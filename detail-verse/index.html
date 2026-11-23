@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Detail Verse | Car detailing in Kitchener</title>
+<meta name="description" content="Detail Verse, 1290 King St E, Kitchener. Interior and exterior detailing, paint correction. Open every day. Call (226) 988-0901.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--k:#0b0b0b;--r:#e4262c;--y:#ffc61a;--w:#f5f3ee;--g:#9c9a95;--l:#262626}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--k);color:var(--w);font:400 17px/1.55 Barlow,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img,video{display:block;max-width:100%}
+.d{font-family:Anton,Impact,sans-serif;font-weight:400;text-transform:uppercase;line-height:.92;letter-spacing:.005em}
+.wrap{width:min(1180px,100% - 36px);margin-inline:auto}
+.nav{position:fixed;inset:0 0 auto;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:12px 18px;background:linear-gradient(#0b0b0bdd,#0b0b0b00)}
+.nav .d{font-size:22px}
+.nav .d i{color:var(--r);font-style:normal}
+.call{background:var(--y);color:#111;text-decoration:none;font-weight:700;padding:10px 16px;font-size:15px}
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;filter:saturate(.9)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0b0b0b66,#0b0b0b00 25%,#0b0b0bcc 70%,#0b0b0b)}
+.hero .in{position:relative;z-index:2;padding:0 18px 30px}
+.hero h1{font-size:clamp(84px,27vw,230px);margin-left:-3px}
+.hero h1 span{color:var(--y)}
+.hero p{font-size:19px;max-width:28ch;margin:14px 0 22px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.b{display:inline-block;padding:16px 24px;font-weight:700;text-decoration:none;font-size:17px}
+.b.y{background:var(--y);color:#111}
+.b.o{border:2px solid var(--w)}
+.facts{display:flex;gap:22px;flex-wrap:wrap;margin-top:22px;color:var(--g);font-size:15px}
+.facts b{color:var(--w)}
+/* stripe */
+.stripe{background:var(--r);color:#fff;overflow:hidden;white-space:nowrap;padding:14px 0}
+.stripe div{display:inline-block;animation:m 28s linear infinite;font-size:30px}
+.stripe span{margin:0 22px}
+@keyframes m{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.stripe div{animation:none}}
+/* services as giant rows */
+.svc{padding:70px 0}
+.svc h2{font-size:clamp(46px,13vw,120px);margin-bottom:26px}
+.svc h2 span{color:var(--r)}
+.row2{display:grid;grid-template-columns:50px 1fr;gap:4px 14px;padding:20px 0;border-top:2px solid var(--l)}
+.row2:last-of-type{border-bottom:2px solid var(--l)}
+.row2 i{font:400 22px Anton;color:var(--y);font-style:normal;padding-top:6px}
+.row2 h3{font-size:clamp(34px,9vw,64px)}
+.row2 p{grid-column:2;color:var(--g)}
+.src{font-size:13px;color:var(--g);margin-top:14px}
+.src a{color:var(--y)}
+/* photos */
+.ph{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.ph img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.ph .wide img{aspect-ratio:16/9}
+.ph .wide{grid-column:span 2}
+/* reviews */
+.rv{padding:80px 0;background:var(--y);color:#111}
+.rv h2{font-size:clamp(46px,13vw,120px);margin-bottom:28px}
+.rv .sc{display:flex;gap:14px;align-items:baseline;margin-bottom:26px}
+.rv .sc b{font:400 70px Anton}
+.q{border-top:3px solid #111;padding:22px 0}
+.q p{font:700 clamp(21px,5.4vw,32px)/1.18 Barlow}
+.q cite{display:block;margin-top:10px;font-style:normal;font-weight:500;font-size:15px}
+.rv .src{color:#3b3000}
+.rv .src a{color:#111}
+/* visit */
+.vis{padding:80px 0}
+.vis h2{font-size:clamp(46px,13vw,120px);margin-bottom:22px}
+.vis h2 span{color:var(--r)}
+.hr{list-style:none;margin:14px 0 20px;max-width:440px}
+.hr li{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--l);font-size:19px}
+.vis .g{display:grid;gap:44px}
+form{display:grid;gap:12px}
+label{display:grid;gap:6px;color:var(--g);font-size:14px}
+input,select,textarea{font:inherit;background:#161616;color:var(--w);border:2px solid var(--l);padding:14px;width:100%;border-radius:0}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--y)}
+textarea{min-height:90px}
+form button{font:700 18px Barlow;background:var(--r);color:#fff;border:0;padding:17px;cursor:pointer}
+footer{border-top:2px solid var(--l);padding:26px 0 44px;color:var(--g);font-size:14px}
+@media(min-width:900px){
+ body{font-size:18px}
+ .nav{padding:16px 40px}
+ .hero .in{width:min(1180px,100% - 36px);margin:0 auto;padding:0 0 56px}
+ .ph{grid-template-columns:repeat(4,1fr);gap:8px}
+ .ph .wide{grid-column:span 2}
+ .ph .wide img{aspect-ratio:auto;height:100%}
+ .rv .qs{display:grid;grid-template-columns:1fr 1fr;column-gap:50px}
+ .vis .g{grid-template-columns:1fr 1fr;gap:90px}
+ .row2{grid-template-columns:80px 1.2fr 1fr;align-items:center}
+ .row2 p{grid-column:3;font-size:18px}
+ .hero::after{background:linear-gradient(180deg,#0b0b0b55,#0b0b0b00 25%,#0b0b0b99 75%,#0b0b0b)}
+}
+</style>
+</head>
+<body>
+<div class="nav"><span class="d">Detail <i>Verse</i></span><a class="call" href="tel:+12269880901">Call (226) 988-0901</a></div>
+
+<header class="hero">
+  <video autoplay muted loop playsinline poster="video/hero-poster.jpg"><source src="video/hero.mp4" type="video/mp4"></video>
+  <div class="in">
+    <h1 class="d">Detail<br><span>Verse</span></h1>
+    <p>Car detailing inside and out at 1290 King St E, Kitchener.</p>
+    <div class="row"><a class="b y" href="tel:+12269880901">Call (226) 988-0901</a><a class="b o" href="#quote">Text for a quote</a></div>
+    <div class="facts"><span><b>5.0</b> from 25 Google reviews</span><span>Open every day, 11 a.m. on</span></div>
+  </div>
+</header>
+
+<div class="stripe d" aria-hidden="true"><div><span>Interior</span><span>Exterior</span><span>Paint correction</span><span>Rust proofing</span><span>Oil change</span><span>Interior</span><span>Exterior</span><span>Paint correction</span><span>Rust proofing</span><span>Oil change</span></div></div>
+
+<section class="svc">
+  <div class="wrap">
+    <h2 class="d">What they <span>do</span></h2>
+    <div class="row2"><i>01</i><h3 class="d">Interior detailing</h3><p>Vacuum and deep cleaning, dashboard and console, leather and fabric, door panels, windows.</p></div>
+    <div class="row2"><i>02</i><h3 class="d">Exterior detailing</h3><p>Hand wash, paint decontamination, wax or sealant, tire and rim cleaning, exterior trim dressing.</p></div>
+    <div class="row2"><i>03</i><h3 class="d">Paint correction</h3><p>They post Stage 1 paint correction jobs, like a Dodge Charger on Aug 17.</p></div>
+    <div class="row2"><i>04</i><h3 class="d">Rust proofing</h3><p>Offered with a 1 year warranty, per their flyer.</p></div>
+    <div class="row2"><i>05</i><h3 class="d">Oil change</h3><p>Full synthetic, per their flyer.</p></div>
+    <div class="row2"><i>06</i><h3 class="d">Pickup and drop</h3><p>Their flyer says it is also available.</p></div>
+    <p class="src">Lists from their own Instagram flyers and posts. <a href="https://www.instagram.com/detail.verse/">instagram.com/detail.verse</a></p>
+  </div>
+</section>
+
+<section style="padding-bottom:80px">
+  <div class="wrap ph">
+    <div class="wide"><img loading="lazy" src="img/p12.jpg" alt="Black Mercedes G-Wagon"></div>
+    <img loading="lazy" src="img/p4c.jpg" alt="Black Dodge Charger">
+    <img loading="lazy" src="img/p5c.jpg" alt="Black Jeep Grand Cherokee">
+    <img loading="lazy" src="img/p10.jpg" alt="Black Jeep Wrangler with black wheels at night">
+    <img loading="lazy" src="img/p9.jpg" alt="Mazda interior with a protective steering wheel cover">
+    <img loading="lazy" src="img/p11.jpg" alt="Toyota 4Runner covered in foam">
+    <img loading="lazy" src="img/p7c.jpg" alt="Grey Dodge Durango">
+  </div>
+</section>
+
+<section class="rv">
+  <div class="wrap">
+    <h2 class="d">Customers said</h2>
+    <div class="sc"><b>5.0</b><span>25 Google reviews</span></div>
+    <div class="qs">
+      <div class="q"><p>I had a great experience here. They did a full interior and exterior detail of my car, plus a paint correction for $350. While others were quoting me double to triple that cost. They did an amazing job, my CRV looks brand new.</p><cite>Ismail U.</cite></div>
+      <div class="q"><p>I had my car detailed here today, I was stunned with the results. My car is brand new again. My car was detailed inside out including engine.</p><cite>Tejas P.</cite></div>
+      <div class="q"><p>Kush and Dipanshu had done great job in removing the long lasting salt stains and felt very professional. It is spotless interior after the service.</p><cite>Harsha G.</cite></div>
+      <div class="q"><p>Great service and amazing results! My car has never looked this clean. The staff was friendly, and the work exceeded my expectations.</p><cite>Patrick H.</cite></div>
+    </div>
+    <p class="src">Google reviews. <a href="https://www.google.com/maps/search/Detail+verse+1290+King+St+E+Kitchener">See them on Google</a></p>
+  </div>
+</section>
+
+<section class="vis" id="quote">
+  <div class="wrap g">
+    <div>
+      <h2 class="d">Come <span>by</span></h2>
+      <p>1290 King St E, Kitchener, ON N2G 2N7</p>
+      <ul class="hr">
+        <li><span>Monday to Friday</span><span>11 a.m. to 8:30 p.m.</span></li>
+        <li><span>Saturday</span><span>11 a.m. to 9 p.m.</span></li>
+        <li><span>Sunday</span><span>11 a.m. to 8:30 p.m.</span></li>
+      </ul>
+      <p><a href="tel:+12269880901">(226) 988-0901</a></p>
+    </div>
+    <form id="q">
+      <p style="color:var(--g)">Opens a text to (226) 988-0901 with your details filled in.</p>
+      <label>Your name<input name="n" required autocomplete="name"></label>
+      <label>Your vehicle<input name="v" placeholder="Year, make, model"></label>
+      <label>What do you want done
+        <select name="s"><option>Interior detail</option><option>Exterior detail</option><option>Interior and exterior</option><option>Paint correction</option><option>Not sure</option></select>
+      </label>
+      <label>Anything else<textarea name="m"></textarea></label>
+      <button type="submit">Text my details</button>
+    </form>
+  </div>
+</section>
+
+<footer><div class="wrap">Detail Verse, Kitchener. Preview built by JPF. Not live yet.</div></footer>
+<script>
+document.getElementById('q').addEventListener('submit',function(e){
+  e.preventDefault();var d=new FormData(e.target);
+  location.href='sms:+12269880901?&body='+encodeURIComponent('Hi, it is '+d.get('n')+'. Vehicle: '+(d.get('v')||'not given')+'. I want: '+d.get('s')+'. '+(d.get('m')||''));
+});
+</script>
+</body>
+</html>
