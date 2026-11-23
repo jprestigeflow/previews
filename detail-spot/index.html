@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Detail Spot | Paint correction and detailing in Kitchener</title>
+<meta name="description" content="Detail Spot, 342 Victoria St N, Kitchener. Paint correction, ceramic coating, interior and exterior detailing. Call (519) 400-9666.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0908;--panel:#141211;--line:#2b2724;--cu:#d0703a;--cu2:#8f4520;--fg:#f2ede6;--mute:#a49d94}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font:400 17px/1.6 "Hanken Grotesk",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img,video{display:block;max-width:100%}
+h1,h2,h3{font-family:"Instrument Serif",serif;font-weight:400;line-height:1;letter-spacing:-.01em}
+h1 em,h2 em{color:var(--cu);font-style:italic}
+.wrap{width:min(1160px,100% - 40px);margin-inline:auto}
+/* hex light pattern: the honeycomb ceiling light in their bay */
+.hex{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 97'%3E%3Cpath d='M28 1 54 16v30L28 61 2 46V16zM28 61v30M2 46 0 47M54 46l2 1' fill='none' stroke='%23ffffff' stroke-opacity='.07' stroke-width='1'/%3E%3C/svg%3E")}
+.top{position:fixed;inset:0 0 auto;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:linear-gradient(#0a0908ee,#0a090800)}
+.logo{font:italic 27px "Instrument Serif",serif;text-decoration:none}
+.logo b{font-weight:400;color:var(--cu)}
+.call{border:1px solid #f2ede699;padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:500;font-size:15px;backdrop-filter:blur(8px);background:#0a090855}
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 28%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0a090880,#0a090800 18%,#0a090899 48%,#0a0908 90%)}
+.hero .in{position:relative;z-index:2;padding:0 20px 34px;width:100%}
+.hero h1{font-size:clamp(46px,13vw,92px);max-width:10ch}
+.hero p{margin:16px 0 24px;max-width:31ch;font-size:18px;color:#ddd5ca}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.b{display:inline-block;padding:15px 24px;border-radius:999px;font-weight:700;text-decoration:none;font-size:16px}
+.b.c{background:var(--cu);color:#1a0d05}
+.b.l{border:1px solid #f2ede666}
+.meta{margin-top:24px;display:flex;gap:18px;flex-wrap:wrap;font-size:14px;color:var(--mute)}
+.meta b{color:var(--fg);font-weight:500}
+/* ledger */
+.sec{padding:76px 0}
+.sec h2{font-size:clamp(38px,9vw,64px);margin-bottom:12px}
+.sec .lead{color:var(--mute);max-width:44ch;margin-bottom:34px}
+.ledger{border-top:1px solid var(--line)}
+.ledger .r{display:grid;grid-template-columns:62px 1fr;gap:6px 16px;padding:22px 0;border-bottom:1px solid var(--line)}
+.ledger time{font-size:13px;color:var(--cu);padding-top:5px;line-height:1.2}
+.ledger h3{font-size:28px}
+.ledger p{grid-column:2;color:var(--mute);margin-top:2px}
+.src{font-size:13px;color:var(--mute);margin-top:16px}
+.src a{color:var(--cu)}
+/* bay video + services */
+.bay{background:var(--panel);padding:0}
+.bay .vid{position:relative}
+.bay video{width:100%;height:62svh;object-fit:cover;object-position:50% 40%}
+.bay .vid::after{content:"";position:absolute;inset:auto 0 0;height:30%;background:linear-gradient(transparent,var(--panel))}
+.bay .in{padding:20px 20px 76px}
+.svc{display:grid;gap:0;margin-top:26px;list-style:none;border-top:1px solid var(--line)}
+.svc li{padding:16px 0;border-bottom:1px solid var(--line);font-size:19px;display:flex;justify-content:space-between;gap:12px}
+.svc li span{color:var(--mute);font-size:15px;text-align:right}
+/* gallery */
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.gal img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:4px}
+.gal .w{grid-column:span 2}
+.gal .w img{aspect-ratio:4/3;object-position:50% 55%}
+.cap{font-size:14px;color:var(--mute);margin:12px 0 28px}
+/* reviews */
+.rv{padding:76px 0;background:var(--bg)}
+.score{display:flex;align-items:baseline;gap:12px;margin:6px 0 30px}
+.score b{font:400 84px "Instrument Serif",serif;color:var(--cu);line-height:.9}
+.score span{color:var(--mute)}
+.qs{display:grid;gap:0;border-top:1px solid var(--line)}
+.qs blockquote{padding:26px 0;border-bottom:1px solid var(--line)}
+.qs p{font:400 25px/1.25 "Instrument Serif",serif}
+.qs cite{display:block;margin-top:12px;font:500 14px "Hanken Grotesk";font-style:normal;color:var(--mute)}
+/* visit */
+.visit{background:var(--panel);padding:76px 0}
+.visit .grid{display:grid;gap:44px}
+.visit h2{margin-bottom:18px}
+.hours{list-style:none;margin:16px 0}
+.hours li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line)}
+.hours .x{color:var(--mute)}
+form{display:grid;gap:12px}
+label{display:grid;gap:6px;font-size:14px;color:var(--mute)}
+input,select,textarea{font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:14px;width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--cu);border-color:transparent}
+textarea{min-height:92px}
+form button{font:700 17px "Hanken Grotesk";background:var(--cu);color:#1a0d05;border:0;border-radius:999px;padding:16px;cursor:pointer;margin-top:6px}
+footer{padding:30px 0 46px;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
+@media(min-width:900px){
+ body{font-size:18px}
+ .top{padding:18px 44px}
+ .hero .in{width:min(1160px,100% - 40px);margin:0 auto;padding-bottom:64px}
+ .hero h1{max-width:12ch;font-size:108px}
+ .hero>img{object-position:50% 78%}
+ .ledger .r{grid-template-columns:120px 1fr 1.2fr;align-items:baseline;padding:30px 0}
+ .ledger p{grid-column:3;margin:0}
+ .bay{display:grid;grid-template-columns:1fr 1fr;min-height:760px}
+ .bay .vid{order:2}.bay video{height:100%;min-height:760px}
+ .bay .vid::after{inset:0 auto 0 0;width:40%;height:auto;background:linear-gradient(90deg,var(--panel),transparent)}
+ .bay .in{padding:90px 6vw 90px max(20px,calc((100vw - 1160px)/2));display:flex;align-items:center}
+ .gal{grid-template-columns:repeat(4,1fr);gap:12px}
+ .gal .w{grid-column:span 2;grid-row:span 1}
+ .qs{grid-template-columns:1fr 1fr;column-gap:60px}
+ .qs blockquote:first-child{grid-column:span 2}
+ .qs blockquote:first-child p{font-size:38px}
+ .visit .grid{grid-template-columns:1fr 1fr;gap:80px}
+}
+</style>
+</head>
+<body>
+<div class="top"><a class="logo" href="#">Detail <b>Spot</b></a><a class="call" href="tel:+15194009666">(519) 400-9666</a></div>
+
+<header class="hero hex">
+  <img src="img/p1.jpg" alt="White Lamborghini in the Detail Spot bay under the honeycomb lights">
+  <div class="in">
+    <h1>Paint correction in <em>Kitchener</em></h1>
+    <p>Detail Spot in Kitchener. Wet sanding, ceramic coating, tint and protection film, full interior and exterior detailing.</p>
+    <div class="row"><a class="b c" href="tel:+15194009666">Call (519) 400-9666</a><a class="b l" href="#visit">Request a quote</a></div>
+    <div class="meta"><span><b>5.0</b> from 88 Google reviews</span><span>Mon to Fri, 10 to 6</span><span>342 Victoria St N</span></div>
+  </div>
+</header>
+
+<section class="sec">
+  <div class="wrap">
+    <h2>What came <em>through the bay</em></h2>
+    <p class="lead">Lines from their own posts. The work listed is the work they wrote down.</p>
+    <div class="ledger">
+      <div class="r"><time>Oct 31<br>2026</time><h3>Lamborghini Gallardo Superleggera</h3><p>Full wash, premium interior, wrap removal.</p></div>
+      <div class="r"><time>Jul 29<br>2026</time><h3>2024 Chevy Silverado 3500</h3><p>Three step paint correction, done together with another detailer.</p></div>
+      <div class="r"><time>May 8<br>2026</time><h3>BMW X5M</h3><p>Full wash, premium interior, summer wheels swap over, windshield coating.</p></div>
+      <div class="r"><time>Apr 17<br>2026</time><h3>Mercedes C63S</h3><p>Full wash, premium interior, engine bay.</p></div>
+      <div class="r"><time>Mar 24<br>2026</time><h3>2017 Ford Raptor</h3><p>Full wash, premium interior, front bumper, skid plate and rear bumper repainted.</p></div>
+      <div class="r"><time>Mar 20<br>2026</time><h3>2015 Mercedes E63S</h3><p>Full wash, premium interior with pedal removal, Alcantara pilling removed from the steering wheel, engine bay, ceramic tint all around.</p></div>
+    </div>
+    <p class="src">Source: <a href="https://www.instagram.com/detail.spot/">instagram.com/detail.spot</a>, posts from March to October 2026.</p>
+  </div>
+</section>
+
+<section class="bay">
+  <div class="vid"><video autoplay muted loop playsinline poster="video/hero-poster.jpg"><source src="video/hero.mp4" type="video/mp4"></video></div>
+  <div class="in">
+    <div class="wrap" style="width:auto">
+      <h2>Ten years <em>on paint</em></h2>
+      <p class="lead" style="margin-bottom:0">Their Instagram bio says 10 years experience. The list below is straight from it.</p>
+      <ul class="svc">
+        <li>Paint correction <span>wet sanding, texture removal</span></li>
+        <li>Tint <span>and paint protection film</span></li>
+        <li>Ceramic coating</li>
+        <li>Interior and exterior detailing</li>
+        <li>Caliper painting <span>per a customer review</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <h2>Wheels, <em>carbon</em> and Alcantara</h2>
+    <p class="lead">One job, shot start to finish: the Gallardo, Oct 31.</p>
+    <div class="gal">
+      <div class="w"><img loading="lazy" src="img/p2.jpg" alt="Bronze wheel and yellow caliper on the white Lamborghini"></div>
+      <img loading="lazy" src="img/p4.jpg" alt="Front wheel close up">
+      <img loading="lazy" src="img/p6.jpg" alt="Interior seen from the door sill">
+      <img loading="lazy" src="img/p7.jpg" alt="Alcantara bucket seats">
+      <img loading="lazy" src="img/p8.jpg" alt="Carbon fibre door panel">
+      <img loading="lazy" src="img/p10.jpg" alt="Centre console with carbon trim">
+      <img loading="lazy" src="img/p11.jpg" alt="Rear of the Lamborghini in the shop">
+      <img loading="lazy" src="img/p12.jpg" alt="Blue BMW M4 in the bay">
+    </div>
+    <p class="cap">Last frame: a BMW M4, from the Sep 18 before and after post.</p>
+  </div>
+</section>
+
+<section class="rv">
+  <div class="wrap">
+    <h2>In their <em>words</em></h2>
+    <div class="score"><b>5.0</b><span>88 Google reviews</span></div>
+    <div class="qs">
+      <blockquote><p>My Mercedes coupe had scratches all over the paint, and I honestly didn't think it could look new again. When I came back to pick it up, I was shocked, it looked just like the day I bought it from the dealership.</p><cite>Mandeep G.</cite></blockquote>
+      <blockquote><p>David is absolutely amazing and we never want to go to another detailing place again!</p><cite>Katherine O.</cite></blockquote>
+      <blockquote><p>david did a super good job painting my calipers, paint matched them perfectly to my car, They look super clean compared to before.</p><cite>Av</cite></blockquote>
+      <blockquote><p>David is the best in the area. Hands down</p><cite>Andrew T.</cite></blockquote>
+    </div>
+    <p class="src">Google reviews. <a href="https://www.google.com/maps/place/Detail+spot/data=!4m7!3m6!1s0x882bf5f3b89d033d:0x59b8ab3b817142ad">Read them all</a></p>
+  </div>
+</section>
+
+<section class="visit hex" id="visit">
+  <div class="wrap grid">
+    <div>
+      <h2>Come by, <em>or text first</em></h2>
+      <p class="lead" style="margin-bottom:6px">342 Victoria St N, Kitchener, ON N2H 5E2</p>
+      <ul class="hours">
+        <li><span>Monday to Friday</span><span>10 a.m. to 6 p.m.</span></li>
+        <li class="x"><span>Saturday</span><span>Closed</span></li>
+        <li class="x"><span>Sunday</span><span>Closed</span></li>
+      </ul>
+      <a class="b c" href="tel:+15194009666" style="margin-top:8px">Call (519) 400-9666</a>
+    </div>
+    <form id="q">
+      <p style="color:var(--mute)">This opens a text to (519) 400-9666 with your details filled in. Add photos once it opens.</p>
+      <label>Your name<input name="n" required autocomplete="name"></label>
+      <label>Vehicle<input name="v" placeholder="Year, make, model"></label>
+      <label>What do you need
+        <select name="s"><option>Paint correction</option><option>Ceramic coating</option><option>Interior and exterior detail</option><option>Tint or paint protection film</option><option>Not sure</option></select>
+      </label>
+      <label>Anything else<textarea name="m"></textarea></label>
+      <button type="submit">Text my details</button>
+    </form>
+  </div>
+</section>
+
+<footer><div class="wrap">Detail Spot, Kitchener. Preview built by JPF. Not live yet.</div></footer>
+
+<script>
+document.getElementById('q').addEventListener('submit',function(e){
+  e.preventDefault();var d=new FormData(e.target);
+  var b='Hi, it is '+d.get('n')+'. Vehicle: '+(d.get('v')||'not given')+'. I need: '+d.get('s')+'. '+(d.get('m')||'');
+  location.href='sms:+15194009666?&body='+encodeURIComponent(b);
+});
+</script>
+</body>
+</html>
