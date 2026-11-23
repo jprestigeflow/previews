@@ -3,159 +3,417 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
+<meta name="robots" content="noindex, nofollow">
 <title>Khatri Detailing Hub | Car detailing in St. Catharines</title>
 <meta name="description" content="Khatri Detailing Hub, 43 Scott St W, St. Catharines. Hand car wash, interior detailing, paint correction, ceramic coating. Call (289) 696-2763.">
+<meta name="theme-color" content="#e1140f">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Schibsted+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#0c1a2b;--navy2:#13273f;--sky:#7db8ea;--silver:#e7ecf1;--ink:#0c1a2b;--mute:#5b6b7c;--line:#0c1a2b22}
+/* DESIGN PLAN
+   1 Direction: BOLD colour. Tail-light red used as whole screens of colour (hero, reviews, quote), cut with black paint and ceramic silver. Loud, automotive, sure of itself.
+   2 Palette: red #e1140f (Raptor LED tail light, c10) / ink #121113 (black Cadillac paint, c9) / silver #e6e9ec (ceramic-coated hood, c12) / graphite #2b2d31 (Defender hood, c11) / oxblood #6e0a0e (Raptor decal lettering, c10).
+   3 Fonts: Big Shoulders Display 900 (heavy condensed, Chicago-industrial, plate-and-badge feel) + Schibsted Grotesk (plain body).
+   4 Signature: "Pick your detail" — five giant service rows; tapping one lights it red and swaps in the photo + their own reel words for that job. Motif: the Raptor decal's diagonal hash stripes.
+   5 Order: red hero (their words "Gloss. Protection. Perfection." + Raptor tail) / lead review on silver with 133 count-up / Pick your detail (ink) / Hydrophobic band (beading photo + their caption) / more reviews on red / sentence-style text form + hours / footer. Fixed Call/Text dock on phone.
+   6 Motion: one load sequence (red field wipes up, headline lines rise through masks, photo un-clips and settles from 1.12). On scroll only: photos un-clip, numbers count once. Reduced motion = everything static.
+*/
+:root{
+  --red:#e1140f;--red-d:#b80d09;--ink:#121113;--silver:#e6e9ec;--graph:#2b2d31;--ox:#6e0a0e;--paper:#f4f5f6;
+  --disp:"Big Shoulders Display",Impact,sans-serif;--body:"Schibsted Grotesk",system-ui,sans-serif;
+  --gut:20px;
+}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--silver);color:var(--ink);font:400 17px/1.6 "DM Sans",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--ink);font:400 17px/1.55 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit}
 img{display:block;max-width:100%}
-h1,h2,h3{font-family:Syne,sans-serif;font-weight:800;line-height:1;letter-spacing:-.025em}
-.nav{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;position:sticky;top:0;z-index:20;background:#e7ecf1ee;backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.nav .n{font:800 15px Syne;line-height:1.1}
-.call{white-space:nowrap;background:var(--navy);color:#fff;text-decoration:none;font-weight:700;padding:10px 16px;border-radius:999px;font-size:15px}
-.layout{display:grid;gap:0}
-.side{padding:40px 20px 30px}
-.side h1{font-size:clamp(44px,13vw,84px);margin-bottom:18px}
-.side h1 span{color:#2a78bd}
-.side .lead{font-size:19px;max-width:30ch;margin-bottom:22px}
-.row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}
-.b{display:inline-block;padding:15px 24px;border-radius:999px;font-weight:700;text-decoration:none}
-.b.n{background:var(--navy);color:#fff}
-.b.o{border:2px solid var(--navy)}
-.rate{display:flex;align-items:baseline;gap:10px;color:var(--mute);margin-bottom:26px}
-.rate b{font:800 44px Syne;color:var(--ink)}
-.menu{list-style:none;border-top:1px solid var(--line);max-width:420px}
-.menu li{padding:13px 0;border-bottom:1px solid var(--line);font-weight:500}
-.src{font-size:13px;color:var(--mute);margin-top:14px}
-.src a{color:#1d5f9c}
-/* gallery */
-.gal{padding:0 12px;columns:2;column-gap:10px}
-.gal figure{break-inside:avoid;margin-bottom:10px;position:relative;background:var(--navy)}
-.gal img{width:100%;height:auto}
-.gal figcaption{position:absolute;left:0;bottom:0;right:0;padding:36px 14px 12px;background:linear-gradient(transparent,#0c1a2bd9);color:#fff;font:700 15px Syne}
-.note{padding:6px 20px 0;font-size:13px;color:var(--mute)}
-/* reviews */
-.rv{background:var(--navy);color:#fff;padding:76px 0;margin-top:60px}
-.rv .wrap,.vs .wrap{width:min(1120px,100% - 40px);margin-inline:auto}
-.rv h2{font-size:clamp(34px,8vw,56px);margin-bottom:8px}
-.rv .sc{display:flex;gap:12px;align-items:baseline;color:#9fb4c9;margin-bottom:30px}
-.rv .sc b{font:800 50px Syne;color:var(--sky)}
-.qs{display:grid;gap:0;border-top:1px solid #ffffff30}
-.qs blockquote{padding:24px 0;border-bottom:1px solid #ffffff30}
-.qs p{font:500 21px/1.38 "DM Sans"}
-.qs cite{display:block;margin-top:10px;font-style:normal;color:#9fb4c9;font-size:14px}
-.rv .src{color:#9fb4c9}
-.rv .src a{color:var(--sky)}
-/* visit */
-.vs{padding:76px 0}
-.vs .g{display:grid;gap:44px}
-.vs h2{font-size:clamp(34px,8vw,56px);margin-bottom:16px}
-.hrs{list-style:none;margin:16px 0}
-.hrs li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line)}
-.hrs .x{color:var(--mute)}
-form{display:grid;gap:12px}
-label{display:grid;gap:6px;font-size:14px;color:var(--mute)}
-input,select,textarea{font:inherit;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:8px;padding:14px;width:100%}
-input:focus,select:focus,textarea:focus{outline:2px solid var(--sky);border-color:transparent}
-textarea{min-height:92px}
-form button{font:700 17px "DM Sans";background:var(--navy);color:#fff;border:0;border-radius:999px;padding:16px;cursor:pointer}
-footer{padding:24px 20px 44px;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
-@media(min-width:900px){
- body{font-size:18px}
- .nav{padding:16px 44px}
- .layout{grid-template-columns:minmax(380px,5fr) 7fr;gap:30px;padding:0 30px 0 44px}
- .side{position:sticky;top:64px;align-self:start;padding:60px 0 40px}
- .gal{columns:2;padding:40px 0 0}
- .side h1{font-size:clamp(46px,4.6vw,66px)}
- .gal figcaption{font-size:18px}
- .note{grid-column:2;padding:0}
- .qs{grid-template-columns:1fr 1fr;column-gap:70px}
- .vs .g{grid-template-columns:1fr 1fr;gap:90px}
+.disp{font-family:var(--disp);font-weight:900;text-transform:uppercase;line-height:.86;letter-spacing:-.01em}
+.lbl{font:700 14px/1.2 var(--body);letter-spacing:.08em;text-transform:uppercase}
+.wrap{width:min(1240px,100% - 2*var(--gut));margin-inline:auto}
+.hash{height:14px;background:repeating-linear-gradient(-58deg,currentColor 0 3px,transparent 3px 9px)}
+
+/* NAV */
+.nav{position:absolute;inset:0 0 auto;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:18px var(--gut);color:var(--ink)}
+.brand{font:900 22px/0.9 var(--disp);text-transform:uppercase;letter-spacing:.01em;text-decoration:none}
+.brand small{display:block;font:700 14px/1.2 var(--body);letter-spacing:.1em;margin-top:4px}
+.nav .call{font:700 15px var(--body);text-decoration:none;background:var(--ink);color:#fff;padding:11px 16px;border-radius:4px;white-space:nowrap}
+.nav .links{display:none}
+
+/* HERO */
+.hero{position:relative;background:var(--red);color:var(--ink);overflow:hidden;padding:104px 0 40px}
+.hero .wrap{position:relative}
+.h1{font-size:clamp(64px,19.5vw,196px);position:relative;z-index:3}
+.h1 .ln{display:block;overflow:hidden;padding-bottom:.02em}
+.h1 .ln>span{display:block}
+.h1 .w{color:#fff}
+.hero-photo{position:relative;z-index:2;margin:-4px 0 0 auto;width:80%;aspect-ratio:600/720;overflow:hidden;background:var(--ox);box-shadow:0 30px 60px -20px #5a0507}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+.hero-photo figcaption{position:absolute;left:0;bottom:0;background:var(--ink);color:#fff;font:500 14px/1.3 var(--body);padding:10px 12px}
+.hero-meta{position:relative;z-index:3;display:grid;gap:22px;margin-top:28px}
+.hero-meta p{font-size:18px;max-width:34ch}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;font:700 16px var(--body);text-decoration:none;padding:16px 22px;border-radius:4px;white-space:nowrap}
+.btn.k{background:var(--ink);color:#fff}
+.btn.o{border:2px solid var(--ink)}
+.btn .ar{font-family:var(--disp);font-size:20px;line-height:1}
+.rate{display:flex;align-items:center;gap:12px}
+.rate b{font:900 54px/.8 var(--disp)}
+.rate span{font-size:15px;line-height:1.3}
+.hero .hash{color:var(--ink);opacity:.9;position:absolute;left:0;right:0;bottom:0}
+
+/* LEAD REVIEW */
+.lead{background:var(--silver);padding:84px 0 92px}
+.lead .grid{display:grid;gap:44px}
+.lead blockquote p{font:900 clamp(40px,11vw,104px)/.9 var(--disp);text-transform:uppercase;letter-spacing:-.005em}
+.lead blockquote p em{font-style:normal;color:var(--red)}
+.lead cite{display:block;margin-top:22px;font:500 16px var(--body);font-style:normal}
+.lead .full{font-size:17px;max-width:46ch;margin-top:18px;color:#3a3d42}
+.count{border-top:3px solid var(--ink);padding-top:18px;display:flex;gap:28px}
+.count div b{display:block;font:900 96px/.85 var(--disp);color:var(--ink)}
+.count div b i{font-style:normal;color:var(--red)}
+.count div span{display:block;font-size:15px;margin-top:8px;max-width:16ch}
+
+/* PICK YOUR DETAIL */
+.pick{background:var(--ink);color:#fff;padding:84px 0 96px}
+.pick .head{display:flex;flex-direction:column;gap:14px;margin-bottom:40px}
+.pick h2{font-size:clamp(56px,15vw,150px)}
+.pick h2 em{font-style:normal;color:var(--red)}
+.pick .head p{color:#b7bcc3;max-width:40ch}
+.pgrid{display:grid;gap:0}
+.rows{list-style:none;border-top:1px solid #ffffff2e}
+.rows li{border-bottom:1px solid #ffffff2e}
+.rows button{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:flex;align-items:baseline;gap:14px;padding:16px 0;color:#ffffff73;transition:color .25s}
+.rows button .n{font:700 14px var(--body);letter-spacing:.06em;width:28px;flex:none}
+.rows button .t{font:900 clamp(36px,10.2vw,92px)/.9 var(--disp);text-transform:uppercase;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.rows button:hover,.rows button:focus-visible{color:#fff}
+.rows li.on button{color:var(--red)}
+.rows li.on button .t{transform:translateX(6px)}
+.rows .drop{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.2,.7,.2,1)}
+.rows li.on .drop{grid-template-rows:1fr}
+.rows .drop>div{overflow:hidden}
+.panel{display:grid;gap:16px;padding:4px 0 26px}
+.panel img{width:100%;aspect-ratio:5/4;object-fit:cover}
+.panel q{font:800 28px/1 var(--disp);text-transform:uppercase;quotes:none;color:#fff}
+.panel small{display:block;color:#9ea4ab;font-size:14px;margin-top:6px}
+.panel a{color:#fff;font-weight:700;font-size:16px}
+.stage{display:none}
+
+/* HYDRO BAND */
+.hydro{background:var(--graph);color:#fff;overflow:hidden}
+.hydro .grid{display:grid}
+.hydro figure{position:relative;overflow:hidden}
+.hydro figure img{width:100%;height:100%;object-fit:cover;aspect-ratio:7/7.6}
+.hydro .txt{padding:64px var(--gut) 76px}
+.hydro h2{font-size:clamp(60px,17vw,150px)}
+.hydro h2 .r{color:var(--red)}
+.hydro p{color:#c6cad0;max-width:36ch;margin-top:22px}
+.hydro .src{font-size:14px;color:#9ea4ab;margin-top:14px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:34px}
+.duo img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.duo figcaption{font-size:14px;color:#b7bcc3;margin-top:8px}
+
+/* REVIEWS ON RED */
+.rv{background:var(--red);color:var(--ink);padding:84px 0 92px;position:relative}
+.rv h2{font-size:clamp(56px,15vw,150px);margin-bottom:34px}
+.rv h2 .w{color:#fff}
+.rlist{display:grid;gap:0;border-top:3px solid var(--ink)}
+.rlist blockquote{padding:26px 0;border-bottom:1px solid #12111340}
+.rlist p{font:500 20px/1.42 var(--body);max-width:42ch}
+.rlist cite{display:block;margin-top:12px;font:700 14px var(--body);letter-spacing:.06em;text-transform:uppercase;font-style:normal}
+.rv .more{display:inline-block;margin-top:24px;font-weight:700}
+
+/* QUOTE + VISIT */
+.q{background:var(--ink);color:#fff;padding:84px 0 120px}
+.q .grid{display:grid;gap:64px}
+.q h2{font-size:clamp(60px,17vw,150px)}
+.q h2 em{font-style:normal;color:var(--red)}
+.sent{margin-top:30px;font:500 clamp(24px,6.4vw,40px)/1.55 var(--body);color:#d9dce0}
+.sent input,.sent select{font:inherit;color:#fff;background:transparent;border:0;border-bottom:3px solid var(--red);padding:0 4px;border-radius:0;width:9ch;max-width:100%;-webkit-appearance:none;appearance:none}
+.sent input.wide{width:11ch}
+.sent select{width:auto;cursor:pointer;padding-right:26px;background:linear-gradient(45deg,transparent 50%,var(--red) 50%) right 8px center/9px 9px no-repeat}
+.sent select option{color:#121113}
+.sent input::placeholder{color:#ffffff59}
+.sent input:focus,.sent select:focus{outline:none;border-bottom-color:#fff}
+.send{margin-top:30px;display:flex;flex-wrap:wrap;align-items:center;gap:16px}
+.send button{font:900 28px/1 var(--disp);text-transform:uppercase;background:var(--red);color:#fff;border:0;border-radius:4px;padding:18px 26px;cursor:pointer}
+.send button:hover{background:var(--red-d)}
+.send span{color:#9ea4ab;font-size:14px;max-width:28ch}
+.visit .num{display:block;white-space:nowrap;font:900 clamp(54px,15vw,80px)/.9 var(--disp);color:var(--red);text-decoration:none;margin:6px 0 20px}
+.visit address{font-style:normal;font-size:18px;color:#d9dce0}
+.hrs{list-style:none;margin-top:26px;border-top:1px solid #ffffff2e}
+.hrs li{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #ffffff2e;font-size:16px;color:#c6cad0}
+.hrs li.x{color:#80868d}
+.hrs li.today{color:#fff;font-weight:700}
+.hrs li.today span:first-child::after{content:" · today";color:var(--red)}
+
+footer{background:var(--ink);color:#8a9097;font-size:14px;padding:0 0 120px;border-top:1px solid #ffffff1f}
+footer .wrap{padding-top:24px;display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:space-between}
+
+/* DOCK */
+.dock{position:fixed;left:10px;right:10px;bottom:10px;z-index:50;display:grid;grid-template-columns:1.6fr 1fr;gap:8px;padding:8px;background:var(--ink);border-radius:8px;box-shadow:0 12px 30px #0006}
+.dock a{display:flex;align-items:center;justify-content:center;font:700 16px var(--body);text-decoration:none;padding:15px 10px;border-radius:5px;white-space:nowrap}
+.dock .c{background:var(--red);color:#fff}
+.dock .t{border:1.5px solid #ffffff40;color:#fff}
+
+/* REVEALS (scroll) */
+.clip img{clip-path:inset(0 0 100% 0);transform:scale(1.12);transition:clip-path 1s cubic-bezier(.2,.7,.2,1),transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.clip.in img{clip-path:inset(0 0 0 0);transform:none}
+
+/* LOAD SEQUENCE */
+.js .hero{clip-path:inset(100% 0 0 0)}
+.js .h1 .ln>span{transform:translateY(105%)}
+.js .hero-photo{clip-path:inset(0 0 100% 0)}
+.js .hero-photo img{transform:scale(1.12)}
+.js .hero-meta,.js .nav{opacity:0}
+.go .hero{clip-path:inset(0 0 0 0);transition:clip-path .7s cubic-bezier(.7,0,.2,1)}
+.go .h1 .ln>span{transform:none;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.go .h1 .ln:nth-child(1)>span{transition-delay:.35s}
+.go .h1 .ln:nth-child(2)>span{transition-delay:.45s}
+.go .h1 .ln:nth-child(3)>span{transition-delay:.55s}
+.go .hero-photo{clip-path:inset(0 0 0 0);transition:clip-path .9s cubic-bezier(.7,0,.2,1) .5s}
+.go .hero-photo img{transform:none;transition:transform 1.3s cubic-bezier(.2,.7,.2,1) .5s}
+.go .hero-meta,.go .nav{opacity:1;transition:opacity .6s ease .95s}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important}
+  .js .hero,.js .hero-photo,.clip img{clip-path:none!important}
+  .js .h1 .ln>span,.js .hero-photo img,.clip img{transform:none!important}
+  .js .hero-meta,.js .nav{opacity:1!important}
+}
+
+/* DESKTOP */
+@media (min-width:900px){
+  :root{--gut:48px}
+  body{font-size:18px}
+  .nav{padding:26px var(--gut)}
+  .nav .links{display:flex;gap:28px;margin:0 auto 0 56px;font:500 15px var(--body)}
+  .nav .links a{text-decoration:none}
+  .nav .links a:hover{text-decoration:underline}
+  .brand{font-size:26px}
+  .hero{padding:132px 0 70px;min-height:100vh}
+  .hero{display:flex;align-items:center}
+  .hero .wrap{position:static}
+  .h1{font-size:clamp(112px,11.6vw,190px);max-width:56vw}
+  .hero-photo{position:absolute;top:0;right:0;bottom:0;width:40vw;margin:0;aspect-ratio:auto;box-shadow:none}
+  .hero-photo img{object-position:30% 50%}
+  .hero-photo figcaption{bottom:14px}
+  .hero-meta{max-width:56vw;margin-top:44px;grid-template-columns:auto auto;align-items:end;justify-content:start;column-gap:54px}
+  .hero-meta p{grid-column:1/3;font-size:20px}
+  .lead{padding:150px 0}
+  .lead .grid{grid-template-columns:1fr 300px;gap:90px;align-items:end}
+  .count{flex-direction:column;gap:34px}
+  .count div b{font-size:140px}
+  .pick{padding:150px 0}
+  .pick .head{flex-direction:row;justify-content:space-between;align-items:end;margin-bottom:60px}
+  .pgrid{grid-template-columns:1.25fr 1fr;gap:70px;align-items:start}
+  .rows .drop{display:none}
+  .rows button{padding:14px 0}
+  .rows button .t{font-size:clamp(48px,5vw,72px)}
+  .stage{display:block;position:sticky;top:40px}
+  .stage figure{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--graph)}
+  .stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity .5s,transform .9s cubic-bezier(.2,.7,.2,1)}
+  .stage img.on{opacity:1;transform:none}
+  .stage .cap{margin-top:18px;min-height:110px}
+  .stage q{display:block;font:800 34px/1 var(--disp);text-transform:uppercase;quotes:none}
+  .stage small{display:block;color:#9ea4ab;font-size:14px;margin-top:8px}
+  .stage a{display:inline-block;margin-top:14px;font-weight:700;color:#fff}
+  .hydro .grid{grid-template-columns:5fr 6fr;align-items:stretch}
+  .hydro figure img{aspect-ratio:auto;min-height:100%}
+  .hydro .txt{padding:130px var(--gut) 130px 80px}
+  .duo{max-width:520px}
+  .rv{padding:150px 0}
+  .rv .rl{display:grid;grid-template-columns:1fr 1fr;gap:80px}
+  .rlist{grid-column:2}
+  .rv h2{position:sticky;top:60px;align-self:start}
+  .q{padding:150px 0}
+  .q .grid{grid-template-columns:1.35fr 1fr;gap:110px}
+  .sent{font-size:36px}
+  .dock{display:none}
+  footer{padding-bottom:40px}
 }
 </style>
 </head>
 <body>
-<div class="nav"><span class="n">Khatri Detailing Hub</span><a class="call" href="tel:+12896962763">(289) 696-2763</a></div>
+<script>document.documentElement.classList.add('js')</script>
 
-<main class="layout">
-  <div class="side">
-    <h1>Khatri <span>Detailing</span> Hub</h1>
-    <p class="lead">Hand car wash, detailing, paint correction and ceramic coating at 43 Scott St W, St. Catharines.</p>
-    <div class="row"><a class="b n" href="tel:+12896962763">Call (289) 696-2763</a><a class="b o" href="#visit">Text a quote request</a></div>
-    <div class="rate"><b>5.0</b><span>from 133 Google reviews</span></div>
-    <ul class="menu">
-      <li>Hand car wash</li>
-      <li>Interior detailing</li>
-      <li>Paint correction</li>
-      <li>Ceramic coating</li>
-      <li>Engine bay cleaning</li>
-    </ul>
-    <p class="src">From their Instagram bio and flyer. <a href="https://www.instagram.com/khatri_detailing_hub/">@khatri_detailing_hub</a></p>
+<header class="nav">
+  <a class="brand" href="#top">Khatri Detailing Hub<small>St. Catharines, ON</small></a>
+  <nav class="links"><a href="#detail">Services</a><a href="#reviews">Reviews</a><a href="#quote">Quote and hours</a></nav>
+  <a class="call" href="tel:+12896962763">(289) 696-2763</a>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <h1 class="h1 disp" aria-label="Gloss. Protection. Perfection.">
+      <span class="ln"><span>Gloss.</span></span>
+      <span class="ln"><span class="w">Protection.</span></span>
+      <span class="ln"><span>Perfection.</span></span>
+    </h1>
+    <figure class="hero-photo">
+      <img src="img/k-raptor.jpg" alt="White Ford Raptor after a detail at Khatri Detailing Hub, red tail light lit">
+      <figcaption>Ford Raptor. Fresh detail. Serious shine.</figcaption>
+    </figure>
+    <div class="hero-meta">
+      <p>Hand car wash, detailing, paint correction and ceramic coating at 43 Scott St W, St. Catharines.</p>
+      <div class="btns"><a class="btn k" href="tel:+12896962763">Call (289) 696-2763</a><a class="btn o" href="#quote">Text for a quote <span class="ar">&rarr;</span></a></div>
+      <div class="rate"><b>5.0</b><span>from 133<br>Google reviews</span></div>
+    </div>
   </div>
-  <div class="gal">
-    <figure><img src="img/c8.jpg" alt="Nissan hood and grille after ceramic coating"><figcaption>Ceramic gone right</figcaption></figure>
-    <figure><img loading="lazy" src="img/c11.jpg" alt="Land Rover Defender hood"><figcaption>Showroom shine</figcaption></figure>
-    <figure><img loading="lazy" src="img/c9.jpg" alt="Black SUV after one step paint correction"><figcaption>One step paint correction</figcaption></figure>
-    <figure><img loading="lazy" src="img/c10.jpg" alt="White Ford Raptor"><figcaption>Raptor mode</figcaption></figure>
-    <figure><img loading="lazy" src="img/c12.jpg" alt="Water beading on a ceramic coated hood"><figcaption>Water doesn't stand a chance</figcaption></figure>
+  <div class="hash" aria-hidden="true"></div>
+</section>
+
+<section class="lead">
+  <div class="wrap grid">
+    <blockquote>
+      <p>&ldquo;His attention to detail and quality of work is <em>second to none!</em>&rdquo;</p>
+      <p class="full" style="font:400 17px/1.55 var(--body);text-transform:none">Khatri has always gone above and beyond on all of my vehicles, his attention to detail and quality of work is second to none!</p>
+      <cite>Ali I., Google</cite>
+    </blockquote>
+    <div class="count">
+      <div><b data-count="5.0" data-dec="1">5.0</b><span>Google rating</span></div>
+      <div><b data-count="133">133</b><span>Google reviews</span></div>
+    </div>
   </div>
-  <p class="note">The captions are the words on their own reels. Photos are from their Instagram.</p>
+</section>
+
+<section class="pick" id="detail">
+  <div class="wrap">
+    <div class="head">
+      <h2 class="disp">Pick your <em>detail.</em></h2>
+      <p>What Khatri Detailing Hub does, from their Instagram bio and flyer. Tap one to see the work.</p>
+    </div>
+    <div class="pgrid">
+      <ul class="rows" id="rows">
+        <li class="on" data-i="0"><button aria-expanded="true"><span class="n">01</span><span class="t">Ceramic coating</span></button>
+          <div class="drop"><div><div class="panel"><img src="img/k-nissan.jpg" alt="Nissan hood reflecting the sky after ceramic coating" loading="lazy"><div><q>Gloss. Protection. Perfection.</q><small>Their words, on a Nissan that just got a fresh ceramic coating.</small></div><a href="#quote" data-s="Ceramic coating">Text about ceramic coating &rarr;</a></div></div></div></li>
+        <li data-i="1"><button aria-expanded="false"><span class="n">02</span><span class="t">Paint correction</span></button>
+          <div class="drop"><div><div class="panel"><img src="img/k-cadillac.jpg" alt="Black Cadillac SUV after one-step paint correction" loading="lazy"><div><q>Cadillac brought back to life.</q><small>Their words. One-step paint correction for deeper gloss and sharper reflections.</small></div><a href="#quote" data-s="Paint correction">Text about paint correction &rarr;</a></div></div></div></li>
+        <li data-i="2"><button aria-expanded="false"><span class="n">03</span><span class="t">Hand car wash</span></button>
+          <div class="drop"><div><div class="panel"><img src="img/k-defender.jpg" alt="Land Rover Defender hood, clean and glossy" loading="lazy"><div><q>Premium hand wash.</q><small>From their Instagram bio. Land Rover Defender.</small></div><a href="#quote" data-s="Hand car wash">Text about a hand wash &rarr;</a></div></div></div></li>
+        <li data-i="3"><button aria-expanded="false"><span class="n">04</span><span class="t">Interior detailing</span></button>
+          <div class="drop"><div><div class="panel"><img src="img/k-raptor.jpg" alt="Ford Raptor after a full detail" loading="lazy"><div><q>Spotless inside and out.</q><small>Abdullah T., Google review.</small></div><a href="#quote" data-s="Interior detailing">Text about interior detailing &rarr;</a></div></div></div></li>
+        <li data-i="4"><button aria-expanded="false"><span class="n">05</span><span class="t">Engine bay cleaning</span></button>
+          <div class="drop"><div><div class="panel"><img src="img/k-beads.jpg" alt="Water beading on a coated hood" loading="lazy"><div><q>Under the hood too.</q><small>Engine bay cleaning is on their flyer. Ask Atul what it involves for your car.</small></div><a href="#quote" data-s="Engine bay cleaning">Text about engine bay cleaning &rarr;</a></div></div></div></li>
+      </ul>
+      <div class="stage" aria-hidden="true">
+        <figure>
+          <img class="on" src="img/k-nissan.jpg" alt="">
+          <img src="img/k-cadillac.jpg" alt="" loading="lazy">
+          <img src="img/k-defender.jpg" alt="" loading="lazy">
+          <img src="img/k-raptor.jpg" alt="" loading="lazy">
+          <img src="img/k-beads.jpg" alt="" loading="lazy">
+        </figure>
+        <div class="cap"><q id="sq">Gloss. Protection. Perfection.</q><small id="ss">Their words, on a Nissan that just got a fresh ceramic coating.</small><a id="sa" href="#quote" data-s="Ceramic coating">Text about ceramic coating &rarr;</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hydro">
+  <div class="grid">
+    <figure class="clip"><img src="img/k-beads.jpg" alt="Water beading and sheeting off a ceramic coated hood" loading="lazy"></figure>
+    <div class="txt">
+      <span class="lbl" style="color:#9ea4ab">Ceramic coating</span>
+      <h2 class="disp" style="margin-top:14px">Hydrophobic mode: <span class="r">on.</span></h2>
+      <p>That&rsquo;s what a properly protected finish looks like. Water doesn&rsquo;t stick around.</p>
+      <p class="src">Their caption, from @khatri_detailing_hub.</p>
+      <div class="duo">
+        <figure class="clip"><img src="img/k-defender.jpg" alt="Land Rover Defender hood" loading="lazy"></figure>
+        <figure class="clip"><img src="img/k-cadillac.jpg" alt="Black Cadillac after paint correction" loading="lazy"></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rv" id="reviews">
+  <div class="wrap rl">
+    <h2 class="disp">Five stars,<br><span class="w">133 times.</span></h2>
+    <div class="rlist">
+      <blockquote><p>I had my car detailed and ceramic coated today at Khatri Detailing Hub, and I&rsquo;m extremely happy with the results! The car looks absolutely amazing &mdash; spotless, super shiny, and like brand new.</p><cite>Anoop K., Google</cite></blockquote>
+      <blockquote><p>Recommended by another car-guy I know well. Atul was very patient as I cancelled a few times due to rain /snow. Finally got the Range Rover done. Very happy. Price more than fair for the quality of the job.</p><cite>S. M., Google</cite></blockquote>
+      <blockquote><p>He did an amazing job detailing my car. Very professional, punctual, and paid great attention to detail. My car looked spotless inside and out once he was done. You can tell he takes pride in his work and really cares about customer satisfaction.</p><cite>Abdullah T., Google</cite></blockquote>
+      <a class="more" href="https://www.google.com/maps/place/KHATRI+DETAILING+HUB/data=!4m7!3m6!1s0x89d3518914820065:0x23f687fbb3d050f3">Read all 133 on Google &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section class="q" id="quote">
+  <div class="wrap grid">
+    <form id="qf">
+      <span class="lbl" style="color:#9ea4ab">Text for a quote</span>
+      <h2 class="disp" style="margin-top:14px">Book your <em>shine.</em></h2>
+      <p class="sent">
+        Hi Atul, I&rsquo;m <label><span class="sr" style="position:absolute;left:-9999px">Your name</span><input name="n" required autocomplete="given-name" placeholder="name"></label>.
+        I drive a <label><span class="sr" style="position:absolute;left:-9999px">Your vehicle</span><input class="wide" name="v" placeholder="make, model"></label>
+        and I&rsquo;m after <label><span class="sr" style="position:absolute;left:-9999px">Service</span><select name="s" id="svc"><option>ceramic coating</option><option>paint correction</option><option>a hand car wash</option><option>interior detailing</option><option>engine bay cleaning</option><option>not sure yet</option></select></label>.
+      </p>
+      <div class="send"><button type="submit">Text it &rarr;</button><span>Opens a text to (289) 696-2763 with this filled in.</span></div>
+    </form>
+    <div class="visit">
+      <span class="lbl" style="color:#9ea4ab">Call or text</span>
+      <a class="num" href="tel:+12896962763">289 696 2763</a>
+      <address>43 Scott St W Unit 4<br>St. Catharines, ON L2R 1E1</address>
+      <ul class="hrs" id="hrs">
+        <li data-d="1"><span>Monday</span><span>9 a.m. to 5 p.m.</span></li>
+        <li data-d="2"><span>Tuesday</span><span>9 a.m. to 8:30 p.m.</span></li>
+        <li data-d="3" class="x"><span>Wednesday</span><span>Closed</span></li>
+        <li data-d="4"><span>Thursday</span><span>9 a.m. to 8:30 p.m.</span></li>
+        <li data-d="5"><span>Friday</span><span>9 a.m. to 8:30 p.m.</span></li>
+        <li data-d="6"><span>Saturday</span><span>9 a.m. to 8:30 p.m.</span></li>
+        <li data-d="0"><span>Sunday</span><span>9 a.m. to 6 p.m.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
 </main>
 
-<section class="rv">
-  <div class="wrap">
-    <h2>What customers wrote</h2>
-    <div class="sc"><b>5.0</b><span>133 Google reviews</span></div>
-    <div class="qs">
-      <blockquote><p>Khatri has always gone above and beyond on all of my vehicles, his attention to detail and quality of work is second to none!</p><cite>Ali I.</cite></blockquote>
-      <blockquote><p>Atul was very patient as I cancelled a few times due to rain and snow. Finally got the Range Rover done. Very happy. Price more than fair for the quality of the job.</p><cite>S. McBride</cite></blockquote>
-      <blockquote><p>He did an amazing job detailing my car. Very professional, punctual, and paid great attention to detail. My car looked spotless inside and out once he was done.</p><cite>Abdullah T.</cite></blockquote>
-      <blockquote><p>I had my car detailed and ceramic coated today at Khatri Detailing Hub, and I'm extremely happy with the results! The car looks absolutely amazing, spotless, super shiny, and like brand new.</p><cite>Anoop K.</cite></blockquote>
-    </div>
-    <p class="src">Google reviews. <a href="https://www.google.com/maps/place/KHATRI+DETAILING+HUB/data=!4m7!3m6!1s0x89d3518914820065:0x23f687fbb3d050f3">Read them on Google</a></p>
-  </div>
-</section>
+<footer><div class="wrap"><span>Khatri Detailing Hub · 43 Scott St W, St. Catharines · (289) 696-2763</span><span>Preview built by JPF. Not live yet.</span></div></footer>
 
-<section class="vs" id="visit">
-  <div class="wrap g">
-    <div>
-      <h2>Visit or text</h2>
-      <p>43 Scott St W Unit 4, St. Catharines, ON L2R 1E1</p>
-      <ul class="hrs">
-        <li><span>Monday</span><span>9 a.m. to 5 p.m.</span></li>
-        <li><span>Tuesday</span><span>9 a.m. to 8:30 p.m.</span></li>
-        <li class="x"><span>Wednesday</span><span>Closed</span></li>
-        <li><span>Thursday to Saturday</span><span>9 a.m. to 8:30 p.m.</span></li>
-        <li><span>Sunday</span><span>9 a.m. to 6 p.m.</span></li>
-      </ul>
-      <p><a href="tel:+12896962763" style="font-weight:700">(289) 696-2763</a></p>
-    </div>
-    <form id="q">
-      <p style="color:var(--mute)">This opens a text to (289) 696-2763 with your details filled in.</p>
-      <label>Your name<input name="n" required autocomplete="name"></label>
-      <label>Your vehicle<input name="v" placeholder="Year, make, model"></label>
-      <label>What do you need
-        <select name="s"><option>Hand car wash</option><option>Interior detailing</option><option>Paint correction</option><option>Ceramic coating</option><option>Engine bay cleaning</option><option>Not sure</option></select>
-      </label>
-      <label>Anything else<textarea name="m"></textarea></label>
-      <button type="submit">Text my details</button>
-    </form>
-  </div>
-</section>
+<nav class="dock" aria-label="Contact"><a class="c" href="tel:+12896962763">Call (289) 696-2763</a><a class="t" href="sms:+12896962763">Text</a></nav>
 
-<footer>Khatri Detailing Hub, St. Catharines. Preview built by JPF. Not live yet.</footer>
 <script>
-document.getElementById('q').addEventListener('submit',function(e){
-  e.preventDefault();var d=new FormData(e.target);
-  location.href='sms:+12896962763?&body='+encodeURIComponent('Hi, it is '+d.get('n')+'. Vehicle: '+(d.get('v')||'not given')+'. I need: '+d.get('s')+'. '+(d.get('m')||''));
-});
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  requestAnimationFrame(function(){requestAnimationFrame(function(){document.documentElement.classList.add('go')})});
+
+  // service picker
+  var rows=[].slice.call(document.querySelectorAll('#rows li'));
+  var stageImgs=[].slice.call(document.querySelectorAll('.stage img'));
+  var sq=document.getElementById('sq'),ss=document.getElementById('ss'),sa=document.getElementById('sa');
+  function pick(i){
+    rows.forEach(function(li,j){li.classList.toggle('on',j===i);li.querySelector('button').setAttribute('aria-expanded',j===i)});
+    stageImgs.forEach(function(im,j){im.classList.toggle('on',j===i)});
+    var p=rows[i];sq.textContent=p.querySelector('q').textContent;ss.textContent=p.querySelector('small').textContent;
+    var a=p.querySelector('a');sa.textContent=a.textContent;sa.dataset.s=a.dataset.s;
+  }
+  rows.forEach(function(li,i){
+    var b=li.querySelector('button');
+    b.addEventListener('click',function(){pick(i)});
+    b.addEventListener('mouseenter',function(){if(matchMedia('(min-width:900px)').matches)pick(i)});
+  });
+  var map={'Ceramic coating':0,'Paint correction':1,'Hand car wash':2,'Interior detailing':3,'Engine bay cleaning':4};
+  document.addEventListener('click',function(e){var a=e.target.closest('a[data-s]');if(a){document.getElementById('svc').selectedIndex=map[a.dataset.s]}});
+
+  // scroll reveals + count-up
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target;io.unobserve(el);
+    if(el.dataset.count){var end=parseFloat(el.dataset.count),dec=+el.dataset.dec||0;if(reduce)return;var t0=null;
+      (function f(t){if(!t0)t0=t;var k=Math.min((t-t0)/1300,1),v=end*(1-Math.pow(1-k,3));el.textContent=v.toFixed(dec);if(k<1)requestAnimationFrame(f)})(performance.now());
+    } else el.classList.add('in');
+  })},{threshold:.2});
+  document.querySelectorAll('.clip,[data-count]').forEach(function(el){if(reduce)el.classList.add('in');else io.observe(el)});
+
+  // today's hours (Toronto)
+  try{var wd=new Intl.DateTimeFormat('en-US',{timeZone:'America/Toronto',weekday:'short'}).format(new Date());
+    var d={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[wd];var li=document.querySelector('#hrs li[data-d="'+d+'"]');if(li)li.classList.add('today');}catch(e){}
+
+  // sms form
+  document.getElementById('qf').addEventListener('submit',function(e){e.preventDefault();var f=new FormData(e.target);
+    var body='Hi Atul, I\'m '+f.get('n')+'. I drive a '+(f.get('v')||'(vehicle not given)')+' and I\'m after '+f.get('s')+'.';
+    location.href='sms:+12896962763?&body='+encodeURIComponent(body);});
+})();
 </script>
 </body>
 </html>

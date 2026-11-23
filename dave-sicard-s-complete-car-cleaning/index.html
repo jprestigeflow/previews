@@ -3,162 +3,370 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-<title>Dave Sicard's Complete Car Cleaning | Car detailing in St. Catharines</title>
+<meta name="robots" content="noindex, nofollow">
+<title>Dave Sicard's Complete Car Cleaning | St. Catharines</title>
 <meta name="description" content="Dave Sicard's Complete Car Cleaning, 12 Nihan Dr, St. Catharines. 4.8 stars from 64 Google reviews. Call (905) 324-8176.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Albert+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,500;0,700;1,500;1,700&family=Figtree:wght@400;500;700&family=Yellowtail&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#f6f2ea;--ink:#1b2127;--blue:#1b86c9;--blue2:#0e5f93;--slate:#3d4a55;--sand:#e8e1d3;--mute:#5d6770}
+/* DESIGN PLAN
+   Direction: warm, owner-run shop. Cream page, warm-black type, Dave's own words and his customers' words carry it; one blue from his sign.
+   Palette: cream #f4ede1 (base) / warm black #1f1a16 (the black sign board) / sign blue #1d7fd6 (the "Dave Sicard's" script on sign + truck, ACCENT) / truck slate #3f5662 (his GMC) / fence tan #cbb894 (lot fence boards, rules only).
+   Fonts: Zilla Slab 700 display (sturdy, warm slab), Figtree body, Yellowtail used only for the wordmark + one "Dave" (echoes the brush script on his sign).
+   Signature: "What happened to your car?" picker. Pick a situation, the matching Google review answers, and a text to Dave is pre-written.
+   Order: hero (headline + Buick at his sign + rating card) / lead review + count-up / Tesla band / picker / inside set / find Dave + fill-in-the-blank text form / footer.
+   Motion: one load sequence (lines rise, photo unmasks, card lands, <1.4s); Tesla band eases in on scroll; 4.8 and 64 count up; reduced-motion = static. */
+:root{--paper:#f4ede1;--paper2:#ebe2d2;--ink:#1f1a16;--blue:#1d7fd6;--blue2:#145fa3;--slate:#3f5662;--tan:#cbb894;--mute:#6b6157}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--paper);color:var(--ink);font:400 17px/1.6 "Albert Sans",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-a{color:inherit}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font:400 17px/1.6 "Figtree",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
-h1,h2,h3,.serif{font-family:"Young Serif",serif;font-weight:400;line-height:1.1}
-.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
-.nav{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid #1b212722;position:sticky;top:0;background:#f6f2eaf2;z-index:10;backdrop-filter:blur(8px)}
-.nav .n{font:20px "Young Serif",serif}
-.call{background:var(--ink);color:var(--paper);text-decoration:none;font-weight:700;padding:10px 16px;border-radius:6px;font-size:15px}
-/* top: the review is the headline */
-.top{padding:44px 0 0}
-.stars{display:flex;align-items:baseline;gap:12px;margin-bottom:22px}
-.stars b{font:400 64px "Young Serif",serif;color:var(--blue2);line-height:1}
-.stars span{color:var(--mute);font-size:15px;line-height:1.3}
-.big{font:clamp(30px,8vw,56px)/1.12 "Young Serif",serif;max-width:21ch}
-.big q{quotes:"\201C" "\201D"}
-.by{margin-top:18px;font-weight:700}
-.by span{color:var(--mute);font-weight:400}
-.truck{margin-top:34px}
-.truck img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:50% 60%;border-radius:4px}
-.truck p{font-size:14px;color:var(--mute);margin-top:8px}
-.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
-.b{display:inline-block;padding:15px 22px;border-radius:6px;font-weight:700;text-decoration:none}
+.slab{font-family:"Zilla Slab",Georgia,serif}
+.wrap{width:min(1200px,100% - 40px);margin-inline:auto}
+.lbl{font-size:14px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+
+/* nav */
+.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 20px}
+.mark{font:30px/1 "Yellowtail",cursive;color:var(--blue)}
+.nav .r{display:flex;gap:28px;align-items:center;font-size:15px;font-weight:500}
+.nav .r .lk{display:none}
+.pill{background:var(--ink);color:var(--paper);padding:11px 18px;border-radius:999px;font-weight:700;font-size:15px}
+
+/* hero */
+.hero{padding:22px 0 0;position:relative}
+.hero .wrap{display:flex;flex-direction:column}.hero .txt{display:contents}.hero h1{order:1}.who{order:2}.shot{order:3}.intro{order:4;margin-top:64px!important}.btns{order:5}
+.hero h1{font:700 clamp(70px,10.2vw,140px)/.9 "Zilla Slab",Georgia,serif;letter-spacing:-.025em}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ln>span{display:inline-block}
+.hero h1 em{font-style:italic;font-weight:700;color:var(--blue)}
+.who{margin-top:18px;font-size:15px;color:var(--mute)}
+.who b{color:var(--ink);font-weight:700}
+.intro{margin-top:26px;font-size:18px;max-width:34ch}
+.btns{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.b{display:inline-flex;align-items:center;gap:10px;padding:16px 24px;border-radius:999px;font-weight:700;font-size:16px}
 .b.p{background:var(--blue);color:#fff}
-.b.o{border:2px solid var(--ink)}
-/* wall */
-.wall{padding:76px 0 30px}
-.wall h2{font-size:clamp(30px,7vw,46px);margin-bottom:28px;max-width:16ch}
-.cols{columns:1;column-gap:22px}
-.card{break-inside:avoid;background:#fff;border:1px solid #1b212714;border-radius:4px;padding:24px;margin-bottom:22px}
-.card p{font-size:18px}
-.card.k{background:var(--slate);color:#fff;border:0}
-.card.k p{font:24px/1.25 "Young Serif",serif}
-.card cite{display:block;font-style:normal;font-weight:700;margin-top:14px;font-size:15px}
-.card small{color:var(--mute);font-weight:400}
-.card.k small{color:#c3ccd3}
-.src{font-size:13px;color:var(--mute);margin-top:6px}
-.src a{color:var(--blue2)}
-/* what it looks like */
-.look{padding:50px 0 76px}
-.look h2{font-size:clamp(30px,7vw,46px);margin-bottom:10px}
-.look .lead{color:var(--mute);margin-bottom:26px;max-width:46ch}
-.strip{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.strip img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:3px}
-.strip .w{grid-column:span 2}
-.strip .w img{aspect-ratio:16/10}
-/* visit */
-.visit{background:var(--ink);color:var(--paper);padding:70px 0}
-.visit .grid{display:grid;gap:44px}
-.visit h2{font-size:clamp(30px,7vw,46px);margin-bottom:16px}
-.hrs{list-style:none;margin:14px 0 22px}
-.hrs li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #f6f2ea30}
-.hrs .x{opacity:.6}
-.visit a{color:#8fd0f5}
-form{display:grid;gap:12px}
-label{display:grid;gap:6px;font-size:14px;color:#c9c3b6}
-input,select,textarea{font:inherit;color:var(--ink);background:#fff;border:0;border-radius:4px;padding:14px;width:100%}
-textarea{min-height:90px}
-form button{font:700 17px "Albert Sans";background:var(--blue);color:#fff;border:0;border-radius:6px;padding:16px;cursor:pointer}
-footer{padding:26px 0 40px;font-size:14px;color:var(--mute)}
-@media(min-width:900px){
- body{font-size:18px}
- .nav{padding:16px 44px}
- .top{padding:80px 0 0}
- .top .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:end}
- .truck{margin:0}
- .truck img{aspect-ratio:4/5}
- .cols{columns:3}
- .strip{grid-template-columns:repeat(4,1fr);gap:12px}
- .strip .w{grid-column:span 2}
- .strip .w img{aspect-ratio:2/1}
- .visit .grid{grid-template-columns:1fr 1fr;gap:90px}
+.b.o{border:1.5px solid var(--ink)}
+.shot{position:relative;margin:32px -20px 0}
+.shot .ph{overflow:hidden;aspect-ratio:4/5}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:30% 40%}
+.card{position:absolute;left:20px;bottom:-34px;background:#fff;border-radius:18px;padding:18px 22px;box-shadow:0 18px 40px -18px #1f1a1640;display:flex;gap:16px;align-items:center}
+.card .n{font:700 54px/1 "Zilla Slab",serif;letter-spacing:-.02em}
+.card .t{font-size:14px;line-height:1.35;color:var(--mute)}
+.card .t b{display:block;color:var(--ink);font-size:15px}
+
+/* lead review */
+.lead{padding:120px 0 96px}
+.lead .q{font:500 clamp(40px,5.6vw,80px)/1.02 "Zilla Slab",serif;letter-spacing:-.02em;max-width:15ch;margin-top:22px}
+.lead .q::before{content:"";display:block;width:72px;height:6px;background:var(--blue);border-radius:3px;margin-bottom:.5em}
+.lead .full{margin-top:30px;max-width:56ch;font-size:17px;color:#3a322b}
+.lead cite{display:block;margin-top:16px;font-style:normal;font-weight:700;font-size:15px}
+.lead cite span{font-weight:400;color:var(--mute)}
+.nums{display:flex;gap:56px;margin-top:64px;padding-top:28px;border-top:1.5px solid var(--tan)}
+.nums div{font-size:15px;color:var(--mute);line-height:1.35}
+.nums b{display:block;font:700 clamp(64px,9vw,120px)/.9 "Zilla Slab",serif;letter-spacing:-.03em;color:var(--ink);margin-bottom:8px}
+
+/* band */
+.band{position:relative;overflow:hidden;background:var(--ink)}
+.band img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:40% 50%;transform:scale(1.06);transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.band.in img{transform:scale(1)}
+.bandcap{background:var(--ink);color:var(--paper);padding:30px 0 64px}
+.bandcap h2{font:700 clamp(44px,7vw,96px)/.95 "Zilla Slab",serif;letter-spacing:-.025em}
+.bandcap p{margin-top:16px;color:#cfc4b4;max-width:44ch;font-size:16px}
+.bandcap p q{color:#fff}
+
+/* picker */
+.pick{padding:112px 0}
+.pick h2{font:700 clamp(44px,7vw,96px)/.95 "Zilla Slab",serif;letter-spacing:-.025em;max-width:11ch}
+.pick .sub{margin-top:18px;color:var(--mute);max-width:40ch}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.chips button{font:500 16px "Figtree",sans-serif;color:var(--ink);background:transparent;border:1.5px solid #1f1a1633;border-radius:999px;padding:12px 18px;cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.chips button[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.ans{margin-top:44px;border-top:1.5px solid var(--tan);padding-top:34px;min-height:300px}
+.ans .k{font-size:14px;color:var(--blue2);font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.ans blockquote{font:500 clamp(26px,3.4vw,44px)/1.18 "Zilla Slab",serif;letter-spacing:-.01em;margin-top:14px;max-width:30ch;transition:opacity .35s,transform .35s}
+.ans cite{display:block;font-style:normal;font-weight:700;margin-top:18px;font-size:15px}
+.ans cite span{font-weight:400;color:var(--mute)}
+.ans.sw blockquote{opacity:0;transform:translateY(8px)}
+.ans .b{margin-top:30px}
+
+/* inside set */
+.inside{padding:0 0 112px}
+.inside .hd{display:flex;flex-direction:column;gap:8px;margin-bottom:28px}
+.inside h2{font:700 clamp(40px,5vw,64px)/.95 "Zilla Slab",serif;letter-spacing:-.02em}
+.set{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.set figure{margin:0}
+.set img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:6px}
+.set .w{grid-column:span 2}
+.set .w img{aspect-ratio:16/10}
+.set figcaption{font-size:14px;color:var(--mute);margin-top:8px}
+
+/* find dave */
+.find{background:var(--ink);color:var(--paper);padding:104px 0 120px}
+.find .big{font:400 clamp(110px,22vw,300px)/.8 "Yellowtail",cursive;color:var(--blue);margin-left:-.04em}
+.find h2{font:700 clamp(40px,6vw,80px)/.95 "Zilla Slab",serif;letter-spacing:-.02em;margin-top:6px}
+.truck{margin:44px -20px 0}
+.truck img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:45% 60%}
+.truck p{font-size:14px;color:#a89d8e;margin:10px 20px 0}
+.info{display:grid;gap:44px;margin-top:56px}
+.hrs{list-style:none}
+.hrs li{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid #f4ede126;font-size:17px}
+.hrs li.x{color:#8d8275}
+.addr{font:500 26px/1.25 "Zilla Slab",serif}
+.links{margin-top:18px;display:flex;flex-direction:column;gap:10px;font-size:16px}
+.links a{color:#8cc4f5;border-bottom:1px solid #8cc4f540;align-self:flex-start}
+.phone{display:block;font:700 clamp(40px,7.5vw,104px)/1 "Zilla Slab",serif;letter-spacing:-.025em;margin-top:72px}
+.phone:hover{color:#8cc4f5}
+
+/* letter form */
+.letter{margin-top:72px;padding-top:40px;border-top:1.5px solid #f4ede130}
+.letter .lbl{color:#a89d8e}
+.letter p.s{font:500 clamp(26px,3.6vw,46px)/1.5 "Zilla Slab",serif;margin-top:18px;max-width:34ch}
+.letter input{font:inherit;color:#fff;background:transparent;border:0;border-bottom:2px solid var(--blue);padding:0 4px;width:7.5em;max-width:100%;outline:none;border-radius:0}
+.letter input.l{width:11em}
+.letter input::placeholder{color:#7d7368}
+.letter input:focus{border-bottom-color:#8cc4f5}
+.letter button{margin-top:34px;font:700 17px "Figtree",sans-serif;background:var(--blue);color:#fff;border:0;border-radius:999px;padding:17px 28px;cursor:pointer}
+.letter .note{margin-top:14px;font-size:14px;color:#a89d8e}
+
+footer{background:var(--ink);color:#8d8275;font-size:14px;padding:28px 0 120px;border-top:1px solid #f4ede11a}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+/* dock */
+.dock{position:fixed;left:12px;right:12px;bottom:12px;z-index:50;display:flex;gap:8px;padding:8px;border-radius:999px;background:var(--ink);box-shadow:0 14px 34px -12px #1f1a1680}
+.dock a{flex:1;text-align:center;padding:14px;border-radius:999px;font-weight:700;font-size:16px;color:var(--paper)}
+.dock a:first-child{background:var(--blue);color:#fff;flex:1.6}
+
+/* load sequence */
+.js .hero h1 .ln>span{transform:translateY(105%)}
+.js .shot .ph{clip-path:inset(12% 8% 12% 8% round 24px)}
+.js .shot img{transform:scale(1.12)}
+.js .card,.js .who,.js .intro,.js .btns{opacity:0;transform:translateY(14px)}
+.go .hero h1 .ln>span{transform:none;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.go .hero h1 .ln:nth-child(2)>span{transition-delay:.09s}
+.go .hero h1 .ln:nth-child(3)>span{transition-delay:.18s}
+.go .shot .ph{clip-path:inset(0 0 0 0 round 0px);transition:clip-path 1.1s .15s cubic-bezier(.6,0,.2,1)}
+.go .shot img{transform:none;transition:transform 1.4s .15s cubic-bezier(.2,.7,.2,1)}
+.go .who,.go .intro,.go .btns{opacity:1;transform:none;transition:opacity .6s .55s,transform .6s .55s}
+.go .card{opacity:1;transform:none;transition:opacity .5s 1s,transform .6s 1s cubic-bezier(.2,.9,.3,1.2)}
+
+@media(min-width:720px){
+  .set{grid-template-columns:repeat(3,1fr);gap:14px}
+  .set .w{grid-column:span 3}
+}
+@media(min-width:980px){
+  body{font-size:18px}
+  .nav{padding:26px 48px}
+  .nav .r .lk{display:inline}
+  .mark{font-size:36px}
+  .hero{padding:40px 0 0}
+  .hero .txt{display:block}.intro{margin-top:26px!important}
+  .hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+  .hero .txt{padding-top:24px}
+  .shot{margin:0 -20px 0 0}
+  .shot .ph{aspect-ratio:auto;height:min(78vh,700px);border-radius:28px}
+  .js .shot .ph{clip-path:inset(10% 10% 10% 10% round 28px)}
+  .go .shot .ph{clip-path:inset(0 0 0 0 round 28px)}
+  .card{left:-64px;bottom:48px;padding:22px 28px}
+  .card .n{font-size:64px}
+  .lead{padding:180px 0 140px}
+  .lead .inner{display:grid;grid-template-columns:3fr 1.25fr;gap:72px;align-items:end}
+  .lead .full{margin-top:0}
+  .band img{aspect-ratio:21/9;max-height:86vh}
+  .bandcap{padding:40px 0 110px}
+  .bandcap .wrap{display:flex;justify-content:space-between;align-items:end;gap:48px}
+  .pick{padding:170px 0}
+  .pick .top{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:end}
+  .ans{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:end;min-height:260px}
+  .inside{padding:0 0 170px}
+  .set .w{grid-column:span 1}
+  .inside .hd{flex-direction:row;justify-content:space-between;align-items:end}
+  .set .w img{aspect-ratio:1/1}
+  .find{padding:150px 0 140px}
+  .find .head{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:end}
+  .truck{margin:0}
+  .truck img{border-radius:18px}
+  .truck p{margin-left:0}
+  .info{grid-template-columns:1fr 1fr;gap:96px;margin-top:96px}
+  .letter{display:grid;grid-template-columns:1.4fr 1fr;gap:64px;align-items:end}
+  .dock{display:none}
+  footer{padding-bottom:40px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important}
+  .js .hero h1 .ln>span,.js .shot img,.js .card,.js .who,.js .intro,.js .btns{transform:none!important;opacity:1!important}
+  .js .shot .ph{clip-path:none!important}
+  .band img{transform:none}
 }
 </style>
+<script>document.documentElement.className='js'</script>
 </head>
 <body>
-<div class="nav"><span class="n">Dave Sicard's</span><a class="call" href="tel:+19053248176">Call (905) 324-8176</a></div>
 
-<section class="top">
+<nav class="nav">
+  <span class="mark">Dave Sicard's</span>
+  <div class="r"><a class="lk" href="#reviews">Reviews</a><a class="lk" href="#ask">Ask Dave</a><a class="lk" href="#find">Hours</a><a class="pill" href="tel:+19053248176">Call Dave</a></div>
+</nav>
+
+<header class="hero">
   <div class="wrap">
-    <div>
-      <div class="stars"><b>4.8</b><span>64 Google reviews<br>Dave Sicard's Complete Car Cleaning, St. Catharines</span></div>
-      <h1 class="big"><q>My car looked new again in just a few hours.</q></h1>
-      <p class="by">Maria P. <span>wrote this on Google</span></p>
-      <div class="cta"><a class="b p" href="tel:+19053248176">Call (905) 324-8176</a><a class="b o" href="#quote">Text a quote request</a></div>
+    <div class="txt">
+      <h1><span class="ln"><span>Done,</span></span><span class="ln"><span>and done</span></span><span class="ln"><span><em>right.</em></span></span></h1>
+      <p class="who"><b>Justin P.</b>, on Google, about Dave</p>
+      <p class="intro">Complete car cleaning, inside and out, at 12 Nihan Dr in St. Catharines. You bring it to Dave.</p>
+      <div class="btns"><a class="b p" href="tel:+19053248176">Call (905) 324-8176</a><a class="b o" href="#ask">Text Dave</a></div>
     </div>
-    <figure class="truck"><img src="img/p1.jpg" alt="Dave Sicard's Complete Car Cleaning work truck"><p>The work truck, from their Facebook page.</p></figure>
+    <figure class="shot">
+      <div class="ph"><picture><source media="(min-width:980px)" srcset="img/hero-buick-tall.jpg"><img src="img/hero-buick-tall.jpg" alt="A freshly cleaned black Buick SUV parked in front of the Dave Sicard's Complete Car Cleaning sign"></picture></div>
+      <div class="card"><span class="n">4.8</span><span class="t"><b>64 Google reviews</b>Dave Sicard's, St. Catharines</span></div>
+    </figure>
   </div>
-</section>
+</header>
 
-<section class="wall">
+<section class="lead" id="reviews">
   <div class="wrap">
-    <h2>What people say about Dave</h2>
-    <div class="cols">
-      <div class="card k"><p>It's rare these days to find the kind of personal touch and experience that Dave offers. He makes sure it's done, and done right, all while maintaining a great attitude, really makes you feel like you're family.</p><cite>Justin P. <small>4 months ago</small></cite></div>
-      <div class="card"><p>I'm so happy that Dave was recommended to me. He and his son did such an amazing job detailing my car. It was cleaner than the day I brought it home. He even drove me home then picked me up when the job was completed.</p><cite>Furella G. <small>a month ago</small></cite></div>
-      <div class="card"><p>My child unfortunately threw up in my new car and it got in the vent. I could not seem to get rid of the smell, took it to Dave he did an amazing job, it smells so much better and is nice and clean also for a very fair price. He even got me to work and back when my ride fell through.</p><cite>Sally B. <small>3 weeks ago</small></cite></div>
-      <div class="card"><p>We took my car to Dave as I needed it done before a meeting. He fit me in quickly as he had a cancellation.</p><cite>Christian N. <small>4 months ago</small></cite></div>
+    <p class="lbl">What people say about Dave</p>
+    <div class="inner">
+      <p class="q">It was cleaner than the day I brought it home.</p>
+      <div>
+        <p class="full">"I'm so happy that Dave was recommended to me. He and his son did such an amazing job detailing my car. It was cleaner than the day I brought it home. He even drove me home then picked me up when the job was completed. I'm super impressed …"</p>
+        <cite>Furella G.<span>, Google</span></cite>
+      </div>
     </div>
-    <p class="src">Google reviews. <a href="https://m.facebook.com/SICARDAUTODETAILING/">Facebook page</a></p>
-  </div>
-</section>
-
-<section class="look">
-  <div class="wrap">
-    <h2>Inside and out</h2>
-    <p class="lead">Photos from their Facebook page. They describe themselves as a professional automotive detailing service.</p>
-    <div class="strip">
-      <div class="w"><img loading="lazy" src="img/p10.jpg" alt="Red GMC pickup in the wash bay"></div>
-      <img loading="lazy" src="img/p9.jpg" alt="Truck front seat with floor mats">
-      <img loading="lazy" src="img/p11.jpg" alt="Truck dash and centre console">
-      <img loading="lazy" src="img/p12.jpg" alt="Rear leather seats">
-      <img loading="lazy" src="img/p6.jpg" alt="Leather interior of a dark SUV">
-      <img loading="lazy" src="img/p2.jpg" alt="Red Tesla Model X with the falcon door open">
-      <img loading="lazy" src="img/p3.jpg" alt="Black Buick SUV at the shop">
+    <div class="nums">
+      <div><b data-n="4.8" data-d="1">4.8</b>stars on Google</div>
+      <div><b data-n="64">64</b>Google reviews</div>
     </div>
   </div>
 </section>
 
-<section class="visit" id="quote">
-  <div class="wrap grid">
-    <div>
-      <h2>Find Dave</h2>
-      <p>12 Nihan Dr, St. Catharines, ON L2N 1L1</p>
-      <ul class="hrs">
-        <li><span>Monday to Friday</span><span>8 a.m. to 5 p.m.</span></li>
-        <li><span>Saturday</span><span>9 a.m. to 2 p.m.</span></li>
-        <li class="x"><span>Sunday</span><span>Closed</span></li>
-      </ul>
-      <p><a href="tel:+19053248176">(905) 324-8176</a> &nbsp;·&nbsp; <a href="https://www.facebook.com/SICARDAUTODETAILING">Facebook</a></p>
+<section class="band" id="band">
+  <img src="img/band-tesla.jpg" alt="Red Tesla Model X with the falcon door up, showing a clean black interior, in front of the Dave Sicard's sign" loading="lazy">
+</section>
+<div class="bandcap">
+  <div class="wrap">
+    <h2>Inside<br>and out.</h2>
+    <p>From Dave's Facebook page: <q>It feels nice inviting passengers in your beautiful clean vehicle interior!</q></p>
+  </div>
+</div>
+
+<section class="pick" id="ask">
+  <div class="wrap">
+    <div class="top">
+      <h2>What happened to your car?</h2>
+      <p class="sub">Pick the one that sounds like you. A customer who had the same day tells you how it went, and the text to Dave is already written.</p>
     </div>
-    <form id="q">
-      <p style="color:#c9c3b6">This opens a text to (905) 324-8176 with your details in it.</p>
-      <label>Your name<input name="n" required autocomplete="name"></label>
-      <label>Your vehicle<input name="v" placeholder="Year, make, model"></label>
-      <label>What does it need<textarea name="m" placeholder="Inside, outside, a smell, a stain"></textarea></label>
-      <button type="submit">Text my details</button>
+    <div class="chips" role="group" aria-label="Pick your situation">
+      <button type="button" aria-pressed="true" data-i="0">Something got spilled</button>
+      <button type="button" aria-pressed="false" data-i="1">I need it before a meeting</button>
+      <button type="button" aria-pressed="false" data-i="2">I'm a busy parent</button>
+      <button type="button" aria-pressed="false" data-i="3">I want it done right</button>
+      <button type="button" aria-pressed="false" data-i="4">I have no ride</button>
+    </div>
+    <div class="ans" id="ans" aria-live="polite">
+      <div>
+        <p class="k" id="ak">Sally B. had this</p>
+        <blockquote id="aq"></blockquote>
+        <cite id="ac"></cite>
+      </div>
+      <a class="b p" id="asms" href="sms:+19053248176">Text Dave about this</a>
+    </div>
+  </div>
+</section>
+
+<section class="inside">
+  <div class="wrap">
+    <div class="hd"><h2>The inside, too.</h2><p class="lbl">From Dave's Facebook</p></div>
+    <div class="set">
+      <figure class="w"><img loading="lazy" src="img/p10.jpg" alt="Red GMC Sierra pickup inside the wash bay"><figcaption>Red GMC, in the bay</figcaption></figure>
+      <figure><img loading="lazy" src="img/p6.jpg" alt="Clean front interior of a Volkswagen Atlas with the door open"><figcaption>"Came from miles away for the Davey detail!"</figcaption></figure>
+      <figure><img loading="lazy" src="img/p12.jpg" alt="Clean black leather rear seats of a pickup"><figcaption>Rear leather, wiped down</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="find" id="find">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="big">Dave</div>
+        <h2>is at 12&nbsp;Nihan&nbsp;Dr.</h2>
+      </div>
+      <figure class="truck"><img loading="lazy" src="img/truck-side.jpg" alt="Dave Sicard's slate blue GMC work truck with the blue script lettering and phone number"><p>Look for the truck.</p></figure>
+    </div>
+
+    <div class="info">
+      <div>
+        <p class="lbl" style="color:#a89d8e">Hours</p>
+        <ul class="hrs" style="margin-top:10px">
+          <li><span>Monday to Friday</span><span>8 a.m. to 5 p.m.</span></li>
+          <li><span>Saturday</span><span>9 a.m. to 2 p.m.</span></li>
+          <li class="x"><span>Sunday</span><span>Closed</span></li>
+        </ul>
+      </div>
+      <div>
+        <p class="lbl" style="color:#a89d8e">Address</p>
+        <p class="addr" style="margin-top:14px">12 Nihan Dr<br>St. Catharines, ON L2N 1L1</p>
+        <div class="links">
+          <a href="https://www.google.com/maps/place/Dave+Sicard%27s+Complete+Car+Cleaning/@43.1835448,-79.2492856,17z" target="_blank" rel="noopener">Directions on Google Maps</a>
+          <a href="https://www.facebook.com/SICARDAUTODETAILING" target="_blank" rel="noopener">Dave's Facebook page</a>
+        </div>
+      </div>
+    </div>
+
+    <a class="phone" href="tel:+19053248176">(905) 324-8176</a>
+
+    <form class="letter" id="q">
+      <div>
+        <p class="lbl">Ask for a quote by text</p>
+        <p class="s">Hi Dave, I'm <input name="n" required autocomplete="given-name" placeholder="your name" aria-label="Your name">. My car needs <input class="l" name="m" required placeholder="a full inside clean" aria-label="What your car needs">.</p>
+      </div>
+      <div>
+        <button type="submit">Send it as a text</button>
+        <p class="note">This opens a text to (905) 324-8176 with your words in it. Nothing is sent until you press send.</p>
+      </div>
     </form>
   </div>
 </section>
 
-<footer><div class="wrap">Dave Sicard's Complete Car Cleaning. Preview built by JPF. Not live yet.</div></footer>
+<footer><div class="wrap"><span>Dave Sicard's Complete Car Cleaning, St. Catharines</span><span>Preview built by JPF. Not live yet.</span></div></footer>
+
+<div class="dock"><a href="tel:+19053248176">Call (905) 324-8176</a><a href="sms:+19053248176">Text</a></div>
+
 <script>
+(function(){
+var still=matchMedia('(prefers-reduced-motion: reduce)').matches,root=document.documentElement;
+requestAnimationFrame(function(){requestAnimationFrame(function(){root.classList.add('go')})});
+
+// picker: real Google reviews, word for word
+var R=[
+ {k:'Sally B. had this',q:'My child unfortunately threw up in my new car and it got in the vent . I could not seem to get rid of the smell, took it to Dave he did an amazing job, it smells so much better and is nice and clean also for a very fair price.',c:'Sally B.',m:'something got spilled in my car and I need it cleaned.'},
+ {k:'Christian N. had this',q:'We took my car to Dave as I needed it done before a meeting. He fit me in quickly as he had a cancellation. I’m pretty picky and normally do my detailing myself as I’ve been disappointed with detailing in the past. Dave did an amazing …',c:'Christian N.',m:'I need my car cleaned before a meeting. Do you have an opening?'},
+ {k:'Maria P. had this',q:'Wonderful service, especially for busy moms! My car looked new again in just a few hours.',c:'Maria P.',m:'my car needs a full clean and I don’t have much time.'},
+ {k:'Justin P. had this',q:'It’s rare these days to find the kind of personal touch and experience that Dave offers. He makes sure it’s done, and done right - all while maintaining a great attitude, really makes you feel like you’re family. …',c:'Justin P.',m:'I’d like my car detailed, done right.'},
+ {k:'Furella G. had this',q:'He even drove me home then picked me up when the job was completed. I’m super impressed …',c:'Furella G.',m:'I’d like my car detailed but I don’t have a ride. Can we work something out?'}
+];
+var ans=document.getElementById('ans'),aq=document.getElementById('aq'),ac=document.getElementById('ac'),ak=document.getElementById('ak'),as=document.getElementById('asms'),btns=document.querySelectorAll('.chips button');
+function show(i,anim){var r=R[i];function put(){aq.textContent='“'+r.q+'”';ac.innerHTML=r.c+'<span>, Google</span>';ak.textContent=r.k;as.href='sms:+19053248176?&body='+encodeURIComponent('Hi Dave, '+r.m);ans.classList.remove('sw')}
+ btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.i==i?'true':'false')});
+ if(anim&&!still){ans.classList.add('sw');setTimeout(put,260)}else put()}
+btns.forEach(function(b){b.addEventListener('click',function(){show(+b.dataset.i,true)})});
+show(0,false);
+
+// band eases in, numbers count once
+if('IntersectionObserver' in window){
+ var band=document.getElementById('band');
+ new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){band.classList.add('in');o.disconnect()}})},{threshold:.2}).observe(band);
+ var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;co.unobserve(e.target);if(still)return;var el=e.target,n=+el.dataset.n,d=+(el.dataset.d||0),t0=performance.now();(function f(t){var p=Math.min(1,(t-t0)/1200),v=n*(1-Math.pow(1-p,3));el.textContent=v.toFixed(d);if(p<1)requestAnimationFrame(f)})(t0)})},{threshold:.6});
+ document.querySelectorAll('[data-n]').forEach(function(el){co.observe(el)});
+}else{document.getElementById('band').classList.add('in')}
+
 document.getElementById('q').addEventListener('submit',function(e){
-  e.preventDefault();var d=new FormData(e.target);
-  location.href='sms:+19053248176?&body='+encodeURIComponent('Hi Dave, it is '+d.get('n')+'. Vehicle: '+(d.get('v')||'not given')+'. '+(d.get('m')||''));
+ e.preventDefault();var d=new FormData(e.target);
+ location.href='sms:+19053248176?&body='+encodeURIComponent('Hi Dave, I’m '+d.get('n')+'. My car needs '+d.get('m')+'.');
 });
+})();
 </script>
 </body>
 </html>

@@ -3,220 +3,437 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
+<meta name="robots" content="noindex, nofollow">
 <title>Detail Spot | Paint correction and detailing in Kitchener</title>
-<meta name="description" content="Detail Spot, 342 Victoria St N, Kitchener. Paint correction, ceramic coating, interior and exterior detailing. Call (519) 400-9666.">
+<meta name="description" content="Detail Spot, 342 Victoria St N, Kitchener. Paint correction, wet sanding, ceramic coating, tint, paint protection film, interior and exterior detailing. Call (519) 400-9666.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0a0908;--panel:#141211;--line:#2b2724;--cu:#d0703a;--cu2:#8f4520;--fg:#f2ede6;--mute:#a49d94}
+/* DESIGN PLAN
+ 1 Direction: white showroom floor under bright lights. Light base, ink type, lots of air, one red line.
+ 2 Palette: #f4f4f2 base (their white bay wall) / #ffffff paper / #111214 ink (carbon hood, black tees) / #8b8e92 concrete grey (shop floor) / #e3242b tape red (the masking-tape line in their paint-correction video).
+ 3 Fonts: Michroma (wide, squared, same feel as the DETAIL SPOT wordmark on their wall) for display + labels; Schibsted Grotesk for body.
+ 4 Signature: "Under the hex lights": their honeycomb ceiling light drawn as a 7-cell honeycomb; tap a cell (a service from their bio) to light it and see the cars they posted that got it.
+ 5 Order: hero (RESET. over the Gallardo in the white bay) / correction video + M4 / lead review / hex lights / one car Oct 31 set / 5.0 and 88 count-up + reviews / text-a-quote sentence form + hours / footer.
+ 6 Motion: one load sequence (photo un-scales, red tape line draws, headline settles, under 1.4 s); on scroll only photos un-clip and the two numbers count once. Reduced motion = all static.
+*/
+:root{--base:#f4f4f2;--paper:#fff;--ink:#111214;--ink2:#3b3d41;--grey:#8b8e92;--line:#dcdcd8;--red:#e3242b}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--fg);font:400 17px/1.6 "Hanken Grotesk",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--base);color:var(--ink);font:400 17px/1.55 "Schibsted Grotesk",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit}
 img,video{display:block;max-width:100%}
-h1,h2,h3{font-family:"Instrument Serif",serif;font-weight:400;line-height:1;letter-spacing:-.01em}
-h1 em,h2 em{color:var(--cu);font-style:italic}
-.wrap{width:min(1160px,100% - 40px);margin-inline:auto}
-/* hex light pattern: the honeycomb ceiling light in their bay */
-.hex{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 97'%3E%3Cpath d='M28 1 54 16v30L28 61 2 46V16zM28 61v30M2 46 0 47M54 46l2 1' fill='none' stroke='%23ffffff' stroke-opacity='.07' stroke-width='1'/%3E%3C/svg%3E")}
-.top{position:fixed;inset:0 0 auto;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:linear-gradient(#0a0908ee,#0a090800)}
-.logo{font:italic 27px "Instrument Serif",serif;text-decoration:none}
-.logo b{font-weight:400;color:var(--cu)}
-.call{border:1px solid #f2ede699;padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:500;font-size:15px;backdrop-filter:blur(8px);background:#0a090855}
+.d{font-family:"Michroma",sans-serif;font-weight:400;letter-spacing:-.02em;line-height:1.02;text-transform:uppercase}
+.lab{font:400 14px/1.3 "Michroma",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
+.g{padding-inline:16px}
+.max{max-width:1304px;margin-inline:auto}
+
+/* nav */
+.nav{position:absolute;inset:0 0 auto;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:18px 16px}
+.logo{font:400 15px/1.05 "Michroma",sans-serif;letter-spacing:.14em;text-decoration:none;text-transform:uppercase}
+.logo i{display:block;width:100%;height:2px;background:var(--red);margin-top:5px}
+.nav .call{display:none}
+
 /* hero */
-.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
-.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 28%}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0a090880,#0a090800 18%,#0a090899 48%,#0a0908 90%)}
-.hero .in{position:relative;z-index:2;padding:0 20px 34px;width:100%}
-.hero h1{font-size:clamp(46px,13vw,92px);max-width:10ch}
-.hero p{margin:16px 0 24px;max-width:31ch;font-size:18px;color:#ddd5ca}
-.row{display:flex;gap:10px;flex-wrap:wrap}
-.b{display:inline-block;padding:15px 24px;border-radius:999px;font-weight:700;text-decoration:none;font-size:16px}
-.b.c{background:var(--cu);color:#1a0d05}
-.b.l{border:1px solid #f2ede666}
-.meta{margin-top:24px;display:flex;gap:18px;flex-wrap:wrap;font-size:14px;color:var(--mute)}
-.meta b{color:var(--fg);font-weight:500}
-/* ledger */
-.sec{padding:76px 0}
-.sec h2{font-size:clamp(38px,9vw,64px);margin-bottom:12px}
-.sec .lead{color:var(--mute);max-width:44ch;margin-bottom:34px}
-.ledger{border-top:1px solid var(--line)}
-.ledger .r{display:grid;grid-template-columns:62px 1fr;gap:6px 16px;padding:22px 0;border-bottom:1px solid var(--line)}
-.ledger time{font-size:13px;color:var(--cu);padding-top:5px;line-height:1.2}
-.ledger h3{font-size:28px}
-.ledger p{grid-column:2;color:var(--mute);margin-top:2px}
-.src{font-size:13px;color:var(--mute);margin-top:16px}
-.src a{color:var(--cu)}
-/* bay video + services */
-.bay{background:var(--panel);padding:0}
-.bay .vid{position:relative}
-.bay video{width:100%;height:62svh;object-fit:cover;object-position:50% 40%}
-.bay .vid::after{content:"";position:absolute;inset:auto 0 0;height:30%;background:linear-gradient(transparent,var(--panel))}
-.bay .in{padding:20px 20px 76px}
-.svc{display:grid;gap:0;margin-top:26px;list-style:none;border-top:1px solid var(--line)}
-.svc li{padding:16px 0;border-bottom:1px solid var(--line);font-size:19px;display:flex;justify-content:space-between;gap:12px}
-.svc li span{color:var(--mute);font-size:15px;text-align:right}
-/* gallery */
-.gal{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.gal img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:4px}
-.gal .w{grid-column:span 2}
-.gal .w img{aspect-ratio:4/3;object-position:50% 55%}
-.cap{font-size:14px;color:var(--mute);margin:12px 0 28px}
-/* reviews */
-.rv{padding:76px 0;background:var(--bg)}
-.score{display:flex;align-items:baseline;gap:12px;margin:6px 0 30px}
-.score b{font:400 84px "Instrument Serif",serif;color:var(--cu);line-height:.9}
-.score span{color:var(--mute)}
-.qs{display:grid;gap:0;border-top:1px solid var(--line)}
-.qs blockquote{padding:26px 0;border-bottom:1px solid var(--line)}
-.qs p{font:400 25px/1.25 "Instrument Serif",serif}
-.qs cite{display:block;margin-top:12px;font:500 14px "Hanken Grotesk";font-style:normal;color:var(--mute)}
-/* visit */
-.visit{background:var(--panel);padding:76px 0}
-.visit .grid{display:grid;gap:44px}
-.visit h2{margin-bottom:18px}
-.hours{list-style:none;margin:16px 0}
-.hours li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line)}
-.hours .x{color:var(--mute)}
-form{display:grid;gap:12px}
-label{display:grid;gap:6px;font-size:14px;color:var(--mute)}
-input,select,textarea{font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:14px;width:100%}
-input:focus,select:focus,textarea:focus{outline:2px solid var(--cu);border-color:transparent}
-textarea{min-height:92px}
-form button{font:700 17px "Hanken Grotesk";background:var(--cu);color:#1a0d05;border:0;border-radius:999px;padding:16px;cursor:pointer;margin-top:6px}
-footer{padding:30px 0 46px;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
-@media(min-width:900px){
- body{font-size:18px}
- .top{padding:18px 44px}
- .hero .in{width:min(1160px,100% - 40px);margin:0 auto;padding-bottom:64px}
- .hero h1{max-width:12ch;font-size:108px}
- .hero>img{object-position:50% 78%}
- .ledger .r{grid-template-columns:120px 1fr 1.2fr;align-items:baseline;padding:30px 0}
- .ledger p{grid-column:3;margin:0}
- .bay{display:grid;grid-template-columns:1fr 1fr;min-height:760px}
- .bay .vid{order:2}.bay video{height:100%;min-height:760px}
- .bay .vid::after{inset:0 auto 0 0;width:40%;height:auto;background:linear-gradient(90deg,var(--panel),transparent)}
- .bay .in{padding:90px 6vw 90px max(20px,calc((100vw - 1160px)/2));display:flex;align-items:center}
- .gal{grid-template-columns:repeat(4,1fr);gap:12px}
- .gal .w{grid-column:span 2;grid-row:span 1}
- .qs{grid-template-columns:1fr 1fr;column-gap:60px}
- .qs blockquote:first-child{grid-column:span 2}
- .qs blockquote:first-child p{font-size:38px}
- .visit .grid{grid-template-columns:1fr 1fr;gap:80px}
+.hero{position:relative;padding-top:86px}
+.hero .kick{display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
+.hero .kick span{font:500 22px/1 "Schibsted Grotesk";letter-spacing:-.01em}
+.hero h1{font-size:clamp(58px,16.4vw,226px);line-height:.9;margin-top:6px;position:relative;z-index:3;white-space:nowrap}
+.hero h1 b{color:var(--red);font-weight:400}
+.tape{height:7px;background:var(--red);margin:14px 0 0;transform-origin:left;width:62%}
+.hero .sub{max-width:30ch;margin:18px 0 0;color:var(--ink2);font-size:17px}
+.shot{position:relative;margin-top:26px;overflow:hidden;background:#e9e9e6}
+.shot img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 70%}
+.card{position:absolute;left:12px;bottom:12px;background:var(--paper);padding:16px 18px 14px;box-shadow:0 18px 40px -18px #11121455;display:grid;gap:6px;min-width:210px}
+.card .big{font:400 30px/1 "Michroma";letter-spacing:-.02em}
+.card .big em{font-style:normal;color:var(--red);font-size:20px;vertical-align:4px;margin-left:6px;letter-spacing:.1em}
+.card small{font-size:14px;color:var(--ink2)}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.b{display:inline-flex;align-items:center;gap:10px;padding:16px 22px;font:700 16px/1 "Schibsted Grotesk";text-decoration:none;border:1.5px solid var(--ink)}
+.b.k{background:var(--ink);color:#fff}
+.b.r{background:var(--red);border-color:var(--red);color:#fff}
+.b .ar{display:inline-block;width:18px;height:1.5px;background:currentColor;position:relative}
+.b .ar::after{content:"";position:absolute;right:0;top:-4px;width:8px;height:8px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg)}
+
+/* correction band */
+.corr{padding:96px 0 88px}
+.corr .grid{display:grid;gap:28px}
+.corr h2{font-size:clamp(34px,9.4vw,84px)}
+.corr h2 b{color:var(--red);font-weight:400}
+.corr .vid{position:relative;overflow:hidden;background:#ddd}
+.corr video{width:100%;aspect-ratio:3/4;object-fit:cover}
+.corr .m4{display:none}
+.corr p{max-width:52ch;color:var(--ink2)}
+.list{list-style:none;border-top:1.5px solid var(--ink);margin-top:8px}
+.list li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:18px;font-weight:500}
+.list li span{color:var(--grey);font-weight:400;font-size:15px;text-align:right}
+.src{font-size:14px;color:var(--grey);margin-top:14px}
+.src a{color:var(--ink)}
+
+/* lead quote */
+.lead{background:var(--paper);padding:96px 0}
+.lead blockquote p{font:400 clamp(24px,5.6vw,52px)/1.22 "Michroma";letter-spacing:-.03em;text-transform:none;max-width:24ch}
+.lead blockquote p mark{background:none;color:var(--red)}
+.lead cite{display:block;margin-top:26px;font:500 15px "Schibsted Grotesk";font-style:normal;color:var(--ink2)}
+.lead .tick{width:56px;height:7px;background:var(--red);margin-bottom:28px}
+
+/* hex lights */
+.hexsec{padding:96px 0}
+.hexsec h2{font-size:clamp(34px,9.4vw,84px);margin-bottom:12px}
+.hexsec .intro{color:var(--ink2);max-width:42ch;margin-bottom:28px}
+.hexwrap{display:grid;gap:30px;align-items:center}
+.hexsvg{width:100%;max-width:560px;margin-inline:auto;overflow:visible}
+.cell{cursor:pointer;outline:none}
+.cell polygon{fill:var(--paper);stroke:var(--ink);stroke-width:2.2;transition:fill .35s,stroke .35s,filter .35s}
+.cell text{font:700 14.5px "Schibsted Grotesk";letter-spacing:0;fill:var(--ink);text-anchor:middle;pointer-events:none;transition:fill .35s}
+.cell:hover polygon,.cell:focus-visible polygon{stroke:var(--red)}
+.cell.on polygon{fill:var(--ink);stroke:var(--red);stroke-width:3;filter:drop-shadow(0 0 14px #e3242b66)}
+.cell.on text{fill:#fff}
+.panel{border-top:1.5px solid var(--ink);padding-top:22px;min-height:360px}
+.panel h3{font-size:clamp(26px,7vw,44px);margin:10px 0 12px}
+.panel .what{color:var(--ink2);max-width:44ch}
+.jobs{list-style:none;margin-top:20px}
+.jobs li{display:grid;grid-template-columns:86px 1fr;gap:4px 14px;padding:14px 0;border-bottom:1px solid var(--line)}
+.jobs time{font:400 14px/1.4 "Michroma";color:var(--red);letter-spacing:.04em}
+.jobs b{font-weight:700;display:block}
+.jobs span{color:var(--ink2);font-size:16px}
+.panel .none{color:var(--grey);margin-top:18px;font-size:16px}
+
+/* one car */
+.car{background:var(--paper);padding:96px 0 80px}
+.car .head{display:grid;gap:14px;margin-bottom:30px}
+.car h2{font-size:clamp(34px,9.4vw,84px)}
+.car .head p{color:var(--ink2);max-width:40ch}
+.strip{display:grid;align-items:start;grid-auto-flow:column;grid-auto-columns:78%;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 16px 6px;scrollbar-width:none}
+.strip::-webkit-scrollbar{display:none}
+.strip figure{scroll-snap-align:start;overflow:hidden}
+.strip img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.strip figcaption{font-size:14px;color:var(--grey);padding:10px 0 0;background:var(--paper)}
+
+/* numbers + reviews */
+.rv{padding:96px 0}
+.nums{display:grid;grid-template-columns:1fr 1fr;gap:18px;border-bottom:1.5px solid var(--ink);padding-bottom:30px}
+.nums div{display:grid;gap:8px}
+.nums b{font:400 clamp(64px,19vw,190px)/.9 "Michroma";letter-spacing:-.04em}
+.nums b.red{color:var(--red)}
+.nums span{font-size:15px;color:var(--ink2)}
+.qs{display:grid;gap:0}
+.qs blockquote{padding:28px 0;border-bottom:1px solid var(--line)}
+.qs p{font-size:20px;line-height:1.45;font-weight:500;letter-spacing:-.01em}
+.qs cite{display:block;margin-top:12px;font-size:14px;font-style:normal;color:var(--grey)}
+
+/* quote form */
+.ask{background:var(--ink);color:#fff;padding:96px 0 64px}
+.ask .lab{color:#9a9da2}
+.ask h2{font-size:clamp(34px,9.4vw,84px);margin:12px 0 30px}
+.ask h2 b{color:var(--red);font-weight:400}
+.mad{font:500 clamp(24px,5.4vw,44px)/1.6 "Schibsted Grotesk";letter-spacing:-.02em;max-width:22em;color:#c9cbce}
+.mad input,.mad select{font:inherit;color:#fff;background:transparent;border:0;border-bottom:2px solid #4a4c51;padding:0 2px;border-radius:0;outline:none;min-width:0;-webkit-appearance:none;appearance:none}
+.mad input:focus,.mad select:focus{border-bottom-color:var(--red)}
+.mad input::placeholder{color:#6d7075}
+.mad input[name=n]{width:6.5em}
+.mad input[name=v]{width:9em}
+.mad select{width:auto;max-width:100%;cursor:pointer;padding-right:1.1em;background:linear-gradient(45deg,transparent 50%,#e3242b 50%) right 6px center/7px 7px no-repeat,linear-gradient(-45deg,transparent 50%,#e3242b 50%) right 0 center/7px 7px no-repeat}
+.mad select option{color:#111;background:#fff}
+.mad button{margin-top:26px;font:700 17px/1 "Schibsted Grotesk";letter-spacing:0;background:var(--red);color:#fff;border:0;padding:18px 26px;cursor:pointer;display:inline-flex;gap:12px;align-items:center}
+.ask .note{font-size:15px;color:#9a9da2;margin-top:14px;max-width:44ch}
+.visit{display:grid;gap:30px;margin-top:80px;padding-top:30px;border-top:1px solid #2c2e32}
+.visit h3{font-size:22px;margin-bottom:12px}
+.hours{list-style:none}
+.hours li{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #2c2e32;font-size:16px}
+.hours .x{color:#7d8085}
+.visit a.big{font:400 clamp(26px,7.4vw,54px)/1.1 "Michroma";letter-spacing:-.03em;text-decoration:none;display:block}
+.visit address{font-style:normal;color:#c9cbce;margin-top:10px}
+.visit address a{color:#fff}
+footer{background:var(--ink);color:#7d8085;font-size:14px;padding:0 0 100px}
+footer .max{border-top:1px solid #2c2e32;padding-top:24px}
+
+/* dock */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:1.4fr 1fr;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:var(--paper);border-top:1px solid var(--line)}
+.dock a{display:flex;justify-content:center;align-items:center;padding:15px 10px;font:700 16px/1 "Schibsted Grotesk";text-decoration:none}
+.dock .c{background:var(--ink);color:#fff}
+.dock .t{background:var(--red);color:#fff}
+
+/* motion */
+.js .shot img{transform:scale(1.12);transition:transform 1.3s cubic-bezier(.2,.7,.2,1)}
+.js .tape{transform:scaleX(0);transition:transform .7s cubic-bezier(.7,0,.2,1) .35s}
+.js .hero h1{opacity:0;transform:translateY(14px);letter-spacing:.04em;transition:opacity .8s ease .15s,transform .9s cubic-bezier(.2,.7,.2,1) .15s,letter-spacing 1.1s cubic-bezier(.2,.7,.2,1) .15s}
+.js .card{opacity:0;transform:translateY(10px);transition:opacity .5s ease .9s,transform .5s ease .9s}
+.ready .shot img{transform:none}.ready .tape{transform:none}.ready .hero h1{opacity:1;transform:none;letter-spacing:-.02em}.ready .card{opacity:1;transform:none}
+.js .rev{clip-path:inset(10% 0 0 0);transition:clip-path 1s cubic-bezier(.2,.7,.2,1)}
+.js .rev img,.js .rev video{transform:scale(1.08);transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.js .rev.in{clip-path:inset(0)}.js .rev.in img,.js .rev.in video{transform:none}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}.js .shot img,.js .tape,.js .hero h1,.js .card,.js .rev,.js .rev img,.js .rev video{transform:none!important;opacity:1!important;clip-path:none!important;letter-spacing:-.02em}}
+
+@media(min-width:700px){
+ .g{padding-inline:32px}
+ .strip{grid-auto-columns:40%;padding:0 32px 6px}
 }
+@media(min-width:980px){
+ body{font-size:18px}
+ .nav{padding:26px max(32px,calc((100vw - 1240px)/2))}
+ .nav .call{display:inline-flex;padding:12px 18px;font-size:15px}
+ .hero{padding-top:84px}
+ .hero .kick span{font-size:28px}
+ .hero .sub{margin:0;font-size:18px}
+ .hgrid{display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto auto 1fr;column-gap:56px}
+ .kick{grid-column:1;grid-row:1;margin-top:40px}
+ .hero h1{grid-column:1;grid-row:2;font-size:clamp(110px,calc((100vw - 640px)/4.95),150px);margin-top:clamp(40px,11vh,130px)}
+ .shot{grid-column:2;grid-row:1/5;margin-top:0;overflow:visible}
+ .shot img{aspect-ratio:3/4;height:clamp(600px,calc(100vh - 130px),780px);width:auto;object-position:50% 50%}
+ .tape{grid-column:1;grid-row:3;width:62%;margin-top:26px}
+ .hero .row{grid-column:1;grid-row:4;align-self:end;display:grid;gap:26px;padding-bottom:8px}
+ .hero .sub{max-width:34ch}
+ .btns{margin-top:0}
+ .card{left:-120px;bottom:48px;padding:22px 26px 18px;min-width:280px}
+ .card .big{font-size:40px}
+ .corr{padding:150px 0 130px}
+ .corr .grid{grid-template-columns:1.25fr .75fr .9fr;gap:28px;align-items:end}
+ .corr .m4{display:block;overflow:hidden}
+ .corr .m4 img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 70%}
+ .corr .txt{grid-column:1/-1;order:-1;display:grid;grid-template-columns:1.25fr 1.65fr;gap:28px;align-items:end;margin-bottom:40px}
+ .corr .txt h2{grid-column:1/-1}
+ .corr .side{align-self:end}
+ .lead{padding:160px 0}
+ .lead blockquote{margin-left:16%}
+ .hexsec{padding:150px 0}
+ .hexwrap{grid-template-columns:1.05fr 1fr;gap:70px}
+ .car{padding:150px 0 130px}
+ .car .head{grid-template-columns:1.3fr 1fr;align-items:end}
+ .strip{grid-auto-columns:calc((100% - 64px - 36px)/4);overflow:visible;padding:0 32px}
+ .strip figure:nth-child(even){margin-top:80px}
+ .rv{padding:150px 0}
+ .nums{gap:60px}
+ .qs{grid-template-columns:repeat(3,1fr);column-gap:48px}
+ .qs blockquote{border-bottom:0;padding-top:34px}
+ .ask{padding:150px 0 130px}
+ .visit{grid-template-columns:1.2fr 1fr;gap:80px;margin-top:120px}
+ .dock{display:none}
+ footer{padding-bottom:40px}
+}
+@media(min-width:1304px){.strip{padding-inline:calc((100vw - 1240px)/2);grid-auto-columns:calc((1240px - 36px)/4)}}
 </style>
 </head>
 <body>
-<div class="top"><a class="logo" href="#">Detail <b>Spot</b></a><a class="call" href="tel:+15194009666">(519) 400-9666</a></div>
+<script>document.documentElement.classList.add('js')</script>
 
-<header class="hero hex">
-  <img src="img/p1.jpg" alt="White Lamborghini in the Detail Spot bay under the honeycomb lights">
-  <div class="in">
-    <h1>Paint correction in <em>Kitchener</em></h1>
-    <p>Detail Spot in Kitchener. Wet sanding, ceramic coating, tint and protection film, full interior and exterior detailing.</p>
-    <div class="row"><a class="b c" href="tel:+15194009666">Call (519) 400-9666</a><a class="b l" href="#visit">Request a quote</a></div>
-    <div class="meta"><span><b>5.0</b> from 88 Google reviews</span><span>Mon to Fri, 10 to 6</span><span>342 Victoria St N</span></div>
+<nav class="nav">
+  <a class="logo" href="#">Detail<br>Spot<i></i></a>
+  <a class="b k call" href="tel:+15194009666">Call (519) 400-9666</a>
+</nav>
+
+<header class="hero">
+  <div class="g max hgrid">
+    <div class="kick"><span>In for a</span><span class="lab">Kitchener, ON</span></div>
+    <h1 class="d">Reset<b>.</b></h1>
+    <div class="shot">
+      <img src="img/p1.jpg" alt="White Lamborghini Gallardo Superleggera in the Detail Spot bay, under their honeycomb lights, DETAIL SPOT on the wall">
+      <div class="card">
+        <span class="lab">Google</span>
+        <span class="big">5.0<em>&#9733;&#9733;&#9733;&#9733;&#9733;</em></span>
+        <small>88 reviews. Mon to Fri, 10 to 6.</small>
+      </div>
+    </div>
+    <div class="tape"></div>
+    <div class="row">
+      <p class="sub">Paint correction, wet sanding, ceramic coating, tint, paint protection film, interior and exterior detailing. 342 Victoria St N.</p>
+      <div class="btns">
+        <a class="b r" href="#ask">Get a quote by text <span class="ar"></span></a>
+        <a class="b" href="tel:+15194009666">(519) 400-9666</a>
+      </div>
+    </div>
   </div>
 </header>
 
-<section class="sec">
-  <div class="wrap">
-    <h2>What came <em>through the bay</em></h2>
-    <p class="lead">Lines from their own posts. The work listed is the work they wrote down.</p>
-    <div class="ledger">
-      <div class="r"><time>Oct 31<br>2026</time><h3>Lamborghini Gallardo Superleggera</h3><p>Full wash, premium interior, wrap removal.</p></div>
-      <div class="r"><time>Jul 29<br>2026</time><h3>2024 Chevy Silverado 3500</h3><p>Three step paint correction, done together with another detailer.</p></div>
-      <div class="r"><time>May 8<br>2026</time><h3>BMW X5M</h3><p>Full wash, premium interior, summer wheels swap over, windshield coating.</p></div>
-      <div class="r"><time>Apr 17<br>2026</time><h3>Mercedes C63S</h3><p>Full wash, premium interior, engine bay.</p></div>
-      <div class="r"><time>Mar 24<br>2026</time><h3>2017 Ford Raptor</h3><p>Full wash, premium interior, front bumper, skid plate and rear bumper repainted.</p></div>
-      <div class="r"><time>Mar 20<br>2026</time><h3>2015 Mercedes E63S</h3><p>Full wash, premium interior with pedal removal, Alcantara pilling removed from the steering wheel, engine bay, ceramic tint all around.</p></div>
+<section class="corr">
+  <div class="g max grid">
+    <div class="txt">
+      <span class="lab">Paint correction specialist</span>
+      <h2 class="d">Swirls out.<br><b>Gloss</b> back.</h2>
+      <p>That is what their Instagram calls them: paint correction specialist. Their bio lists 10 years experience. Here, a carbon hood on a BMW M4, taped off and polished, straight from their feed.</p>
     </div>
-    <p class="src">Source: <a href="https://www.instagram.com/detail.spot/">instagram.com/detail.spot</a>, posts from March to October 2026.</p>
-  </div>
-</section>
-
-<section class="bay">
-  <div class="vid"><video autoplay muted loop playsinline poster="video/hero-poster.jpg"><source src="video/hero.mp4" type="video/mp4"></video></div>
-  <div class="in">
-    <div class="wrap" style="width:auto">
-      <h2>Ten years <em>on paint</em></h2>
-      <p class="lead" style="margin-bottom:0">Their Instagram bio says 10 years experience. The list below is straight from it.</p>
-      <ul class="svc">
+    <div class="vid rev"><video autoplay muted loop playsinline preload="metadata" poster="video/hero-poster.jpg" aria-label="A Detail Spot detailer polishing a taped-off carbon hood on a blue BMW M4"><source src="video/hero.mp4" type="video/mp4"></video></div>
+    <div class="m4 rev"><img loading="lazy" src="img/p12.jpg" alt="Blue BMW M4 in the Detail Spot bay"></div>
+    <div class="side">
+      <ul class="list">
         <li>Paint correction <span>wet sanding, texture removal</span></li>
-        <li>Tint <span>and paint protection film</span></li>
         <li>Ceramic coating</li>
+        <li>Tint <span>and paint protection film</span></li>
         <li>Interior and exterior detailing</li>
-        <li>Caliper painting <span>per a customer review</span></li>
       </ul>
+      <p class="src">From <a href="https://www.instagram.com/detail.spot/">@detail.spot</a> on Instagram.</p>
     </div>
   </div>
 </section>
 
-<section class="sec">
-  <div class="wrap">
-    <h2>Wheels, <em>carbon</em> and Alcantara</h2>
-    <p class="lead">One job, shot start to finish: the Gallardo, Oct 31.</p>
-    <div class="gal">
-      <div class="w"><img loading="lazy" src="img/p2.jpg" alt="Bronze wheel and yellow caliper on the white Lamborghini"></div>
-      <img loading="lazy" src="img/p4.jpg" alt="Front wheel close up">
-      <img loading="lazy" src="img/p6.jpg" alt="Interior seen from the door sill">
-      <img loading="lazy" src="img/p7.jpg" alt="Alcantara bucket seats">
-      <img loading="lazy" src="img/p8.jpg" alt="Carbon fibre door panel">
-      <img loading="lazy" src="img/p10.jpg" alt="Centre console with carbon trim">
-      <img loading="lazy" src="img/p11.jpg" alt="Rear of the Lamborghini in the shop">
-      <img loading="lazy" src="img/p12.jpg" alt="Blue BMW M4 in the bay">
+<section class="lead">
+  <div class="g max">
+    <blockquote>
+      <div class="tick"></div>
+      <p>&ldquo;My Mercedes coupe had scratches all over the paint, and I honestly didn&rsquo;t think it could look new again. When I came back to pick it up, I was shocked, it looked <mark>just like the day I bought it from the dealership.</mark>&rdquo;</p>
+      <cite>Mandeep G., Google</cite>
+    </blockquote>
+  </div>
+</section>
+
+<section class="hexsec" id="services">
+  <div class="g max">
+    <span class="lab">Under the hex lights</span>
+    <h2 class="d">Pick a <span style="color:var(--red)">cell</span>.</h2>
+    <p class="intro">Their bay is lit by a honeycomb ceiling light. Each cell here is a service from their bio. Tap one to see the cars they posted that got it.</p>
+    <div class="hexwrap">
+      <svg class="hexsvg" viewBox="-153 -147 306 294" role="group" aria-label="Services">
+        <g id="cells"></g>
+      </svg>
+      <div class="panel" aria-live="polite">
+        <span class="lab" id="pk">Service</span>
+        <h3 class="d" id="pt"></h3>
+        <p class="what" id="pw"></p>
+        <ul class="jobs" id="pj"></ul>
+      </div>
     </div>
-    <p class="cap">Last frame: a BMW M4, from the Sep 18 before and after post.</p>
+  </div>
+</section>
+
+<section class="car">
+  <div class="g max head">
+    <div><span class="lab">Oct 31, 2026</span><h2 class="d" style="margin-top:12px">One car.<br>Every <span style="color:var(--red)">detail</span>.</h2></div>
+    <p>A Lamborghini Gallardo Superleggera in for a reset: full wash, premium interior, wrap removal. Their words, their photos.</p>
+  </div>
+  <div class="strip">
+    <figure class="rev"><img loading="lazy" src="img/p2.jpg" alt="Bronze wheel and yellow caliper on the white Gallardo"><figcaption>Wheels and the Superleggera stripe</figcaption></figure>
+    <figure class="rev"><img loading="lazy" src="img/p6.jpg" alt="Gallardo interior seen from the door sill"><figcaption>Premium interior</figcaption></figure>
+    <figure class="rev"><img loading="lazy" src="img/p4.jpg" alt="Front wheel close up, bronze rim and yellow caliper"><figcaption>Front wheel, cleaned</figcaption></figure>
+    <figure class="rev"><img loading="lazy" src="img/p11.jpg" alt="Rear of the white Gallardo in the shop"><figcaption>Back in the bay</figcaption></figure>
   </div>
 </section>
 
 <section class="rv">
-  <div class="wrap">
-    <h2>In their <em>words</em></h2>
-    <div class="score"><b>5.0</b><span>88 Google reviews</span></div>
+  <div class="g max">
+    <div class="nums">
+      <div><b class="red" data-to="5.0" data-dec="1">5.0</b><span>Google rating</span></div>
+      <div><b data-to="88" data-dec="0">88</b><span>Google reviews</span></div>
+    </div>
     <div class="qs">
-      <blockquote><p>My Mercedes coupe had scratches all over the paint, and I honestly didn't think it could look new again. When I came back to pick it up, I was shocked, it looked just like the day I bought it from the dealership.</p><cite>Mandeep G.</cite></blockquote>
-      <blockquote><p>David is absolutely amazing and we never want to go to another detailing place again!</p><cite>Katherine O.</cite></blockquote>
-      <blockquote><p>david did a super good job painting my calipers, paint matched them perfectly to my car, They look super clean compared to before.</p><cite>Av</cite></blockquote>
-      <blockquote><p>David is the best in the area. Hands down</p><cite>Andrew T.</cite></blockquote>
+      <blockquote><p>&ldquo;David is absolutely amazing and we never want to go to another detailing place again!&rdquo;</p><cite>Katherine O., Google</cite></blockquote>
+      <blockquote><p>&ldquo;david did a super good job painting my calipers, paint matched them perfectly to my car, They look super clean compared to before, just overall excellent work, fast responses &amp; good customer experience. Would highly recommend&rdquo;</p><cite>Av, Google</cite></blockquote>
+      <blockquote><p>&ldquo;David is the best in the area. Hands down, I probably give him one of the worst vehicles to work on due to the nature of my work environment.&rdquo;</p><cite>Andrew T., Google</cite></blockquote>
     </div>
-    <p class="src">Google reviews. <a href="https://www.google.com/maps/place/Detail+spot/data=!4m7!3m6!1s0x882bf5f3b89d033d:0x59b8ab3b817142ad">Read them all</a></p>
+    <p class="src"><a href="https://www.google.com/maps/place/Detail+spot/data=!4m7!3m6!1s0x882bf5f3b89d033d:0x59b8ab3b817142ad">Read all 88 on Google</a></p>
   </div>
 </section>
 
-<section class="visit hex" id="visit">
-  <div class="wrap grid">
-    <div>
-      <h2>Come by, <em>or text first</em></h2>
-      <p class="lead" style="margin-bottom:6px">342 Victoria St N, Kitchener, ON N2H 5E2</p>
-      <ul class="hours">
-        <li><span>Monday to Friday</span><span>10 a.m. to 6 p.m.</span></li>
-        <li class="x"><span>Saturday</span><span>Closed</span></li>
-        <li class="x"><span>Sunday</span><span>Closed</span></li>
-      </ul>
-      <a class="b c" href="tel:+15194009666" style="margin-top:8px">Call (519) 400-9666</a>
-    </div>
-    <form id="q">
-      <p style="color:var(--mute)">This opens a text to (519) 400-9666 with your details filled in. Add photos once it opens.</p>
-      <label>Your name<input name="n" required autocomplete="name"></label>
-      <label>Vehicle<input name="v" placeholder="Year, make, model"></label>
-      <label>What do you need
-        <select name="s"><option>Paint correction</option><option>Ceramic coating</option><option>Interior and exterior detail</option><option>Tint or paint protection film</option><option>Not sure</option></select>
-      </label>
-      <label>Anything else<textarea name="m"></textarea></label>
-      <button type="submit">Text my details</button>
+<section class="ask" id="ask">
+  <div class="g max">
+    <span class="lab">Text for a quote</span>
+    <h2 class="d">Tell David<br>about the <b>car</b>.</h2>
+    <form class="mad" id="q">
+      Hi David, I&rsquo;m <input name="n" required autocomplete="given-name" placeholder="your name" aria-label="Your name">
+      and I drive a <input name="v" placeholder="year, make, model" aria-label="Vehicle">.
+      I&rsquo;m after <select name="s" aria-label="What you need">
+        <option>paint correction</option>
+        <option>ceramic coating</option>
+        <option>tint</option>
+        <option>paint protection film</option>
+        <option>an interior detail</option>
+        <option>an exterior detail</option>
+        <option>a full reset</option>
+      </select>.
+      <br><button type="submit">Send it as a text <span class="ar" style="display:inline-block;width:18px;height:1.5px;background:currentColor;position:relative"></span></button>
     </form>
+    <p class="note">This opens a text to (519) 400-9666 with your words filled in. Add photos of the car before you send.</p>
+
+    <div class="visit">
+      <div>
+        <span class="lab">Call or text</span>
+        <a class="big" href="tel:+15194009666" style="margin-top:12px">(519) 400&#8209;9666</a>
+        <address>342 Victoria St N, Kitchener, ON N2H 5E2<br><a href="https://www.google.com/maps/place/Detail+spot/data=!4m7!3m6!1s0x882bf5f3b89d033d:0x59b8ab3b817142ad">Directions</a></address>
+      </div>
+      <div>
+        <h3 class="lab" style="color:#9a9da2">Hours</h3>
+        <ul class="hours">
+          <li><span>Monday to Friday</span><span>10 a.m. to 6 p.m.</span></li>
+          <li class="x"><span>Saturday</span><span>Closed</span></li>
+          <li class="x"><span>Sunday</span><span>Closed</span></li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
-<footer><div class="wrap">Detail Spot, Kitchener. Preview built by JPF. Not live yet.</div></footer>
+<footer><div class="g max"><div class="max">Detail Spot, Kitchener. Preview built by JPF. Not live yet.</div></div></footer>
+
+<div class="dock">
+  <a class="c" href="tel:+15194009666">Call (519) 400-9666</a>
+  <a class="t" href="sms:+15194009666">Text</a>
+</div>
 
 <script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  requestAnimationFrame(function(){requestAnimationFrame(function(){document.documentElement.classList.add('ready')})});
+
+  /* hex lights: services from their IG bio, jobs from their own post captions */
+  var S=[
+    {k:'Paint correction',l:['Paint','correction'],w:'Their speciality. The bio lists it first.',j:[
+      ['Jul 29 2026','2024 Chevy Silverado 3500','Three step paint correction, done together with another detailer.'],
+      ['Mar 13 2026','2026 Acura MDX Type S','Single stage paint correction.'],
+      ['Sep 2026','BMW M4 Competition','The taped carbon hood in the video above.']]},
+    {k:'Wet sanding',l:['Wet','sanding'],w:'Listed in their bio as part of paint correction, with texture removal.',j:[]},
+    {k:'Ceramic coating',l:['Ceramic','coating'],w:'Listed in their bio.',j:[
+      ['Mar 13 2026','2026 Acura MDX Type S','5 year ceramic coating.'],
+      ['May 8 2026','BMW X5M','Windshield coating, with a full wash, premium interior and summer wheel swap.']]},
+    {k:'Tint',l:['Tint'],w:'Listed in their bio.',j:[
+      ['Mar 20 2026','2015 Mercedes E63S','Ceramic tint all around.']]},
+    {k:'Paint protection film',l:['Paint','protection','film'],w:'Listed in their bio, next to tint.',j:[]},
+    {k:'Interior detailing',l:['Interior','detailing'],w:'Listed in their bio.',j:[
+      ['Oct 31 2026','Lamborghini Gallardo Superleggera','Premium interior.'],
+      ['Mar 20 2026','2015 Mercedes E63S','Premium interior with pedal removal. Alcantara pilling removed from the steering wheel.'],
+      ['Apr 17 2026','Mercedes C63S','Premium interior.'],
+      ['Jan 27 2026','BMW M6','Enhanced interior.']]},
+    {k:'Exterior detailing',l:['Exterior','detailing'],w:'Listed in their bio.',j:[
+      ['Oct 31 2026','Lamborghini Gallardo Superleggera','Full wash and wrap removal.'],
+      ['Mar 24 2026','2017 Ford Raptor','Full wash. Front bumper, skid plate and rear bumper repainted.'],
+      ['Mar 6 2026','Ford Raptor R','Post winter clean, engine bay detail.'],
+      ['Jan 29 2026','Ford F150','Back to showroom condition.']]}
+  ];
+  var r=56,h=Math.sqrt(3)*r, pos=[[0,0],[-h/2-2,-1.5*r-3],[h/2+2,-1.5*r-3],[h+4,0],[h/2+2,1.5*r+3],[-h/2-2,1.5*r+3],[-h-4,0]];
+  var ns='http://www.w3.org/2000/svg', G=document.getElementById('cells'), cells=[];
+  function pts(cx,cy){var a=[];for(var i=0;i<6;i++){var t=Math.PI/180*(60*i-90);a.push((cx+r*Math.cos(t)).toFixed(1)+','+(cy+r*Math.sin(t)).toFixed(1))}return a.join(' ')}
+  S.forEach(function(s,i){
+    var g=document.createElementNS(ns,'g');g.setAttribute('class','cell');g.setAttribute('tabindex','0');g.setAttribute('role','button');g.setAttribute('aria-label',s.k);
+    var p=document.createElementNS(ns,'polygon');p.setAttribute('points',pts(pos[i][0],pos[i][1]));g.appendChild(p);
+    var t=document.createElementNS(ns,'text');var n=s.l.length;
+    s.l.forEach(function(w,j){var ts=document.createElementNS(ns,'tspan');ts.setAttribute('x',pos[i][0]);ts.setAttribute('y',(pos[i][1]+4+(j-(n-1)/2)*17).toFixed(1));ts.textContent=w;t.appendChild(ts)});
+    g.appendChild(t);
+    g.addEventListener('click',function(){pick(i)});
+    g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(i)}});
+    G.appendChild(g);cells.push(g);
+  });
+  function pick(i){
+    var s=S[i];cells.forEach(function(c,k){c.classList.toggle('on',k===i);c.setAttribute('aria-pressed',k===i)});
+    document.getElementById('pt').textContent=s.k;
+    document.getElementById('pw').textContent=s.w;
+    document.getElementById('pk').textContent=s.j.length?'Cars they posted':'Service';
+    var ul=document.getElementById('pj');ul.innerHTML='';
+    if(!s.j.length){var li=document.createElement('li');li.style.display='block';li.innerHTML='<span>No post for this one yet. Text a photo of the car for a quote.</span>';ul.appendChild(li)}
+    s.j.forEach(function(x){var li=document.createElement('li');li.innerHTML='<time>'+x[0]+'</time><div><b>'+x[1]+'</b><span>'+x[2]+'</span></div>';ul.appendChild(li)});
+  }
+  pick(0);
+
+  /* scroll: photos un-clip, numbers count once */
+  if(!('IntersectionObserver' in window)||reduce){document.querySelectorAll('.rev').forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+  document.querySelectorAll('.rev').forEach(function(e){io.observe(e)});
+  var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;co.unobserve(e.target);var b=e.target,to=parseFloat(b.dataset.to),d=+b.dataset.dec,t0=null;
+    function f(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/1200);k=1-Math.pow(1-k,3);b.textContent=(to*k).toFixed(d);if(k<1)requestAnimationFrame(f)}requestAnimationFrame(f)})},{threshold:.4});
+  document.querySelectorAll('[data-to]').forEach(function(b){b.textContent=(0).toFixed(+b.dataset.dec);co.observe(b)});
+})();
+
 document.getElementById('q').addEventListener('submit',function(e){
   e.preventDefault();var d=new FormData(e.target);
-  var b='Hi, it is '+d.get('n')+'. Vehicle: '+(d.get('v')||'not given')+'. I need: '+d.get('s')+'. '+(d.get('m')||'');
+  var b='Hi David, I\'m '+d.get('n')+(d.get('v')?' and I drive a '+d.get('v'):'')+'. I\'m after '+d.get('s')+'.';
   location.href='sms:+15194009666?&body='+encodeURIComponent(b);
 });
 </script>
