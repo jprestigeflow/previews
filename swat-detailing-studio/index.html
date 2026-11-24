@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>SWAT Detailing Studio | Car detailing in Kitchener</title>
+<meta name="description" content="SWAT Detailing Studio, 1138 King St E, Kitchener. Foam wash, interior detailing and stage 1 paint correction. Open Monday to Saturday, 9 to 6.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;600;700&family=Mona+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+   Direction: "Studio white, tactical light bar". A bright bay-white page (their shop walls), paint-black type, the logo's red
+     as the one accent and the logo's red/blue headlights as a thin light bar. Deliberately the opposite of Detail Verse (dark, wide chrome type, amber).
+   Palette: bay #EDEEEB (white bay walls in their videos), ink #121417 (black Range Rover / Charger paint), steel #5E646B + chrome #B7BCC2 (logo letters),
+     red #D21F2B (logo "STUDIO"), blue #2A5BD8 (logo headlights, light bar only).
+   Fonts: Antonio (tall condensed, tactical) for display, Mona Sans for body.
+   Signature: foam-to-gloss slider on their own Range Rover job (same car, before/after, from their Nov 14 post).
+   Order: split-headline hero around a portrait wash video, foam-to-gloss band, what they do, last two weeks (dated post log), reviews, visit + text-a-quote, footer.
+   Motion: one load sequence (light bar flash, headline reveal, video settles, glass card floats in); photo reveals on scroll; reduced-motion = static.
+*/
+:root{
+  --bay:#EDEEEB; --bay2:#E3E5E1; --ink:#121417; --ink2:#1B1E22; --steel:#5E646B; --chrome:#B7BCC2;
+  --red:#D21F2B; --red-d:#B0141F; --blue:#2A5BD8;
+  --disp:"Antonio", "Arial Narrow", sans-serif; --body:"Mona Sans", system-ui, sans-serif;
+  --pad: clamp(20px, 5vw, 72px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bay);color:var(--ink);font:400 17px/1.55 var(--body);overflow-x:hidden;padding-bottom:0}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1320px;margin:0 auto;padding:0 var(--pad)}
+.disp{font-family:var(--disp);font-weight:700;text-transform:uppercase;letter-spacing:-.01em;line-height:.88;word-spacing:.08em}
+
+/* ---------- light bar (their logo's red + blue headlights) ---------- */
+.lightbar{display:flex;height:4px;border-radius:4px;overflow:hidden}
+.lightbar i{flex:1;background:var(--red)} .lightbar i+i{background:var(--blue)}
+.flash .lightbar i{animation:strobeR 1.1s steps(1) 1 both} .flash .lightbar i+i{animation-name:strobeB}
+@keyframes strobeR{0%,50%{opacity:1}25%,75%{opacity:.15}100%{opacity:1}}
+@keyframes strobeB{0%,50%{opacity:.15}25%,75%{opacity:1}100%{opacity:1}}
+
+/* ---------- nav (frosted pill) ---------- */
+.nav{position:fixed;top:14px;left:14px;right:14px;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  max-width:1240px;margin:0 auto;padding:8px 8px 8px 20px;border-radius:999px;
+  background:rgba(237,238,235,.62);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);
+  border:1px solid rgba(255,255,255,.6);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 20px 60px -24px rgba(18,20,23,.35)}
+.mark{display:flex;align-items:baseline;gap:8px;text-decoration:none}
+.mark b{font:700 26px/1 var(--disp);letter-spacing:.02em;background:linear-gradient(180deg,#2a2e33 0%,#6d737a 48%,#121417 52%,#3b4046 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.mark span{font:600 14px/1 var(--body);letter-spacing:.04em;color:var(--steel)}
+.mark span em{font-style:normal;color:var(--red)}
+.nav ul{display:flex;gap:26px;list-style:none;font-size:15px;font-weight:500}
+.nav ul a{text-decoration:none;color:var(--ink2);opacity:.8;transition:opacity .15s} .nav ul a:hover{opacity:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:999px;border:0;cursor:pointer;
+  font:600 16px/1 var(--body);text-decoration:none;transition:transform .16s ease,background .16s ease,box-shadow .16s}
+.btn:active{transform:scale(.98)}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 10px 30px -12px rgba(210,31,43,.7)} .btn-red:hover{background:var(--red-d)}
+.btn-ink{background:var(--ink);color:#fff} .btn-ink:hover{background:#2a2e33}
+.btn-line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px rgba(18,20,23,.25)} .btn-line:hover{box-shadow:inset 0 0 0 1.5px var(--ink)}
+.nav .btn{min-height:44px;padding:0 20px;font-size:15px}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;padding:112px var(--pad) 40px;max-width:1440px;margin:0 auto;
+  display:grid;grid-template-columns:1fr minmax(300px,360px) 1fr;grid-template-rows:auto 1fr auto;column-gap:28px}
+.h1{grid-column:1 / 3;grid-row:1;position:relative;z-index:3;font-size:clamp(64px,8.6vw,140px);color:#fff;mix-blend-mode:difference}
+.h1 span,.h2 span{display:block;overflow:hidden;padding-bottom:.04em}
+.h1 span b,.h2 span b{display:block;font-weight:700}
+.h2{grid-column:2 / 4;grid-row:3;justify-self:end;text-align:right;position:relative;z-index:3;font-size:clamp(64px,8.6vw,140px);color:var(--red)}
+.stage{grid-column:2;grid-row:1 / 4;align-self:center;position:relative;z-index:2;margin:24px 0 0}
+.vid{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:2/3;background:#2b2f33;box-shadow:0 50px 90px -40px rgba(18,20,23,.55)}
+.vid video,.vid img{width:100%;height:100%;object-fit:cover}
+.stage .lightbar{position:absolute;top:-14px;left:22%;right:22%;z-index:3}
+.glass{background:rgba(237,238,235,.58);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);
+  border:1px solid rgba(255,255,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.65),0 20px 60px -20px rgba(18,20,23,.35)}
+.rate{position:absolute;right:-84px;bottom:110px;z-index:4;width:250px;border-radius:22px;padding:16px 18px}
+.rate .row{display:flex;align-items:center;gap:10px}
+.rate .n{font:700 40px/1 var(--disp)}
+.stars{display:flex;gap:2px}.stars svg{width:15px;height:15px;fill:var(--red)}
+.rate small{display:block;font-size:14px;color:#3a3f45;margin-top:2px}
+.rate q{display:block;margin-top:10px;font:600 16px/1.3 var(--body);quotes:"“" "”"}
+.rate cite{display:block;font-style:normal;font-size:14px;color:#4a5057;margin-top:4px}
+.intro{grid-column:1;grid-row:2 / 4;align-self:end;max-width:380px;position:relative;z-index:3;padding-bottom:8px}
+.intro p{font-size:18px;color:#2c3035}
+.intro p strong{font-weight:600;color:var(--ink)}
+.ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.addr{grid-column:3;grid-row:1;align-self:start;justify-self:end;text-align:right;font-size:15px;color:var(--steel);padding-top:18px;line-height:1.5}
+.addr strong{display:block;color:var(--ink);font-weight:600}
+
+/* ---------- foam to gloss ---------- */
+.band{background:var(--ink);color:#EDEEEB;position:relative;overflow:hidden}
+.ftg{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(32px,6vw,96px);align-items:center;padding-top:clamp(80px,11vw,150px);padding-bottom:clamp(80px,11vw,150px)}
+.ftg h2{font-size:clamp(56px,7.4vw,112px);color:#F2F3F1}
+.ftg h2 em{font-style:normal;color:var(--chrome)}
+.ftg p{max-width:430px;margin-top:26px;color:#B8BDC3;font-size:17px}
+.ftg blockquote{margin-top:34px;padding-left:18px;border-left:3px solid var(--red);max-width:420px}
+.ftg blockquote p{margin:0;color:#F2F3F1;font:500 20px/1.4 var(--body)}
+.ftg blockquote a{display:inline-block;margin-top:8px;font-size:14.5px;color:#9EA4AB;text-underline-offset:3px}
+.compare{position:relative;aspect-ratio:720/880;max-height:78vh;border-radius:26px;overflow:hidden;user-select:none;touch-action:pan-y;cursor:ew-resize;background:#222}
+.compare img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.compare .top{clip-path:inset(0 calc(100% - var(--x,50%)) 0 0)}
+.compare .rule{position:absolute;top:0;bottom:0;left:var(--x,50%);width:2px;margin-left:-1px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.15)}
+.compare .knob{position:absolute;top:50%;left:var(--x,50%);transform:translate(-50%,-50%);display:flex;align-items:center;gap:6px;padding:0 16px;height:48px;border-radius:999px;
+  color:#121417;font:600 14.5px/1 var(--body);background:rgba(237,238,235,.6);-webkit-backdrop-filter:blur(20px) saturate(160%);backdrop-filter:blur(20px) saturate(160%);
+  border:1px solid rgba(255,255,255,.6);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 14px 40px -14px rgba(0,0,0,.6);white-space:nowrap}
+.compare .knob svg{width:16px;height:16px}
+.tag{position:absolute;bottom:16px;padding:8px 14px;border-radius:14px;font:600 14px/1 var(--body);color:#fff;background:rgba(18,20,23,.55);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.tag.l{left:16px}.tag.r{right:16px}
+.compare input{position:absolute;inset:0;opacity:0;width:100%;height:100%;cursor:ew-resize}
+
+/* ---------- services ---------- */
+.svc{padding-top:clamp(90px,11vw,150px);padding-bottom:clamp(60px,8vw,110px)}
+.svc-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:clamp(40px,5vw,70px)}
+.svc-head h2{font-size:clamp(52px,6.6vw,100px)}
+.svc-head p{max-width:380px;color:#3a3f45}
+.svc-list{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px)}
+.s{position:relative}
+.s .ph{border-radius:24px;overflow:hidden;aspect-ratio:4/5;background:#cfd2ce}
+.s .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.s:hover .ph img{transform:scale(1.03)}
+.s:nth-child(2){margin-top:70px}
+.s h3{font:700 clamp(34px,3.2vw,46px)/.95 var(--disp);text-transform:uppercase;margin-top:22px;word-spacing:.08em}
+.s p{margin-top:10px;color:#3a3f45;max-width:340px;font-size:16.5px}
+.s .src{display:inline-block;margin-top:10px;font-size:14px;color:var(--steel);text-underline-offset:3px}
+
+/* ---------- log ---------- */
+.log{padding:clamp(60px,8vw,110px) 0 clamp(90px,11vw,150px);background:var(--bay2)}
+.log-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.log-head h2{font-size:clamp(52px,6.6vw,100px)}
+.log-head .ctrl{display:flex;gap:10px}
+.chip{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;cursor:pointer;color:var(--ink)}
+.chip svg{width:20px;height:20px}
+.chip:active{transform:scale(.96)}
+.rail{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:44px var(--pad) 8px;scrollbar-width:none;max-width:1440px;margin:0 auto;scroll-padding:0 var(--pad)}
+.rail::-webkit-scrollbar{display:none}
+.card{flex:0 0 clamp(250px,24vw,320px);scroll-snap-align:start}
+.card .ph{border-radius:22px;overflow:hidden;aspect-ratio:3/4;background:#cfd2ce}
+.card .ph img{width:100%;height:100%;object-fit:cover}
+.card time{display:block;margin-top:16px;font:600 15px/1 var(--body);color:var(--red)}
+.card h3{font:700 30px/1 var(--disp);text-transform:uppercase;margin-top:8px;word-spacing:.08em}
+.card p{margin-top:8px;font-size:15.5px;color:#3a3f45}
+.card a{font-size:14px;color:var(--steel);text-underline-offset:3px}
+
+/* ---------- reviews ---------- */
+.rev{padding-top:clamp(100px,12vw,170px);padding-bottom:clamp(100px,12vw,170px);position:relative}
+.rev .big{font-size:clamp(60px,9.4vw,150px);max-width:12ch}
+.rev .big .q{color:var(--red)}
+.rev .by{margin-top:26px;font-size:16px;color:var(--steel)}
+.rev .by strong{color:var(--ink);font-weight:600}
+.rev-2{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(32px,6vw,96px);margin-top:clamp(70px,9vw,120px);align-items:start}
+.score{display:flex;align-items:baseline;gap:14px}
+.score .n{font:700 clamp(90px,10vw,150px)/.8 var(--disp)}
+.score small{font-size:16px;color:var(--steel);max-width:160px;line-height:1.35}
+.long p{font:500 clamp(20px,1.9vw,26px)/1.45 var(--body);color:var(--ink2);max-width:60ch}
+.long .by{margin-top:18px}
+
+/* ---------- visit + quote ---------- */
+.visit{position:relative;background:var(--ink);color:#EDEEEB;overflow:hidden;padding:clamp(90px,11vw,150px) 0}
+.orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.42;pointer-events:none}
+.orb.a{width:520px;height:520px;background:radial-gradient(circle,#D21F2B 0%,transparent 70%);right:-120px;top:-80px;animation:drift 26s ease-in-out infinite alternate}
+.orb.b{width:460px;height:460px;background:radial-gradient(circle,#2A5BD8 0%,transparent 70%);right:22%;bottom:-160px;opacity:.32;animation:drift 30s ease-in-out infinite alternate-reverse}
+@keyframes drift{to{transform:translate(-60px,40px)}}
+.visit .wrap{position:relative;display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(40px,6vw,100px);align-items:start}
+.visit h2{font-size:clamp(56px,7vw,108px);color:#F2F3F1}
+.where{margin-top:30px;font-size:18px;color:#D3D6DA}
+.where a{color:#fff;text-underline-offset:4px}
+.hours{margin-top:34px;max-width:380px;border-top:1px solid rgba(255,255,255,.14)}
+.hours div{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:16px;color:#C5C9CE}
+.hours div.today{color:#fff;font-weight:600}
+.hours div.today span:first-child::after{content:"Today";margin-left:10px;font-size:12.5px;padding:3px 8px;border-radius:999px;background:var(--red);color:#fff;vertical-align:2px}
+.quote{border-radius:28px;padding:clamp(26px,3vw,40px);background:rgba(30,33,38,.55);-webkit-backdrop-filter:blur(26px) saturate(150%);backdrop-filter:blur(26px) saturate(150%);
+  border:1px solid rgba(255,255,255,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 30px 80px -30px rgba(0,0,0,.6)}
+.quote .lightbar{width:90px;margin-bottom:22px}
+.quote h3{font:700 clamp(34px,3.2vw,46px)/1 var(--disp);text-transform:uppercase;color:#fff;word-spacing:.08em}
+.fill{margin-top:24px;font:500 clamp(20px,1.9vw,25px)/2.1 var(--body);color:#E3E5E8}
+.fill input,.fill select{font:600 inherit;font-size:.92em;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);border-radius:14px;
+  padding:4px 12px;margin:0 2px;min-height:44px;vertical-align:middle;max-width:100%;-webkit-appearance:none;appearance:none;transition:border-color .15s,box-shadow .15s}
+.fill select{padding-right:30px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23fff' stroke-width='1.6' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 11px center;background-size:11px}
+.fill select option{color:#121417}
+.fill input::placeholder{color:rgba(255,255,255,.5)}
+.fill input:focus,.fill select:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 3px rgba(210,31,43,.35)}
+.fill input[name=n]{width:7.5em}.fill input[name=c]{width:9.5em}
+.quote .btn{margin-top:26px;width:100%}
+.quote .note{margin-top:14px;font-size:14px;color:#A9AEB5}
+
+footer{background:var(--ink);color:#9EA4AB;border-top:1px solid rgba(255,255,255,.08);padding:40px 0 48px;font-size:14.5px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;align-items:center}
+footer .mark b{background:linear-gradient(180deg,#fff 0%,#9aa0a7 50%,#e9ebee 52%,#b7bcc2 100%);-webkit-background-clip:text;background-clip:text}
+footer .mark span{color:#9EA4AB}
+footer .pv{color:#D3D6DA}
+
+/* ---------- phone dock ---------- */
+.dock{display:none}
+@media (max-width:760px){
+  body{font-size:16.5px;padding-bottom:96px}
+  .nav{top:10px;left:10px;right:10px;padding:6px 6px 6px 16px}
+  .nav ul{display:none}
+  .mark b{font-size:24px}
+  .hero{display:flex;flex-direction:column;min-height:0;padding:92px 16px 48px}
+  .h1{order:1;mix-blend-mode:normal;color:var(--ink)}.stage{order:2}.h2{order:3;align-self:flex-start}.intro{order:4}.addr{order:5}
+  .h1,.h2{font-size:clamp(58px,17.6vw,76px)}
+  .h2{text-align:left;margin-top:-.28em;position:relative;z-index:4;padding-left:4px;text-shadow:0 2px 24px rgba(18,20,23,.25)}
+  .stage{margin:24px 0 0}
+  .vid{aspect-ratio:1/1}
+  .stage .lightbar{top:-10px}
+  .rate{left:auto;right:12px;top:12px;bottom:auto;width:210px;padding:12px 14px;border-radius:18px}
+  .rate .n{font-size:32px}
+  .rate q{font-size:14.5px}
+  .intro{max-width:none;padding:26px 0 0}
+  .intro p{font-size:17px}
+  .ctas .btn{flex:1 1 auto}
+  .addr{text-align:left;padding-top:22px}
+  .ftg{grid-template-columns:1fr;padding-top:80px;padding-bottom:80px}
+  .compare{max-height:none}
+  .svc-list{grid-template-columns:1fr;gap:44px}
+  .s:nth-child(2){margin-top:0}
+  .s .ph{aspect-ratio:5/4}
+  .rail{padding:32px 16px 8px;scroll-padding:0 16px}
+  .card{flex-basis:78%}
+  .rev-2{grid-template-columns:1fr}
+  .visit .wrap{grid-template-columns:1fr}
+  .fill{line-height:2.25}
+  .dock{display:flex;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:60;gap:8px;padding:7px;border-radius:999px;
+    background:rgba(237,238,235,.6);-webkit-backdrop-filter:blur(22px) saturate(170%);backdrop-filter:blur(22px) saturate(170%);
+    border:1px solid rgba(255,255,255,.6);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 20px 50px -18px rgba(18,20,23,.55)}
+  .dock .btn{flex:1;min-height:52px}
+}
+@media (min-width:761px) and (max-width:1100px){
+  .hero{grid-template-columns:1fr minmax(260px,320px) .6fr}
+  .rate{right:-30px}
+  .addr{display:none}
+  .svc-list{grid-template-columns:1fr 1fr}.s:nth-child(3){grid-column:1 / 3}.s:nth-child(3) .ph{aspect-ratio:16/9}
+}
+
+/* ---------- load + reveal motion ---------- */
+.js .h1 b,.js .h2 b{transform:translateY(105%)}
+.js .stage .vid{transform:scale(1.06);opacity:0}
+.js .rate{opacity:0;transform:translateY(16px)}
+.js .intro,.js .addr{opacity:0}
+.go .h1 b,.go .h2 b{transform:none;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.go .h1 span:nth-child(2) b{transition-delay:.08s}.go .h2 span:nth-child(1) b{transition-delay:.28s}.go .h2 span:nth-child(2) b{transition-delay:.36s}
+.go .stage .vid{transform:none;opacity:1;transition:transform 1.2s cubic-bezier(.2,.8,.2,1),opacity .6s}
+.go .rate{opacity:1;transform:none;transition:all .8s cubic-bezier(.2,.8,.2,1) .75s}
+.go .intro,.go .addr{opacity:1;transition:opacity .8s .55s}
+.rv .ph{clip-path:inset(12% 0 0 0 round 24px);transition:clip-path 1s cubic-bezier(.2,.8,.2,1)}
+.rv.in .ph{clip-path:inset(0 0 0 0 round 24px)}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .h1 b,.js .h2 b,.js .stage .vid,.js .rate,.js .intro,.js .addr{transform:none;opacity:1}
+  .rv .ph{clip-path:none}
+}
+
+/* fix Nov 24: headlines never run under the video on desktop */
+@media (min-width:761px){
+  .h1{grid-column:1;mix-blend-mode:normal;color:var(--ink);font-size:clamp(56px,6.3vw,124px)}
+  .h2{grid-column:3;font-size:clamp(56px,6.3vw,124px)}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <a class="mark" href="#top" aria-label="SWAT Detailing Studio, top"><b>SWAT</b><span>Detailing <em>Studio</em></span></a>
+  <ul>
+    <li><a href="#before-after">Before and after</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#recent">Recent cars</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#visit">Visit</a></li>
+  </ul>
+  <a class="btn btn-ink" href="tel:+15197446171">Call</a>
+</nav>
+
+<header class="hero" id="top">
+  <h1 class="h1 disp"><span><b>We don’t</b></span><span><b>just wash.</b></span></h1>
+  <div class="intro">
+    <p><strong>SWAT Detailing Studio</strong> is a car detailing studio on King St E in Kitchener. Foam wash, interiors and stage 1 paint correction.</p>
+    <div class="ctas">
+      <a class="btn btn-red" href="#quote">Text for a quote</a>
+      <a class="btn btn-line" href="tel:+15197446171">Call (519) 744-6171</a>
+    </div>
+  </div>
+  <div class="stage">
+    <div class="lightbar" aria-hidden="true"><i></i><i></i></div>
+    <div class="vid">
+      <video autoplay muted loop playsinline preload="auto" poster="img/hero-poster.jpg" aria-label="A black Tesla covered in snow foam, then rinsed, inside the SWAT bay">
+        <source src="video/hero.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="rate glass">
+      <div class="row"><span class="n">5.0</span><span class="stars" aria-label="5 out of 5 stars">
+        <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg></span></div>
+      <small>From 2 reviews on Google</small>
+      <q>Best Detailing Shop in Kitchener</q>
+      <cite>Shivam M., Google</cite>
+    </div>
+  </div>
+  <p class="addr"><strong>1138 King St E</strong>Kitchener, Ontario<br>Mon to Sat, 9 a.m. to 6 p.m.</p>
+  <h2 class="h2 disp" aria-label="We transform."><span><b>We</b></span><span><b>transform.</b></span></h2>
+</header>
+
+<section class="band" id="before-after" aria-labelledby="ftg-h">
+  <div class="wrap ftg">
+    <div>
+      <h2 class="disp" id="ftg-h">Foam<br><em>to gloss.</em></h2>
+      <p>One of their Range Rover jobs, straight from their Instagram. Drag across the photo to go from the foam stage to the finished car.</p>
+      <blockquote>
+        <p>“Where luxury meets perfection.”</p>
+        <a href="https://www.instagram.com/p/DfuTqmBqiz5/" target="_blank" rel="noopener">SWAT on Instagram, Nov 14</a>
+      </blockquote>
+    </div>
+    <div class="compare" id="cmp" style="--x:52%">
+      <img src="img/rr-gloss.jpg" alt="The black Range Rover after the detail, glossy paint" loading="lazy">
+      <img class="top" src="img/rr-foam.jpg" alt="The same Range Rover covered in snow foam" loading="lazy">
+      <span class="tag l">Foam</span><span class="tag r">Finished</span>
+      <div class="rule" aria-hidden="true"></div>
+      <div class="knob" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3L1.5 8 6 13M10 3l4.5 5-4.5 5"/></svg>Drag</div>
+      <input type="range" min="0" max="100" value="52" aria-label="Compare foam and finished photos">
+    </div>
+  </div>
+</section>
+
+<section class="svc wrap" id="services" aria-labelledby="svc-h">
+  <div class="svc-head">
+    <h2 class="disp" id="svc-h">What they<br>work on</h2>
+    <p>Everything here is from their own posts: the cars, the bay, the work. Ask by text for what your car needs.</p>
+  </div>
+  <div class="svc-list">
+    <article class="s rv">
+      <div class="ph"><img src="img/audi-foam.jpg" alt="Audi grille covered in foam in the SWAT bay" loading="lazy"></div>
+      <h3>Foam wash</h3>
+      <p>Snow foam, then a full rinse. Their Audi, Tesla and Range Rover all got it this month.</p>
+      <a class="src" href="https://www.instagram.com/p/Df8h7AhqK9Y/" target="_blank" rel="noopener">See the Audi post</a>
+    </article>
+    <article class="s rv">
+      <div class="ph"><img src="img/cadillac.jpg" alt="Cadillac steering wheel wrapped in plastic during an interior detail" loading="lazy"></div>
+      <h3>Interior detailing</h3>
+      <p>Seats, doors, dash and floors. Their Cadillac, Tesla and white SUV posts all walk through the inside.</p>
+      <a class="src" href="https://www.instagram.com/p/Dfxav8VKyfM/" target="_blank" rel="noopener">See the Cadillac post</a>
+    </article>
+    <article class="s rv">
+      <div class="ph"><img src="img/charger.jpg" alt="Black Dodge Charger after stage 1 paint correction" loading="lazy"></div>
+      <h3>Stage 1 paint correction</h3>
+      <p>“Charger stage 1 paint correction done at SWAT DETAILING STUDIO.” Posted Nov 14.</p>
+      <a class="src" href="https://www.instagram.com/p/Dfv9SmyKO4t/" target="_blank" rel="noopener">See the Charger post</a>
+    </article>
+  </div>
+</section>
+
+<section class="log" id="recent" aria-labelledby="log-h">
+  <div class="wrap log-head">
+    <h2 class="disp" id="log-h">Recent cars</h2>
+    <div class="ctrl">
+      <button class="chip glass" type="button" data-dir="-1" aria-label="Previous cars"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12.5 4L6.5 10l6 6"/></svg></button>
+      <button class="chip glass" type="button" data-dir="1" aria-label="Next cars"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7.5 4l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+  <div class="rail" id="rail">
+    <article class="card"><div class="ph"><img src="img/tesla-gloss.jpg" alt="Black Tesla after the wash, in the bay" loading="lazy"></div>
+      <time datetime="2026-11-20">Nov 20</time><h3>Tesla</h3><p>“We don’t just clean cars, we bring them back to life!”</p><a href="https://www.instagram.com/p/Df-zmX-qotp/" target="_blank" rel="noopener">Watch on Instagram</a></article>
+    <article class="card"><div class="ph"><img src="img/audi-side.jpg" alt="Grey Audi sedan with black wheels after detailing" loading="lazy"></div>
+      <time datetime="2026-11-19">Nov 19</time><h3>Audi</h3><p>“Bringing back the showroom shine, one car at a time!”</p><a href="https://www.instagram.com/p/Df8h7AhqK9Y/" target="_blank" rel="noopener">Watch on Instagram</a></article>
+    <article class="card"><div class="ph"><img src="img/audi-wheel.jpg" alt="Close up of a black Audi wheel after cleaning" loading="lazy"></div>
+      <time datetime="2026-11-19">Nov 19</time><h3>Audi wheels</h3><p>Same Audi, wheels done in the bay.</p><a href="https://www.instagram.com/p/Df8h7AhqK9Y/" target="_blank" rel="noopener">Watch on Instagram</a></article>
+    <article class="card"><div class="ph"><img src="img/mazda-door.jpg" alt="Inside a white Mazda SUV, rear door open after the interior detail" loading="lazy"></div>
+      <time datetime="2026-11-18">Nov 18</time><h3>White SUV</h3><p>“From dusty to glossy – that’s the SWAT touch!”</p><a href="https://www.instagram.com/p/Df6BUxHq-z4/" target="_blank" rel="noopener">Watch on Instagram</a></article>
+    <article class="card"><div class="ph"><img src="img/charger.jpg" alt="Black Dodge Charger in the lot" loading="lazy"></div>
+      <time datetime="2026-11-14">Nov 14</time><h3>Charger</h3><p>“Charger stage 1 paint correction done at SWAT DETAILING STUDIO”</p><a href="https://www.instagram.com/p/Dfv9SmyKO4t/" target="_blank" rel="noopener">Watch on Instagram</a></article>
+    <article class="card"><div class="ph"><img src="img/rr-detail.jpg" alt="Front corner of a black Range Rover after the detail" loading="lazy"></div>
+      <time datetime="2026-11-14">Nov 14</time><h3>Range Rover</h3><p>“SWAT Detailing Studio — Where luxury meets perfection.”</p><a href="https://www.instagram.com/p/DfuTqmBqiz5/" target="_blank" rel="noopener">Watch on Instagram</a></article>
+  </div>
+</section>
+
+<section class="rev wrap" id="reviews" aria-labelledby="rev-h">
+  <h2 class="big disp" id="rev-h"><span class="q">“</span>Best detailing shop in Kitchener<span class="q">”</span></h2>
+  <p class="by"><strong>Shivam M.</strong>, Google review</p>
+  <div class="rev-2">
+    <div class="score"><span class="n" data-count="5.0">5.0</span><small>Google rating, from 2 reviews</small></div>
+    <div class="long">
+      <p>“Best car detailing service in town! Even though they’re new to the city, their professionalism, attention to detail, and quality of work are outstanding. My car looked brand new after the service! Amazing customer service and great results. Highly recommend supporting this new business. Definitely a 10/10 experience!”</p>
+      <p class="by"><strong>Kaur J.</strong>, Google review</p>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit" aria-labelledby="visit-h">
+  <div class="orb a" aria-hidden="true"></div><div class="orb b" aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <h2 class="disp" id="visit-h">Bring it<br>to the bay</h2>
+      <p class="where"><a href="https://www.google.com/maps/search/?api=1&query=SWAT+Detailing+Studio+1138+King+St+E+Kitchener" target="_blank" rel="noopener">1138 King St E, Kitchener, ON N2G 2N4</a></p>
+      <div class="hours" id="hours">
+        <div data-d="1"><span>Monday</span><span>9 a.m. to 6 p.m.</span></div>
+        <div data-d="2"><span>Tuesday</span><span>9 a.m. to 6 p.m.</span></div>
+        <div data-d="3"><span>Wednesday</span><span>9 a.m. to 6 p.m.</span></div>
+        <div data-d="4"><span>Thursday</span><span>9 a.m. to 6 p.m.</span></div>
+        <div data-d="5"><span>Friday</span><span>9 a.m. to 6 p.m.</span></div>
+        <div data-d="6"><span>Saturday</span><span>9 a.m. to 6 p.m.</span></div>
+        <div data-d="0"><span>Sunday</span><span>Closed</span></div>
+      </div>
+    </div>
+    <form class="quote" id="quote" aria-labelledby="q-h">
+      <div class="lightbar" aria-hidden="true"><i></i><i></i></div>
+      <h3 id="q-h">Text for a quote</h3>
+      <p class="fill">
+        Hi SWAT, I’m <input name="n" placeholder="your name" aria-label="Your name" autocomplete="given-name">.
+        My <input name="c" placeholder="car, e.g. Civic" aria-label="Your car"> needs
+        <select name="s" aria-label="What it needs">
+          <option>a foam wash</option>
+          <option>an interior detail</option>
+          <option>stage 1 paint correction</option>
+          <option>inside and out</option>
+        </select>.
+        Best day is
+        <select name="d" aria-label="Best day">
+          <option>Monday</option><option>Tuesday</option><option>Wednesday</option><option>Thursday</option><option>Friday</option><option>Saturday</option>
+        </select>.
+      </p>
+      <button class="btn btn-red" type="submit">Send this as a text</button>
+      <p class="note">Opens your messages app with this note to (519) 744-6171. Nothing is sent until you press send.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a class="mark" href="#top"><b>SWAT</b><span>Detailing Studio, Kitchener</span></a>
+    <a href="https://www.instagram.com/swatdetailingstudio/" target="_blank" rel="noopener">@swatdetailingstudio</a>
+    <span class="pv">Preview built by JPF. Not live yet.</span>
+  </div>
+</footer>
+
+<div class="dock" role="group" aria-label="Contact SWAT">
+  <a class="btn btn-ink" href="tel:+15197446171">Call</a>
+  <a class="btn btn-red" href="sms:+15197446171">Text</a>
+</div>
+
+<script>
+(function(){
+  var d=document.documentElement, reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  d.classList.add('js');
+  requestAnimationFrame(function(){requestAnimationFrame(function(){d.classList.add('go');if(!reduce)d.classList.add('flash');});});
+  // before/after
+  var c=document.getElementById('cmp'), r=c.querySelector('input');
+  r.addEventListener('input',function(){c.style.setProperty('--x',r.value+'%')});
+  // reveals
+  var rv=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+    rv.forEach(function(el){io.observe(el)});
+  } else rv.forEach(function(el){el.classList.add('in')});
+  // rail buttons
+  var rail=document.getElementById('rail');
+  document.querySelectorAll('.chip').forEach(function(b){b.addEventListener('click',function(){
+    var card=rail.querySelector('.card'); rail.scrollBy({left:(card.offsetWidth+18)*+b.dataset.dir,behavior:reduce?'auto':'smooth'});
+  })});
+  // today in hours (Kitchener time)
+  try{var wd=new Intl.DateTimeFormat('en-US',{timeZone:'America/Toronto',weekday:'short'}).format(new Date());
+    var i=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(wd); var row=document.querySelector('#hours [data-d="'+i+'"]'); if(row)row.classList.add('today');}catch(e){}
+  // quote -> sms
+  document.getElementById('quote').addEventListener('submit',function(e){
+    e.preventDefault(); var f=e.target;
+    var n=f.n.value.trim(), car=f.c.value.trim()||'car';
+    var msg='Hi SWAT, '+(n?'I’m '+n+'. ':'')+'My '+car+' needs '+f.s.value+'. Best day is '+f.d.value+'. Can I get a quote?';
+    var ios=/iPhone|iPad|iPod/.test(navigator.userAgent);
+    location.href='sms:+15197446171'+(ios?'&':'?')+'body='+encodeURIComponent(msg);
+  });
+})();
+</script>
+</body>
+</html>
