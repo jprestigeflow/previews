@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Billionaire Mobile Detailing | Car detailing in Mississauga, ON</title>
+<meta name="description" content="Mobile car detailing in Mississauga, Ontario. 4.9 on Google from 33 reviews. Call (647) 549-9366.">
+<meta name="theme-color" content="#0b0d14">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ direction: poster-stack-led. Huge stacked League Gothic type blocks alternate with full-bleed photo bands. One service per band: inside, outside, mobile, trucks.
+ palette: ink #0b0d14 (night shot of the dark EQS, their photo), cobalt #2557f0 (Genesis hood, their photo p11), bone #ecebe6 (stucco wall behind the Genesis), glass tints of ink/bone.
+ fonts: League Gothic (display) + Instrument Sans (body).
+ signature: the poster stack itself. Each block is one giant word; the photo band under it carries that service. Plus a fill-in-the-blanks quote sentence that sends a text.
+ order: hero > inside > outside > mobile > trucks > reviews wall > hours/area > quote > footer.
+ motion: one load entrance on the hero, words slide up once on scroll, rating counts up. Reduced motion respected.
+*/
+:root{
+  --ink:#0b0d14; --ink2:#121623; --cobalt:#2557f0; --cobalt-lt:#7e9dff; --bone:#ecebe6; --bone2:#dcdad2;
+  --mut:#9aa1b4; --mut-ink:#4b5163;
+  --disp:'League Gothic','Arial Narrow',Impact,sans-serif;
+  --body:'Instrument Sans',system-ui,sans-serif;
+  --pad:clamp(18px,4vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--bone);font-family:var(--body);font-size:17px;line-height:1.55;overflow-x:hidden;padding-bottom:0}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cobalt-lt);outline-offset:3px;border-radius:6px}
+.disp{font-family:var(--disp);font-weight:400;text-transform:uppercase;letter-spacing:-.005em;line-height:.84}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:48px;padding:0 26px;border-radius:999px;background:var(--cobalt);color:#fff;text-decoration:none;font-weight:600;font-size:16px;border:0;cursor:pointer;transition:transform .18s,background .18s,box-shadow .18s;box-shadow:0 10px 30px -12px rgba(37,87,240,.8)}
+.btn:hover{background:#3b6bff}
+.btn:active{transform:scale(.98)}
+.btn.ghost{background:transparent;border:1.5px solid currentColor;box-shadow:none;color:inherit}
+.btn.ghost:hover{background:rgba(255,255,255,.08)}
+
+/* NAV pill */
+.nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 6px 6px 20px;border-radius:999px;
+  background:rgba(11,13,20,.5);backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 20px 50px -20px rgba(0,0,0,.5);max-width:980px;margin:0 auto}
+.nav b{font-family:var(--disp);font-weight:400;font-size:25px;letter-spacing:.02em;text-transform:uppercase;color:#fff;line-height:1}
+.nav .links{display:none;gap:24px;font-size:14.5px;font-weight:500}
+.nav .links a{text-decoration:none;opacity:.85;padding:10px 0}
+.nav .links a:hover{opacity:1}
+.nav .btn{min-height:44px;padding:0 20px;font-size:15px}
+@media(min-width:820px){.nav .links{display:flex}}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:96px var(--pad) 30px;overflow:hidden;isolation:isolate;background:var(--ink)}
+.hero .ph{position:absolute;inset:0;z-index:-2}
+.hero .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 50%;animation:push 2.2s cubic-bezier(.2,.7,.2,1) both}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(11,13,20,.55) 0%,rgba(11,13,20,0) 28%,rgba(11,13,20,.15) 52%,rgba(11,13,20,.9) 100%)}
+.hero h1{font-size:24.5vw;color:#fff;margin-left:-.02em}
+.hero h1 span{display:block;overflow:hidden}
+.hero h1 span i{display:block;font-style:normal;animation:rise 1s cubic-bezier(.2,.8,.2,1) both}
+.hero h1 span:nth-child(2) i{animation-delay:.12s;color:var(--cobalt-lt)}
+.hero .row{display:flex;flex-wrap:wrap;gap:18px 40px;align-items:flex-end;justify-content:space-between;margin-top:22px}
+.hero p.lead{max-width:420px;font-size:18px;color:#f3f2ee;animation:fade .9s .5s both}
+.hero .cta{display:flex;gap:10px;flex-wrap:wrap;animation:fade .9s .6s both}
+.gcard{position:absolute;right:var(--pad);top:96px;width:min(260px,calc(100% - 2*var(--pad)));padding:16px 18px;border-radius:24px;
+  background:rgba(11,13,20,.48);backdrop-filter:blur(24px) saturate(170%);-webkit-backdrop-filter:blur(24px) saturate(170%);border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 24px 60px -24px rgba(0,0,0,.6);animation:floatin 1s .7s cubic-bezier(.2,.8,.2,1) both}
+.gcard .big{font-family:var(--disp);font-size:56px;line-height:.9;color:#fff}
+.gcard .big small{font-family:var(--body);font-size:14px;color:#dfe3ee;margin-left:8px;letter-spacing:0}
+.gcard q{display:block;margin-top:8px;font-size:14.5px;line-height:1.4;color:#f1f2f6;quotes:none}
+.gcard cite{display:block;margin-top:6px;font-size:13px;font-style:normal;color:#c6cbda}
+@media(max-width:600px){.gcard{display:none}}
+@media(min-width:820px){.hero h1{font-size:min(17.5vw,300px)}}
+@keyframes rise{from{transform:translateY(105%)}to{transform:none}}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes floatin{from{opacity:0;transform:translateY(24px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes push{from{transform:scale(1.12)}to{transform:none}}
+
+/* POSTER BLOCKS */
+.blk{padding:clamp(64px,9vw,140px) var(--pad) clamp(40px,6vw,90px);position:relative}
+.blk.bone{background:var(--bone);color:var(--ink)}
+.blk.dark{background:var(--ink);color:var(--bone)}
+.blk h2{font-size:clamp(96px,31vw,470px);margin-left:-.02em}
+.blk h2 em{font-style:normal;color:var(--cobalt)}
+.dark h2 em{color:var(--cobalt-lt)}
+.blk h2 .ln{display:block;overflow:hidden}
+.blk h2 .ln>span{display:block}
+.js .blk h2 .ln>span{transform:translateY(105%);transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.js .blk.in h2 .ln>span{transform:none}
+.js .blk.in h2 .ln:nth-child(2)>span{transition-delay:.1s}
+.js .blk.in h2 .ln:nth-child(3)>span{transition-delay:.2s}
+.blk .meta{display:grid;gap:22px;margin-top:clamp(22px,3vw,40px);grid-template-columns:1fr}
+.blk .meta p{font-size:18px;max-width:46ch}
+.blk.bone .meta p{color:var(--mut-ink)}
+.blk.dark .meta p{color:#c4c9d8}
+.blk blockquote{font-size:20px;line-height:1.4;font-weight:500;max-width:38ch;border-left:3px solid var(--cobalt);padding-left:16px}
+.blk.dark blockquote{border-color:var(--cobalt-lt)}
+.blk blockquote cite{display:block;margin-top:8px;font-size:14px;font-weight:400;font-style:normal;opacity:.7}
+@media(min-width:820px){.blk .meta{grid-template-columns:1fr 1fr;align-items:end}.blk .meta blockquote{justify-self:end}}
+/* word sized to fit 6-7 letters across */
+.blk.wide h2{font-size:clamp(90px,27vw,420px)}
+
+/* PHOTO BANDS */
+.band{display:grid;gap:0;background:var(--ink)}
+.band img{width:100%;height:100%;object-fit:cover}
+.band figure{position:relative;overflow:hidden;margin:0}
+.band figcaption{position:absolute;left:16px;bottom:14px;font-size:13px;font-weight:600;color:#fff;padding:6px 12px;border-radius:14px;background:rgba(11,13,20,.5);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.2)}
+.band.tri{grid-template-columns:repeat(2,1fr);height:min(72svh,640px)}
+.band.tri figure:nth-child(3){display:none}
+@media(min-width:820px){.band.tri{grid-template-columns:repeat(3,1fr);height:min(88svh,860px)}.band.tri figure:nth-child(3){display:block}}
+.band.stag{grid-template-columns:1fr 1fr;height:min(76svh,680px)}
+.band.stag figure:first-child img{object-position:50% 70%}
+@media(min-width:820px){.band.stag{grid-template-columns:5fr 7fr;height:min(88svh,860px)}}
+.band.full{height:min(70svh,640px)}
+.band.full img{object-position:50% 55%}
+.band.duo{grid-template-columns:1fr 1fr;height:min(76svh,680px)}
+.band.duo video{width:100%;height:100%;object-fit:cover}
+@media(min-width:820px){.band.duo{height:min(88svh,860px)}}
+.zoomy img,.zoomy video{transform:scale(1.06);transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.js .zoomy.in img,.js .zoomy.in video{transform:none}
+.js .zoomy:not(.in) img{transform:scale(1.12)}
+
+/* REVIEWS */
+.rev{background:var(--ink);padding:clamp(70px,9vw,140px) var(--pad);position:relative;overflow:hidden;isolation:isolate}
+.rev::before,.rev::after{content:"";position:absolute;border-radius:50%;filter:blur(70px);z-index:-1;pointer-events:none}
+.rev::before{width:520px;height:520px;right:-140px;top:-80px;background:radial-gradient(circle,rgba(37,87,240,.5),transparent 70%);animation:drift 26s ease-in-out infinite alternate}
+.rev::after{width:460px;height:460px;left:-160px;bottom:40px;background:radial-gradient(circle,rgba(126,157,255,.28),transparent 70%);animation:drift 30s ease-in-out infinite alternate-reverse}
+@keyframes drift{to{transform:translate(60px,40px)}}
+.score{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.score .n{font-size:clamp(120px,34vw,380px);line-height:.8;color:#fff}
+.score .t{padding-bottom:.5em;font-size:18px;color:#c4c9d8;max-width:22ch}
+.score .t b{color:#fff;font-weight:600;display:block;font-size:20px}
+.lead-q{margin-top:clamp(36px,5vw,70px);font-family:var(--disp);text-transform:uppercase;font-size:clamp(40px,8vw,112px);line-height:.95;color:#fff;max-width:18ch}
+.lead-q+cite{display:block;margin-top:16px;font-size:15px;font-style:normal;color:#c4c9d8}
+.cards{display:grid;gap:14px;margin-top:clamp(36px,5vw,64px);grid-template-columns:1fr}
+@media(min-width:820px){.cards{grid-template-columns:repeat(3,1fr)}}
+.card{padding:22px;border-radius:26px;background:rgba(18,22,35,.55);backdrop-filter:blur(20px) saturate(150%);-webkit-backdrop-filter:blur(20px) saturate(150%);border:1px solid rgba(255,255,255,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 24px 60px -28px rgba(0,0,0,.6)}
+.card p{font-size:16.5px;color:#eef0f6}
+.card cite{display:block;margin-top:12px;font-size:14px;font-style:normal;color:#b3b9cb}
+.stars{color:var(--cobalt-lt);letter-spacing:3px;font-size:14px;margin-bottom:10px}
+
+/* HOURS / AREA */
+.where{background:var(--bone);color:var(--ink);padding:clamp(64px,8vw,120px) var(--pad)}
+.where h2{font-size:clamp(70px,19vw,260px)}
+.where h2 em{font-style:normal;color:var(--cobalt)}
+.facts{display:grid;gap:0;margin-top:clamp(28px,4vw,56px);border-top:1.5px solid var(--ink)}
+.facts div{display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px solid rgba(11,13,20,.2);font-size:18px}
+.facts div span:first-child{color:var(--mut-ink)}
+.facts div span:last-child{text-align:right;font-weight:600}
+.facts a{text-decoration:none;font-weight:600}
+@media(min-width:820px){.facts{max-width:760px;margin-left:auto}}
+
+/* QUOTE */
+.quote{position:relative;isolation:isolate;overflow:hidden;padding:clamp(70px,9vw,140px) var(--pad) clamp(90px,10vw,140px);background:var(--ink)}
+.quote .bg{position:absolute;inset:0;z-index:-2}
+.quote .bg img{width:100%;height:100%;object-fit:cover;filter:saturate(1.1) brightness(.6)}
+.quote::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,var(--ink),rgba(11,13,20,.35) 40%,rgba(11,13,20,.7))}
+.quote h2{font-size:clamp(80px,21vw,300px);color:#fff}
+.quote h2 em{font-style:normal;color:var(--cobalt-lt)}
+.panel{margin-top:clamp(28px,4vw,56px);max-width:860px;padding:clamp(22px,3.5vw,44px);border-radius:28px;background:rgba(11,13,20,.5);backdrop-filter:blur(26px) saturate(170%);-webkit-backdrop-filter:blur(26px) saturate(170%);border:1px solid rgba(255,255,255,.24);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 30px 80px -30px rgba(0,0,0,.7)}
+.sentence{font-size:clamp(20px,2.6vw,28px);line-height:2.1;color:#f3f4f8;font-weight:500}
+.sentence input,.sentence select{font:inherit;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);border-radius:14px;padding:4px 14px;min-height:48px;max-width:100%;width:auto;margin:2px 4px;transition:border-color .18s,box-shadow .18s,background .18s}
+.sentence input::placeholder{color:#b8bed0}
+.sentence input:focus,.sentence select:focus{outline:none;border-color:var(--cobalt-lt);box-shadow:0 0 0 3px rgba(126,157,255,.35);background:rgba(255,255,255,.14)}
+.sentence select option{color:#0b0d14}
+.sentence input.nm{width:min(220px,100%)}
+.sentence input.vh{width:min(300px,100%)}
+.panel .go{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:24px}
+.panel small{color:#c4c9d8;font-size:14px}
+
+footer{background:var(--ink);color:#aab0c2;padding:34px var(--pad) 120px;font-size:14.5px;display:flex;flex-wrap:wrap;gap:10px 30px;justify-content:space-between}
+footer a{color:#dfe3ee}
+@media(min-width:820px){footer{padding-bottom:40px}}
+
+/* DOCK */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));display:flex;gap:8px;padding:8px;border-radius:999px;
+  background:rgba(11,13,20,.55);backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 20px 50px -16px rgba(0,0,0,.7)}
+.dock a{flex:1;min-height:48px;border-radius:999px;display:flex;align-items:center;justify-content:center;text-decoration:none;font-weight:600;font-size:16px;color:#fff;transition:transform .18s}
+.dock a:active{transform:scale(.97)}
+.dock a.call{background:var(--cobalt)}
+.dock a.txt{background:rgba(255,255,255,.12)}
+@media(min-width:820px){.dock{display:none}}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .js .blk h2 .ln>span{transform:none}
+  .js .zoomy:not(.in) img{transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <b>Billionaire Detailing</b>
+  <div class="links"><a href="#inside">Inside</a><a href="#outside">Outside</a><a href="#mobile">Mobile</a><a href="#reviews">Reviews</a><a href="#quote">Quote</a></div>
+  <a class="btn" href="tel:+16475499366">Call</a>
+</nav>
+
+<header class="hero">
+  <div class="ph"><img src="img/c-hero.jpg" alt="Blue Genesis sedan with a mirror-clear hood after a detail" fetchpriority="high"></div>
+  <aside class="gcard" aria-label="Google rating">
+    <div class="big">4.9<small>on Google</small></div>
+    <q>I had my car detailed today and honestly, I’m very happy with the results.</q>
+    <cite>Hasan A., Google &middot; 33 reviews</cite>
+  </aside>
+  <h1 class="disp"><span><i>Billionaire</i></span><span><i>Detailing.</i></span></h1>
+  <div class="row">
+    <p class="lead">Mobile car detailing in Mississauga. Inside and out. Open 24 hours.</p>
+    <div class="cta"><a class="btn" href="tel:+16475499366">Call (647) 549-9366</a><a class="btn ghost" href="#quote">Get a quote</a></div>
+  </div>
+</header>
+
+<section class="blk bone" id="inside">
+  <h2 class="disp"><span class="ln"><span>Inside.</span></span><span class="ln"><span><em>Back to</em></span></span><span class="ln"><span><em>new.</em></span></span></h2>
+  <div class="meta">
+    <p>Messy interiors, salt-stained floors, work truck cabins.</p>
+    <blockquote>“Truly amazing job. Driver area was full of salt stains and now back to brand new.”<cite>D T., Google</cite></blockquote>
+  </div>
+</section>
+<div class="band tri zoomy">
+  <figure><img src="img/p2.jpg" alt="Car interior with a freshly cleaned driver area" loading="lazy"></figure>
+  <figure><img src="img/p9.jpg" alt="Luxury sedan interior with quilted seats and a clean cabin" loading="lazy"></figure>
+  <figure><img src="img/p6.jpg" alt="Clean steering wheel, dash and floor mats inside an SUV" loading="lazy"></figure>
+</div>
+
+<section class="blk dark" id="outside">
+  <h2 class="disp"><span class="ln"><span>Outside.</span></span><span class="ln"><span><em>Shiny.</em></span></span></h2>
+  <div class="meta">
+    <p>Cars and SUVs, detailed on site.</p>
+    <blockquote>“The exterior looks incredibly shiny”<cite>Andrew, Google</cite></blockquote>
+  </div>
+</section>
+<div class="band stag zoomy">
+  <figure><img src="img/p5.jpg" alt="White SUV with clean wheels in evening light" loading="lazy"></figure>
+  <figure><img src="img/c-p12.jpg" alt="Dark Mercedes SUV with beaded water on the hood at night" loading="lazy"></figure>
+</div>
+
+<section class="blk bone" id="mobile">
+  <h2 class="disp"><span class="ln"><span>Mobile.</span></span><span class="ln"><span><em>We come</em></span></span><span class="ln"><span><em>to you.</em></span></span></h2>
+  <div class="meta">
+    <p>Serving all across Ontario. Based in Mississauga.</p>
+    <blockquote>“Another Happy Client, Another Flawless Full Detail!”<cite>Billionaire Mobile Detailing, Instagram</cite></blockquote>
+  </div>
+</section>
+<div class="band full zoomy"><figure style="height:100%"><img src="img/p8.jpg" alt="White BMW being detailed in a parking lot with the mobile van behind it" loading="lazy"></figure></div>
+
+<section class="blk dark" id="trucks">
+  <h2 class="disp"><span class="ln"><span>Trucks.</span></span><span class="ln"><span><em>Work ones too.</em></span></span></h2>
+  <div class="meta">
+    <p>Pickups and work trucks, filthy to finished.</p>
+    <blockquote>“My work truck was filthy and stinky. He revitalized it and it is like brand new again.”<cite>Chris C., Google</cite></blockquote>
+  </div>
+</section>
+<div class="band duo zoomy">
+  <figure><img src="img/p3.jpg" alt="Black Ford pickup with orange hose on the lot" loading="lazy"></figure>
+  <figure><video src="video/hero.mp4" poster="video/hero-poster.jpg" muted loop playsinline preload="none" id="vid" aria-label="Truck cab interior"></video></figure>
+</div>
+
+<section class="rev" id="reviews">
+  <div class="score disp"><span class="n"><span class="count" data-to="4.9" data-dec="1">4.9</span></span><span class="t" style="font-family:var(--body);text-transform:none"><b>Google rating</b>from <span class="count" data-to="33" data-dec="0">33</span> reviews</span></div>
+  <p class="lead-q">“My car was in desperate need of a clean both inside and outside and he gave me a new car!”</p>
+  <cite style="display:block;margin-top:16px;font-size:15px;font-style:normal;color:#c4c9d8">Jennifer H., Google</cite>
+  <div class="cards">
+    <div class="card"><div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>“Amazing job detailing my car! The interior was super messy before, but he took the time to clean everything thoroughly and made it look even better than when I first got it.”</p><cite>Andrew, Google</cite></div>
+    <div class="card"><div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>“I had my car detailed today and honestly, I’m very happy with the results. The work was excellent, everything was cleaned with great attention to detail, and the car looks amazing.”</p><cite>Hasan A., Google</cite></div>
+    <div class="card"><div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>“Had an amazing experience, my work truck was filthy and stinky. He revitalized it and it is like brand new again. He was very professional and worked hard for hours to make sure it was perfect.”</p><cite>Chris C., Google</cite></div>
+  </div>
+</section>
+
+<section class="where" id="where">
+  <h2 class="disp">Open <em>24 hours.</em></h2>
+  <div class="facts">
+    <div><span>Hours</span><span>Every day, open 24 hours</span></div>
+    <div><span>Area</span><span>Mississauga, ON and all across Ontario</span></div>
+    <div><span>Listed at</span><span>2642 Liruma Rd, Mississauga, ON L5K 1Z1</span></div>
+    <div><span>Phone</span><a href="tel:+16475499366">(647) 549-9366</a></div>
+    <div><span>Instagram</span><a href="https://www.instagram.com/billionaire_mobile_detailing/" rel="noopener">@billionaire_mobile_detailing</a></div>
+  </div>
+</section>
+
+<section class="quote" id="quote">
+  <div class="bg"><img src="img/p9.jpg" alt="" loading="lazy"></div>
+  <h2 class="disp">Get a <em>quote.</em></h2>
+  <form class="panel" id="qf" autocomplete="on">
+    <div class="sentence">
+      Hi, I’m <input class="nm" name="name" id="qn" type="text" placeholder="your name" aria-label="Your name" required>
+      and I need a <select id="qs" aria-label="Service"><option>full detail</option><option>interior detail</option><option>exterior detail</option><option>truck detail</option></select>
+      for my <input class="vh" id="qv" type="text" placeholder="car, SUV or truck" aria-label="Your vehicle" required>
+    </div>
+    <div class="go"><button class="btn" type="submit">Text this to Billionaire</button><small>Opens a text to (647) 549-9366. Or <a href="tel:+16475499366">call</a>.</small></div>
+  </form>
+</section>
+
+<footer>
+  <span>Preview built by JPF. Not live yet.</span>
+  <span>Billionaire Mobile Detailing &middot; Mississauga, ON &middot; <a href="tel:+16475499366">(647) 549-9366</a></span>
+</footer>
+
+<div class="dock" role="group" aria-label="Call or text">
+  <a class="call" href="tel:+16475499366">Call</a>
+  <a class="txt" href="sms:+16475499366">Text</a>
+</div>
+
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+  document.querySelectorAll('.blk,.zoomy').forEach(function(el){io.observe(el)});
+  // safety: never leave words hidden
+  setTimeout(function(){document.querySelectorAll('.blk,.zoomy').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<innerHeight*1.2)el.classList.add('in')})},1200);
+  // count-up once
+  var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;co.unobserve(e.target);var el=e.target,to=parseFloat(el.dataset.to),d=+el.dataset.dec;if(reduce){return}el.textContent=(0).toFixed(d);setTimeout(function(){el.textContent=to.toFixed(d)},1500);var t0=null;(function f(t){t0=t||t0;var p=Math.min(1,((t||0)-t0)/1100)||0;el.textContent=(to*(1-Math.pow(1-p,3))).toFixed(d);if(p<1)requestAnimationFrame(f);else el.textContent=to.toFixed(d)})(performance.now())})},{threshold:.6});
+  document.querySelectorAll('.count').forEach(function(el){co.observe(el)});
+  // video plays only when visible
+  var v=document.getElementById('vid');
+  if(v&&!reduce){new IntersectionObserver(function(es){es.forEach(function(e){e.isIntersecting?v.play().catch(function(){}):v.pause()})},{threshold:.3}).observe(v)}
+  // quote form -> sms
+  document.getElementById('qf').addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=document.getElementById('qn').value.trim(),s=document.getElementById('qs').value,c=document.getElementById('qv').value.trim();
+    var body='Hi, I’m '+n+' and I need a '+s+' for my '+c+'.';
+    location.href='sms:+16475499366?&body='+encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
