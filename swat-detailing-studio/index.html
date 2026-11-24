@@ -277,7 +277,7 @@ footer .pv{color:#D3D6DA}
   <div class="intro">
     <p><strong>SWAT Detailing Studio</strong> is a car detailing studio on King St E in Kitchener. Foam wash, interiors and stage 1 paint correction.</p>
     <div class="ctas">
-      <a class="btn btn-red" href="#quote">Text for a quote</a>
+      <a class="btn btn-red" href="#quote" data-qb-open>Get a quote in 30s</a>
       <a class="btn btn-line" href="tel:+15197446171">Call (519) 744-6171</a>
     </div>
   </div>
@@ -466,6 +466,95 @@ footer .pv{color:#D3D6DA}
     var ios=/iPhone|iPad|iPod/.test(navigator.userAgent);
     location.href='sms:+15197446171'+(ios?'&':'?')+'body='+encodeURIComponent(msg);
   });
+})();
+</script>
+<style>:root{--qb-accent:var(--red);--qb-ink:var(--ink);--qb-font:var(--body)}</style>
+<script>window.QB={biz:"SWAT Detailing Studio",phone:"+15197446171",hours:"Monday to Saturday, 9 a.m. to 6 p.m. (closed Sunday)",where:"1138 King St E, Kitchener",
+services:["Foam wash","Interior detail","Stage 1 paint correction","Inside and out"],days:["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]};</script>
+<!-- JPF quote assistant DEMO (Nov 24 2026). Scripted, no AI backend in the preview. Upsell for the $400 tier:
+     on a paid site the summary posts to the owner's Telegram; in the preview it opens a text to the business.
+     Config: window.QB = {biz, phone(+1..), phoneLabel, services[], days[], hours, where}. Uses page vars --qb-accent/--qb-ink/--qb-font. -->
+<style>
+.qb-btn{position:fixed;right:18px;bottom:22px;z-index:70;display:flex;align-items:center;gap:10px;padding:12px 18px 12px 14px;border:0;border-radius:999px;cursor:pointer;
+  background:var(--qb-ink);color:#fff;font:600 15px/1 var(--qb-font);box-shadow:0 18px 40px -14px rgba(0,0,0,.55);transition:transform .18s}
+.qb-btn:active{transform:scale(.97)} .qb-btn i{width:9px;height:9px;border-radius:50%;background:#2fd170;box-shadow:0 0 0 4px rgba(47,209,112,.18)}
+.qb{position:fixed;right:18px;bottom:22px;z-index:80;width:min(380px,calc(100vw - 24px));height:min(600px,calc(100svh - 40px));display:flex;flex-direction:column;border-radius:26px;overflow:hidden;
+  background:rgba(250,250,248,.82);-webkit-backdrop-filter:blur(24px) saturate(160%);backdrop-filter:blur(24px) saturate(160%);border:1px solid rgba(255,255,255,.6);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 30px 80px -24px rgba(0,0,0,.5);font:400 15.5px/1.45 var(--qb-font);color:var(--qb-ink);
+  opacity:0;transform:translateY(16px) scale(.98);pointer-events:none;transition:opacity .22s,transform .22s}
+.qb.on{opacity:1;transform:none;pointer-events:auto}
+.qb-h{display:flex;align-items:center;gap:10px;padding:14px 14px 12px 18px;border-bottom:1px solid rgba(0,0,0,.07)}
+.qb-h b{display:block;font-weight:700;font-size:15.5px} .qb-h small{font-size:13px;color:#5d636a;display:flex;align-items:center;gap:6px}
+.qb-h small i{width:7px;height:7px;border-radius:50%;background:#2fd170}
+.qb-x{margin-left:auto;width:40px;height:40px;border:0;border-radius:50%;background:rgba(0,0,0,.06);font-size:20px;cursor:pointer;color:inherit}
+.qb-log{flex:1;overflow-y:auto;padding:16px 14px;display:flex;flex-direction:column;gap:8px;scroll-behavior:smooth}
+.qb-m{max-width:84%;padding:10px 14px;border-radius:18px;animation:qbIn .25s ease both}
+.qb-m.bot{background:#fff;border-bottom-left-radius:6px;box-shadow:0 2px 10px -6px rgba(0,0,0,.25)}
+.qb-m.me{align-self:flex-end;background:var(--qb-accent);color:#fff;border-bottom-right-radius:6px}
+.qb-typing{display:flex;gap:4px;padding:14px} .qb-typing i{width:7px;height:7px;border-radius:50%;background:#9aa0a6;animation:qbDot 1s infinite}
+.qb-typing i:nth-child(2){animation-delay:.15s}.qb-typing i:nth-child(3){animation-delay:.3s}
+.qb-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 10px}
+.qb-chips button{min-height:40px;padding:8px 14px;border-radius:999px;border:1px solid rgba(0,0,0,.14);background:rgba(255,255,255,.7);font:500 14.5px/1 var(--qb-font);color:inherit;cursor:pointer}
+.qb-chips button:hover{border-color:var(--qb-accent)}
+.qb-in{display:flex;gap:8px;padding:10px 12px 12px;border-top:1px solid rgba(0,0,0,.07)}
+.qb-in input{flex:1;min-width:0;height:46px;border-radius:999px;border:1px solid rgba(0,0,0,.14);background:#fff;padding:0 16px;font:400 16px var(--qb-font);color:inherit}
+.qb-in input:focus{outline:2px solid var(--qb-accent);outline-offset:1px}
+.qb-in button{height:46px;padding:0 18px;border:0;border-radius:999px;background:var(--qb-ink);color:#fff;font:600 15px var(--qb-font);cursor:pointer}
+.qb-card{background:#fff;border-radius:18px;padding:14px 16px;box-shadow:0 2px 12px -6px rgba(0,0,0,.3);animation:qbIn .25s both}
+.qb-card dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:8px 0 12px;font-size:14.5px} .qb-card dt{color:#6a7077}
+.qb-hot{display:inline-block;padding:4px 10px;border-radius:999px;font:700 12.5px/1.2 var(--qb-font);background:var(--qb-accent);color:#fff}
+.qb-hot.warm{background:#e9a320}
+.qb-send{display:block;width:100%;text-align:center;padding:13px;border-radius:999px;background:var(--qb-accent);color:#fff;font-weight:600;text-decoration:none}
+.qb-note{font-size:13px;color:#6a7077;margin-top:8px}
+@keyframes qbIn{from{opacity:0;transform:translateY(6px)}} @keyframes qbDot{50%{opacity:.25}}
+@media (max-width:760px){.qb-btn{bottom:calc(92px + env(safe-area-inset-bottom));right:12px;padding:11px 15px 11px 12px;font-size:14.5px}
+  .qb{right:12px;left:12px;width:auto;bottom:calc(12px + env(safe-area-inset-bottom));height:min(78svh,620px)}}
+@media (prefers-reduced-motion:reduce){.qb,.qb-m,.qb-card{transition:none;animation:none}}
+</style>
+<button class="qb-btn" type="button" aria-haspopup="dialog"><i></i><span>Get a quote in 30s</span></button>
+<div class="qb" role="dialog" aria-label="Quote assistant">
+  <div class="qb-h"><div><b class="qb-title"></b><small><i></i>Quote assistant · replies instantly</small></div><button class="qb-x" type="button" aria-label="Close">×</button></div>
+  <div class="qb-log" aria-live="polite"></div>
+  <div class="qb-chips"></div>
+  <form class="qb-in"><input autocomplete="off" aria-label="Your answer"><button>Send</button></form>
+</div>
+<script>
+(()=>{const C=window.QB;const $=s=>document.querySelector(s);const box=$('.qb'),log=$('.qb-log'),chips=$('.qb-chips'),form=$('.qb-in'),inp=form.querySelector('input');
+$('.qb-title').textContent=C.biz;const A={};let step=-1,started=false;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const say=(t,who='bot')=>{const d=document.createElement('div');d.className='qb-m '+who;d.innerHTML=t;log.appendChild(d);log.scrollTop=log.scrollHeight};
+const typing=(t,cb)=>{const d=document.createElement('div');d.className='qb-m bot qb-typing';d.innerHTML='<i></i><i></i><i></i>';log.appendChild(d);log.scrollTop=log.scrollHeight;
+  setTimeout(()=>{d.remove();say(t);cb&&cb()},matchMedia('(prefers-reduced-motion:reduce)').matches?0:650)};
+const setChips=a=>{chips.innerHTML='';(a||[]).forEach(x=>{const b=document.createElement('button');b.type='button';b.textContent=x;b.onclick=()=>answer(x);chips.appendChild(b)})};
+const FAQ=t=>{t=t.toLowerCase();if(/hour|open|close|when are/.test(t))return 'We\'re open '+C.hours+'.';if(/where|address|locat/.test(t))return 'We\'re at '+C.where+'.';
+  if(/price|cost|how much|\$/.test(t))return 'Price depends on the vehicle and its condition. Answer a few quick questions and '+C.biz+' will text you a quote.';return null};
+const S=[
+ {k:'name',q:'Hey! I can get you a quote from '+C.biz+'. What\'s your name?',ph:'Your name'},
+ {k:'car',q:n=>'Nice to meet you, '+esc(A.name)+'. What are you driving?',ph:'e.g. 2021 Honda Civic',chips:['Car','SUV','Truck']},
+ {k:'job',q:'What does it need?',chips:C.services.concat(['Not sure, need advice'])},
+ {k:'when',q:'How soon do you want it done?',chips:['This week','Next week','Just getting prices']},
+ {k:'day',q:'Which day works best?',chips:C.days},
+ {k:'phone',q:'Best number to text your quote to?',ph:'Your phone',type:'tel'},
+ {k:'email',q:'And an email, in case texts get missed? (or tap Skip)',ph:'Your email',type:'email',chips:['Skip']},
+];
+function ask(){step++;const s=S[step];if(!s)return done();typing(typeof s.q==='function'?s.q():s.q,()=>{setChips(s.chips);inp.placeholder=s.ph||'Type here';inp.type=s.type||'text';inp.focus({preventScroll:true})})}
+function answer(v){v=String(v).trim();if(!v)return;say(esc(v),'me');setChips();inp.value='';const f=FAQ(v);
+  if(f&&step<5&&!/^(car|suv|truck)$/i.test(v)&&S[step].k!=='job'){typing(f,()=>{step--;ask()});return}
+  const s=S[step];if(!s)return;
+  if(s.k==='phone'&&v.replace(/\D/g,'').length<10){typing('That number looks short. Can you send all 10 digits?',()=>{});return}
+  A[s.k]=v==='Skip'?'':v;ask()}
+function done(){const hot=A.when==='This week',warm=A.when==='Next week';
+  const tag=hot?'<span class="qb-hot">HOT LEAD</span>':warm?'<span class="qb-hot warm">WARM LEAD</span>':'<span class="qb-hot" style="background:#7c838a">PRICE SHOPPER</span>';
+  const body=`New quote request (website)\nName: ${A.name}\nVehicle: ${A.car}\nNeeds: ${A.job}\nTiming: ${A.when}, best day ${A.day}\nPhone: ${A.phone}${A.email?'\nEmail: '+A.email:''}`;
+  typing('Got it, '+esc(A.name)+'. Here\'s what '+C.biz+' gets:',()=>{const d=document.createElement('div');d.className='qb-card';
+   d.innerHTML=tag+'<dl><dt>Vehicle</dt><dd>'+esc(A.car)+'</dd><dt>Needs</dt><dd>'+esc(A.job)+'</dd><dt>Timing</dt><dd>'+esc(A.when)+', '+esc(A.day)+'</dd><dt>Phone</dt><dd>'+esc(A.phone)+'</dd>'+(A.email?'<dt>Email</dt><dd>'+esc(A.email)+'</dd>':'')+'</dl>'+
+   '<a class="qb-send" href="sms:'+C.phone+'?&body='+encodeURIComponent(body)+'">Send to '+esc(C.biz)+'</a><p class="qb-note">Preview demo. On the live site this lands on the owner\'s phone (Telegram) the second you finish, sorted hot, warm or price shopper.</p>';
+   log.appendChild(d);log.scrollTop=log.scrollHeight});}
+form.onsubmit=e=>{e.preventDefault();answer(inp.value)};
+const open=()=>{box.classList.add('on');$('.qb-btn').style.visibility='hidden';if(!started){started=true;ask()}};
+$('.qb-btn').onclick=open;$('.qb-x').onclick=()=>{box.classList.remove('on');$('.qb-btn').style.visibility=''};
+document.addEventListener('keydown',e=>{if(e.key==='Escape')$('.qb-x').click()});
+document.querySelectorAll('[data-qb-open]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();open()}));
 })();
 </script>
 </body>
