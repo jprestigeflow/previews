@@ -471,6 +471,7 @@ footer .pv{color:#D3D6DA}
 </script>
 <style>:root{--qb-accent:var(--red);--qb-ink:var(--ink);--qb-font:var(--body)}</style>
 <script>window.QB={biz:"SWAT Detailing Studio",phone:"+15197446171",hours:"Monday to Saturday, 9 a.m. to 6 p.m. (closed Sunday)",where:"1138 King St E, Kitchener",
+relay:"https://found-vault-volunteers-members.trycloudflare.com/lead",teaseDelay:1000,
 tease:"Want a price for your car? Answer 5 quick questions and SWAT texts you a quote.",
 services:["Foam wash","Interior detail","Stage 1 paint correction","Inside and out"],days:["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]};</script>
 <!-- JPF quote assistant DEMO (Nov 24 2026). Scripted, no AI backend in the preview. Upsell for the $400 tier:
@@ -523,9 +524,22 @@ services:["Foam wash","Interior detail","Stage 1 paint correction","Inside and o
 .qb-tease .tx{position:absolute;top:6px;right:6px;width:36px;height:36px;border:0;background:none;font-size:18px;color:#7c838a;cursor:pointer}
 @media (max-width:760px){.qb-btn{display:none}.qb-tease{right:12px;left:12px;width:auto;bottom:calc(88px + env(safe-area-inset-bottom));border-radius:20px}}
 @media (prefers-reduced-motion:reduce){.qb-btn::after{animation:none}}
+.qb-btn{background:#fff!important;color:var(--qb-ink)!important;padding:8px 20px 8px 8px!important;gap:12px!important;border:1px solid rgba(0,0,0,.08)!important;box-shadow:0 20px 50px -16px rgba(0,0,0,.45)!important}
+.qb-btn:hover{transform:translateY(-2px)}
+.qb-ic{position:relative;width:48px;height:48px;border-radius:50%;background:var(--qb-accent);display:grid;place-items:center;flex:none}
+.qb-ic svg{width:24px;height:24px;fill:#fff}
+.qb-ic i{position:absolute;top:1px;right:1px;width:12px;height:12px;border-radius:50%;background:#2fd170;border:2px solid #fff;box-shadow:none!important}
+.qb-lb{display:flex;flex-direction:column;align-items:flex-start;gap:3px;text-align:left}.qb-lb b{font:700 16px/1.1 var(--qb-font)}.qb-lb small{font:500 13px/1.1 var(--qb-font);color:#5d636a}
+.qb-btn::after{border-radius:999px}
+.qb-sent{display:flex;align-items:center;gap:8px;font-weight:700;color:#178a4a;margin:4px 0 6px}
+.qb-alt{display:block;text-align:center;margin-top:8px;font-size:14px;color:#5d636a}
+@media (max-width:760px){.qb-btn{display:flex!important;right:12px;bottom:calc(88px + env(safe-area-inset-bottom));padding:0!important;border:0!important;background:none!important;box-shadow:none!important}
+  .qb-btn .qb-lb{display:none}.qb-ic{width:58px;height:58px;box-shadow:0 14px 30px -10px rgba(0,0,0,.5)}.qb-ic svg{width:28px;height:28px}
+  .qb-btn::after{inset:0 auto auto 0;width:58px;height:58px;border-radius:50%}
+  .qb-tease.on~.qb-btn,.qb-tease.on+.qb-btn{visibility:hidden}}
 </style>
-<button class="qb-btn" type="button" aria-haspopup="dialog"><i></i><span>Get a quote in 30s</span></button>
 <div class="qb-tease" role="button" tabindex="0" aria-label="Open the quote assistant"><button class="tx" type="button" aria-label="Dismiss">×</button><b><i></i><span class="qb-tt"></span></b><span class="qb-tm"></span><br><span class="go">Start my quote</span></div>
+<button class="qb-btn" type="button" aria-haspopup="dialog" aria-label="Open chat: get a quote"><span class="qb-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.9 2 11.6c0 2.4 1.2 4.6 3.1 6.1L4.3 21l3.9-1.9c1.2.4 2.5.6 3.8.6 5.5 0 10-3.9 10-8.6S17.5 3 12 3z"/></svg><i></i></span><span class="qb-lb"><b>Chat with us</b><small>Get a quote in 30s</small></span></button>
 <div class="qb" role="dialog" aria-label="Quote assistant">
   <div class="qb-h"><div><b class="qb-title"></b><small><i></i>Quote assistant · replies instantly</small></div><button class="qb-x" type="button" aria-label="Close">×</button></div>
   <div class="qb-log" aria-live="polite"></div>
@@ -563,12 +577,17 @@ function done(){const hot=A.when==='This week',warm=A.when==='Next week';
   typing('Got it, '+esc(A.name)+'. Here\'s what '+C.biz+' gets:',()=>{const d=document.createElement('div');d.className='qb-card';
    d.innerHTML=tag+'<dl><dt>Vehicle</dt><dd>'+esc(A.car)+'</dd><dt>Needs</dt><dd>'+esc(A.job)+'</dd><dt>Timing</dt><dd>'+esc(A.when)+', '+esc(A.day)+'</dd><dt>Phone</dt><dd>'+esc(A.phone)+'</dd>'+(A.email?'<dt>Email</dt><dd>'+esc(A.email)+'</dd>':'')+'</dl>'+
    '<a class="qb-send" href="sms:'+C.phone+'?&body='+encodeURIComponent(body)+'">Send to '+esc(C.biz)+'</a><p class="qb-note">Preview demo. On the live site this lands on the owner\'s phone (Telegram) the second you finish, sorted hot, warm or price shopper.</p>';
-   log.appendChild(d);log.scrollTop=log.scrollHeight});}
+   log.appendChild(d);log.scrollTop=log.scrollHeight;
+   if(C.relay){const a=d.querySelector('.qb-send');a.textContent='Sending to '+C.biz+'...';a.removeAttribute('href');
+    fetch(C.relay,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({biz:C.biz,tag:hot?'hot':warm?'warm':'shopper',...A})})
+    .then(r=>{if(!r.ok)throw 0;d.querySelector('.qb-note')?.remove();a.outerHTML='<div class="qb-sent">&#10003; Sent to '+esc(C.biz)+'</div><p class="qb-note">They\'ll text you back at '+esc(A.phone)+'. Want to talk now? <a href="tel:'+C.phone+'">Call them</a>.</p>'})
+    .catch(()=>{a.href='sms:'+C.phone+'?&body='+encodeURIComponent(body);a.textContent='Send to '+C.biz+' by text'})}
+  });}
 form.onsubmit=e=>{e.preventDefault();answer(inp.value)};
 const open=()=>{document.querySelector('.qb-tease')?.classList.remove('on');box.classList.add('on');$('.qb-btn').style.visibility='hidden';if(!started){started=true;ask()}};
 const T=$('.qb-tease');$('.qb-tt').textContent=C.biz;$('.qb-tm').textContent=C.tease||'Want a price? Answer 5 quick questions and get a quote texted back.';
 let teased=false;const tease=()=>{if(teased||box.classList.contains('on'))return;teased=true;T.classList.add('on')};
-setTimeout(tease,C.teaseDelay||3500);addEventListener('scroll',()=>{if(scrollY>innerHeight*.6)tease()},{passive:true});
+setTimeout(tease,C.teaseDelay??1200);addEventListener('scroll',()=>{if(scrollY>innerHeight*.6)tease()},{passive:true});
 T.onclick=e=>{if(e.target.closest('.tx')){e.stopPropagation();T.classList.remove('on');return}T.classList.remove('on');open()};
 T.onkeydown=e=>{if(e.key==='Enter')T.click()};
 $('.qb-btn').onclick=open;$('.qb-x').onclick=()=>{box.classList.remove('on');$('.qb-btn').style.visibility=''};
