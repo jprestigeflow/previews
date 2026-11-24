@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Just Right Automotive Detailing | Car detailing in Brampton, ON</title>
+<meta name="description" content="Just Right Automotive Detailing. Interior and exterior car detailing in Brampton, Ontario. Call or text (416) 700-0428.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Karla:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ Direction: split-screen-duo-led. Page = stacked two-column pairs (big photo beside ONE claim), sides alternate. Stacks on phone.
+ Palette: night #0f0f13 (their dark BMW night shots), Corvette red #cd0101 (sampled from the C8 seat photo), bone #f1eee8 (the white C8 paint),
+          leather #9b6f60 (BMW rear-seat photo, used once as a rule), ink #17171c.
+ Fonts: Dela Gothic One (display) + Karla (body).
+ Signature: the centre seam. A red line down the middle of the desktop page fills as you scroll, so every pair reads as one split screen. Pair counter 01-07.
+ Order: hero pair, inside+out, grime/salt, hands-on video, big review, services, review trio, quote+hours.
+ Motion: one load entrance (hero photo settles, headline rises, glass card floats in), photos ease from 1.06 to 1 once, numbers count up once. Reduced-motion: none of it.
+*/
+:root{
+  --night:#0f0f13; --ink:#17171c; --bone:#f1eee8; --red:#cd0101; --redHi:#ff3a35; --leather:#9b6f60;
+  --muted:#5a5a63; --mutedD:#b9b7b2;
+  --disp:'Dela Gothic One',Impact,sans-serif; --body:'Karla',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--body);background:var(--night);color:var(--bone);font-size:17px;line-height:1.55;overflow-x:hidden;padding-bottom:96px}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--redHi);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--disp);font-weight:400;letter-spacing:-.01em;line-height:.98}
+.ck{font-weight:700;font-size:14px;letter-spacing:.04em;color:var(--redHi)}
+
+/* glass */
+.glass{background:rgba(15,15,19,.52);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 24px 60px -24px rgba(0,0,0,.6)}
+
+/* nav pill */
+.nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;max-width:980px;margin:0 auto;height:56px;border-radius:999px;display:flex;align-items:center;justify-content:space-between;padding:0 8px 0 20px}
+.nav b{font-family:var(--disp);font-weight:400;font-size:15px;letter-spacing:.01em;white-space:nowrap}
+.nav .links{display:none;gap:26px;font-weight:700;font-size:15px}
+.nav .links a{text-decoration:none;opacity:.85}
+.nav .links a:hover{opacity:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 22px;border-radius:999px;background:var(--red);color:#fff;font-weight:800;font-size:16px;text-decoration:none;border:0;cursor:pointer;font-family:var(--body);transition:transform .18s,background .18s}
+.btn:hover{background:#e50a0a}.btn:active{transform:scale(.97)}
+.btn.ghost{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3)}
+.btn.ghost:hover{background:rgba(255,255,255,.2)}
+.nav .btn{min-height:44px;padding:0 18px;font-size:15px}
+
+/* the duo */
+.duo{display:grid;grid-template-columns:1fr;position:relative}
+.ph{position:relative;overflow:hidden;aspect-ratio:4/5;background:#222}
+.ph img,.ph video{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.ph.in img,.ph.in video{transform:scale(1)}
+.claim{padding:56px 22px 64px;display:flex;flex-direction:column;justify-content:center;position:relative}
+.claim.bone{background:var(--bone);color:var(--ink)}
+.claim.bone .ck{color:var(--red)}
+.claim.dark{background:var(--night)}
+.claim.ink{background:var(--ink)}
+.n{font-family:var(--disp);font-size:14px;color:var(--redHi);margin-bottom:22px;display:flex;align-items:center;gap:12px}
+.bone .n{color:var(--red)}
+.n:after{content:"";height:2px;width:44px;background:currentColor;opacity:.9}
+.claim h2{font-size:clamp(38px,11vw,60px);margin-bottom:22px}
+.claim p{max-width:46ch;color:var(--mutedD);font-size:18px}
+.bone p{color:#3c3c44}
+.claim p+p{margin-top:14px}
+.src{font-size:14px;margin-top:20px;opacity:.7}
+
+/* hero */
+.hero .ph{aspect-ratio:auto;min-height:92svh}
+.hero .claim{padding-top:96px;padding-bottom:44px}
+.hero h1{font-size:clamp(52px,16.5vw,92px);margin-bottom:24px}
+.hero h1 span{color:var(--redHi);display:block}
+.hero .lead{font-size:19px;color:var(--bone);max-width:30ch}
+.hero .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero .ph{min-height:78svh}
+.hero .ph:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,15,19,.0) 55%,rgba(15,15,19,.55))}
+.gcard{position:absolute;z-index:3;left:14px;right:14px;bottom:16px;border-radius:24px;padding:18px 20px;opacity:0;transform:translateY(18px);animation:rise .9s .7s cubic-bezier(.2,.7,.2,1) forwards}
+.gcard .big{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.gcard .num{font-family:var(--disp);font-size:44px;line-height:1}
+.gcard .stars{color:#ffd166;letter-spacing:2px;font-size:18px}
+.gcard small{font-size:15px;font-weight:700;color:var(--bone)}
+.gcard q{display:block;margin-top:10px;font-size:15.5px;line-height:1.45;quotes:"\201C" "\201D";color:#f3f1ec}
+.gcard cite{display:block;margin-top:6px;font-style:normal;font-size:13.5px;font-weight:700;color:var(--mutedD)}
+@keyframes rise{to{opacity:1;transform:none}}
+.hero h1,.hero .lead,.hero .acts{animation:up .9s .15s cubic-bezier(.2,.7,.2,1) both}
+.hero .lead{animation-delay:.3s}.hero .acts{animation-delay:.42s}
+@keyframes up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+
+/* services list */
+.svc{list-style:none;margin-top:6px;border-top:1px solid rgba(255,255,255,.18)}
+.svc li{display:flex;gap:16px;align-items:baseline;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.18);font-size:18px;font-weight:700}
+.svc li i{font-style:normal;font-family:var(--disp);font-size:13px;color:var(--redHi);min-width:26px}
+.svc li span{display:block;font-weight:400;font-size:15.5px;color:var(--mutedD);margin-top:2px}
+
+/* big quote */
+.bq{font-family:var(--body);font-weight:800;font-size:clamp(25px,6.6vw,38px);line-height:1.22;letter-spacing:-.01em;margin-bottom:22px;quotes:"\201C" "\201D"}
+.bq:before{content:open-quote;color:var(--red)}.bq:after{content:close-quote;color:var(--red)}
+.who{font-weight:700;font-size:15px}
+.who s{text-decoration:none;color:#c98900;letter-spacing:2px}
+
+/* review trio */
+.trio{display:grid;gap:0}
+.trio blockquote{padding:20px 0;border-top:1px solid rgba(255,255,255,.18);font-size:17px;line-height:1.5;quotes:"\201C" "\201D"}
+.trio blockquote:last-child{border-bottom:1px solid rgba(255,255,255,.18)}
+.trio cite{display:block;margin-top:8px;font-style:normal;font-weight:700;font-size:14.5px;color:var(--mutedD)}
+
+/* quote */
+.formside{position:relative;min-height:760px;display:flex;align-items:center;justify-content:center;padding:36px 14px;overflow:hidden}
+.formside .bg{position:absolute;inset:0}
+.formside .bg img{width:100%;height:100%;object-fit:cover;filter:saturate(1.1)}
+.formside .bg:after{content:"";position:absolute;inset:0;background:rgba(15,15,19,.35)}
+.qp{position:relative;z-index:2;width:100%;max-width:520px;border-radius:28px;padding:28px 22px;background:rgba(15,15,19,.62)}
+.qp h3{font-size:clamp(27px,8vw,36px);margin-bottom:16px}
+.fill{font-size:19px;line-height:2.5;font-weight:500}
+.fill input,.fill select{font:inherit;font-weight:700;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);border-radius:14px;padding:6px 12px;min-height:46px;max-width:100%;width:100%;margin:2px 0;-webkit-appearance:none;appearance:none;transition:border-color .18s,box-shadow .18s}
+.fill select{background-image:linear-gradient(45deg,transparent 50%,#fff 50%),linear-gradient(135deg,#fff 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;background-size:6px 6px;background-repeat:no-repeat}
+.fill select option{color:#111}
+.fill input::placeholder{color:rgba(255,255,255,.55);font-weight:400}
+.fill input:focus,.fill select:focus{outline:none;border-color:var(--redHi);box-shadow:0 0 0 3px rgba(255,58,53,.35)}
+.qp .btn{width:100%;margin-top:14px;min-height:54px;font-size:17px}
+.qp small{display:block;margin-top:12px;font-size:14px;color:var(--mutedD);text-align:center}
+
+.facts{margin-top:26px;display:grid;gap:0;border-top:1px solid rgba(23,23,28,.2)}
+.facts div{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid rgba(23,23,28,.2);font-weight:700}
+.facts span{font-weight:400;color:#3c3c44;text-align:right}
+.bigtel{display:block;font-family:var(--disp);font-size:clamp(30px,9vw,46px);text-decoration:none;color:var(--red);margin:6px 0 4px;white-space:nowrap}
+
+footer{padding:36px 22px 40px;background:#0a0a0d;color:var(--mutedD);font-size:14.5px;text-align:left}
+footer b{color:var(--bone)}
+
+/* dock */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));height:64px;border-radius:999px;display:flex;gap:8px;align-items:center;padding:8px;max-width:520px;margin:0 auto}
+.dock a{flex:1;min-height:48px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;text-decoration:none;transition:transform .18s}
+.dock a:active{transform:scale(.97)}
+.dock .c{background:var(--red);color:#fff}
+.dock .t{background:rgba(255,255,255,.14);color:#fff}
+
+.seam{display:none}
+
+@media (min-width:900px){
+  body{padding-bottom:0;font-size:18px}
+  .nav{padding-left:26px}.nav .links{display:flex}
+  .dock{display:none}
+  .duo{grid-template-columns:1fr 1fr;min-height:min(100svh,900px)}
+  .ph{aspect-ratio:auto;min-height:680px}
+  .claim{padding:96px clamp(40px,6vw,110px)}
+  .claim h2{font-size:clamp(44px,4.6vw,76px)}
+  .hero{min-height:100svh}
+  .hero .ph{order:2;min-height:100svh}
+  .hero .claim{padding-top:130px}
+  .hero h1{font-size:clamp(70px,8.2vw,138px)}
+  .hero .lead{font-size:22px}
+  .gcard{left:auto;right:30px;bottom:48px;width:min(400px,calc(100% - 60px))}
+  .formside{min-height:820px}
+  .seam{display:block;position:fixed;z-index:5;left:50%;top:0;bottom:0;width:2px;background:rgba(255,255,255,.16);pointer-events:none;mix-blend-mode:difference}
+  .seam i{position:absolute;left:0;top:0;width:100%;height:100%;background:var(--redHi);transform-origin:top;transform:scaleY(0)}
+  .svc li{font-size:21px}
+  .bq{font-size:clamp(30px,2.9vw,46px)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .ph img,.ph video{transform:none;transition:none}
+  .gcard,.hero h1,.hero .lead,.hero .acts{animation:none;opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="seam" aria-hidden="true"><i id="seamFill"></i></div>
+
+<nav class="nav glass" aria-label="Main">
+  <b>JUST RIGHT</b>
+  <div class="links"><a href="#inside">Detailing</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#quote">Quote</a></div>
+  <a class="btn" href="tel:+14167000428">Call</a>
+</nav>
+
+<main>
+<!-- 01 HERO -->
+<section class="duo hero" id="top">
+  <div class="claim dark">
+    <div class="n">01 / 07</div>
+    <h1>JUST RIGHT<span>DONE.</span></h1>
+    <p class="lead">Car detailing in Brampton, Ontario. Your vehicle done justice, inside and out.</p>
+    <div class="acts">
+      <a class="btn" href="tel:+14167000428">Call (416) 700-0428</a>
+      <a class="btn ghost" href="#quote">Get a quote</a>
+    </div>
+  </div>
+  <div class="ph in">
+    <img src="img/p9.jpg" alt="White Corvette C8 rear with the Just Right Automotive Detailing plate" style="object-position:50% 58%" fetchpriority="high">
+    <div class="gcard glass">
+      <div class="big"><span class="num" data-count="5" data-dec="1">5.0</span><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><small>30 Google reviews</small></div>
+      <q>I was especially impressed that he even removed the minor salt stains from the floor.</q>
+      <cite>Hanna B., Google</cite>
+    </div>
+  </div>
+</section>
+
+<!-- 02 INSIDE + OUT -->
+<section class="duo flip" id="inside">
+  <div class="ph"><img src="img/p11.jpg" alt="White Corvette C8 Stingray front after detailing" style="object-position:50% 40%" loading="lazy"></div>
+  <div class="claim bone">
+    <div class="n">02 / 07</div>
+    <h2>Inside and out. Every time.</h2>
+    <p>The full interior and exterior detailing package. On a C8 Stingray that meant two coats of shampoo and degreaser to lift the built-up dirt and bugs off the white paint.</p>
+    <p class="src">From their Instagram post, Nov 2026.</p>
+  </div>
+</section>
+
+<!-- 03 GRIME + SALT -->
+<section class="duo">
+  <div class="claim ink">
+    <div class="n">03 / 07</div>
+    <h2>Salt stains. Grime. Brake dust. Gone.</h2>
+    <p>A drive-by car wash leaves packed-on dirt behind. Their full treatment goes after salt stains, built-up grime and brake dust, then finishes with a protective coating on the body.</p>
+    <p class="src">From their Instagram posts, Nov 2026.</p>
+  </div>
+  <div class="ph"><img src="img/p7.jpg" alt="Black BMW rear wheel and fender after detailing" style="object-position:50% 55%" loading="lazy"></div>
+</section>
+
+<!-- 04 STEAM, SHAMPOO, VIDEO -->
+<section class="duo flip">
+  <div class="ph">
+    <video id="vid" muted loop playsinline preload="metadata" poster="video/band-poster.jpg" aria-label="Detailing work on a car interior" style="object-position:50% 50%">
+      <source src="video/band.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="claim dark">
+    <div class="n">04 / 07</div>
+    <h2>Steam. Shampoo. Drill brush.</h2>
+    <p>The inside of a BMW M240i came back to a factory state through deep steam cleaning and drill brushing. Carpets get the shampoo treatment.</p>
+    <p class="src">From their Instagram posts, Nov 2026.</p>
+  </div>
+</section>
+
+<!-- 05 BIG REVIEW -->
+<section class="duo" id="reviews">
+  <div class="claim bone">
+    <div class="n">05 / 07</div>
+    <p class="bq" style="color:var(--ink);max-width:24ch">Detailed my car and made it look like it just rolled off the showroom floor, would recommend him 1000 times!! Attention to detail and cleaned the car inside out perfectly. Super honest and great guy too, exactly who I&rsquo;d want to trust my car with.</p>
+    <div class="who">Omar G., Google <s aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</s></div>
+  </div>
+  <div class="ph"><img src="img/p3.jpg" alt="BMW M240i interior with red-brown leather and centre console" style="object-position:50% 50%" loading="lazy"></div>
+</section>
+
+<!-- 06 SERVICES -->
+<section class="duo flip" id="services">
+  <div class="ph"><img src="img/p12.jpg" alt="Red leather Corvette seat after interior detailing" style="object-position:50% 50%" loading="lazy"></div>
+  <div class="claim dark">
+    <div class="n">06 / 07</div>
+    <h2>What they do.</h2>
+    <ul class="svc">
+      <li><i>01</i><div>Full interior and exterior detail<span>The complete package, inside and out.</span></div></li>
+      <li><i>02</i><div>Deep steam cleaning<span>For the inside of the car.</span></div></li>
+      <li><i>03</i><div>Carpet shampoo<span>Salt stains and grime out of the floors.</span></div></li>
+      <li><i>04</i><div>Wash, shampoo and degrease<span>Dirt and bugs off the paint.</span></div></li>
+      <li><i>05</i><div>Protective coating on the body<span>Applied after the detail.</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 07 REVIEW TRIO -->
+<section class="duo">
+  <div class="claim ink">
+    <div class="n">07 / 07</div>
+    <h2>30 reviews. A 5.0 on Google.</h2>
+    <div class="trio">
+      <blockquote>&ldquo;I&rsquo;m really happy with how my car turned out. The detailing was done very well, and my car looks and feels almost brand new again.&rdquo;<cite>Ansh S., Google</cite></blockquote>
+      <blockquote>&ldquo;He was even very accommodating on drop of time. Highly recommend!&rdquo;<cite>Hanna B., Google</cite></blockquote>
+      <blockquote>&ldquo;Amazing experience! I got my car detailed for the first time by him, and I couldn&rsquo;t be happier with the results.&rdquo;<cite>Abraam T., Google</cite></blockquote>
+    </div>
+  </div>
+  <div class="ph"><img src="img/p1.jpg" alt="BMW M240i interior with steering wheel cover" style="object-position:50% 55%" loading="lazy"></div>
+</section>
+
+<!-- QUOTE + HOURS -->
+<section class="duo flip" id="quote">
+  <div class="formside">
+    <div class="bg"><img src="img/p10.jpg" alt="" loading="lazy"></div>
+    <form class="qp glass" id="qf" autocomplete="off">
+      <h3>Tell Justice what you drive.</h3>
+      <div class="fill">
+        Hi, I&rsquo;m
+        <input id="fn" name="name" placeholder="your name" required aria-label="Your name">
+        and I drive a
+        <input id="fc" name="car" placeholder="car, year" required aria-label="Your car">
+        . I need
+        <select id="fs" aria-label="What you need">
+          <option>a full detail, inside and out</option>
+          <option>an interior detail</option>
+          <option>an exterior detail</option>
+          <option>carpet shampoo</option>
+          <option>salt stains removed</option>
+          <option>a protective coating</option>
+        </select>
+        .
+      </div>
+      <button class="btn" type="submit">Text my quote request</button>
+      <small>Opens a text to (416) 700-0428. Nothing is sent until you press send.</small>
+    </form>
+  </div>
+  <div class="claim bone">
+    <div class="n">Call or text</div>
+    <a class="bigtel" href="tel:+14167000428">(416) 700-0428</a>
+    <h2 style="font-size:clamp(34px,9vw,52px);margin-top:10px">Brampton, Ontario.</h2>
+    <div class="facts">
+      <div>Hours<span>Every day, 8 a.m. to 9 p.m.</span></div>
+      <div>Area<span>Brampton, ON</span></div>
+      <div>Rating<span>5.0 from 30 Google reviews</span></div>
+      <div>Instagram<span>@justrightautomotivedetailing</span></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p><b>Just Right Automotive Detailing</b> &middot; Car detailing service &middot; Brampton, ON &middot; <a href="tel:+14167000428">(416) 700-0428</a></p>
+  <p style="margin-top:10px">Preview built by JPF. Not live yet.</p>
+</footer>
+
+<div class="dock glass" role="group" aria-label="Call or text">
+  <a class="c" href="tel:+14167000428">Call now</a>
+  <a class="t" href="sms:+14167000428">Text us</a>
+</div>
+
+<script>
+(function(){
+  var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  // photo ease-in
+  var ph=document.querySelectorAll('.ph');
+  if('IntersectionObserver' in window && !rm){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+    ph.forEach(function(p){io.observe(p)});
+  } else ph.forEach(function(p){p.classList.add('in')});
+  // video
+  var v=document.getElementById('vid');
+  if(v && !rm && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(es){es.forEach(function(e){e.isIntersecting?v.play().catch(function(){}):v.pause()})},{threshold:.35}).observe(v);
+  }
+  // seam fill
+  var f=document.getElementById('seamFill');
+  function seam(){var h=document.documentElement.scrollHeight-innerHeight;f.style.transform='scaleY('+(h>0?Math.min(1,scrollY/h):0)+')'}
+  if(f && !rm){addEventListener('scroll',seam,{passive:true});seam()}
+  // count up
+  var c=document.querySelector('[data-count]');
+  if(c && !rm){
+    var to=5,t0=null;c.textContent='0.0';
+    (function step(t){if(!t0)t0=t;var p=Math.min(1,(t-t0)/1200);c.textContent=(to*(1-Math.pow(1-p,3))).toFixed(1);if(p<1)requestAnimationFrame(step)})(performance.now());
+  }
+  // quote -> sms
+  document.getElementById('qf').addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=document.getElementById('fn').value.trim(),car=document.getElementById('fc').value.trim(),s=document.getElementById('fs').value;
+    var body="Hi, I'm "+n+" and I drive a "+car+". I need "+s+".";
+    location.href='sms:+14167000428?&body='+encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
