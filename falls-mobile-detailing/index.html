@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Falls Mobile Detailing | Mobile car detailing, Niagara Falls ON</title>
+<meta name="description" content="Falls Mobile Detailing. Mobile car detailing in Niagara Falls, ON. Call (437) 477-0059.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Martian+Mono:wght@400;500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/*
+DESIGN PLAN
+Direction: ledger-led. The page reads like a clean job ledger / receipt: numbered rows, dotted leaders, a running tally.
+Palette: paper #f3ede2 (warm paver and tan leather tones from the BMW X5 and driveway photos), ink #1b1c20 (black BMW / tarmac),
+  accent #9c1b3a (the Lexus red seats in their hero video), sky #bcd6ee (sky in their foam-wash photos, used only for glass orbs), rule #d8cfbf.
+Fonts: Fraunces (display) + Public Sans (body) + Martian Mono (ledger numbers).
+Signature: the service ledger. Tap a numbered row to open it and see their real job photo for that line. Ends with a tally line.
+Order: nav pill, hero (headline + video + glass rating card), tally strip, ledger, video band, reviews as entries, driveway photos, area + hours, quote sentence, footer.
+Motion: one load entrance, tally counts up once, rows ease open. Reduced motion respected.
+*/
+:root{--paper:#f3ede2;--paper2:#ebe3d4;--ink:#1b1c20;--mute:#5b5a57;--red:#9c1b3a;--sky:#bcd6ee;--rule:#d8cfbf;
+--disp:'Fraunces',Georgia,serif;--body:'Public Sans',system-ui,sans-serif;--mono:'Martian Mono',ui-monospace,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font:400 17px/1.55 var(--body);overflow-x:hidden;padding-bottom:96px}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+.mono{font-family:var(--mono);font-size:13px;letter-spacing:.02em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 26px;border-radius:999px;background:var(--red);color:#fff;font:600 16px var(--body);text-decoration:none;border:0;cursor:pointer;transition:transform .18s,box-shadow .18s,background .18s;box-shadow:0 14px 30px -14px rgba(156,27,58,.7)}
+.btn:hover{background:#85152f}.btn:active{transform:scale(.98)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+
+/* glass nav pill */
+.nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;max-width:1100px;margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 6px 6px 20px;border-radius:999px;background:rgba(243,237,226,.62);backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 18px 50px -22px rgba(27,28,32,.4)}
+.nav b{font:700 17px var(--disp);letter-spacing:-.01em;white-space:nowrap}
+.show-d{display:none}.nav .links{display:none;gap:26px;font:500 14px var(--body)}
+.nav .links a{text-decoration:none;padding:10px 0}
+.nav .btn{min-height:44px;padding:0 20px;font-size:15px}
+@media(min-width:820px){.nav .links{display:flex}.show-d{display:inline}.hide-d{display:none}}
+
+/* hero */
+.hero{padding:92px 0 40px;position:relative}
+.hero .wrap{display:grid;gap:28px}
+.slip{font:500 12.5px/1 var(--mono);color:var(--mute);display:flex;justify-content:space-between;gap:10px;border-bottom:1.5px dashed var(--ink);padding-bottom:12px;margin-bottom:6px}
+h1{font:900 clamp(54px,15.5vw,118px)/.92 var(--disp);letter-spacing:-.035em;font-variation-settings:"opsz" 144}
+h1 em{font-style:normal;color:var(--red);display:block}
+.hero p.lede{font-size:18px;max-width:34ch;color:#34343a}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+.frame{position:relative;border-radius:26px 26px 0 0;overflow:hidden;aspect-ratio:3/4;background:#222;box-shadow:0 40px 80px -40px rgba(27,28,32,.55)}
+.frame video,.frame img{width:100%;height:100%;object-fit:cover}
+/* receipt zigzag bottom */
+.frame::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:14px;background:conic-gradient(from -45deg at bottom,transparent 90deg,var(--paper) 0) 0 0/22px 14px repeat-x}
+.glass-card{position:absolute;left:14px;right:14px;bottom:30px;z-index:3;padding:16px 18px;border-radius:24px;background:rgba(243,237,226,.58);backdrop-filter:blur(22px) saturate(170%);-webkit-backdrop-filter:blur(22px) saturate(170%);border:1px solid rgba(255,255,255,.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 20px 60px -20px rgba(27,28,32,.45)}
+.glass-card .big{font:900 40px/1 var(--disp);letter-spacing:-.02em}
+.glass-card .big small{font:500 13px var(--mono);letter-spacing:0;margin-left:6px;color:var(--mute)}
+.glass-card q{display:block;font:500 15px/1.4 var(--body);margin-top:8px;quotes:none;color:#1b1c20}
+.glass-card cite{display:block;font:400 12.5px var(--mono);font-style:normal;margin-top:6px;color:#3c3b3a}
+@media(min-width:900px){
+ .hero{padding:120px 0 60px}
+ .hero .wrap{grid-template-columns:1.25fr .75fr;align-items:center;gap:56px}
+ .hero .frame{aspect-ratio:3/4.3}
+ .glass-card{left:16px;right:16px;bottom:34px}
+}
+
+/* tally strip */
+.tally{background:var(--ink);color:var(--paper)}
+.tally .wrap{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.tally div{padding:26px 0;border-right:1px dashed rgba(243,237,226,.35)}
+.tally div+div{padding-left:22px;border-right:0}
+.tally .k{font:400 12px var(--mono);opacity:.7;display:block;margin-bottom:6px}
+.tally .v{font:900 clamp(40px,9vw,76px)/1 var(--disp);letter-spacing:-.03em}
+.tally .v i{font:500 .28em var(--mono);font-style:normal;opacity:.7;margin-left:6px;letter-spacing:0}
+
+/* sections */
+section{padding:72px 0}
+@media(min-width:900px){section{padding:120px 0}}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;border-bottom:1.5px solid var(--ink);padding-bottom:14px;margin-bottom:8px}
+.head h2{font:700 clamp(34px,7.5vw,64px)/1 var(--disp);letter-spacing:-.025em}
+.head .mono{color:var(--mute);text-align:right}
+
+/* ledger */
+.row{border-bottom:1px solid var(--rule)}
+.row button{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:grid;grid-template-columns:40px 1fr auto;align-items:center;gap:6px 14px;padding:24px 0;min-height:76px}
+.row button:focus-visible{outline:3px solid var(--red);outline-offset:2px;border-radius:6px}
+.row .n{font:500 14px var(--mono);color:var(--red)}
+.row .t{font:700 clamp(24px,5.4vw,38px)/1.1 var(--disp);letter-spacing:-.02em}
+.row .lead{display:none;flex:1;border-bottom:2px dotted #b9ad98;transform:translateY(-6px);min-width:30px}
+.row .tag{font:400 12.5px var(--mono);color:var(--mute);text-align:right}
+.row .tag{display:none}@media(min-width:600px){.row .tag{display:block}}.row .plus{flex:none;width:30px;height:30px;border-radius:50%;box-shadow:inset 0 0 0 1.5px var(--ink);position:relative;transition:transform .25s,background .2s}
+.row .plus::before,.row .plus::after{content:"";position:absolute;left:8px;right:8px;top:14px;height:2px;background:var(--ink);transition:transform .25s}
+.row .plus::after{transform:rotate(90deg)}
+.row[open] .plus{transform:rotate(180deg);background:var(--red);box-shadow:none}
+.row[open] .plus::before,.row[open] .plus::after{background:#fff}
+.row[open] .plus::after{transform:rotate(0)}
+.row .body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s ease}
+.row[open] .body{grid-template-rows:1fr}
+.row .body>div{overflow:hidden}
+.row .in{display:grid;gap:18px;padding:0 0 28px 58px}
+.row .in p{max-width:46ch;color:#34343a}
+.row .in .pics{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.row .in img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px}
+.row .in .src{font:400 12px var(--mono);color:var(--mute)}
+.row .in .src a{text-decoration:underline}
+.row .right{display:flex;align-items:center;gap:12px}
+@media(min-width:900px){
+ .row button{grid-template-columns:70px 1fr auto auto}
+ .row .lead{display:block}
+ .row .in{grid-template-columns:1fr 1fr;padding-left:84px;align-items:start}
+}
+.total{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;padding:26px 0 0;border-top:3px double var(--ink);margin-top:10px}
+.total span{font:500 13px var(--mono)}
+.total b{font:900 clamp(26px,6vw,44px)/1.05 var(--disp);letter-spacing:-.02em}
+
+/* video band */
+.band{position:relative;height:min(78vh,720px);background:#222;overflow:hidden}
+.band video{width:100%;height:100%;object-fit:cover;object-position:15% 100%}
+.band .cap{position:absolute;left:0;right:0;bottom:0;padding:50px 0 26px;background:linear-gradient(transparent,rgba(27,28,32,.75));color:#fff}
+.band .cap p{font:700 clamp(26px,6vw,52px)/1.05 var(--disp);letter-spacing:-.02em;max-width:18ch}
+.band .cap .mono{opacity:.8;margin-top:8px;display:block}
+
+/* reviews */
+.rev .lead-q{padding:34px 0 30px;border-bottom:1px solid var(--rule)}
+.rev .lead-q q{display:block;quotes:none;font:500 clamp(26px,5.6vw,46px)/1.18 var(--disp);letter-spacing:-.015em;max-width:26ch}
+.rev .by{font:400 13px var(--mono);color:var(--mute);margin-top:16px;display:flex;gap:14px;flex-wrap:wrap}
+.rev .by b{color:var(--ink);font-weight:500}
+.ent{display:grid;grid-template-columns:44px 1fr;gap:10px 14px;padding:22px 0;border-bottom:1px solid var(--rule)}
+.ent .n{font:500 14px var(--mono);color:var(--red);padding-top:4px}
+.ent q{quotes:none;font-size:17.5px;line-height:1.5;max-width:58ch}
+.ent .by{grid-column:2;margin-top:0}
+@media(min-width:900px){.rev .cols{display:grid;grid-template-columns:1fr 1fr;column-gap:56px}}
+.rev .sum{font:500 13px var(--mono);color:var(--mute);padding-top:20px;display:block}
+
+/* photos */
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:26px}
+.gal figure{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/5;background:#ddd}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.gal figure:hover img{transform:scale(1.04)}
+.gal figure:nth-child(3n+1){border-radius:26px 16px 16px 16px}
+.gal figcaption{position:absolute;left:8px;bottom:8px;font:500 11.5px var(--mono);background:rgba(243,237,226,.9);padding:4px 8px;border-radius:999px;color:var(--ink)}
+@media(min-width:900px){.gal{grid-template-columns:repeat(6,1fr)}}
+
+/* area */
+.area{background:var(--paper2)}
+.area .cols{display:grid;gap:34px;margin-top:20px}
+.kv{border-top:1.5px dashed var(--ink)}
+.kv div{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.kv dt{font:500 12.5px var(--mono);color:var(--mute)}
+.kv dd{font:500 18px/1.4 var(--body)}
+.kv dd a{text-decoration:none;font:700 26px var(--disp);color:var(--red)}
+@media(min-width:900px){.area .cols{grid-template-columns:1fr 1fr;gap:70px}}
+
+/* quote */
+.quote{position:relative;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.7;pointer-events:none;animation:drift 26s ease-in-out infinite alternate}
+.orb.a{width:420px;height:420px;background:var(--sky);left:-120px;top:-60px}
+.orb.b{width:380px;height:380px;background:rgba(156,27,58,.28);right:-100px;bottom:-80px;animation-duration:32s}
+@keyframes drift{to{transform:translate(60px,40px) scale(1.12)}}
+.panel{position:relative;z-index:2;padding:30px 22px;border-radius:28px;background:rgba(243,237,226,.6);backdrop-filter:blur(26px) saturate(165%);-webkit-backdrop-filter:blur(26px) saturate(165%);border:1px solid rgba(255,255,255,.6);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 30px 70px -30px rgba(27,28,32,.4)}
+.panel h2{font:700 clamp(32px,7vw,56px)/1 var(--disp);letter-spacing:-.025em;margin-bottom:18px}
+.sent{font:500 clamp(20px,4.6vw,28px)/2 var(--disp)}
+.sent input,.sent select{font:600 inherit;font-family:var(--body);font-size:17px;color:var(--ink);padding:8px 14px;min-height:44px;border-radius:14px;border:1px solid rgba(27,28,32,.2);background:rgba(255,255,255,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);width:min(100%,260px);vertical-align:middle;margin:2px 0}
+.sent select{width:min(100%,300px)}
+.sent input:focus,.sent select:focus{outline:3px solid var(--red);outline-offset:1px;background:#fff}
+.panel .btn{margin-top:20px;width:100%}
+.panel small{display:block;margin-top:12px;color:var(--mute);font-size:14px}
+@media(min-width:900px){.panel{padding:56px;max-width:900px;margin-inline:auto}.panel .btn{width:auto}}
+
+footer{padding:36px 0 120px;border-top:1.5px dashed var(--ink);text-align:left;font:400 13px var(--mono);color:var(--mute)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* dock */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));display:flex;gap:8px;padding:8px;border-radius:999px;background:rgba(243,237,226,.62);backdrop-filter:blur(22px) saturate(170%);-webkit-backdrop-filter:blur(22px) saturate(170%);border:1px solid rgba(255,255,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 20px 50px -18px rgba(27,28,32,.5)}
+.dock a{flex:1;min-height:52px;border-radius:999px;display:flex;align-items:center;justify-content:center;font:600 16px var(--body);text-decoration:none;transition:transform .18s}
+.dock a:active{transform:scale(.97)}
+.dock .call{background:var(--red);color:#fff;flex:1.4}
+.dock .txt{color:var(--ink);box-shadow:inset 0 0 0 1.5px rgba(27,28,32,.35)}
+@media(min-width:900px){.dock{display:none}body{padding-bottom:0}footer{padding-bottom:40px}}
+
+/* load */
+.in-load{opacity:0;transform:translateY(14px);animation:up .8s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes up{to{opacity:1;transform:none}}
+.d1{animation-delay:.05s}.d2{animation-delay:.18s}.d3{animation-delay:.3s}.d4{animation-delay:.55s}
+.rv{opacity:0;transform:translateY(16px);transition:opacity .7s,transform .7s}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.in-load,.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <b>Falls Mobile Detailing</b>
+  <div class="links"><a href="#ledger">Services</a><a href="#reviews">Reviews</a><a href="#area">Hours</a><a href="#quote">Quote</a></div>
+  <a class="btn" href="tel:+14374770059"><span class="hide-d">Call now</span><span class="show-d">Call (437) 477-0059</span></a>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="slip in-load d1"><span>JOB LEDGER</span><span>NIAGARA FALLS, ON</span></div>
+      <h1 class="in-load d2">We come to <em>your driveway.</em></h1>
+      <p class="lede in-load d3" style="margin-top:22px">Falls Mobile Detailing. Car detailing in Niagara Falls, Ontario. Interior, exterior, full detail, done where your car is parked.</p>
+      <div class="cta in-load d3" style="margin-top:22px">
+        <a class="btn" href="tel:+14374770059">Call (437) 477-0059</a>
+        <a class="btn ghost" href="#quote">Get a quote</a>
+      </div>
+    </div>
+    <div class="frame in-load d4">
+      <video autoplay muted loop playsinline preload="auto" poster="video/hero-poster.jpg" aria-label="Red leather Lexus interior after a detail"><source src="video/hero.mp4" type="video/mp4"></video>
+      <div class="glass-card">
+        <div class="big"><span data-count="4.9" data-dec="1">4.9</span><small>/ 5 &middot; 38 Google reviews</small></div>
+        <q>Absolutely fantastic work! We have 2 dogs so our car is very messy! It&rsquo;s never been so clean!</q>
+        <cite>MoMar C., Google</cite>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="tally" aria-label="Running tally">
+  <div class="wrap">
+    <div><span class="k">GOOGLE RATING</span><span class="v"><span data-count="4.9" data-dec="1">4.9</span><i>/ 5</i></span></div>
+    <div><span class="k">REVIEWS TO DATE</span><span class="v"><span data-count="38">38</span><i>on Google</i></span></div>
+  </div>
+</div>
+
+<section id="ledger">
+  <div class="wrap">
+    <div class="head rv"><h2>The job ledger</h2><span class="mono">TAP A LINE</span></div>
+
+    <div class="row rv" open>
+      <button type="button" aria-expanded="true">
+        <span class="n">01</span><span class="t">Driveway visit</span>
+        <span class="right"><span class="lead"></span><span class="tag">they come to you</span><span class="plus" aria-hidden="true"></span></span>
+      </button>
+      <div class="body"><div><div class="in">
+        <div><p>No drop-off. The detail happens at your door, in the driveway. Their own posts say &ldquo;Mobile detailing done right at your door.&rdquo; A reviewer says he &ldquo;comes right to your driveway.&rdquo;</p>
+        <p class="src" style="margin-top:12px">Source: <a href="https://www.instagram.com/p/Df-ZGxBKMle/">Instagram post</a></p></div>
+        <div class="pics"><img src="img/c1.jpg" alt="BMW X5 covered in foam in a driveway" loading="lazy"><img src="img/p9.jpg" alt="Car being detailed on a residential street" loading="lazy"></div>
+      </div></div></div>
+    </div>
+
+    <div class="row rv">
+      <button type="button" aria-expanded="false">
+        <span class="n">02</span><span class="t">Interior detail</span>
+        <span class="right"><span class="lead"></span><span class="tag">seats, floors, dash</span><span class="plus" aria-hidden="true"></span></span>
+      </button>
+      <div class="body"><div><div class="in">
+        <div><p>Seats, mats, dash and door cards. Their posts show a Lexus red interior and a Mercedes GLC interior. One reviewer: &ldquo;He did a fantastic job on my car&rsquo;s interiors, paying attention to every detail.&rdquo;</p>
+        <p class="src" style="margin-top:12px">Source: <a href="https://www.instagram.com/p/DfqdXA_qfYV/">Instagram post</a></p></div>
+        <div class="pics"><img src="img/p2.jpg" alt="Red leather Lexus interior" loading="lazy"><img src="img/p10.jpg" alt="Clean black Mercedes interior with floor mats" loading="lazy"></div>
+      </div></div></div>
+    </div>
+
+    <div class="row rv">
+      <button type="button" aria-expanded="false">
+        <span class="n">03</span><span class="t">Foam wash and hand detail</span>
+        <span class="right"><span class="lead"></span><span class="tag">outside, by hand</span><span class="plus" aria-hidden="true"></span></span>
+      </button>
+      <div class="body"><div><div class="in">
+        <div><p>Trucks, SUVs, sedans and an electric car, all foamed down in the driveway. Their post: &ldquo;Electric car. Manual detail. Maximum clean.&rdquo;</p>
+        <p class="src" style="margin-top:12px">Source: <a href="https://www.instagram.com/p/DekojjpKn3w/">Instagram post</a></p></div>
+        <div class="pics"><img src="img/c4.jpg" alt="Ford truck covered in foam" loading="lazy"><img src="img/p5.jpg" alt="White electric car front end" loading="lazy"></div>
+      </div></div></div>
+    </div>
+
+    <div class="row rv">
+      <button type="button" aria-expanded="false">
+        <span class="n">04</span><span class="t">Full detail</span>
+        <span class="right"><span class="lead"></span><span class="tag">inside and out</span><span class="plus" aria-hidden="true"></span></span>
+      </button>
+      <div class="body"><div><div class="in">
+        <div><p>&ldquo;From dirty to&hellip; this BMW X5 got the full treatment.&rdquo; Also posted: a Jeep Grand Cherokee Summit Edition after a full detail, and a Mercedes GLC 300.</p>
+        <p class="src" style="margin-top:12px">Source: <a href="https://www.instagram.com/p/Df-ZGxBKMle/">Instagram post</a></p></div>
+        <div class="pics"><img src="img/c3.jpg" alt="White Mercedes GLC in a driveway after a detail" loading="lazy"><img src="img/p8.jpg" alt="White Toyota sedan after a detail" loading="lazy"></div>
+      </div></div></div>
+    </div>
+
+    <div class="total rv"><span>TOTAL TO DATE</span><b>4.9 stars across 38 Google reviews</b></div>
+  </div>
+</section>
+
+<div class="band">
+  <video autoplay muted loop playsinline preload="metadata" poster="video/band-poster.jpg" aria-label="BMW X5 detail, exterior and interior"><source src="video/band.mp4" type="video/mp4"></video>
+  <div class="cap"><div class="wrap"><p>Done at your door.</p><span class="mono">BMW X5, from their Instagram</span></div></div>
+</div>
+
+<section id="reviews" class="rev">
+  <div class="wrap">
+    <div class="head rv"><h2>Entries from customers</h2><span class="mono">GOOGLE</span></div>
+    <div class="lead-q rv">
+      <q>Much better job than any other place I&rsquo;ve taken my car for detail cleaning!</q>
+      <div class="by"><b>Lizzy, Google</b><span>3 months ago</span><span>5 stars</span></div>
+    </div>
+    <div class="cols">
+      <div class="ent rv"><span class="n">R1</span><q>Absolutely amazing job! We have 2 dogs and do hikes and go to the beach so needless to say, the car gets pretty gross! Here are our before and after!</q><div class="by"><b>Mo C., Google</b><span>3 months ago</span></div></div>
+      <div class="ent rv"><span class="n">R2</span><q>Excellent service! Akshat is a very hardworking and dedicated person who comes right to your driveway and takes care of your car detailing needs.</q><div class="by"><b>Armandeep S., Google</b><span>3 weeks ago</span></div></div>
+      <div class="ent rv"><span class="n">R3</span><q>I can&rsquo;t recommend Falls Mobile Detailing enough! Akshat was incredibly professional, friendly, and meticulous, and the results were outstanding.</q><div class="by"><b>Christine F., Google</b><span>a month ago</span></div></div>
+      <div class="ent rv"><span class="n">R4</span><q>Absolutely fantastic work! We have 2 dogs so our car is very messy! It&rsquo;s never been so clean!</q><div class="by"><b>MoMar C., Google</b><span>2 months ago</span></div></div>
+    </div>
+    <span class="rev sum">Shown: 5 of 38 Google reviews. Rating 4.9.</span>
+  </div>
+</section>
+
+<section class="photos" style="padding-top:0">
+  <div class="wrap">
+    <div class="head rv"><h2>Driveway photos</h2><span class="mono">THEIR OWN JOBS</span></div>
+    <div class="gal">
+      <figure class="rv"><img src="img/p7.jpg" alt="Car interior door open, clean" loading="lazy"></figure>
+      <figure class="rv"><img src="img/c6.jpg" alt="Jeep Grand Cherokee covered in foam" loading="lazy"></figure>
+      <figure class="rv"><img src="img/p11.jpg" alt="Dark Porsche SUV in a driveway" loading="lazy"></figure>
+      <figure class="rv"><img src="img/p12.jpg" alt="Ford truck foamed in a driveway" loading="lazy"></figure>
+      <figure class="rv"><img src="img/p3.jpg" alt="White Mercedes GLC" loading="lazy" style="object-position:center 55%"></figure>
+      <figure class="rv"><img src="img/p5.jpg" alt="White electric car wheel and front end" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section id="area" class="area">
+  <div class="wrap">
+    <div class="head rv"><h2>Where and when</h2><span class="mono">FROM GOOGLE</span></div>
+    <div class="cols">
+      <dl class="kv rv">
+        <div><dt>SERVICE</dt><dd>Mobile car detailing, at your driveway</dd></div>
+        <div><dt>AREA</dt><dd>Niagara Falls, ON</dd></div>
+        <div><dt>HOURS</dt><dd>Open 24 hours, every day (Google listing)</dd></div>
+        <div><dt>LISTED AT</dt><dd>7423 Alex Ave, Niagara Falls, ON L2G 7V1</dd></div>
+        <div><dt>PHONE</dt><dd><a href="tel:+14374770059">(437) 477-0059</a></dd></div>
+      </dl>
+      <div class="rv" style="align-self:center">
+        <p style="font:700 clamp(26px,5vw,42px)/1.1 var(--disp);letter-spacing:-.02em;max-width:16ch">Text a photo of your car. Get a quote.</p>
+        <p style="margin-top:14px;color:#34343a;max-width:40ch">Rated 4.9 from 38 Google reviews. <a href="https://www.google.com/maps/place/Falls+Mobile+Detailing/data=!4m7!3m6!1s0x24210b7cd381e96b:0xa975f2fa4a94b205!8m2!3d43.068512!4d-79.0898599" style="text-decoration:underline">See them on Google Maps</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="quote" class="quote">
+  <div class="orb a"></div><div class="orb b"></div>
+  <div class="wrap">
+    <form class="panel" id="qf" autocomplete="off">
+      <h2>Fill in the blanks.</h2>
+      <p class="sent">Hi, I&rsquo;m <input id="qn" type="text" placeholder="your name" aria-label="Your name" required>. I drive a <input id="qc" type="text" placeholder="car make and model" aria-label="Car" required>. I need a
+        <select id="qs" aria-label="What you need"><option>full detail</option><option>interior detail</option><option>exterior foam wash and hand detail</option><option>not sure, need advice</option></select>
+        in Niagara Falls.</p>
+      <button class="btn" type="submit">Text this to (437) 477-0059</button>
+      <small>This opens your messages app. Nothing is sent until you press send.</small>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><span>Preview built by JPF. Not live yet.</span><span>Falls Mobile Detailing &middot; Niagara Falls, ON</span></div>
+</footer>
+
+<div class="dock" role="group" aria-label="Contact">
+  <a class="call" href="tel:+14374770059">Call now</a>
+  <a class="txt" href="sms:+14374770059">Text</a>
+</div>
+
+<script>
+(function(){
+  var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  // accordion rows (custom, using details for semantics)
+  document.querySelectorAll('.row').forEach(function(r){
+    
+    var b=r.querySelector('button');
+    b.addEventListener('click',function(){
+      var o=!r.hasAttribute('open');
+      if(o){r.setAttribute('open','')}else{r.removeAttribute('open')}
+      b.setAttribute('aria-expanded',o);
+    });
+  });
+  // reveal
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window&&!rm){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});
+    els.forEach(function(e){io.observe(e)});
+  }else els.forEach(function(e){e.classList.add('on')});
+  // count up
+  document.querySelectorAll('[data-count]').forEach(function(el){
+    var to=parseFloat(el.dataset.count),dec=+el.dataset.dec||0;
+    if(rm)return;
+    var started=false;
+    function run(){if(started)return;started=true;var t0=performance.now();(function f(t){var p=Math.min(1,(t-t0)/1200);p=1-Math.pow(1-p,3);el.textContent=(to*p).toFixed(dec);if(p<1)requestAnimationFrame(f)})(t0)}
+    if('IntersectionObserver' in window){var o=new IntersectionObserver(function(es){if(es[0].isIntersecting){run();o.disconnect()}});o.observe(el)}else run();
+  });
+  if(rm)document.querySelectorAll('video').forEach(function(v){v.removeAttribute('autoplay');v.pause()});
+  // quote -> sms
+  document.getElementById('qf').addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=qn.value.trim(),c=qc.value.trim(),s=qs.value;
+    var msg='Hi, I’m '+n+'. I drive a '+c+'. I need a '+s+' in Niagara Falls.';
+    location.href='sms:+14374770059?&body='+encodeURIComponent(msg);
+  });
+})();
+</script>
+</body>
+</html>
