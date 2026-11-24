@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Stepx Epoxy | Flooring contractor in Brampton</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:ital,wght@0,700;0,800;0,900;1,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* TIER 2 · EPOXY · "Spec board"
+   direction: a contractor's sample board. Raw-slab grey page, graphite ink, the business name set edge to edge like a stencil on a job box.
+   palette: slab #e5e2dc (raw concrete) / board #d6d2ca (cured slab) / graphite #17181a / mute #5b5d60 / accent #9c2f27 (picked from their photos)
+   fonts: Sofia Sans Extra Condensed 800-900 (display, caps) + IBM Plex Sans (body)
+   signature: the sample board, one big photo with a wipe change and a rail of chips, like flake samples
+   order: name, photo + rating glass, sample board, what they coat, reviews (graphite band), area + hours, quote by text, giant phone
+   motion: one load (name rises out of a mask, photo settles, glass card floats in); wipe on photo change; rating counts up once */
+:root{--slab:#e5e2dc;--board:#d6d2ca;--ink:#17181a;--mute:#55575a;--line:rgba(23,24,26,.16);--acc:#9c2f27;--acc-ink:#ffffff;--acc-rgb:156,47,39;--g:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--slab);color:var(--ink);font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:96px}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.35;background-image:radial-gradient(rgba(23,24,26,.10) 1px,transparent 1.2px),radial-gradient(rgba(255,255,255,.5) 1px,transparent 1.2px);background-size:7px 7px,11px 11px;background-position:0 0,3px 5px}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{position:relative;z-index:1;width:min(1280px,100% - 2*var(--g));margin-inline:auto}
+.d{font-family:"Sofia Sans Extra Condensed",Impact,sans-serif;font-weight:900;text-transform:uppercase;line-height:.84;letter-spacing:-.005em}
+.ln{display:block;width:max-content;white-space:nowrap}
+[data-fit]{display:block;max-width:100%;overflow-x:clip}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+
+/* glass */
+.glass{background:rgba(236,233,228,.62);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 20px 60px -20px rgba(23,24,26,.35)}
+
+/* nav */
+nav{position:fixed;top:12px;left:12px;right:12px;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:12px;border-radius:999px;padding:6px 6px 6px 20px}
+nav .nm{font-weight:600;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+nav .links{display:none}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:46px;padding:0 20px;border-radius:999px;background:var(--ink);color:var(--slab);font-weight:600;font-size:15px;white-space:nowrap;transition:transform .16s,filter .18s;border:0;cursor:pointer;font-family:inherit}
+.pill.acc{background:var(--acc);color:var(--acc-ink)}
+.pill.line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.pill:active{transform:scale(.98)}
+.pill:hover{filter:brightness(1.08)}
+
+/* hero */
+.hero{position:relative;z-index:1;padding-top:84px;display:flex;flex-direction:column}
+.hero .shot{order:2;margin-top:22px}.hero .sub{order:3}
+.name{font-size:clamp(64px,19vw,260px);padding-bottom:.04em}
+.name .ln{overflow:hidden;padding-top:.02em}
+.name .ln span{display:block}
+.sub{display:grid;gap:18px;margin:66px 0 10px}
+.sub p{font-size:18px;max-width:34ch;color:#2b2c2f}
+.sub .btns{display:flex;flex-wrap:wrap;gap:10px}
+.shot{position:relative;margin-inline:calc(-1*var(--g))}
+.shot .ph{height:min(96vw,560px);overflow:hidden}
+.shot .ph img{width:100%;height:100%;object-fit:cover}
+.rate{position:absolute;left:var(--g);bottom:-40px;z-index:3;width:min(270px,72%);border-radius:24px;padding:14px 18px 14px}
+.rate .top{display:flex;align-items:baseline;gap:10px}
+.rate b{font-family:"Sofia Sans Extra Condensed",sans-serif;font-weight:900;font-size:52px;line-height:.8}
+.st{color:var(--acc);letter-spacing:2px;font-size:15px}
+.rate .n{font-size:14px;color:var(--mute)}
+.rate q{display:block;quotes:none;margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:16px;font-weight:500;line-height:1.4}
+.rate .who{font-size:14px;color:var(--mute);margin-top:2px}
+.tag{position:absolute;right:var(--g);bottom:16px;z-index:2;font-size:14px;color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.6)}
+
+section{position:relative;z-index:1;padding:88px 0;overflow-x:clip}
+h2.d{font-size:clamp(58px,15vw,150px)}
+.lede{font-size:17px;color:var(--mute);max-width:40ch;margin-top:14px}
+
+/* sample board (signature) */
+.board{margin-top:34px;display:grid;gap:12px}
+.stage{position:relative;aspect-ratio:1/1;border-radius:26px;overflow:hidden;background:var(--board)}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.stage img.in{animation:wipe .9s cubic-bezier(.7,0,.2,1) both}
+@keyframes wipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+.stage .ctl{position:absolute;right:12px;bottom:12px;z-index:3;display:flex;align-items:center;gap:4px;border-radius:999px;padding:5px}
+.stage .ctl button{width:44px;height:44px;border-radius:999px;border:0;background:transparent;font:600 20px/1 "IBM Plex Sans",sans-serif;color:var(--ink);cursor:pointer;transition:background .16s,transform .16s}
+.stage .ctl button:hover{background:rgba(255,255,255,.5)}
+.stage .ctl button:active{transform:scale(.94)}
+.stage .ctl span{font-size:14px;font-weight:600;min-width:52px;text-align:center;font-variant-numeric:tabular-nums}
+.chips{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 6px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips button{flex:0 0 74px;height:96px;border-radius:14px;overflow:hidden;border:0;padding:0;cursor:pointer;scroll-snap-align:start;opacity:.55;transition:opacity .2s,transform .2s,box-shadow .2s;background:var(--board)}
+.chips button img{width:100%;height:100%;object-fit:cover}
+.chips button[aria-current="true"]{opacity:1;box-shadow:0 0 0 2px var(--slab),0 0 0 4px var(--acc)}
+
+/* services */
+.svc{margin-top:36px;border-top:2px solid var(--ink)}
+.svc li{list-style:none;display:flex;align-items:center;gap:16px;padding:16px 0 14px;border-bottom:1px solid var(--line)}
+.svc li::before{content:"";flex:0 0 14px;height:14px;background:var(--acc);border-radius:3px;transform:rotate(45deg) scale(.8)}
+.svc li span{font-family:"Sofia Sans Extra Condensed",sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(34px,9vw,60px);line-height:.95}
+.svc-wrap{display:grid;gap:40px}
+.svc-ph{display:none}
+
+/* reviews band */
+.band{background:var(--ink);color:var(--slab)}
+.band .big{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.band .big b{font-family:"Sofia Sans Extra Condensed",sans-serif;font-weight:900;font-size:clamp(130px,40vw,300px);line-height:.78;color:var(--slab)}
+.band .big div{padding-bottom:10px}
+.band .st{font-size:20px}
+.band .big small{display:block;font-size:15px;color:#a9aaa8;margin-top:6px}
+.lead{margin-top:48px;border-top:2px solid var(--acc);padding-top:26px}
+.lead q{display:block;quotes:none;font-size:clamp(24px,6vw,38px);line-height:1.28;font-weight:500;letter-spacing:-.01em;max-width:30ch}
+.who{margin-top:16px;font-size:15px;color:#a9aaa8}
+.more{display:grid;gap:30px;margin-top:52px}
+.more figure{border-top:1px solid rgba(229,226,220,.18);padding-top:20px}
+.more q{display:block;quotes:none;font-size:17px;color:#dcd9d3}
+.band .note{margin-top:36px;font-size:14px;color:#8b8c8a}
+
+/* area + hours */
+.where .city{font-size:clamp(64px,22vw,300px);color:transparent;-webkit-text-stroke:1.5px var(--ink)}
+.where .grid{display:grid;gap:30px;margin-top:30px}
+.hrs{border-top:2px solid var(--ink)}
+.hrs div{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:17px}
+.hrs div b{font-weight:600}
+.hrs .closed{color:var(--mute)}
+.where p{font-size:17px;max-width:36ch}
+.where .map{display:inline-flex;margin-top:14px;font-weight:600;border-bottom:2px solid var(--acc);padding-bottom:2px}
+
+/* quote */
+.qzone{position:relative;margin-top:36px}
+.orb{position:absolute;border-radius:50%;pointer-events:none;animation:drift 26s ease-in-out infinite alternate}
+.o1{width:320px;height:320px;left:-80px;top:-60px;background:radial-gradient(circle,rgba(var(--acc-rgb),.38),rgba(var(--acc-rgb),0) 68%)}
+.o2{width:360px;height:360px;right:-120px;bottom:-90px;background:radial-gradient(circle,rgba(23,24,26,.22),rgba(23,24,26,0) 68%);animation-duration:31s;animation-direction:alternate-reverse}
+@keyframes drift{to{transform:translate(40px,30px) scale(1.08)}}
+.qf{position:relative;border-radius:28px;padding:26px 20px 22px}
+.qf .say{font-size:clamp(22px,5.6vw,34px);line-height:1.6;font-weight:500;letter-spacing:-.01em}
+.qf input,.qf select{font:inherit;font-size:.82em;color:var(--ink);background:rgba(255,255,255,.55);border:1px solid rgba(23,24,26,.18);border-radius:14px;padding:4px 12px;min-height:46px;max-width:100%;box-shadow:inset 0 1px 0 rgba(255,255,255,.8);transition:border-color .18s,box-shadow .18s;vertical-align:middle}
+.qf input:focus,.qf select:focus{outline:none;border-color:var(--acc);box-shadow:0 0 0 3px rgba(var(--acc-rgb),.25)}
+.qf input[name=n]{width:8.5em}.qf input[name=s]{width:13em}
+.qf .row{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;margin-top:22px}
+.qf .row small{font-size:14px;color:var(--mute)}
+
+/* phone */
+.call{padding:70px 0 40px}
+.call .num{display:block;margin-top:22px;color:var(--ink);transition:color .2s}
+.call .num:hover{color:var(--acc)}
+.call p{color:var(--mute);margin-top:18px;max-width:40ch}
+footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:26px 0 30px;font-size:14px;color:var(--mute);display:flex;flex-direction:column;gap:6px}
+
+/* dock */
+.dock{position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:60;display:flex;gap:6px;padding:6px;border-radius:999px}
+.dock a{flex:1;min-height:50px;display:flex;align-items:center;justify-content:center;border-radius:999px;font-weight:600;font-size:16px;transition:transform .16s}
+.dock a:first-child{background:var(--ink);color:var(--slab)}
+.dock a:last-child{box-shadow:inset 0 0 0 1.5px rgba(23,24,26,.35)}
+.dock a:active{transform:scale(.98)}
+
+/* load + reveal */
+.js .name .ln span{transform:translateY(105%)}
+.js .shot .ph img{transform:scale(1.12);filter:saturate(.4)}
+.js .rate,.js .sub{opacity:0;transform:translateY(16px)}
+.ready .name .ln span{transform:none;transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.ready .name .ln:nth-child(2) span{transition-delay:.08s}.ready .name .ln:nth-child(3) span{transition-delay:.16s}
+.ready .shot .ph img{transform:none;filter:none;transition:transform 1.6s cubic-bezier(.16,.84,.24,1) .2s,filter 1.2s .2s}
+.ready .sub{opacity:1;transform:none;transition:opacity .8s .55s,transform .8s .55s}
+.ready .rate{opacity:1;transform:none;transition:opacity .8s 1s,transform 1s cubic-bezier(.2,.8,.2,1) 1s}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .9s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+@media (min-width:900px){
+  :root{--g:40px}
+  body{padding-bottom:0}
+  nav{top:18px;left:28px;right:28px;padding-left:26px}
+  nav .links{display:flex;gap:4px}
+  nav .links a{font-size:15px;padding:10px 16px;border-radius:999px;transition:background .16s}
+  nav .links a:hover{background:rgba(255,255,255,.55)}
+  .hero{--bleed:max(40px,(100vw - 1280px)/2);padding-top:110px;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);grid-template-rows:auto 1fr;column-gap:56px;align-items:start}
+  .hero .name{grid-column:1;grid-row:1}
+  .hero .sub{grid-column:1;grid-row:2;align-self:end;margin:30px 0 8px}
+  .sub p{font-size:20px}
+  .hero .shot{grid-column:2;grid-row:1/3;margin:0 calc(-1*var(--bleed)) 0 0}
+  .shot .ph{height:max(520px,calc(100vh - 150px));border-radius:30px 0 0 30px}
+  .rate{left:-70px;top:auto;bottom:36px;width:300px}
+  section{padding:150px 0}
+  .board{grid-template-columns:1fr 132px;gap:16px;align-items:start}
+  .stage{aspect-ratio:16/10}
+  .chips{flex-direction:column;overflow:visible;max-height:none}
+  .chips button{flex:0 0 auto;width:132px;height:100px}
+  .svc-wrap{grid-template-columns:1.2fr 1fr;gap:80px;align-items:start}
+  .svc-ph{display:block;position:sticky;top:110px;border-radius:26px;overflow:hidden;aspect-ratio:4/5}
+  .svc-ph img{width:100%;height:100%;object-fit:cover}
+  .more{grid-template-columns:repeat(3,1fr)}
+  .where .grid{grid-template-columns:1fr 1fr;gap:80px}
+  .qf{padding:44px 48px 40px}
+  .dock{display:none}
+  footer{flex-direction:row;justify-content:space-between}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+  .js .name .ln span,.js .shot .ph img,.js .rate,.js .sub,.rv{opacity:1!important;transform:none!important;filter:none!important}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+
+<nav class="glass" aria-label="Main">
+  <a class="nm" href="#top">Stepx Epoxy</a>
+  <div class="links"><a href="#work">Work</a><a href="#reviews">Reviews</a><a href="#quote">Quote</a></div>
+  <a class="pill" href="tel:+16474035801">Call</a>
+</nav>
+
+<header class="hero wrap" id="top">
+  <h1 class="d name" data-fit data-max="330" data-vh="21"><span class="ln"><span>Stepx Epoxy</span></span></h1>
+  <div class="sub">
+    <p>Flooring contractor in Brampton.</p>
+    <div class="btns"><a class="pill acc" href="#quote">Get a quote by text</a><a class="pill line" href="tel:+16474035801">(647) 403-5801</a></div>
+  </div>
+  <div class="shot">
+    <div class="ph"><img src="img/p5.jpg" alt="Stepx Epoxy, Brampton" style="object-position:51% 40%" fetchpriority="high"></div>
+    <a class="rate glass" href="#reviews">
+      <span class="top"><b>5.0</b><span><span class="st" aria-label="5.0 stars">★★★★★</span><br><span class="n">24 Google reviews</span></span></span>
+      <q>Highly recommend their work!</q><span class="who">Guramrit K., Google</span>
+    </a>
+  </div>
+</header>
+
+
+<section id="work">
+  <div class="wrap">
+    <h2 class="d rv">Their floors</h2>
+    <p class="lede rv">Their own photos. Tap one to see it big.</p>
+    <div class="board rv">
+      <div class="stage" id="stage"><img src="img/p6.jpg" alt="" style="object-position:58% 43%"><div class="ctl glass"><button type="button" id="prev" aria-label="Previous photo">‹</button><span id="count">2 / 9</span><button type="button" id="next" aria-label="Next photo">›</button></div></div>
+      <div class="chips" id="chips"><button type="button" data-src="img/p5.jpg" data-pos="51% 40%" aria-label="Photo 1"><img src="img/p5.jpg" alt="" style="object-position:51% 40%" loading="lazy"></button><button type="button" data-src="img/p6.jpg" data-pos="58% 43%" aria-label="Photo 2"><img src="img/p6.jpg" alt="" style="object-position:58% 43%" loading="lazy"></button><button type="button" data-src="img/p1.jpg" data-pos="50% 47%" aria-label="Photo 3"><img src="img/p1.jpg" alt="" style="object-position:50% 47%" loading="lazy"></button><button type="button" data-src="img/p8.jpg" data-pos="47% 47%" aria-label="Photo 4"><img src="img/p8.jpg" alt="" style="object-position:47% 47%" loading="lazy"></button><button type="button" data-src="img/p3.jpg" data-pos="51% 48%" aria-label="Photo 5"><img src="img/p3.jpg" alt="" style="object-position:51% 48%" loading="lazy"></button><button type="button" data-src="img/p2.jpg" data-pos="50% 43%" aria-label="Photo 6"><img src="img/p2.jpg" alt="" style="object-position:50% 43%" loading="lazy"></button><button type="button" data-src="img/p7.jpg" data-pos="47% 44%" aria-label="Photo 7"><img src="img/p7.jpg" alt="" style="object-position:47% 44%" loading="lazy"></button><button type="button" data-src="img/p4.jpg" data-pos="50% 41%" aria-label="Photo 8"><img src="img/p4.jpg" alt="" style="object-position:50% 41%" loading="lazy"></button><button type="button" data-src="img/p9.jpg" data-pos="43% 53%" aria-label="Photo 9"><img src="img/p9.jpg" alt="" style="object-position:43% 53%" loading="lazy"></button></div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="band" id="reviews">
+  <div class="wrap">
+    <div class="big rv"><b data-count="5.0">5.0</b><div><span class="st">★★★★★</span><small>from 24 Google reviews</small></div></div>
+    <figure class="lead rv"><q>10/10 service! The epoxy flooring with flakes turned out absolutely amazing. The garage looks clean, professional, and the finish exceeded my expectations. STEPX EPOXY Team was punctual, professional, and friendly. They paid great attention to details. Highly recommend their work!</q><figcaption class="who">Guramrit K., Google</figcaption></figure>
+    <div class="more"><figure class="rv"><q>Got my garage down in metallic and couldn’t be happier with the results the floor shines and I get compliments each time</q><figcaption class="who">Hartej K., Google</figcaption></figure><figure class="rv"><q>I couldn’t be happier with the work this company did. From the initial quote to the finished product, everything was handled professionally and on time. The team was friendly, knowledgeable, and paid close attention to every detail.</q><figcaption class="who">Vishal G., Google</figcaption></figure><figure class="rv"><q>Provided excellent service, and the quality of work was phenomenal. Very happy, would definitely recommend!</q><figcaption class="who">Karan G., Google</figcaption></figure></div>
+    <p class="note">Reviews quoted word for word from Google.</p>
+  </div>
+</section>
+
+
+<section class="where">
+  <div class="wrap">
+    <div class="d city rv" data-fit data-max="280"><span class="ln">Brampton</span></div>
+    <div class="grid">
+      <div class="rv">
+        <p>Stepx Epoxy works out of Brampton, ON. 32 Fulmer Rd. Their Google listing says open 24 hours.</p>
+        <a class="map" href="https://www.google.com/maps/place/STEPX+EPOXY/data=!4m7!3m6!1s0x882b1335f5452c47:0xfa76d14a940e5516!8m2!3d43.6856653!4d-79.8484601!16s%2Fg%2F11nqd8qxp9!19sChIJRyxF9TUTK4gRFlUOlErRdvo?authuser=0&amp;hl=en&amp;g_ep=EgoyMDI2MTExOC4xIJJjKgBIAVAD&amp;rclk=1" target="_blank" rel="noopener">See them on Google Maps</a>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<section id="quote" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="d rv">Quote by text</h2>
+    <p class="lede rv">Fill in the gaps. It opens a text to Stepx Epoxy with it written out.</p>
+    <div class="qzone rv"><span class="orb o1" aria-hidden="true"></span><span class="orb o2" aria-hidden="true"></span>
+      <form class="qf glass" id="qf" data-name="Stepx Epoxy">
+        <p class="say">Hi Stepx Epoxy, I'm <input name="n" aria-label="Your name" placeholder="your name" autocomplete="given-name">.
+        I need <input name="w" aria-label="What you need" placeholder="a floor coating">
+        for <input name="s" aria-label="The floor" placeholder="Garage, about 400 sq ft">.</p>
+        <div class="row"><button class="pill acc" type="submit">Text this to Stepx Epoxy</button><small>Add a photo of the floor in the text.</small></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="call">
+  <div class="wrap">
+    <p class="lede" style="margin:0">Or call</p>
+    <a class="d num" href="tel:+16474035801" data-fit data-max="300"><span class="ln">647 403 5801</span></a>
+  </div>
+</section>
+
+<footer class="wrap"><span>Stepx Epoxy, Brampton, ON. (647) 403-5801</span><span>Preview built by JPF. Not live yet.</span></footer>
+
+<div class="dock glass"><a href="tel:+16474035801">Call 647 403 5801</a><a href="sms:+16474035801">Text</a></div>
+
+<script>
+(()=>{
+const root=document.documentElement,still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function fit(){document.querySelectorAll('[data-fit]').forEach(el=>{el.style.fontSize='100px';const w=el.clientWidth;let m=0;el.querySelectorAll('.ln').forEach(s=>m=Math.max(m,s.getBoundingClientRect().width));if(m){let mx=+el.dataset.max||400;if(el.dataset.vh&&innerWidth>=900)mx=Math.min(mx,innerHeight*el.dataset.vh/100);el.style.fontSize=Math.min(mx,100*w/m*.995)+'px'}})}
+fit();(document.fonts&&document.fonts.ready||Promise.resolve()).then(fit);addEventListener('resize',fit);
+addEventListener('load',()=>requestAnimationFrame(()=>root.classList.add('ready')));setTimeout(()=>root.classList.add('ready'),1400);
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+// count up
+const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;co.unobserve(e.target);if(still)return;const b=e.target,n=+b.dataset.count,t0=performance.now();(function f(t){const p=Math.min(1,(t-t0)/1100);b.textContent=(n*(1-Math.pow(1-p,3))).toFixed(1);if(p<1)requestAnimationFrame(f)})(t0)}),{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(b=>co.observe(b));
+// sample board
+const st=document.getElementById('stage');
+if(st){const chips=[...document.querySelectorAll('#chips button')],cnt=document.getElementById('count');let i=1;
+ function show(k){i=(k+chips.length)%chips.length;const c=chips[i];chips.forEach(x=>x.setAttribute('aria-current',x===c));const im=new Image();im.src=c.dataset.src;im.alt='';im.style.objectPosition=c.dataset.pos;if(!still)im.className='in';st.insertBefore(im,st.querySelector('.ctl'));const old=st.querySelectorAll('img');if(old.length>2)old[0].remove();cnt.textContent=(i+1)+' / '+chips.length}
+ chips.forEach((c,k)=>c.addEventListener('click',()=>show(k)));document.getElementById('prev').onclick=()=>show(i-1);document.getElementById('next').onclick=()=>show(i+1);chips[1].setAttribute('aria-current','true')}
+// quote by text
+document.getElementById('qf').addEventListener('submit',e=>{e.preventDefault();const f=e.target,n=f.n.value.trim(),w=f.w.value.trim(),s=f.s.value.trim();
+ const b='Hi '+f.dataset.name+', '+(n?"I'm "+n+". ":'')+'I need '+(w||'a quote')+(s?' for '+s:'')+'.';location.href='sms:+16474035801?&body='+encodeURIComponent(b)});
+})();
+</script>
+</body>
+</html>
