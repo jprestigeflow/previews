@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Detailing Niagara | Car detailing and window tint, St. Catharines</title>
+<meta name="description" content="Detailing Niagara, car detailing service at 213 Bunting Rd, St. Catharines. Google rating 5 from 310 reviews.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,500;0,600;0,700;1,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ 1 Direction: map-and-areas-led (no prices published). Warm graphite shop page, giant 3-word headline over their own GTO clip, schematic Niagara map as signature.
+ 2 Palette: ink #15171a (graphite shop wall in their photos), paper #ece8df (light map page), gold #e2a93b (the gold script on their shop sign, p1/p7/p10), lake #c5d0d3 (grey sky in their photos).
+ 3 Fonts: Familjen Grotesk (display, tight tracking) + Work Sans (body).
+ 4 Signature: tap-a-pin Niagara map (shop on Bunting Rd + places in their post hashtags) and a custom review wall.
+ 5 Order: hero, rating strip, map, work strip, services, review wall, quote, footer.
+ 6 Motion: one load entrance, count-up numbers, gentle reveals on 3 blocks, reduced-motion respected. Glass: nav pill, dock, hero card, review cards, quote panel. */
+:root{
+  --ink:#15171a; --ink2:#1f2226; --paper:#ece8df; --paper2:#e2ddd1; --gold:#e2a93b; --lake:#c5d0d3; --txt:#f3efe6; --mut:#a9a69d;
+  --disp:'Familjen Grotesk',system-ui,sans-serif; --body:'Work Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--txt);font:400 17px/1.55 var(--body);overflow-x:hidden;padding-bottom:0}
+img,video,svg{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1240px,100% - 40px);margin-inline:auto}
+h1,h2,h3{font-family:var(--disp);font-weight:700;letter-spacing:-.03em;line-height:.92}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font:600 16px var(--body);text-decoration:none;border:0;cursor:pointer;transition:transform .18s,background .18s,box-shadow .18s}
+.btn:active{transform:scale(.97)}
+.btn.gold{background:var(--gold);color:#1a1405;box-shadow:0 10px 30px -12px rgba(226,169,59,.7)}
+.btn.gold:hover{background:#f0b94c}
+.btn.line{border:1px solid rgba(255,255,255,.3);color:var(--txt);background:transparent}
+.btn.line:hover{background:rgba(255,255,255,.08)}
+
+/* glass nav pill */
+.nav{position:fixed;z-index:50;top:max(12px,env(safe-area-inset-top));left:14px;right:14px;max-width:1100px;margin-inline:auto;height:58px;border-radius:999px;display:flex;align-items:center;justify-content:space-between;padding:0 8px 0 22px;
+  background:rgba(21,23,26,.5);backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 20px 50px -22px rgba(0,0,0,.6)}
+.nav b{font:700 20px var(--disp);letter-spacing:-.02em}
+.nav b i{color:var(--gold);font-style:normal}
+.nav .links{display:none;gap:28px;font-size:15px}
+.nav .links a{text-decoration:none;color:var(--mut);transition:color .15s}
+.nav .links a:hover{color:var(--txt)}
+.nav .btn{min-height:44px;padding:0 20px;font-size:15px;white-space:nowrap}.nav .nn{display:none}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.hero .vid{position:absolute;inset:0;z-index:-2}
+.hero .vid video,.hero .vid img{width:100%;height:100%;object-fit:cover;object-position:35% 50%}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(21,23,26,.55) 0,rgba(21,23,26,0) 24%,rgba(21,23,26,.1) 45%,rgba(21,23,26,.94) 90%)}
+.hero .in{padding-block:120px 110px;width:min(1240px,100% - 40px)}
+.hero h1{line-height:1;font-size:clamp(64px,19.5vw,96px);text-transform:none}
+.hero h1 span{display:block}
+.hero h1 .g{color:var(--gold)}
+.hero .sub{margin:22px 0 28px;font-size:18px;max-width:30ch;color:#e6e1d6}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.hcard{position:absolute;z-index:3;right:20px;top:92px;width:min(220px,52vw);padding:14px 16px;border-radius:22px;background:rgba(21,23,26,.55);backdrop-filter:blur(22px) saturate(170%);-webkit-backdrop-filter:blur(22px) saturate(170%);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 24px 60px -24px rgba(0,0,0,.7)}
+.hcard .n{font:700 38px/1 var(--disp);letter-spacing:-.03em}
+.hcard .n small{font-size:15px;color:var(--gold);margin-left:4px;letter-spacing:0}
+.hcard p{display:none;font-size:14px;line-height:1.4;color:#ddd8cc;margin-top:6px}
+.stars{color:var(--gold);letter-spacing:2px;font-size:14px}
+
+/* strip */
+.strip{background:var(--ink2);border-block:1px solid rgba(255,255,255,.08)}
+.strip .wrap{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.strip div{padding:30px 0}
+.strip div+div{padding-left:22px;border-left:1px solid rgba(255,255,255,.1)}
+.strip .big{font:700 clamp(48px,13vw,84px)/1 var(--disp);letter-spacing:-.04em}
+.strip .big i{font-style:normal;color:var(--gold)}
+.strip small{display:block;color:var(--mut);font-size:14px;margin-top:6px}
+
+/* map section */
+.map{background:var(--paper);color:var(--ink);padding:84px 0 96px}
+.map h2{font-size:clamp(52px,15vw,120px);max-width:11ch}
+.map h2 em{font-style:normal;color:#b07d12}
+.map .lede{margin-top:20px;max-width:46ch;font-size:18px;color:#3a3d40}
+.mapgrid{display:grid;gap:22px;margin-top:44px}
+.mapbox{position:relative;border-radius:28px;overflow:hidden;background:var(--paper2);border:1px solid rgba(21,23,26,.12);aspect-ratio:600/420}
+.mapbox svg{width:100%;height:100%}
+.pin{cursor:pointer}
+.pin circle.hit{fill:transparent}
+.pin text{font:600 23px var(--body);fill:#1d2024;paint-order:stroke;stroke:#e2ddd1;stroke-width:7px;stroke-linejoin:round}
+.pin .dot{fill:#15171a;transition:r .2s,fill .2s}
+.pin.on .dot,.pin:hover .dot{fill:var(--gold);stroke:#15171a;stroke-width:3}
+.pin:focus-visible{outline:none}
+.pin:focus-visible .dot{stroke:#15171a;stroke-width:4}
+.shop .pulse{fill:var(--gold);opacity:.35;transform-origin:center;transform-box:fill-box;animation:pulse 2.6s ease-out infinite}
+@keyframes pulse{0%{transform:scale(.6);opacity:.55}100%{transform:scale(2.4);opacity:0}}
+.panel{border-radius:28px;background:var(--ink);color:var(--txt);overflow:hidden;display:flex;flex-direction:column}
+.panel .ph{aspect-ratio:4/3;position:relative;background:#222}
+.panel .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .3s}
+.panel .tx{padding:22px 24px 26px}
+.panel h3{font-size:34px;line-height:1}
+.panel p{margin-top:10px;color:#cfcabd;font-size:16px}
+.panel .tag{font:600 13px var(--body);color:var(--gold);margin-bottom:8px;display:block}
+.facts{display:grid;gap:0;margin-top:22px;border-top:1px solid rgba(21,23,26,.18)}
+.facts div{display:flex;justify-content:space-between;gap:20px;padding:15px 0;border-bottom:1px solid rgba(21,23,26,.18);font-size:16px}
+.facts span{color:#5b5e60}
+.facts b{font-weight:600;text-align:right}
+.facts a{text-decoration-color:rgba(176,125,18,.7);text-underline-offset:3px}
+.sponsor{margin-top:20px;font-size:15px;color:#3a3d40;max-width:50ch}
+
+@media(min-width:900px){.pin text{font-size:15px;stroke-width:5px}}
+@media(max-width:600px){.sent input,.sent select{display:block;width:100%!important;margin:4px 0 10px}.sent{line-height:1.5}}
+/* work strip */
+.work{padding:96px 0 40px}
+.work h2{font-size:clamp(46px,12vw,104px);max-width:12ch}
+.work h2 span{color:var(--gold)}
+.rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:36px 20px 20px;margin-top:10px;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.rail figure{flex:0 0 78vw;max-width:520px;scroll-snap-align:center;border-radius:26px;overflow:hidden;aspect-ratio:4/5;background:#222}
+.rail figure.w{flex-basis:88vw;max-width:680px;aspect-ratio:4/3}
+.rail img{width:100%;height:100%;object-fit:cover}
+.rail figure:first-child{margin-left:max(0px,(100vw - 1240px)/2)}
+
+/* services */
+.svc{padding:70px 0 90px}
+.svc .row{display:grid;gap:18px;padding:30px 0;border-top:1px solid rgba(255,255,255,.14)}
+.svc .row:last-child{border-bottom:1px solid rgba(255,255,255,.14)}
+.svc h3{font-size:clamp(40px,10vw,72px)}
+.svc p{color:#cfcabd;max-width:52ch}
+.svc .src{font-size:14px;color:var(--mut)}
+.svc .src a{color:var(--gold);text-underline-offset:3px}
+.svc .row div.col{display:grid;gap:10px;align-content:start}
+
+/* review wall */
+.wall{background:radial-gradient(60% 50% at 15% 10%,rgba(226,169,59,.13),transparent 70%),radial-gradient(50% 50% at 90% 70%,rgba(197,208,211,.09),transparent 70%),var(--ink2);padding:96px 0 100px;position:relative;overflow:hidden}
+.wall h2{font-size:clamp(46px,12vw,96px)}
+.lead-q{margin:40px 0 34px;font:600 clamp(30px,7.4vw,64px)/1.04 var(--disp);letter-spacing:-.03em;max-width:20ch}
+.lead-q q{quotes:"\201C" "\201D"}
+.lead-q cite{display:block;margin-top:20px;font:500 16px var(--body);letter-spacing:0;color:var(--mut);font-style:normal}
+.lead-q cite b{color:var(--txt);font-weight:600}
+.cards{display:grid;gap:14px}
+.rc{border-radius:24px;padding:24px 24px 22px;background:rgba(21,23,26,.5);backdrop-filter:blur(20px) saturate(150%);-webkit-backdrop-filter:blur(20px) saturate(150%);border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 20px 50px -26px rgba(0,0,0,.7)}
+.rc p{font-size:16px;line-height:1.55;color:#ece7db;margin:10px 0 14px}
+.rc cite{font-style:normal;font-size:14px;color:var(--mut)}
+.rc cite b{color:var(--txt);font-weight:600}
+.wall .more{margin-top:30px;color:var(--mut);font-size:15px}
+.wall .more a{color:var(--gold);text-underline-offset:3px}
+
+/* quote */
+.quote{position:relative;padding:100px 0 110px;isolation:isolate;overflow:hidden}
+.quote .bg{position:absolute;inset:0;z-index:-2}
+.quote .bg img{width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+.quote::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,var(--ink2) 0,rgba(21,23,26,.55) 30%,rgba(21,23,26,.6) 100%)}
+.quote h2{font-size:clamp(50px,14vw,112px);margin-bottom:34px}
+.qp{max-width:760px;padding:30px 26px 32px;border-radius:28px;background:rgba(21,23,26,.55);backdrop-filter:blur(26px) saturate(170%);-webkit-backdrop-filter:blur(26px) saturate(170%);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 30px 70px -28px rgba(0,0,0,.75)}
+.sent{font:500 clamp(22px,5.4vw,32px)/1.9 var(--disp);letter-spacing:-.01em}
+.sent input,.sent select{font:600 inherit;font-size:inherit;font-family:var(--body);color:var(--txt);background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:4px 14px;min-height:46px;max-width:100%;width:min(100%,15ch);transition:border-color .15s,box-shadow .15s;font-size:18px}
+.sent input#car{width:min(100%,19ch)}
+.sent select{width:auto;appearance:none;padding-right:14px}
+.sent select option{color:#111}
+.sent input::placeholder{color:#a9a69d;font-weight:400}
+.sent input:focus,.sent select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(226,169,59,.3)}
+.qp .go{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.qp .note{font-size:14px;color:#cfcabd}
+
+/* footer */
+footer{padding:56px 0 150px;border-top:1px solid rgba(255,255,255,.1);color:var(--mut);font-size:15px}
+footer .wrap{display:grid;gap:22px}
+footer b{font:700 28px var(--disp);color:var(--txt);letter-spacing:-.02em}
+footer a{color:var(--txt);text-underline-offset:3px}
+footer .pv{font-size:14px;color:#8a877e}
+
+/* dock */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));display:flex;gap:8px;padding:8px;border-radius:999px;max-width:460px;margin-inline:auto;
+  background:rgba(21,23,26,.55);backdrop-filter:blur(22px) saturate(170%);-webkit-backdrop-filter:blur(22px) saturate(170%);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 20px 50px -18px rgba(0,0,0,.8)}
+.dock a{flex:1;min-height:50px;border-radius:999px;display:flex;align-items:center;justify-content:center;font:600 16px var(--body);text-decoration:none;transition:transform .18s}
+.dock a:active{transform:scale(.97)}
+.dock .c{background:var(--gold);color:#1a1405;flex:1.3}
+.dock .t{color:var(--txt);background:rgba(255,255,255,.08)}
+
+/* motion */
+.ld{opacity:0;transform:translateY(22px);animation:in .9s cubic-bezier(.2,.7,.2,1) forwards}
+.ld.d1{animation-delay:.12s}.ld.d2{animation-delay:.26s}.ld.d3{animation-delay:.4s}.ld.d4{animation-delay:.55s}
+@keyframes in{to{opacity:1;transform:none}}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .ld,.rv{animation:none;opacity:1;transform:none;transition:none}
+  .shop .pulse{animation:none}html{scroll-behavior:auto}
+}
+
+@media(min-width:900px){
+  .hcard p{display:block}.nav .nn{display:inline;margin-left:4px}
+  body{font-size:18px}
+  .nav .links{display:flex}
+  .nav{padding-left:28px}
+  .hero{align-items:center;background:var(--ink)}
+  .hero .vid{left:auto;width:46vw;right:0;border-radius:0}
+  .hero::after{background:linear-gradient(90deg,var(--ink) 0,var(--ink) 54%,rgba(21,23,26,0) 66%)}
+  .hero .in{padding-block:130px 90px}
+  .hero h1{font-size:clamp(110px,12vw,190px);line-height:.95}
+  .hero .sub{font-size:21px;max-width:34ch}
+  .hcard{top:auto;bottom:70px;right:calc(46vw - 130px);width:260px}
+  .hcard .n{font-size:48px}
+  .strip .wrap{grid-template-columns:1fr 1fr 1.4fr}
+  .strip .wide{display:block}
+  .mapgrid{grid-template-columns:1.5fr 1fr;align-items:stretch}
+  .mapbox{aspect-ratio:auto;min-height:520px}
+  .rail figure{flex-basis:30vw}
+  .rail figure.w{flex-basis:44vw}
+  .svc .row{grid-template-columns:1.1fr 1fr;gap:60px;padding:44px 0}
+  .cards{grid-template-columns:repeat(2,1fr);gap:18px}
+  .cards .rc:nth-child(1){grid-row:span 1}
+  .dock{display:none}
+  footer{padding-bottom:70px}
+  footer .wrap{grid-template-columns:1.2fr 1fr 1fr}
+}
+.strip .wide{display:none}
+@media(min-width:900px){.strip .wide{display:block}}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <b>Detailing <i>Niagara</i></b>
+  <div class="links"><a href="#map">Find us</a><a href="#work">Work</a><a href="#services">Services</a><a href="#reviews">Reviews</a></div>
+  <a class="btn gold" href="tel:+12895018659">Call <span class="nn">(289) 501-8659</span></a>
+</nav>
+
+<header class="hero">
+  <div class="vid">
+    <video autoplay muted loop playsinline preload="auto" poster="video/hero-poster.jpg" aria-hidden="true"><source src="video/hero.mp4" type="video/mp4"></video>
+  </div>
+  <div class="hcard ld d4" aria-label="Google rating">
+    <div class="n"><span data-count="5" data-dec="1">5.0</span><small>on Google</small></div>
+    <div class="stars" aria-hidden="true">★★★★★</div>
+    <p>310 reviews. "Brett and his team did an amazing job on my Mustang."</p>
+  </div>
+  <div class="wrap in">
+    <h1><span class="ld d1">Detailed.</span><span class="ld d2">Tinted.</span><span class="ld d3 g">Niagara.</span></h1>
+    <p class="sub ld d3">Car detailing and window tint at 213 Bunting Rd, St. Catharines.</p>
+    <div class="cta ld d4"><a class="btn gold" href="tel:+12895018659">Call (289) 501-8659</a><a class="btn line" href="#quote">Text a quote</a></div>
+  </div>
+</header>
+
+<section class="strip" aria-label="Rating">
+  <div class="wrap">
+    <div><span class="big"><span data-count="5" data-dec="1">5.0</span><i>*</i></span><small>Google rating</small></div>
+    <div><span class="big"><span data-count="310">310</span></span><small>Google reviews</small></div>
+    <div class="wide"><span class="big" style="font-size:clamp(30px,3.4vw,46px);line-height:1.05;letter-spacing:-.03em">Car detailing service.<br>St. Catharines, ON.</span><small>Google Maps category and address</small></div>
+  </div>
+</section>
+
+<section class="map" id="map">
+  <div class="wrap">
+    <h2 class="rv">Right off <em>Bunting Rd.</em></h2>
+    <p class="lede rv">The shop is at 213 Bunting Rd in St. Catharines. Their posts tag three places: St. Catharines, Niagara-on-the-Lake and Niagara Falls. Tap a pin.</p>
+    <div class="mapgrid">
+      <div class="mapbox rv">
+        <svg viewBox="0 0 600 420" role="img" aria-label="Schematic map of the Niagara region with the Detailing Niagara shop in St. Catharines, Niagara-on-the-Lake and Niagara Falls marked">
+          <rect width="600" height="420" fill="#e2ddd1"/>
+          <path d="M0 0H600V92L470 92C395 98 300 128 225 150C160 168 80 174 0 176Z" fill="#c5d0d3"/>
+          <path d="M0 176C80 174 160 168 225 150C300 128 395 98 470 92" fill="none" stroke="#9fb0b5" stroke-width="2.5"/>
+          <path d="M462 92C470 160 450 230 446 300C444 340 452 380 456 420" fill="none" stroke="#c5d0d3" stroke-width="16" stroke-linecap="round"/>
+          <path d="M80 420C100 330 130 270 170 215" fill="none" stroke="#d3cdbf" stroke-width="10" stroke-linecap="round" stroke-dasharray="1 0"/>
+          <path d="M0 262H600M0 330H600M250 190V420" stroke="#d6d0c3" stroke-width="2" fill="none"/>
+          <text x="22" y="40" font-family="Work Sans" font-weight="600" font-size="14" fill="#6f8186" letter-spacing="2">LAKE ONTARIO</text>
+          <text x="478" y="262" font-family="Work Sans" font-weight="600" font-size="12" fill="#6f8186" letter-spacing="1" transform="rotate(90 478 262)">NIAGARA RIVER</text>
+
+          <g class="pin" data-k="stc" tabindex="0" role="button" aria-label="St. Catharines"><circle class="hit" cx="140" cy="250" r="34"/><circle class="dot" cx="140" cy="250" r="9"/><text x="156" y="272">St. Catharines</text></g>
+          <g class="pin" data-k="notl" tabindex="0" role="button" aria-label="Niagara-on-the-Lake"><circle class="hit" cx="437" cy="118" r="34"/><circle class="dot" cx="437" cy="118" r="9"/><text x="150" y="85" style="display:none"></text><text x="420" y="152" text-anchor="end">Niagara-on-the-Lake</text></g>
+          <g class="pin" data-k="nf" tabindex="0" role="button" aria-label="Niagara Falls"><circle class="hit" cx="421" cy="326" r="34"/><circle class="dot" cx="421" cy="326" r="9"/><text x="400" y="364" text-anchor="end">Niagara Falls</text></g>
+          <g class="pin shop on" data-k="shop" tabindex="0" role="button" aria-label="Detailing Niagara shop, 213 Bunting Rd"><circle class="pulse" cx="195" cy="214" r="14"/><circle class="hit" cx="195" cy="214" r="34"/><circle class="dot" cx="195" cy="214" r="11"/><text x="212" y="206">Detailing Niagara</text></g>
+        </svg>
+        <span style="position:absolute;left:16px;bottom:12px;font-size:12px;color:#5b5e60">Schematic, not to scale</span>
+      </div>
+      <div class="panel rv">
+        <div class="ph"><img id="pimg" src="img/p10.jpg" alt="Black SUV parked outside the Detailing Niagara shop"></div>
+        <div class="tx">
+          <span class="tag" id="ptag">The shop</span>
+          <h3 id="ptitle">213 Bunting Rd</h3>
+          <p id="ptext">Walk-in address on their Google listing, with a shop sign you can see in their photos.</p>
+        </div>
+      </div>
+    </div>
+    <div class="facts rv">
+      <div><span>Address</span><b><a href="https://www.google.com/maps/place/Detailing+Niagara/data=!4m7!3m6!1s0x89d34ff337b4123f:0x7fa9821f81a47efb!8m2!3d43.1721647!4d-79.2104189!16s%2Fg%2F11rb618pqf!19sChIJPxK0N_NP04kR-36kgR-CqX8?authuser=0&hl=en" target="_blank" rel="noopener">213 Bunting Rd, St. Catharines, ON L2M 3Y2</a></b></div>
+      <div><span>Phone</span><b><a href="tel:+12895018659">(289) 501-8659</a></b></div>
+      <div><span>Hours</span><b>Not listed online. Call or text to book.</b></div>
+    </div>
+    <p class="sponsor rv">Local: they sponsor the Smoke Show 2026, a car and cigar show with Havana Castle and Golden Ash Cigars, and sold tickets at the shop.</p>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="wrap"><h2 class="rv">Cars they've <span>had in.</span></h2></div>
+  <div class="rail" tabindex="0" aria-label="Photos of recent work, scroll sideways">
+    <figure><img loading="lazy" src="img/p7.jpg" alt="Red Corvette with black hood stripe outside the shop"></figure>
+    <figure class="w"><img loading="lazy" src="img/p11.jpg" alt="Blue Corvette convertible"></figure>
+    <figure><img loading="lazy" src="img/p6.jpg" alt="Blue hatchback with black wheels outside the shop"></figure>
+    <figure class="w"><img loading="lazy" src="img/p12.jpg" alt="Orange Corvette Stingray in front of a house"></figure>
+    <figure><img loading="lazy" src="img/p1.jpg" alt="Classic Pontiac GTO in front of the Detailing Niagara sign"></figure>
+    <figure class="w"><img loading="lazy" src="img/p9.jpg" alt="Black SUV, clean after a detail"></figure>
+  </div>
+</section>
+
+<section class="svc" id="services">
+  <div class="wrap">
+    <div class="row rv">
+      <h3>Detailing</h3>
+      <div class="col">
+        <p>Inside and out, front to back. Customers describe the Complete Detail, dog hair and stains out of the interior, greasy handprints off the paint, and a Bentley, a Yukon and a Mustang brought in.</p>
+        <span class="src">From Google reviews by Marnie S., Lorrie G., Tarra M., Roger V. <a href="#reviews">Read them</a></span>
+      </div>
+    </div>
+    <div class="row rv">
+      <h3>Window tint</h3>
+      <div class="col">
+        <p>Tint on a European car with thick, old window seals, finished same day. A 2023 Porsche 911 GTS came in for a detail and a window tint refresh.</p>
+        <span class="src">From a Google review by Zaid M. and their post of Sept 4, 2026. <a href="https://www.instagram.com/p/Dc2IjHIu8u8/" target="_blank" rel="noopener">See the post</a></span>
+      </div>
+    </div>
+    <div class="row rv">
+      <h3>Pricing</h3>
+      <div class="col">
+        <p>No prices are posted online. Call or text with the car and what you need, and ask.</p>
+        <span class="src"><a href="tel:+12895018659">(289) 501-8659</a></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wall" id="reviews">
+  <div class="wrap">
+    <h2 class="rv">310 reviews.<br>Rated 5.</h2>
+    <blockquote class="lead-q rv"><q>Brett and his team did an amazing job on my Mustang. Cleaned up a few dings and made my girl shine like new. Highly recommend!</q>
+      <cite><span class="stars" aria-hidden="true">★★★★★</span> <b>Roger V.</b>, Google, 4 months ago</cite></blockquote>
+    <div class="cards">
+      <article class="rc rv"><span class="stars" aria-hidden="true">★★★★★</span>
+        <p>"I googled “where’s the best place” to get my Bentley fully detailed from front to back and inside and out. What came up right away was “ Detailing Niagara” and boy they were NOT wrong. Absolutely thrilled with the finished product and so …"</p>
+        <cite><b>Lorrie G.</b>, Google, 2 months ago</cite></article>
+      <article class="rc rv"><span class="stars" aria-hidden="true">★★★★★</span>
+        <p>"They did great work tinting my car and taking great care. It was tricky to do as it's a European car with thick windows seals and they where old. But they managed to finish it same day and with no extra charge for the extra hassle. Highly recommended and great guys to deal with. Thank you"</p>
+        <cite><b>Zaid M.</b>, Google, a month ago</cite></article>
+      <article class="rc rv"><span class="stars" aria-hidden="true">★★★★★</span>
+        <p>"I highly recommend Detailing Niagara. I brought a Yukon in, and the team did an absolutely incredible job. Every inch of the truck looks and smells like new—inside and out. They matched the window tint to the existing tint perfectly. The …"</p>
+        <cite><b>Tarra M.</b>, Google, 5 months ago</cite></article>
+      <article class="rc rv"><span class="stars" aria-hidden="true">★★★★★</span>
+        <p>"I brought my Buick Encore to Detailing Niagara for the Complete Detail. The interior had some dog hair, makeup, and a few other stains, and the outside had greasy handprints I just couldn't get rid of myself. The owner, Brett, was friendly …"</p>
+        <cite><b>Marnie S.</b>, Google, a month ago</cite></article>
+    </div>
+    <p class="more">Rating 5 from 310 Google reviews. <a href="https://www.google.com/maps/place/Detailing+Niagara/data=!4m7!3m6!1s0x89d34ff337b4123f:0x7fa9821f81a47efb!8m2!3d43.1721647!4d-79.2104189!16s%2Fg%2F11rb618pqf!19sChIJPxK0N_NP04kR-36kgR-CqX8?authuser=0&hl=en" target="_blank" rel="noopener">Read them on Google Maps</a></p>
+  </div>
+</section>
+
+<section class="quote" id="quote">
+  <div class="bg"><img loading="lazy" src="img/p11.jpg" alt=""></div>
+  <div class="wrap">
+    <h2 class="rv">Text us<br>the car.</h2>
+    <form class="qp rv" id="qf" autocomplete="off">
+      <p class="sent">Hi, my name is <input id="nm" placeholder="your name" aria-label="Your name" required> and I have a <input id="car" placeholder="car, year, make" aria-label="Your car"> and I'd like a
+        <select id="need" aria-label="What you need"><option>detail</option><option>window tint</option><option>detail and tint</option><option>price, not sure yet</option></select></p>
+      <div class="go"><button class="btn gold" type="submit">Open my text</button><span class="note">Opens a text to (289) 501-8659. You press send.</span></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><b>Detailing Niagara</b><p style="margin-top:8px">Car detailing service<br>213 Bunting Rd, St. Catharines, ON L2M 3Y2</p></div>
+    <div><p><a href="tel:+12895018659">(289) 501-8659</a><br><a href="https://www.instagram.com/detailingniagara/" target="_blank" rel="noopener">@detailingniagara on Instagram</a></p></div>
+    <div class="pv">Preview built by JPF. Not live yet.</div>
+  </div>
+</footer>
+
+<div class="dock" role="group" aria-label="Call or text"><a class="c" href="tel:+12895018659">Call now</a><a class="t" href="sms:+12895018659">Text</a></div>
+
+<script>
+(function(){
+  var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // reveal
+  var rv=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window && !rm){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    rv.forEach(function(el){io.observe(el)});
+  } else rv.forEach(function(el){el.classList.add('on')});
+  // count up
+  document.querySelectorAll('[data-count]').forEach(function(el){
+    var end=+el.dataset.count,dec=+(el.dataset.dec||0);
+    if(rm||!('IntersectionObserver' in window)){return}
+    var done=false,o=new IntersectionObserver(function(es){if(es[0].isIntersecting&&!done){done=true;var t0=performance.now();(function f(t){var p=Math.min(1,(t-t0)/1100),v=end*(1-Math.pow(1-p,3));el.textContent=v.toFixed(dec);if(p<1)requestAnimationFrame(f)})(t0)}},{threshold:.6});
+    o.observe(el);
+  });
+  // map pins
+  var data={
+    shop:{img:'img/p10.jpg',alt:'Black SUV parked outside the Detailing Niagara shop',tag:'The shop',t:'213 Bunting Rd',x:'Walk-in address on their Google listing, with a shop sign you can see in their photos.'},
+    stc:{img:'img/p1.jpg',alt:'Classic Pontiac GTO in front of the Detailing Niagara sign',tag:'#stcatharines',t:'St. Catharines',x:'Home base. Their Sept 11 post reads "Taking care of the local Porsche community!" with the Bunting Rd address.'},
+    notl:{img:'img/p7.jpg',alt:'Red Corvette outside the shop',tag:'#niagaraonthelake',t:'Niagara-on-the-Lake',x:'One of three places they tag on posts, including their 2026 Smoke Show posts.'},
+    nf:{img:'img/p12.jpg',alt:'Orange Corvette Stingray',tag:'#niagarafalls',t:'Niagara Falls',x:'One of three places they tag on posts. Golden Ash Cigars in Niagara Falls sold Smoke Show tickets too.'}
+  };
+  var pins=document.querySelectorAll('.pin');
+  function pick(k){
+    var d=data[k];if(!d)return;
+    pins.forEach(function(p){p.classList.toggle('on',p.dataset.k===k)});
+    var im=document.getElementById('pimg');im.style.opacity=0;
+    setTimeout(function(){im.src=d.img;im.alt=d.alt;im.style.opacity=1},150);
+    document.getElementById('ptag').textContent=d.tag;
+    document.getElementById('ptitle').textContent=d.t;
+    document.getElementById('ptext').textContent=d.x;
+  }
+  pins.forEach(function(p){
+    p.addEventListener('click',function(){pick(p.dataset.k)});
+    p.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(p.dataset.k)}});
+  });
+  // quote form
+  document.getElementById('qf').addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=document.getElementById('nm').value.trim(),c=document.getElementById('car').value.trim(),w=document.getElementById('need').value;
+    var b="Hi Detailing Niagara, my name is "+n+"."+(c?" I have a "+c+".":"")+" I'd like a "+w+". Can you quote me?";
+    location.href='sms:+12895018659?&body='+encodeURIComponent(b);
+  });
+})();
+</script>
+</body>
+</html>
