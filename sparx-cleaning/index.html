@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Sparx Cleaning | House Cleaning in Oshawa, ON</title>
+<meta name="description" content="Sparx Cleaning, house cleaning in Oshawa, ON. 5.0 on Google from 10 reviews. Call (289) 298-0461.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600&family=Red+Hat+Display:ital,wght@0,500;0,700;0,800;0,900;1,800&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ Direction: timeline-feed-led. Page reads as a dated feed of their real Instagram posts + Google job photos, newest first; rating and reviews pinned on top.
+ Palette: ice #f3f8fc (bright rooms in their kitchen photos), ink #0e2236 (navy of their logo), sparkle blue #2a8ed8 / deep #1769a8 (their logo word "SPARX"), floor oak #c8a47a (wood floors in their photos).
+ Fonts: Red Hat Display (900 display) + Hind (body).
+ Signature: the feed itself, a spine with dated nodes, filter chips, pinned glass rating card on the kitchen photo.
+ Order: hero + pinned > feed (posts, Google photos, earlier posts) > services > quote > area/hours.
+ Motion: one load settle, gentle reveal on cards, count-up, reduced-motion respected. */
+:root{
+  --ice:#f3f8fc; --ink:#0e2236; --blue:#2a8ed8; --deep:#1769a8; --oak:#c8a47a; --mute:#4b6074; --line:#d5e2ee;
+  --r-pill:999px; --r-big:26px; --r-sm:15px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{overflow-x:clip;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Hind',system-ui,sans-serif;font-size:17px;line-height:1.55;color:var(--ink);background:var(--ice);overflow-x:clip;padding-bottom:104px}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,.disp{font-family:'Red Hat Display',sans-serif;letter-spacing:-.02em}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:8px}
+.wrap{width:100%;max-width:1240px;margin:0 auto;padding:0 20px}
+
+/* orbs */
+.orbs{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.orb{position:absolute;border-radius:50%;filter:blur(50px);opacity:.5;animation:drift 26s ease-in-out infinite alternate}
+.o1{width:420px;height:420px;background:radial-gradient(circle,#bcdcf5,transparent 70%);top:-120px;right:-120px}
+.o2{width:360px;height:360px;background:radial-gradient(circle,#ecdcc4,transparent 70%);top:380px;left:-160px;animation-duration:30s}
+@keyframes drift{to{transform:translate(40px,30px)}}
+
+/* nav pill */
+.nav{position:sticky;top:12px;z-index:50;margin:12px 14px 0;display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:8px 8px 8px 20px;border-radius:var(--r-pill);
+  background:rgba(243,248,252,.62);backdrop-filter:blur(22px) saturate(170%);-webkit-backdrop-filter:blur(22px) saturate(170%);
+  border:1px solid rgba(255,255,255,.7);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 18px 50px -22px rgba(14,34,54,.35)}
+.brand{font-family:'Red Hat Display';font-weight:900;font-size:19px;text-decoration:none;letter-spacing:-.02em}
+.brand i{font-style:normal;color:var(--deep)}
+.navlinks{display:none;gap:26px;font-weight:500;font-size:15px}
+.navlinks a{text-decoration:none;color:var(--mute)}
+.navlinks a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 22px;border-radius:var(--r-pill);font-family:'Red Hat Display';font-weight:800;font-size:16px;text-decoration:none;border:0;cursor:pointer;transition:transform .18s,background .18s,box-shadow .18s;white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn-main{background:var(--deep);color:#fff;box-shadow:0 10px 24px -10px rgba(23,105,168,.7)}
+.btn-main:hover{background:#125a92}
+.btn-ghost{background:rgba(255,255,255,.7);color:var(--ink);border:1px solid var(--line)}
+
+/* hero */
+.hero{position:relative;padding:34px 0 20px;isolation:isolate}
+.hero .wrap{position:relative;z-index:1}
+.kicker{font-size:14px;font-weight:600;color:var(--deep);display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.kicker:before{content:"";width:10px;height:10px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 5px rgba(42,142,216,.2)}
+h1{font-weight:900;font-size:clamp(54px,15.5vw,104px);line-height:.92;text-transform:none}
+h1 em{font-style:normal;color:var(--deep)}
+.lede{margin:20px 0 0;max-width:46ch;color:var(--mute);font-size:18px}
+.heroactions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.photo-card{position:relative;margin-top:30px;border-radius:var(--r-big);overflow:hidden;aspect-ratio:4/4.6;box-shadow:0 30px 70px -34px rgba(14,34,54,.5)}
+.photo-card img{width:100%;height:100%;object-fit:cover}
+.pin{position:absolute;left:12px;right:12px;bottom:12px;padding:16px 18px 18px;border-radius:22px;
+  background:rgba(243,248,252,.72);backdrop-filter:blur(24px) saturate(170%);-webkit-backdrop-filter:blur(24px) saturate(170%);
+  border:1px solid rgba(255,255,255,.65);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 20px 50px -22px rgba(14,34,54,.5)}
+.pinlabel{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--mute)}
+.pinlabel svg{width:15px;height:15px;color:var(--deep)}
+.score{display:flex;align-items:baseline;gap:10px;margin:6px 0 4px}
+.score b{font-family:'Red Hat Display';font-weight:900;font-size:52px;line-height:1;letter-spacing:-.03em}
+.score span{font-size:15px;font-weight:500;color:var(--mute)}
+.stars{color:var(--blue);letter-spacing:2px;font-size:18px}
+.pin blockquote{font-size:15.5px;line-height:1.45;margin-top:6px}
+.pin cite{display:block;margin-top:6px;font-style:normal;font-size:14px;color:var(--mute)}
+
+/* feed layout */
+.main{display:block;padding-top:34px}
+.side{display:none}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:4px 20px 12px;margin:0 -20px;max-width:100vw;scrollbar-width:none;position:sticky;top:76px;z-index:20}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;min-height:44px;padding:0 18px;border-radius:var(--r-sm);cursor:pointer;font:600 15px 'Hind';color:var(--ink);
+  background:rgba(243,248,252,.7);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);
+  border:1px solid rgba(255,255,255,.7);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 8px 24px -16px rgba(14,34,54,.4);transition:transform .18s,background .18s,color .18s}
+.chip:active{transform:scale(.97)}
+.chip[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.feedhead{display:flex;align-items:baseline;justify-content:space-between;margin:10px 0 10px}
+.feedhead h2{font-size:30px;font-weight:900}
+.feedhead small{font-size:14px;color:var(--mute)}
+.feed{position:relative;padding-left:34px}
+.feed:before{content:"";position:absolute;left:11px;top:6px;bottom:0;width:2px;background:linear-gradient(var(--blue),var(--line) 30%,var(--line))}
+.entry{position:relative;margin:0 0 30px}
+.entry:before{content:"";position:absolute;left:-30px;top:5px;width:14px;height:14px;border-radius:50%;background:var(--ice);border:3px solid var(--blue);box-shadow:0 0 0 5px var(--ice)}
+.entry.photo:before{border-color:var(--oak)}
+.entry.hide{display:none}
+.meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin-bottom:10px;font-size:14px;color:var(--mute)}
+.date{font-family:'Red Hat Display';font-weight:800;font-size:17px;color:var(--ink)}
+.src{padding:2px 10px;border-radius:var(--r-pill);background:#e4eef7;font-size:13px;font-weight:600;color:var(--deep);text-decoration:none}
+.src.g{background:#f1e8da;color:#7d5d36}
+.card{border-radius:var(--r-big);background:#fff;border:1px solid var(--line);overflow:hidden;box-shadow:0 22px 50px -34px rgba(14,34,54,.35)}
+.card .body{padding:18px 20px 20px}
+.card h3{font-size:24px;font-weight:800;line-height:1.1;margin-bottom:8px}
+.cap{color:var(--ink);font-size:16.5px;white-space:pre-line}
+.cap q{quotes:"\201C" "\201D"}
+.card video,.card img{width:100%;height:auto;background:#dfe9f2}
+.tall{aspect-ratio:3/4;object-fit:cover}
+.sq{aspect-ratio:1/1;object-fit:cover}
+.wide{aspect-ratio:16/10;object-fit:cover}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+.duo img{aspect-ratio:3/4;object-fit:cover}
+.trio{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+.trio img{aspect-ratio:1/1;object-fit:cover}
+.trio img:first-child{grid-column:1/3;aspect-ratio:16/10}
+.link{display:inline-flex;align-items:center;min-height:44px;margin-top:6px;font-weight:600;color:var(--deep);text-decoration:none;border-bottom:2px solid rgba(42,142,216,.3)}
+.link:hover{border-color:var(--deep)}
+.slim .body{padding:14px 18px 16px}
+.slim .cap{font-size:16px}
+.divider{margin:6px 0 24px;padding:14px 18px;border-radius:var(--r-sm);background:#e7f0f8;font-size:15px;color:var(--mute)}
+.note{font-size:13.5px;color:var(--mute);margin-top:8px}
+
+/* reviews strip */
+.sect{padding:70px 0 10px}
+.sect h2{font-size:clamp(40px,10vw,76px);font-weight:900;line-height:.95;margin-bottom:26px}
+.rv{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -20px;padding:4px 20px 18px;scrollbar-width:none}
+.rv::-webkit-scrollbar{display:none}
+.rc{flex:0 0 84%;scroll-snap-align:start;padding:22px;border-radius:var(--r-big);background:#fff;border:1px solid var(--line);box-shadow:0 22px 50px -34px rgba(14,34,54,.35)}
+.rc p{font-size:16.5px}
+.rc b{display:block;margin-top:14px;font-family:'Red Hat Display';font-weight:800}
+.rc span{font-size:14px;color:var(--mute)}
+
+/* services */
+.svc{list-style:none;border-top:2px solid var(--ink)}
+.svc li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);font-family:'Red Hat Display';font-weight:800;font-size:clamp(24px,6vw,36px);letter-spacing:-.02em;line-height:1.1}
+.svc small{font:400 14px 'Hind';color:var(--mute);text-align:right;max-width:20ch}
+
+/* quote */
+.quote{position:relative;margin-top:70px;padding:60px 0 70px;isolation:isolate;background:var(--ink);color:#fff;overflow:hidden}
+.quote .orb{opacity:.35}
+.quote .o1{background:radial-gradient(circle,#2a8ed8,transparent 70%);top:-160px;left:-120px;right:auto}
+.quote .o2{background:radial-gradient(circle,#c8a47a,transparent 70%);top:auto;bottom:-180px;right:-120px;left:auto}
+.quote .wrap{position:relative;z-index:1}
+.quote h2{font-size:clamp(40px,10vw,76px);font-weight:900;line-height:.95;margin-bottom:26px}
+.glass{padding:24px 20px;border-radius:var(--r-big);background:rgba(14,34,54,.5);backdrop-filter:blur(26px) saturate(160%);-webkit-backdrop-filter:blur(26px) saturate(160%);
+  border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 30px 70px -30px rgba(0,0,0,.6)}
+.sentence{font-family:'Red Hat Display';font-weight:700;font-size:clamp(22px,5.6vw,34px);line-height:1.6;letter-spacing:-.01em}
+.sentence input,.sentence select{font:inherit;color:#fff;min-width:0;width:11ch;max-width:100%;padding:2px 12px;margin:0 2px;min-height:44px;border-radius:12px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);box-shadow:inset 0 1px 0 rgba(255,255,255,.2)}
+.sentence select{width:auto;appearance:none;-webkit-appearance:none;padding-right:12px}
+.sentence select option{color:#0e2236;font-family:'Hind'}
+.sentence input::placeholder{color:rgba(255,255,255,.55)}
+.sentence input:focus,.sentence select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(42,142,216,.55)}
+.sendrow{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:22px}
+.sendrow .btn-main{background:var(--blue);color:#06182a}
+.sendrow small{color:#b9cadb;font-size:14px;flex:1 1 200px}
+
+/* area */
+.facts{display:grid;gap:30px;padding:70px 0 40px}
+.facts h3{font-size:15px;font-weight:700;color:var(--deep);margin-bottom:8px}
+.facts .big{font-family:'Red Hat Display';font-weight:900;font-size:clamp(30px,7vw,44px);line-height:1.05;letter-spacing:-.02em}
+.hours{margin-top:8px;font-size:16.5px}
+a.tel{text-decoration:none;border-bottom:3px solid var(--blue)}
+footer{padding:26px 0 40px;font-size:14px;color:var(--mute);border-top:1px solid var(--line)}
+
+/* dock */
+.dock{position:fixed;left:14px;right:14px;bottom:max(14px,env(safe-area-inset-bottom));z-index:60;display:flex;gap:8px;padding:8px;border-radius:var(--r-pill);
+  background:rgba(243,248,252,.66);backdrop-filter:blur(24px) saturate(170%);-webkit-backdrop-filter:blur(24px) saturate(170%);
+  border:1px solid rgba(255,255,255,.7);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 20px 50px -20px rgba(14,34,54,.55)}
+.dock .btn{flex:1;min-height:50px}
+
+/* motion */
+.rise{opacity:0;transform:translateY(14px);animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
+.d1{animation-delay:.05s}.d2{animation-delay:.18s}.d3{animation-delay:.3s}.d4{animation-delay:.45s}
+@keyframes rise{to{opacity:1;transform:none}}
+.rev{opacity:0;transform:translateY(12px);transition:opacity .7s,transform .7s}
+.rev.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .orb{animation:none}
+  .rise,.rev{opacity:1;transform:none;animation:none;transition:none}
+}
+
+@media (min-width:820px){
+  body{padding-bottom:0}
+  .dock{display:none}
+  .navlinks{display:flex}
+  .nav{max-width:1100px;margin:14px auto 0}
+  .hero{padding:60px 0 30px}
+  .herogrid{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:end}
+  .photo-card{margin-top:0;aspect-ratio:4/4.6}
+  .main{display:grid;grid-template-columns:340px 1fr;gap:70px;align-items:start;padding-top:60px}
+  .side{display:block;position:sticky;top:96px}
+  .side .tile{padding:24px;border-radius:var(--r-big);background:#fff;border:1px solid var(--line);margin-bottom:16px}
+  .side h3{font-size:14px;font-weight:700;color:var(--deep);margin-bottom:6px}
+  .side .big{font-family:'Red Hat Display';font-weight:900;font-size:34px;line-height:1.05;letter-spacing:-.02em}
+  .side .small{font-size:15px;color:var(--mute);margin-top:6px}
+  .chips{position:static;margin:0 0 6px;padding:4px 0 12px;flex-wrap:wrap;overflow:visible}
+  .rv{margin:0;padding:4px 0 18px;overflow:visible;display:grid;grid-template-columns:repeat(3,1fr)}
+  .rc{flex:none}
+  .card.cols{display:grid;grid-template-columns:1fr 1fr}
+  .card.cols>:first-child{height:100%}
+  .card.cols video,.card.cols img{height:100%;aspect-ratio:auto;object-fit:cover}
+  .facts{grid-template-columns:1fr 1fr 1fr}
+  .glass{padding:40px}
+  .sentence input{width:14ch}
+}
+@media (min-width:820px){ .card>img.wide,.card>img.tall{max-height:460px;aspect-ratio:auto} .trio img:first-child{aspect-ratio:16/9} .duo img{aspect-ratio:4/5} }
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <a class="brand" href="#top">Sparx <i>Cleaning</i></a>
+  <div class="navlinks"><a href="#feed">Feed</a><a href="#reviews">Reviews</a><a href="#services">Services</a><a href="#quote">Quote</a></div>
+  <a class="btn btn-main" href="tel:+12892980461">Call</a>
+</nav>
+
+<header class="hero" id="top">
+  <div class="orbs" aria-hidden="true"><div class="orb o1"></div><div class="orb o2"></div></div>
+  <div class="wrap herogrid">
+    <div>
+      <p class="kicker rise d1">House cleaning · Oshawa, ON</p>
+      <h1 class="rise d2">Real jobs.<br>Real reviews.<br><em>Newest first.</em></h1>
+      <p class="lede rise d3">This is Sparx Cleaning, scrolled like their own feed: what they posted, the rooms they cleaned, and what customers wrote about them.</p>
+      <div class="heroactions rise d3">
+        <a class="btn btn-main" href="tel:+12892980461">Call (289) 298-0461</a>
+        <a class="btn btn-ghost" href="#quote">Get a quote</a>
+      </div>
+    </div>
+    <div class="photo-card rise d4">
+      <img src="img/f-kitchen1.jpg" alt="Clean kitchen with a long white counter and wood floors, cleaned by Sparx Cleaning" width="1400" height="1100" fetchpriority="high">
+      <aside class="pin" aria-label="Pinned: Google rating">
+        <div class="pinlabel"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="9" r="5"/><rect x="11" y="13" width="2" height="8" rx="1"/></svg>Pinned · Google rating</div>
+        <div class="score"><b data-count="5" data-dec="1">5.0</b><span>from <span data-count="10">10</span> Google reviews</span></div>
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <blockquote>“The crew was so friendly and easy to talk to, and I could tell they really cared about doing a great job.”</blockquote>
+        <cite>Amaan, Google</cite>
+      </aside>
+    </div>
+  </div>
+</header>
+
+<div class="wrap main" id="feed">
+  <aside class="side" aria-label="Business facts">
+    <div class="tile"><h3>Phone</h3><a class="big tel" href="tel:+12892980461">(289) 298-0461</a><p class="small">Open every day, 8 a.m. to 8 p.m.</p></div>
+    <div class="tile"><h3>Where</h3><p class="big" style="font-size:24px">57 Simcoe St S, Ste 1J<br>Oshawa, ON L1H 4G4</p></div>
+    <div class="tile"><h3>Follow the work</h3><a class="link" href="https://www.instagram.com/sparxcleaning/" rel="noopener">Instagram: @sparxcleaning</a></div>
+  </aside>
+
+  <div>
+    <div class="chips" role="group" aria-label="Filter the feed">
+      <button class="chip" aria-pressed="true" data-f="all">All</button>
+      <button class="chip" aria-pressed="false" data-f="video">Videos</button>
+      <button class="chip" aria-pressed="false" data-f="carpet">Carpet</button>
+      <button class="chip" aria-pressed="false" data-f="rooms">Kitchens and floors</button>
+      <button class="chip" aria-pressed="false" data-f="bath">Bathrooms</button>
+    </div>
+    <div class="feedhead"><h2>The feed</h2><small>Newest first</small></div>
+
+    <div class="feed">
+
+      <article class="entry rev" data-t="video">
+        <div class="meta"><span class="date">Oct 6, 2026</span><a class="src" href="https://www.instagram.com/p/DeIzfemunMf/" rel="noopener">Instagram video</a></div>
+        <div class="card slim"><div class="body"><h3>New video on Instagram</h3><p class="cap">Their latest post is a video with no caption. Watch it on their page.</p><a class="link" href="https://www.instagram.com/p/DeIzfemunMf/" rel="noopener">Open the post</a></div></div>
+      </article>
+
+      <article class="entry rev" data-t="video">
+        <div class="meta"><span class="date">Aug 11, 2026</span><a class="src" href="https://www.instagram.com/p/Db6hPXLSAg6/" rel="noopener">Instagram video</a></div>
+        <div class="card cols">
+          <video src="video/hero.mp4" poster="video/hero-poster.jpg" muted loop playsinline preload="metadata" class="tall autoplay" aria-label="Video of an oven being steam cleaned"></video>
+          <div class="body"><h3>Steam cleaning an oven</h3><p class="cap">A gloved hand works a steam wand inside an oven.</p><a class="link" href="https://www.instagram.com/p/Db6hPXLSAg6/" rel="noopener">Open the post</a></div>
+        </div>
+      </article>
+
+      <article class="entry rev" data-t="video rooms">
+        <div class="meta"><span class="date">Jul 6, 2026</span><a class="src" href="https://www.instagram.com/p/Dad_QVqyKK8/" rel="noopener">Instagram video</a></div>
+        <div class="card cols">
+          <video src="video/band.mp4" poster="video/band-poster.jpg" muted loop playsinline preload="metadata" class="wide autoplay" aria-label="Video of tile floor and baseboards being cleaned"></video>
+          <div class="body"><h3>Spray and a mop vs. the real kit</h3>
+            <p class="cap"><q>Think one spray and a mop can deep clean a house?
+
+Think again.</q></p>
+            <p class="cap" style="margin-top:10px">Their list of what they used: Oreck Orbiter Scrubber, Steam Cleaner, Heavy Duty Scraper, Professional Degreaser, Grout Cleaner.</p>
+            <a class="link" href="https://www.instagram.com/p/Dad_QVqyKK8/" rel="noopener">Open the post</a></div>
+        </div>
+      </article>
+
+      <div class="divider rev">Next: job photos from their Google listing. Google does not show dates for these, so they sit here without one.</div>
+
+      <article class="entry photo rev" data-t="carpet">
+        <div class="meta"><span class="date">Carpet job</span><span class="src g">Google photos</span></div>
+        <div class="card">
+          <div class="trio"><img src="img/p3.jpg" alt="Cleaner working a carpet extractor in an empty room" loading="lazy"><img src="img/p2.jpg" alt="Cleaner using a carpet wand in a bright room" loading="lazy"><img src="img/p7.jpg" alt="Cleaner holding a carpet cleaning wand by a window" loading="lazy"></div>
+          <div class="body"><h3>Carpet cleaning</h3><p class="cap">Hoses out, wand down, one room at a time.</p></div>
+        </div>
+      </article>
+
+      <article class="entry photo rev" data-t="carpet">
+        <div class="meta"><span class="date">Carpet job</span><span class="src g">Google photo</span></div>
+        <div class="card"><img class="wide" src="img/p10.jpg" alt="Carpet wand resting on a large area of carpet" loading="lazy"><div class="body"><h3>Wand on the carpet</h3><p class="cap">A wide-angle shot of the extractor wand on the floor.</p></div></div>
+      </article>
+
+      <article class="entry photo rev" data-t="rooms">
+        <div class="meta"><span class="date">Kitchens</span><span class="src g">Google photos</span></div>
+        <div class="card">
+          <div class="duo"><img src="img/f-kitchen2.jpg" alt="Clean kitchen with white cabinets, stainless stove and wood-look floor" loading="lazy"><img src="img/p9.jpg" alt="Open kitchen with white island and tile floor" loading="lazy"></div>
+          <div class="body"><h3>Counters, stoves, floors</h3><p class="cap">Two kitchens after a clean.</p></div>
+        </div>
+      </article>
+
+      <article class="entry photo rev" data-t="rooms">
+        <div class="meta"><span class="date">Floors</span><span class="src g">Google photos</span></div>
+        <div class="card">
+          <div class="duo"><img src="img/f-aisle-l.jpg" alt="Dirty tile floor in a store aisle" loading="lazy"><img src="img/f-aisle-r.jpg" alt="Clean tile floor in the same store aisle" loading="lazy"></div>
+          <div class="body"><h3>Tile aisle, split down the middle</h3><p class="cap">One side dark with dirt, the other side clean.</p></div>
+        </div>
+      </article>
+
+      <article class="entry photo rev" data-t="rooms">
+        <div class="meta"><span class="date">Hallway</span><span class="src g">Google photo</span></div>
+        <div class="card slim"><img class="tall" src="img/p8.jpg" alt="Clean hallway with wood floor and a person at the far end" loading="lazy" style="aspect-ratio:4/3"><div class="body"><p class="cap">A clear hallway, wood floor, bright light.</p></div></div>
+      </article>
+
+      <div class="divider rev">Earlier posts on their Instagram, newest first.</div>
+
+      <article class="entry rev slim" data-t="video">
+        <div class="meta"><span class="date">Nov 20, 2025</span><a class="src" href="https://www.instagram.com/p/DRS_vTcDdNU/" rel="noopener">Instagram video</a></div>
+        <div class="card"><div class="body"><p class="cap">Caption: <q>Ontario | Canada</q></p></div></div>
+      </article>
+      <article class="entry rev slim" data-t="carpet">
+        <div class="meta"><span class="date">Sep 17, 2025</span><a class="src" href="https://www.instagram.com/p/DOsRr9MiZcD/" rel="noopener">Instagram photo</a></div>
+        <div class="card"><div class="body"><p class="cap"><q>Thorough Carpet Cleaning for a Fresh Home!</q></p><a class="link" href="https://www.instagram.com/p/DOsRr9MiZcD/" rel="noopener">Open the post</a></div></div>
+      </article>
+      <article class="entry rev slim" data-t="video">
+        <div class="meta"><span class="date">Aug 17, 2025</span><a class="src" href="https://www.instagram.com/p/DNd0RDNg8-Z/" rel="noopener">Instagram video</a></div>
+        <div class="card"><div class="body"><p class="cap"><q>Guess the city we cleaned this unit?</q></p></div></div>
+      </article>
+      <article class="entry rev slim" data-t="video">
+        <div class="meta"><span class="date">Jul 16, 2025</span><a class="src" href="https://www.instagram.com/p/DMJlC50sZ3m/" rel="noopener">Instagram video</a></div>
+        <div class="card"><div class="body"><p class="cap"><q>Looking for Move out Cleaning?</q></p></div></div>
+      </article>
+      <article class="entry rev slim" data-t="video carpet">
+        <div class="meta"><span class="date">Jun 28, 2025</span><a class="src" href="https://www.instagram.com/p/DLc5Mr-MYDd/" rel="noopener">Instagram video</a></div>
+        <div class="card"><div class="body"><p class="cap"><q>Clean your dirty carpets with Sparx Cleaning</q></p></div></div>
+      </article>
+      <article class="entry rev slim" data-t="video bath">
+        <div class="meta"><span class="date">Mar 29, 2025</span><a class="src" href="https://www.instagram.com/p/DHyaDsCOadA/" rel="noopener">Instagram video</a></div>
+        <div class="card"><div class="body"><p class="cap"><q>From Chaos To Crystal Clean!</q> Tagged #BeforeAndAfter #BathroomRefresh</p></div></div>
+      </article>
+      <article class="entry rev slim" data-t="video bath">
+        <div class="meta"><span class="date">Mar 20, 2025</span><a class="src" href="https://www.instagram.com/p/DHbTDDLuHA_/" rel="noopener">Instagram video</a></div>
+        <div class="card"><div class="body"><p class="cap"><q>From mess to impress!</q> Tagged #BeforeAndAfter #BathroomRefresh</p></div></div>
+      </article>
+      <article class="entry rev slim" data-t="video">
+        <div class="meta"><span class="date">Mar 18, 2025</span><a class="src" href="https://www.instagram.com/p/DHWkJQGyzoL/" rel="noopener">Instagram video</a></div>
+        <div class="card"><div class="body"><p class="cap"><q>visited a client site and captured the ultimate ASMR cleaning experience!</q></p></div></div>
+      </article>
+      <p class="note" id="empty" hidden>Nothing in this filter yet. Try All.</p>
+    </div>
+  </div>
+</div>
+
+<section class="sect wrap" id="reviews">
+  <h2 class="rev">What customers wrote.</h2>
+  <div class="rv">
+    <figure class="rc rev"><p>“Sparx Cleaners totally exceeded my expectations. I wasn’t sure what to expect, but they went above and beyond. My place looked amazing after they were done cleaning. The crew was so friendly and easy to talk to, and I could tell they really cared about doing a great job.”</p><b>Amaan</b><span>Google, 5 stars</span></figure>
+    <figure class="rc rev"><p>“Sparx Cleaning really stands out for their friendly and attentive service. The team is not only professional but genuinely cares about making your space shine. They take the time to address your specific needs.”</p><b>Sukhjeet S.</b><span>Google, 5 stars</span></figure>
+    <figure class="rc rev"><p>“The owner was quite polite and punctual towards his work. The cleaners arrived on time and we had no such issues with them. They worked quickly but didn’t miss a single detail. My kitchen and bathrooms have never looked better! Plus, they …”</p><b>Raghav</b><span>Google, 5 stars</span></figure>
+    <figure class="rc rev"><p>“Sparx cleaning was honestly such a great experience! I didn’t know what to expect at first, but they really impressed me. My toilet has never been this neat and tidy before, YES IM SERIOUS! My place was left sparkling clean, even in those …”</p><b>Anand N.</b><span>Google, 5 stars</span></figure>
+    <figure class="rc rev"><p>“SparkX Cleaners really impressed me. They didn’t just do a surface-level job; they got into all the nooks and crannies and left everything looking spotless. The team was friendly, arrived on time, and seemed to genuinely care about doing a …”</p><b>Himanshu P.</b><span>Google, 5 stars</span></figure>
+  </div>
+  <p class="note">5.0 on Google from 10 reviews. Five are shown here, word for word as Google displays them.</p>
+</section>
+
+<section class="sect wrap" id="services">
+  <h2 class="rev">What they clean.</h2>
+  <ul class="svc rev">
+    <li>House cleaning <small>Google category</small></li>
+    <li>Kitchens and bathrooms <small>named in reviews</small></li>
+    <li>Carpet cleaning <small>posted Jun and Sep 2025</small></li>
+    <li>Move-out cleaning <small>posted Jul 2025</small></li>
+    <li>Deep cleaning, tile and grout <small>posted Jul 2026</small></li>
+    <li>Oven steam cleaning <small>posted Aug 2026</small></li>
+  </ul>
+</section>
+
+<section class="quote" id="quote">
+  <div class="orbs" aria-hidden="true"><div class="orb o1"></div><div class="orb o2"></div></div>
+  <div class="wrap">
+    <h2 class="rev">Ask for a quote.</h2>
+    <form class="glass rev" id="qf" autocomplete="off">
+      <p class="sentence">Hi Sparx, I’m
+        <input id="qn" name="n" placeholder="your name" aria-label="Your name" required>
+        in
+        <input id="qc" name="c" placeholder="your city" aria-label="Your city" required>
+        and I need
+        <select id="qs" aria-label="What you need"><option>house cleaning</option><option>carpet cleaning</option><option>move-out cleaning</option><option>a deep clean</option><option>something else</option></select>.
+      </p>
+      <div class="sendrow"><button class="btn btn-main" type="submit">Text this to Sparx</button><small>Opens your messages with this note ready to send to (289) 298-0461.</small></div>
+    </form>
+  </div>
+</section>
+
+<section class="wrap facts" id="area">
+  <div><h3>Where</h3><p class="big">57 Simcoe St S, Ste 1J<br>Oshawa, ON L1H 4G4</p></div>
+  <div><h3>Open</h3><p class="big">Every day,<br>8 a.m. to 8 p.m.</p><p class="hours">Monday to Sunday, per Google.</p></div>
+  <div><h3>Call</h3><p class="big"><a class="tel" href="tel:+12892980461">(289) 298-0461</a></p><p class="hours"><a class="link" href="https://www.google.com/maps/place/Sparx+Cleaning/data=!4m7!3m6!1s0x89d51d4d39c4421b:0x99accb9c90357839!8m2!3d43.8959574!4d-78.8626041!16s%2Fg%2F11wc1vq7fb!19sChIJG0LEOU0d1YkROXg1kJzLrJk?authuser=0&hl=en" rel="noopener">See them on Google Maps</a></p></div>
+</section>
+
+<footer><div class="wrap">Preview built by JPF. Not live yet.</div></footer>
+
+<div class="dock" role="group" aria-label="Call or text">
+  <a class="btn btn-main" href="tel:+12892980461">Call</a>
+  <a class="btn btn-ghost" href="sms:+12892980461">Text</a>
+</div>
+
+<script>
+(function(){
+  var rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // filter chips
+  var chips=document.querySelectorAll('.chip'), entries=document.querySelectorAll('.entry'), dividers=document.querySelectorAll('.divider');
+  chips.forEach(function(c){c.addEventListener('click',function(){
+    chips.forEach(function(x){x.setAttribute('aria-pressed','false')});c.setAttribute('aria-pressed','true');
+    var f=c.dataset.f, n=0;
+    entries.forEach(function(e){var ok=f==='all'||(e.dataset.t||'').split(' ').indexOf(f)>-1;e.classList.toggle('hide',!ok);if(ok){n++;e.classList.add('in')}});
+    dividers.forEach(function(d){d.style.display=f==='all'?'':'none'});
+    document.getElementById('empty').hidden=n>0;
+  })});
+  // reveal
+  var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -6% 0px'}):null;
+  document.querySelectorAll('.rev').forEach(function(el){if(io&&!rm)io.observe(el);else el.classList.add('in')});
+  // count up
+  document.querySelectorAll('[data-count]').forEach(function(el){
+    if(rm)return;var to=+el.dataset.count,dec=+el.dataset.dec||0,t0=null;
+    (function step(t){t0=t0||t;var p=Math.min((t-t0)/1100,1),v=to*(1-Math.pow(1-p,3));el.textContent=v.toFixed(dec);if(p<1)requestAnimationFrame(step)})(performance.now());
+  });
+  // videos: play when visible
+  var vids=document.querySelectorAll('video.autoplay');
+  if(!rm&&'IntersectionObserver' in window){
+    var vo=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){var p=v.play();if(p&&p.catch)p.catch(function(){})}else v.pause()})},{threshold:.4});
+    vids.forEach(function(v){vo.observe(v)});
+  } else vids.forEach(function(v){v.controls=true});
+  // sms form
+  document.getElementById('qf').addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=document.getElementById('qn').value.trim(),c=document.getElementById('qc').value.trim(),s=document.getElementById('qs').value;
+    var body='Hi Sparx, I’m '+n+' in '+c+' and I need '+s+'. Can I get a quote?';
+    location.href='sms:+12892980461?&body='+encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
