@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Majestic Auto Wash | Car wash in London, ON</title>
+<meta name="description" content="Majestic Auto Wash, 689 Wharncliffe Rd S, London, ON. Full service car wash, open daily 8 a.m. to 8 p.m. Call (519) 690-2882.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Nunito+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+/* Plan: dashboard-card-led. Palette: navy #0a1a36 (sign + tunnel fans), sign blue #2f7be0 (building sign), logo red #e2373f (car mark), ivory #f1efe9.
+   Fonts: Chakra Petch + Nunito Sans. Signature: Jack/Queen/King pass tiles + live open-now chip. Motion: hero card float-in, gentle orb drift. */
+:root{--navy:#0a1a36;--navy2:#0f2447;--blue:#2f7be0;--red:#e2373f;--ivory:#f1efe9;--mute:#aab6cb;
+--glass:rgba(16,36,72,.55);--line:rgba(255,255,255,.18);--hi:rgba(255,255,255,.28)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--navy);color:var(--ivory);font:400 17px/1.55 'Nunito Sans',sans-serif;overflow-x:hidden;padding-bottom:96px}
+h1,h2,h3,.disp{font-family:'Chakra Petch',sans-serif;font-weight:700;letter-spacing:-.02em;line-height:1}
+a{color:inherit}
+:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.orbs{position:fixed;inset:0;z-index:-1;overflow:hidden;background:var(--navy)}
+.orbs i{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;animation:drift 26s ease-in-out infinite alternate}
+.orbs i:nth-child(1){width:60vmax;height:60vmax;background:radial-gradient(#1d5fc4,transparent 65%);top:-20vmax;left:-15vmax}
+.orbs i:nth-child(2){width:50vmax;height:50vmax;background:radial-gradient(#7d1f2b,transparent 65%);bottom:-20vmax;right:-15vmax;opacity:.35;animation-duration:32s}
+.orbs i:nth-child(3){width:40vmax;height:40vmax;background:radial-gradient(#173a7a,transparent 65%);top:40%;left:40%}
+@keyframes drift{to{transform:translate(6vmax,4vmax)}}
+.glass{background:var(--glass);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid var(--line);box-shadow:inset 0 1px 0 var(--hi),0 24px 60px -24px rgba(0,0,0,.6)}
+/* nav */
+.nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:8px 8px 8px 20px;border-radius:999px;min-height:56px}
+.nav b{font:700 18px 'Chakra Petch';letter-spacing:-.01em}
+.nav .links{display:none;gap:26px;font-weight:600;font-size:15px}
+.nav .links a{text-decoration:none;color:var(--mute)}.nav .links a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 22px;border-radius:999px;background:var(--red);color:#fff;font:700 16px 'Chakra Petch';text-decoration:none;border:0;cursor:pointer;transition:transform .18s,filter .18s}
+.btn:hover{filter:brightness(1.1)}.btn:active{transform:scale(.97)}
+.btn.ghost{background:rgba(255,255,255,.1);border:1px solid var(--line)}
+/* hero */
+.hero{position:relative;min-height:88svh;display:flex;align-items:flex-end;padding:96px 16px 28px;isolation:isolate}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 40%;z-index:-2}
+.hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,26,54,.35) 0%,rgba(10,26,54,.2) 35%,rgba(10,26,54,.92) 100%)}
+.hero .in{max-width:1160px;width:100%;margin:0 auto;display:grid;gap:22px}
+.hero h1{font-size:clamp(52px,15vw,150px);text-transform:uppercase;max-width:12ch}
+.hero h1 span{color:var(--red)}
+.hero p.sub{font-size:18px;max-width:34ch;color:#e3e8f1}
+.hcard{border-radius:26px;padding:18px 20px;display:grid;gap:6px;max-width:360px;animation:float .9s .3s cubic-bezier(.2,.8,.2,1) both}
+@keyframes float{from{opacity:0;transform:translateY(24px)}}
+.hcard .big{font:700 44px 'Chakra Petch'}
+.stars{color:#ffd166;letter-spacing:2px;font-size:18px}
+.hcard small{color:var(--mute);font-size:14px}
+@media(max-width:759px){.hcard{grid-template-columns:auto auto 1fr;align-items:center;gap:12px;padding:12px 16px;max-width:none}.hcard .big{font-size:34px}.hcard .stars{display:none}.hero h1{font-size:15vw}.hero{padding-bottom:104px}}
+.cta{display:flex;gap:10px;flex-wrap:wrap}
+/* dashboard */
+main{max-width:1160px;margin:0 auto;padding:0 16px}
+section{padding:64px 0 0}
+.lab{font:600 14px 'Chakra Petch';color:var(--mute);margin-bottom:6px;letter-spacing:.02em}
+h2{font-size:clamp(34px,8vw,64px);margin-bottom:22px;text-transform:uppercase}
+.grid{display:grid;gap:14px;grid-template-columns:1fr}
+.card{border-radius:26px;padding:22px;position:relative;overflow:hidden}
+.card h3{font-size:22px;margin-bottom:8px}
+.card .k{font:600 13px 'Chakra Petch';color:var(--mute);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;display:block}
+.pass{padding:24px}
+.pass .head{font:700 clamp(30px,7vw,48px)/1.02 'Chakra Petch';text-transform:uppercase;margin-bottom:8px}
+.pass .head span{color:var(--red)}
+.tiles{display:grid;gap:10px;margin:18px 0}
+.tile{border-radius:18px;padding:16px 18px;background:rgba(255,255,255,.07);border:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px;transition:transform .18s,border-color .18s}
+.tile:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.4)}
+.tile .n{display:flex;align-items:center;gap:12px;font:700 24px 'Chakra Petch'}
+.suit{font-size:26px;width:34px;text-align:center}
+.suit.r{color:var(--red)}
+.tile .p{font:700 32px 'Chakra Petch'}
+.tile .p small{font:600 13px 'Nunito Sans';color:var(--mute);margin-left:4px}
+ul.inc{list-style:none;padding:0;display:grid;gap:6px;color:#dbe2ee;font-size:16px}
+ul.inc li:before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--blue);margin-right:10px}
+.src{font-size:13px;color:var(--mute);margin-top:14px}
+.src a{color:var(--mute)}
+.meter{height:10px;border-radius:99px;background:rgba(255,255,255,.12);margin:14px 0 8px;overflow:hidden}
+.meter i{display:block;height:100%;width:82%;border-radius:99px;background:linear-gradient(90deg,var(--blue),#6fb0ff)}
+.rate{font:700 76px/1 'Chakra Petch'}.rate small{font-size:26px;color:var(--mute)}
+.open{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:6px 14px;background:rgba(255,255,255,.1);border:1px solid var(--line);font:600 14px 'Chakra Petch';margin-bottom:12px}
+.open i{width:9px;height:9px;border-radius:50%;background:#6c7a92}
+.open.on i{background:#46d17c}
+.hrs{font:700 34px 'Chakra Petch'}
+.bigtel{font:700 clamp(30px,8vw,40px) 'Chakra Petch';text-decoration:none;display:block;margin:4px 0 14px}
+.ph{padding:0;min-height:230px}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph figcaption{position:absolute;left:12px;bottom:12px;padding:8px 14px;border-radius:999px;font:600 13px 'Chakra Petch'}
+figure{margin:0}
+/* reviews */
+.rv{display:grid;gap:14px}
+.rv blockquote{font-size:18px;line-height:1.5}
+.rv cite{display:block;margin-top:14px;font:600 14px 'Chakra Petch';font-style:normal;color:var(--mute)}
+.rv .lead blockquote{font:600 clamp(24px,5.5vw,36px)/1.2 'Chakra Petch'}
+.note{margin-top:16px;color:var(--mute);font-size:15px;max-width:62ch}
+/* quote */
+.quote{padding:26px;border-radius:28px}
+.sent{font:600 clamp(22px,5.5vw,32px)/1.9 'Chakra Petch'}
+.sent input,.sent select{font:inherit;color:#fff;background:rgba(255,255,255,.1);border:1px solid var(--line);border-radius:14px;padding:2px 14px;min-height:48px;max-width:100%;width:min(100%,260px);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.sent select option{color:#000}
+.sent input::placeholder{color:#8fa0bd}
+.sent input:focus,.sent select:focus{outline:3px solid var(--blue);outline-offset:1px}
+.quote .btn{margin-top:18px;min-height:54px;font-size:18px}
+footer{max-width:1160px;margin:0 auto;padding:60px 16px 20px;color:var(--mute);font-size:14px}
+/* dock */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:12px;max-width:440px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px;border-radius:999px}
+.dock a{min-height:48px;display:flex;align-items:center;justify-content:center;border-radius:999px;text-decoration:none;font:700 17px 'Chakra Petch';transition:transform .18s}
+.dock a:active{transform:scale(.97)}
+.dock .c{background:var(--red)}.dock .t{background:rgba(255,255,255,.12)}
+@media(min-width:760px){
+ body{padding-bottom:0}
+ .nav .links{display:flex}
+ .dock{display:none}
+ .hero{padding:120px 40px 48px}
+ .hero .in{grid-template-columns:minmax(0,1fr) 340px;align-items:end;gap:32px}.hero h1{font-size:clamp(80px,10vw,128px);max-width:none}.hero .l{min-width:0}
+ .hero .l{display:grid;gap:22px}
+ .hcard{justify-self:end}
+ main{padding:0 40px}section{padding-top:110px}
+ .grid{grid-template-columns:repeat(6,1fr)}
+ .c-pass{grid-column:span 4;grid-row:span 2}
+ .c-rate{grid-column:span 2}
+ .c-hours{grid-column:span 2}
+ .c-addr{grid-column:span 3}.c-call{grid-column:span 3}
+ .c-b4{grid-column:span 3}.c-p1{grid-column:span 3;min-height:320px}
+ .c-p2,.c-p3,.c-p4{grid-column:span 2;min-height:300px}
+ .rv{grid-template-columns:1.4fr 1fr 1fr}
+ .quote{padding:44px}
+ footer{padding:80px 40px 40px}
+}
+@media(prefers-reduced-motion:reduce){.orbs i,.hcard{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="orbs" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<header class="nav glass">
+  <b>Majestic Auto Wash</b>
+  <nav class="links"><a href="#pass">Winter pass</a><a href="#info">Hours + map</a><a href="#reviews">Reviews</a><a href="#quote">Text us</a></nav>
+  <a class="btn" href="tel:+15196902882">Call</a>
+</header>
+
+<section class="hero" style="padding-top:96px">
+  <img src="img/p9-hero.jpg" alt="Majestic Auto Wash building on Wharncliffe Rd S, London" width="1130" height="968">
+  <div class="in">
+    <div class="l">
+      <h1>Wash it all <span>winter.</span></h1>
+      <p class="sub">Full service car wash on Wharncliffe Rd S in London. Open daily, no appointment needed.</p>
+      <div class="cta"><a class="btn" href="tel:+15196902882">Call (519) 690-2882</a><a class="btn ghost" href="#pass">See the winter pass</a></div>
+    </div>
+    <aside class="hcard glass" aria-label="Google rating">
+      <span class="stars" aria-hidden="true">★★★★☆</span>
+      <span class="big">4.1 <small style="font-size:16px;font-weight:600">/ 5</small></span>
+      <small>849 Google reviews. The real number, on the page.</small>
+    </aside>
+  </div>
+</section>
+
+<main>
+<section id="pass">
+  <p class="lab">Your dashboard</p>
+  <h2>Pass, hours, rating.</h2>
+  <div class="grid">
+
+    <article class="card glass pass c-pass">
+      <span class="k">Winter special</span>
+      <div class="head">Buy 5 months,<br><span>get 1 free.</span> No tax.</div>
+      <p>6 full months. One wash per day, free vacuum and free mat wash.</p>
+      <div class="tiles">
+        <div class="tile"><div class="n"><span class="suit">&#9824;</span>Jack</div><div class="p">$150<small>6 months</small></div></div>
+        <div class="tile"><div class="n"><span class="suit r">&#9829;</span>Queen</div><div class="p">$175<small>6 months</small></div></div>
+        <div class="tile"><div class="n"><span class="suit r">&#9830;</span>King</div><div class="p">$200<small>6 months</small></div></div>
+      </div>
+      <ul class="inc"><li>1 wash per day</li><li>Free vacuum</li><li>Free mat wash</li></ul>
+      <p class="src">Prices as posted by Majestic on Instagram, Nov 21. <a href="https://www.instagram.com/p/DgA0K6OiwcM/" rel="noopener">See the post</a>. Ask at the wash for the Ace pass.</p>
+    </article>
+
+    <article class="card glass c-rate" aria-label="Google rating">
+      <span class="k">Google rating</span>
+      <div class="rate">4.1<small> / 5</small></div>
+      <div class="meter" role="img" aria-label="4.1 out of 5"><i></i></div>
+      <p>From 849 reviews. Not perfect, and we are not hiding it. The ones below are in the customers' own words.</p>
+    </article>
+
+    <article class="card glass c-hours" id="info">
+      <span class="k">Hours</span>
+      <div class="open" id="open"><i></i><span id="openTxt">Open daily</span></div>
+      <div class="hrs">8 AM &ndash; 8 PM</div>
+      <p style="color:var(--mute)">Every day of the week. No appointment needed.</p>
+    </article>
+
+    <article class="card glass c-addr">
+      <span class="k">Address</span>
+      <h3>689 Wharncliffe Rd S<br>London, ON N6J 2N7</h3>
+      <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Majestic+Auto+Wash+689+Wharncliffe+Rd+S+London+ON" rel="noopener">Open in Maps</a>
+    </article>
+
+    <article class="card glass c-call">
+      <span class="k">Call or text</span>
+      <a class="bigtel" href="tel:+15196902882">(519) 690-2882</a>
+      <div class="cta"><a class="btn" href="tel:+15196902882">Call</a><a class="btn ghost" href="sms:+15196902882">Text</a></div>
+    </article>
+
+    <article class="card glass c-b4">
+      <span class="k">Also posted</span>
+      <h3>Buy 4 washes, get 4 free.</h3>
+      <p>Valid on Jack, Queen, King and Ace washes. Stop by, no appointment needed.</p>
+      <p class="src"><a href="https://www.instagram.com/p/DgAyzoJimCt/" rel="noopener">Instagram post, Nov 21</a></p>
+    </article>
+
+    <figure class="card ph c-p1"><img src="img/p8.jpg" alt="Car in the tunnel wash bay" loading="lazy"><figcaption class="glass">The tunnel</figcaption></figure>
+    <figure class="card ph c-p2"><img src="img/p10.jpg" alt="Car interior" loading="lazy"><figcaption class="glass">Interior</figcaption></figure>
+    <figure class="card ph c-p3"><img src="img/p7.jpg" alt="Majestic Auto Wash street sign" loading="lazy"><figcaption class="glass">Find the sign</figcaption></figure>
+    <figure class="card ph c-p4"><img src="img/p12.jpg" alt="Customer waiting area" loading="lazy"><figcaption class="glass">Waiting area</figcaption></figure>
+  </div>
+</section>
+
+<section id="reviews">
+  <p class="lab">Customers, on Google</p>
+  <h2>What they wrote.</h2>
+  <div class="rv">
+    <article class="card glass lead"><blockquote>&ldquo;This was my first experience having my car cleaned at an establishment. Majestic Auto Wash did an excellent job with my SUV. I have never seen my car that clean, even when I bought it brand new(it seemed more shiny than when I bought it!)&rdquo;</blockquote><cite>Sheereen L., Google, 5 stars</cite></article>
+    <article class="card glass"><blockquote>&ldquo;Sanchit was an amazing person to deal with, had my car sparking clean inside out in under 45 minutes. I will recommend his services as there priced fairly cheap compared to other detailing spots!!!&rdquo;</blockquote><cite>Jay, Google, 5 stars</cite></article>
+    <article class="card glass"><blockquote>&ldquo;Great interior car wash and the price was right! I&rsquo;ll definitely be back. The hours are great, no appointment needed and it didn&rsquo;t take too long. Service was prompt and friendly.&rdquo;</blockquote><cite>Angela B., Google, 5 stars</cite></article>
+  </div>
+  <p class="note">Three reviews out of 849. The overall rating is 4.1 out of 5. Read them all on <a href="https://www.google.com/maps/place/Majestic+Auto+Wash/@42.9487288,-81.2595711,17z" rel="noopener">Google Maps</a>.</p>
+</section>
+
+<section id="quote">
+  <p class="lab">Text us</p>
+  <h2>Ask about a pass.</h2>
+  <form class="quote glass" id="qf">
+    <p class="sent">Hi, I'm <input id="qn" placeholder="your name" aria-label="Your name" autocomplete="name">. I want
+      <select id="qw" aria-label="What you need"><option>the Jack pass</option><option>the Queen pass</option><option>the King pass</option><option>a single wash</option><option>to ask a question</option></select>
+      at Majestic Auto Wash.</p>
+    <button class="btn" type="submit">Send as text</button>
+  </form>
+</section>
+</main>
+
+<footer>Majestic Auto Wash &middot; 689 Wharncliffe Rd S, London, ON &middot; (519) 690-2882<br>Preview built by JPF. Not live yet.</footer>
+
+<nav class="dock glass" aria-label="Call or text"><a class="c" href="tel:+15196902882">Call</a><a class="t" href="sms:+15196902882">Text</a></nav>
+
+<script>
+document.getElementById('qf').addEventListener('submit',function(e){
+  e.preventDefault();
+  var n=document.getElementById('qn').value.trim()||'a customer';
+  var w=document.getElementById('qw').value;
+  var b="Hi, I'm "+n+". I want "+w+" at Majestic Auto Wash.";
+  location.href='sms:+15196902882?&body='+encodeURIComponent(b);
+});
+(function(){
+  try{
+    var p=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Toronto',hour:'numeric',hour12:false}).format(new Date());
+    var h=parseInt(p,10),el=document.getElementById('open'),t=document.getElementById('openTxt');
+    if(h>=8&&h<20){el.classList.add('on');t.textContent='Open now, until 8 PM'}else{t.textContent='Closed now, opens 8 AM'}
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
