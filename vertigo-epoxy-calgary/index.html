@@ -134,13 +134,66 @@ footer{border-top:1px solid var(--line);padding:28px 0 110px;font-size:13px;colo
 .rv{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}
 .rv.in{opacity:1;transform:none}
 
+/* ---------- glass layer (Nov 24 polish) ---------- */
+.glass{background:rgba(16,24,22,.55);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 20px 60px -20px rgba(4,8,7,.6)}
+nav.top.glass{position:fixed;top:26px;left:26px;right:26px;z-index:60;border-radius:999px;padding:6px 6px 6px 16px}
+.panel{padding-top:80px}
+.logo span{white-space:nowrap;font-size:14px}
+nav.top.glass .logo img{height:38px}
+.pills a{background:transparent;border-color:transparent;transition:background .18s,color .18s}
+.pills a:hover{background:rgba(255,255,255,.07);color:var(--bone)}
+.btn{border-radius:999px;transition:transform .16s ease,filter .18s;min-height:48px}
+.btn i{border-radius:50%}
+.btn.sm{min-height:44px;padding:0 20px}
+.btn:hover{filter:brightness(1.06)}
+.btn:active,.ghost:active,.dock a:active,.gcard:active{transform:scale(.98)}
+.ghost{border-radius:999px;min-height:48px;align-items:center;transition:transform .16s,background .18s}
+.ghost:hover{background:rgba(255,255,255,.05)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.cap{position:relative;z-index:2;margin:-34px 0 -40px}
+.cap .capsule{margin:0}
+.gcard{position:absolute;left:-84px;bottom:44px;z-index:4;width:172px;display:grid;gap:2px;padding:14px 16px 15px;border-radius:22px;background:rgba(12,18,16,.58);-webkit-backdrop-filter:blur(20px) saturate(160%);backdrop-filter:blur(20px) saturate(160%);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 20px 60px -20px rgba(4,8,7,.75);transition:transform .16s}
+.gc-top{display:flex;align-items:baseline;gap:10px}
+.gc-top b{font-family:Anton,sans-serif;font-weight:400;font-size:32px;line-height:1;color:var(--gold)}
+.gc-st{color:var(--gold);letter-spacing:2px;font-size:14px}
+.gc-n{font-size:14px;color:#c9ccc8}
+.gcard q{quotes:none;display:block;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.14);font-size:16px;color:var(--bone)}
+.gc-who{font-size:14px;color:#a9b0ad}
+.qzone{position:relative;max-width:560px;margin:48px auto 0}
+.orb{position:absolute;border-radius:50%;pointer-events:none;z-index:0;animation:drift 26s ease-in-out infinite alternate}
+.o1{width:300px;height:300px;left:-70px;top:-50px;background:radial-gradient(circle,rgba(214,164,70,.34),rgba(214,164,70,0) 68%)}
+.o2{width:340px;height:340px;right:-90px;bottom:-80px;background:radial-gradient(circle,rgba(23,160,143,.34),rgba(23,160,143,0) 68%);animation-duration:31s;animation-direction:alternate-reverse}
+@keyframes drift{to{transform:translate(40px,30px) scale(1.08)}}
+.qf.glass{position:relative;z-index:1;margin:0;padding:26px 20px 22px;border-radius:26px;gap:8px;background:rgba(16,24,22,.5)}
+.call .qf-h{font-weight:600;font-size:15px;color:var(--bone);margin:0 0 6px;max-width:none}
+.qf label{font-size:14px;color:#aab2ae}
+.qf input{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:14px;box-shadow:inset 0 1px 0 rgba(255,255,255,.06);padding:13px 16px;min-height:50px;margin-bottom:8px;transition:border-color .18s,box-shadow .18s}
+.qf input::placeholder{color:#7d8683}
+.qf input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(214,164,70,.25)}
+.qf .btn{margin-top:10px}
+.dock.glass{border-radius:999px;padding:6px;background:rgba(14,20,18,.6)}
+.dock a{border-radius:999px;min-height:48px;display:flex;align-items:center;justify-content:center;transition:transform .16s}
+.dock a:last-child{border-color:rgba(255,255,255,.18)}
+.js .gcard{opacity:0;transform:translateY(18px) scale(.96)}
+.ready .gcard{opacity:1;transform:none;transition:opacity .8s 1.15s,transform 1s cubic-bezier(.2,.8,.2,1) 1.15s}
+.ready .gcard:active{transform:scale(.98);transition:transform .16s}
+.call{overflow:clip}
+
 @media (min-width:900px){
   .stage{padding:20px}
   .panel{padding:26px 40px 36px;min-height:calc(100vh - 40px)}
   .pills{display:flex}
   .hero{grid-template-columns:1fr auto 1fr;grid-template-rows:auto auto;align-items:start;padding-top:30px;min-height:calc(100vh - 140px)}
   .h-top{grid-column:1/3;grid-row:1;font-size:clamp(110px,12.5vw,190px);z-index:3}
-  .capsule{grid-column:2;grid-row:1/3;width:clamp(280px,25vw,360px);margin:0;align-self:center}
+  .cap{grid-column:2;grid-row:1/3;margin:0;align-self:center}
+  .capsule{width:clamp(280px,25vw,360px)}
+  nav.top.glass{top:34px;left:36px;right:36px}
+  .panel{padding-top:88px}
+  .hero{padding-top:14px}
+  .logo span{font-size:15px}
+  nav.top.glass .logo img{height:44px}
+  .gcard{left:-110px;bottom:70px;width:210px}
+  .qf.glass{padding:34px 34px 30px}
   .h-bot{grid-column:2/4;grid-row:2;align-self:end;font-size:clamp(110px,12.5vw,190px);margin:0}
   .h-copy{grid-column:1;grid-row:2;align-self:center;margin:0}
   .badge{position:absolute;left:0;bottom:0}
@@ -164,7 +217,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 110px;font-size:13px;colo
 }
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important;animation:none!important}
-  .js .capsule,.js .h-top,.js .h-bot,.js .h-copy,.js .badge,.rv{opacity:1!important;transform:none!important;filter:none!important;clip-path:none!important}
+  .js .gcard,.orb,.js .capsule,.js .h-top,.js .h-bot,.js .h-copy,.js .badge,.rv{opacity:1!important;transform:none!important;filter:none!important;clip-path:none!important}
 }
 </style>
 </head>
@@ -173,7 +226,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 110px;font-size:13px;colo
 
 <div class="stage">
   <div class="panel">
-    <nav class="top">
+    <nav class="top glass">
       <a class="logo" href="#"><img src="v/logo.png" alt="Vertigo Epoxy logo"><span>Vertigo Epoxy Calgary</span></a>
       <div class="pills"><a href="#finishes">Finishes</a><a href="#prep">Prep</a><a href="#reviews">Reviews</a><a href="#call">Contact</a></div>
       <a class="btn sm" href="tel:+14034781115">Call</a>
@@ -181,13 +234,13 @@ footer{border-top:1px solid var(--line);padding:28px 0 110px;font-size:13px;colo
 
     <div class="hero">
       <h1 class="d h-top"><span class="gold">Not just</span><br>a floor.</h1>
-      <div class="capsule"><img src="v/emerald-s.jpg" alt="Emerald and gold metallic epoxy floor by Vertigo Epoxy"></div>
+      <div class="cap"><div class="capsule"><img src="v/emerald-s.jpg" alt="Emerald and gold metallic epoxy floor by Vertigo Epoxy"></div>
+        <a class="gcard" href="#reviews"><span class="gc-top"><b>5.0</b><span class="gc-st" aria-label="5 stars">★★★★★</span></span><span class="gc-n">17 Google reviews</span><q>Looks fantastic.</q><span class="gc-who">Lakha K., Google</span></a></div>
       <div class="d h-bot" aria-hidden="true"><span class="gold">It's a</span><br><span class="fade">statement.</span></div>
       <div class="h-copy">
         <p>Metallic and flake epoxy floors for garages, homes and commercial spaces in Calgary and surroundings.</p>
         <a class="btn" href="tel:+14034781115">Get a free quote <i>+</i></a>
       </div>
-      <div class="badge"><b>5.0</b><span>from 17<br>Google reviews</span></div>
       <div class="finishes">
         <a href="#finishes"><img src="v/emerald.jpg" alt=""><span>Emerald and gold metallic</span></a>
         <a href="#finishes"><img src="v/graphite.jpg" alt=""><span>Graphite metallic</span></a>
@@ -266,13 +319,13 @@ footer{border-top:1px solid var(--line);padding:28px 0 110px;font-size:13px;colo
     <a class="d num rv" href="tel:+14034781115">403 478 1115</a>
     <p class="rv">Call or text for a free quote. Send a photo of the floor and the size of the space.</p>
     <div class="row rv"><a class="btn" href="tel:+14034781115">Call now <i>+</i></a><a class="ghost" href="sms:+14034781115">Text a photo</a></div>
-    <form class="qf rv" id="qf"><label for="qn">Your name</label><input id="qn" name="n" autocomplete="name" placeholder="First name"><label for="qs">The floor</label><input id="qs" name="s" placeholder="Garage, about 400 sq ft, flake"><button class="btn" type="submit">Text this to Vertigo <i>+</i></button></form>
+    <div class="qzone rv"><span class="orb o1" aria-hidden="true"></span><span class="orb o2" aria-hidden="true"></span><form class="qf glass" id="qf"><p class="qf-h">Quote by text</p><label for="qn">Your name</label><input id="qn" name="n" autocomplete="name" placeholder="First name"><label for="qs">The floor</label><input id="qs" name="s" placeholder="Garage, about 400 sq ft, flake"><button class="btn" type="submit">Text this to Vertigo <i>+</i></button></form></div>
   </div>
 </section>
 
 <footer class="wrap"><span>Vertigo Epoxy Calgary · Chestermere, AB · (403) 478-1115</span><span>Preview built by JPF. Not live yet.</span></footer>
 
-<div class="dock"><a href="tel:+14034781115">Call 403 478 1115</a><a href="sms:+14034781115">Text</a></div>
+<div class="dock glass"><a href="tel:+14034781115">Call 403 478 1115</a><a href="sms:+14034781115">Text</a></div>
 
 <script>
 addEventListener('load',()=>requestAnimationFrame(()=>document.documentElement.classList.add('ready')));

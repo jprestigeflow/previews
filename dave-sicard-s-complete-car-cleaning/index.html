@@ -199,6 +199,66 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
   .js .shot .ph{clip-path:none!important}
   .band img{transform:none}
 }
+
+/* GLASS PASS (Nov 24): frosted nav pill, frosted dock, glass rating card on the hero photo,
+   glass chips + answer panel over soft orbs in the picker, glass quote panel over orbs in "find Dave".
+   Lead review, Tesla band, inside set, hours stay plain. Orbs use only blue/slate/tan/cream. */
+:root{--glass:rgba(250,246,239,.74);--gline:rgba(255,255,255,.55);--ghi:inset 0 1px 0 rgba(255,255,255,.6);--gsh:0 20px 60px -20px rgba(31,26,22,.32)}
+.gl{-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%)}
+.nav{position:sticky;top:12px;z-index:40;margin:12px 12px 0;padding:8px 8px 8px 20px;border-radius:999px;background:var(--glass);border:1px solid var(--gline);box-shadow:var(--ghi),0 14px 40px -22px rgba(31,26,22,.35);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%)}
+.mark{font-size:27px}
+.pill{padding:13px 20px;min-height:44px;display:inline-flex;align-items:center}
+.hero{padding-top:28px}
+/* hero glass card */
+.card{background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.6);border-radius:24px;box-shadow:var(--ghi),var(--gsh);-webkit-backdrop-filter:blur(24px) saturate(170%);backdrop-filter:blur(24px) saturate(170%)}
+.card .t{color:#4f463d}
+.card .t b{color:var(--ink)}
+/* orb fields */
+.orbs{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.orbs i{position:absolute;border-radius:50%;filter:blur(60px);animation:drift 26s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate3d(6%,8%,0) scale(1.08)}}
+.pick,.find{position:relative;isolation:isolate}
+.pick>.wrap,.find>.wrap{position:relative;z-index:1}
+.pick .orbs i:nth-child(1){width:520px;height:520px;left:-180px;top:34%;background:radial-gradient(circle,rgba(29,127,214,.40),rgba(29,127,214,0) 70%)}
+.pick .orbs i:nth-child(2){width:460px;height:460px;right:-160px;top:58%;background:radial-gradient(circle,rgba(203,184,148,.8),rgba(203,184,148,0) 70%);animation-duration:30s;animation-delay:-8s}
+.pick .orbs i:nth-child(3){width:380px;height:380px;left:30%;top:78%;background:radial-gradient(circle,rgba(63,86,98,.3),rgba(63,86,98,0) 70%);animation-duration:22s;animation-delay:-4s}
+.find .orbs i:nth-child(1){width:620px;height:620px;right:-220px;bottom:4%;background:radial-gradient(circle,rgba(29,127,214,.42),rgba(29,127,214,0) 70%)}
+.find .orbs i:nth-child(2){width:520px;height:520px;left:-220px;bottom:6%;background:radial-gradient(circle,rgba(63,86,98,.55),rgba(63,86,98,0) 70%);animation-duration:30s;animation-delay:-10s}
+/* picker glass chips + answer panel */
+.chips button{min-height:46px;background:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.7);border-radius:16px;box-shadow:var(--ghi),0 8px 24px -16px rgba(31,26,22,.35);-webkit-backdrop-filter:blur(18px) saturate(150%);backdrop-filter:blur(18px) saturate(150%);transition:background .2s,color .2s,border-color .2s,transform .16s}
+.chips button:hover{background:rgba(255,255,255,.7)}
+.chips button[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink);box-shadow:0 10px 26px -14px rgba(31,26,22,.6)}
+.ans{border-top:0;margin-top:28px;padding:28px 22px 26px;border-radius:26px;background:rgba(250,246,239,.58);border:1px solid rgba(255,255,255,.6);box-shadow:var(--ghi),var(--gsh);-webkit-backdrop-filter:blur(24px) saturate(160%);backdrop-filter:blur(24px) saturate(160%)}
+/* quote form glass panel on dark */
+.letter{border-top:0;padding:30px 22px 28px;border-radius:26px;background:rgba(31,26,22,.48);border:1px solid rgba(255,255,255,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 24px 60px -24px rgba(0,0,0,.6);-webkit-backdrop-filter:blur(26px) saturate(150%);backdrop-filter:blur(26px) saturate(150%)}
+.letter p.s{line-height:1.75}
+.letter input{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:2px 12px;box-shadow:inset 0 1px 0 rgba(255,255,255,.12);transition:border-color .18s,box-shadow .18s,background .18s}
+.letter input:focus{border-color:var(--blue);background:rgba(255,255,255,.12);box-shadow:0 0 0 3px rgba(29,127,214,.45)}
+.letter input::placeholder{color:#a59a8c}
+.letter .note{color:#b9ae9f}
+/* frosted dock */
+.dock{background:rgba(250,246,239,.66);border:1px solid rgba(255,255,255,.6);box-shadow:var(--ghi),0 18px 44px -16px rgba(31,26,22,.5);-webkit-backdrop-filter:blur(22px) saturate(170%);backdrop-filter:blur(22px) saturate(170%)}
+.dock a{color:var(--ink);min-height:48px}
+.dock a:first-child{box-shadow:inset 0 1px 0 rgba(255,255,255,.3)}
+/* press, hover, focus, targets */
+.b,.pill,.dock a,.letter button,.chips button{transition:transform .16s ease,background .2s,color .2s,box-shadow .2s}
+.b:active,.pill:active,.dock a:active,.letter button:active,.chips button:active{transform:scale(.98)}
+.b.p:hover,.letter button:hover{background:var(--blue2)}
+.b.o:hover{background:var(--ink);color:var(--paper)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.find a:focus-visible,.find button:focus-visible{outline-color:#8cc4f5}
+.links a{padding:10px 0 4px}
+section[id]{scroll-margin-top:90px}
+@media(min-width:980px){
+  .nav{width:min(1240px,100% - 48px);margin:16px auto 0;padding:10px 10px 10px 28px;top:16px}
+  .mark{font-size:33px}
+  .hero{padding-top:48px}
+  .ans{padding:40px 44px}
+  .letter{padding:44px 48px}
+  .letter p.s{line-height:1.6}
+  .letter input{padding:0 14px;border-radius:16px}
+}
+@media(prefers-reduced-motion:reduce){.orbs i{animation:none!important}}
 </style>
 <script>document.documentElement.className='js'</script>
 </head>
@@ -252,6 +312,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 </div>
 
 <section class="pick" id="ask">
+  <div class="orbs" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="wrap">
     <div class="top">
       <h2>What happened to your car?</h2>
@@ -287,6 +348,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 </section>
 
 <section class="find" id="find">
+  <div class="orbs" aria-hidden="true"><i></i><i></i></div>
   <div class="wrap">
     <div class="head">
       <div>

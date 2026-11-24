@@ -236,6 +236,91 @@ footer b{color:#fff;font-weight:600}
   .js .hcard,.js .hero-copy,.js .nav{opacity:1}
   .band img{transform:none}
 }
+
+/* ===== GLASS PASS (Nov 24) =====
+   Glass on 5 things only: floating nav pill, phone dock, hero review card, wipe-the-glass chips, quote panel.
+   Orbs = wall blue #2b4f7e + shower glass #e4ecf0 + steel #6b7a89, low alpha, slow drift. Everything else stays plain. */
+:root{--glass-blur:blur(22px) saturate(165%);--glass-shadow:0 20px 60px -20px rgba(15,23,34,.3)}
+html{scroll-padding-top:96px}
+.hero,.quote{isolation:isolate}
+.orbs{position:absolute;inset:0;overflow:hidden;z-index:-1;pointer-events:none}
+.orbs span{position:absolute;border-radius:50%;will-change:transform;animation:drift 26s ease-in-out infinite alternate}
+.hero .orbs span:nth-child(1){width:62vw;height:62vw;max-width:760px;max-height:760px;left:30%;top:42%;background:radial-gradient(circle,rgba(43,79,126,.17),rgba(43,79,126,0) 68%)}
+.hero .orbs span:nth-child(2){width:46vw;height:46vw;max-width:560px;max-height:560px;left:-12%;top:-8%;background:radial-gradient(circle,rgba(107,122,137,.13),rgba(107,122,137,0) 68%);animation-duration:30s;animation-direction:alternate-reverse}
+.hero .orbs span:nth-child(3){width:40vw;height:40vw;max-width:480px;max-height:480px;left:58%;top:-10%;background:radial-gradient(circle,rgba(176,200,214,.45),rgba(228,236,240,0) 70%);animation-duration:22s}
+.quote .orbs span:nth-child(1){width:70vw;height:70vw;max-width:900px;max-height:900px;left:-20%;top:20%;background:radial-gradient(circle,rgba(228,236,240,.16),rgba(228,236,240,0) 66%)}
+.quote .orbs span:nth-child(2){width:60vw;height:60vw;max-width:760px;max-height:760px;left:55%;top:-15%;background:radial-gradient(circle,rgba(15,23,34,.3),rgba(15,23,34,0) 68%);animation-duration:30s;animation-direction:alternate-reverse}
+.quote .orbs span:nth-child(3){width:48vw;height:48vw;max-width:600px;max-height:600px;left:40%;top:55%;background:radial-gradient(circle,rgba(107,122,137,.32),rgba(107,122,137,0) 68%);animation-duration:24s}
+@keyframes drift{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(6%,-5%,0) scale(1.08)}}
+
+/* nav: floating frosted pill */
+.nav{position:fixed;top:14px;left:16px;right:16px;inset-inline:16px;max-width:1240px;margin-inline:auto;border-radius:999px;
+  background:rgba(255,255,255,.62);-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);
+  border:1px solid rgba(255,255,255,.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),var(--glass-shadow)}
+.nav .wrap{width:100%;height:64px;padding:0 8px 0 24px}
+.nav .pill{display:inline-flex;align-items:center;min-height:48px}
+.hero{padding-top:92px}
+.hero .wrap{min-height:calc(100svh - 92px)}
+
+/* hero review card: glass over photo + orb */
+.hcard{background:rgba(255,255,255,.64);-webkit-backdrop-filter:blur(24px) saturate(170%);backdrop-filter:blur(24px) saturate(170%);
+  border:1px solid rgba(255,255,255,.55);border-radius:24px;box-shadow:inset 0 1px 0 rgba(255,255,255,.6),var(--glass-shadow)}
+.hcard small{color:#4f5d6b}
+.js .hcard{transform:translateY(28px) scale(.97)}
+.go .hcard{transition:opacity .7s .85s,transform 1s .85s var(--ease)}
+
+/* wipe chips */
+.wipe .tag{background:rgba(255,255,255,.58);-webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);
+  border:1px solid rgba(255,255,255,.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 10px 30px -12px rgba(15,23,34,.3);border-radius:14px;padding:10px 16px}
+.wipe .done-tag{background:rgba(15,23,34,.62);-webkit-backdrop-filter:blur(18px) saturate(150%);backdrop-filter:blur(18px) saturate(150%);
+  border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),var(--glass-shadow);min-height:48px;padding:12px 22px}
+
+/* quote: glass panel on blue + inner glass fields */
+.quote{position:relative}
+.qpanel{position:relative;padding:52px 56px 50px;border-radius:28px;background:rgba(34,63,102,.48);
+  -webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);
+  border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 30px 70px -24px rgba(15,23,34,.45)}
+.sentence{max-width:none}
+.sentence input,.sentence select{background-color:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.24);border-radius:14px;padding:0 .3em;margin:0 .06em;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12);transition:border-color .2s,box-shadow .2s,background-color .2s}
+.sentence select{padding-right:1.1em}
+.sentence input::placeholder{color:#b9cbe0}
+.sentence input:focus,.sentence select:focus{border-color:#e4ecf0;background-color:rgba(255,255,255,.16);box-shadow:0 0 0 3px rgba(228,236,240,.45)}
+.quote .send small{color:#d4e0ee}
+
+/* dock: frosted pill */
+.dock a{transition:transform .16s var(--ease),background .2s}
+
+/* UI polish */
+.btn,.pill,.dock a,.done-tag{transition:background .2s,color .2s,transform .16s var(--ease),box-shadow .2s}
+.btn:active,.pill:active,.dock a:active,.done-tag:active{transform:scale(.98)}
+.words :focus-visible,.quote :focus-visible,.band :focus-visible,footer :focus-visible{outline-color:#fff}
+.dock a:focus-visible{outline-offset:2px}
+footer a{text-decoration:underline;text-decoration-color:rgba(170,182,195,.5);text-underline-offset:3px;padding-block:12px}
+
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .nav,.hcard,.wipe .tag{background:rgba(255,255,255,.94)} .qpanel{background:#26476f} .wipe .done-tag{background:rgba(15,23,34,.92)} .dock{background:rgba(247,248,246,.96)}
+}
+@media (max-width:900px){
+  html{scroll-padding-top:84px}
+  .nav{top:12px;left:12px;right:12px}
+  .nav .wrap{height:58px;padding:0 6px 0 18px;width:100%}
+  .nav .pill{min-height:46px;padding:0 18px}
+  .hero{padding-top:80px}
+  .hero .wrap{min-height:0}
+  .hcard{padding:18px 20px;border-radius:22px;background:rgba(255,255,255,.7)}
+  .hero-photo{max-height:44svh;width:100%}
+  .qpanel{padding:26px 20px 26px;border-radius:24px;margin-inline:-4px}
+  .sentence{font-size:24px;line-height:1.85}
+  .dock{left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));padding:6px;gap:6px;border-radius:999px;
+    background:rgba(247,248,246,.66);-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);
+    border:1px solid rgba(255,255,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 20px 50px -16px rgba(15,23,34,.38)}
+  .dock a{height:50px}
+  .dock .c{box-shadow:0 8px 20px -10px rgba(43,79,126,.7)}
+  .dock .t{background:rgba(255,255,255,.62);box-shadow:inset 0 0 0 1px rgba(15,23,34,.16)}
+  body{padding-bottom:calc(88px + env(safe-area-inset-bottom))}
+}
+@media (prefers-reduced-motion:reduce){ .orbs span{animation:none} .js .hcard{transform:none} }
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -255,6 +340,7 @@ footer b{color:#fff;font-weight:600}
 
 <main id="top">
 <section class="hero">
+  <div class="orbs" aria-hidden="true"><span></span><span></span><span></span></div>
   <div class="wrap">
     <h1><span class="l"><span class="i">Come</span></span><span class="l"><span class="i">home to</span></span><span class="l"><span class="i b">clean.</span></span></h1>
     <div class="hero-copy">
@@ -353,10 +439,11 @@ footer b{color:#fff;font-weight:600}
 </section>
 
 <section class="quote" id="quote">
+  <div class="orbs" aria-hidden="true"><span></span><span></span><span></span></div>
   <div class="wrap">
     <div class="eyebrow">Free quote, by text</div>
     <h2>Tell us about your place.</h2>
-    <form id="qf" class="sentence" novalidate>
+    <div class="qpanel"><form id="qf" class="sentence" novalidate>
       Hi, I'm <input class="in-name" name="name" placeholder="your name" autocomplete="given-name" aria-label="Your name">.
       I need a <select name="kind" aria-label="Kind of clean">
         <option>deep clean</option><option>move-out clean</option><option>move-in clean</option><option>regular clean</option><option>kitchen and bathroom clean</option><option>custom clean</option>
@@ -367,7 +454,7 @@ footer b{color:#fff;font-weight:600}
         <button class="btn" type="submit">Text it to Fresh Touch <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         <small>Opens your messages app with this filled in. We text you back.</small>
       </div>
-    </form>
+    </form></div>
     <div class="facts">
       <div><h3>Call or text</h3><a href="tel:+15142098641">(514) 209-8641</a></div>
       <div><h3>Hours</h3><p>Every day, 8 a.m. to 12 a.m.</p></div>

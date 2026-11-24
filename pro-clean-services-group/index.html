@@ -195,6 +195,89 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
  .js .hero h1 .l{clip-path:none}
  .js .rv .fr{clip-path:none}.js .rv .fr img{transform:none}
 }
+
+/* ===== GLASS PASS (Nov 24) =====
+ Frosted linen/paper panels over soft linen + oak orbs. Applied to: nav pill, call dock, hero rating card,
+ more-reviews cards, door hanger + its fields/ticks. List, lead quote, rooms and way stay plain. */
+:root{--glass:rgba(251,252,251,.62);--gb:rgba(255,255,255,.55);--ghi:inset 0 1px 0 rgba(255,255,255,.7);--gsh:0 20px 60px -20px rgba(26,35,38,.3)}
+html{scroll-behavior:smooth}
+#door{scroll-margin-top:20px}
+.orbs{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.orbs i{position:absolute;border-radius:50%;filter:blur(40px);animation:drift 26s ease-in-out infinite alternate}
+@keyframes drift{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(30px,-40px,0) scale(1.08)}}
+.hero .orbs i:nth-child(1){width:420px;height:420px;right:-160px;top:120px;background:radial-gradient(circle,rgba(173,123,76,.26),rgba(173,123,76,0) 68%)}
+.hero .orbs i:nth-child(2){width:520px;height:520px;left:-220px;top:300px;background:radial-gradient(circle,rgba(220,227,226,.9),rgba(220,227,226,0) 70%);animation-duration:30s;animation-direction:alternate-reverse}
+.hero .orbs i:nth-child(3){width:300px;height:300px;left:30%;bottom:-120px;background:radial-gradient(circle,rgba(173,123,76,.16),rgba(173,123,76,0) 70%);animation-duration:22s}
+.hero>*:not(.orbs){position:relative;z-index:1}
+.hero h1.d{z-index:2}
+.hero{overflow:hidden}
+
+/* nav: floating frosted pill */
+.nav{position:sticky;top:12px;z-index:30;margin:12px 12px 0;padding:8px 8px 8px 20px;border-radius:999px;background:var(--glass);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid var(--gb);box-shadow:var(--ghi),var(--gsh)}
+.brand b{font-size:20px}
+.brand{display:block;padding:3px 0}
+.pill,.cta,.dock a,.hanger button{transition:transform .17s ease,background-color .2s,box-shadow .2s}
+.pill:active,.cta:active,.dock a:active,.hanger button:active{transform:scale(.98)}
+.pill{min-height:44px;gap:10px}
+.pill i,.dock .c i{width:8px;height:8px;border-radius:50%;background:var(--oak);box-shadow:0 0 0 3px rgba(173,123,76,.25)}
+.pill:hover,.cta:hover{background:#26343a}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--oak);outline-offset:3px}
+
+/* hero glass card over the arch photo */
+.gcard{position:absolute;left:12px;right:12px;bottom:14px;display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:16px;background:rgba(251,252,251,.66);-webkit-backdrop-filter:blur(20px) saturate(170%);backdrop-filter:blur(20px) saturate(170%);border:1px solid rgba(255,255,255,.5);box-shadow:var(--ghi),0 20px 50px -20px rgba(26,35,38,.45)}
+.gcard b{font:500 38px/1 "Bodoni Moda",serif;letter-spacing:-.02em}
+.gcard div{display:grid;gap:2px;font-size:14px;line-height:1.3;color:var(--ink)}
+.gcard .stars{color:var(--oak);letter-spacing:.12em;font-size:14px}
+.js .gcard{animation:floatin .9s cubic-bezier(.2,.7,.2,1) 1.25s both}
+@keyframes floatin{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+
+/* more reviews: glass cards over a soft orb field */
+.more{position:relative;padding-top:40px;padding-bottom:80px}
+.more>.wrap{position:relative;z-index:1}
+.more .orbs i:nth-child(1){width:460px;height:460px;right:-160px;top:40px;background:radial-gradient(circle,rgba(173,123,76,.32),rgba(173,123,76,0) 68%)}
+.more .orbs i:nth-child(2){width:520px;height:520px;left:-200px;top:38%;background:radial-gradient(circle,rgba(220,227,226,1),rgba(220,227,226,0) 70%);animation-duration:30s}
+.more .orbs i:nth-child(3){width:360px;height:360px;right:10%;bottom:-80px;background:radial-gradient(circle,rgba(173,123,76,.16),rgba(173,123,76,0) 70%);animation-duration:22s;animation-direction:alternate-reverse}
+.more blockquote{margin-top:14px;padding:24px 22px;border:1px solid rgba(255,255,255,.6);border-radius:24px;background:rgba(251,252,251,.58);-webkit-backdrop-filter:blur(24px) saturate(150%);backdrop-filter:blur(24px) saturate(150%);box-shadow:var(--ghi),var(--gsh)}
+.more blockquote:first-of-type{margin-top:4px}
+.more .g a{display:inline-flex;align-items:center;min-height:44px}
+
+/* door: oak glow on slate, frosted hanger */
+.door{position:relative}
+.door>.wrap{position:relative;z-index:1}
+.door .orbs i:nth-child(1){width:640px;height:640px;right:-260px;bottom:180px;background:radial-gradient(circle,rgba(173,123,76,.6),rgba(173,123,76,0) 68%)}
+.door .orbs i:nth-child(2){width:420px;height:420px;left:-160px;bottom:-160px;background:radial-gradient(circle,rgba(220,227,226,.18),rgba(220,227,226,0) 70%);animation-duration:30s}
+.hanger{background:rgba(251,252,251,.86);-webkit-backdrop-filter:blur(26px) saturate(170%);backdrop-filter:blur(26px) saturate(170%);border:1px solid rgba(255,255,255,.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 40px 80px -30px #000a}
+.hanger>label{color:var(--ink);opacity:.82}
+.hanger input:not([type=checkbox]),.hanger textarea{background:rgba(255,255,255,.55);border:1px solid rgba(26,35,38,.12);border-radius:14px;padding:12px 14px;margin-top:6px;box-shadow:inset 0 1px 2px rgba(26,35,38,.06);transition:border-color .2s,box-shadow .2s}
+.hanger input:not([type=checkbox]):focus,.hanger textarea:focus{border-color:var(--oak);box-shadow:0 0 0 3px rgba(173,123,76,.22);outline:0}
+.ticks span{background:rgba(255,255,255,.5);border:1px solid rgba(26,35,38,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.8);padding:11px 15px;transition:background .2s,color .2s,border-color .2s,transform .17s}
+.ticks span:active{transform:scale(.97)}
+.hanger button{background:var(--ink)}
+.hanger button:hover{background:#26343a}
+
+/* dock: frosted pill */
+.dock{left:12px;right:12px;bottom:12px;padding:6px;gap:6px;border-radius:999px;background:var(--glass);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid var(--gb);box-shadow:var(--ghi),0 20px 50px -18px rgba(26,35,38,.4)}
+.dock a{border-radius:999px;min-height:50px;padding:12px 8px}
+.dock .c{display:flex;justify-content:center;align-items:center;gap:10px}
+.dock .t{background:rgba(255,255,255,.55);border:1px solid rgba(26,35,38,.16)}
+body{padding-bottom:92px}
+
+@media(min-width:900px){
+ body{padding-bottom:0}
+ .nav{top:16px;margin:16px auto 0;max-width:1400px;width:calc(100% - 64px);padding:10px 10px 10px 28px}
+ .gcard{left:-64px;right:auto;bottom:auto;top:300px;padding:16px 22px;border-radius:20px}
+ .arch{overflow:visible}
+ .arch img{border-radius:999px 999px 6px 6px}
+ .gcard b{font-size:46px}
+ .more{padding-top:60px;padding-bottom:150px}
+ .more blockquote{padding:30px 32px}
+ .door .orbs i:nth-child(1){right:-120px;bottom:-60px}
+ .hero .orbs i:nth-child(1){width:640px;height:640px;right:-120px;top:160px}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ .orbs i{animation:none!important}
+}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -202,18 +285,18 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
 
 <nav class="nav">
   <a class="brand" href="#top"><b>Pro Clean</b><span>Services Group</span></a>
-  <a class="pill" href="tel:+14373654327">Call (437) 365-4327</a>
+  <a class="pill" href="tel:+14373654327"><i aria-hidden="true"></i>Call (437) 365-4327</a>
 </nav>
 
-<header class="hero" id="top">
+<header class="hero" id="top"><div class="orbs" aria-hidden="true"><i></i><i></i><i></i></div>
   <p class="lab eyebrow">Cleaning · Brampton and the GTA</p>
   <h1 class="d"><span class="l">Incredibly</span><span class="l l2"><em>clean.</em></span></h1>
-  <div class="arch"><img src="img/p6-hero.jpg" alt="Curved oak staircase and the front hall of a home they cleaned"></div>
+  <div class="arch"><img src="img/p6-hero.jpg" alt="Curved oak staircase and the front hall of a home they cleaned">
+    <div class="gcard"><b>5.0</b><div><span class="stars" aria-label="5 out of 5 stars">★★★★★</span><span>13 Google reviews · open 24 hours</span></div></div></div>
   <div class="side">
     <p class="src-q">"Everything looked and felt incredibly clean when they finished."<span>Eduardo C., Google</span></p>
     <p>Homes, condos, offices, move-ins and move-outs, post-construction and Airbnb turnovers.</p>
     <a class="cta" href="#door">Ask for a quote <i>+</i></a>
-    <div class="rate"><b>5.0</b><span>from 13<br>Google reviews</span></div>
   </div>
 </header>
 
@@ -297,7 +380,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
   </div>
 </section>
 
-<section class="more">
+<section class="more"><div class="orbs" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="wrap">
     <div><span class="lab">More from Google</span></div>
     <div>
@@ -309,7 +392,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
   </div>
 </section>
 
-<section class="door" id="door">
+<section class="door" id="door"><div class="orbs" aria-hidden="true"><i></i><i></i></div>
   <div class="wrap">
     <div>
       <p class="lab">Ask for a quote</p>
@@ -351,7 +434,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
 
 <footer><div class="wrap"><span>Pro Clean Services Group, Brampton, ON</span><span>Preview built by JPF. Not live yet.</span></div></footer>
 
-<div class="dock"><a class="c" href="tel:+14373654327">Call (437) 365-4327</a><a class="t" href="sms:+14373654327">Text</a></div>
+<div class="dock"><a class="c" href="tel:+14373654327"><i aria-hidden="true"></i>Call (437) 365-4327</a><a class="t" href="sms:+14373654327">Text</a></div>
 
 <script>
 document.getElementById('q').addEventListener('submit',function(e){

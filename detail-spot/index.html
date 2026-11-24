@@ -213,14 +213,98 @@ footer .max{border-top:1px solid #2c2e32;padding-top:24px}
  footer{padding-bottom:40px}
 }
 @media(min-width:1304px){.strip{padding-inline:calc((100vw - 1240px)/2);grid-auto-columns:calc((1240px - 36px)/4)}}
+
+/* GLASS PASS (Nov 24): frosted white glass on the light floor, smoked ink glass in the dark quote bay.
+   Applied to: nav pill, call/text dock, hero rating card, hex service panel (over soft orbs), quote form panel (over soft orbs).
+   Left plain: correction band, lead quote, one car strip, numbers + reviews, visit/hours, footer. */
+:root{--gl:rgba(255,255,255,.62);--glb:rgba(255,255,255,.5);--glsh:0 20px 60px -20px rgba(17,18,20,.3);--ease:cubic-bezier(.2,.7,.2,1)}
+html{scroll-padding-top:96px}
+.glass{background:var(--gl);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid var(--glb);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),var(--glsh)}
+
+/* buttons: pills, press + focus */
+.b,.mad button,.dock a{border-radius:999px;transition:transform .18s var(--ease),background-color .18s,color .18s,border-color .18s,box-shadow .18s}
+.b{min-height:48px}
+.b:hover{transform:translateY(-1px)}
+.b:active,.mad button:active,.dock a:active{transform:scale(.98)}
+.b:not(.k):not(.r):hover{background:var(--ink);color:#fff}
+.b.r:hover,.mad button:hover{background:#c91d24}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.cell:focus-visible polygon{stroke:var(--red);stroke-width:3.4}
+
+/* nav: floating frosted pill */
+.nav{position:fixed;inset:12px 12px auto;padding:9px 9px 9px 20px;border-radius:999px;min-height:58px;transition:box-shadow .3s}
+.nav .q{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;background:var(--ink);color:#fff;font:700 15px/1 "Schibsted Grotesk";text-decoration:none;transition:transform .18s var(--ease)}
+.nav .q:active{transform:scale(.98)}
+.logo{padding:4px 0}
+.hero{padding-top:96px}
+
+/* hero card: frosted chip over the photo */
+.card{border-radius:24px;padding:16px 20px 15px}
+.card.glass{background:rgba(255,255,255,.66)}
+
+/* hex: orb field + glass panel */
+.hexsec{position:relative;overflow:hidden;isolation:isolate}
+.orbs{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.orbs i{position:absolute;border-radius:50%;filter:blur(40px);animation:drift 26s ease-in-out infinite alternate}
+.hexsec .orbs i:nth-child(1){width:520px;height:520px;right:-140px;top:22%;background:radial-gradient(circle,rgba(227,36,43,.16),rgba(227,36,43,0) 68%)}
+.hexsec .orbs i:nth-child(2){width:620px;height:620px;left:-200px;bottom:-160px;background:radial-gradient(circle,rgba(139,142,146,.32),rgba(139,142,146,0) 68%);animation-duration:30s;animation-direction:alternate-reverse}
+.hexsec .orbs i:nth-child(3){width:380px;height:380px;left:40%;top:-120px;background:radial-gradient(circle,rgba(255,255,255,.9),rgba(255,255,255,0) 70%);animation-duration:22s}
+@keyframes drift{from{transform:translate3d(0,0,0)}to{transform:translate3d(-40px,30px,0) scale(1.08)}}
+.panel{border-top:0;padding:22px 20px 14px;border-radius:26px}
+.panel .jobs li:last-child{border-bottom:0}
+.cell polygon{fill:rgba(255,255,255,.78)}
+
+/* quote bay: smoked glass over dark orbs */
+.ask{position:relative;overflow:hidden;isolation:isolate}
+.ask .orbs i:nth-child(1){width:560px;height:560px;left:-180px;top:120px;background:radial-gradient(circle,rgba(227,36,43,.26),rgba(227,36,43,0) 66%)}
+.ask .orbs i:nth-child(2){width:600px;height:600px;right:-220px;top:360px;background:radial-gradient(circle,rgba(139,142,146,.24),rgba(139,142,146,0) 66%);animation-duration:30s;animation-direction:alternate-reverse}
+.ask .orbs i:nth-child(3){display:none}
+.mad.glass{background:rgba(17,18,20,.5);border-color:rgba(255,255,255,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 20px 60px -20px rgba(0,0,0,.5);border-radius:26px;padding:24px 20px 22px;max-width:none}
+.mad input,.mad select{background-color:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:.02em .4em;box-shadow:inset 0 1px 0 rgba(255,255,255,.08);transition:border-color .18s,box-shadow .18s,background-color .18s;min-height:44px;vertical-align:baseline}
+.mad select{padding-right:1.4em;background-position:right 16px center,right 10px center}
+.mad input:focus,.mad select:focus{border-color:var(--red);background-color:rgba(255,255,255,.1);box-shadow:0 0 0 3px rgba(227,36,43,.35)}
+.mad input:focus-visible,.mad select:focus-visible{outline:none}
+.mad input::placeholder{color:#8f9297}
+.mad button{min-height:52px}
+.ask .note{color:#a9acb1}
+
+/* dock: frosted pill */
+.dock{left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));padding:7px;border-radius:999px;border-top:1px solid var(--glb);grid-template-columns:1.5fr 1fr;gap:6px}
+.dock.glass{background:rgba(255,255,255,.64)}
+.dock a{min-height:48px;padding:0 10px}
+footer{padding-bottom:120px}
+
+.card.glass{background:rgba(255,255,255,.76)}
+.card small{color:#2e3034}
+.mad input[name=v]{width:10.4em}
+.mad button .ar::after{content:"";position:absolute;right:0;top:-4px;width:8px;height:8px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg)}
+.cell.on polygon{filter:drop-shadow(0 8px 18px rgba(17,18,20,.28))}
+@media (prefers-reduced-motion:reduce){.orbs i{animation:none!important}html{scroll-behavior:auto}}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.glass{background:rgba(255,255,255,.94)}.mad.glass{background:#1a1b1e}}
+
+@media(min-width:700px){
+ .mad.glass{padding:34px 36px 30px}
+ .panel{padding:28px 30px 18px}
+}
+@media(min-width:980px){
+ html{scroll-padding-top:110px}
+ .nav{inset:16px 0 auto;left:50%;transform:translateX(-50%);width:min(1272px,calc(100vw - 32px));padding:10px 10px 10px 26px}
+ .nav .q{display:none}
+ .nav .call{min-height:46px;padding:0 22px}
+ .hero{padding-top:108px}
+ .card{border-radius:26px;padding:22px 28px 19px}
+ .mad.glass{padding:44px 48px 40px;max-width:1080px}
+ footer{padding-bottom:40px}
+}
 </style>
 </head>
 <body>
 <script>document.documentElement.classList.add('js')</script>
 
-<nav class="nav">
+<nav class="nav glass">
   <a class="logo" href="#">Detail<br>Spot<i></i></a>
   <a class="b k call" href="tel:+15194009666">Call (519) 400-9666</a>
+  <a class="q" href="#ask">Get a quote</a>
 </nav>
 
 <header class="hero">
@@ -229,7 +313,7 @@ footer .max{border-top:1px solid #2c2e32;padding-top:24px}
     <h1 class="d">Reset<b>.</b></h1>
     <div class="shot">
       <img src="img/p1.jpg" alt="White Lamborghini Gallardo Superleggera in the Detail Spot bay, under their honeycomb lights, DETAIL SPOT on the wall">
-      <div class="card">
+      <div class="card glass">
         <span class="lab">Google</span>
         <span class="big">5.0<em>&#9733;&#9733;&#9733;&#9733;&#9733;</em></span>
         <small>88 reviews. Mon to Fri, 10 to 6.</small>
@@ -278,6 +362,7 @@ footer .max{border-top:1px solid #2c2e32;padding-top:24px}
 </section>
 
 <section class="hexsec" id="services">
+  <div class="orbs" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="g max">
     <span class="lab">Under the hex lights</span>
     <h2 class="d">Pick a <span style="color:var(--red)">cell</span>.</h2>
@@ -286,7 +371,7 @@ footer .max{border-top:1px solid #2c2e32;padding-top:24px}
       <svg class="hexsvg" viewBox="-153 -147 306 294" role="group" aria-label="Services">
         <g id="cells"></g>
       </svg>
-      <div class="panel" aria-live="polite">
+      <div class="panel glass" aria-live="polite">
         <span class="lab" id="pk">Service</span>
         <h3 class="d" id="pt"></h3>
         <p class="what" id="pw"></p>
@@ -325,10 +410,11 @@ footer .max{border-top:1px solid #2c2e32;padding-top:24px}
 </section>
 
 <section class="ask" id="ask">
+  <div class="orbs" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="g max">
     <span class="lab">Text for a quote</span>
     <h2 class="d">Tell David<br>about the <b>car</b>.</h2>
-    <form class="mad" id="q">
+    <form class="mad glass" id="q">
       Hi David, I&rsquo;m <input name="n" required autocomplete="given-name" placeholder="your name" aria-label="Your name">
       and I drive a <input name="v" placeholder="year, make, model" aria-label="Vehicle">.
       I&rsquo;m after <select name="s" aria-label="What you need">
@@ -364,7 +450,7 @@ footer .max{border-top:1px solid #2c2e32;padding-top:24px}
 
 <footer><div class="g max"><div class="max">Detail Spot, Kitchener. Preview built by JPF. Not live yet.</div></div></footer>
 
-<div class="dock">
+<div class="dock glass">
   <a class="c" href="tel:+15194009666">Call (519) 400-9666</a>
   <a class="t" href="sms:+15194009666">Text</a>
 </div>

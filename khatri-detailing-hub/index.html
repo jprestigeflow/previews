@@ -132,6 +132,7 @@ img{display:block;max-width:100%}
 .sent{margin-top:30px;font:500 clamp(24px,6.4vw,40px)/1.55 var(--body);color:#d9dce0}
 .sent input,.sent select{font:inherit;color:#fff;background:transparent;border:0;border-bottom:3px solid var(--red);padding:0 4px;border-radius:0;width:9ch;max-width:100%;-webkit-appearance:none;appearance:none}
 .sent input.wide{width:11ch}
+.sent input{width:8.5ch}.sent input.wide{width:12.5ch}
 .sent select{width:auto;cursor:pointer;padding-right:26px;background:linear-gradient(45deg,transparent 50%,var(--red) 50%) right 8px center/9px 9px no-repeat}
 .sent select option{color:#121113}
 .sent input::placeholder{color:#ffffff59}
@@ -233,12 +234,105 @@ footer .wrap{padding-top:24px;display:flex;flex-wrap:wrap;gap:6px 18px;justify-c
   .dock{display:none}
   footer{padding-bottom:40px}
 }
+
+/* ===== GLASS PASS (Nov 24): frosted nav pill, frosted dock, one hero glass card, glass quote panel over orbs, review glass cards over orbs. Lead, picker, hydro stay plain. ===== */
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+:focus-visible{outline:3px solid #fff;outline-offset:3px;border-radius:6px}
+.hero :focus-visible,.rv :focus-visible{outline-color:var(--ink)}
+.glass-d{background:rgba(18,17,19,.6);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 20px 60px -20px rgba(18,17,19,.45)}
+/* nav pill */
+.nav{position:fixed;inset:12px 12px auto;padding:7px 7px 7px 20px;border-radius:999px;color:#fff;z-index:60}
+.nav .call{background:var(--red);color:#fff;border-radius:999px;padding:0 18px;min-height:44px;display:inline-flex;align-items:center;transition:transform .16s ease,background .16s ease}
+.nav .call:hover{background:var(--red-d)}
+.brand small{color:#ffffffb3}
+.hero{padding-top:112px}
+/* buttons: pills + press */
+.btn,.send button,.dock a{border-radius:999px;transition:transform .16s ease,background-color .18s ease,box-shadow .18s ease}
+.btn{min-height:52px}
+.btn.k:hover{background:#000}
+.btn.o:hover{background:rgba(18,17,19,.1)}
+.btn:active,.send button:active,.dock a:active,.nav .call:active{transform:scale(.98)}
+/* hero glass card */
+.hp{position:relative;z-index:2;width:80%;margin:-4px 0 0 auto}
+.hp .hero-photo{width:100%;margin:0}
+.hcard{position:absolute;z-index:4;left:-52px;bottom:78px;width:222px;padding:16px 18px 15px;border-radius:24px;color:var(--ink);
+  background:rgba(255,255,255,.7);-webkit-backdrop-filter:blur(20px) saturate(150%);backdrop-filter:blur(20px) saturate(150%);
+  border:1px solid rgba(255,255,255,.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 20px 60px -20px rgba(18,17,19,.3)}
+.hcard .r{display:flex;align-items:center;gap:10px}
+.hcard .r b{font:900 44px/.8 var(--disp)}
+.hcard .r span{font:700 14px/1.2 var(--body)}
+.hcard p{font:500 15px/1.38 var(--body);margin-top:10px}
+.hcard cite{display:block;font:700 14px var(--body);font-style:normal;margin-top:6px;color:#3a2a2a}
+.js .hcard{opacity:0;transform:translateY(18px)}
+.go .hcard{opacity:1;transform:none;transition:opacity .7s ease 1.15s,transform .9s cubic-bezier(.2,.8,.2,1) 1.15s}
+/* orbs */
+.orbs{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.orbs i{position:absolute;border-radius:50%;filter:blur(40px);animation:drift 26s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate3d(8%,-6%,0) scale(1.08)}}
+.rv,.q{position:relative;overflow:hidden;isolation:isolate}
+.rv .wrap,.q .wrap{position:relative;z-index:1}
+.rv .orbs i:nth-child(1){width:70vw;height:70vw;max-width:760px;max-height:760px;left:-20vw;top:30%;background:radial-gradient(circle,rgba(110,10,14,.75),rgba(110,10,14,0) 70%)}
+.rv .orbs i:nth-child(2){width:60vw;height:60vw;max-width:640px;max-height:640px;right:-18vw;top:-6%;background:radial-gradient(circle,rgba(18,17,19,.45),rgba(18,17,19,0) 70%);animation-duration:30s;animation-direction:alternate-reverse}
+.rv .orbs i:nth-child(3){width:50vw;height:50vw;max-width:520px;max-height:520px;right:4vw;bottom:-10%;background:radial-gradient(circle,rgba(184,13,9,.8),rgba(184,13,9,0) 70%);animation-duration:22s}
+.q .orbs i:nth-child(1){width:80vw;height:80vw;max-width:820px;max-height:820px;left:-26vw;top:-8%;background:radial-gradient(circle,rgba(225,20,15,.32),rgba(225,20,15,0) 70%)}
+.q .orbs i:nth-child(2){width:70vw;height:70vw;max-width:700px;max-height:700px;right:-24vw;top:40%;background:radial-gradient(circle,rgba(110,10,14,.55),rgba(110,10,14,0) 70%);animation-duration:30s;animation-direction:alternate-reverse}
+.q .orbs i:nth-child(3){width:50vw;height:50vw;max-width:480px;max-height:480px;left:30%;bottom:-14%;background:radial-gradient(circle,rgba(43,45,49,.9),rgba(43,45,49,0) 70%);animation-duration:22s}
+/* reviews as dark glass cards on the red */
+.rlist{border-top:0;gap:14px}
+.rlist blockquote{padding:22px 22px 20px;border-radius:24px;border-bottom:0;color:#fff;background:rgba(18,17,19,.42);-webkit-backdrop-filter:blur(22px) saturate(150%);backdrop-filter:blur(22px) saturate(150%);border:1px solid rgba(255,255,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 20px 60px -20px rgba(18,17,19,.5)}
+.rlist p{font-size:18px}
+.rlist cite{color:#ffffffcc}
+.rv .more{display:inline-flex;align-items:center;min-height:44px;margin-top:10px}
+/* quote form as glass panel */
+#qf{padding:28px 20px 26px;border-radius:26px;background:rgba(18,17,19,.5);-webkit-backdrop-filter:blur(24px) saturate(160%);backdrop-filter:blur(24px) saturate(160%);border:1px solid rgba(255,255,255,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 20px 60px -20px rgba(0,0,0,.6)}
+.q h2{font-size:clamp(56px,15.5vw,150px)}
+.sent{line-height:1.9}
+.sent input,.sent select{border:1px solid rgba(255,255,255,.2);border-radius:14px;background:rgba(255,255,255,.07);box-shadow:inset 0 1px 0 rgba(255,255,255,.12);padding:2px 12px;line-height:1.35;min-height:44px;transition:border-color .18s,box-shadow .18s,background-color .18s}
+.sent select{padding-right:32px;background:rgba(255,255,255,.07) linear-gradient(45deg,transparent 50%,var(--red) 50%) right 12px center/9px 9px no-repeat}
+.sent input:focus,.sent select:focus{outline:none;border-color:var(--red);background-color:rgba(255,255,255,.11);box-shadow:0 0 0 3px rgba(225,20,15,.45)}
+.send button{padding:18px 30px;min-height:56px}
+/* dock pill */
+.dock{left:12px;right:12px;bottom:12px;border-radius:999px;padding:7px;gap:7px}
+.dock a{min-height:50px;padding:0 10px}
+.dock .t{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.06)}
+.dock .c:hover{background:var(--red-d)}
+footer{padding-bottom:132px}
+.panel a,.stage a{display:inline-flex;align-items:center;min-height:44px}
+.brand{display:inline-block;padding:2px 0}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .glass-d,.rlist blockquote,#qf{background:rgba(18,17,19,.88)}
+  .hcard{background:rgba(255,255,255,.94)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .orbs i{animation:none!important}
+  .js .hcard{opacity:1!important;transform:none!important}
+}
+@media (min-width:900px){
+  .nav{inset:16px 24px auto;padding:8px 8px 8px 26px}
+  .nav .links a{color:#ffffffd9;padding:10px 4px}
+  .nav .links a:hover{color:#fff}
+  .hero{padding-top:132px}
+  .hp{position:absolute;top:0;right:0;bottom:0;width:40vw;margin:0}
+  .hp .hero-photo{height:100%}
+  .hcard{left:auto;right:28px;bottom:76px;width:280px;padding:20px 22px 18px}
+  .hcard .r b{font-size:54px}
+  .hcard p{font-size:17px}
+  .rlist blockquote{padding:28px 30px 26px}
+  .rlist p{font-size:20px}
+  #qf{padding:46px 44px 42px;align-self:start}
+  .q h2{font-size:clamp(60px,9vw,130px)}
+  .sent{font-size:30px}
+}
+@media (min-width:1200px){
+  .hcard{right:auto;left:-96px;bottom:110px}
+}
 </style>
 </head>
 <body>
 <script>document.documentElement.classList.add('js')</script>
 
-<header class="nav">
+<header class="nav glass-d">
   <a class="brand" href="#top">Khatri Detailing Hub<small>St. Catharines, ON</small></a>
   <nav class="links"><a href="#detail">Services</a><a href="#reviews">Reviews</a><a href="#quote">Quote and hours</a></nav>
   <a class="call" href="tel:+12896962763">(289) 696-2763</a>
@@ -252,14 +346,16 @@ footer .wrap{padding-top:24px;display:flex;flex-wrap:wrap;gap:6px 18px;justify-c
       <span class="ln"><span class="w">Protection.</span></span>
       <span class="ln"><span>Perfection.</span></span>
     </h1>
+    <div class="hp">
     <figure class="hero-photo">
       <img src="img/k-raptor.jpg" alt="White Ford Raptor after a detail at Khatri Detailing Hub, red tail light lit">
       <figcaption>Ford Raptor. Fresh detail. Serious shine.</figcaption>
     </figure>
+    <div class="hcard"><div class="r"><b>5.0</b><span>from 133<br>Google reviews</span></div><p>&ldquo;&hellip;spotless, super shiny, and like brand new.&rdquo;</p><cite>Anoop K., Google</cite></div>
+    </div>
     <div class="hero-meta">
       <p>Hand car wash, detailing, paint correction and ceramic coating at 43 Scott St W, St. Catharines.</p>
       <div class="btns"><a class="btn k" href="tel:+12896962763">Call (289) 696-2763</a><a class="btn o" href="#quote">Text for a quote <span class="ar">&rarr;</span></a></div>
-      <div class="rate"><b>5.0</b><span>from 133<br>Google reviews</span></div>
     </div>
   </div>
   <div class="hash" aria-hidden="true"></div>
@@ -329,6 +425,7 @@ footer .wrap{padding-top:24px;display:flex;flex-wrap:wrap;gap:6px 18px;justify-c
 </section>
 
 <section class="rv" id="reviews">
+  <div class="orbs" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="wrap rl">
     <h2 class="disp">Five stars,<br><span class="w">133 times.</span></h2>
     <div class="rlist">
@@ -341,6 +438,7 @@ footer .wrap{padding-top:24px;display:flex;flex-wrap:wrap;gap:6px 18px;justify-c
 </section>
 
 <section class="q" id="quote">
+  <div class="orbs" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="wrap grid">
     <form id="qf">
       <span class="lbl" style="color:#9ea4ab">Text for a quote</span>
@@ -372,7 +470,7 @@ footer .wrap{padding-top:24px;display:flex;flex-wrap:wrap;gap:6px 18px;justify-c
 
 <footer><div class="wrap"><span>Khatri Detailing Hub · 43 Scott St W, St. Catharines · (289) 696-2763</span><span>Preview built by JPF. Not live yet.</span></div></footer>
 
-<nav class="dock" aria-label="Contact"><a class="c" href="tel:+12896962763">Call (289) 696-2763</a><a class="t" href="sms:+12896962763">Text</a></nav>
+<nav class="dock glass-d" aria-label="Contact"><a class="c" href="tel:+12896962763">Call (289) 696-2763</a><a class="t" href="sms:+12896962763">Text</a></nav>
 
 <script>
 (function(){

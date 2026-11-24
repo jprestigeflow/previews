@@ -36,10 +36,10 @@ img,video{display:block;max-width:100%}
 .chrome{background:linear-gradient(180deg,#ffffff 0%,#dfe4ea 45%,#8d97a5 62%,#e9edf2 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 
 /* nav */
-.nav{position:absolute;inset:0 0 auto;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:18px var(--gut)}
+.nav{position:fixed;top:calc(12px + env(safe-area-inset-top));left:12px;right:12px;max-width:1240px;margin-inline:auto;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:6px 6px 6px 20px;border-radius:999px}
 .brand{font:400 15px/1 var(--d);letter-spacing:.04em;text-transform:uppercase}
 .brand i{font-style:normal;color:var(--a)}
-.nav .call{font:600 15px var(--b);padding:10px 16px;border:1px solid #ffffff33;border-radius:40px}
+.nav .call{display:inline-flex;align-items:center;min-height:44px;font:600 15px var(--b);padding:0 20px;border:1px solid rgba(255,255,255,.22);border-radius:999px;background:rgba(255,255,255,.07)}
 .nav .links{display:none}
 
 /* hero */
@@ -190,10 +190,76 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
 .js .unmask{clip-path:inset(12% 0 0 0);transition:clip-path 1.2s cubic-bezier(.2,.7,.2,1)}
 .js .unmask.on{clip-path:inset(0 0 0 0)}
 
+/* GLASS PASS (Nov 24): frosted panels only on nav, dock, hero rating card, photo tag, quote form, review cards. Rest stays plain. */
+.glass{background:rgba(20,24,32,.5);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 20px 60px -20px rgba(0,0,0,.7)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.glass{background:rgba(20,24,32,.92)}}
+section[id],header[id]{scroll-margin-top:84px}
+:focus-visible{outline:2px solid var(--a);outline-offset:3px}
+.btn,.dock a,.nav .call,.sw button,.chips label{transition:transform .18s ease,background-color .2s ease,color .2s ease,border-color .2s ease;-webkit-tap-highlight-color:transparent}
+.btn{min-height:52px}
+.btn:hover{background:#ffab4a}
+.btn.ghost:hover{background:rgba(255,255,255,.08)}
+.btn:active,.dock a:active,.nav .call:active,.chips label:active,.sw button:active{transform:scale(.98)}
+.nav .call:hover{background:rgba(255,255,255,.14)}
+.nav .brand{padding:12px 0}
+
+/* hero rating card */
+.hcard{position:relative;z-index:3;margin-top:24px;border-radius:24px;padding:16px 18px;max-width:360px;background:rgba(20,24,32,.46)}
+.hc-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.hc-top b{font:400 26px/1 var(--d);letter-spacing:-.02em}
+.stars{display:inline-flex;gap:3px}
+.stars i{width:13px;height:13px;background:var(--a);clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.hc-n{font-size:14px;color:#c9d0d9}
+.hc-q{margin-top:10px;font-size:16px;line-height:1.4;color:var(--w)}
+.hc-w{margin-top:4px;font-size:14px;color:#aab3bf}
+.js .hcard{opacity:0;transform:translateY(18px) scale(.98);animation:floatin .9s 1.15s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes floatin{to{opacity:1;transform:none}}
+
+/* inside/out photo tag as a small glass chip */
+.io .tag{left:14px;bottom:14px;padding:9px 14px;border-radius:14px;font-size:14px;color:var(--w);text-shadow:none;background:rgba(20,24,32,.55)}
+
+/* soft orb fields (accent + steel), tint only */
+.orbs{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.orbs span{position:absolute;border-radius:50%;will-change:transform}
+.orbs .o1{width:520px;height:520px;right:-160px;top:-60px;background:radial-gradient(circle,rgba(255,157,46,.20) 0%,rgba(255,157,46,0) 68%);animation:drift1 26s ease-in-out infinite alternate}
+.orbs .o2{width:600px;height:600px;left:-240px;top:38%;background:radial-gradient(circle,rgba(141,151,165,.18) 0%,rgba(141,151,165,0) 68%);animation:drift2 30s ease-in-out infinite alternate}
+.orbs .o3{width:420px;height:420px;right:5%;bottom:-120px;background:radial-gradient(circle,rgba(255,157,46,.12) 0%,rgba(255,157,46,0) 68%);animation:drift1 22s ease-in-out infinite alternate-reverse}
+@keyframes drift1{to{transform:translate(-60px,50px)}}
+@keyframes drift2{to{transform:translate(70px,-40px)}}
+.book>.wrap,.more>.wrap{position:relative;z-index:1}
+.more{position:relative;overflow:hidden}
+.book{overflow:hidden}
+
+/* reviews as glass cards */
+.more .qs>div{border-radius:24px;padding:26px 24px 24px}
+.more .qs{gap:16px;align-items:start}
+.nums .row>div:nth-child(3){grid-column:1/-1}
+.nums .row>div:nth-child(3) .k{max-width:none}
+
+/* quote form as glass panel */
+.qf.glass{border-radius:26px;padding:26px 20px 24px;gap:16px;background:rgba(20,24,32,.55)}
+.qf label{border:0;padding:0}
+.qf label span{margin-bottom:8px}
+.qf input:not([type=radio]){background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:13px 16px;font-size:19px;min-height:52px;transition:border-color .2s,box-shadow .2s,background-color .2s}
+.qf input:not([type=radio]):focus{border-color:var(--a);box-shadow:0 0 0 3px rgba(255,157,46,.28);background:rgba(255,255,255,.07)}
+.qf input::placeholder{color:#7d8796}
+.qf .need{padding-top:2px}
+.qf .need>.lab{display:block;margin-bottom:10px;letter-spacing:.14em}
+.chips label{border-radius:14px;min-height:44px;display:inline-flex;align-items:center;padding:0 16px;background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.16)}
+.chips label:hover{border-color:rgba(255,255,255,.32)}
+.qf .go{margin-top:8px}
+.qf .hint{margin-top:0}
+
+/* dock: frosted pill */
+.dock.glass{background:rgba(13,16,21,.58);border-radius:999px;border-color:rgba(255,255,255,.18)}
+.dock a{border-radius:999px;min-height:48px}
+.dock .t{background:rgba(255,255,255,.06)}
+footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
+
 @media (min-width:900px){
   :root{--gut:48px}
   body{font-size:18px}
-  .nav{padding:26px var(--gut)}
+  .nav{top:16px;left:30px;right:30px;padding:6px 6px 6px 18px}
   .nav .links{display:flex;gap:30px;font-size:15px;color:#c9d0d9}
   .nav .links a:hover{color:var(--w)}
   .hero{min-height:max(100vh,760px);padding:0 var(--gut) 70px;justify-content:center}
@@ -226,6 +292,11 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
   .book{padding:170px 0 150px}
   .book .top{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
   .info{grid-template-columns:1fr 1fr 1fr;gap:60px}
+  .hcard{position:absolute;right:calc(var(--gut) + 28px);bottom:72px;width:340px;margin:0}
+  .qf.glass{padding:34px 34px 30px}
+  .more .qs{gap:24px}
+  .nums .row>div:nth-child(3){grid-column:auto}
+  .more .qs>div{padding:30px 28px 28px}
   .dock{display:none}
   footer{padding-bottom:40px}
 }
@@ -233,6 +304,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
   *,*::before,*::after{animation:none!important;transition:none!important}
   .js .hero h1 span,.js .hero .rest{opacity:1;transform:none}
   .js .hero .bar{transform:none}
+  .js .hcard{opacity:1;transform:none}
+  .orbs span{animation:none!important}
   .js .unmask{clip-path:none}
   .reel .ph img{transform:none}
   html{scroll-behavior:auto}
@@ -242,7 +315,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
 <body>
 <script>document.documentElement.classList.add('js')</script>
 
-<nav class="nav">
+<nav class="nav glass">
   <a class="brand" href="#top">Detail <i>Verse</i></a>
   <div class="links"><a href="#io">Services</a><a href="#rides">Recent rides</a><a href="#reviews">Reviews</a><a href="#book">Book</a></div>
   <a class="call" href="tel:+12269880901">Call</a>
@@ -257,10 +330,14 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
       <p class="sub">Car detailing in <b>Kitchener</b>, interior and exterior, plus paint correction. 1290 King St E.</p>
       <div>
         <div class="btns"><a class="btn" href="#book">Get a quote by text</a><a class="btn ghost" href="tel:+12269880901">Call now</a></div>
-        <div class="rate"><b>5.0</b><span>from 25 Google reviews</span></div>
       </div>
     </div>
   </div>
+  <aside class="hcard glass" aria-label="Google rating">
+    <div class="hc-top"><b>5.0</b><span class="stars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="hc-n">25 Google reviews</span></div>
+    <p class="hc-q">&ldquo;My car has never looked this clean.&rdquo;</p>
+    <p class="hc-w">Patrick H., Google</p>
+  </aside>
 </header>
 
 <section class="lead">
@@ -285,7 +362,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
       <div class="frame unmask">
         <img class="out" src="img/p5c.jpg" alt="Black Jeep Grand Cherokee with amber running lights, after a detail">
         <img class="in" src="img/p9.jpg" alt="Mazda interior after a detail, steering wheel covered">
-        <p class="tag" id="io-tag">Grand Cherokee, from their Instagram</p>
+        <p class="tag glass" id="io-tag">Grand Cherokee, from their Instagram</p>
       </div>
       <div>
         <div class="pane" data-p="out">
@@ -359,27 +436,29 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
 </section>
 
 <section class="more" id="reviews">
+  <div class="orbs" aria-hidden="true"><span class="o1"></span><span class="o2"></span></div>
   <div class="wrap">
     <p class="lab"><b>&#9679;</b>&nbsp; More from Google</p>
     <div class="qs">
-      <div><q>I had my car detailed here today, I was stunned with the results. My car is brand new again. They’re very professional and did fantastic job. My car was detailed inside out including engine. Results are amazing.</q><cite>Tejas P., Google</cite></div>
-      <div><q>I had been looking for Car detailing for a while and was referred to Detail Verse. Kush and Dipanshu had done great job in removing the long lasting salt stains and felt very professional. It is is spotless interior after the service. I would highly recommend Detail Verse car detailing.</q><cite>Harsha G., Google</cite></div>
-      <div><q>Great service and amazing results! My car has never looked this clean. The staff was friendly, and the work exceeded my expectations. I'll definitely be coming back. Highly recommended!</q><cite>Patrick H., Google</cite></div>
+      <div class="glass"><q>I had my car detailed here today, I was stunned with the results. My car is brand new again. They’re very professional and did fantastic job. My car was detailed inside out including engine. Results are amazing.</q><cite>Tejas P., Google</cite></div>
+      <div class="glass"><q>I had been looking for Car detailing for a while and was referred to Detail Verse. Kush and Dipanshu had done great job in removing the long lasting salt stains and felt very professional. It is is spotless interior after the service. I would highly recommend Detail Verse car detailing.</q><cite>Harsha G., Google</cite></div>
+      <div class="glass"><q>Great service and amazing results! My car has never looked this clean. The staff was friendly, and the work exceeded my expectations. I'll definitely be coming back. Highly recommended!</q><cite>Patrick H., Google</cite></div>
     </div>
   </div>
 </section>
 
 <section class="book" id="book">
+  <div class="orbs" aria-hidden="true"><span class="o1"></span><span class="o2"></span><span class="o3"></span></div>
   <div class="wrap">
     <div class="top">
       <div>
         <h2 class="d">Book your <span>shine.</span></h2>
         <p class="lede">Two quick answers and your phone opens a text to Detail Verse with everything filled in.</p>
       </div>
-      <form class="qf" id="q">
+      <form class="qf glass" id="q">
         <label><span>Your name</span><input name="n" required autocomplete="name" placeholder="First name"></label>
         <label><span>Your vehicle</span><input name="v" placeholder="Year, make, model"></label>
-        <div style="border-bottom:1px solid #ffffff2e;padding:18px 0 14px">
+        <div class="need">
           <span class="lab" style="display:block;margin-bottom:10px;letter-spacing:.14em">What you need</span>
           <div class="chips">
             <input type="radio" name="s" id="s1" value="Interior detail"><label for="s1">Interior</label>
@@ -405,7 +484,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
 
 <footer><div class="wrap"><span>Detail Verse, Kitchener.</span><span>Preview built by JPF. Not live yet.</span></div></footer>
 
-<div class="dock"><a class="c" href="tel:+12269880901">Call (226) 988-0901</a><a class="t" href="sms:+12269880901">Text</a></div>
+<div class="dock glass"><a class="c" href="tel:+12269880901">Call (226) 988-0901</a><a class="t" href="sms:+12269880901">Text</a></div>
 
 <script>
 (function(){
