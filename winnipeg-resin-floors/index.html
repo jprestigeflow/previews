@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Winnipeg Resin Floors | Epoxy flake floors in Winnipeg</title>
+<meta name="description" content="Epoxy flake floors for garages, stairs and shops in Winnipeg, Manitoba. 5.0 on Google from 14 reviews. Call or text (431) 533-2301.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,700;0,800;0,900;1,800;1,900&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/*
+DESIGN PLAN
+Direction: process-story-led. The page walks a floor from bare slab to finished flake, one numbered chapter at a time, with the crew's own reel stills. Dark slate and flake-pink, one custom sticky "job rail" that fills as you scroll.
+Palette: ink #12161a (shadow tone of the finished garage floor in their hero reel), slate #6c7987 (average floor grey from the same frame), concrete #e8e9eb (light flake in p3-p7), accent flake pink #cf4a72 (the red flake in their Nightfall post, sampled bb4465 and lifted for contrast).
+Fonts: Epilogue 800/900 display (tight, wide-ish grotesk) + Be Vietnam Pro body.
+Signature: the Job Rail, 6 chapters (quote, grind, blend, flake, seal, finish) with a live progress line, only steps their posts and reels show.
+Order: hero (video panel + glass rating card) > rail > finished floors > numbers > reviews > areas/services > quote sentence > footer.
+Motion: one load entrance, rail progress, counters once, gentle photo reveal. Reduced-motion respected.
+*/
+:root{
+  --ink:#12161a; --ink2:#1b2127; --slate:#6c7987; --con:#e8e9eb; --paper:#f4f4f2; --pink:#cf4a72; --pinkd:#a3294f;
+  --r-pill:999px; --r-lg:26px; --r-sm:14px;
+  --display:'Epilogue',system-ui,sans-serif; --body:'Be Vietnam Pro',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--body);background:var(--ink);color:var(--con);line-height:1.55;font-size:16px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--pink);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1240px,100% - 40px);margin-inline:auto}
+h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-.035em;line-height:.96}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:52px;padding:0 28px;border-radius:var(--r-pill);font-weight:600;font-size:16px;text-decoration:none;border:0;cursor:pointer;transition:transform .18s,background .18s,box-shadow .18s;font-family:var(--body)}
+.btn:active{transform:scale(.98)}
+.btn-pink{background:var(--pink);color:#fff;box-shadow:0 14px 34px -14px rgba(207,74,114,.9)}
+.btn-pink:hover{background:#dc5a82}
+.btn-line{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.3)}
+.btn-line:hover{background:rgba(255,255,255,.16)}
+.glass{background:rgba(24,30,36,.52);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 24px 60px -22px rgba(0,0,0,.6)}
+
+/* NAV */
+.nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;max-width:1100px;margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 8px 8px 20px;border-radius:var(--r-pill)}
+.nav b{font-family:var(--display);font-weight:800;font-size:16px;letter-spacing:-.02em;white-space:nowrap}
+.nav .links{display:none;gap:26px;font-size:14px;font-weight:500}
+.nav .links a{text-decoration:none;opacity:.85}.nav .links a:hover{opacity:1}
+.nav .btn{min-height:44px;padding:0 20px;font-size:15px;white-space:nowrap}
+.nav .cn{display:none}
+@media(min-width:420px){.nav .cn{display:inline}}
+@media(min-width:860px){.nav .links{display:flex}.nav{top:18px}}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:var(--ink)}
+.hero .vid{position:absolute;inset:0}
+.hero video,.hero .vid img{width:100%;height:100%;object-fit:cover}
+.hero .vid::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,22,26,.6) 0%,rgba(18,22,26,.3) 25%,rgba(18,22,26,.62) 48%,rgba(18,22,26,.96) 88%)}
+.hero .in{position:relative;z-index:2;padding:130px 0 108px;width:min(1240px,100% - 40px)}
+.hero h1{font-size:clamp(50px,14.4vw,76px);font-weight:900;text-wrap:balance}
+.hero h1 span{color:var(--pink)}
+.hero .sub{margin-top:20px;font-size:18px;max-width:30em;color:#d6d9dd}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero .card{position:relative;margin-top:30px;padding:16px 18px;border-radius:var(--r-lg);max-width:420px}
+.card .top{display:flex;align-items:center;gap:12px}
+.card .big{font-family:var(--display);font-weight:900;font-size:40px;letter-spacing:-.04em;line-height:1}
+.card .meta{font-size:13px;line-height:1.35;color:#d8dbe0}
+.card q{display:block;margin-top:10px;font-size:14.5px;line-height:1.45;color:#fff;quotes:none}
+.card q::before{content:"\201C"}.card q::after{content:"\201D"}
+.stars{color:#ffd166;letter-spacing:2px;font-size:15px}
+@media(min-width:900px){
+  .hero{align-items:stretch}
+  .hero .vid{left:auto;width:46%}
+  .hero .vid::after{background:linear-gradient(90deg,rgba(18,22,26,1) 0%,rgba(18,22,26,0) 30%),linear-gradient(180deg,rgba(18,22,26,.5) 0,rgba(18,22,26,0) 25%,rgba(18,22,26,0) 70%,rgba(18,22,26,.8) 100%)}
+  .hero .in{display:flex;flex-direction:column;justify-content:center;padding:130px 0 90px}
+  .hero h1{font-size:clamp(100px,10.6vw,150px);width:130%;position:relative;z-index:3}
+  .hero .sub,.hero .cta{position:relative;z-index:3}
+  .hero .card{position:absolute;right:0;bottom:70px;margin:0;z-index:4;width:340px}
+}
+.rise{opacity:0;transform:translateY(26px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+.d1{animation-delay:.1s}.d2{animation-delay:.28s}.d3{animation-delay:.46s}.d4{animation-delay:.68s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* RAIL (signature) */
+.story{position:relative;padding:96px 0 40px;background:linear-gradient(180deg,var(--ink) 0,#171c21 100%)}
+.story .head{max-width:760px;margin-bottom:56px}
+.story h2{font-size:clamp(42px,10vw,88px)}
+.story .head p{margin-top:20px;color:#b6bcc4;font-size:17px;max-width:34em}
+.railgrid{display:block}
+.rail{display:none}
+.steps{display:flex;flex-direction:column;gap:72px}
+.step{position:relative}
+.step .ph{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/5;background:#222}
+.step .ph img,.step .ph video{width:100%;height:100%;object-fit:cover}
+.step .num{position:absolute;left:16px;top:10px;font-family:var(--display);font-weight:900;font-size:84px;letter-spacing:-.05em;line-height:1;color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.5)}
+.step h3{font-size:clamp(34px,8.5vw,54px);margin:24px 0 10px}
+.step p{color:#c4c9cf;max-width:32em;font-size:16.5px}
+.step .src{display:inline-block;margin-top:12px;font-size:13px;color:var(--slate)}
+.step.quote .ph{aspect-ratio:auto;background:none;border:1px solid rgba(255,255,255,.14);padding:28px 22px;border-radius:var(--r-lg);display:flex;flex-direction:column;justify-content:space-between;gap:30px;min-height:260px;background:radial-gradient(120% 120% at 100% 0,rgba(207,74,114,.28),transparent 55%),var(--ink2)}
+.step.quote .num{position:static;text-shadow:none;color:var(--pink)}
+.step.quote .ph .ways{display:flex;flex-direction:column;gap:10px}
+.fillbar{height:4px;background:rgba(255,255,255,.12);border-radius:4px;overflow:hidden}
+.fillbar i{display:block;height:100%;width:0;background:var(--pink)}
+.blends{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.blends span{padding:8px 14px;border-radius:var(--r-sm);font-size:14px;font-weight:500;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16)}
+@media(min-width:900px){
+  .story{padding:150px 0 90px}
+  .railgrid{display:grid;grid-template-columns:260px 1fr;gap:80px;align-items:start}
+  .rail{display:block;position:sticky;top:110px;padding:22px 22px 22px 26px;border-radius:var(--r-lg)}
+  .rail ol{list-style:none;position:relative;display:flex;flex-direction:column;gap:2px}
+  .rail .track{position:absolute;left:0;top:10px;bottom:10px;width:3px;background:rgba(255,255,255,.14);border-radius:3px;overflow:hidden}
+  .rail .track i{display:block;width:100%;height:0;background:var(--pink);transition:height .25s}
+  .rail li{padding:9px 0 9px 24px;font-size:15px;font-weight:500;color:#9aa2ab;transition:color .2s;cursor:pointer}
+  .rail li b{font-family:var(--display);font-weight:900;margin-right:10px;color:inherit;font-size:13px}
+  .rail li.on{color:#fff}.rail li.on b{color:var(--pink)}
+  .rail .lbl{font-size:12.5px;color:#9aa2ab;margin:0 0 14px 24px}
+  .steps{gap:130px}
+  .step{display:grid;grid-template-columns:1fr;gap:0}
+  .step .ph{aspect-ratio:5/4;max-height:620px}
+  .step .num{font-size:130px;left:26px;top:16px}
+  .step h3{font-size:62px}
+  .step.quote .ph{min-height:340px;padding:40px}
+  .step .ph img{transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+  .step.in-view .ph img{transform:scale(1.04)}
+}
+
+/* FINISHED FLOORS */
+.fin{padding:80px 0 100px;background:var(--paper);color:var(--ink)}
+.fin h2{font-size:clamp(44px,10.5vw,104px);max-width:11em}
+.fin h2 em{font-style:italic;color:var(--pinkd)}
+.fin .lead{margin-top:20px;max-width:34em;color:#3a424a}
+.set{margin-top:48px;display:grid;gap:12px;grid-template-columns:1fr 1fr}
+.set figure{border-radius:20px;overflow:hidden;position:relative;background:#cfd3d6}
+.set img{width:100%;height:100%;object-fit:cover}
+.set .a{grid-column:1/3;aspect-ratio:4/3}
+.set .b{aspect-ratio:3/4}.set .c{aspect-ratio:3/4}
+.set .d{grid-column:1/3;aspect-ratio:16/10}
+.set figcaption{position:absolute;left:12px;bottom:12px;padding:7px 14px;border-radius:var(--r-pill);font-size:13px;font-weight:500;color:#fff}
+@media(min-width:900px){
+  .fin{padding:140px 0}
+  .set{grid-template-columns:5fr 3fr 4fr;grid-template-rows:auto auto;gap:18px}
+  .set .a{grid-column:1;grid-row:1/3;aspect-ratio:auto}
+  .set .b{grid-column:2;aspect-ratio:auto;min-height:340px}
+  .set .c{grid-column:3;aspect-ratio:auto}
+  .set .d{grid-column:2/4;grid-row:2;aspect-ratio:auto;min-height:300px}
+}
+
+/* NUMBERS */
+.nums{padding:84px 0;background:var(--ink)}
+.nums .row{display:grid;grid-template-columns:1fr;gap:34px}
+.nums .n{border-top:1px solid rgba(255,255,255,.18);padding-top:16px}
+.nums .v{font-family:var(--display);font-weight:900;font-size:clamp(70px,16vw,128px);letter-spacing:-.05em;line-height:.95}
+.nums .v sup{font-size:.4em;color:var(--pink);vertical-align:top;margin-left:4px}
+.nums .l{color:#aab0b8;font-size:15px;margin-top:8px;max-width:20em}
+@media(min-width:800px){.nums{padding:120px 0}.nums .row{grid-template-columns:repeat(3,1fr);gap:40px}}
+
+/* REVIEWS */
+.rev{position:relative;padding:90px 0 100px;background:#171c21;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;animation:drift 26s ease-in-out infinite alternate}
+.o1{width:520px;height:520px;background:radial-gradient(circle,rgba(207,74,114,.32),transparent 68%);right:-160px;top:-100px}
+.o2{width:560px;height:560px;background:radial-gradient(circle,rgba(108,121,135,.4),transparent 68%);left:-200px;bottom:-160px;animation-duration:32s}
+@keyframes drift{to{transform:translate(50px,36px) scale(1.08)}}
+.rev .wrap{position:relative;z-index:2}
+.lead-q{font-family:var(--display);font-weight:800;letter-spacing:-.03em;line-height:1.08;font-size:clamp(26px,6.4vw,50px);max-width:24em}
+.lead-q::before{content:"\201C";color:var(--pink)}.lead-q::after{content:"\201D";color:var(--pink)}
+.who{margin-top:22px;display:flex;align-items:center;gap:12px;color:#c7ccd2;font-size:15px}
+.who b{color:#fff;font-weight:600}
+.cards{margin-top:56px;display:grid;gap:14px}
+.rc{padding:24px;border-radius:var(--r-lg)}
+.rc p{font-size:16px;color:#eef0f2}
+.rc .who{margin-top:16px;font-size:14px}
+@media(min-width:900px){.rev{padding:140px 0}.cards{grid-template-columns:repeat(3,1fr);gap:18px}}
+
+/* AREA + SERVICES */
+.svc{padding:90px 0;background:var(--paper);color:var(--ink)}
+.svc h2{font-size:clamp(40px,9.5vw,84px);margin-bottom:40px}
+.svc .cols{display:grid;gap:44px}
+.svc ul{list-style:none;border-top:2px solid var(--ink)}
+.svc li{padding:20px 0;border-bottom:1px solid rgba(18,22,26,.18);display:grid;grid-template-columns:44px 1fr;gap:6px}
+.svc li i{font-style:normal;font-family:var(--display);font-weight:900;color:var(--pinkd)}
+.svc li b{font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:-.02em}
+.svc li span{grid-column:2;color:#454d55;font-size:15.5px}
+.svc .info p{margin-bottom:14px;color:#2d343b}
+.svc .info strong{font-family:var(--display);font-weight:800}
+.svc .info a{color:var(--pinkd);font-weight:600}
+@media(min-width:900px){.svc{padding:140px 0}.svc .cols{grid-template-columns:1.2fr .8fr;gap:90px}}
+
+/* QUOTE */
+.quote-sec{position:relative;padding:96px 0 120px;overflow:hidden;background:var(--ink)}
+.quote-sec .bg{position:absolute;inset:0;background:url(img/p5.jpg) center/cover;opacity:.5;filter:saturate(.8)}
+.quote-sec .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--ink) 0,rgba(18,22,26,.35) 35%,rgba(18,22,26,.6) 100%)}
+.quote-sec .wrap{position:relative;z-index:2}
+.quote-sec h2{font-size:clamp(44px,11vw,100px);max-width:9em}
+.qp{margin-top:36px;padding:26px 22px;border-radius:var(--r-lg);max-width:860px}
+.qp .sent{font-size:clamp(18px,4.8vw,26px);line-height:2.1;color:#e9ecef;font-weight:500}
+.qp .sent select,.qp .sent input{font:inherit;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);border-radius:12px;padding:6px 12px;min-height:44px;max-width:100%;transition:border-color .15s,box-shadow .15s}
+.qp .sent input{width:min(11em,100%)}
+.qp .sent select option{color:#111}
+.qp .sent ::placeholder{color:#aab0b8}
+.qp .sent select:focus,.qp .sent input:focus{outline:none;border-color:var(--pink);box-shadow:0 0 0 3px rgba(207,74,114,.35)}
+.qp .go{margin-top:20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.qp .note{font-size:13.5px;color:#aab0b8}
+@media(min-width:700px){.qp{padding:40px}}
+
+/* FOOTER */
+footer{padding:46px 0 130px;background:#0d1013;color:#8d949c;font-size:14px}
+footer .wrap{display:flex;flex-direction:column;gap:10px}
+footer b{color:#fff;font-family:var(--display);font-size:20px;letter-spacing:-.02em}
+footer a{color:#cfd3d8}
+@media(min-width:900px){footer{padding-bottom:50px}footer .wrap{flex-direction:row;justify-content:space-between;align-items:flex-end}}
+
+/* DOCK */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));display:flex;gap:8px;padding:7px;border-radius:var(--r-pill);transition:transform .3s,opacity .3s}
+.dock .btn{flex:1;min-height:50px;padding:0 10px}
+.dock.hide{transform:translateY(130%);opacity:0}
+@media(min-width:900px){.dock{display:none}}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}
+.js .rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rise,.js .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+
+<header class="nav glass" id="top">
+  <b>Winnipeg Resin Floors</b>
+  <nav class="links" aria-label="Main">
+    <a href="#process">The job</a><a href="#floors">Floors</a><a href="#reviews">Reviews</a><a href="#services">Services</a>
+  </nav>
+  <a class="btn btn-pink" href="tel:+14315332301"><span class="cl">Call </span><span class="cn">(431) 533-2301</span></a>
+</header>
+
+<main>
+<section class="hero">
+  <div class="vid">
+    <video autoplay muted loop playsinline preload="metadata" poster="video/hero-poster.jpg" aria-hidden="true"><source src="video/hero.mp4" type="video/mp4"></video>
+  </div>
+  <div class="wrap in">
+    <h1 class="rise d1">Bare slab.<br><span>Flake</span> floor.</h1>
+    <p class="sub rise d2">Epoxy flake floors for garages, stairs and shops in Winnipeg. Watch the job from the first grind to the finished floor.</p>
+    <div class="cta rise d3">
+      <a class="btn btn-pink" href="#quote">Get a free quote</a>
+      <a class="btn btn-line" href="#process">See how a floor gets built</a>
+    </div>
+    <div class="card glass rise d4">
+      <div class="top"><span class="big">5.0</span><div><div class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="meta">14 Google reviews<br>Winnipeg, MB</div></div></div>
+      <q>He arrives when he says he will.</q>
+    </div>
+  </div>
+</section>
+
+<section class="story" id="process">
+  <div class="wrap">
+    <div class="head rv">
+      <h2>How a floor gets built.</h2>
+      <p>Six steps, in order. Every picture below is from the crew's own posts and reels.</p>
+    </div>
+    <div class="railgrid">
+      <aside class="rail glass" aria-label="Job progress">
+        <div class="lbl">The job</div>
+        <ol>
+          <span class="track" aria-hidden="true"><i></i></span>
+          <li data-i="0"><b>01</b>Quote</li>
+          <li data-i="1"><b>02</b>Grind</li>
+          <li data-i="2"><b>03</b>Pick the blend</li>
+          <li data-i="3"><b>04</b>Flake</li>
+          <li data-i="4"><b>05</b>Seal</li>
+          <li data-i="5"><b>06</b>The floor</li>
+        </ol>
+      </aside>
+      <div class="steps">
+        <article class="step quote" data-i="0">
+          <div class="ph">
+            <div class="num">01</div>
+            <div class="ways">
+              <a class="btn btn-pink" href="tel:+14315332301">Call (431) 533-2301</a>
+              <a class="btn btn-line" href="sms:+14315332301">Text them</a>
+            </div>
+          </div>
+          <h3>Start with a quote.</h3>
+          <p>Their posts say it plainly: "DM us for a free quote." You can also call or text the number above.</p>
+        </article>
+        <article class="step" data-i="1">
+          <div class="ph"><div class="num">02</div><img src="img/v-grind.jpg" alt="Floor grinder working on bare concrete" loading="lazy" style="object-position:40% 40%"></div>
+          <h3>Grind the slab.</h3>
+          <p>The grinder comes out before anything else goes down. This frame is from the crew's own reel.</p>
+        </article>
+        <article class="step" data-i="2">
+          <div class="ph"><div class="num">03</div><img src="img/p1c.jpg" alt="Red flake being poured into a box of grey and black flake" loading="lazy"></div>
+          <h3>Pick the blend.</h3>
+          <p>"Custom nightfall blend with a touch of red," from their 1,200 sq.ft garage post. Their other posts name more Torginol blends:</p>
+          <div class="blends"><span>Nightfall</span><span>Gravel</span><span>Creek Bed</span><span>Cabin Fever</span></div>
+        </article>
+        <article class="step" data-i="3">
+          <div class="ph"><div class="num">04</div><img src="img/v-hands.jpg" alt="Gloved hands in a bucket of grey flake" loading="lazy"></div>
+          <h3>Lay the flake.</h3>
+          <p>A flake system, as they call it. Their stair post adds that it is slip resistant, easy to clean and super durable.</p>
+        </article>
+        <article class="step" data-i="4">
+          <div class="ph"><div class="num">05</div><img src="img/v-squeegee.jpg" alt="Squeegee pulling a coat across a flake floor" loading="lazy"></div>
+          <h3>Seal it.</h3>
+          <p>Their Creek Bed job was "sealed with a UV-stable topcoat for maximum durability." Frame from their reel.</p>
+        </article>
+        <article class="step" data-i="5">
+          <div class="ph"><div class="num">06</div><img src="img/p4.jpg" alt="Finished grey flake floor meeting a grey wall" loading="lazy" style="object-position:50% 60%"></div>
+          <h3>Walk on it.</h3>
+          <p>"Sleek, seamless, modern-neutral and built to last." That is how they describe this Gravel flake blend.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="fin" id="floors">
+  <div class="wrap">
+    <h2 class="rv">Finished floors, <em>no filter.</em></h2>
+    <p class="lead rv">Gravel flake blend by Torginol, from a single job posted in October. One job, three angles.</p>
+    <div class="set">
+      <figure class="a rv"><img src="img/p3.jpg" alt="Grey flake floor running toward a grey wall" loading="lazy"><figcaption class="glass">Gravel blend</figcaption></figure>
+      <figure class="b rv"><img src="img/p5.jpg" alt="Close up of flake floor with saw cut joint lines" loading="lazy" style="object-position:50% 40%"></figure>
+      <figure class="c rv"><img src="img/p6.jpg" alt="Flake floor with saw cut joint, close up" loading="lazy" style="object-position:30% 50%"></figure>
+      <figure class="d rv"><img src="img/p4.jpg" alt="Wide flake floor meeting a grey wall" loading="lazy" style="object-position:50% 65%"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="nums">
+  <div class="wrap row">
+    <div class="n rv"><div class="v"><span data-count="5" data-dec="1">5.0</span></div><div class="l">Google rating</div></div>
+    <div class="n rv"><div class="v"><span data-count="14">14</span></div><div class="l">Google reviews</div></div>
+    <div class="n rv"><div class="v"><span data-count="1200">1,200</span><sup>sq.ft</sup></div><div class="l">One garage, posted Nov 17. Nightfall blend with a touch of red.</div></div>
+  </div>
+</section>
+
+<section class="rev" id="reviews">
+  <div class="orb o1"></div><div class="orb o2"></div>
+  <div class="wrap">
+    <blockquote class="lead-q rv">what an amazing floor Francis and his crew are very polite, very professional, And the floor turned out amazing don&rsquo;t hesitate. He&rsquo;s got a reasonable price very professional. He arrives when he says he will. I&rsquo;d recommend them to anybody.</blockquote>
+    <div class="who rv"><b>Doug</b><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span>Google</span></div>
+    <div class="cards">
+      <figure class="rc glass rv"><p>&ldquo;I had Winnipeg resin floors do my garage floor in the blue flake. Francois and Brandon were great from start to finish and did a fantastic shop and were a pleasure to deal with from start to finish and a fair price for the project. I would highly recommend them thanks guys&rdquo;</p><div class="who"><b>Tim A.</b><span>Google</span></div></figure>
+      <figure class="rc glass rv"><p>&ldquo;Francis and his team did a amazing job. Would definitely recommend them.&rdquo;</p><div class="who"><b>Terri N.</b><span>Google</span></div></figure>
+      <figure class="rc glass rv"><p>&ldquo;Very knowledgeable and the product, finish product is so amazing&rdquo;</p><div class="who"><b>Ruby E.</b><span>Google</span></div></figure>
+    </div>
+  </div>
+</section>
+
+<section class="svc" id="services">
+  <div class="wrap">
+    <h2 class="rv">What they put down.</h2>
+    <div class="cols">
+      <ul class="rv">
+        <li><i>A</i><b>Garage floors</b><span>Flake system floors, including a 1,200 sq.ft garage in a custom Nightfall blend.</span></li>
+        <li><i>B</i><b>Stair steps</b><span>"No project is too little." Flake system stairsteps, slip resistant and easy to clean.</span></li>
+        <li><i>C</i><b>Shop floors</b><span>A customer review thanks them for a "fantastic shop." They also posted a floor with a customer's own logo in a shop.</span></li>
+        <li><i>D</i><b>Custom flake blends</b><span>Torginol blends named in their posts: Nightfall, Gravel, Creek Bed, Cabin Fever.</span></li>
+      </ul>
+      <div class="info rv">
+        <p><strong>Where.</strong> Winnipeg, Manitoba. Their July post from Headingley says they "proudly serve all the surrounding areas."</p>
+        <p><strong>When.</strong> Hours are not listed on their Google profile. Call or text to book.</p>
+        <p><strong>Phone.</strong> <a href="tel:+14315332301">(431) 533-2301</a></p>
+        <p><strong>Instagram.</strong> <a href="https://www.instagram.com/winnipegresinfloors/" rel="noopener">@winnipegresinfloors</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quote-sec" id="quote">
+  <div class="bg"></div>
+  <div class="wrap">
+    <h2 class="rv">Tell them about your floor.</h2>
+    <form class="qp glass rv" id="qf" autocomplete="on">
+      <p class="sent">
+        Hi, I'm <input id="qn" name="name" placeholder="your name" aria-label="Your name" required>
+        and I need a
+        <select id="qt" name="type" aria-label="What you need">
+          <option>garage floor</option><option>stair steps</option><option>shop floor</option><option>different floor</option>
+        </select>
+        in <input id="qa" name="area" placeholder="your area" aria-label="Your area">.
+        Can I get a quote?
+      </p>
+      <div class="go">
+        <button class="btn btn-pink" type="submit">Send as a text</button>
+        <span class="note">Opens your messages to (431) 533-2301. Nothing is sent until you hit send.</span>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>Winnipeg Resin Floors</b><br>Epoxy flake floors &middot; Winnipeg, MB &middot; <a href="tel:+14315332301">(431) 533-2301</a></div>
+    <div>Preview built by JPF. Not live yet.</div>
+  </div>
+</footer>
+
+<div class="dock glass" id="dock">
+  <a class="btn btn-pink" href="tel:+14315332301">Call</a>
+  <a class="btn btn-line" href="sms:+14315332301">Text</a>
+</div>
+
+<script>
+(function(){
+  var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // reveal
+  var rv=document.querySelectorAll('.rv');
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});
+  rv.forEach(function(el){io.observe(el)});
+  // counters
+  var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;co.unobserve(e.target);var el=e.target,to=+el.dataset.count,dec=+(el.dataset.dec||0);if(rm){return}var t0=performance.now();(function f(t){var p=Math.min(1,(t-t0)/1300),v=to*(1-Math.pow(1-p,3));el.textContent=dec?v.toFixed(dec):Math.round(v).toLocaleString('en-CA');if(p<1)requestAnimationFrame(f)})(t0)})},{threshold:.6});
+  document.querySelectorAll('[data-count]').forEach(function(el){co.observe(el)});
+  // rail
+  var steps=[].slice.call(document.querySelectorAll('.step')),lis=[].slice.call(document.querySelectorAll('.rail li')),fill=document.querySelector('.rail .track i');
+  var cur=-1;
+  function upd(){
+    var mid=innerHeight*.5,best=0;
+    steps.forEach(function(s,i){var r=s.getBoundingClientRect();if(r.top<mid)best=i;s.classList.toggle('in-view',r.top<innerHeight*.75&&r.bottom>innerHeight*.25)});
+    if(best!==cur){cur=best;lis.forEach(function(l,i){l.classList.toggle('on',i===best)})}
+    if(fill){var first=steps[0].getBoundingClientRect().top,last=steps[steps.length-1].getBoundingClientRect();var tot=last.bottom-first-innerHeight*.5;var pr=Math.max(0,Math.min(1,(mid-first)/(tot||1)));fill.style.height=(pr*100)+'%'}
+  }
+  addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+  lis.forEach(function(l){l.addEventListener('click',function(){steps[+l.dataset.i].scrollIntoView({behavior:rm?'auto':'smooth',block:'center'})})});
+  // dock hides near the quote form
+  var dock=document.getElementById('dock'),qs=document.getElementById('quote');
+  new IntersectionObserver(function(es){dock.classList.toggle('hide',es[0].isIntersecting)},{threshold:.35}).observe(qs);
+  // sms
+  document.getElementById('qf').addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=document.getElementById('qn').value.trim(),t=document.getElementById('qt').value,a=document.getElementById('qa').value.trim();
+    var body="Hi, I'm "+n+" and I need a "+t+(a?" in "+a:"")+". Can I get a quote?";
+    location.href='sms:+14315332301?&body='+encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
