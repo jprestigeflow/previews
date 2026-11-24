@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>David’s Auto Detailing | Car detailing in Ottawa</title>
+<meta name="description" content="David’s Auto Detailing, car detailing in Ottawa, ON. 4.9 stars on Google from 90 reviews. Call (613) 220-3678.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,300..900&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ Direction: map-and-areas-led. A survey-sheet / street-map look: paper base, ink type, one route line. Only Ottawa and Ahearn Ave are named (listing + posts); no invented neighbourhoods.
+ Palette: paper #ecede7 (map paper), ink #11151a (Corvette/truck black, photo 12), route blue #1c63e6 (David's blue pressure hose, photo 8), sky #9fc3ee (sky in photo 12), park #cfd9c3 (lawns in photo 12 / 6).
+ Fonts: Anybody (variable width, condensed for headlines, wide for map labels) + Public Sans body.
+ Signature: "Where David works" street map with a pin at the listing address and a route line to a driveway (review: "he comes to my house"). Custom section: headlight before/after slider from the Instagram headlight post.
+ Order: hero photo, map, services as street index, before/after, interior strip, reviews, hours + sentence quote form.
+ Motion: hero load settle, route line draws once, counters count up, slider; reduced-motion respected.
+*/
+:root{
+  --paper:#ecede7; --paper2:#e2e4dc; --ink:#11151a; --ink2:#2a313a; --blue:#1c63e6; --sky:#9fc3ee; --park:#cfd9c3;
+  --mut:#5b636d;
+  --d:'Anybody','Arial Narrow',sans-serif; --b:'Public Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--b);background:var(--paper);color:var(--ink);font-size:17px;line-height:1.55;overflow-x:hidden;padding-bottom:96px}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1240px,100% - 40px);margin-inline:auto}
+.lab{font:600 13px/1 var(--b);letter-spacing:.04em;color:var(--mut)}
+h1,h2,h3{font-family:var(--d);font-weight:850;font-stretch:62%;line-height:.88;letter-spacing:-.01em;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font:700 16px var(--b);text-decoration:none;border:0;cursor:pointer;transition:transform .18s,background .18s,box-shadow .18s}
+.btn:active{transform:scale(.98)}
+.btn.pri{background:var(--blue);color:#fff;box-shadow:0 12px 30px -12px rgba(28,99,230,.7)}
+.btn.pri:hover{background:#1553c4}
+.btn.ghost{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.4)}
+
+/* glass */
+.glass{background:rgba(236,237,231,.58);-webkit-backdrop-filter:blur(22px) saturate(165%);backdrop-filter:blur(22px) saturate(165%);border:1px solid rgba(255,255,255,.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 20px 60px -20px rgba(17,21,26,.35)}
+.glass.dk{background:rgba(17,21,26,.5);border-color:rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 20px 60px -20px rgba(17,21,26,.6);color:#fff}
+
+/* nav */
+nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;max-width:1100px;margin-inline:auto;height:56px;border-radius:999px;display:flex;align-items:center;justify-content:space-between;padding:0 8px 0 22px}
+nav .logo{font:850 19px/1 var(--d);font-stretch:70%;text-transform:uppercase;text-decoration:none;color:#fff;letter-spacing:.01em}
+nav .links{display:none;gap:26px;font-weight:600;font-size:15px}
+nav .links a{text-decoration:none;color:#fff;opacity:.9}
+nav .btn{min-height:44px;padding:0 20px;font-size:15px}
+@media(min-width:820px){nav .links{display:flex}}
+
+/* hero */
+.hero{position:relative;min-height:100svh;color:#fff;display:flex;align-items:flex-end;background:var(--ink);overflow:hidden}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:74% 30%;transform:scale(1.08);animation:settle 1.6s cubic-bezier(.2,.7,.2,1) forwards}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,21,26,.55) 0,rgba(17,21,26,.05) 32%,rgba(17,21,26,.35) 62%,rgba(17,21,26,.92) 100%)}
+@keyframes settle{to{transform:scale(1)}}
+.contours{position:absolute;inset:0;z-index:1;opacity:.28;mix-blend-mode:screen;pointer-events:none}
+.hero .in{position:relative;z-index:2;width:min(1240px,100% - 40px);padding:110px 0 28px}
+.hero h1{font-size:clamp(64px,21vw,176px);line-height:.82;max-width:11ch}
+.hero h1 span{display:block;overflow:hidden}
+.hero h1 span i{display:block;font-style:normal;transform:translateY(105%);animation:rise .9s cubic-bezier(.2,.8,.2,1) forwards}
+.hero h1 span:nth-child(2) i{animation-delay:.12s;color:var(--sky)}
+.hero h1 span:nth-child(3) i{animation-delay:.24s}
+@keyframes rise{to{transform:none}}
+.hero .row{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-end;justify-content:space-between;margin-top:22px}
+.hero p.sub{max-width:34ch;font-size:17px;line-height:1.45;opacity:0;animation:fade .8s .7s forwards}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;opacity:0;animation:fade .8s .85s forwards}
+@keyframes fade{to{opacity:1}}
+.gcard{border-radius:24px;padding:16px 18px;margin-bottom:84px;max-width:360px;opacity:0;transform:translateY(16px);animation:cardin .9s 1s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes cardin{to{opacity:1;transform:none}}
+.gcard .big{font:850 56px/.9 var(--d);font-stretch:70%}
+.gcard .big small{font:600 15px var(--b);font-stretch:100%;opacity:.85;margin-left:8px}
+.gcard q{display:block;margin-top:10px;font-size:15px;line-height:1.45;quotes:none}
+.gcard cite{display:block;margin-top:6px;font:600 13px var(--b);font-style:normal;opacity:.8}
+.hero .meta{position:absolute;z-index:2;right:20px;top:88px;font:600 12px/1.3 var(--b);letter-spacing:.05em;text-align:right;opacity:.85;display:none}
+@media(min-width:900px){.gcard{margin-bottom:0}.hero .meta{display:block;right:max(20px,calc(50% - 620px))}}
+.hero .layout{display:grid;gap:26px}
+@media(min-width:900px){.hero .layout{grid-template-columns:1fr 360px;align-items:end}}
+
+/* map */
+section{position:relative}
+.mapsec{padding:90px 0 0;background:var(--paper)}
+.mapsec .head{display:grid;gap:18px;margin-bottom:34px}
+.mapsec h2{font-size:clamp(60px,13vw,150px)}
+.mapsec h2 em{font-style:normal;color:var(--blue)}
+.mapsec .head p{max-width:46ch;color:var(--ink2)}
+@media(min-width:900px){.mapsec .head{grid-template-columns:1.3fr 1fr;align-items:end}}
+.mapbox{position:relative}
+@media(min-width:900px){.mapbox{aspect-ratio:800/520;border-radius:28px}}
+
+.route{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2.4s cubic-bezier(.5,0,.2,1)}
+.mapbox.go .route{stroke-dashoffset:0}
+.pulse{transform-origin:center;transform-box:fill-box;animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{0%{transform:scale(.5);opacity:.7}100%{transform:scale(2.6);opacity:0}}
+.mapcard{position:relative;z-index:3;margin:0;border-radius:0 0 28px 28px;padding:20px;border-width:1px 0 0}.mapbox{overflow:visible;background:none;border:0}.mapbox svg{position:relative;inset:auto;display:block;border-radius:28px 28px 0 0;aspect-ratio:380/420;height:auto}
+@media(min-width:900px){.mapbox{overflow:hidden;background:var(--paper2);border:1px solid rgba(17,21,26,.12)}.mapbox svg{position:absolute;inset:0;aspect-ratio:auto;height:100%;border-radius:0}.mapcard{border-radius:24px;border-width:1px;position:absolute;left:auto;right:24px;top:auto;bottom:24px;width:340px}}
+.mapcard h3{font-size:34px;margin-bottom:10px}
+.mapcard dl{display:grid;gap:10px;font-size:15px}
+.mapcard dt{font:600 12px var(--b);color:var(--mut);letter-spacing:.04em}
+.mapcard dd{font-weight:600}
+.mapcard a{text-decoration:none;border-bottom:2px solid var(--blue)}
+.streetnote{margin-top:12px;font-size:13px;color:var(--mut)}
+.jobs{display:grid;gap:12px;margin-top:40px;grid-template-columns:1fr}
+.jobs figure{position:relative;border-radius:22px;overflow:hidden;background:var(--ink)}
+.jobs img{width:100%;height:100%;object-fit:cover}
+.jobs figcaption{position:absolute;left:12px;bottom:12px;padding:8px 14px;border-radius:999px;font:600 13px var(--b)}
+.jobs .a{aspect-ratio:4/3}.jobs .b{aspect-ratio:4/3}.jobs .c{aspect-ratio:4/3}
+@media(min-width:900px){.jobs{grid-template-columns:1.6fr 1fr 1fr;grid-template-rows:auto}.jobs figure{aspect-ratio:auto!important;min-height:420px}}
+
+/* services as street index */
+.svc{padding:110px 0 40px}
+.svc h2{font-size:clamp(56px,11vw,120px);margin-bottom:36px}
+.idx{border-top:2px solid var(--ink)}
+.idx li{list-style:none;display:grid;grid-template-columns:54px 1fr;gap:6px 16px;padding:26px 0;border-bottom:1px solid rgba(17,21,26,.22)}
+.idx .n{font:800 15px var(--d);font-stretch:120%;color:var(--blue);padding-top:8px}
+.idx h3{font-size:clamp(38px,7vw,70px);line-height:.9}
+.idx p{grid-column:2;max-width:56ch;color:var(--ink2)}
+.idx small{grid-column:2;font-size:13px;color:var(--mut)}
+@media(min-width:900px){.idx li{grid-template-columns:80px 1fr 1fr;align-items:start}.idx p{grid-column:3;grid-row:1/3}.idx small{grid-column:2}}
+
+/* before after */
+.ba{padding:80px 0 110px;background:var(--ink);color:#fff;overflow:hidden}
+.ba .top{display:grid;gap:14px;margin-bottom:34px}
+.ba h2{font-size:clamp(56px,11vw,130px)}
+.ba h2 em{font-style:normal;color:var(--sky)}
+.ba p{max-width:44ch;opacity:.8}
+@media(min-width:900px){.ba .top{grid-template-columns:1fr 1fr;align-items:end}}
+.cmp{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:1/1;max-height:80vh;width:min(100%,760px);margin-inline:auto;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:ew-resize;background:#000}
+@media(min-width:900px){.cmp{margin-inline:0 auto}}
+.cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.cmp .after{clip-path:inset(0 0 0 var(--p,50%))}
+.cmp .tag{position:absolute;top:16px;padding:8px 14px;border-radius:999px;font:600 13px var(--b);z-index:3}
+.cmp .t1{left:16px}.cmp .t2{right:16px}
+.cmp .bar{position:absolute;top:0;bottom:0;left:var(--p,50%);width:2px;background:#fff;z-index:2;transform:translateX(-1px)}
+.cmp .knob{position:absolute;top:50%;left:var(--p,50%);width:60px;height:60px;margin:-30px 0 0 -30px;border-radius:999px;z-index:4;display:grid;place-items:center;font:700 18px var(--b);letter-spacing:2px}
+.cmp input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;z-index:5}
+.ba .src{margin-top:16px;font-size:13px;opacity:.65}
+.ba .src a{border-bottom:1px solid rgba(255,255,255,.5);text-decoration:none}
+
+/* inside */
+.inside{padding:100px 0 30px}
+.inside .grid{display:grid;gap:12px}
+.inside h2{font-size:clamp(56px,11vw,120px);margin-bottom:30px}
+.inside figure{border-radius:22px;overflow:hidden;background:var(--ink);aspect-ratio:3/4}
+.inside img{width:100%;height:100%;object-fit:cover}
+.inside .cap{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:20px;color:var(--ink2);font-size:15px}
+@media(min-width:900px){.inside .grid{grid-template-columns:repeat(3,1fr)}.inside figure:nth-child(2){margin-top:60px}}
+
+/* reviews */
+.rev{padding:110px 0 100px;position:relative;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.55;pointer-events:none;animation:drift 26s ease-in-out infinite alternate}
+.orb.o1{width:420px;height:420px;background:var(--sky);right:-120px;top:140px}
+.orb.o2{width:360px;height:360px;background:var(--park);left:-140px;bottom:40px;animation-duration:32s}
+@keyframes drift{to{transform:translate(-50px,40px)}}
+.rev .wrap{position:relative;z-index:1}
+.score{display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap;margin-bottom:36px}
+.score .num{font:850 clamp(110px,26vw,260px)/.8 var(--d);font-stretch:62%;color:var(--blue)}
+.score .txt{padding-bottom:10px;font-weight:600;max-width:24ch}
+.lead{font:700 clamp(30px,5.2vw,64px)/1.05 var(--d);font-stretch:75%;letter-spacing:-.005em;max-width:24ch;text-transform:none}
+.lead::before{content:"“"}.lead::after{content:"”"}
+.who{margin-top:16px;font-weight:600}
+.cards{display:grid;gap:14px;margin-top:56px}
+.card{border-radius:24px;padding:24px}
+.card p{font-size:16px}
+.card .who{margin-top:14px;font-size:14px}
+@media(min-width:900px){.cards{grid-template-columns:repeat(2,1fr)}.card.wide{grid-column:span 2}}
+
+/* quote */
+.quote{padding:100px 0 110px;background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.quote .orb.o3{width:500px;height:500px;background:var(--blue);opacity:.35;left:-150px;top:-100px}
+.quote .orb.o4{width:420px;height:420px;background:var(--sky);opacity:.18;right:-120px;bottom:-80px;animation-duration:30s}
+.quote .wrap{position:relative;z-index:1;display:grid;gap:40px}
+@media(min-width:900px){.quote .wrap{grid-template-columns:1fr 1fr;align-items:start}}
+.quote h2{font-size:clamp(60px,13vw,150px)}
+.hours{margin-top:28px;max-width:360px;font-size:16px}
+.hours div{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.18)}
+.hours div.off{opacity:.6}
+.fpanel{border-radius:28px;padding:28px}
+.fpanel .sent{font:600 clamp(24px,3.6vw,32px)/1.5 var(--b)}
+.fpanel input,.fpanel select{font:600 inherit;font-size:16px;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:14px;min-height:46px;padding:0 14px;margin:2px 4px;max-width:100%;width:auto;-webkit-appearance:none;appearance:none}
+.fpanel input::placeholder{color:rgba(255,255,255,.6)}
+.fpanel input:focus,.fpanel select:focus{outline:none;border-color:var(--sky);box-shadow:0 0 0 3px rgba(159,195,238,.35)}
+.fpanel select option{color:#11151a}
+.fpanel .btn{margin-top:22px;width:100%}
+.fpanel .hint{margin-top:12px;font-size:13px;opacity:.75}
+.callbig{display:inline-block;margin-top:30px;font:850 clamp(38px,6vw,64px)/1 var(--d);font-stretch:70%;text-decoration:none;border-bottom:4px solid var(--blue)}
+
+footer{background:#0b0e12;color:rgba(255,255,255,.7);padding:30px 0 120px;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 30px;justify-content:space-between}
+
+/* dock */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:12px;max-width:420px;margin-inline:auto;border-radius:999px;padding:8px;display:flex;gap:8px;background:rgba(17,21,26,.55);-webkit-backdrop-filter:blur(22px) saturate(170%);backdrop-filter:blur(22px) saturate(170%);border:1px solid rgba(255,255,255,.25);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 20px 50px -15px rgba(0,0,0,.55)}
+.dock .btn{flex:1;min-height:48px;padding:0 10px}
+.dock .btn.t{background:rgba(255,255,255,.16);color:#fff}
+@media(min-width:900px){.dock{display:none}body{padding-bottom:0}footer{padding-bottom:30px}}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .hero>img{transform:none}.hero h1 span i,.gcard{transform:none;opacity:1}.hero p.sub,.hero .cta{opacity:1}
+  .route{stroke-dashoffset:0}
+}
+</style>
+</head>
+<body>
+
+<nav class="glass dk" aria-label="Main">
+  <a class="logo" href="#top">David’s Auto Detailing</a>
+  <div class="links"><a href="#map">Where</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#quote">Quote</a></div>
+  <a class="btn pri" href="tel:+16132203678">Call</a>
+</nav>
+
+<header class="hero" id="top">
+  <img src="img/p8.jpg" alt="David foam-spraying a car in Ottawa" fetchpriority="high">
+  <svg class="contours" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true" fill="none" stroke="#fff" stroke-width="1">
+    <path d="M-20 520C120 470 200 560 330 520S560 400 820 470"/><path d="M-20 560C130 510 210 600 335 562S570 445 820 512"/><path d="M-20 600C140 550 220 640 340 604S580 490 820 554"/>
+    <path d="M-20 200C150 150 250 260 420 200S640 120 820 180"/><path d="M-20 240C160 190 260 300 425 242S650 165 820 222"/>
+    <path d="M-20 700C160 650 300 740 460 700S700 640 820 690"/>
+  </svg>
+  <div class="meta">45.3602° N, 75.8021° W<br>Ahearn Ave, Ottawa</div>
+  <div class="wrap in">
+    <div class="layout">
+      <div>
+        <h1><span><i>Spotless</i></span><span><i>inside</i></span><span><i>and out.</i></span></h1>
+        <div class="row">
+          <p class="sub">Car detailing in Ottawa, Ontario. One customer says it plainly: “I love that he comes to my house.”</p>
+          <div class="cta">
+            <a class="btn pri" href="tel:+16132203678">Call (613) 220-3678</a>
+            <a class="btn ghost" href="#quote">Get a quote</a>
+          </div>
+        </div>
+      </div>
+      <aside class="gcard glass dk" aria-label="Google rating">
+        <div class="big"><span data-count="4.9" data-dec="1">4.9</span><small>on Google, <span data-count="90">90</span> reviews</small></div>
+        <q>The attention to detail was top-notch—every inch looked spotless, inside and out.</q>
+        <cite>Brady H., Google</cite>
+      </aside>
+    </div>
+  </div>
+</header>
+
+<section class="mapsec" id="map">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <p class="lab" style="margin-bottom:14px">WHERE DAVID WORKS</p>
+        <h2>Ottawa.<br><em>Right to</em><br>your door.</h2>
+      </div>
+      <p>The listing puts David at 2895 Ahearn Ave, Ottawa. One review says it plainly: “I love that he comes to my house.” Call to ask about your area.</p>
+    </div>
+    <div class="mapbox" id="mapbox">
+      <svg id="mapsvg" viewBox="0 0 800 520" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Schematic street map of Ottawa showing Ahearn Ave and a route to a customer driveway">
+        <rect width="800" height="520" fill="#e2e4dc"/>
+        <path d="M-10 410C120 360 210 430 300 400S470 350 520 420 700 520 820 470V540H-10Z" fill="#cfd9c3"/>
+        <path d="M560 30C640 20 730 60 780 110V-10H560Z" fill="#cfd9c3"/>
+        <g stroke="#fff" stroke-width="14" stroke-linecap="round" fill="none">
+          <path d="M-10 150H820"/><path d="M-10 270H820"/><path d="M-10 380H820"/>
+          <path d="M130 -10V540"/><path d="M270 -10V540"/><path d="M420 -10V540"/><path d="M590 -10V540"/><path d="M720 -10V540"/>
+        </g>
+        <g stroke="#fff" stroke-width="7" stroke-linecap="round" fill="none" opacity=".9">
+          <path d="M-10 90H820"/><path d="M-10 210H820"/><path d="M-10 330H820"/><path d="M-10 460H820"/>
+          <path d="M200 -10V540"/><path d="M345 -10V540"/><path d="M505 -10V540"/><path d="M655 -10V540"/>
+        </g>
+        <path d="M-10 500L820 60" stroke="#f4d58a" stroke-width="18" stroke-linecap="round" opacity=".85" fill="none"/>
+        <path d="M-10 500L820 60" stroke="#fff" stroke-width="2" stroke-dasharray="14 14" fill="none"/>
+        <text x="40" y="262" font-family="Anybody" font-weight="800" font-size="26" letter-spacing="4" fill="#5b636d" style="font-stretch:125%">AHEARN AVE</text>
+        <text x="40" y="82" font-family="Anybody" font-weight="900" font-size="64" fill="#11151a" opacity=".1" style="font-stretch:62%">OTTAWA</text>
+        <!-- route -->
+        <path class="route" pathLength="1" d="M345 270V210H505V150H590" stroke="#1c63e6" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <!-- shop pin -->
+        <circle class="pulse" cx="345" cy="270" r="22" fill="#1c63e6" opacity=".5"/>
+        <circle cx="345" cy="270" r="14" fill="#1c63e6" stroke="#fff" stroke-width="5"/>
+        <g font-family="Public Sans" font-weight="700" font-size="22" fill="#11151a">
+          <rect x="365" y="283" width="196" height="40" rx="20" fill="#fff"/><text x="381" y="310">2895 Ahearn Ave</text>
+        </g>
+        <!-- house -->
+        <g transform="translate(590 150)"><path d="M-22 6L0-18 22 6V24H-22Z" fill="#11151a"/><rect x="-6" y="8" width="12" height="16" fill="#fff"/></g>
+        <g font-family="Public Sans" font-weight="700" font-size="22" fill="#fff"><rect x="462" y="96" width="170" height="40" rx="20" fill="#11151a"/><text x="480" y="123">Your driveway</text></g>
+      </svg>
+      <div class="mapcard glass">
+        <h3>Find David</h3>
+        <dl>
+          <div><dt>LISTED ADDRESS</dt><dd>2895 Ahearn Ave, Ottawa, ON K2B 7A1</dd></div>
+          <div><dt>OPEN</dt><dd>Monday to Saturday, 8 a.m. to 7:30 p.m. Closed Sunday</dd></div>
+          <div><dt>PHONE</dt><dd><a href="tel:+16132203678">(613) 220-3678</a></dd></div>
+        </dl>
+        <p class="streetnote">Schematic map, not to scale. Pin placed from the Google listing address.</p>
+      </div>
+    </div>
+    <div class="jobs">
+      <figure class="a"><img src="img/p12c.jpg" alt="A black pickup with the David’s Auto Detailing window decal beside a dark Corvette on a street" loading="lazy"><figcaption class="glass dk">Truck and Corvette, from the Google listing</figcaption></figure>
+      <figure class="b"><img src="img/p6.jpg" alt="Dark BMW sedan parked under a pop-up canopy in a driveway" loading="lazy" style="object-position:50% 70%"><figcaption class="glass dk">Driveway set-up</figcaption></figure>
+      <figure class="c"><img src="img/p10c.jpg" alt="David hand-washing the back of a BMW in foam" loading="lazy" style="object-position:30% 30%"><figcaption class="glass dk">Hand wash</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="svc" id="services">
+  <div class="wrap">
+    <h2>What he<br>does</h2>
+    <ul class="idx">
+      <li><span class="n">01</span><h3>Inside and out</h3><p>The whole vehicle, interior and exterior. Reviewers describe cars left “spotless including getting the salt stains out of the carpet.”</p><small>Source: Google reviews</small></li>
+      <li><span class="n">02</span><h3>Interior and carpets</h3><p>Inside the vehicle, top to bottom. One customer’s vehicle “had years of salt accumulated on the carpets and he removed it all.”</p><small>Source: Google review, Francois S.</small></li>
+      <li><span class="n">03</span><h3>Headlight restoration</h3><p>Yellow, hazy headlights brought back to clear. See the slider below.</p><small>Source: Instagram post, “Headlight restoration!”</small></li>
+      <li><span class="n">04</span><h3>Cars, trucks, minivans</h3><p>His posts and reviews cover a truck, a minivan, a BMW and “high-end cars.”</p><small>Source: Instagram posts and Google reviews</small></li>
+    </ul>
+  </div>
+</section>
+
+<section class="ba" id="before-after">
+  <div class="wrap">
+    <div class="top">
+      <h2>Headlights,<br><em>cleared.</em></h2>
+      <p>Drag the handle. Left is the yellow, hazy headlight. Right is the same car after David’s headlight restoration.</p>
+    </div>
+    <div class="cmp" id="cmp" style="--p:50%">
+      <img src="img/p1.jpg" alt="Hazy, yellowed headlight before restoration">
+      <img class="after" src="img/p2.jpg" alt="Clear headlight after restoration">
+      <span class="tag glass dk t1">Before</span><span class="tag glass dk t2">After</span>
+      <div class="bar"></div>
+      <div class="knob glass dk" aria-hidden="true">&lsaquo;&rsaquo;</div>
+      <input type="range" min="0" max="100" value="50" aria-label="Before and after slider">
+    </div>
+    <p class="src">Photos from David’s Instagram post, <a href="https://www.instagram.com/p/DeR34n4jgxI/">Headlight restoration!</a></p>
+  </div>
+</section>
+
+<section class="inside">
+  <div class="wrap">
+    <h2>The inside<br>job</h2>
+    <div class="grid">
+      <figure><img src="img/p5.jpg" alt="Clean BMW interior with brown leather seat" loading="lazy"></figure>
+      <figure><img src="img/p7.jpg" alt="Clean front seat and floor of a Toyota" loading="lazy"></figure>
+      <figure><img src="img/p11.jpg" alt="Clean grey car interior with dashboard and steering wheel" loading="lazy"></figure>
+    </div>
+    <div class="cap"><span>Photos from David’s Instagram and Google listing.</span></div>
+  </div>
+</section>
+
+<section class="rev" id="reviews">
+  <div class="orb o1"></div><div class="orb o2"></div>
+  <div class="wrap">
+    <div class="score"><div class="num"><span data-count="4.9" data-dec="1">4.9</span></div><div class="txt">out of 5 on Google, from <span data-count="90">90</span> reviews</div></div>
+    <p class="lead">My truck honestly looks better than when I first got it.</p>
+    <p class="who">Brady H., Google</p>
+    <div class="cards">
+      <article class="card glass wide"><p>“David confirmed the appointment in advance, arrived right on time and communications with him were very clear. He detailed our vehicle which had years of salt accumulated on the carpets and he removed it all. We’d definitely recommend David’s services for car detailing.”</p><p class="who">Francois S., Google</p></article>
+      <article class="card glass"><p>“David does a great job of cleaning my car. It’s the second time he’s done it. I love that he comes to my house. He’s reliable, friendly and efficient. Both times my car is left spotless including getting the salt stains out of the carpet. Definitely recommend”</p><p class="who">Sarah A., Google</p></article>
+      <article class="card glass"><p>“If you’re looking for an excellent Service for your precious car, look no further. David from Ottawa Detailing did an outstanding job on our car, from inside to outside the car is spotless and the attention to details left us speechless. A perfect job at very responsible price done by this young gentleman. Thank you David.”</p><p class="who">Bogdan L., Google</p></article>
+      <article class="card glass wide"><p>“I had a fantastic experience with Ottawa Detailing. David transformed my car with his meticulous attention to detail. Excellent service and results! Highly recommend for anyone who would like there car cleaned for a great price”</p><p class="who">Ollie H., Google</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="quote" id="quote">
+  <div class="orb o3"></div><div class="orb o4"></div>
+  <div class="wrap">
+    <div>
+      <h2>Get a<br>quote</h2>
+      <div class="hours" aria-label="Hours">
+        <div><span>Monday</span><span>8 a.m. to 7:30 p.m.</span></div>
+        <div><span>Tuesday</span><span>8 a.m. to 7:30 p.m.</span></div>
+        <div><span>Wednesday</span><span>8 a.m. to 7:30 p.m.</span></div>
+        <div><span>Thursday</span><span>8 a.m. to 7:30 p.m.</span></div>
+        <div><span>Friday</span><span>8 a.m. to 7:30 p.m.</span></div>
+        <div><span>Saturday</span><span>8 a.m. to 7:30 p.m.</span></div>
+        <div class="off"><span>Sunday</span><span>Closed</span></div>
+      </div>
+      <a class="callbig" href="tel:+16132203678">(613) 220-3678</a>
+    </div>
+    <form class="fpanel glass dk" id="qf" autocomplete="off">
+      <p class="sent">Hi David, it’s
+        <input id="qn" placeholder="your name" aria-label="Your name" required>.
+        I need
+        <select id="qs" aria-label="What you need"><option>a full inside and out detail</option><option>an interior detail</option><option>headlight restoration</option><option>help picking a service</option></select>
+        for my <input id="qv" placeholder="car, truck or van" aria-label="Your vehicle" required>
+        in <input id="qa" placeholder="your area" aria-label="Your area" required>.</p>
+      <button class="btn pri" type="submit">Text this to David</button>
+      <p class="hint">Opens a text message to (613) 220-3678. Nothing is sent until you press send.</p>
+    </form>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>David’s Auto Detailing, 2895 Ahearn Ave, Ottawa, ON</span><span>Preview built by JPF. Not live yet.</span></div></footer>
+
+<div class="dock" role="group" aria-label="Call or text">
+  <a class="btn pri" href="tel:+16132203678">Call David</a>
+  <a class="btn t" href="sms:+16132203678">Text</a>
+</div>
+
+<script>
+(function(){
+  var mm=window.matchMedia('(max-width:899px)');
+  var svg=document.getElementById('mapsvg');
+  function vb(){svg.setAttribute('viewBox',mm.matches?'262 70 380 420':'0 0 800 520')}
+  vb();mm.addEventListener&&mm.addEventListener('change',vb);
+  var rm=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var box=document.getElementById('mapbox');
+  if('IntersectionObserver' in window&&!rm){
+    new IntersectionObserver(function(e,o){if(e[0].isIntersecting){box.classList.add('go');o.disconnect()}},{threshold:.3}).observe(box);
+  }else box.classList.add('go');
+  // counters
+  document.querySelectorAll('[data-count]').forEach(function(el){
+    var to=parseFloat(el.dataset.count),dec=+(el.dataset.dec||0);
+    if(rm||!('IntersectionObserver' in window))return;
+    new IntersectionObserver(function(e,o){if(!e[0].isIntersecting)return;o.disconnect();
+      var t0=performance.now();(function f(t){var k=Math.min(1,(t-t0)/1200);k=1-Math.pow(1-k,3);el.textContent=(to*k).toFixed(dec);if(k<1)requestAnimationFrame(f);else el.textContent=to.toFixed(dec)})(t0)},{threshold:.6}).observe(el);
+  });
+  // slider
+  var c=document.getElementById('cmp'),r=c.querySelector('input');
+  r.addEventListener('input',function(){c.style.setProperty('--p',r.value+'%')});
+  // quote -> sms
+  document.getElementById('qf').addEventListener('submit',function(e){
+    e.preventDefault();
+    var m='Hi David, it’s '+qn.value.trim()+'. I need '+qs.value+' for my '+qv.value.trim()+' in '+qa.value.trim()+'.';
+    location.href='sms:+16132203678?&body='+encodeURIComponent(m);
+  });
+})();
+</script>
+</body>
+</html>
