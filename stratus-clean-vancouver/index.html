@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Stratus Clean Vancouver | Janitorial service in Burnaby, BC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Geologica:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* PLAN: inspection-sheet-led. Janitorial trust: calm, orderly, checked.
+   Palette: sheet #f4f6f5 (their office walls), slate #333f4b + green #42b029 (sampled from their Instagram graphics), deep green #1f5a17 (text-safe green).
+   Fonts: Newsreader display + Geologica body. Signature: clipboard sheet whose service lines tick on scroll, once.
+   Order: hero photo, sheet, floors trio, reviews on slate, quote sentence, hours/area, footer.
+   Motion: one hero load sequence + one tick sequence. Reduced motion respected. */
+:root{--sheet:#f4f6f5;--slate:#333f4b;--slate2:#26303a;--green:#42b029;--deep:#1f5a17;--ink:#1d252d;--mut:#5b6672}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:Geologica,system-ui,sans-serif;font-weight:400;font-size:16.5px;line-height:1.6;color:var(--ink);background:var(--sheet);overflow-x:hidden;padding-bottom:96px}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+h1,h2,h3,.serif{font-family:Newsreader,Georgia,serif;font-weight:400}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+
+/* nav pill */
+.nav{position:fixed;z-index:30;top:12px;left:12px;right:12px;max-width:1180px;margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 8px 8px 20px;border-radius:999px;background:rgba(38,48,58,.52);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 20px 50px -20px rgba(20,28,36,.5);color:#fff}
+.nav b{font-family:Newsreader,serif;font-weight:500;font-size:19px;letter-spacing:.005em;white-space:nowrap}
+.nav .links{display:none;gap:26px;font-size:14.5px}
+.nav .links a{text-decoration:none;opacity:.88}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 22px;border-radius:999px;background:var(--green);color:#10230b;font:600 15.5px Geologica,sans-serif;text-decoration:none;border:0;cursor:pointer;transition:transform .2s,background .2s}
+.btn:hover{background:#56c63c;transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:inherit;border:1px solid currentColor}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;background:var(--slate2) url(img/p1.jpg) center 38%/cover no-repeat;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(24,32,40,.78) 0%,rgba(24,32,40,.5) 45%,rgba(24,32,40,.1) 80%),linear-gradient(180deg,rgba(24,32,40,.5) 0%,rgba(24,32,40,.2) 25%,rgba(24,32,40,.72) 55%,rgba(24,32,40,.95) 100%)}
+.hero .wrap{padding:120px 0 108px}
+.hero h1{font-size:clamp(54px,13.5vw,132px);line-height:.96;letter-spacing:-.012em;word-spacing:.12em;max-width:9ch;font-weight:400}
+.hero h1 em{font-style:italic}
+.hero p.lede{margin-top:22px;max-width:34ch;font-size:18px;color:#e9eef0}
+.hero .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.glass-card{position:relative;margin-top:34px;display:inline-flex;gap:16px;align-items:center;padding:16px 22px;border-radius:26px;background:rgba(244,246,245,.16);-webkit-backdrop-filter:blur(24px) saturate(170%);backdrop-filter:blur(24px) saturate(170%);border:1px solid rgba(255,255,255,.34);box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 24px 60px -24px rgba(10,16,22,.6)}
+.glass-card .num{font-family:Newsreader,serif;font-size:50px;line-height:1}
+.glass-card small{display:block;font-size:14px;line-height:1.35;color:#f1f5f3}
+.stars{color:#8ee06f;letter-spacing:2px;font-size:15px}
+.in{opacity:0;transform:translateY(18px);animation:in .9s cubic-bezier(.2,.7,.2,1) forwards}
+.in.d1{animation-delay:.15s}.in.d2{animation-delay:.35s}.in.d3{animation-delay:.55s}.in.d4{animation-delay:.8s}
+@keyframes in{to{opacity:1;transform:none}}
+
+section{padding:88px 0}
+h2{font-size:clamp(38px,7vw,70px);line-height:1.02;letter-spacing:-.01em;word-spacing:.1em}
+.kicker{max-width:46ch;margin-top:18px;color:var(--mut)}
+
+/* sheet */
+.sheetgrid{display:grid;gap:36px;margin-top:44px}
+.clip{position:relative;background:#fff;border-radius:6px 6px 14px 14px;padding:62px 22px 26px;box-shadow:0 30px 70px -30px rgba(38,48,58,.45),0 0 0 1px rgba(51,63,75,.08)}
+.clip::before{content:"";position:absolute;top:-14px;left:50%;width:132px;height:36px;margin-left:-66px;border-radius:10px;background:var(--slate);box-shadow:inset 0 -6px 0 rgba(0,0,0,.18)}
+.clip::after{content:"";position:absolute;top:-4px;left:50%;width:46px;height:12px;margin-left:-23px;border-radius:6px;background:#aeb7bf}
+.clip h3{font-size:26px;line-height:1.2;margin-bottom:4px}
+.clip .sub{font-size:14.5px;color:var(--mut);margin-bottom:12px}
+.line{display:grid;grid-template-columns:34px 1fr;gap:14px;padding:16px 0;border-top:1px solid rgba(51,63,75,.14)}
+.box{width:30px;height:30px;border:2px solid var(--slate);border-radius:7px;position:relative;margin-top:3px}
+.box svg{position:absolute;inset:-3px;width:30px;height:30px;overflow:visible}
+.box path{fill:none;stroke:var(--green);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:30;stroke-dashoffset:30}
+.sheet.go .box path{animation:tick .55s ease forwards;animation-delay:calc(var(--i)*.28s)}
+@keyframes tick{to{stroke-dashoffset:0}}
+.line h4{font:600 17px/1.35 Geologica,sans-serif}
+.line p{font-size:15px;color:var(--mut);margin-top:2px}
+.stamp{margin-top:6px;padding-top:16px;border-top:2px solid var(--slate);font-size:14.5px;color:var(--slate)}
+.stamp b{font-weight:600}
+.pics{display:grid;gap:14px;grid-template-columns:1fr 1fr;align-content:start}
+.pics img{width:100%;height:100%;object-fit:cover;border-radius:14px}
+.pics .a{grid-column:1/-1;aspect-ratio:2/1}
+.pics .b{aspect-ratio:4/5}
+
+/* floors */
+.floors{padding:0;background:var(--slate2);color:#fff}
+.fl{display:grid;gap:0}
+.fl figure{position:relative;margin:0;min-height:340px;overflow:hidden}
+.fl img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fl figcaption{position:absolute;left:14px;bottom:14px;right:14px;padding:12px 16px;border-radius:16px;background:rgba(38,48,58,.55);-webkit-backdrop-filter:blur(18px) saturate(150%);backdrop-filter:blur(18px) saturate(150%);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.25);font-size:14.5px}
+.floors .intro{padding:70px 0 48px}
+.floors h2{max-width:13ch}
+
+/* reviews */
+.rev{background:var(--slate);color:#fff;position:relative;overflow:hidden;isolation:isolate}
+.orb{position:absolute;z-index:-1;border-radius:50%;filter:blur(40px);animation:drift 26s ease-in-out infinite alternate}
+.orb.o1{width:420px;height:420px;background:rgba(66,176,41,.28);left:-120px;top:-60px}
+.orb.o2{width:520px;height:520px;background:rgba(120,160,190,.22);right:-180px;bottom:-120px;animation-delay:-9s}
+@keyframes drift{to{transform:translate(60px,40px)}}
+.lead blockquote{font-family:Newsreader,serif;font-size:clamp(28px,5vw,50px);line-height:1.18;letter-spacing:-.005em;max-width:24ch;word-spacing:.08em}
+.who{margin-top:20px;font-size:15px;color:#cdd6dc}
+.who .stars{margin-right:8px}
+.cards{display:grid;gap:16px;margin-top:46px}
+.rc{padding:22px;border-radius:24px;background:rgba(244,246,245,.1);-webkit-backdrop-filter:blur(20px) saturate(150%);backdrop-filter:blur(20px) saturate(150%);border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 20px 50px -26px rgba(0,0,0,.5)}
+.rc p{font-size:16px;color:#f1f5f3}
+.rc .who{margin-top:14px}
+
+/* quote */
+.quote{background:linear-gradient(180deg,var(--sheet),#e5ece7);position:relative;overflow:hidden;isolation:isolate}
+.quote .orb.o1{left:auto;right:-140px;top:30px;background:rgba(66,176,41,.22)}
+.quote .orb.o2{left:-160px;bottom:-100px;right:auto;background:rgba(51,63,75,.16)}
+.panel{margin-top:38px;padding:28px 22px;border-radius:28px;background:rgba(255,255,255,.62);-webkit-backdrop-filter:blur(24px) saturate(170%);backdrop-filter:blur(24px) saturate(170%);border:1px solid rgba(255,255,255,.8);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 30px 70px -30px rgba(38,48,58,.4)}
+.sent{font-family:Newsreader,serif;font-size:clamp(24px,4.2vw,38px);line-height:1.9;word-spacing:.06em}
+.sent input,.sent select{font:500 .72em Geologica,sans-serif;color:var(--ink);padding:6px 14px;margin:0 2px;border-radius:14px;border:1px solid rgba(51,63,75,.25);background:rgba(255,255,255,.75);max-width:100%;min-height:44px;vertical-align:middle}
+.sent input{width:min(100%,12em)}
+.sent input:focus,.sent select:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(66,176,41,.35)}
+.panel .btn{margin-top:22px}
+.note{margin-top:12px;font-size:14px;color:var(--mut)}
+
+/* info */
+.info{display:grid;gap:30px;margin-top:36px}
+.hrs{list-style:none;padding:0;max-width:360px}
+.hrs li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(51,63,75,.15);font-size:16px}
+.hrs li span:last-child{color:var(--mut)}
+.addr{font-size:17px}
+.addr a{color:var(--deep);font-weight:500}
+
+footer{background:var(--slate2);color:#aeb8c0;padding:30px 0 40px;font-size:14px}
+
+/* dock */
+.dock{position:fixed;z-index:40;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));max-width:440px;margin-inline:auto;display:flex;gap:8px;padding:8px;border-radius:999px;background:rgba(38,48,58,.6);-webkit-backdrop-filter:blur(22px) saturate(170%);backdrop-filter:blur(22px) saturate(170%);border:1px solid rgba(255,255,255,.24);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 20px 50px -18px rgba(10,16,22,.6)}
+.dock a{flex:1;min-height:50px}
+.dock .t{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.3)}
+
+@media(min-width:820px){
+ body{padding-bottom:0;font-size:17px}
+ .nav .links{display:flex}
+ .dock{display:none}
+ section{padding:130px 0}
+ .hero .wrap{padding-bottom:84px}.hero h1{max-width:8.5ch}
+ .sheetgrid{grid-template-columns:1.05fr .95fr;gap:64px;align-items:start}
+ .clip{padding:70px 40px 34px}
+ .fl{grid-template-columns:1.3fr 1fr 1fr}
+ .fl figure{min-height:520px}
+ .cards{grid-template-columns:repeat(2,1fr)}
+ .info{grid-template-columns:1fr 1fr}
+ .panel{padding:56px}
+}
+@media(prefers-reduced-motion:reduce){
+ .in{animation:none;opacity:1;transform:none}.orb{animation:none}
+ .box path{stroke-dashoffset:0!important;animation:none!important}html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main">
+  <b>Stratus Clean</b>
+  <div class="links"><a href="#sheet">Services</a><a href="#reviews">Reviews</a><a href="#quote">Quote</a><a href="#hours">Hours</a></div>
+  <a class="btn" href="tel:+16044098311">Call (604) 409-8311</a>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1 class="in d1">Consistency is the whole job.</h1>
+    <p class="lede in d2">Stratus Clean Vancouver. Janitorial service for offices, clinics and industrial facilities, from Burnaby, BC.</p>
+    <div class="row in d3">
+      <a class="btn" href="tel:+16044098311">Call (604) 409-8311</a>
+      <a class="btn ghost" href="#quote">Get a quote by text</a>
+    </div>
+    <div class="glass-card in d4">
+      <span class="num">4.8</span>
+      <span><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><small>24 Google reviews</small></span>
+    </div>
+  </div>
+</header>
+
+<section id="sheet" class="sheet">
+  <div class="wrap">
+    <h2>Every visit is checked.</h2>
+    <p class="kicker">Their own words: a 50-point, 5-star evaluation system with regular quality checks across every area of the facility.</p>
+    <div class="sheetgrid">
+      <div class="clip">
+        <h3>What they clean</h3>
+        <p class="sub">Services taken from the Stratus Clean Vancouver Instagram.</p>
+        <div class="line" style="--i:0"><span class="box"><svg viewBox="0 0 30 30"><path d="M7 16 13 22 24 8"/></svg></span><div><h4>Office and commercial cleaning</h4><p>Regular visits for offices, a showroom and a clinic, per their Google reviews.</p></div></div>
+        <div class="line" style="--i:1"><span class="box"><svg viewBox="0 0 30 30"><path d="M7 16 13 22 24 8"/></svg></span><div><h4>Carpet deep cleaning</h4><p>Resets months of dust and debris held deep in the fibers.</p></div></div>
+        <div class="line" style="--i:2"><span class="box"><svg viewBox="0 0 30 30"><path d="M7 16 13 22 24 8"/></svg></span><div><h4>Steam cleaning</h4><p>Reaches deep into carpets and upholstery, chemical-free.</p></div></div>
+        <div class="line" style="--i:3"><span class="box"><svg viewBox="0 0 30 30"><path d="M7 16 13 22 24 8"/></svg></span><div><h4>HEPA-filter vacuums and purifiers</h4><p>Trap up to 99.97% of airborne particles.</p></div></div>
+        <div class="line" style="--i:4"><span class="box"><svg viewBox="0 0 30 30"><path d="M7 16 13 22 24 8"/></svg></span><div><h4>Industrial facility cleaning</h4><p>Teams align with your workflows and safety requirements.</p></div></div>
+        <div class="stamp"><b>Janitorial service</b>, Burnaby, BC. Closed weekends.</div>
+      </div>
+      <div class="pics">
+        <img class="a" src="img/p11-scrub.jpg" alt="Floor scrubber cleaning an industrial floor" loading="lazy">
+        <img class="b" src="img/p7-steam.jpg" alt="Steam cleaning wand on carpet" loading="lazy">
+        <img class="b" src="img/p5.jpg" alt="Polished hardwood floor after cleaning" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="floors" aria-label="Their work">
+  <div class="wrap intro"><h2>Floors that shine back.</h2></div>
+  <div class="fl">
+    <figure><img src="img/p2.jpg" alt="Glossy wood floor in a studio" loading="lazy" style="object-position:50% 60%"><figcaption>Glossy hardwood, studio space</figcaption></figure>
+    <figure><img src="img/p3.jpg" alt="Treatment room with polished floor" loading="lazy" style="object-position:40% 50%"><figcaption>Clinic room</figcaption></figure>
+    <figure><img src="img/p4.jpg" alt="Office reception lounge" loading="lazy" style="object-position:30% 50%"><figcaption>Office lounge</figcaption></figure>
+  </div>
+</section>
+
+<section id="reviews" class="rev">
+  <span class="orb o1"></span><span class="orb o2"></span>
+  <div class="wrap">
+    <div class="lead">
+      <blockquote>&ldquo;We have used Stratus for well over a year and their service is FANTASTIC with great communication. Highly recommend them.&rdquo;</blockquote>
+      <p class="who"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>David T., Google</p>
+    </div>
+    <div class="cards">
+      <div class="rc"><p>&ldquo;Stratus Cleaning does an excellent job from start to finish. Booking is simple, communication is clear, and the team arrives on time and ready to work.&rdquo;</p><p class="who"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>Andrea K., Google</p></div>
+      <div class="rc"><p>&ldquo;Stratus has been cleaning our North Vancouver showroom/ office once a week, and they&rsquo;ve been fantastic. The team is extremely trustworthy, professional, and thorough every single visit.&rdquo;</p><p class="who"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>Shirin G., Google</p></div>
+      <div class="rc"><p>&ldquo;We have been using Stratus Building Solutions for a couple of years now. Anthony does a great job of cleaning our clinic.&rdquo;</p><p class="who"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>Broadway Wellness, Google</p></div>
+      <div class="rc"><p>&ldquo;I have been very happy with the cleaning services provided. The team is reliable, professional, and does a great job keeping the areas clean and well maintained.&rdquo;</p><p class="who"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>Myra T., Google</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="quote" class="quote">
+  <span class="orb o1"></span><span class="orb o2"></span>
+  <div class="wrap">
+    <h2>Ask for a quote.</h2>
+    <p class="kicker">Fill in the sentence. It opens a text to Stratus Clean Vancouver on your phone.</p>
+    <form class="panel" id="qf">
+      <p class="sent"><label for="n" class="sr" style="position:absolute;left:-9999px">Your name</label>Hi, I&rsquo;m <input id="n" placeholder="your name" autocomplete="name" required> and I need
+        <label for="k" style="position:absolute;left:-9999px">Type of space</label>
+        <select id="k"><option>office cleaning</option><option>clinic cleaning</option><option>industrial cleaning</option><option>carpet cleaning</option><option>something else</option></select>
+        at <label for="w" style="position:absolute;left:-9999px">Where</label><input id="w" placeholder="address or area" autocomplete="street-address">.</p>
+      <button class="btn" type="submit">Text my quote request</button>
+      <p class="note">Or call (604) 409-8311. Open Monday to Friday, 9 a.m. to 5 p.m.</p>
+    </form>
+  </div>
+</section>
+
+<section id="hours" style="padding-top:80px">
+  <div class="wrap">
+    <h2>Find them.</h2>
+    <div class="info">
+      <div class="addr"><p>Stratus Clean Vancouver<br>4268 Lozells Ave #201<br>Burnaby, BC V5A 0C6</p><p style="margin-top:14px"><a href="tel:+16044098311">(604) 409-8311</a></p></div>
+      <ul class="hrs"><li><span>Monday</span><span>9 a.m. to 5 p.m.</span></li><li><span>Tuesday</span><span>9 a.m. to 5 p.m.</span></li><li><span>Wednesday</span><span>9 a.m. to 5 p.m.</span></li><li><span>Thursday</span><span>9 a.m. to 5 p.m.</span></li><li><span>Friday</span><span>9 a.m. to 5 p.m.</span></li><li><span>Saturday</span><span>Closed</span></li><li><span>Sunday</span><span>Closed</span></li></ul>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">Preview built by JPF. Not live yet.</div></footer>
+
+<div class="dock" role="group" aria-label="Call or text">
+  <a class="btn" href="tel:+16044098311">Call now</a>
+  <a class="btn t" href="sms:+16044098311">Text</a>
+</div>
+
+<script>
+(function(){
+  var s=document.querySelector('.sheet');
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(e,o){if(e[0].isIntersecting){s.classList.add('go');o.disconnect()}},{threshold:.25}).observe(document.querySelector('.clip'));
+  }else s.classList.add('go');
+  document.getElementById('qf').addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var n=document.getElementById('n').value.trim(),k=document.getElementById('k').value,w=document.getElementById('w').value.trim();
+    var b='Hi Stratus Clean, I’m '+n+' and I need '+k+(w?' at '+w:'')+'. Can I get a quote?';
+    location.href='sms:+16044098311?&body='+encodeURIComponent(b);
+  });
+})();
+</script>
+</body>
+</html>
