@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The Epoxy Company (Co.) | Epoxy garage floors in Sault Ste. Marie</title>
+<meta name="description" content="Flake epoxy garage and basement floors in Sault Ste. Marie and Greater Sudbury. Call (705) 992-7059 for a free quote.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Krona+One&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ Direction: cold-weather garage story. Their own caption "Your garage floor sees it all" is the headline over their real garage floor.
+ Palette: graphite #16191b (dark flake, p2) / flake grey #d9dcde (floor, p3) / wall white #f3f4f4 (garage walls, p1) / teal #2a9caa (their logo + caption colour).
+ Fonts: Krona One (wide, glossy, display) + DM Sans (body).
+ Signature: flake loupe, a glass lens you drag over their real floor photo.
+ Order: photo hero > what they coat > loupe > reviews > award > hours + quote.
+ Motion: one load sequence (photo settles, headline lines rise, glass card floats in), counters once, reduced-motion respected.
+*/
+:root{
+  --ink:#16191b; --ink2:#23282b; --flake:#d9dcde; --wall:#f3f4f4; --teal:#2a9caa; --teal-d:#17707c;
+  --muted:#5a6266; --r-pill:999px; --r-xl:28px; --r-md:16px;
+  --dock:84px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'DM Sans',system-ui,sans-serif;font-size:17px;line-height:1.6;color:var(--ink);background:var(--wall);overflow-x:hidden;padding-bottom:var(--dock)}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:6px}
+.disp{font-family:'Krona One',sans-serif;font-weight:400;letter-spacing:-.01em;word-spacing:.08em;line-height:1.04}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+
+/* speckle = flake motif */
+.speck{background-color:var(--wall);
+  background-image:
+   radial-gradient(circle at 12% 20%,rgba(22,25,27,.10) 0 1.5px,transparent 2px),
+   radial-gradient(circle at 63% 71%,rgba(22,25,27,.09) 0 1.5px,transparent 2px),
+   radial-gradient(circle at 38% 48%,rgba(42,156,170,.16) 0 1.5px,transparent 2px),
+   radial-gradient(circle at 84% 12%,rgba(22,25,27,.07) 0 1px,transparent 1.5px);
+  background-size:53px 61px,71px 47px,89px 83px,37px 41px}
+
+/* glass */
+.glass{background:rgba(22,25,27,.46);border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 20px 60px -20px rgba(22,25,27,.55);
+  -webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);color:#fff}
+.glass-l{background:rgba(255,255,255,.62);border:1px solid rgba(255,255,255,.7);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 20px 60px -20px rgba(22,25,27,.35);
+  -webkit-backdrop-filter:blur(22px) saturate(170%);backdrop-filter:blur(22px) saturate(170%)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:48px;padding:0 26px;border-radius:var(--r-pill);font:700 16px 'DM Sans',sans-serif;text-decoration:none;border:0;cursor:pointer;transition:transform .18s,background .18s,box-shadow .18s}
+.btn:active{transform:scale(.98)}
+.btn-teal{background:var(--teal);color:#06262b}
+.btn-teal:hover{background:#38b3c1}
+.btn-ghost{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.35)}
+.btn-ghost:hover{background:rgba(255,255,255,.24)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:var(--ink2)}
+
+/* nav pill */
+.nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;max-width:1180px;margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 6px 6px 20px;border-radius:var(--r-pill)}
+.nav b{font:400 13px 'Krona One',sans-serif;letter-spacing:0;white-space:nowrap}
+.nav .links{display:none;gap:26px;font-weight:500;font-size:15px}
+.nav .links a{text-decoration:none;opacity:.85}
+.nav .links a:hover{opacity:1}
+.nav .btn{min-height:44px;padding:0 18px;font-size:15px}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;background:var(--ink);overflow:hidden;isolation:isolate}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 100%;z-index:-2;animation:settle 1.6s cubic-bezier(.2,.7,.2,1) both}
+.hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(22,25,27,.45) 0,rgba(22,25,27,0) 22%,rgba(22,25,27,.15) 34%,rgba(22,25,27,.8) 62%,rgba(22,25,27,.95) 100%)}
+.hero .wrap{padding:110px 0 calc(var(--dock) + 24px);display:grid;gap:26px}
+.hero h1{font-size:clamp(35px,10.4vw,76px);color:#fff;text-shadow:0 2px 24px rgba(22,25,27,.45)}
+.hero h1 span{display:block;animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.hero h1 span:nth-child(2){animation-delay:.12s}.hero h1 span:nth-child(3){animation-delay:.24s}
+.hero p.sub{margin-top:6px;color:#e8ecee;font-size:18px;max-width:34ch;animation:rise .9s .4s both}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px;animation:rise .9s .5s both}
+.rate{padding:16px 20px;border-radius:var(--r-xl);width:min(100%,340px);animation:float .9s .75s cubic-bezier(.2,.7,.2,1) both}
+.rate .n{font:400 34px 'Krona One',sans-serif;line-height:1}
+.rate .n small{font:500 15px 'DM Sans',sans-serif;opacity:.85;margin-left:6px}
+.rate q{display:block;margin-top:8px;font-size:15px;line-height:1.45;quotes:"\201C" "\201D";color:#f1f4f5}
+.rate cite{display:block;margin-top:4px;font-size:13px;font-style:normal;opacity:.8}
+@keyframes settle{from{transform:scale(1.12)}to{transform:scale(1)}}
+@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{from{opacity:0;transform:translateY(24px) scale(.96)}to{opacity:1;transform:none}}
+
+/* sections */
+section{padding:84px 0}
+h2.disp{font-size:clamp(26px,6.6vw,52px);margin-bottom:22px;max-width:16ch}
+.lead{font-size:19px;max-width:44ch;color:#30373a}
+
+/* coat section */
+.coat{background:var(--wall)}
+.coat .grid{display:grid;gap:40px}
+.coat .pics{display:grid;gap:14px}
+.coat .pics img{width:100%;border-radius:var(--r-xl);object-fit:cover}
+.coat .pics .a{aspect-ratio:4/3.4}
+.coat .pics .b{aspect-ratio:4/2.2;border-radius:var(--r-md)}
+.list{list-style:none;margin-top:28px;display:grid;gap:0;border-top:1px solid rgba(22,25,27,.18)}
+.list li{padding:18px 0;border-bottom:1px solid rgba(22,25,27,.18);display:grid;gap:2px}
+.list b{font:400 15px 'Krona One',sans-serif;letter-spacing:0}
+.list span{color:var(--muted);font-size:16px}
+
+/* loupe */
+.look{background:var(--ink);color:#fff;position:relative;overflow:hidden;isolation:isolate}
+.look:before{content:"";position:absolute;width:520px;height:520px;right:-160px;top:-120px;border-radius:50%;background:radial-gradient(circle,rgba(42,156,170,.35),transparent 65%);z-index:-1;animation:drift 26s ease-in-out infinite alternate}
+.look:after{content:"";position:absolute;width:460px;height:460px;left:-180px;bottom:-160px;border-radius:50%;background:radial-gradient(circle,rgba(217,220,222,.16),transparent 65%);z-index:-1;animation:drift 30s ease-in-out infinite alternate-reverse}
+@keyframes drift{to{transform:translate(-50px,40px)}}
+.look .lead{color:#c9d0d3}
+.stage{position:relative;margin-top:34px;border-radius:var(--r-xl);overflow:hidden;aspect-ratio:1120/470;background:#222;touch-action:pan-y;cursor:crosshair}
+.stage img{width:100%;height:100%;object-fit:cover}
+.lens{position:absolute;width:132px;height:132px;border-radius:50%;border:2px solid rgba(255,255,255,.75);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 14px 40px rgba(0,0,0,.5);background-repeat:no-repeat;touch-action:none;cursor:grab;left:0;top:0;transform:translate(-50%,-50%)}
+.lens:active{cursor:grabbing}
+.hint{position:absolute;left:14px;bottom:14px;padding:8px 16px;border-radius:var(--r-pill);font-size:14px;font-weight:500;pointer-events:none;transition:opacity .3s}
+.chips{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.chip{padding:0 18px;min-height:44px;border-radius:var(--r-md);font:500 15px 'DM Sans',sans-serif;cursor:pointer;color:#fff;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.1);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);transition:transform .18s,background .18s}
+.chip:active{transform:scale(.98)}
+.chip[aria-pressed=true]{background:var(--teal);color:#06262b;border-color:var(--teal)}
+
+/* reviews */
+.rev{background:var(--flake);position:relative;overflow:hidden;isolation:isolate}
+.rev:before{content:"";position:absolute;width:560px;height:560px;left:-200px;top:20%;border-radius:50%;background:radial-gradient(circle,rgba(42,156,170,.28),transparent 66%);z-index:-1;animation:drift 28s ease-in-out infinite alternate}
+.big{font:400 clamp(24px,6.4vw,50px)/1.18 'Krona One',sans-serif;max-width:19ch;word-spacing:.08em}
+.big+cite,.who{display:block;margin-top:16px;font-style:normal;font-weight:700;font-size:16px}
+.count{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:34px 0 40px;color:var(--ink)}
+.count .disp{font-size:clamp(40px,11vw,76px)}
+.count span.t{font-size:17px;color:#30373a;max-width:22ch;line-height:1.35}
+.cards{display:grid;gap:16px}
+.card{padding:24px 24px 22px;border-radius:var(--r-xl)}
+.card p{font-size:17px;line-height:1.55}
+.card .stars{font-size:15px;letter-spacing:2px;color:var(--teal-d);margin-bottom:8px}
+.src{margin-top:20px;font-size:14px;color:#3d4549}
+
+/* award */
+.award{background:var(--wall)}
+.award .grid{display:grid;gap:32px;align-items:center}
+.award img{width:100%;border-radius:var(--r-xl);aspect-ratio:1/.95;object-fit:cover;object-position:50% 60%}
+
+/* contact */
+.contact{background:var(--ink);color:#fff;position:relative;overflow:hidden;isolation:isolate}
+.contact:before{content:"";position:absolute;width:560px;height:560px;right:-200px;top:-160px;border-radius:50%;background:radial-gradient(circle,rgba(42,156,170,.30),transparent 65%);z-index:-1;animation:drift 27s ease-in-out infinite alternate}
+.contact .grid{display:grid;gap:40px}
+.info dl{display:grid;gap:18px;margin-top:26px}
+.info dt{font-weight:700;font-size:15px;color:#9fb0b4}
+.info dd{font-size:18px}
+.info a{text-decoration-color:var(--teal);text-underline-offset:4px}
+.hrs{display:grid;grid-template-columns:auto 1fr;gap:4px 22px;font-size:17px}
+.hrs span:nth-child(odd){color:#c3ccd0}
+.q{padding:28px 24px;border-radius:var(--r-xl)}
+.q h3{font:400 20px/1.2 'Krona One',sans-serif;margin-bottom:6px}
+.q p.s{font-size:15px;color:#d6dde0;margin-bottom:20px}
+.sent{font-size:19px;line-height:2.35;color:#f1f4f5}
+.f{font:500 17px 'DM Sans',sans-serif;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);border-radius:14px;padding:8px 14px;min-height:44px;max-width:100%;margin:0 2px;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);transition:border-color .18s,background .18s}
+.f::placeholder{color:#b8c4c8}
+.f:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(42,156,170,.45);background:rgba(255,255,255,.18)}
+select.f option{color:#16191b}
+.f.name{width:9.5em}.f.town{width:10em}
+.q .btn{margin-top:22px;width:100%}
+.note{margin-top:12px;font-size:14px;color:#c3ccd0}
+
+footer{background:#0f1214;color:#aeb8bc;padding:26px 0 34px;font-size:14px}
+
+/* dock */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:12px;display:flex;gap:8px;padding:8px;border-radius:var(--r-pill);max-width:520px;margin-inline:auto}
+.dock .btn{flex:1;min-height:52px;padding:0 10px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+.rv.on{opacity:1;transform:none}
+
+@media(max-width:819px){.stage{aspect-ratio:1/.8;margin-inline:-20px;border-radius:0}.lens{width:150px;height:150px}}
+@media(min-width:820px){
+  body{padding-bottom:0}
+  .dock{display:none}
+  .nav .links{display:flex}
+  .nav{padding-left:26px}
+  .hero .wrap{grid-template-columns:1.5fr 1fr;align-items:end;padding-bottom:56px}
+  .hero:after{background:linear-gradient(90deg,rgba(22,25,27,.82) 0,rgba(22,25,27,.55) 45%,rgba(22,25,27,.1) 75%),linear-gradient(180deg,rgba(22,25,27,.5) 0,rgba(22,25,27,0) 20%,rgba(22,25,27,.7) 100%)}
+  .hero .left{display:grid;gap:26px}
+  .rate{justify-self:end;margin-bottom:6px}
+  section{padding:140px 0}
+  .coat .grid{grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+  .coat .pics{position:sticky;top:110px}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .award .grid{grid-template-columns:.9fr 1.1fr;gap:80px}
+  .contact .grid{grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
+  .q{padding:44px}
+  .lens{width:180px;height:180px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav glass" aria-label="Main">
+  <b>The Epoxy Company (Co.)</b>
+  <div class="links"><a href="#floors">Floors</a><a href="#close">Close up</a><a href="#reviews">Reviews</a><a href="#quote">Free quote</a></div>
+  <a class="btn btn-teal" href="tel:+17059927059">Call</a>
+</nav>
+
+<header class="hero">
+  <img src="img/c-garage.jpg" alt="A finished grey flake epoxy garage floor with the garage door open" width="1120" height="1000">
+  <div class="wrap">
+    <div class="left">
+      <h1 class="disp"><span>Your garage</span><span>floor sees</span><span>it all.</span></h1>
+      <p class="sub">Epoxy garage and basement floors in Sault Ste. Marie and Greater Sudbury.</p>
+      <div class="cta">
+        <a class="btn btn-teal" href="tel:+17059927059">Call (705) 992-7059</a>
+        <a class="btn btn-ghost" href="#quote">Get a free quote</a>
+      </div>
+    </div>
+    <aside class="rate glass" aria-label="Google rating">
+      <div class="n"><span data-count="4.8" data-dec="1">4.8</span><small>from <span data-count="41">41</span> Google reviews</small></div>
+      <q>The floor came out amazing and as advertised.</q>
+      <cite>Ryan R., Google</cite>
+    </aside>
+  </div>
+</header>
+
+<section class="coat" id="floors">
+  <div class="wrap grid">
+    <div>
+      <h2 class="disp rv">Road salt, slush, muddy boots.</h2>
+      <p class="lead rv">Their textured grey flake finish makes everyday cleanup easier and gives the whole garage a finished look. They install garage floor coatings year-round.</p>
+      <ul class="list rv">
+        <li><b>Garage floors</b><span>Flake epoxy over bare concrete, with the matching finish along the base of the walls.</span></li>
+        <li><b>Basements</b><span>Epoxy over dull concrete, with a moisture barrier coating built into their system.</span></li>
+        <li><b>Crack repairs</b><span>One customer's floor needed work first. The crew repaired the cracks, then finished it in epoxy.</span></li>
+        <li><b>Where</b><span>Sault Ste. Marie and Greater Sudbury.</span></li>
+      </ul>
+      <p style="margin-top:28px"><a class="btn btn-dark" href="#quote">Ask for a free quote</a></p>
+    </div>
+    <div class="pics">
+      <img class="a" src="img/c-hall.jpg" alt="Textured flake epoxy floor running out to the open garage door" loading="lazy">
+      <img class="b" src="img/c-wide.jpg" alt="A large garage with a finished grey epoxy floor" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="look" id="close">
+  <div class="wrap">
+    <h2 class="disp rv">Look at the flake up close.</h2>
+    <p class="lead rv">This is a real floor they finished. Drag the lens across it, or hover on a computer.</p>
+    <div class="stage" id="stage">
+      <img src="img/c-floor.jpg" alt="Close view of a grey and white flake epoxy garage floor" loading="lazy">
+      <div class="lens" id="lens" role="img" aria-label="Magnifier. Drag to move."></div>
+      <div class="hint glass" id="hint">Drag the lens</div>
+    </div>
+    <div class="chips" role="group" aria-label="Lens zoom">
+      <button class="chip" type="button" data-z="2" aria-pressed="false">2x</button>
+      <button class="chip" type="button" data-z="3" aria-pressed="true">3x</button>
+      <button class="chip" type="button" data-z="4" aria-pressed="false">4x</button>
+    </div>
+  </div>
+</section>
+
+<section class="rev speck" id="reviews">
+  <div class="wrap">
+    <p class="big rv">“Our garage floor looks incredible.”</p>
+    <span class="who">Joe C., Google</span>
+    <div class="count"><span class="disp"><span data-count="4.8" data-dec="1">4.8</span></span><span class="t">average from <b><span data-count="41">41</span></b> Google reviews</span></div>
+    <div class="cards">
+      <figure class="card glass-l rv"><div class="stars" aria-label="5 stars">★★★★★</div><p>Our garage floor required some work. Matt and his team performed crack repairs and completed with a beautiful Epoxy finish. This is a very hard working and professional team.</p><figcaption class="who">Joanne A., Google</figcaption></figure>
+      <figure class="card glass-l rv"><div class="stars" aria-label="5 stars">★★★★★</div><p>Epoxy company was great. Super fast at coming for a free quote, everyone was pleasant and kind to interact with. Price was good and the finished product is fantastic!</p><figcaption class="who">Ariella A., Google</figcaption></figure>
+      <figure class="card glass-l rv"><div class="stars" aria-label="5 stars">★★★★★</div><p>From start to finish the team was very professional. Our garage floor looks incredible. I would highly recommend The Epoxy Company!</p><figcaption class="who">Joe C., Google</figcaption></figure>
+      <figure class="card glass-l rv"><div class="stars" aria-label="5 stars">★★★★★</div><p>This company is absolutely amazing, stands behind their workmanship and product, honoring their warranty and commitment to customer satisfaction!</p><figcaption class="who">Jennifer H., Google</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="award">
+  <div class="wrap grid">
+    <img src="img/c-trophy.jpg" alt="The 2026 Innovation Awards trophy and green folder" loading="lazy">
+    <div>
+      <h2 class="disp rv">Named a 2026 Top 10 Innovator.</h2>
+      <p class="lead rv">The Sault Ste. Marie Innovation Centre recognized the team's work at The Epoxy Company, using digital marketing, educational videos and technology to connect with customers across Northern Ontario.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="quote">
+  <div class="wrap grid">
+    <div class="info">
+      <h2 class="disp">Get a free quote.</h2>
+      <p class="lead" style="color:#c9d0d3">Tell them what you need. This opens a text to (705) 992-7059.</p>
+      <dl>
+        <div><dt>Phone</dt><dd><a href="tel:+17059927059">(705) 992-7059</a></dd></div>
+        <div><dt>Address</dt><dd>1284 Great Northern Rd, Sault Ste. Marie, ON P6A 5K7</dd></div>
+        <div><dt>Hours</dt><dd class="hrs"><span>Mon to Fri</span><span>8 a.m. to 5 p.m.</span><span>Sat, Sun</span><span>Closed</span></dd></div>
+        <div><dt>Serving</dt><dd>Sault Ste. Marie and Greater Sudbury</dd></div>
+      </dl>
+    </div>
+    <form class="q glass" id="qf" autocomplete="on">
+      <h3>Start your quote</h3>
+      <p class="s">Fill in the blanks, then send it as a text.</p>
+      <p class="sent">
+        Hi, I'm <input class="f name" id="qn" name="name" aria-label="Your name" placeholder="your name" required>.
+        I need a <select class="f" id="qs" name="job" aria-label="What you need"><option>garage floor</option><option>basement floor</option><option>different floor</option></select>
+        in <input class="f town" id="qt" name="town" aria-label="Your town" placeholder="your town" required>.
+      </p>
+      <button class="btn btn-teal" type="submit">Text my quote request</button>
+      <p class="note">Opens your messaging app. Nothing is sent until you press send.</p>
+    </form>
+  </div>
+</section>
+
+<footer><div class="wrap">Preview built by JPF. Not live yet.</div></footer>
+
+<div class="dock glass" role="group" aria-label="Contact">
+  <a class="btn btn-teal" href="tel:+17059927059">Call</a>
+  <a class="btn btn-ghost" href="sms:+17059927059">Text</a>
+</div>
+
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  // quote -> sms
+  document.getElementById('qf').addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=qn.value.trim(),j=qs.value,t=qt.value.trim();
+    var body="Hi, I'm "+n+". I need a "+j+" in "+t+". Can I get a free quote?";
+    location.href='sms:+17059927059?&body='+encodeURIComponent(body);
+  });
+  // reveal + count
+  function count(el){
+    var to=parseFloat(el.dataset.count),dec=+el.dataset.dec||0;
+    if(reduce){el.textContent=to.toFixed(dec);return}
+    var t0=null;function s(t){if(!t0)t0=t;var p=Math.min((t-t0)/1100,1);el.textContent=(to*(1-Math.pow(1-p,3))).toFixed(dec);if(p<1)requestAnimationFrame(s)}
+    requestAnimationFrame(s);
+  }
+  var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}})},{threshold:.15});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+  var co=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){count(x.target);co.unobserve(x.target)}})},{threshold:.6});
+  document.querySelectorAll('[data-count]').forEach(function(el){co.observe(el)});
+  // loupe
+  var st=document.getElementById('stage'),lens=document.getElementById('lens'),hint=document.getElementById('hint');
+  var z=3,px=.55,py=.5;
+  lens.style.backgroundImage='url(img/c-floor.jpg)';
+  function draw(){
+    var w=st.clientWidth,h=st.clientHeight,r=lens.offsetWidth/2;
+    var x=px*w,y=py*h,k=Math.max(w/1120,h/470),iw=1120*k,ih=470*k,ox=(w-iw)/2,oy=(h-ih)/2;
+    lens.style.left=x+'px';lens.style.top=y+'px';
+    lens.style.backgroundSize=(iw*z)+'px '+(ih*z)+'px';
+    lens.style.backgroundPosition=(r-(x-ox)*z)+'px '+(r-(y-oy)*z)+'px';
+  }
+  function set(e){
+    var b=st.getBoundingClientRect();
+    px=Math.min(1,Math.max(0,(e.clientX-b.left)/b.width));
+    py=Math.min(1,Math.max(0,(e.clientY-b.top)/b.height));
+    hint.style.opacity=0;draw();
+  }
+  var drag=false;
+  lens.addEventListener('pointerdown',function(e){drag=true;lens.setPointerCapture(e.pointerId);e.preventDefault()});
+  lens.addEventListener('pointermove',function(e){if(drag)set(e)});
+  lens.addEventListener('pointerup',function(){drag=false});
+  lens.addEventListener('pointercancel',function(){drag=false});
+  st.addEventListener('pointermove',function(e){if(e.pointerType==='mouse')set(e)});
+  document.querySelectorAll('.chip').forEach(function(c){c.addEventListener('click',function(){
+    z=+c.dataset.z;document.querySelectorAll('.chip').forEach(function(o){o.setAttribute('aria-pressed',o===c)});draw()})});
+  addEventListener('resize',draw);draw();
+})();
+</script>
+</body>
+</html>
