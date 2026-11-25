@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Eposhield Epoxy Flooring | Epoxy and flake garage floors, North York</title>
+<meta name="description" content="Eposhield Epoxy Flooring, North York. Diamond ground epoxy and flake garage floors. Call (437) 410-0990.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+direction: before-after-led. Concrete slab + flake. The finished floor owns the top; a draggable before/after on their real jobs is the signature.
+palette: slab #e7e5df (their Oakville slab, p2), flake-ink #1b2422 (their grey flake floor, p12), flake grey #7f8c88 (p12), terracotta #b5593a (their Terracotta Oakville floor, p8).
+fonts: Alfa Slab One (display) + Lexend (body).
+signature: before/after slider, two jobs (Oakville, Etobicoke), glass chips as controls.
+order: hero > before/after > prep sequence (their 5 steps) > flake close-ups > review wall > quote sentence > hours/area.
+motion: one hero load sequence; slider hint nudge once. Reduced motion respected.
+*/
+:root{
+  --slab:#e7e5df; --paper:#f3f1ec; --ink:#1b2422; --flake:#7f8c88; --terra:#b5593a; --terra-d:#964627;
+  --disp:'Alfa Slab One',Georgia,serif; --body:'Lexend',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--body);background:var(--slab);color:var(--ink);font-size:17px;line-height:1.6;overflow-x:hidden;padding-bottom:92px}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--terra);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+h1,h2,h3{font-family:var(--disp);font-weight:400;line-height:1.02;letter-spacing:0;word-spacing:.08em}
+/* glass base */
+.glass{background:rgba(27,36,34,.5);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 20px 60px -20px rgba(27,36,34,.55);color:#fff}
+.glass.light{background:rgba(243,241,236,.62);color:var(--ink);border-color:rgba(255,255,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 20px 60px -20px rgba(27,36,34,.3)}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:48px;padding:0 26px;border-radius:999px;font:500 16px var(--body);text-decoration:none;border:0;cursor:pointer;background:var(--terra);color:#fff;transition:transform .18s,background .18s}
+.btn:hover{background:var(--terra-d)}
+.btn:active{transform:scale(.98)}
+.btn.ghost{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);color:#fff}
+.btn.ghost:hover{background:rgba(255,255,255,.24)}
+
+/* NAV */
+.nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;margin-inline:auto;max-width:1180px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px 6px 6px 22px;border-radius:999px}
+.nav b{font:400 18px var(--disp);letter-spacing:.01em}
+.nav .links{display:none;gap:26px;font-size:15px}
+.nav .links a{text-decoration:none;opacity:.88}
+.nav .links a:hover{opacity:1}
+.nav .btn{min-height:44px;padding:0 20px}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;background:var(--ink);color:#fff;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.hero .photo{position:absolute;inset:0 0 auto 0;height:74%;}
+.hero .photo img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;transform:scale(1.08);animation:settle 1.6s cubic-bezier(.2,.7,.2,1) forwards}
+.hero .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,36,34,.35) 0,rgba(27,36,34,0) 30%,rgba(27,36,34,.55) 70%,var(--ink) 100%)}
+.hero .in{position:relative;padding:0 0 28px;z-index:2}
+.hero h1{font-size:clamp(54px,15.5vw,64px);max-width:11ch;opacity:0;transform:translateY(18px);animation:rise .9s .35s cubic-bezier(.2,.7,.2,1) forwards;text-shadow:0 2px 30px rgba(27,36,34,.5)}
+.hero .sub{margin:16px 0 22px;font-size:18px;max-width:30ch;color:#e9ece9;opacity:0;animation:rise .9s .55s forwards}
+.hero .cta{display:flex;gap:10px;flex-wrap:wrap;opacity:0;animation:rise .9s .7s forwards}
+.rate{margin-top:22px;border-radius:22px;padding:18px 20px;max-width:430px;opacity:0;transform:translateY(24px);animation:rise 1s .95s cubic-bezier(.2,.7,.2,1) forwards}
+.rate .row{display:flex;align-items:baseline;gap:10px}
+.rate .n{font:400 40px/1 var(--disp)}
+.rate .stars{color:#f0b66a;letter-spacing:2px;font-size:17px}
+.rate .c{font-size:14px;opacity:.92}
+.rate p{margin-top:10px;font-size:15px;line-height:1.5;color:#f1f3f1}
+.rate cite{display:block;margin-top:6px;font-size:13px;font-style:normal;opacity:.85}
+@media(max-width:819px){.rate p,.rate cite{display:none}.rate{margin-top:18px;padding:14px 18px}.rate .n{font-size:32px}.hero .sub{font-size:17px;margin:12px 0 18px}.hero .in{padding-bottom:104px}}
+@keyframes settle{to{transform:scale(1)}}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* SECTIONS */
+section{padding:84px 0;scroll-margin-top:70px}
+h2{font-size:clamp(38px,10.5vw,60px);margin-bottom:18px;max-width:14ch}
+.lede{max-width:46ch;font-size:18px;color:#3a4643}
+
+/* BEFORE/AFTER */
+.ba-sec{padding-bottom:70px}
+.chips{display:flex;gap:8px;margin:26px 0 14px;flex-wrap:wrap}
+.chip{min-height:44px;padding:0 20px;border-radius:999px;font:500 15px var(--body);cursor:pointer;border:1px solid rgba(27,36,34,.22);background:rgba(243,241,236,.6);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:var(--ink);transition:transform .18s,background .18s}
+.chip:active{transform:scale(.98)}
+.chip[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.ba{position:relative;aspect-ratio:4/4.3;border-radius:26px;overflow:hidden;touch-action:pan-y;background:var(--ink);--p:50%;user-select:none;-webkit-user-select:none;box-shadow:0 30px 70px -30px rgba(27,36,34,.55)}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba .after{clip-path:inset(0 0 0 var(--p))}
+.ba .tag{position:absolute;top:14px;padding:8px 16px;border-radius:999px;font-size:14px;font-weight:500;z-index:3}
+.ba .tag.b{left:14px}.ba .tag.a{right:14px}
+.ba .bar{position:absolute;top:0;bottom:0;left:var(--p);width:2px;margin-left:-1px;background:rgba(255,255,255,.9);z-index:2}
+.ba .knob{position:absolute;top:50%;left:var(--p);width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:50%;z-index:3;display:grid;place-items:center;pointer-events:none}
+.ba .knob svg{width:26px;height:26px}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;z-index:4;margin:0;touch-action:pan-y}
+.ba input:focus-visible+.knob{outline:3px solid var(--terra);outline-offset:3px}
+.ba input{}
+.cap{margin-top:16px;max-width:60ch;font-size:16px;color:#3a4643}
+.cap q{quotes:none;font-style:italic}
+
+/* PROCESS */
+.proc{background:var(--ink);color:#e9ece9;padding:90px 0 40px}
+.proc h2{color:#fff;max-width:13ch}
+.proc .lede{color:#b9c3bf}
+.step{display:grid;gap:18px;padding:44px 0;border-top:1px solid rgba(255,255,255,.14)}
+.step:first-of-type{margin-top:40px}
+.step .ph{aspect-ratio:4/3;border-radius:22px;overflow:hidden}
+.step .ph img{width:100%;height:100%;object-fit:cover}
+.step .num{font:400 76px/1 var(--disp);color:var(--terra)}
+.step h3{font-size:30px;margin:8px 0 10px;color:#fff}
+.step p{max-width:44ch;color:#c5cec9}
+.step small{display:block;margin-top:10px;font-size:13px;color:#8d9a95}
+
+/* FLAKE CLOSE-UPS */
+.close{padding:80px 0 20px}
+.strip{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:30px}
+.strip figure{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:3/4}
+.strip figure:nth-child(1){grid-column:span 2;aspect-ratio:16/10}
+.strip img{width:100%;height:100%;object-fit:cover}
+.strip figcaption{position:absolute;left:10px;bottom:10px;padding:7px 14px;border-radius:999px;font-size:13px}
+
+/* REVIEWS */
+.reviews{position:relative;overflow:hidden;background:var(--paper)}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;pointer-events:none;animation:drift 26s ease-in-out infinite alternate}
+.orb.o1{width:340px;height:340px;background:#b5593a;left:-100px;top:30%;opacity:.28}
+.orb.o2{width:380px;height:380px;background:#7f8c88;right:-120px;bottom:-60px;opacity:.4;animation-delay:-9s}
+@keyframes drift{to{transform:translate(50px,-40px)}}
+.reviews .wrap{position:relative}
+.big{font:400 clamp(26px,7.4vw,46px)/1.18 var(--disp);max-width:24ch;margin:26px 0 14px}
+.big+cite,.rc cite{font-style:normal;font-size:15px;color:#4a5753}
+.score{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.score .n{font:400 56px/1 var(--disp)}
+.score span{font-size:15px;color:#4a5753}
+.rcs{display:grid;gap:14px;margin-top:34px}
+.rc{padding:24px;border-radius:24px}
+.rc p{font-size:16px;line-height:1.55;margin-bottom:12px}
+
+/* QUOTE */
+.quote{position:relative;color:#fff;padding:90px 0;overflow:hidden;background:var(--ink)}
+.quote .bg{position:absolute;inset:0}
+.quote .bg img{width:100%;height:100%;object-fit:cover}
+.quote .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,36,34,.55),rgba(27,36,34,.35))}
+.quote .wrap{position:relative;z-index:2}
+.panel{padding:30px 24px;border-radius:28px;max-width:720px}
+.panel h2{font-size:clamp(34px,9vw,52px);max-width:12ch;color:#fff}
+.sent{font-size:clamp(20px,5.4vw,26px);line-height:2.1;margin:20px 0 26px;font-weight:300}
+.sent input,.sent select{font:500 1em var(--body);color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.32);border-radius:14px;padding:6px 14px;min-height:46px;max-width:100%;transition:border-color .18s,background .18s}
+.sent input{width:min(100%,13em)}
+.sent input::placeholder{color:rgba(255,255,255,.6)}
+.sent select option{color:#1b2422}
+.sent input:focus,.sent select:focus{outline:none;border-color:var(--terra);background:rgba(255,255,255,.22);box-shadow:0 0 0 3px rgba(181,89,58,.55)}
+.panel .note{margin-top:14px;font-size:14px;color:#d9dfdc}
+
+/* INFO */
+.info{padding:84px 0 60px}
+.cols{display:grid;gap:34px;margin-top:30px}
+.info h3{font-size:24px;margin-bottom:10px}
+.info dl{display:grid;grid-template-columns:auto 1fr;gap:6px 20px;font-size:16px}
+.info dt{color:#4a5753}
+.info dd{font-weight:500}
+.info .big-call{display:block;font:400 clamp(30px,9vw,44px)/1.05 var(--disp);white-space:nowrap;text-decoration:none;margin:6px 0 10px;color:var(--ink)}
+.areas{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.areas li{padding:8px 16px;border-radius:14px;background:rgba(27,36,34,.07);font-size:15px}
+footer{padding:30px 0 40px;font-size:14px;color:#4a5753;border-top:1px solid rgba(27,36,34,.14)}
+
+/* DOCK */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));display:flex;gap:6px;padding:6px;border-radius:999px;max-width:420px;margin-inline:auto}
+.dock a{flex:1;min-height:48px;border-radius:999px;display:flex;align-items:center;justify-content:center;font:500 16px var(--body);text-decoration:none;color:#fff;transition:transform .18s}
+.dock a:active{transform:scale(.97)}
+.dock .c{background:var(--terra)}
+.dock .t{background:rgba(255,255,255,.14)}
+
+@media(min-width:820px){
+  body{padding-bottom:0;font-size:18px}
+  .dock{display:none}
+  .nav .links{display:flex}
+  .wrap{width:min(1180px,100% - 80px)}
+  section{padding:130px 0}
+  .hero .photo{height:100%}
+  .hero .photo::after{background:linear-gradient(180deg,rgba(27,36,34,.35) 0,rgba(27,36,34,0) 25%,rgba(27,36,34,.15) 45%,rgba(27,36,34,.88) 100%)}
+  .hero .in{padding-bottom:56px;display:grid;grid-template-columns:1.5fr 1fr;align-items:end;gap:40px}
+  .hero h1{font-size:clamp(84px,9.6vw,136px);max-width:9ch;grid-column:1}
+  .hero .l{grid-column:1}
+  .rate{grid-column:2;grid-row:1/3;margin:0;justify-self:end;align-self:end}
+  .ba{aspect-ratio:16/8.4;border-radius:32px}
+  .step{grid-template-columns:1.05fr 1fr;gap:70px;align-items:center;padding:70px 0}
+  .step:nth-of-type(even) .ph{order:2}
+  .step .ph{aspect-ratio:5/4}
+  .strip{grid-template-columns:1.5fr 1fr 1fr;gap:14px}
+  .strip figure{aspect-ratio:3/4.2}
+  .strip figure:nth-child(1){grid-column:auto;aspect-ratio:3/4.2}
+  .rcs{grid-template-columns:1fr 1fr;gap:20px}
+  .cols{grid-template-columns:1.3fr 1fr 1fr;gap:60px}
+  .panel{padding:48px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .hero h1,.hero .sub,.hero .cta,.rate{opacity:1;transform:none}
+  .hero .photo img{transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav glass" aria-label="Main">
+  <b>Eposhield</b>
+  <div class="links"><a href="#before-after">Before and after</a><a href="#process">How we prep</a><a href="#reviews">Reviews</a><a href="#quote">Get a quote</a></div>
+  <a class="btn" href="tel:+14374100990">Call (437) 410-0990</a>
+</nav>
+
+<header class="hero">
+  <div class="photo"><img src="img/hero.jpg" alt="Finished flake garage floor in Oakville after Eposhield"></div>
+  <div class="wrap in">
+    <h1>Stained to spotless.</h1>
+    <div class="l">
+      <p class="sub">Epoxy and flake garage floors from Eposhield Epoxy Flooring, North York.</p>
+      <div class="cta">
+        <a class="btn" href="tel:+14374100990">Call (437) 410-0990</a>
+        <a class="btn ghost" href="#quote">Get a quote</a>
+      </div>
+    </div>
+    <aside class="rate glass" aria-label="Google rating">
+      <div class="row"><span class="n">5.0</span><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="c">23 Google reviews</span></div>
+      <p>&ldquo;The floor still looks new. The crew were on time and did excellent job in my garage, cleaned up before leaving.&rdquo;</p>
+      <cite>Raahim C., Google</cite>
+    </aside>
+  </div>
+</header>
+
+<main>
+<section class="ba-sec" id="before-after">
+  <div class="wrap">
+    <h2>Drag the floor.</h2>
+    <p class="lede">Two real Eposhield garages. Left is the slab as they found it. Right is the finished floor.</p>
+    <div class="chips" role="group" aria-label="Choose a job">
+      <button class="chip" type="button" aria-pressed="true" data-job="0">Oakville garage</button>
+      <button class="chip" type="button" aria-pressed="false" data-job="1">Etobicoke garage</button>
+    </div>
+    <div class="ba" id="ba">
+      <img id="imgB" src="img/o-before.jpg" alt="Oakville garage floor before: stained concrete">
+      <img id="imgA" class="after" src="img/o-after.jpg" alt="Oakville garage floor after: flake and clear top coat">
+      <span class="tag b glass">Before</span><span class="tag a glass">After</span>
+      <div class="bar"></div>
+      <input id="rng" type="range" min="0" max="100" value="50" aria-label="Slide between before and after">
+      <div class="knob glass"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg></div>
+    </div>
+    <p class="cap" id="cap"><q>We don&rsquo;t coat over stains. We diamond grind the top of the slab off first, so the coating grips clean concrete.</q> Eposhield, on this Oakville garage.</p>
+  </div>
+</section>
+
+<section class="proc" id="process">
+  <div class="wrap">
+    <h2>What happens to your slab.</h2>
+    <p class="lede">Eposhield shows its prep work on Instagram. Here is the order they work in.</p>
+
+    <div class="step">
+      <div class="ph"><img src="img/c3.jpg" alt="Diamond grinder and dust hose on a garage slab"></div>
+      <div><div class="num">1</div><h3>Diamond grind</h3>
+        <p>Takes the stains and the top of the slab off, so the coating grips clean concrete.</p><small>From their Oakville and Etobicoke posts</small></div>
+    </div>
+    <div class="step">
+      <div class="ph"><img src="img/c6.jpg" alt="Crack in a concrete slab being filled"></div>
+      <div><div class="num">2</div><h3>Fill the cracks</h3>
+        <p>Coat over a crack and it shows right back through. So they grind it open, pour in a two-part filler and scrape it flush.</p><small>From their Burlington crack post</small></div>
+    </div>
+    <div class="step">
+      <div class="ph"><img src="img/c7.jpg" alt="Flake thrown over a black base coat"></div>
+      <div><div class="num">3</div><h3>Bury the black base</h3>
+        <p>Flake only sticks while the base is wet, so they keep throwing until no black shows. No thin spots, no bald patches.</p><small>From their flake post</small></div>
+    </div>
+    <div class="step">
+      <div class="ph"><img src="img/c9.jpg" alt="Finished grey flake floor with clear top coat"></div>
+      <div><div class="num">4</div><h3>Seal it clear</h3>
+        <p>Loose flake gets scraped off, then the floor is sealed with a clear top coat that wipes clean. Their Etobicoke garage used polyaspartic.</p><small>From their Oakville and Etobicoke posts</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="close">
+  <div class="wrap">
+    <h2>Flake, up close.</h2>
+    <div class="strip">
+      <figure><img src="img/c8.jpg" alt="Terracotta flake floor, Oakville garage" loading="lazy"><figcaption class="glass">Terracotta, Oakville garage</figcaption></figure>
+      <figure><img src="img/c5.jpg" alt="Blue-grey flake floor with clear top coat" loading="lazy"></figure>
+      <figure><img src="img/c12.jpg" alt="Grey flake floor meeting a brick wall" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="orb o1"></div><div class="orb o2"></div>
+  <div class="wrap">
+    <div class="score"><span class="n">5.0</span><span>from 23 Google reviews</span></div>
+    <blockquote><p class="big">&ldquo;We had epoxy flooring done in our garage 2 years ago Eposhield. The floor still looks new.&rdquo;</p><cite>Raahim C., Google</cite></blockquote>
+    <div class="rcs">
+      <figure class="rc glass light"><p>&ldquo;The salt caused the concrete to have pitting which looked awful, they filled in everything. Now it looks excellent. Getting lots of compliments from neighbors&rdquo;</p><cite><span lang="ar">أبو س.</span>, Google</cite></figure>
+      <figure class="rc glass light"><p>&ldquo;Our garage floor looks fantastic thanks to eposhield crew. I would definitely recommend them.&rdquo;</p><cite>Sufiyan M., Google</cite></figure>
+    </div>
+  </div>
+</section>
+
+<section class="quote" id="quote">
+  <div class="bg"><img src="img/c7.jpg" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <form class="panel glass" id="qf" autocomplete="on">
+      <h2>Get a quote.</h2>
+      <p class="sent">
+        Hi Eposhield, I&rsquo;m
+        <input id="qn" name="name" type="text" placeholder="your name" aria-label="Your name" required>
+        and I need a floor done in my
+        <select id="qt" aria-label="Type of floor"><option>garage</option><option>basement</option><option>other space</option></select>
+        in
+        <input id="qa" name="area" type="text" placeholder="your area" aria-label="Your area">
+      </p>
+      <button class="btn" type="submit">Text this to Eposhield</button>
+      <p class="note">Opens a text to (437) 410-0990. Tip: add a photo of the floor.</p>
+    </form>
+  </div>
+</section>
+
+<section class="info">
+  <div class="wrap">
+    <h2>Find Eposhield.</h2>
+    <div class="cols">
+      <div>
+        <a class="big-call" href="tel:+14374100990">(437) 410-0990</a>
+        <p>170 The Donway W, unit 6a<br>North York, ON M3C 2E8</p>
+      </div>
+      <div>
+        <h3>Hours</h3>
+        <dl><dt>Mon to Fri</dt><dd>9 a.m. to 5 p.m.</dd><dt>Sat, Sun</dt><dd>Closed</dd></dl>
+      </div>
+      <div>
+        <h3>Floors we have done in</h3>
+        <ul class="areas"><li>North York</li><li>Etobicoke</li><li>Toronto</li><li>Oakville</li><li>Burlington</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">Preview built by JPF. Not live yet.</div></footer>
+
+<nav class="dock glass" aria-label="Call or text">
+  <a class="c" href="tel:+14374100990">Call</a>
+  <a class="t" href="sms:+14374100990">Text</a>
+</nav>
+
+<script>
+(function(){
+  var jobs=[
+    {b:'img/o-before.jpg',a:'img/o-after.jpg',ab:'Oakville garage floor before: stained concrete',aa:'Oakville garage floor after: flake and clear top coat',c:'<q>We don’t coat over stains. We diamond grind the top of the slab off first, so the coating grips clean concrete.</q> Eposhield, on this Oakville garage.'},
+    {b:'img/e-before.jpg',a:'img/e-after.jpg',ab:'Etobicoke garage floor before: years of stains',aa:'Etobicoke garage floor after: grey flake and clear top coat',c:'<q>Years of stains on this Etobicoke garage floor. The next day, you’d never know.</q> Eposhield, Instagram.'}
+  ];
+  var ba=document.getElementById('ba'),rng=document.getElementById('rng');
+  function set(v){ba.style.setProperty('--p',v+'%');rng.value=v;}
+  rng.addEventListener('input',function(){set(rng.value)});
+  document.querySelectorAll('.chip').forEach(function(ch){
+    ch.addEventListener('click',function(){
+      var j=jobs[ch.dataset.job];
+      document.querySelectorAll('.chip').forEach(function(c){c.setAttribute('aria-pressed',c===ch)});
+      var B=document.getElementById('imgB'),A=document.getElementById('imgA');
+      B.src=j.b;B.alt=j.ab;A.src=j.a;A.alt=j.aa;
+      document.getElementById('cap').innerHTML=j.c;set(50);
+    });
+  });
+  // one nudge when the slider scrolls into view
+  var done=false;
+  if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion:reduce)').matches){
+    new IntersectionObserver(function(es,o){
+      if(es[0].isIntersecting&&!done){done=true;o.disconnect();
+        var t0=null;(function f(t){if(!t0)t0=t;var k=(t-t0)/1400;
+          if(k<1){set(50+22*Math.sin(k*Math.PI*2)*(1-k));requestAnimationFrame(f)}else set(50)})(performance.now());}
+    },{threshold:.6}).observe(ba);
+  }
+  // quote -> sms
+  document.getElementById('qf').addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=document.getElementById('qn').value.trim(),t=document.getElementById('qt').value,a=document.getElementById('qa').value.trim();
+    var body='Hi Eposhield, I’m '+n+' and I need a floor done in my '+t+(a?' in '+a:'')+'. Can I get a quote?';
+    location.href='sms:+14374100990?&body='+encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
