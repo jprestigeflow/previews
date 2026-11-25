@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Sparkle Solutions | Commercial Cleaning in Burnaby, BC</title>
+<meta name="description" content="Sparkle Solutions, cleaners in Burnaby, BC. Open 24 hours. Call (604) 782-0061.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif&family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* PLAN
+direction: dark premium night-shift (open 24 hours). Big serif headline, one real photo owns the top.
+palette: night #0e1819 (steel kitchen p3/p12), teal #162a2b (same), mint #8fd1bb (glass vanity p6), oak #b9824f (floors p1/p7), bone #eef3f1
+fonts: Hedvig Letters Serif display + Mukta body
+signature: "What needs cleaning?" chooser with frosted chips swapping their own photos
+order: hero > 24-hour strip > chooser > big review > services + reviews > quote sentence > footer
+motion: one hero load sequence; chooser photo crossfade; numbers count once
+*/
+:root{--night:#0e1819;--teal:#162a2b;--mint:#8fd1bb;--oak:#b9824f;--bone:#eef3f1;--mut:#a9bdb9}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--night);color:var(--bone);font-family:'Mukta',sans-serif;font-size:17px;line-height:1.6;overflow-x:hidden;-webkit-text-size-adjust:100%}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+h1,h2,h3{font-family:'Hedvig Letters Serif',serif;font-weight:400;line-height:1.02;letter-spacing:-.01em;word-spacing:.12em}
+.glass{background:rgba(14,24,25,.55);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 20px 60px -20px rgba(0,0,0,.55)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;border-radius:999px;background:var(--mint);color:#0b1c18;font-weight:700;font-size:17px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:transform .18s,filter .18s}
+.btn:hover{filter:brightness(1.08)}.btn:active{transform:scale(.97)}
+.btn.ghost{background:transparent;color:var(--bone);border:1px solid rgba(255,255,255,.35)}
+
+/* nav */
+nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;max-width:980px;margin:0 auto;height:56px;border-radius:999px;display:flex;align-items:center;justify-content:space-between;padding:0 8px 0 22px}
+nav b{font-family:'Hedvig Letters Serif',serif;font-weight:400;font-size:20px;white-space:nowrap}
+nav .links{display:none;gap:26px;font-size:15px;color:var(--mut)}
+nav .links a{text-decoration:none}nav .links a:hover{color:var(--bone)}
+nav .btn{min-height:44px;padding:0 20px;font-size:16px}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 70%;transform:scale(1.12);animation:settle 1.6s cubic-bezier(.2,.7,.2,1) forwards}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,24,25,.55) 0,rgba(14,24,25,.55) 20%,rgba(14,24,25,.82) 45%,rgba(14,24,25,.92) 70%,#0e1819 100%)}
+.hero .in{position:relative;z-index:2;width:100%;max-width:1180px;margin:0 auto;padding:0 20px 110px}
+.hero h1{font-size:clamp(58px,15.5vw,150px);max-width:9ch;margin-top:110px;text-shadow:0 2px 30px rgba(0,0,0,.4)}
+.hero p.sub{margin-top:18px;max-width:34ch;font-size:19px;color:#dfeae6}
+.hero .cta{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}
+.hero .card{margin-top:30px;border-radius:26px;padding:18px 20px;max-width:380px}
+.hero .card .r{display:flex;align-items:baseline;gap:10px;font-family:'Hedvig Letters Serif',serif;font-size:34px;line-height:1}
+.hero .card .r small{font-family:'Mukta',sans-serif;font-size:15px;color:var(--mut)}
+.hero .card q{display:block;margin-top:10px;font-size:16px;line-height:1.5;quotes:"\201C" "\201D"}
+.hero .card cite{display:block;margin-top:6px;font-size:14px;color:var(--mut);font-style:normal}
+.stars{color:var(--mint);letter-spacing:2px;font-size:18px}
+.hero h1,.hero .sub,.hero .cta,.hero .card{opacity:0;transform:translateY(18px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+.hero .sub{animation-delay:.25s}.hero .cta{animation-delay:.4s}.hero .card{animation-delay:.6s}
+@keyframes settle{to{transform:scale(1)}}
+@keyframes rise{to{opacity:1;transform:none}}
+
+section{padding:88px 20px}
+.wrap{max-width:1180px;margin:0 auto}
+
+/* 24h strip */
+.strip{background:var(--teal);position:relative;overflow:hidden}
+.strip .orb{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(143,209,187,.22),transparent 65%);right:-160px;top:-120px;animation:drift 26s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate(-60px,80px)}}
+.strip .wrap{position:relative;display:grid;gap:34px}
+.strip .big{font-family:'Hedvig Letters Serif',serif;font-size:clamp(120px,34vw,300px);line-height:.8;color:var(--mint);letter-spacing:-.04em}
+.strip h2{font-size:clamp(34px,8vw,64px);max-width:12ch}
+.strip p{color:var(--mut);max-width:44ch;margin-top:14px}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:6px}
+.days span{display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:14px;padding:12px 0;font-size:14px;background:rgba(143,209,187,.12);border:1px solid rgba(143,209,187,.35);color:var(--bone)}
+.days span i{font-style:normal;font-size:12px;color:var(--mint)}
+.days span b{font-weight:600}
+
+/* chooser */
+.choose h2{font-size:clamp(40px,10vw,84px);max-width:11ch}
+.stage{margin-top:34px;position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/5;background:#000}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s}
+.stage img.on{opacity:1}
+.stage:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(14,24,25,.85));pointer-events:none}
+.chips{position:absolute;z-index:3;left:12px;right:12px;bottom:12px;display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:44px;padding:0 18px;border-radius:999px;font:600 16px 'Mukta',sans-serif;color:var(--bone);cursor:pointer;transition:transform .18s,background .2s}
+.chip:active{transform:scale(.97)}
+.chip[aria-pressed=true]{background:var(--mint);color:#0b1c18;border-color:var(--mint)}
+.cap{margin-top:16px;min-height:3.4em;font-size:19px;max-width:46ch}
+.cap small{display:block;color:var(--mut);font-size:14px;margin-top:4px}
+
+/* big review */
+.lead{background:var(--bone);color:#10201f;padding:96px 20px}
+.lead blockquote{font-family:'Hedvig Letters Serif',serif;font-size:clamp(30px,7.2vw,64px);line-height:1.12;max-width:20ch;letter-spacing:-.01em;word-spacing:.1em}
+.lead cite{display:block;margin-top:24px;font-style:normal;font-size:17px;color:#41605a}
+.lead .stars{color:#2f7a63}
+.nums{display:flex;gap:40px;margin-top:40px;flex-wrap:wrap}
+.nums div b{display:block;font-family:'Hedvig Letters Serif',serif;font-weight:400;font-size:64px;line-height:1;color:#10201f}
+.nums div span{font-size:15px;color:#41605a}
+
+/* services + reviews */
+.two{display:grid;gap:56px}
+.two h2{font-size:clamp(36px,8vw,60px);margin-bottom:22px}
+.svc{list-style:none}
+.svc li{padding:18px 0;border-top:1px solid rgba(255,255,255,.14);font-size:20px;display:flex;justify-content:space-between;gap:14px;align-items:baseline}
+.svc li:last-child{border-bottom:1px solid rgba(255,255,255,.14)}
+.svc li span{font-size:15px;color:var(--mut);text-align:right;max-width:20ch}
+.revs{position:relative}
+.revs .orb{position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(185,130,79,.28),transparent 65%);left:-120px;top:20%;animation:drift 30s ease-in-out infinite alternate-reverse;pointer-events:none}
+.rv{position:relative;border-radius:24px;padding:22px;margin-bottom:14px}
+.rv p{font-size:17px}.rv cite{display:block;margin-top:10px;font-style:normal;font-size:14px;color:var(--mut)}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:56px}
+.gallery img{width:100%;height:100%;aspect-ratio:3/4;object-fit:cover;border-radius:18px}
+.gallery img:first-child{grid-column:span 2;aspect-ratio:4/3;border-radius:26px}
+
+/* quote */
+.quote{background:var(--teal);padding-bottom:140px}
+.quote h2{font-size:clamp(40px,10vw,80px);max-width:10ch}
+.qp{margin-top:30px;border-radius:28px;padding:26px 22px;max-width:760px}
+.qp p{font-size:clamp(20px,5vw,26px);line-height:2.1}
+.qp input,.qp select{font:600 inherit 'Mukta',sans-serif;font-size:18px;color:var(--bone);background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:14px;padding:6px 12px;min-height:44px;max-width:100%;width:190px;box-shadow:inset 0 1px 0 rgba(255,255,255,.15)}
+.qp select option{color:#10201f}
+.qp input::placeholder{color:#8fa5a0}
+.qp input:focus,.qp select:focus{outline:none;border-color:var(--mint);box-shadow:0 0 0 3px rgba(143,209,187,.35)}
+.qp .btn{margin-top:18px}
+.qp small{display:block;margin-top:12px;color:var(--mut);font-size:14px;line-height:1.4}
+
+footer{padding:56px 20px 130px;background:var(--night);font-size:15px;color:var(--mut)}
+footer b{color:var(--bone);font-family:'Hedvig Letters Serif',serif;font-weight:400;font-size:24px;display:block;margin-bottom:6px}
+footer .pv{margin-top:26px;font-size:14px}
+
+/* dock */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));border-radius:999px;display:flex;gap:8px;padding:8px}
+.dock a{flex:1;min-height:48px;display:flex;align-items:center;justify-content:center;border-radius:999px;text-decoration:none;font-weight:700;font-size:17px;transition:transform .18s}
+.dock a:active{transform:scale(.97)}
+.dock .c{background:var(--mint);color:#0b1c18;flex:1.3}
+.dock .t{color:var(--bone);background:rgba(255,255,255,.1)}
+
+@media(min-width:820px){
+ body{font-size:18px}
+ nav .links{display:flex}
+ section{padding:130px 40px}
+ .hero .in{padding:0 40px 90px}
+ .hero h1{font-size:clamp(90px,8.6vw,124px);max-width:11ch;margin-top:120px}
+ .hero:after{background:linear-gradient(90deg,rgba(14,24,25,.85) 0,rgba(14,24,25,.5) 50%,rgba(14,24,25,.1) 100%),linear-gradient(180deg,transparent 60%,#0e1819 100%)}
+ .strip .wrap{grid-template-columns:auto 1fr;align-items:end;gap:70px}
+ .strip .days{grid-column:1/-1}
+ .stage{aspect-ratio:16/9}
+ .two{grid-template-columns:1fr 1fr;gap:90px}
+ .gallery{grid-template-columns:2fr 1fr 1fr}
+ .gallery img:first-child{grid-column:auto;aspect-ratio:3/4}
+ .dock{left:auto;right:24px;bottom:24px;width:340px}
+ footer{padding-bottom:110px}
+ .quote{padding-bottom:130px}
+}
+@media(prefers-reduced-motion:reduce){
+ *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+ .hero h1,.hero .sub,.hero .cta,.hero .card{opacity:1;transform:none}.hero>img{transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav class="glass" aria-label="Main">
+  <b>Sparkle Solutions</b>
+  <div class="links"><a href="#spaces">Spaces</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#quote">Get a quote</a></div>
+  <a class="btn" href="tel:+16047820061">Call now</a>
+</nav>
+
+<header class="hero">
+  <img src="img/p1.jpg" alt="Wood floor in a restaurant dining room cleaned by Sparkle Solutions">
+  <div class="in">
+    <h1>Cleaning that never closes.</h1>
+    <p class="sub">Sparkle Solutions. Restaurant, kitchen and janitorial cleaning in Burnaby, BC. Open 24 hours.</p>
+    <div class="cta"><a class="btn" href="tel:+16047820061">Call (604) 782-0061</a><a class="btn ghost" href="#quote">Get a quote</a></div>
+    <div class="card glass">
+      <div class="r">5.0 <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <small>29 Google reviews</small></div>
+      <q>The team was so professional, and punctual on time The cleaning quality was outstanding, and everything was left spotless.</q>
+      <cite>Rahul G., Google</cite>
+    </div>
+  </div>
+</header>
+
+<section class="strip" aria-labelledby="h24">
+  <div class="orb"></div>
+  <div class="wrap">
+    <div class="big" aria-hidden="true">24</div>
+    <div>
+      <h2 id="h24">Open 24 hours, every day.</h2>
+      <p>Their Google listing shows every day of the week as open 24 hours. Call any time on (604) 782-0061.</p>
+    </div>
+    <div class="days" aria-label="Open 24 hours, all seven days">
+      <span><b>Tue</b><i>24h</i></span><span><b>Wed</b><i>24h</i></span><span><b>Thu</b><i>24h</i></span><span><b>Fri</b><i>24h</i></span><span><b>Sat</b><i>24h</i></span><span><b>Sun</b><i>24h</i></span><span><b>Mon</b><i>24h</i></span>
+    </div>
+  </div>
+</section>
+
+<section class="choose" id="spaces">
+  <div class="wrap">
+    <h2>What needs cleaning?</h2>
+    <div class="stage" id="stage">
+      <img class="on" src="img/p1.jpg" alt="Restaurant dining room floor" data-k="0">
+      <img src="img/p3.jpg" alt="Commercial kitchen floor and shelving" data-k="1">
+      <img src="img/p12.jpg" alt="Stainless steel kitchen equipment" data-k="1b" hidden>
+      <img src="img/p7.jpg" alt="Polished wood floor in an office hallway" data-k="2">
+      <img src="img/p6.jpg" alt="Clean washroom vanity and sink" data-k="3">
+      <div class="chips" role="group" aria-label="Choose a space">
+        <button class="chip glass" aria-pressed="true" data-i="0">Restaurants</button>
+        <button class="chip glass" aria-pressed="false" data-i="1">Commercial kitchens</button>
+        <button class="chip glass" aria-pressed="false" data-i="2">Floors</button>
+        <button class="chip glass" aria-pressed="false" data-i="3">Washrooms</button>
+      </div>
+    </div>
+    <p class="cap" id="cap" aria-live="polite"></p>
+  </div>
+</section>
+
+<section class="lead" id="reviews">
+  <div class="wrap">
+    <div class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    <blockquote>I had an wonderful experience with Sparkle Solutions. From start to finish, their service was truly impressive.</blockquote>
+    <cite>Sahil B., Google</cite>
+    <div class="nums">
+      <div><b data-n="5.0" data-d="1">5.0</b><span>Google rating</span></div>
+      <div><b data-n="29">29</b><span>Google reviews</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap two">
+    <div>
+      <h2>What they do</h2>
+      <ul class="svc">
+        <li>Restaurant cleaning <span>for health inspections</span></li>
+        <li>Commercial kitchens <span>restored</span></li>
+        <li>Floor cleaning <span>scrubbed and shined</span></li>
+        <li>Janitorial services <span>commercial spaces</span></li>
+        <li>Parking lot maintenance <span>commercial property</span></li>
+        <li>Deep cleaning</li>
+      </ul>
+    </div>
+    <div class="revs">
+      <div class="orb"></div>
+      <h2>What clients say</h2>
+      <div class="rv glass"><p>&ldquo;I called Sparkle to come and fix a washer and they were on site within 4 hours. I was really impressed with their quick response compared to our last laundry service provider.&rdquo;</p><cite>Alison B., Google</cite></div>
+      <div class="rv glass"><p>&ldquo;If you&rsquo;re looking for a company that genuinely cares about quality, professionalism, and customer satisfaction, look no further than Sparkle Solutions.&rdquo;</p><cite>S. G., Google</cite></div>
+      <div class="rv glass"><p>&ldquo;Excellent service from Sprkle Solution Cleaning Company!!! The team was so professional, and punctual on time The cleaning quality was outstanding, and everything was left spotless.&rdquo;</p><cite>Rahul G., Google</cite></div>
+    </div>
+  </div>
+  <div class="wrap gallery">
+    <img src="img/p3.jpg" alt="Commercial kitchen floor" loading="lazy">
+    <img src="img/p2.jpg" alt="Mopping a floor" loading="lazy">
+    <img src="img/p9.jpg" alt="Washroom sinks" loading="lazy" style="aspect-ratio:3/4;grid-column:auto">
+  </div>
+</section>
+
+<section class="quote" id="quote">
+  <div class="wrap">
+    <h2>Tell them what you need.</h2>
+    <form class="qp glass" id="qf">
+      <p>Hi Sparkle Solutions, I&rsquo;m
+        <input id="qn" aria-label="Your name" placeholder="your name" autocomplete="name" required>
+        and I need
+        <select id="qs" aria-label="What you need">
+          <option>restaurant cleaning</option><option>kitchen cleaning</option><option>floor cleaning</option><option>janitorial service</option><option>parking lot cleaning</option><option>a deep clean</option>
+        </select>
+        in
+        <input id="qp" aria-label="Your city or address" placeholder="city or address">.</p>
+      <button class="btn" type="submit">Text this to Sparkle</button>
+      <small>Opens a text message to (604) 782-0061. Nothing is sent until you press send.</small>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <b>Sparkle Solutions</b>
+    4168 Lougheed Hwy, Burnaby, BC V5C 0N9<br>
+    Open 24 hours, 7 days. <a href="tel:+16047820061">(604) 782-0061</a>
+    <div class="pv">Preview built by JPF. Not live yet.</div>
+  </div>
+</footer>
+
+<div class="dock glass" role="group" aria-label="Contact">
+  <a class="c" href="tel:+16047820061">Call</a>
+  <a class="t" href="sms:+16047820061">Text</a>
+</div>
+
+<script>
+(function(){
+  var caps=[
+   ['Get your restaurant serviced on a regular basis to pass health inspections every time.','From their Instagram post, Nov 18'],
+   ['Cleaner kitchens are safer kitchens. They restore commercial kitchens.','From their Instagram post, Nov 1'],
+   ['Floors scrubbed. Janitorial and cleaning for commercial spaces.','From their Instagram post, Nov 12'],
+   ['Washrooms cleaned and ready.','Photo from their Google listing']
+  ];
+  var imgs=[].slice.call(document.querySelectorAll('#stage img:not([hidden])'));
+  var chips=[].slice.call(document.querySelectorAll('.chip'));
+  var cap=document.getElementById('cap');
+  function pick(i){
+    imgs.forEach(function(m,j){m.classList.toggle('on',j===i)});
+    chips.forEach(function(c,j){c.setAttribute('aria-pressed',j===i)});
+    cap.innerHTML=caps[i][0]+'<small>'+caps[i][1]+'</small>';
+  }
+  chips.forEach(function(c,i){c.addEventListener('click',function(){pick(i)})});
+  pick(0);
+
+  // count up once
+  var nums=[].slice.call(document.querySelectorAll('[data-n]'));
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if('IntersectionObserver' in window&&!reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(!e.isIntersecting)return;io.unobserve(e.target);
+      var t=parseFloat(e.target.dataset.n),d=e.target.dataset.d?1:0,s=performance.now();
+      (function f(n){var p=Math.min(1,(n-s)/1100);e.target.textContent=(t*(1-Math.pow(1-p,3))).toFixed(d);if(p<1)requestAnimationFrame(f);else e.target.textContent=t.toFixed(d)})(s);
+    })},{threshold:.6});
+    nums.forEach(function(n){io.observe(n)});
+  }
+
+  document.getElementById('qf').addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=document.getElementById('qn').value.trim(),s=document.getElementById('qs').value,p=document.getElementById('qp').value.trim();
+    var body='Hi Sparkle Solutions, I’m '+n+' and I need '+s+(p?' in '+p:'')+'.';
+    location.href='sms:+16047820061?&body='+encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
