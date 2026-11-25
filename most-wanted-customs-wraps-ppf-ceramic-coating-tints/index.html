@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Most Wanted Customs | Wraps, PPF, Ceramic Coating, Tints in Cambridge, ON</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,500;0,700;0,800;1,700;1,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* PLAN: direction = dark asphalt lot at dusk, one baby-blue accent. Pit-board type, stacked short service words.
+ palette: asphalt #14171b (parking-lot tarmac in their Ferrari photos), bone #eef2f5, accent blue #8cc3ee (the car paint in p6/p11), steel #2a3037, mist #9aa6b2.
+ fonts: Tomorrow (display) + DM Sans (body). signature: "Pick the job" chips that swap in what real customers said about that service.
+ order: hero photo, commercial wrap (gas pumps), signature picker, photo set, reviews, hours/area, quote fill-in, footer. motion: one hero load sequence. */
+:root{--bg:#14171b;--bone:#eef2f5;--blue:#8cc3ee;--steel:#2a3037;--mist:#a3aeb9}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--bg);color:var(--bone);font:400 17px/1.6 'DM Sans',sans-serif;overflow-x:hidden;padding-bottom:96px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+h1,h2,h3,.disp{font-family:'Tomorrow',sans-serif}
+.glass{background:rgba(20,23,27,.55);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 20px 60px -20px rgba(0,0,0,.6)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;border-radius:999px;background:var(--blue);color:#0c1116;font:700 16px 'DM Sans';text-decoration:none;border:0;cursor:pointer;transition:transform .18s,filter .18s}
+.btn:hover{filter:brightness(1.08)}.btn:active{transform:scale(.97)}
+.btn.ghost{background:rgba(255,255,255,.08);color:var(--bone);border:1px solid rgba(255,255,255,.25)}
+/* nav */
+nav{position:fixed;z-index:20;top:12px;left:12px;right:12px;max-width:980px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 6px 6px 20px;border-radius:999px}
+nav b{font:800 14px 'Tomorrow';letter-spacing:.02em;white-space:nowrap}
+nav .btn{min-height:44px;padding:0 20px}
+.d{display:none}
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:100px 20px 104px;overflow:hidden;isolation:isolate}
+.hero img{position:absolute;top:0;left:0;width:100%;height:68%;object-fit:cover;object-position:50% 35%;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(20,23,27,.5) 0,rgba(20,23,27,0) 20%,rgba(20,23,27,0) 34%,rgba(20,23,27,.9) 58%,var(--bg) 70%)}
+h1{font-weight:800;font-style:italic;font-size:clamp(46px,14.5vw,76px);line-height:.92;letter-spacing:-.01em;word-spacing:.12em;margin-bottom:22px}
+h1 span{display:block}
+.hero p.sub{max-width:34ch;color:#dfe7ee;margin-bottom:22px}
+.hero .row{display:flex;gap:10px;flex-wrap:wrap}
+.rate{position:absolute;right:16px;top:84px;max-width:230px;padding:14px 16px;border-radius:22px;font-size:14px;line-height:1.4}
+.rate strong{display:block;font:800 26px 'Tomorrow';color:var(--blue)}
+.rate em{font-style:normal;color:#dfe7ee}
+.in>*{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.in>*:nth-child(2){animation-delay:.12s}.in>*:nth-child(3){animation-delay:.24s}.in>*:nth-child(4){animation-delay:.36s}
+.rate{animation:rise 1s .5s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+section{padding:72px 20px;max-width:1100px;margin:auto}
+h2{font-weight:800;font-size:clamp(34px,9vw,60px);line-height:1;margin-bottom:22px;word-spacing:.08em}
+.lede{color:var(--mist);max-width:56ch;margin-bottom:28px}
+/* commercial */
+.com{display:grid;gap:24px}
+.com img{width:100%;border-radius:22px;aspect-ratio:4/5;object-fit:cover;object-position:50% 40%}
+.com blockquote{border-left:3px solid var(--blue);padding-left:16px;color:#dfe7ee}
+/* picker */
+.pick{background:var(--steel);max-width:none;border-radius:28px;margin:0 12px}
+.pick>div{max-width:1100px;margin:auto}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+.chip{min-height:46px;padding:0 20px;border-radius:999px;font:700 15px 'DM Sans';color:var(--bone);cursor:pointer;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.22);transition:transform .15s,background .2s}
+.chip:active{transform:scale(.97)}
+.chip[aria-pressed=true]{background:var(--blue);color:#0c1116;border-color:var(--blue)}
+.say{min-height:190px}
+.say q{display:block;quotes:none;font:700 clamp(23px,5.6vw,38px)/1.25 'Tomorrow';max-width:30ch}
+.say cite{display:block;margin-top:14px;color:var(--mist);font-style:normal;font-size:15px}
+.say.swap{animation:rise .45s both}
+/* photo set */
+.set{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.set img{width:100%;height:100%;object-fit:cover;border-radius:16px;display:block}
+.set .a{grid-column:span 2;aspect-ratio:3/4}
+.set .b,.set .c{aspect-ratio:3/4}
+.cap{color:var(--mist);font-size:14px;margin-top:12px}
+/* reviews */
+.rv{display:grid;gap:14px;margin-top:6px}
+.rv figure{padding:22px;border-radius:22px;background:var(--steel)}
+.rv blockquote{font-size:17px}
+.rv figcaption{margin-top:10px;color:var(--mist);font-size:14px}
+.big{font:800 clamp(28px,7vw,48px)/1.15 'Tomorrow';margin-bottom:8px}
+/* info */
+.info{display:grid;gap:26px}
+.info dl{display:grid;grid-template-columns:auto 1fr;gap:6px 20px;font-size:16px}
+.info dt{color:var(--mist)}
+.info a{color:var(--blue)}
+/* quote */
+.quote{border-radius:28px;padding:28px 22px;margin:0 12px 40px;max-width:none}
+.quote form{max-width:760px;margin:auto;font:500 clamp(20px,5vw,30px)/2 'Tomorrow'}
+.quote input,.quote select{font:inherit;color:var(--blue);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);border-radius:14px;padding:2px 12px;min-height:46px;max-width:100%;width:min(100%,15ch)}
+.quote select{width:auto;background:#1b2026}
+.quote input::placeholder{color:#7d8995}
+.quote .btn{margin-top:14px;font-size:16px}
+.quote h2{max-width:760px;margin:0 auto 14px}
+footer{padding:30px 20px 40px;text-align:center;color:var(--mist);font-size:14px}
+/* dock */
+.dock{position:fixed;z-index:30;left:12px;right:12px;bottom:12px;max-width:420px;margin:auto;display:flex;gap:8px;padding:8px;border-radius:999px}
+.dock .btn{flex:1;min-height:48px;padding:0 10px}
+@media(min-width:820px){
+ .m{display:none}.d{display:inline}
+ .hero img{left:38%;width:62%;height:100%;object-position:50% 78%}
+ .hero::after{background:linear-gradient(90deg,var(--bg) 0,var(--bg) 36%,rgba(20,23,27,.5) 52%,rgba(20,23,27,0) 75%),linear-gradient(180deg,rgba(20,23,27,.5) 0,rgba(20,23,27,0) 20%,rgba(20,23,27,0) 60%,var(--bg) 100%)}
+ body{padding-bottom:0}.dock{display:none}
+ .hero{padding:120px 6vw 64px}.hero .in{max-width:900px}
+ h1{font-size:clamp(70px,7.4vw,118px)}h1 span{display:inline}
+ h1 span+span:before{content:" "}
+ .hero p.sub{font-size:20px}
+ .rate{right:6vw;top:100px;max-width:280px}
+ section{padding:120px 40px}.com{grid-template-columns:1fr 1fr;align-items:center;gap:60px}
+ .pick{padding:0;margin:0 24px}.pick>div{padding:90px 40px}
+ .set{grid-template-columns:1.2fr 1fr 1fr}.set .a{grid-column:auto;grid-row:span 2;aspect-ratio:auto}.set .b,.set .c{aspect-ratio:4/5}
+ .rv{grid-template-columns:repeat(3,1fr)}
+ .info{grid-template-columns:1fr 1fr}
+ .quote{padding:64px 40px;margin:0 24px 80px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style></head><body>
+<nav class="glass" aria-label="Main">
+ <b>Most Wanted Customs</b>
+ <a class="btn" href="tel:+18775253007"><span class="m">Call now</span><span class="d">Call 877-525-3007</span></a>
+</nav>
+
+<header class="hero">
+ <img src="img/p6.jpg" alt="Light blue Ferrari parked at the Porsche Experience Centre in Toronto, shared on Most Wanted Customs' Instagram">
+ <aside class="rate glass" aria-label="Google rating"><strong>4.9 stars</strong>160 Google reviews<br><em>Cambridge, Ontario</em></aside>
+ <div class="in">
+  <h1><span>Wraps.</span> <span>PPF.</span> <span>Ceramic.</span> <span>Tints.</span></h1>
+  <p class="sub">Car wraps, paint protection film, ceramic coating and window tint at 131 Sheldon Dr, Cambridge.</p>
+  <div class="row"><a class="btn" href="tel:+18775253007">Call 877-525-3007</a><a class="btn ghost" href="#quote">Get a quote by text</a></div>
+ </div>
+</header>
+
+<section class="com">
+ <img src="img/p1.jpg" alt="Gas station with an orange and green canopy and wrapped pumps, from Most Wanted Customs' Instagram">
+ <div>
+  <h2>Cars. And gas pumps.</h2>
+  <p class="lede">Their latest post shows a commercial job: new vinyl on a set of gas pumps.</p>
+  <blockquote>Disassembly, surface preparation, custom vinyl design and printing, colour matching, and professional installation.</blockquote>
+  <p class="cap">Most Wanted Customs on Instagram, Nov 16 2026. Commercial project? Call or text.</p>
+ </div>
+</section>
+
+<div class="pick">
+ <div>
+  <section style="padding:0;max-width:none">
+   <h2>Pick the job.</h2>
+   <p class="lede">Hear what customers wrote on Google about each one.</p>
+   <div class="chips" role="group" aria-label="Service">
+    <button class="chip" aria-pressed="true" data-k="wraps">Wraps</button>
+    <button class="chip" aria-pressed="false" data-k="ppf">PPF</button>
+    <button class="chip" aria-pressed="false" data-k="ceramic">Ceramic coating</button>
+    <button class="chip" aria-pressed="false" data-k="tint">Window tints</button>
+   </div>
+   <div class="say" id="say" aria-live="polite"></div>
+  </section>
+ </div>
+</div>
+
+<section>
+ <h2>On the lot.</h2>
+ <div class="set">
+  <img class="a" src="img/p10.jpg" alt="Light blue Ferrari front wheel and bodywork" loading="lazy">
+  <img class="b" src="img/p11.jpg" alt="Ferrari badge on light blue paint" loading="lazy">
+  <img class="c" src="img/p12.jpg" alt="Light blue Ferrari wheel with gold calipers" loading="lazy">
+ </div>
+ <p class="cap">Photos from their Instagram, taken at a SickKids charity car show at the Porsche Experience Centre Toronto.</p>
+</section>
+
+<section>
+ <p class="big">&ldquo;The quality of their work is top-notch, and their attention to detail really stands out.&rdquo;</p>
+ <p class="cap" style="margin-bottom:28px">Sunny J., Google</p>
+ <div class="rv">
+  <figure><blockquote>The team was professional, friendly, and really took the time to make sure everything was done right.</blockquote><figcaption>Adil H., Google</figcaption></figure>
+  <figure><blockquote>The quality of the work was excellent, and the communication throughout the entire process was great. They kept me informed every step of the way.</blockquote><figcaption>Nisarg N., Google</figcaption></figure>
+  <figure><blockquote>I got PPF done on my car and couldn’t be happier with the quality of the work.</blockquote><figcaption>Abdulrehman B., Google</figcaption></figure>
+ </div>
+</section>
+
+<section class="info">
+ <div>
+  <h2>Come by.</h2>
+  <p class="lede">131 Sheldon Dr Unit 8, Cambridge, ON N1R 6S2. Open seven days.</p>
+  <a class="btn" href="tel:+18775253007">Call 877-525-3007</a>
+ </div>
+ <dl>
+  <dt>Mon to Sat</dt><dd>10 a.m. to 6:30 p.m.</dd>
+  <dt>Sunday</dt><dd>10 a.m. to 5 p.m.</dd>
+  <dt>Phone</dt><dd><a href="tel:+18775253007">877-525-3007</a></dd>
+  <dt>Instagram</dt><dd>@mostwanted.customs</dd>
+ </dl>
+</section>
+
+<div class="quote glass" id="quote">
+ <h2>Get a quote.</h2>
+ <form id="qf">
+  Hi, I'm <input id="n" required placeholder="your name" aria-label="Your name"> and I need
+  <select id="s" aria-label="Service"><option>a wrap</option><option>PPF</option><option>ceramic coating</option><option>window tints</option><option>something else</option></select>
+  for my <input id="c" required placeholder="car" aria-label="Your car">.
+  <br><button class="btn" type="submit">Text this to Most Wanted Customs</button>
+ </form>
+</div>
+
+<footer>Preview built by JPF. Not live yet.</footer>
+
+<div class="dock glass" role="group" aria-label="Contact">
+ <a class="btn" href="tel:+18775253007">Call</a>
+ <a class="btn ghost" href="sms:+18775253007">Text</a>
+</div>
+
+<script>
+const Q={
+ wraps:['They use really good wraps. They turned my car into totally something different For the better for sure','Dante M., Google'],
+ ppf:['I got PPF done on my car and couldn’t be happier with the quality of the work.','Abdulrehman B., Google'],
+ ceramic:['Got my window tints, paint correction, and ceramic coating done here, and I’m extremely happy with the results!','Nisarg N., Google'],
+ tint:['Whether it’s wraps, PPF, ceramic coating, or window tints, they take pride in delivering','Sunny J., Google']
+};
+const say=document.getElementById('say'),chips=[...document.querySelectorAll('.chip')];
+function show(k){const [t,w]=Q[k];say.innerHTML='<q></q><cite></cite>';say.firstChild.textContent='“'+t+(k==='tint'?'…':'')+'”';say.lastChild.textContent=w;say.classList.remove('swap');void say.offsetWidth;say.classList.add('swap');chips.forEach(c=>c.setAttribute('aria-pressed',c.dataset.k===k))}
+chips.forEach(c=>c.onclick=()=>show(c.dataset.k));show('wraps');say.classList.remove('swap');
+document.getElementById('qf').onsubmit=e=>{e.preventDefault();const m="Hi, I'm "+n.value+" and I need "+s.value+" for my "+c.value+".";location.href='sms:+18775253007?&body='+encodeURIComponent(m)};
+</script>
+</body></html>
