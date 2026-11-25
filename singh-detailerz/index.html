@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Singh Detailerz | Car detailing and window tint in Brampton</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Sen:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* Plan: sign-board-menu-led. Workshop sign-shop look.
+   Palette: cladding #17191c (their building), sign orange #e8591c (storefront lettering + floor tiles), bone #f2eee8 (white cars), steel #6b7178 (shop floor).
+   Fonts: Bungee (sign lettering) + Sen. Signature: services board from their printed sign that writes the text quote.
+   Order: hero, lead review, services board + quote, the shop, more reviews, hours + call.
+   Motion: one load sequence (headline lines rise, glass card floats in). Reduced-motion respected. */
+:root{--ink:#17191c;--ink2:#20242a;--or:#e8591c;--or2:#ff7a3d;--bone:#f2eee8;--steel:#6b7178;--r-lg:26px;--r-sm:14px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--bone);font:400 17px/1.55 'Sen',system-ui,sans-serif;overflow-x:hidden;padding-bottom:96px}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--or2);outline-offset:3px;border-radius:8px}
+.d{font-family:'Bungee',sans-serif;font-weight:400;line-height:.95;letter-spacing:.01em;word-spacing:.12em}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+section{padding:72px 0}
+/* glass */
+.glass{background:rgba(23,25,28,.58);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 22px 60px -22px rgba(0,0,0,.6)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:999px;background:var(--or);color:#fff;font:700 16px 'Sen';text-decoration:none;border:0;cursor:pointer;transition:transform .18s,background .18s}
+.btn:hover{background:var(--or2)}.btn:active{transform:scale(.98)}
+.btn.ghost{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.28)}
+/* nav */
+nav{position:fixed;z-index:30;top:12px;left:12px;right:12px;max-width:760px;margin-inline:auto;height:56px;border-radius:999px;display:flex;align-items:center;justify-content:space-between;padding:0 8px 0 22px}
+nav b{font:400 17px 'Bungee';letter-spacing:.02em}
+nav .btn{min-height:44px;padding:0 20px}
+/* hero */
+.hero{padding:96px 0 0;position:relative;overflow:hidden}
+.hero h1{font-size:clamp(40px,11.6vw,96px)}
+.hero h1 span{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 span i{display:block;font-style:normal;animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+.hero h1 span:nth-child(2) i{animation-delay:.12s;color:var(--or)}
+.hero p.lede{max-width:34ch;margin:22px 0 26px;font-size:19px;color:#d9d4cb}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero .pic{position:relative;margin-top:36px;border-radius:var(--r-lg) var(--r-lg) 0 0;overflow:hidden;height:min(112vw,560px)}
+.hero .pic img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.hero .card{position:absolute;left:14px;right:14px;bottom:14px;border-radius:22px;padding:16px 18px;display:flex;gap:16px;align-items:center;animation:float 1s .6s cubic-bezier(.2,.8,.2,1) both}
+.card .big{font:400 40px/1 'Bungee';color:var(--or2)}
+.card small{display:block;font-size:14px;color:#e6e1d8;line-height:1.35}
+@keyframes rise{from{transform:translateY(105%)}to{transform:none}}
+@keyframes float{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+/* lead review */
+.lead q{display:block;font:400 clamp(26px,6.6vw,52px)/1.12 'Bungee';quotes:none;max-width:22ch;word-spacing:.1em}
+.lead q:before{content:"\201C"}.lead q:after{content:"\201D"}
+.lead cite{display:block;margin-top:22px;font:700 16px 'Sen';font-style:normal;color:var(--or2)}
+/* board */
+.board{background:var(--ink2);border-top:6px solid var(--or)}
+.board h2,.shop h2,.rev h2,.visit h2{font-size:clamp(34px,9vw,64px);margin-bottom:12px}
+.board .sub{color:#c9c4bb;max-width:46ch;margin-bottom:26px}
+.sign{border-radius:var(--r-sm);overflow:hidden;margin-bottom:26px;border:1px solid rgba(255,255,255,.12)}
+.sign img{width:100%;height:auto;aspect-ratio:14/9;object-fit:cover}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
+.chip{min-height:46px;padding:0 18px;border-radius:999px;font:700 15px 'Sen';color:var(--bone);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.22);cursor:pointer;transition:all .18s;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.chip:active{transform:scale(.97)}
+.chip[aria-pressed=true]{background:var(--or);border-color:var(--or2);color:#fff;box-shadow:0 8px 24px -10px var(--or)}
+.quote{border-radius:var(--r-lg);padding:26px 22px}
+.quote p{font:500 clamp(19px,5vw,26px)/2.1 'Sen'}
+.quote input{font:700 inherit;font-size:inherit;color:#fff;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.26);border-radius:12px;padding:2px 12px;min-height:44px;width:min(100%,15ch);margin:0 2px}
+.quote input.w{width:min(100%,19ch)}
+.quote input:focus{outline:none;border-color:var(--or2);box-shadow:0 0 0 3px rgba(232,89,28,.45)}
+.quote .pick{color:var(--or2);font-weight:700}
+.quote .btn{margin-top:18px;width:100%}
+.quote small{display:block;margin-top:12px;color:#c9c4bb;font-size:14px}
+/* shop */
+.shop h2{margin-bottom:26px}
+.rail{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 20px 8px;margin:0 -0px;-webkit-overflow-scrolling:touch}
+.rail figure{flex:0 0 74%;scroll-snap-align:center;border-radius:20px;overflow:hidden;height:min(120vw,520px);background:var(--ink2)}
+.rail img{width:100%;height:100%;object-fit:cover}
+.rail::-webkit-scrollbar{display:none}
+/* reviews */
+.rev{overflow:hidden}
+.rev .grid{display:grid;gap:14px;margin-top:22px}
+.rev blockquote{border-radius:22px;padding:22px;font-size:17px}
+.rev blockquote cite{display:block;margin-top:12px;font:700 15px 'Sen';font-style:normal;color:var(--or2)}
+.orbs{position:relative}
+.orbs:before,.orbs:after{content:"";position:absolute;border-radius:50%;filter:blur(70px);z-index:0;animation:drift 26s ease-in-out infinite alternate}
+.orbs:before{width:300px;height:300px;background:rgba(232,89,28,.28);top:-40px;left:-60px}
+.orbs:after{width:260px;height:260px;background:rgba(107,113,120,.35);bottom:-30px;right:-40px;animation-delay:-9s}
+.orbs>*{position:relative;z-index:1}
+@keyframes drift{to{transform:translate(50px,36px)}}
+/* visit */
+.visit{background:var(--bone);color:var(--ink);border-radius:32px 32px 0 0}
+.visit .grid{display:grid;gap:30px}
+.visit .num{display:block;font:400 clamp(34px,10.4vw,72px)/1 'Bungee';color:var(--or);text-decoration:none;word-spacing:0;margin:10px 0 18px}
+.visit p{max-width:40ch}
+.visit .pic{border-radius:20px;overflow:hidden;height:300px}
+.visit .pic img{width:100%;height:100%;object-fit:cover}
+.visit .btn.ghost{background:rgba(23,25,28,.06);border-color:rgba(23,25,28,.3);color:var(--ink)}
+footer{background:var(--bone);color:var(--ink);padding:0 0 28px;font-size:14px}
+footer .wrap{border-top:1px solid rgba(23,25,28,.2);padding-top:18px}
+/* dock */
+.dock{position:fixed;z-index:40;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));max-width:520px;margin-inline:auto;border-radius:999px;display:flex;gap:8px;padding:8px}
+.dock a{flex:1;min-height:48px}
+.dock .btn.ghost{color:var(--bone)}
+@media(min-width:860px){
+ body{font-size:18px;padding-bottom:0}.dock{display:none}
+ section{padding:120px 0}
+ .hero{padding-top:120px}
+ .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
+ .hero .pic{margin:0;height:min(80vh,720px);border-radius:var(--r-lg) var(--r-lg) 0 0}
+ .hero h1{font-size:clamp(80px,9vw,128px)}
+ .board .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:start}
+ .board .sign{margin:0}
+ .quote{padding:34px 36px}
+ .rail{padding:0 max(20px,calc((100vw - 1180px)/2));gap:18px}
+ .rail figure{flex:0 0 300px;height:480px}
+ .rev .grid{grid-template-columns:repeat(2,1fr)}
+ .visit .grid{grid-template-columns:1.1fr .9fr;align-items:center}
+ .visit .pic{height:440px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav class="glass" aria-label="Main">
+  <b>Singh Detailerz</b>
+  <a class="btn" href="tel:+19057875600">Call now</a>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <h1 class="d"><span><i>Singh</i></span><span><i>Detailerz</i></span></h1>
+      <p class="lede">Car detailing and window tint in Brampton. Open 9 a.m. to 9 p.m., every day.</p>
+      <div class="cta">
+        <a class="btn" href="tel:+19057875600">Call (905) 787-5600</a>
+        <a class="btn ghost" href="#quote">Text a quote</a>
+      </div>
+    </div>
+    <div class="pic">
+      <img src="img/p9.jpg" alt="A black BMW parked under the Singh Detailerz storefront sign in Brampton" width="1050" height="1400">
+      <div class="card glass">
+        <span class="big">4.9</span>
+        <small>from 105 Google reviews<br>115 East Dr, Brampton</small>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="lead">
+  <div class="wrap">
+    <q>Amazing job, my car looks new. Very professional Service.</q>
+    <cite>Aman K., Google</cite>
+  </div>
+</section>
+
+<section class="board" id="quote">
+  <div class="wrap">
+    <div>
+      <h2 class="d">What does your car need?</h2>
+      <p class="sub">These are the lines on their own sign. Tap what you want and the text writes itself.</p>
+      <div class="sign"><img src="img/p7.jpg" alt="Printed Singh Detailerz sign listing interior cleaning, car wash, paint correction, ceramic coating, headlights restore, window tint, PPF and more, with the number 905-787-5600" width="1400" height="896" loading="lazy"></div>
+    </div>
+    <div>
+      <div class="chips" id="chips" role="group" aria-label="Services">
+        <button class="chip" type="button" aria-pressed="false">Interior Cleaning</button>
+        <button class="chip" type="button" aria-pressed="false">Car Wash</button>
+        <button class="chip" type="button" aria-pressed="false">Hand Wash</button>
+        <button class="chip" type="button" aria-pressed="false">Paint Correction</button>
+        <button class="chip" type="button" aria-pressed="false">Ceramic Coating</button>
+        <button class="chip" type="button" aria-pressed="false">Headlights Restore</button>
+        <button class="chip" type="button" aria-pressed="false">Window Tint</button>
+        <button class="chip" type="button" aria-pressed="false">PPF</button>
+        <button class="chip" type="button" aria-pressed="false">Full Body Wrap</button>
+        <button class="chip" type="button" aria-pressed="false">Custom Decals</button>
+        <button class="chip" type="button" aria-pressed="false">Smoke Lights</button>
+        <button class="chip" type="button" aria-pressed="false">Dashcam</button>
+      </div>
+      <form class="quote glass" id="qf" autocomplete="on">
+        <p>Hi, I'm <input id="nm" name="name" placeholder="your name" aria-label="Your name" required> and I have a <input id="car" class="w" name="car" placeholder="year, make, model" aria-label="Your vehicle" required>. I need <span class="pick" id="pick">a quote</span>.</p>
+        <button class="btn" type="submit">Send this by text</button>
+        <small>Opens a text to (905) 787-5600. Nothing is sent until you press send.</small>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="shop">
+  <div class="wrap"><h2 class="d">Inside the shop</h2></div>
+  <div class="rail" tabindex="0" aria-label="Photos from the shop">
+    <figure><img src="img/p5c.jpg" alt="Inside the Singh Detailerz bay under hexagon lights with a white Honda" loading="lazy"></figure>
+    <figure><img src="img/p6.jpg" alt="A white hatchback in the bay on orange floor tiles" loading="lazy"></figure>
+    <figure><img src="img/p10.jpg" alt="A grey Honda Civic in the bay with the door open" loading="lazy"></figure>
+    <figure><img src="img/p4.jpg" alt="Cleaned Honda interior, dash and seats" loading="lazy"></figure>
+    <figure><img src="img/p12.jpg" alt="Cleaned rear leather seat" loading="lazy"></figure>
+    <figure><img src="img/p8.jpg" alt="Rear seat being vacuumed" loading="lazy"></figure>
+  </div>
+</section>
+
+<section class="rev">
+  <div class="wrap orbs">
+    <h2 class="d">Words from customers</h2>
+    <div class="grid">
+      <blockquote class="glass">Got My Civic detailed with the Premium Package and these guys did an amazing job I am very satisfied with the worm and all the guys were very professional. Must Visit<cite>Joe T., Google</cite></blockquote>
+      <blockquote class="glass">Have been taking my cars for detailing to Singh detailerz, excellent work and attention to detail. The team really goes above and beyond for customer satisfaction and really care to provide the best result every time, very passionate about their work. Easy to deal with and reasonable prices. Keep up the great work team!<cite>Saiesan S., Google</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="visit">
+  <div class="wrap grid">
+    <div>
+      <h2 class="d">Come in or call</h2>
+      <a class="num" href="tel:+19057875600">(905) 787-5600</a>
+      <p>115 East Dr, Brampton, ON L6T 1B7. Open 9 a.m. to 9 p.m., Monday to Sunday.</p>
+      <p style="margin-top:20px"><a class="btn ghost" href="https://www.google.com/maps/place/Singh+Detailerz/data=!4m7!3m6!1s0x882b3d73703b9bbd:0x3f7eebfaaed8626d!8m2!3d43.7101775!4d-79.6910168!16s%2Fg%2F11zjv03yx_!19sChIJvZs7cHM9K4gRbWLYrvrrfj8" rel="noopener">Open in Google Maps</a></p>
+    </div>
+    <div class="pic"><img src="img/p2.jpg" alt="A white Honda Civic outside the Singh Detailerz shop" loading="lazy"></div>
+  </div>
+</section>
+<footer><div class="wrap">Preview built by JPF. Not live yet.</div></footer>
+
+<div class="dock glass" role="group" aria-label="Call or text">
+  <a class="btn" href="tel:+19057875600">Call</a>
+  <a class="btn ghost" href="#quote">Text</a>
+</div>
+
+<script>
+(function(){
+  var chips=[].slice.call(document.querySelectorAll('.chip')),pick=document.getElementById('pick');
+  function sel(){return chips.filter(function(c){return c.getAttribute('aria-pressed')==='true'}).map(function(c){return c.textContent})}
+  function list(a){return a.length<2?a.join(''):a.slice(0,-1).join(', ')+' and '+a[a.length-1]}
+  chips.forEach(function(c){c.addEventListener('click',function(){
+    c.setAttribute('aria-pressed',c.getAttribute('aria-pressed')==='true'?'false':'true');
+    var s=sel();pick.textContent=s.length?list(s):'a quote';
+  })});
+  document.getElementById('qf').addEventListener('submit',function(e){
+    e.preventDefault();
+    var s=sel(),body="Hi Singh Detailerz, I'm "+document.getElementById('nm').value.trim()+" and I have a "+document.getElementById('car').value.trim()+". I need "+(s.length?list(s):'a quote')+".";
+    location.href='sms:+19057875600?&body='+encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
