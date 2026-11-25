@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>2 ball Cleaning Services | Home and business cleaning in Summerside, PEI</title>
+<meta name="description" content="2 ball Cleaning Services. Janitorial and home cleaning in Summerside, PEI. Call (902) 916-9536.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@500;700;800;900&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+1 Direction: room-picker-led. Pale waxed-floor page, the crew's own rooms are the show. Fresh, bright, trustworthy.
+2 Palette: wax floor #eef1f3 (their stripped and waxed floor photo), uniform slate #3d444b (crew shirts), logo blue #2f6db5 (blue logo on the crew shirts, the only accent),
+  oak #b97a45 (kitchen and dining room wood, used once as a rule), ink #161b20 (dark room bands).
+3 Fonts: Gabarito 800/900 display + Atkinson Hyperlegible body.
+4 Signature: "Pick a room" - glass chips swap the big photo between kitchen, bedroom, bathroom, floors and business space.
+5 Order: hero (photo + glass rating card), services as plain rows, pick-a-room, reviews, area + hours, fill-in quote, footer.
+6 Motion: one load sequence in the hero. Rating counts up once. Room switch crossfades. All off on reduced-motion. */
+:root{
+  --floor:#eef1f3; --slate:#3d444b; --blue:#2f6db5; --blue-d:#245a98; --oak:#b97a45; --ink:#161b20;
+  --line:rgba(22,27,32,.14);
+  --d:'Gabarito',system-ui,sans-serif; --b:'Atkinson Hyperlegible',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--b);font-size:17px;line-height:1.6;color:var(--ink);background:var(--floor);overflow-x:hidden;padding-bottom:96px}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--d);font-weight:900;line-height:.98;letter-spacing:-.015em;word-spacing:.12em}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+
+/* glass */
+.glass{background:rgba(238,241,243,.62);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 20px 60px -20px rgba(22,27,32,.35)}
+.glass-d{background:rgba(22,27,32,.55);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 20px 60px -20px rgba(22,27,32,.5);color:#fff}
+
+/* nav */
+.nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;margin-inline:auto;max-width:1180px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 8px 8px 20px;border-radius:999px}
+.nav b{font-family:var(--d);font-weight:900;font-size:19px;letter-spacing:-.01em;word-spacing:.1em}
+.nav .links{display:none;gap:26px;font-weight:700;font-size:15px}
+.nav .links a{text-decoration:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 24px;border-radius:999px;background:var(--blue);color:#fff;font-family:var(--d);font-weight:800;font-size:17px;text-decoration:none;border:0;cursor:pointer;transition:background .2s,transform .2s}
+.btn:hover{background:var(--blue-d)}
+.btn:active{transform:scale(.97)}
+.btn.ghost{background:transparent;color:inherit;border:1.5px solid currentColor}
+.btn.ghost:hover{background:rgba(255,255,255,.15)}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;background:var(--ink);overflow:hidden}
+.hero .ph{position:absolute;inset:0}
+.hero .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 55%}
+.hero .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,27,32,.35) 0%,rgba(22,27,32,0) 22%,rgba(22,27,32,.25) 34%,rgba(22,27,32,.82) 62%,rgba(22,27,32,.92) 100%)}
+.hero .in{position:relative;z-index:2;padding:0 0 118px}
+.hero h1{font-size:clamp(54px,16.5vw,76px)}
+.hero h1 span{display:block}
+.hero p.lead{margin-top:16px;font-size:18px;max-width:34ch;color:rgba(255,255,255,.92)}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.rate{position:absolute;z-index:3;top:78px;left:14px;width:auto;padding:10px 16px;border-radius:24px;font-size:14px;line-height:1.4}
+.rate .n{font-family:var(--d);font-weight:900;font-size:40px;line-height:1;letter-spacing:-.02em}
+.rate .s{color:var(--blue);letter-spacing:2px;font-size:15px}
+.rate q,.rate small{display:none}
+.rate .n{font-size:30px}
+.rate q{display:none;margin-top:8px;quotes:"\201C" "\201D"}
+.rate small{margin-top:6px;opacity:.75}
+.rise{opacity:0;transform:translateY(22px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+.rise.d1{animation-delay:.15s}.rise.d2{animation-delay:.3s}.rise.d3{animation-delay:.45s}.rise.d4{animation-delay:.7s}
+@keyframes rise{to{opacity:1;transform:none}}
+@keyframes drift{from{transform:translate3d(0,0,0)}to{transform:translate3d(40px,30px,0)}}
+
+/* services */
+.sec{padding:84px 0}
+.sec h2{font-size:clamp(38px,9.6vw,92px)}
+.services{display:grid;gap:36px;margin-top:8px}
+.rows{list-style:none;border-top:2px solid var(--ink)}
+.rows li{display:grid;grid-template-columns:1fr;gap:4px;padding:20px 0;border-bottom:1px solid var(--line)}
+.rows h3{font-size:28px;line-height:1.05}
+.rows p{max-width:46ch;color:#363d44}
+.badge{display:inline-flex;align-items:center;gap:10px;margin-top:22px;padding:10px 18px;border-radius:16px;background:#fff;border:1px solid var(--line);font-weight:700;font-size:15px}
+.badge i{width:10px;height:10px;border-radius:50%;background:var(--oak)}
+.sv-photo{display:none}
+
+/* pick a room */
+.rooms{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;animation:drift 26s ease-in-out infinite alternate}
+.o1{width:420px;height:420px;background:rgba(47,109,181,.35);top:-120px;left:-120px}
+.o2{width:360px;height:360px;background:rgba(185,122,69,.2);bottom:-100px;right:-80px;animation-duration:32s}
+.rooms .wrap{position:relative}
+.stage{position:relative;margin-top:30px;border-radius:28px;overflow:hidden;aspect-ratio:4/5;background:#000}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s}
+.stage img.on{opacity:1}
+.chips{position:absolute;left:12px;right:12px;bottom:12px;z-index:3;display:flex;gap:8px;overflow-x:auto;padding:8px;border-radius:999px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);color:#fff;font-family:var(--d);font-weight:700;font-size:16px;cursor:pointer;transition:background .2s,color .2s}
+.chip[aria-pressed=true]{background:#fff;color:var(--ink)}
+.cap{margin-top:16px;font-size:18px;max-width:46ch;min-height:3.4em;color:rgba(255,255,255,.88)}
+
+/* reviews */
+.rev{position:relative;overflow:hidden}
+.rev .o3{width:380px;height:380px;background:rgba(47,109,181,.2);top:30%;right:-120px}
+.rev .o4{width:300px;height:300px;background:rgba(185,122,69,.18);bottom:0;left:-100px;animation-duration:30s}
+.big{position:relative;margin-top:30px}
+.big blockquote{font-family:var(--d);font-weight:800;font-size:clamp(26px,6.6vw,52px);line-height:1.1;letter-spacing:-.01em;word-spacing:.08em;max-width:24ch}
+.big cite{display:block;margin-top:16px;font-style:normal;font-weight:700}
+.big cite em{font-style:normal;font-weight:400;opacity:.7}
+.mini{position:relative;display:grid;gap:14px;margin-top:34px}
+.mini figure{padding:22px;border-radius:22px}
+.mini blockquote{font-size:17px}
+.mini figcaption{margin-top:12px;font-weight:700;font-size:15px}
+.mini figcaption span{font-weight:400;opacity:.7}
+.score{display:flex;align-items:baseline;gap:12px;margin-top:6px;font-weight:700}
+.score b{font-family:var(--d);font-weight:900;font-size:54px;line-height:1;color:var(--blue)}
+
+/* area */
+.area{background:#fff}
+.area .grid{display:grid;gap:34px;margin-top:26px}
+.hours{list-style:none;border-top:2px solid var(--ink)}
+.hours li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-weight:700}
+.hours li span{font-weight:400}
+.area address{font-style:normal;font-size:20px}
+.area .tel{display:inline-block;margin-top:14px;font-family:var(--d);font-weight:900;font-size:clamp(34px,9vw,56px);letter-spacing:-.02em;text-decoration:none;color:var(--blue)}
+.rule{height:6px;width:84px;border-radius:3px;background:var(--oak);margin:0 0 22px}
+
+/* quote */
+.quote{position:relative;overflow:hidden;background:var(--slate);color:#fff}
+.quote .o5{width:460px;height:460px;background:rgba(47,109,181,.5);top:-140px;right:-120px}
+.quote .o6{width:340px;height:340px;background:rgba(185,122,69,.28);bottom:-120px;left:-100px;animation-duration:34s}
+.panel{position:relative;margin-top:28px;padding:28px 22px;border-radius:28px}
+.sentence{font-family:var(--d);font-weight:800;font-size:clamp(24px,6.4vw,40px);line-height:1.5;letter-spacing:-.01em}
+.sentence input,.sentence select{font:inherit;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);border-radius:14px;padding:0 12px;min-height:52px;max-width:100%;width:12ch;-webkit-appearance:none;appearance:none}
+.sentence input#nm{width:12ch}
+.sentence select{width:auto;padding-right:30px;background-image:linear-gradient(45deg,transparent 50%,#fff 50%),linear-gradient(135deg,#fff 50%,transparent 50%);background-position:calc(100% - 16px) 50%,calc(100% - 11px) 50%;background-size:5px 5px;background-repeat:no-repeat}
+.sentence select option{color:#000}
+.sentence input::placeholder{color:rgba(255,255,255,.55)}
+.sentence input:focus,.sentence select:focus{outline:none;border-color:#fff;box-shadow:0 0 0 3px var(--blue)}
+.panel .btn{margin-top:22px;width:100%;min-height:56px;font-size:19px}
+.panel small{display:block;margin-top:14px;opacity:.8;font-size:15px}
+
+footer{padding:34px 0 120px;font-size:15px;background:var(--ink);color:rgba(255,255,255,.8)}
+
+/* dock */
+.dock{background:rgba(238,241,243,.82);position:fixed;z-index:60;left:12px;right:12px;bottom:12px;margin-inline:auto;max-width:420px;display:flex;gap:8px;padding:8px;border-radius:999px}
+.dock a{flex:1;min-height:50px;display:flex;align-items:center;justify-content:center;border-radius:999px;font-family:var(--d);font-weight:800;font-size:18px;text-decoration:none}
+.dock .c{background:var(--blue);color:#fff}
+.dock .t{color:var(--ink)}
+
+@media(min-width:880px){
+  body{padding-bottom:0;font-size:18px}
+  .wrap{width:min(1180px,100% - 80px)}
+  .nav{top:16px;padding-left:26px}
+  .nav .links{display:flex}
+  .dock{display:none}
+  footer{padding-bottom:40px}
+  .hero{background:var(--floor);color:var(--ink);align-items:center}
+  .hero .ph{left:auto;width:48%}
+  .hero .ph::after{background:linear-gradient(90deg,rgba(238,241,243,.0) 0%,rgba(238,241,243,0) 100%)}
+  .hero .in{padding:130px 0 70px;width:min(1180px,100% - 80px);margin-inline:auto}
+  .hero .in>*{max-width:52%}
+  .hero h1{font-size:clamp(84px,9.4vw,138px)}
+  .hero p.lead{color:#363d44;font-size:21px}
+  .hero .btn.ghost:hover{background:rgba(22,27,32,.06)}
+  .rate q{display:block}.rate small{display:block}.rate .n{font-size:40px}
+  .rate{top:auto;bottom:56px;right:auto;left:calc(52% - 40px);width:290px;padding:18px 20px}
+  .sec{padding:130px 0}
+  .services{grid-template-columns:1.1fr .9fr;gap:70px;align-items:start}
+  .sv-photo{display:block;border-radius:28px;overflow:hidden;aspect-ratio:4/5;position:sticky;top:100px}
+  .sv-photo img{width:100%;height:100%;object-fit:cover}
+  .rows li{grid-template-columns:260px 1fr;gap:24px;align-items:baseline}
+  .stage{aspect-ratio:16/9;border-radius:32px}
+  .stage img{object-position:50% 50%}
+  .chips{left:50%;right:auto;transform:translateX(-50%);bottom:22px;overflow:visible}
+  .mini{grid-template-columns:repeat(2,1fr)}
+  .area .grid{grid-template-columns:1fr 1fr;gap:80px}
+  .sentence{font-size:44px}
+  .panel{padding:56px 60px}
+  .panel .btn{width:auto;min-width:280px}
+}
+@media(max-width:879px){
+  .nav .btn{min-height:42px;padding:0 18px;font-size:16px}
+  .nav b{font-size:17px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .rise{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav glass" aria-label="Main">
+  <b>2 ball Cleaning</b>
+  <div class="links"><a href="#services">Services</a><a href="#rooms">Rooms</a><a href="#reviews">Reviews</a><a href="#area">Hours</a><a href="#quote">Quote</a></div>
+  <a class="btn" href="tel:+19029169536">Call now</a>
+</nav>
+
+<header class="hero">
+  <div class="ph"><img src="img/p8.jpg" alt="Two 2 ball cleaners buffing a large hall floor"></div>
+  <aside class="rate glass rise d4" aria-label="Google rating">
+    <div class="n"><span id="cnt">5.0</span> <span class="s" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+    <div>35 Google reviews</div>
+    <q>It was such a wonderful feeling to come home to a beautifully cleaned house.</q>
+    <small>Shelly M., Google</small>
+  </aside>
+  <div class="in wrap">
+    <h1><span class="rise d1">Fresh rooms.</span><span class="rise d2">Shining floors.</span></h1>
+    <p class="lead rise d3">2 ball Cleaning Services. Janitorial and home cleaning in Summerside, serving all of PEI.</p>
+    <div class="cta rise d3">
+      <a class="btn" href="tel:+19029169536">Call (902) 916-9536</a>
+      <a class="btn ghost" href="#quote">Get a quote by text</a>
+    </div>
+  </div>
+</header>
+
+<section class="sec" id="services">
+  <div class="wrap">
+    <h2>What we clean</h2>
+    <div class="services">
+      <div>
+        <ul class="rows">
+          <li><h3>Home cleaning</h3><p>Kitchens, bedrooms, bathrooms and basements, cleaned with attention to detail.</p></li>
+          <li><h3>Deep cleaning</h3><p>A full deep clean of your living area, booked fast.</p></li>
+          <li><h3>Business cleaning</h3><p>Commercial cleaning for offices and public spaces, on contract.</p></li>
+          <li><h3>Disinfection</h3><p>Cleaning and disinfection for homes and businesses across PEI.</p></li>
+          <li><h3>Strip and wax floors</h3><p>Rain, snow or shine, the floors get done.</p></li>
+        </ul>
+        <span class="badge"><i></i>Licensed and insured. Islandwide.</span>
+      </div>
+      <div class="sv-photo"><img src="img/p3.jpg" alt="Two cleaners working in a bright kitchen" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec rooms" id="rooms">
+  <i class="orb o1"></i><i class="orb o2"></i>
+  <div class="wrap">
+    <h2>Pick a room</h2>
+    <div class="stage" id="stage">
+      <img class="on" src="img/p3.jpg" alt="Kitchen being cleaned by two cleaners">
+      <img src="img/p6.jpg" alt="Two cleaners making up a bedroom" loading="lazy">
+      <img src="img/p7.jpg" alt="Clean bathroom with a soaking tub" loading="lazy">
+      <img src="img/p8.jpg" alt="Cleaners buffing a hall floor" loading="lazy">
+      <img src="img/p11.jpg" alt="Clean rec room with a dark floor and green wall" loading="lazy">
+      <div class="chips glass-d" role="group" aria-label="Rooms">
+        <button class="chip" aria-pressed="true" data-i="0">Kitchen</button>
+        <button class="chip" aria-pressed="false" data-i="1">Bedroom</button>
+        <button class="chip" aria-pressed="false" data-i="2">Bathroom</button>
+        <button class="chip" aria-pressed="false" data-i="3">Floors</button>
+        <button class="chip" aria-pressed="false" data-i="4">Business space</button>
+      </div>
+    </div>
+    <p class="cap" id="cap" aria-live="polite"></p>
+  </div>
+</section>
+
+<section class="sec rev" id="reviews">
+  <i class="orb o3"></i><i class="orb o4"></i>
+  <div class="wrap">
+    <h2>What customers say</h2>
+    <p class="score"><b>5.0</b> from 35 Google reviews</p>
+    <figure class="big">
+      <blockquote>&ldquo;Excellent service! They did a fantastic job cleaning my home.&rdquo;</blockquote>
+      <cite>Hanan M. <em>Google</em></cite>
+    </figure>
+    <div class="mini">
+      <figure class="glass"><blockquote>&ldquo;We are so pleased with 2 Ball Cleaning Services! It was such a wonderful feeling to come home to a beautifully cleaned house.&rdquo;</blockquote><figcaption>Shelly M. <span>Google</span></figcaption></figure>
+      <figure class="glass"><blockquote>&ldquo;Very organized and reliable. They accommodated our inquiry on a timely manner.&rdquo;</blockquote><figcaption>Eigfer B. <span>Google</span></figcaption></figure>
+      <figure class="glass"><blockquote>&ldquo;Great service and very positive attitude!&rdquo;</blockquote><figcaption>Madiha A. <span>Google</span></figcaption></figure>
+      <figure class="glass"><blockquote>&ldquo;I went from inquiry to booked in a few hours.&rdquo;</blockquote><figcaption>Backwoods Burger <span>Google</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec area" id="area">
+  <div class="wrap">
+    <div class="rule"></div>
+    <h2>Summerside, serving PEI</h2>
+    <div class="grid">
+      <div>
+        <address>454 MacEwen Rd<br>Summerside, PE C1N 6E9</address>
+        <a class="tel" href="tel:+19029169536">(902) 916-9536</a>
+      </div>
+      <ul class="hours" aria-label="Hours">
+        <li>Monday to Saturday <span>9 a.m. to 5 p.m.</span></li>
+        <li>Sunday <span>Closed</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec quote" id="quote">
+  <i class="orb o5"></i><i class="orb o6"></i>
+  <div class="wrap">
+    <h2>Get a quote by text</h2>
+    <form class="panel glass-d" id="qf" autocomplete="off">
+      <p class="sentence">Hi, I'm <input id="nm" required placeholder="your name" aria-label="Your name"> and I need
+        <select id="need" aria-label="What you need"><option>home cleaning</option><option>a deep clean</option><option>business cleaning</option><option>floor stripping and waxing</option><option>disinfection</option></select>
+        in <input id="ar" placeholder="your town" aria-label="Your town">.</p>
+      <button class="btn" type="submit">Text 2 ball Cleaning</button>
+      <small>This opens a text message to (902) 916-9536. You can edit it before you send.</small>
+    </form>
+  </div>
+</section>
+
+<footer><div class="wrap">Preview built by JPF. Not live yet.</div></footer>
+
+<nav class="dock glass" aria-label="Call or text">
+  <a class="t" href="sms:+19029169536">Text</a>
+  <a class="c" href="tel:+19029169536">Call now</a>
+</nav>
+
+<script>
+(function(){
+  var caps=[
+    "Kitchens and fridges, cleaned with attention to detail.",
+    "Bedrooms made up fresh, two cleaners at a time.",
+    "Bathrooms done properly, tub to floor.",
+    "Stripped and waxed floors. Rain, snow or shine.",
+    "Commercial cleaning for business spaces, on contract."
+  ];
+  var imgs=document.querySelectorAll('#stage img'),chips=document.querySelectorAll('.chip'),cap=document.getElementById('cap');
+  function pick(i){imgs.forEach(function(m,k){m.classList.toggle('on',k===i)});chips.forEach(function(c,k){c.setAttribute('aria-pressed',k===i)});cap.textContent=caps[i];}
+  chips.forEach(function(c){c.addEventListener('click',function(){pick(+c.dataset.i)})});
+  pick(0);
+  document.getElementById('qf').addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=document.getElementById('nm').value.trim(),w=document.getElementById('need').value,a=document.getElementById('ar').value.trim();
+    var body="Hi, I'm "+n+" and I need "+w+(a?" in "+a:"")+". Can I get a quote?";
+    location.href="sms:+19029169536?&body="+encodeURIComponent(body);
+  });
+  var el=document.getElementById('cnt');
+  if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
+    var t0=null;el.textContent='0.0';
+    setTimeout(function(){requestAnimationFrame(function s(t){t0=t0||t;var p=Math.min((t-t0)/1100,1);el.textContent=(5*(1-Math.pow(1-p,3))).toFixed(1);if(p<1)requestAnimationFrame(s)})},700);
+  }
+})();
+</script>
+</body>
+</html>
