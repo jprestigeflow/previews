@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>TYBO Concrete Coatings &amp; Restoration | Concrete resurfacing and parging, St. Catharines</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* PLAN: dark-premium, porch-led. Direction: black-slate porch photo owns the top, stone-grey sections, one orange.
+   Palette: slate #14171a (black porch tile), stone #a9b2ab (grey-green coating on their porches), mortar #ecebe5 (light coating),
+   brick #b4533a (brick in their photos, used on tiny details only), orange #e8692a (van + flyer phone strip, buttons only).
+   Fonts: Fjalla One display + Atkinson Hyperlegible body. Signature: "Pick the surface" picker (photo + their own words).
+   Order: hero, numbers, picker, services ledger, van band, reviews, quote sentence, hours. Motion: one hero load, picker crossfade. */
+:root{--ink:#14171a;--ink2:#1d2226;--stone:#a9b2ab;--mortar:#ecebe5;--brick:#b4533a;--or:#e8692a;--line:rgba(255,255,255,.16)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font:400 17px/1.6 "Atkinson Hyperlegible",system-ui,sans-serif;background:var(--ink);color:var(--mortar);overflow-x:hidden;padding-bottom:96px}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,.disp{font-family:"Fjalla One",Impact,sans-serif;font-weight:400;letter-spacing:-.005em;word-spacing:.12em;line-height:1.02}
+:focus-visible{outline:3px solid var(--or);outline-offset:3px}
+.wrap{width:min(1200px,100% - 40px);margin-inline:auto}
+.glass{background:rgba(29,34,38,.55);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 20px 60px -20px rgba(0,0,0,.55)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:48px;padding:0 26px;border-radius:999px;font:700 16px "Atkinson Hyperlegible",sans-serif;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .17s,background .17s}
+.btn:active{transform:scale(.98)}
+.btn.or{background:var(--or);color:#17110d}
+.btn.or:hover{background:#f07a3c}
+.btn.gl{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);color:#fff}
+.btn.gl:hover{background:rgba(255,255,255,.18)}
+
+/* nav */
+.nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;max-width:1100px;margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 6px 6px 20px;border-radius:999px}
+.nav b{font:400 19px "Fjalla One",sans-serif;word-spacing:.12em;white-space:nowrap}
+.nav .links{display:none;gap:26px;font-size:15px}
+.nav .links a{text-decoration:none;opacity:.85}.nav .links a:hover{opacity:1}
+.nav .btn{min-height:44px;padding:0 20px}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 60%;z-index:-2;animation:zoom 1.6s cubic-bezier(.2,.7,.2,1) both}
+.hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(20,23,26,.55) 0,rgba(20,23,26,.35) 30%,rgba(20,23,26,.7) 55%,rgba(20,23,26,.95) 100%)}
+.hero .wrap{padding:120px 0 104px;display:grid;gap:26px}
+.hero h1{font-size:clamp(58px,15.5vw,150px);max-width:11ch;animation:rise 1s .35s cubic-bezier(.2,.7,.2,1) both}
+.hero p.sub{max-width:34ch;font-size:18px;color:#e4e3dc;animation:rise 1s .5s both}
+.hero .cta .gl{display:none}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px;animation:rise 1s .6s both}
+.hcard{border-radius:24px;padding:18px 20px;max-width:360px;animation:rise 1s .8s both}
+.hcard .big{font:400 40px "Fjalla One",sans-serif;line-height:1}
+.hcard .big small{font:400 15px "Atkinson Hyperlegible",sans-serif;opacity:.85;margin-left:6px}
+.hcard q{display:block;margin-top:8px;font-size:15px;line-height:1.45;quotes:"\201C" "\201D"}
+.hcard cite{display:block;margin-top:6px;font-size:13.5px;font-style:normal;opacity:.8}
+@keyframes zoom{from{transform:scale(1.12)}to{transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
+/* numbers */
+.nums{background:var(--mortar);color:var(--ink);padding:56px 0}
+.nums .wrap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.nums .wrap>div{border-left:3px solid var(--brick);padding-left:14px}
+.nums .n{font:400 clamp(40px,9vw,88px) "Fjalla One",sans-serif;line-height:1}
+.nums .l{font-size:14.5px;line-height:1.35;margin-top:6px;color:#3b4247}
+
+/* picker */
+.pick{padding:90px 0;position:relative;overflow:hidden;isolation:isolate}
+.orb{position:absolute;z-index:-1;border-radius:50%;filter:blur(90px);opacity:.38;animation:drift 26s ease-in-out infinite alternate}
+.orb.a{width:520px;height:520px;background:#4a5a52;top:-120px;right:-120px}
+.orb.b{width:420px;height:420px;background:#6b3523;bottom:-140px;left:-100px;animation-duration:32s}
+@keyframes drift{to{transform:translate(-60px,50px)}}
+.pick h2{font-size:clamp(44px,9vw,104px);max-width:12ch}
+.pick .intro{margin-top:16px;max-width:46ch;color:#cfd2cb}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:32px 0 22px}
+.chip{min-height:46px;padding:0 20px;border-radius:999px;font:700 15.5px "Atkinson Hyperlegible",sans-serif;color:#fff;cursor:pointer;transition:transform .17s,background .17s}
+.chip:active{transform:scale(.97)}
+.chip[aria-pressed=true]{background:var(--or);border-color:var(--or);color:#17110d}
+.stage{display:grid;gap:18px}
+.frame{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/3.6;background:var(--ink2)}
+.frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s}
+.frame img.on{opacity:1}
+.say h3{font-size:clamp(32px,6vw,52px)}
+.say p{margin-top:12px;max-width:52ch;font-size:18px}
+.say .src{margin-top:12px;font-size:14px;opacity:.7}
+.say .src a{text-underline-offset:3px}
+
+/* services */
+.svc{background:var(--stone);color:var(--ink);padding:90px 0}
+.svc h2{font-size:clamp(40px,8vw,88px);max-width:13ch}
+.svc .cols{display:grid;gap:36px;margin-top:40px}
+.svc ul{list-style:none;border-top:2px solid var(--ink)}
+.svc li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:15px 0;border-bottom:1px solid rgba(20,23,26,.35);font:400 clamp(24px,4.4vw,34px) "Fjalla One",sans-serif;word-spacing:.1em}
+.svc li span{font:400 14.5px "Atkinson Hyperlegible",sans-serif;opacity:.75;text-align:right;max-width:20ch}
+.svc .side{display:grid;gap:14px;align-content:start}
+.svc .side p{font-size:15px;color:#2c3338}
+
+/* van band */
+.band{position:relative;min-height:82svh;display:flex;align-items:flex-start;isolation:isolate;overflow:hidden}
+.band>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:82% 100%;z-index:-2}
+.band:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(20,23,26,0) 45%,rgba(20,23,26,.88))}
+.band .wrap{padding:60px 0}
+.band h2{font-size:clamp(40px,8vw,92px);max-width:14ch}
+.band p{margin-top:12px;max-width:44ch;color:#e6e5de}
+
+/* reviews */
+.rev{padding:96px 0;position:relative;isolation:isolate;overflow:hidden}
+.rev .orb.a{top:auto;bottom:-160px;right:auto;left:-80px;background:#52605a}
+.lead q{display:block;font:400 clamp(30px,6.4vw,66px)/1.1 "Fjalla One",sans-serif;word-spacing:.1em;quotes:"\201C" "\201D";max-width:20ch}
+.lead cite{display:block;margin-top:18px;font-style:normal;color:#cfd2cb}
+.rg{display:grid;gap:14px;margin-top:44px}
+.rc{border-radius:22px;padding:22px}
+.rc q{display:block;font-size:17px;line-height:1.55;quotes:"\201C" "\201D"}
+.rc cite{display:block;margin-top:10px;font-style:normal;font-size:14px;opacity:.78}
+.stars{letter-spacing:3px;color:var(--or);font-size:15px;margin-bottom:8px}
+.gl-link{margin-top:26px;display:inline-block;font-size:15px}
+
+/* quote */
+.quote{background:var(--mortar);color:var(--ink);padding:96px 0}
+.quote h2{font-size:clamp(40px,8vw,88px);max-width:12ch}
+.qp{margin-top:34px;border-radius:28px;padding:28px 22px;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.8);box-shadow:inset 0 1px 0 #fff,0 24px 60px -24px rgba(20,23,26,.35);-webkit-backdrop-filter:blur(20px) saturate(160%);backdrop-filter:blur(20px) saturate(160%)}
+.qp .sent{font:400 clamp(24px,5.2vw,40px)/1.9 "Fjalla One",sans-serif;word-spacing:.1em}
+.qp input,.qp select{font:400 inherit/1.2 "Fjalla One",sans-serif;font-size:inherit;word-spacing:inherit;color:var(--ink);background:rgba(255,255,255,.7);border:1px solid rgba(20,23,26,.3);border-radius:14px;padding:4px 14px;min-height:52px;max-width:100%;width:min(100%,15em);-webkit-appearance:none;appearance:none}
+.qp input:focus,.qp select:focus{outline:3px solid var(--or);outline-offset:1px;border-color:var(--or)}
+.qp .row{margin-top:22px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.qp .row small{font-size:14.5px;color:#3b4247;max-width:34ch}
+
+/* hours */
+.info{padding:80px 0 60px}
+.info .wrap{display:grid;gap:36px}
+.info h2{font-size:clamp(34px,6vw,60px)}
+.info p{margin-top:10px;max-width:40ch;color:#cfd2cb}
+.hrs{list-style:none;border-top:1px solid var(--line)}
+.hrs li{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--line);font-size:16px}
+.hrs li.cl{opacity:.6}
+footer{padding:30px 0 40px;font-size:14px;color:#aab0aa;border-top:1px solid var(--line)}
+
+/* dock */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:12px;display:flex;gap:8px;padding:8px;border-radius:999px;max-width:460px;margin-inline:auto}
+.dock .btn{flex:1;min-height:50px;padding:0 10px}
+
+@media(min-width:820px){
+ body{padding-bottom:0}
+ .nav .links{display:flex}
+ .dock{display:none}
+ .hero .wrap{grid-template-columns:1.5fr 1fr;align-items:end;padding-bottom:64px}
+ .hero .l{display:grid;gap:26px}
+ .hcard{justify-self:end}
+ .hero .cta .gl{display:inline-flex}
+ .hero .wrap{padding-bottom:64px}
+ .band{min-height:70svh}
+ .band>img{object-position:60% 70%}
+ .stage{grid-template-columns:1.35fr 1fr;align-items:center;gap:48px}
+ .svc .cols{grid-template-columns:1.5fr 1fr;gap:64px}
+ .rg{grid-template-columns:repeat(3,1fr)}
+ .info .wrap{grid-template-columns:1fr 1fr;gap:80px}
+ .qp{padding:46px 52px}
+}
+@media(max-width:819px){.nw{white-space:nowrap;display:block}.nw input{width:calc(100% - .5em)}.band{display:flex;flex-direction:column-reverse;min-height:0;background:var(--ink)}.band>img{position:static;height:auto;aspect-ratio:1.4;object-position:75% 100%}.band:after{display:none}.band .wrap{padding:56px 0 28px}.hero .l{display:grid;gap:22px}.hcard{max-width:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav class="nav glass" aria-label="Main">
+ <b>TYBO Concrete</b>
+ <div class="links"><a href="#surfaces">Surfaces</a><a href="#work">Services</a><a href="#reviews">Reviews</a><a href="#quote">Quote</a></div>
+ <a class="btn or" href="tel:+19053534300">Call (905) 353-4300</a>
+</nav>
+
+<header class="hero">
+ <img src="img/p10.jpg" alt="Front entrance steps and porch finished in a black tile-pattern concrete coating" width="1400" height="1400">
+ <div class="wrap">
+  <div class="l">
+   <h1>Worn concrete, made new.</h1>
+   <p class="sub">TYBO Concrete Coatings &amp; Restoration resurfaces porches, steps, patios and foundation walls across the Niagara Region.</p>
+   <div class="cta"><a class="btn or" href="#quote">Get a quote</a><a class="btn gl" href="tel:+19053534300">Call (905) 353-4300</a></div>
+  </div>
+  <aside class="hcard glass" aria-label="Google rating">
+   <div class="big">4.5<small>on Google, 56 reviews</small></div>
+   <q>Top notch work. Would definitely recommend him to others.</q>
+   <cite>Braden K., Google</cite>
+  </aside>
+ </div>
+</header>
+
+<section class="nums" aria-label="At a glance">
+ <div class="wrap">
+  <div><div class="n" data-to="4.5" data-dec="1">4.5</div><div class="l">Google rating</div></div>
+  <div><div class="n" data-to="56">56</div><div class="l">Google reviews</div></div>
+  <div><div class="n">2004</div><div class="l">Est., licensed and insured (their Instagram)</div></div>
+ </div>
+</section>
+
+<section class="pick" id="surfaces">
+ <div class="orb a"></div><div class="orb b"></div>
+ <div class="wrap">
+  <h2>Pick the surface.</h2>
+  <p class="intro">Real TYBO jobs, in their own words. Tap a surface to see it.</p>
+  <div class="chips" role="group" aria-label="Surface">
+   <button class="chip glass" aria-pressed="true" data-i="0">Entrances</button>
+   <button class="chip glass" aria-pressed="false" data-i="1">Porches</button>
+   <button class="chip glass" aria-pressed="false" data-i="2">Patios</button>
+   <button class="chip glass" aria-pressed="false" data-i="3">Walkways</button>
+   <button class="chip glass" aria-pressed="false" data-i="4">Foundations</button>
+  </div>
+  <div class="stage">
+   <div class="frame">
+    <img class="on" src="img/p8.jpg" alt="Entrance step resurfaced in smooth grey concrete coating" loading="lazy">
+    <img src="img/c-porch.jpg" alt="Porch resurfaced with a smooth grey finish" loading="lazy">
+    <img src="img/c-patio.jpg" alt="Patio resurfaced in a stone-pattern coating" loading="lazy">
+    <img src="img/c-walk.jpg" alt="Concrete walkway beside a brick home" loading="lazy">
+    <img src="img/c-parge.jpg" alt="Parged foundation wall along the base of a brick home" loading="lazy">
+   </div>
+   <div class="say" aria-live="polite">
+    <h3 id="sh">Entrances</h3>
+    <p id="sp"></p>
+    <div class="src">From their Instagram</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="svc" id="work">
+ <div class="wrap">
+  <h2>What they resurface and repair.</h2>
+  <div class="cols">
+   <ul>
+    <li>Stairs and porches</li>
+    <li>Patios and walkways</li>
+    <li>Pool decks and driveways</li>
+    <li>Floors</li>
+    <li>Parging <span>foundation walls</span></li>
+    <li>Stucco effect wall coatings</li>
+    <li>Coatings leveling</li>
+    <li>Concrete sealing</li>
+   </ul>
+   <div class="side">
+    <p>Colour finishes and designs available. Residential and commercial. From their printed ad.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="band" aria-label="TYBO van">
+ <img src="img/c-van.jpg" alt="White TYBO Concrete van with phone number 905.353.4300 parked on a lawn" loading="lazy">
+ <div class="wrap">
+  <h2>Same phone number since 2005.</h2>
+  <p>Their first newspaper ads ran in 2005. They posted it: &ldquo;The craft continues. #SamePhoneNumberToo.&rdquo;</p>
+ </div>
+</section>
+
+<section class="rev" id="reviews">
+ <div class="orb a"></div>
+ <div class="wrap">
+  <div class="lead">
+   <q>We are super happy with his work and will have him back out to finish some other jobs.</q>
+   <cite>Elizabeth B., Google</cite>
+  </div>
+  <div class="rg">
+   <figure class="rc glass"><div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><q>Tyler did an excellent job parging our foundation. He was in constant communication with us and quick to respond to any questions or messages we had.</q><cite>Braden K., Google</cite></figure>
+   <figure class="rc glass"><div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><q>I am very pleased with the job done by Tyler on the parging around my home.</q><cite>Carol S., Google</cite></figure>
+   <figure class="rc glass"><div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><q>Tyler is definately the best in the business!</q><cite>James P., Google</cite></figure>
+  </div>
+  <a class="gl-link" href="https://www.google.com/maps/place/TYBO+Concrete+Coatings+%26+Restoration/data=!4m7!3m6!1s0x89d34249d8176b03:0x43d5db23df594524!8m2!3d43.0490127!4d-79.1994244!16s%2Fg%2F12qg4r5cs!19sChIJA2sX2ElC04kRJEVZ3yPb1UM">All 56 reviews on Google</a>
+ </div>
+</section>
+
+<section class="quote" id="quote">
+ <div class="wrap">
+  <h2>Tell Tyler what needs fixing.</h2>
+  <form class="qp" id="qf">
+   <div class="sent">
+    Hi, I'm <input id="qn" name="n" placeholder="your name" autocomplete="name" required aria-label="Your name">
+    and I need
+    <select id="qj" aria-label="What you need"><option>porch resurfacing</option><option>entrance or step repair</option><option>patio resurfacing</option><option>walkway repair</option><option>foundation parging</option><option>concrete sealing</option><option>something else</option></select>
+    in <span class="nw"><input id="qt" name="t" placeholder="your town" autocomplete="address-level2" aria-label="Your town">.</span>
+   </div>
+   <div class="row"><button class="btn or" type="submit">Text this to TYBO</button><small>Opens a text to (905) 353-4300 on your phone.</small></div>
+  </form>
+ </div>
+</section>
+
+<section class="info">
+ <div class="wrap">
+  <div>
+   <h2>St. Catharines and the Niagara Region.</h2>
+   <p>Concrete contractor based in St. Catharines, Ontario. Call (905) 353-4300.</p>
+   <p style="margin-top:20px"><a class="btn gl" href="tel:+19053534300">Call (905) 353-4300</a></p>
+  </div>
+  <ul class="hrs" aria-label="Hours">
+   <li><span>Monday</span><span>9 a.m. to 5 p.m.</span></li>
+   <li><span>Tuesday</span><span>9 a.m. to 5 p.m.</span></li>
+   <li><span>Wednesday</span><span>9 a.m. to 5 p.m.</span></li>
+   <li><span>Thursday</span><span>9 a.m. to 5 p.m.</span></li>
+   <li><span>Friday</span><span>9 a.m. to 5 p.m.</span></li>
+   <li><span>Saturday</span><span>9 a.m. to 5 p.m.</span></li>
+   <li class="cl"><span>Sunday</span><span>Closed</span></li>
+  </ul>
+ </div>
+</section>
+<footer><div class="wrap">Preview built by JPF. Not live yet.</div></footer>
+
+<div class="dock glass" role="group" aria-label="Contact">
+ <a class="btn or" href="tel:+19053534300">Call</a>
+ <a class="btn gl" href="sms:+19053534300">Text</a>
+</div>
+
+<script>
+const D=[
+ ["Entrances","If your entrance is painted, chipped, spalled or deteriorating, resurface it with a proper concrete coating."],
+ ["Porches","Residential porch and entrance restoration professionals. Porch resurfacing, one porch at a time."],
+ ["Patios","Patio resurfacing. Their stone-pattern finish, done over the existing concrete."],
+ ["Walkways","Walkways are on their list of surfaces: stairs, porches, patios, floors, walkways, pool decks and driveways."],
+ ["Foundations","Parging the base of your home provides protection to your home's foundation walls and maintains the appearance, all in one."]
+];
+const chips=[...document.querySelectorAll('.chip')],imgs=[...document.querySelectorAll('.frame img')];
+function show(i){chips.forEach((c,k)=>c.setAttribute('aria-pressed',k==i));imgs.forEach((m,k)=>m.classList.toggle('on',k==i));
+ document.getElementById('sh').textContent=D[i][0];document.getElementById('sp').textContent=D[i][1]}
+chips.forEach(c=>c.onclick=()=>show(+c.dataset.i));show(0);
+document.getElementById('qf').addEventListener('submit',e=>{e.preventDefault();
+ const n=qn.value.trim(),t=qt.value.trim();
+ const b="Hi TYBO, I'm "+n+" and I need "+qj.value+(t?" in "+t:"")+". Can I get a quote?";
+ location.href="sms:+19053534300?&body="+encodeURIComponent(b)});
+</script>
+</body>
+</html>
