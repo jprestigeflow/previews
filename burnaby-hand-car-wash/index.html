@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Burnaby Hand Car Wash | Hand car wash in Burnaby, open 7 days</title>
+<meta name="description" content="Hand car wash at 5679 Imperial St, Burnaby. Open every day 9 to 6. Call (778) 865-2679.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ 1 Direction: their own printed price poster, blown up. Dotted-leader price rows, sign yellow on slate-navy. Grey floor tile as faint texture.
+ 2 Palette: #0E1520 base (floor/dark car), #3B4350 tile grey (p2,p9), #F7B500 sign yellow (p7,p8,p10), #1F3F8F poster navy (p10), #F2F4F7 wall grey, #fff.
+ 3 Fonts: Bowlby One (display, loose word-spacing) + Urbanist (body).
+ 4 Signature: tappable vehicle-size price list -> big price ticket -> prefilled text.
+ 5 Order: hero, price list, storefront band, jobs mosaic, reviews, text quote, visit, footer.
+ 6 Motion: one hero load sequence; price number swaps on tap. Reduced-motion respected. */
+:root{--base:#0E1520;--tile:#3B4350;--sun:#F7B500;--navy:#1F3F8F;--wall:#F2F4F7;--ink:#101828}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Urbanist',system-ui,sans-serif;font-size:17px;line-height:1.55;color:#fff;background:var(--base);overflow-x:hidden;padding-bottom:92px}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.disp{font-family:'Bowlby One',Impact,sans-serif;font-weight:400;letter-spacing:-.005em;word-spacing:.14em;line-height:.98}
+.wrap{width:min(1200px,100% - 40px);margin-inline:auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:54px;padding:0 26px;border-radius:999px;font-weight:800;font-size:17px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:transform .15s}
+.btn:active{transform:scale(.97)}
+.btn.sun{background:var(--sun);color:#101828;box-shadow:0 12px 30px -10px rgba(247,181,0,.6)}
+.btn.glass{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.35);box-shadow:inset 0 1px 0 rgba(255,255,255,.35);-webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%)}
+
+/* nav pill */
+.nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;display:flex;align-items:center;justify-content:space-between;gap:10px;max-width:980px;margin-inline:auto;padding:8px 8px 8px 20px;border-radius:999px;background:rgba(14,21,32,.5);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 20px 50px -20px rgba(0,0,0,.6);-webkit-backdrop-filter:blur(22px) saturate(170%);backdrop-filter:blur(22px) saturate(170%)}
+.nav b{font-family:'Bowlby One',sans-serif;font-weight:400;font-size:15px;word-spacing:.1em;white-space:nowrap}
+.nav .btn{min-height:42px;padding:0 20px;font-size:15px}
+.nav .links{display:none;gap:26px;font-weight:700;font-size:15px}
+.nav .links a{text-decoration:none;opacity:.85}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;isolation:isolate;overflow:hidden;background:var(--base)}
+.hero .ph{position:absolute;inset:0;z-index:-2}
+.hero .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(14,21,32,.55) 0%,rgba(14,21,32,.05) 22%,rgba(14,21,32,.82) 44%,rgba(14,21,32,.97) 64%)}
+.hero .in{width:min(1200px,100% - 40px);margin:0 auto;padding:120px 0 108px}
+h1{font-size:clamp(54px,16vw,92px);margin-bottom:16px}
+h1 span{display:block}
+h1 .y{color:var(--sun)}
+.lede{font-size:19px;font-weight:600;max-width:30ch;margin-bottom:24px;color:rgba(255,255,255,.92)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px}
+.gcard{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:24px;max-width:420px;background:rgba(14,21,32,.5);border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 24px 60px -20px rgba(0,0,0,.6);-webkit-backdrop-filter:blur(22px) saturate(170%);backdrop-filter:blur(22px) saturate(170%)}
+.gcard .num{font-family:'Bowlby One',sans-serif;font-size:40px;line-height:1;color:var(--sun)}
+.gcard small{display:block;font-size:14px;line-height:1.35;color:rgba(255,255,255,.88)}
+.stars{display:flex;gap:2px;margin-bottom:2px}.stars svg{width:15px;height:15px;fill:var(--sun)}
+.load{opacity:0;transform:translateY(22px);animation:up .8s cubic-bezier(.2,.7,.2,1) forwards}
+.l1{animation-delay:.1s}.l2{animation-delay:.25s}.l3{animation-delay:.4s}.l4{animation-delay:.55s}.l5{animation-delay:.8s}
+@keyframes up{to{opacity:1;transform:none}}
+
+/* price section */
+.prices{background:var(--wall);color:var(--navy);padding:84px 0 92px;position:relative;overflow:hidden}
+.prices::before{content:"";position:absolute;inset:0;opacity:.5;background:
+ repeating-linear-gradient(45deg,transparent 0 17px,rgba(31,63,143,.06) 17px 18px),
+ repeating-linear-gradient(-45deg,transparent 0 17px,rgba(31,63,143,.06) 17px 18px)}
+.prices .wrap{position:relative}
+h2{font-size:clamp(38px,10vw,64px);margin-bottom:12px}
+.sub{color:#33415f;font-weight:600;margin-bottom:30px;max-width:44ch}
+.pgrid{display:grid;gap:22px}
+.rows{list-style:none}
+.rows button{all:unset;box-sizing:border-box;width:100%;display:flex;align-items:baseline;gap:8px;padding:15px 16px;border-radius:16px;cursor:pointer;font-weight:800;font-size:19px;color:var(--navy);min-height:54px;transition:background .2s}
+.rows button .lead{flex:1;border-bottom:3px dotted rgba(31,63,143,.4);transform:translateY(-4px);min-width:16px}
+.rows button .pr{font-family:'Bowlby One',sans-serif;font-size:21px}
+.rows button[aria-checked=true]{background:var(--sun);box-shadow:0 14px 30px -14px rgba(31,63,143,.6)}
+.rows button[aria-checked=true] .lead{border-color:rgba(16,24,40,.55)}
+.rows button:focus-visible{outline:3px solid var(--navy)}
+.ticket{background:var(--navy);color:#fff;border-radius:28px;padding:28px 24px;box-shadow:0 30px 70px -30px rgba(31,63,143,.8);position:relative}
+.ticket .who{font-weight:700;font-size:16px;opacity:.85}
+.ticket .big{font-family:'Bowlby One',sans-serif;font-size:clamp(76px,22vw,128px);line-height:1;color:var(--sun);margin:4px 0 4px}
+.ticket .big.pop{animation:pop .35s ease}
+@keyframes pop{from{transform:translateY(10px);opacity:.3}to{transform:none;opacity:1}}
+.ticket .gst{font-size:14px;opacity:.8;margin-bottom:18px}
+.ticket h3{font-size:16px;font-weight:800;margin-bottom:8px}
+.ticket ul{list-style:none;display:grid;gap:5px;margin-bottom:22px;font-size:16px}
+.ticket li{padding-left:22px;position:relative}
+.ticket li::before{content:"";position:absolute;left:2px;top:.5em;width:10px;height:6px;border-left:3px solid var(--sun);border-bottom:3px solid var(--sun);transform:rotate(-45deg)}
+.ticket .btn{width:100%}
+.extras{margin-top:34px;display:grid;gap:10px;font-weight:700;color:var(--navy)}
+.extras h3{font-family:'Bowlby One',sans-serif;font-weight:400;font-size:22px;word-spacing:.1em}
+.ex{display:flex;align-items:baseline;gap:8px}.ex i{flex:1;border-bottom:3px dotted rgba(31,63,143,.35);transform:translateY(-4px)}.ex b{font-family:'Bowlby One',sans-serif;font-weight:400}
+.ig{margin-top:30px;padding:20px;border-radius:22px;background:#fff;border:1px solid rgba(31,63,143,.14);font-size:16px;color:#26324f}
+.ig h3{font-size:17px;color:var(--navy);margin-bottom:8px;font-weight:800}
+.ig p{margin-top:8px}
+.ig small{display:block;margin-top:10px;font-size:14px;opacity:.8}
+
+/* storefront band */
+.band{background:var(--base);padding:0}
+.band img{width:100%;max-height:640px;object-fit:cover;object-position:50% 50%}
+.bandcap{width:min(1200px,100% - 40px);margin:0 auto;padding:18px 0 0;font-weight:600;font-size:15px;color:rgba(255,255,255,.8)}
+
+/* jobs */
+.jobs{padding:84px 0 40px;position:relative;background:var(--base)}
+.mosaic{display:grid;gap:14px;grid-template-columns:1fr;margin-top:28px}
+.mosaic figure{border-radius:24px;overflow:hidden;background:var(--tile)}
+.mosaic img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.mosaic figcaption{padding:12px 16px 14px;font-weight:700;font-size:15px;line-height:1.35;background:#161f2e}
+.mosaic figcaption span{display:block;font-weight:500;opacity:.75;font-size:14px}
+.mosaic .tall img{aspect-ratio:4/5}
+
+/* reviews */
+.rev{padding:70px 0 90px;position:relative;overflow:hidden;background:var(--base)}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;animation:drift 26s ease-in-out infinite alternate;z-index:0;pointer-events:none}
+.orb.a{width:420px;height:420px;background:var(--navy);left:-120px;top:20%}
+.orb.b{width:340px;height:340px;background:#8a6700;right:-100px;bottom:5%;animation-duration:32s}
+@keyframes drift{to{transform:translate(50px,-40px)}}
+.rev .wrap{position:relative;z-index:1}
+.bigq{font-size:clamp(25px,6.4vw,44px);font-weight:700;line-height:1.22;letter-spacing:-.01em;max-width:30ch;margin:18px 0 12px;text-wrap:balance}
+.who{font-weight:700;color:var(--sun);margin-bottom:34px}
+.cards{display:grid;gap:14px}
+.card{padding:22px;border-radius:24px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.25);-webkit-backdrop-filter:blur(20px) saturate(150%);backdrop-filter:blur(20px) saturate(150%)}
+.card p{font-size:17px;margin:8px 0 10px;color:rgba(255,255,255,.95)}
+.card b{font-size:15px;color:var(--sun)}
+
+/* quote */
+.quote{padding:84px 0 90px;background:linear-gradient(180deg,var(--base),#142038);position:relative;overflow:hidden}
+.quote .orb.a{left:auto;right:-140px;top:-60px;opacity:.45}
+.qpanel{position:relative;z-index:1;padding:28px 22px;border-radius:28px;background:rgba(14,21,32,.5);border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 30px 80px -30px rgba(0,0,0,.7);-webkit-backdrop-filter:blur(26px) saturate(160%);backdrop-filter:blur(26px) saturate(160%);max-width:860px}
+.sent{font-size:clamp(22px,5.6vw,32px);font-weight:700;line-height:2.1;margin:20px 0 24px}
+.sent input,.sent select{font:inherit;font-weight:800;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);border-radius:14px;padding:4px 12px;min-height:46px;max-width:100%;box-shadow:inset 0 1px 0 rgba(255,255,255,.2)}
+.sent select option{color:#101828}
+.sent input{width:9ch}.sent input.wide{width:min(100%,16ch)}
+.sent input::placeholder{color:rgba(255,255,255,.5);font-weight:600}
+.sent input:focus,.sent select:focus{outline:none;border-color:var(--sun);box-shadow:0 0 0 3px rgba(247,181,0,.35)}
+.note{font-size:14px;opacity:.8;margin-top:12px}
+
+/* visit */
+.visit{padding:84px 0 60px;background:var(--wall);color:var(--navy)}
+.vgrid{display:grid;gap:26px;margin-top:20px}
+.visit p,.visit li{font-weight:600;color:#26324f;font-size:18px}
+.visit .addr{font-family:'Bowlby One',sans-serif;font-size:clamp(26px,7vw,40px);color:var(--navy);line-height:1.1;word-spacing:.1em;text-decoration:none;display:block;margin-bottom:12px}
+.hrs{list-style:none;display:grid;gap:2px;max-width:340px}
+.hrs li{display:flex;justify-content:space-between;border-bottom:3px dotted rgba(31,63,143,.3);padding:6px 0}
+.visit .btn.sun{margin-top:18px}
+footer{padding:26px 20px 30px;text-align:center;background:#0a0f18;font-size:14px;color:rgba(255,255,255,.7)}
+footer b{display:block;color:#fff;margin-bottom:4px}
+
+/* dock */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));display:flex;gap:8px;padding:8px;border-radius:999px;max-width:460px;margin-inline:auto;background:rgba(14,21,32,.55);border:1px solid rgba(255,255,255,.25);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 20px 50px -15px rgba(0,0,0,.65);-webkit-backdrop-filter:blur(24px) saturate(170%);backdrop-filter:blur(24px) saturate(170%)}
+.dock .btn{flex:1;min-height:50px;padding:0 10px;font-size:16px}
+.dock .btn:first-child{flex:1.5}
+
+@media(min-width:760px){
+ body{padding-bottom:0;font-size:18px}
+ .nav .links{display:flex}
+ .dock{display:none}
+ .hero .ph{left:52%;inset-block:0;right:0;border-radius:0}
+ .hero{background:var(--base)}
+ .hero::before{content:"";position:absolute;inset:0;z-index:-2;opacity:.35;background:repeating-linear-gradient(45deg,transparent 0 21px,rgba(255,255,255,.06) 21px 22px),repeating-linear-gradient(-45deg,transparent 0 21px,rgba(255,255,255,.06) 21px 22px)}
+ .hero::after{background:linear-gradient(90deg,rgba(14,21,32,1) 0%,rgba(14,21,32,1) 50%,rgba(14,21,32,0) 62%),linear-gradient(0deg,rgba(14,21,32,.6),transparent 30%)}
+ .hero .in{padding:140px 0 64px}
+ h1{font-size:clamp(76px,7.6vw,100px)}
+ .hero .in{padding:140px 0 64px}
+ .hero .gcard{position:absolute;right:max(24px,calc((100vw - 1200px)/2));bottom:64px;max-width:340px}
+ .pgrid{grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
+ .ticket{position:sticky;top:96px;padding:36px 34px}
+ .mosaic{grid-template-columns:repeat(6,1fr);grid-auto-rows:auto}
+ .mosaic .w3{grid-column:span 3}.mosaic .w2{grid-column:span 2}.mosaic .w4{grid-column:span 4}
+ .mosaic img{aspect-ratio:auto;height:100%;min-height:300px}
+ .mosaic figure{display:flex;flex-direction:column}.mosaic figure img{flex:1}
+ .cards{grid-template-columns:repeat(3,1fr)}
+ .vgrid{grid-template-columns:1fr 1fr;gap:60px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}.load{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main">
+  <b>Burnaby Hand Car Wash</b>
+  <div class="links"><a href="#prices">Prices</a><a href="#jobs">Our work</a><a href="#reviews">Reviews</a><a href="#quote">Text us</a><a href="#visit">Visit</a></div>
+  <a class="btn sun" href="tel:+17788652679">Call</a>
+</nav>
+
+<header class="hero">
+  <div class="ph"><img src="img/p2.jpg" alt="A worker foaming a dark sedan at Burnaby Hand Car Wash" fetchpriority="high"></div>
+  <div class="in">
+    <h1 class="disp"><span class="load l1">Hand</span><span class="load l2 y">car wash.</span></h1>
+    <p class="lede load l3">Open 7 days, 9 to 6. No appointment needed. 5679 Imperial St, Burnaby.</p>
+    <div class="cta load l4">
+      <a class="btn sun" href="tel:+17788652679">Call (778) 865-2679</a>
+      <a class="btn glass" href="sms:+17788652679">Text us</a>
+    </div>
+    <div class="gcard load l5">
+      <div class="num">4.7</div>
+      <div><div class="stars" aria-label="4.7 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18l-6.5 4 1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18l-6.5 4 1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18l-6.5 4 1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18l-6.5 4 1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18l-6.5 4 1.7-7.4-5.7-5 7.5-.7z"/></svg></div>
+      <small>104 Google reviews</small></div>
+    </div>
+  </div>
+</header>
+
+<section class="prices" id="prices">
+  <div class="wrap">
+    <h2 class="disp">Pick your vehicle.</h2>
+    <p class="sub">The prices from their posted price list. Tap your size to see the price and what the wash includes.</p>
+    <div class="pgrid">
+      <ul class="rows" role="radiogroup" aria-label="Vehicle size" id="rows"></ul>
+      <aside class="ticket" aria-live="polite">
+        <div class="who" id="who">Sedan / Coupe</div>
+        <div class="big" id="big">$65</div>
+        <div class="gst">Plus GST. Extra charges may apply depending on the vehicle's condition.</div>
+        <h3>Every wash includes</h3>
+        <ul>
+          <li>Exterior hand wash and dry</li><li>Wheel cleaning</li><li>Interior air blow and vacuum</li><li>Wipe dashboard and center console</li><li>Window cleaning, inside and out</li><li>Wipe door jambs</li><li>Tire dressing</li>
+        </ul>
+        <a class="btn sun" id="tk" href="sms:+17788652679">Text us for a Sedan / Coupe wash</a>
+      </aside>
+    </div>
+    <div class="extras">
+      <h3>Add-ons</h3>
+      <div class="ex">Rinse rubber mats, driver's mat<i></i><b>$4</b></div>
+      <div class="ex">Rinse rubber mats, driver and passenger<i></i><b>$7</b></div>
+      <div class="ex">Rinse rubber mats, all mats<i></i><b>$10</b></div>
+      <div class="ex">Spray wax, whole vehicle (wipe-on)<i></i><b>$8</b></div>
+      <div class="ex">Deep wheel cleaning with woolies<i></i><b>$15</b></div>
+    </div>
+    <div class="ig">
+      <h3>Also on their Instagram, November 2026</h3>
+      <p>Complete Exterior Wash and Shine $99. Exterior Wash $38. Undercarriage Wash and foam $38. Headlight Restoration $68 a pair. All 5 seaters, vacuum and shampoo $88.</p>
+      <small>From @burnaby_handcarwash posts. Ask them which price fits your vehicle.</small>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-label="Storefront">
+  <img src="img/p7.jpg" alt="Burnaby Hand Car Wash storefront with a yellow sign reading Hand Car Wash, Open 7 Days A Week" loading="lazy">
+  <p class="bandcap">The yellow sign at 5679 Imperial St.</p>
+</section>
+
+<section class="jobs" id="jobs">
+  <div class="wrap">
+    <h2 class="disp">On the floor today.</h2>
+    <div class="mosaic">
+      <figure class="w4"><img src="img/foam-bmw.jpg" alt="A BMW covered in foam on the grey tile floor" loading="lazy"><figcaption>Foam on, hand wash next.</figcaption></figure>
+      <figure class="w2 tall"><img src="img/p9.jpg" alt="A white sports car with black wheels in the bay" loading="lazy"><figcaption>In the bay.</figcaption></figure>
+      <figure class="w2"><img src="img/headlight.jpg" alt="A yellowed headlight before restoration" loading="lazy"><figcaption>Headlight Restoration<span>$68 a pair</span></figcaption></figure>
+      <figure class="w2"><img src="img/seats.jpg" alt="A dirty car floor and seat before vacuum and shampoo" loading="lazy"><figcaption>Vacuum and shampoo<span>All 5 seaters, $88</span></figcaption></figure>
+      <figure class="w2"><img src="img/p11.jpg" alt="A clean grey back seat" loading="lazy"><figcaption>Inside, done.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="rev" id="reviews">
+  <span class="orb a"></span><span class="orb b"></span>
+  <div class="wrap">
+    <h2 class="disp">What drivers say.</h2>
+    <blockquote>
+      <p class="bigq">“Great experience! The staff were very welcoming and friendly. They did a really good job cleaning my car, and they even took care of some extra cleaning without charging me. Really appreciate the great service. I’ll definitely be back!”</p>
+      <p class="who">Santi S., Google, 5 stars</p>
+    </blockquote>
+    <div class="cards">
+      <div class="card"><div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18l-6.5 4 1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18l-6.5 4 1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18l-6.5 4 1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18l-6.5 4 1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18l-6.5 4 1.7-7.4-5.7-5 7.5-.7z"/></svg></div><p>“Excellent service! My car looks spotless, inside and out. The staff was friendly, professional, and paid attention to the details. I’m very happy with the results and will definitely come back!”</p><b>Stefania E., Google</b></div>
+      <div class="card"><div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18l-6.5 4 1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18l-6.5 4 1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18l-6.5 4 1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18l-6.5 4 1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18l-6.5 4 1.7-7.4-5.7-5 7.5-.7z"/></svg></div><p>“Very detailed and high standards. They will discuss your plans and suggest a personal price for u.”</p><b>Michelle Y., Google</b></div>
+      <div class="card"><div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18l-6.5 4 1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18l-6.5 4 1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18l-6.5 4 1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18l-6.5 4 1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18l-6.5 4 1.7-7.4-5.7-5 7.5-.7z"/></svg></div><p>“It’s been an amazing experience. The staff is very professional and did a thorough job with the interior detailing along with the exterior hand wash. The car looked extremely clean and refreshed afterward, and their attention to detail was …”</p><b>Vishal S., Google</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="quote" id="quote">
+  <span class="orb a"></span>
+  <div class="wrap">
+    <form class="qpanel" id="qf">
+      <h2 class="disp">Text us your car.</h2>
+      <p class="sent">
+        Hi, I'm <input id="qn" class="wide" placeholder="your name" aria-label="Your name" required>.
+        I drive a <select id="qs" aria-label="Vehicle size"></select>
+        and I need <input id="qw" class="wide" placeholder="a wash" aria-label="What you need" style="width:min(100%,14ch)">.
+      </p>
+      <button class="btn sun" type="submit">Send as a text</button>
+      <p class="note">This opens a text message to (778) 865-2679. Nothing is sent until you press send in your messages app.</p>
+    </form>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <h2 class="disp">Come by.</h2>
+    <div class="vgrid">
+      <div>
+        <a class="addr" href="https://www.google.com/maps/place/Burnaby+Hand+Car+Wash/data=!4m7!3m6!1s0x5486773312b61dd5:0x29f2084054bfce8d!8m2!3d49.2222166!4d-122.9816816!16s%2Fg%2F11zgqx0ph4!19sChIJ1R22EjN3hlQRjc6_VEAI8ik?authuser=0&hl=en&g_ep=EgoyMDI2MTEyMi4wIJJjKgBIAVAD&rclk=1">5679 Imperial St<br>Burnaby, BC V5J 1G1</a>
+        <p>Walk-ins welcome, no appointment needed.</p>
+        <a class="btn sun" href="tel:+17788652679">Call (778) 865-2679</a>
+      </div>
+      <ul class="hrs" aria-label="Hours">
+        <li><span>Monday</span><b>9 a.m. to 6 p.m.</b></li><li><span>Tuesday</span><b>9 a.m. to 6 p.m.</b></li><li><span>Wednesday</span><b>9 a.m. to 6 p.m.</b></li><li><span>Thursday</span><b>9 a.m. to 6 p.m.</b></li><li><span>Friday</span><b>9 a.m. to 6 p.m.</b></li><li><span>Saturday</span><b>9 a.m. to 6 p.m.</b></li><li><span>Sunday</span><b>9 a.m. to 6 p.m.</b></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer><b>Burnaby Hand Car Wash</b>Preview built by JPF. Not live yet.</footer>
+
+<div class="dock"><a class="btn sun" href="tel:+17788652679">Call now</a><a class="btn glass" href="sms:+17788652679">Text</a></div>
+
+<script>
+const SIZES=[["Small",55],["Sedan / Coupe",65],["Large car / Wagon",70],["SUV",85],["Large SUV / Mini van",90],["Truck",100],["Ex-large",140]];
+const rows=document.getElementById('rows'),big=document.getElementById('big'),who=document.getElementById('who'),tk=document.getElementById('tk'),qs=document.getElementById('qs');
+let cur=1;
+function pick(i){cur=i;const [n,p]=SIZES[i];
+  rows.querySelectorAll('button').forEach((b,j)=>{b.setAttribute('aria-checked',j===i);b.tabIndex=j===i?0:-1});
+  who.textContent=n;big.textContent='$'+p;big.classList.remove('pop');void big.offsetWidth;big.classList.add('pop');
+  tk.textContent='Text us for a '+n+' wash';
+  tk.href='sms:+17788652679?&body='+encodeURIComponent("Hi, I'd like a hand car wash for my "+n+" ($"+p+" on your price list). When can I come in?");
+  qs.value=n;}
+SIZES.forEach(([n,p],i)=>{const li=document.createElement('li'),b=document.createElement('button');
+  b.type='button';b.setAttribute('role','radio');b.innerHTML='<span>'+n+'</span><span class="lead"></span><span class="pr">$'+p+'</span>';
+  b.onclick=()=>pick(i);
+  b.onkeydown=e=>{if(e.key==='ArrowDown'||e.key==='ArrowRight'){e.preventDefault();pick((cur+1)%7);rows.querySelectorAll('button')[cur].focus()}if(e.key==='ArrowUp'||e.key==='ArrowLeft'){e.preventDefault();pick((cur+6)%7);rows.querySelectorAll('button')[cur].focus()}};
+  li.appendChild(b);rows.appendChild(li);
+  const o=document.createElement('option');o.value=n;o.textContent=n;qs.appendChild(o);});
+pick(1);
+qs.addEventListener('change',()=>{const i=SIZES.findIndex(s=>s[0]===qs.value);if(i>-1)pick(i)});
+document.getElementById('qf').addEventListener('submit',e=>{e.preventDefault();
+  const n=document.getElementById('qn').value.trim(),w=document.getElementById('qw').value.trim()||'a hand car wash';
+  const body="Hi, I'm "+n+". I drive a "+qs.value+" and I need "+w+".";
+  location.href='sms:+17788652679?&body='+encodeURIComponent(body);});
+</script>
+</body>
+</html>
