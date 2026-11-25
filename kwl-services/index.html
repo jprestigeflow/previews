@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>KWL SERVICES | House cleaning in Markham, Ontario</title>
+<meta name="description" content="KWL SERVICES, house cleaning service in Markham, Ontario. Deep cleaning, carpet and mattress cleaning. Call (437) 259-1233.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@500;700;800;900&family=Radio+Canada+Big:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+direction: surface-index-led. Big type list of the surfaces they clean; tap one and its real photo swaps in.
+palette: deep #0a1c33 (navy from flyer text), ice #eef5fa (logo card background), logo blue #1f63b4 (ring and letters in logo), cyan #35b8ee (logo sparkle, the one accent).
+fonts: Darker Grotesque 900 display + Radio Canada Big body.
+signature: the surface index.
+order: hero, surface index, before/after pair, reviews, membership + hours, quote form, footer.
+motion: one load sequence (headline lines rise, glass card floats in); orbs drift; reduced-motion off.
+*/
+:root{
+  --deep:#0a1c33; --deep2:#10294a; --ice:#eef5fa; --blue:#1f63b4; --cyan:#35b8ee; --white:#fff;
+  --r-pill:999px; --r-big:26px; --r-small:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Radio Canada Big',system-ui,sans-serif;background:var(--ice);color:var(--deep);font-size:17px;line-height:1.55;overflow-x:hidden;padding-bottom:96px}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:6px}
+.display{font-family:'Darker Grotesque',sans-serif;font-weight:900;line-height:.86;letter-spacing:-.01em;word-spacing:.14em}
+.wrap{width:min(1200px,100% - 40px);margin-inline:auto}
+
+/* glass */
+.glass{background:rgba(10,28,51,.58);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 20px 60px -20px rgba(10,28,51,.45);color:#fff}
+.glass-light{background:rgba(255,255,255,.62);-webkit-backdrop-filter:blur(22px) saturate(170%);backdrop-filter:blur(22px) saturate(170%);border:1px solid rgba(255,255,255,.7);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 20px 60px -24px rgba(10,28,51,.3);color:var(--deep)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:48px;padding:0 24px;border-radius:var(--r-pill);font:600 16px/1 'Radio Canada Big',sans-serif;text-decoration:none;border:0;cursor:pointer;transition:transform .18s,background .18s}
+.btn:active{transform:scale(.98)}
+.btn-main{background:var(--cyan);color:var(--deep)}
+.btn-main:hover{background:#5ccaf6}
+.btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.35)}
+
+/* nav */
+nav{position:fixed;top:12px;left:12px;right:12px;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 6px 6px 20px;border-radius:var(--r-pill);max-width:1000px;margin-inline:auto}
+nav b{font-family:'Darker Grotesque',sans-serif;font-weight:900;font-size:26px;letter-spacing:.01em;line-height:1}
+nav .btn{min-height:44px;padding:0 20px}
+nav b{white-space:nowrap}nav .btn{white-space:nowrap}.short{display:inline}.long{display:none}nav .links{display:none;gap:26px;font-size:15px}
+nav .links a{text-decoration:none;opacity:.85}
+nav .links a:hover{opacity:1}
+
+/* hero */
+.hero{position:relative;background:var(--deep);color:#fff;padding:104px 0 54px;overflow:hidden;isolation:isolate}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);z-index:-1;animation:drift 26s ease-in-out infinite alternate}
+.o1{width:380px;height:380px;background:radial-gradient(circle,rgba(53,184,238,.42),transparent 70%);top:-90px;right:-120px}
+.o2{width:420px;height:420px;background:radial-gradient(circle,rgba(31,99,180,.6),transparent 70%);bottom:-140px;left:-160px;animation-duration:32s}
+@keyframes drift{to{transform:translate(40px,30px) scale(1.12)}}
+.hero h1{font-size:clamp(76px,22vw,148px);margin-bottom:22px}
+.hero h1 span{display:block;overflow:hidden;padding-bottom:.16em;margin-bottom:-.1em}
+.hero h1 span i{display:block;font-style:normal;transform:translateY(105%);animation:rise .9s cubic-bezier(.2,.8,.2,1) forwards}
+.hero h1 span:nth-child(2) i{animation-delay:.12s;color:var(--cyan)}
+.hero h1 span:nth-child(3) i{animation-delay:.24s}
+@keyframes rise{to{transform:none}}
+.lede{font-size:18px;max-width:34ch;color:#d4e3f2;margin-bottom:26px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}
+.heroPhoto{position:relative;border-radius:var(--r-big);overflow:hidden;aspect-ratio:1194/1010;background:#223}
+.heroPhoto img{width:100%;height:100%;object-fit:cover}
+.rateCard{position:absolute;left:12px;right:12px;bottom:12px;padding:16px 18px;border-radius:22px;opacity:0;transform:translateY(24px);animation:floatin .9s .7s cubic-bezier(.2,.8,.2,1) forwards;background:rgba(10,28,51,.72)}
+@keyframes floatin{to{opacity:1;transform:none}}
+.rateCard .big{font-family:'Darker Grotesque',sans-serif;font-weight:900;font-size:40px;line-height:1}
+.rateCard .big small{font:500 15px 'Radio Canada Big',sans-serif;margin-left:8px;color:#cfe2f4}
+.rateCard p{font-size:15px;margin-top:6px;color:#eaf3fb}
+
+/* sections */
+section{padding:72px 0}
+h2{font-size:clamp(52px,13vw,104px);margin-bottom:12px}
+.sub{max-width:44ch;color:#3b4f68;margin-bottom:34px}
+
+/* surface index */
+.idx{display:grid;gap:22px}
+.panel{position:relative;border-radius:var(--r-big);overflow:hidden;background:var(--deep);aspect-ratio:4/4.2}
+.panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .45s}
+.panel img.on{opacity:1}
+.panel .cap{position:absolute;left:12px;right:12px;bottom:12px;padding:14px 18px;border-radius:20px;font-size:15px;min-height:60px}
+.list{list-style:none;border-top:1px solid rgba(10,28,51,.2)}
+.list li{border-bottom:1px solid rgba(10,28,51,.2)}
+.list button{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:12px 4px 10px;min-height:64px;transition:padding .25s,color .25s}
+.list .nm{font-family:'Darker Grotesque',sans-serif;font-weight:900;font-size:clamp(46px,11vw,76px);line-height:.9;word-spacing:.12em;color:rgba(10,28,51,.38);transition:color .25s}
+.list .tx{font-size:14px;max-width:16ch;text-align:right;color:transparent;transition:color .25s;line-height:1.3}
+.list button[aria-pressed=true] .nm{color:var(--deep)}
+.list button[aria-pressed=true] .tx{color:var(--blue)}
+.list button:hover .nm{color:var(--deep)}
+.list button:focus-visible{outline:3px solid var(--cyan);outline-offset:-3px}
+.list button[aria-pressed=true]{padding-left:14px}
+
+/* before after */
+.ba{background:var(--deep);color:#fff;position:relative;overflow:hidden;isolation:isolate}
+.ba .o1{top:auto;bottom:-120px;right:-100px}
+.pair{display:grid;gap:18px}
+.pair figure{border-radius:var(--r-big);overflow:hidden;position:relative;aspect-ratio:1194/1010}
+.pair figure.b4{aspect-ratio:1194/1000}
+.pair img{width:100%;height:100%;object-fit:cover}
+.pair figcaption{position:absolute;left:12px;bottom:12px;padding:8px 16px;border-radius:var(--r-pill);font-size:14px}
+.bigq{font-family:'Darker Grotesque',sans-serif;font-weight:800;font-size:clamp(34px,8.4vw,64px);line-height:1;margin:56px 0 12px;max-width:22ch;word-spacing:.1em}
+.who{color:#b9d3ec;font-size:15px}
+
+/* reviews */
+.rev{position:relative;isolation:isolate;overflow:hidden}
+.rev .o1{top:40px;right:-160px}
+.rev .o2{bottom:20px;left:-200px}
+.cards{display:grid;gap:16px;margin-top:30px}
+.card{padding:24px;border-radius:22px;font-size:16px}
+.card b{display:block;margin-top:14px;font-size:15px;font-weight:600}
+.score{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+.score .display{font-size:clamp(90px,24vw,170px)}
+.score span{font-size:16px;max-width:14ch;color:#3b4f68;line-height:1.3}
+
+/* membership / hours */
+.two{display:grid;gap:36px}
+.mem{background:var(--blue);color:#fff;border-radius:var(--r-big);padding:30px 26px}
+.mem h3{font-family:'Darker Grotesque',sans-serif;font-weight:900;font-size:clamp(44px,10vw,64px);line-height:.9;margin-bottom:14px;word-spacing:.1em}
+.mem p{color:#e0eefb;max-width:36ch}
+.mem ul{list-style:none;margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+.mem li{padding:9px 16px;border-radius:var(--r-small);background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);font-size:15px}
+dl.hrs{display:grid;grid-template-columns:auto 1fr;gap:0 24px;font-size:17px;margin-top:8px}
+dl.hrs dt,dl.hrs dd{padding:12px 0;border-bottom:1px solid rgba(10,28,51,.18)}
+dl.hrs dt{font-weight:600}
+.addr{margin-top:20px;color:#3b4f68;font-size:16px}
+
+/* quote */
+.quote{background:var(--deep);color:#fff;position:relative;overflow:hidden;isolation:isolate}
+.quote .o2{bottom:auto;top:-160px;left:auto;right:-160px}
+.qp{padding:28px 22px;border-radius:var(--r-big);margin-top:26px}
+.sent{font-size:clamp(22px,5.4vw,30px);line-height:2.05;font-weight:500}
+.sent input,.sent select{font:inherit;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);border-radius:12px;padding:2px 12px;min-height:44px;width:min(100%,15ch);transition:border-color .18s,background .18s;max-width:100%}
+.sent select{width:auto;appearance:none;-webkit-appearance:none;padding-right:14px}
+.sent select option{color:var(--deep)}
+.sent input::placeholder{color:rgba(255,255,255,.5)}
+.sent input:focus,.sent select:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 3px rgba(53,184,238,.35);background:rgba(255,255,255,.16)}
+.qp .btn{margin-top:22px;width:100%}
+.note{font-size:14px;color:#b9d3ec;margin-top:12px}
+
+footer{background:#06121f;color:#9fb7d0;padding:40px 0 30px;font-size:15px}
+footer .wrap{display:grid;gap:10px}
+footer b{color:#fff;font-size:17px}
+
+/* dock */
+.dock{position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:60;display:flex;gap:8px;padding:8px;border-radius:var(--r-pill)}
+.dock .btn{flex:1;min-height:52px}
+.dock .btn-ghost{background:rgba(255,255,255,.14)}
+
+@media(min-width:820px){
+  body{padding-bottom:0;font-size:18px}
+  .dock{display:none}
+  nav .links{display:flex}.short{display:none}.long{display:inline}
+  nav{left:50%;right:auto;transform:translateX(-50%);width:min(1000px,calc(100% - 40px))}
+  .hero{padding:130px 0 80px}
+  .hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+  .heroPhoto{aspect-ratio:4/4.3}
+  .heroPhoto img{object-position:30% 50%}
+  section{padding:120px 0}
+  .idx{grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+  .panel{position:sticky;top:96px;aspect-ratio:4/4.6}
+  .pair{grid-template-columns:1fr 1fr;gap:24px}
+  .cards{grid-template-columns:repeat(3,1fr)}
+  .two{grid-template-columns:1.1fr .9fr;gap:70px;align-items:start}
+  .qp{padding:46px 52px}
+  .qp .btn{width:auto}
+  .sent input{width:14ch}
+}
+@media(max-width:380px){.list .tx{display:none}}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .hero h1 span i{transform:none}.rateCard{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav class="glass" aria-label="Main">
+  <b>KWL SERVICES</b>
+  <div class="links"><a href="#surfaces">What we clean</a><a href="#reviews">Reviews</a><a href="#hours">Hours</a><a href="#quote">Get a quote</a></div>
+  <a class="btn btn-main" href="tel:+14372591233"><span class="long">Call (437) 259-1233</span><span class="short">Call now</span></a>
+</nav>
+
+<header class="hero">
+  <div class="orb o1"></div><div class="orb o2"></div>
+  <div class="wrap grid">
+    <div>
+      <h1 class="display"><span><i>Deep</i></span><span><i>cleaning</i></span><span><i>Markham.</i></span></h1>
+      <p class="lede">KWL SERVICES is a house cleaning service in Markham, Ontario. Mattresses, carpets, stairs, bathrooms, kitchens.</p>
+      <div class="cta">
+        <a class="btn btn-main" href="tel:+14372591233">Call (437) 259-1233</a>
+        <a class="btn btn-ghost" href="#quote">Get a quote by text</a>
+      </div>
+    </div>
+    <div class="heroPhoto">
+      <img src="img/b1.jpg" alt="Mattress before and after cleaning by KWL SERVICES" width="1194" height="1010">
+      <div class="rateCard glass">
+        <div class="big">5.0<small>21 Google reviews</small></div>
+        <p>"He was professional, friendly, and very thorough." Ben N., Google</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="surfaces">
+  <div class="wrap">
+    <h2 class="display">What gets cleaned</h2>
+    <p class="sub">Tap a surface to see their work on it. Every photo is from KWL SERVICES.</p>
+    <div class="idx">
+      <div class="panel" aria-live="polite">
+        <img src="img/s2.jpg" data-i="0" class="on" alt="Steam cleaning a mattress">
+        <img src="img/b4.jpg" data-i="1" alt="Carpet before and after cleaning" loading="lazy">
+        <img src="img/s6.jpg" data-i="2" alt="Steam cleaning carpeted stairs" loading="lazy">
+        <img src="img/s8.jpg" data-i="3" alt="Bathtub and shower after deep cleaning" loading="lazy">
+        <img src="img/s5.jpg" data-i="4" alt="Scrubbing a kitchen sink with a power brush" loading="lazy">
+        <img src="img/s10.jpg" data-i="5" alt="Steam cleaning a tatame mat" loading="lazy">
+        <div class="cap glass" id="cap">Mattress cleaning</div>
+      </div>
+      <ul class="list" id="list">
+        <li><button aria-pressed="true" data-i="0" data-c="Mattress cleaning"><span class="nm">Mattresses</span><span class="tx">Mattress cleaning</span></button></li>
+        <li><button aria-pressed="false" data-i="1" data-c="Carpet and rug cleaning, before and after"><span class="nm">Carpets</span><span class="tx">Carpet and rug cleaning</span></button></li>
+        <li><button aria-pressed="false" data-i="2" data-c="Stairs. Sundas R.: &quot;They made them look brand new!&quot;"><span class="nm">Stairs</span><span class="tx">Stair carpet cleaning</span></button></li>
+        <li><button aria-pressed="false" data-i="3" data-c="Bathroom deep cleaning and mildew removal treatment"><span class="nm">Bathrooms</span><span class="tx">Deep clean and mildew removal</span></button></li>
+        <li><button aria-pressed="false" data-i="4" data-c="Kitchen deep cleaning"><span class="nm">Kitchens</span><span class="tx">Kitchen deep cleaning</span></button></li>
+        <li><button aria-pressed="false" data-i="5" data-c="Tatame and mat disinfection with a steaming system"><span class="nm">Mats</span><span class="tx">Tatame and mat disinfection</span></button></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="ba">
+  <div class="orb o1"></div>
+  <div class="wrap">
+    <h2 class="display">Before. After.</h2>
+    <div class="pair">
+      <figure class="b4"><img src="img/s2.jpg" alt="Steam cleaning a mattress" loading="lazy" style="object-position:50% 40%"><figcaption class="glass">Steam on a mattress</figcaption></figure>
+      <figure class="b4"><img src="img/b4.jpg" alt="Carpet, stained before and clean after" loading="lazy"><figcaption class="glass">Carpet</figcaption></figure>
+    </div>
+    <p class="bigq">"Kurt's mildew treatment helped wipe clean all the red build up we had in the grouts of our bathroom shower tiles."</p>
+    <p class="who">Jeeva K., Google</p>
+  </div>
+</section>
+
+<section class="rev" id="reviews">
+  <div class="orb o1"></div><div class="orb o2"></div>
+  <div class="wrap">
+    <div class="score"><div class="display">5.0</div><span>from 21 Google reviews</span></div>
+    <h2 class="display">Word from customers</h2>
+    <div class="cards">
+      <blockquote class="card glass-light">"I had a great experience with KWL Services. Kurt did an amazing job cleaning and paid attention to all the little details. He was professional, friendly, and very thorough. The place felt fresh and ready to move in."<b>Ben N., Google</b></blockquote>
+      <blockquote class="card glass-light">"KWL Cleaning Company did an amazing job on my stair carpets. They made them look brand new! Excellent service, very reasonable pricing, and I highly recommend them to anyone looking for a professional carpet cleaning."<b>Sundas R., Google</b></blockquote>
+      <blockquote class="card glass-light">"Highly recommended KWL Services for your next cleaning job!"<b>Vaarunan S., Google</b></blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="hours" style="padding-top:20px">
+  <div class="wrap two">
+    <div class="mem">
+      <h3>Weekly cleaning</h3>
+      <p>KWL SERVICES offers membership programs with a weekly cleaning service, for homes, offices and industrial spaces. Ask them for details.</p>
+      <ul><li>Homes</li><li>Offices</li><li>Industrial spaces</li></ul>
+    </div>
+    <div>
+      <h2 class="display" style="font-size:clamp(52px,12vw,88px)">Open 7 days</h2>
+      <dl class="hrs">
+        <dt>Monday to Friday</dt><dd>8 a.m. to 8 p.m.</dd>
+        <dt>Saturday and Sunday</dt><dd>6 a.m. to 6 p.m.</dd>
+      </dl>
+      <p class="addr">37 Pettigrew Ct, Markham, ON L3S 1K4. Serving Markham and Toronto.</p>
+    </div>
+  </div>
+</section>
+
+<section class="quote" id="quote">
+  <div class="orb o2"></div>
+  <div class="wrap">
+    <h2 class="display">Get a quote</h2>
+    <p class="sub" style="color:#b9d3ec">Fill in the sentence. It opens a text to KWL SERVICES on your phone.</p>
+    <form class="qp glass" id="qf">
+      <p class="sent">Hi KWL, I'm <input id="n" placeholder="your name" aria-label="Your name" required autocomplete="given-name"> in <input id="a" placeholder="your area" aria-label="Your area" autocomplete="address-level2">. I need
+        <select id="s" aria-label="What needs cleaning"><option>a deep clean</option><option>carpets cleaned</option><option>a mattress cleaned</option><option>stairs cleaned</option><option>a bathroom cleaned</option><option>a kitchen cleaned</option><option>weekly cleaning</option></select>. Can you give me a quote?</p>
+      <button class="btn btn-main" type="submit">Text my quote request</button>
+      <p class="note">Or call (437) 259-1233.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <b>KWL SERVICES</b>
+    <span>House cleaning service, Markham, Ontario. (437) 259-1233</span>
+    <span>Preview built by JPF. Not live yet.</span>
+  </div>
+</footer>
+
+<div class="dock glass" role="group" aria-label="Contact">
+  <a class="btn btn-main" href="tel:+14372591233">Call</a>
+  <a class="btn btn-ghost" href="sms:+14372591233">Text</a>
+</div>
+
+<script>
+(function(){
+  var imgs=document.querySelectorAll('.panel img'),cap=document.getElementById('cap'),btns=document.querySelectorAll('#list button');
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.setAttribute('aria-pressed','false')});
+    b.setAttribute('aria-pressed','true');
+    imgs.forEach(function(im){im.classList.toggle('on',im.dataset.i===b.dataset.i)});
+    cap.textContent=b.dataset.c;
+  })});
+  document.getElementById('qf').addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=document.getElementById('n').value.trim(),a=document.getElementById('a').value.trim(),s=document.getElementById('s').value;
+    var body="Hi KWL, I'm "+n+(a?" in "+a:"")+". I need "+s+". Can you give me a quote?";
+    location.href='sms:+14372591233?&body='+encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
