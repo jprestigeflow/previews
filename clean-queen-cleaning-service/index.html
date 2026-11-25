@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Clean Queen Cleaning Service | House cleaning in Innisfil Beach, ON</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Marcellus&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ direction: hotel-clean calm. Full-bleed room photo, big headline, room-by-room tour as the signature.
+ palette: chalk #eef1f0 (white oven/walls) / navy #121c27 (dark cabinets) / brass #b98a3e (cabinet pulls) / teal #1d4f4a (bathroom tile in their video)
+ fonts: Marcellus display, Jost body
+ signature: room tour with glass chips swapping one big real photo
+ order: hero, services list, room tour, reviews (teal band), area+hours, quote sentence, footer
+ motion: one hero load sequence, counters once, orbs drift (paused on reduced motion)
+*/
+:root{--chalk:#eef1f0;--navy:#121c27;--brass:#b98a3e;--brass-d:#8a6320;--teal:#1d4f4a;--mut:#4a5763}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Jost',sans-serif;background:var(--chalk);color:var(--navy);font-size:17px;line-height:1.55;overflow-x:hidden;padding-bottom:96px}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
+h1,h2,h3{font-family:'Marcellus',serif;font-weight:400;letter-spacing:0;word-spacing:.08em}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+.glass{background:rgba(238,241,240,.6);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.45);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 20px 60px -20px rgba(18,28,39,.35)}
+.glass.dk{background:rgba(18,28,39,.55);border-color:rgba(255,255,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 20px 60px -20px rgba(0,0,0,.5);color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:transform .18s,background .18s}
+.btn:active{transform:scale(.98)}
+.btn.p{background:var(--brass);color:var(--navy)}.btn.p:hover{background:#c99a4a}
+.btn.g{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.4)}
+/* nav */
+nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;max-width:1000px;margin:0 auto;height:56px;border-radius:999px;display:flex;align-items:center;justify-content:space-between;padding:0 8px 0 22px}
+nav b{font-family:'Marcellus',serif;font-weight:400;font-size:20px;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.4)}
+nav .btn{min-height:44px;padding:0 20px}
+nav.scrolled b{text-shadow:none;color:var(--navy)}
+nav.scrolled{background:rgba(238,241,240,.7)}
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:var(--navy)}
+.hero picture,.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero img{transform:scale(1.08);animation:settle 1.6s cubic-bezier(.2,.7,.2,1) forwards}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,16,24,.9) 0%,rgba(10,16,24,.6) 40%,rgba(10,16,24,0) 70%),linear-gradient(to right,rgba(10,16,24,.45),rgba(10,16,24,0) 55%),linear-gradient(to bottom,rgba(10,16,24,.5),rgba(10,16,24,0) 22%)}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-bottom:104px;display:grid;gap:26px}
+.hero h1{font-size:clamp(54px,13vw,120px);line-height:1;max-width:11ch;opacity:0;animation:rise .9s .35s forwards}
+.hero .sub{font-size:19px;max-width:30ch;opacity:0;animation:rise .9s .55s forwards;color:#eef1f0}
+.hero .cta{display:flex;gap:10px;flex-wrap:wrap;opacity:0;animation:rise .9s .7s forwards}
+.hero .l{display:grid;gap:22px}
+.rate{border-radius:22px;padding:16px 20px;max-width:330px;opacity:0;animation:rise .9s .9s forwards}
+.rate .n{font-family:'Marcellus',serif;font-size:44px;line-height:1}
+.rate small{display:block;font-size:14px;color:#dfe6e5;margin-top:4px}
+.rate q{display:block;margin-top:10px;font-size:15px;line-height:1.4;quotes:"\201C" "\201D"}
+@keyframes settle{to{transform:scale(1)}}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@media(max-width:899px){.rate q{display:none}.hero{background-position:top}}
+@media(min-width:900px){.hero .wrap{grid-template-columns:1fr auto;align-items:end;padding-bottom:72px}}
+/* sections */
+section{padding:84px 0}
+h2{font-size:clamp(38px,8vw,76px);line-height:1}
+.lead{color:var(--mut);max-width:46ch;margin-top:18px}
+/* services */
+.svc{margin-top:40px;border-top:1px solid rgba(18,28,39,.25)}
+.svc div{padding:20px 0;border-bottom:1px solid rgba(18,28,39,.25);display:grid;gap:4px}
+.svc h3{font-size:clamp(26px,5vw,38px);line-height:1.1}
+.svc p{color:var(--mut);font-size:16px;max-width:60ch}
+@media(min-width:800px){.svc div{grid-template-columns:1fr 1.2fr;gap:30px;align-items:baseline}}
+/* tour */
+.tour{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.tour .orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.45;pointer-events:none;animation:drift 26s ease-in-out infinite alternate}
+.tour .o1{width:420px;height:420px;background:var(--teal);top:-80px;right:-100px}
+.tour .o2{width:360px;height:360px;background:var(--brass);bottom:-120px;left:-120px;opacity:.28;animation-duration:32s}
+@keyframes drift{to{transform:translate(-60px,50px)}}
+.tour .wrap{position:relative;z-index:2}
+.stage{margin-top:34px;display:grid;gap:18px}
+.frame{position:relative;border-radius:26px;overflow:hidden;aspect-ratio:4/5;background:#0b121a}
+.frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .45s}
+.frame img.on{opacity:1}
+.cap{position:absolute;left:14px;bottom:14px;border-radius:999px;padding:8px 18px;font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;align-content:start}
+.chip{min-height:44px;padding:0 20px;border-radius:999px;font:500 16px 'Jost',sans-serif;color:#fff;cursor:pointer;transition:transform .18s,background .18s}
+.chip:active{transform:scale(.98)}
+.chip[aria-pressed=true]{background:var(--brass);color:var(--navy);border-color:var(--brass)}
+@media(min-width:900px){.stage{grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}.frame{aspect-ratio:5/4}.chips{flex-direction:column;align-items:flex-start}.chip{font-size:18px}}
+/* reviews */
+.rev{background:var(--teal);color:#fff}
+.big{font-family:'Marcellus',serif;font-size:clamp(28px,6vw,54px);line-height:1.15;max-width:22ch;margin:0}
+.who{margin-top:18px;color:#cfe0dd;font-size:16px}
+.stats{display:flex;gap:34px;margin-top:34px;flex-wrap:wrap}
+.stats b{font-family:'Marcellus',serif;font-weight:400;font-size:56px;line-height:1;display:block}
+.stats span{font-size:15px;color:#cfe0dd}
+.more{margin-top:48px;display:grid;gap:14px}
+.more figure{border-radius:22px;padding:20px 22px}
+.more blockquote{font-size:17px;line-height:1.45}
+.more figcaption{margin-top:10px;font-size:15px;color:#cfe0dd}
+@media(min-width:900px){.more{grid-template-columns:repeat(2,1fr)}.more figure:last-child{grid-column:1/-1}}
+/* area */
+.area{display:grid;gap:34px}
+.area .k{font-family:'Marcellus',serif;font-size:clamp(30px,5.5vw,48px);line-height:1.12}
+.area p{color:var(--mut)}
+.area a.tel{display:inline-block;font-family:'Marcellus',serif;font-size:clamp(34px,8vw,64px);text-decoration:none;color:var(--navy);border-bottom:3px solid var(--brass);line-height:1.1}
+@media(min-width:900px){.area{grid-template-columns:1.1fr .9fr;gap:70px}}
+/* quote */
+.quote{position:relative;overflow:hidden;background:#dfe6e4}
+.quote .orb{position:absolute;width:480px;height:480px;border-radius:50%;filter:blur(90px);background:var(--brass);opacity:.3;top:-120px;right:-140px;animation:drift 28s ease-in-out infinite alternate}
+.qp{position:relative;border-radius:28px;padding:30px 24px;margin-top:34px;max-width:820px}
+.sent{font-family:'Marcellus',serif;font-size:clamp(24px,5vw,38px);line-height:1.9}
+.sent input,.sent select{font:inherit;font-family:'Jost',sans-serif;font-size:18px;color:var(--navy);background:rgba(255,255,255,.55);border:1px solid rgba(18,28,39,.25);border-radius:14px;padding:6px 14px;min-height:44px;max-width:100%;vertical-align:middle}
+.sent input{width:min(100%,260px)}
+.sent input:focus,.sent select:focus{outline:3px solid var(--brass);border-color:var(--brass)}
+.qp .btn{margin-top:22px;background:var(--navy);color:#fff}
+.qp small{display:block;margin-top:12px;color:var(--mut);font-size:15px}
+footer{padding:34px 0 40px;font-size:15px;color:var(--mut);border-top:1px solid rgba(18,28,39,.2)}
+/* dock */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:12px;max-width:420px;margin:0 auto;border-radius:999px;padding:6px;display:flex;gap:6px}
+.dock .btn{flex:1;min-height:48px;padding:0 10px}
+.dock .t{background:rgba(18,28,39,.08);color:var(--navy)}
+@media(min-width:900px){.dock{display:none}body{padding-bottom:0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero h1,.hero .sub,.hero .cta,.rate{opacity:1}.hero img{transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav class="glass" id="nav"><b>Clean Queen</b><a class="btn p" href="tel:+16476875870">Call now</a></nav>
+
+<header class="hero">
+<picture><source media="(min-width:900px)" srcset="img/p1.jpg"><img src="img/p7.jpg" alt="Cleaned living room with fireplace and hardwood-style floor"></picture>
+<div class="wrap">
+<div class="l">
+<h1>Every room, left spotless.</h1>
+<p class="sub">House cleaning and deep cleaning in Innisfil Beach, Ontario.</p>
+<div class="cta"><a class="btn p" href="tel:+16476875870">Call (647) 687-5870</a><a class="btn g" href="#quote">Get a quote</a></div>
+</div>
+<aside class="rate glass dk">
+<div class="n">4.9</div><small>49 Google reviews</small>
+<q>Amazing crew - the ladies at clean queen do it right ! I highly recommend everybody use their services</q>
+</aside>
+</div>
+</header>
+
+<section id="services"><div class="wrap">
+<h2>What we clean</h2>
+<p class="lead">Clean Queen is a house cleaning service on Candaras St in Innisfil Beach.</p>
+<div class="svc">
+<div><h3>House cleaning</h3><p>Regular home cleaning, kitchens, bathrooms and living areas.</p></div>
+<div><h3>Deep cleaning</h3><p>Before and after deep cleans across Innisfil homes, shown in the tour below.</p></div>
+<div><h3>Move-in clean</h3><p>A customer hired them for a move-in clean, then booked again.</p></div>
+<div><h3>Deep carpet cleaning</h3><p>Steam clean and vacuum, residue-free rinse, free deodorizer, pre-treatment, agitation, and stain or pet treatment.</p></div>
+<div><h3>Deep shower cleaning</h3><p>Showers and bathrooms cleaned top to bottom.</p></div>
+</div>
+</div></section>
+
+<section class="tour" id="tour"><div class="orb o1"></div><div class="orb o2"></div><div class="wrap">
+<h2>Room by room</h2>
+<p class="lead" style="color:#cfd8dc">Real photos of their work. Tap a room.</p>
+<div class="stage">
+<div class="frame" id="frame">
+<img class="on" src="img/p2.jpg" alt="Clean oven with racks and glass door">
+<img src="img/p8.jpg" alt="Clean open fridge and freezer" loading="lazy">
+<img src="img/p9.jpg" alt="Clean double kitchen sink and tap" loading="lazy">
+<img src="img/p10.jpg" alt="Clean bathroom with shower and mirror" loading="lazy">
+<img src="img/p7.jpg" alt="Clean living room with fireplace" loading="lazy">
+<img src="img/p4.jpg" alt="Clean laundry room with washer and dryer" loading="lazy">
+<img src="img/p1.jpg" alt="Clean finished basement and kitchen" loading="lazy">
+<div class="cap glass dk" id="cap">Oven</div>
+</div>
+<div class="chips" role="group" aria-label="Choose a room">
+<button class="chip glass dk" aria-pressed="true">Oven</button>
+<button class="chip glass dk" aria-pressed="false">Fridge</button>
+<button class="chip glass dk" aria-pressed="false">Sink</button>
+<button class="chip glass dk" aria-pressed="false">Bathroom</button>
+<button class="chip glass dk" aria-pressed="false">Living room</button>
+<button class="chip glass dk" aria-pressed="false">Laundry</button>
+<button class="chip glass dk" aria-pressed="false">Basement</button>
+</div>
+</div>
+</div></section>
+
+<section class="rev" id="reviews"><div class="wrap">
+<p class="big">I cannot recommend Clean Queen Cleaning Service enough!</p>
+<p class="who">Antonella S., Google</p>
+<div class="stats"><div><b data-n="4.9" data-d="1">4.9</b><span>Google rating</span></div><div><b data-n="49">49</b><span>Google reviews</span></div></div>
+<div class="more">
+<figure class="glass dk"><blockquote>&ldquo;I&rsquo;ve been working with the Clean Queen team for over a year now, and they have been an absolute life saver.&rdquo;</blockquote><figcaption>Mary S., Google</figcaption></figure>
+<figure class="glass dk"><blockquote>&ldquo;They arrived right on time, were professional and thorough and left our home looking spotless.&rdquo;</blockquote><figcaption>Megan M., Google</figcaption></figure>
+<figure class="glass dk"><blockquote>&ldquo;This is the second time I've hired this cleaning company, and I couldn't be happier with their service.&rdquo;</blockquote><figcaption>Freeyelle M., Google</figcaption></figure>
+</div>
+</div></section>
+
+<section><div class="wrap area">
+<div>
+<h2>Where and when</h2>
+<p class="k" style="margin-top:22px">Innisfil, Barrie and East Gwillimbury.</p>
+<p style="margin-top:12px">716 Candaras St, Innisfil Beach, ON L9S 2G9<br>Open 24 hours, every day.</p>
+</div>
+<div style="align-self:end">
+<p style="margin-bottom:10px">Call or text</p>
+<a class="tel" href="tel:+16476875870">(647) 687-5870</a>
+</div>
+</div></section>
+
+<section class="quote" id="quote"><div class="orb"></div><div class="wrap">
+<h2>Ask for a quote</h2>
+<p class="lead">Fill in the sentence. It opens a text to Clean Queen.</p>
+<form class="qp glass" id="qf">
+<div class="sent">
+Hi, I'm <input id="nm" aria-label="Your name" placeholder="your name" autocomplete="name">. I need
+<select id="sv" aria-label="What you need"><option>house cleaning</option><option>deep cleaning</option><option>a move-in clean</option><option>carpet cleaning</option><option>shower cleaning</option></select>
+in <input id="tw" aria-label="Your town" placeholder="your town" value="Innisfil">.
+</div>
+<button class="btn" type="submit">Text Clean Queen</button>
+<small>Your phone opens a message to (647) 687-5870. Nothing is sent until you press send.</small>
+</form>
+</div></section>
+
+<footer><div class="wrap">Preview built by JPF. Not live yet.</div></footer>
+
+<div class="dock glass"><a class="btn t" href="sms:+16476875870">Text</a><a class="btn p" href="tel:+16476875870">Call now</a></div>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>innerHeight*.7),{passive:true});
+const imgs=[...document.querySelectorAll('#frame img')],chips=[...document.querySelectorAll('.chip')],cap=document.getElementById('cap');
+chips.forEach((c,i)=>c.addEventListener('click',()=>{imgs.forEach((m,j)=>m.classList.toggle('on',i===j));chips.forEach((x,j)=>x.setAttribute('aria-pressed',i===j));cap.textContent=c.textContent;imgs[i].loading='eager'}));
+document.getElementById('qf').addEventListener('submit',e=>{e.preventDefault();
+const n=nm.value.trim()||'a customer',m=`Hi Clean Queen, I'm ${n}. I need ${sv.value} in ${tw.value.trim()||'Innisfil'}. Can I get a quote?`;
+location.href='sms:+16476875870?&body='+encodeURIComponent(m)});
+const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+if(!rm&&'IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;io.unobserve(e.target);const el=e.target,t=+el.dataset.n,d=+el.dataset.d||0,s=performance.now();
+(function f(n){const p=Math.min(1,(n-s)/1200);el.textContent=(t*(1-Math.pow(1-p,3))).toFixed(d);if(p<1)requestAnimationFrame(f)})(s)}),{threshold:.6});
+document.querySelectorAll('[data-n]').forEach(b=>io.observe(b))}
+</script>
+</body>
+</html>
