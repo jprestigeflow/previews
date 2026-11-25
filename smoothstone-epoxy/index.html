@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Smoothstone Epoxy | Custom floor coatings in Surrey, BC</title>
+<meta name="description" content="Smoothstone Epoxy: epoxy and polyaspartic flake floors for garages, patios, steps, shops and gyms in Surrey, BC. Call (778) 878-8777.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700&family=Smooch+Sans:wght@600;800;900&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+direction: light concrete page; the company name set huge, fading out of one tall garage photo; flake-speckle texture; surface switcher as the signature.
+palette: concrete #e5e7e8 (their floor photos) / ink #12171c (black flake + garage walls) / flake #8b9298 (flake close-ups) / trailer blue #3a78b8 (their trailer + logo) / navy #1c2f46 (logo chevron)
+fonts: Smooch Sans 800 (display) + DM Sans (body)
+signature: "Where we coat" glass chip switcher swapping their real job photos by surface
+order: hero > switcher > big quote > what we do (rows) > more reviews > hours + quote form (glass, over dark photo) > footer
+motion: name rises once on load, glass card floats in, rating counts up; switcher fades on tap; reduced-motion respected */
+:root{
+  --concrete:#e5e7e8; --paper:#f1f2f3; --ink:#12171c; --flake:#8b9298; --blue:#3a78b8; --blue-d:#2c5f96; --navy:#1c2f46;
+  --disp:'Smooch Sans','Arial Narrow',sans-serif; --body:'DM Sans',system-ui,sans-serif;
+  --pad:clamp(20px,5vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--concrete);color:var(--ink);font:400 17px/1.6 var(--body);overflow-x:hidden;padding-bottom:96px}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+.speck{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='360' height='360'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.55' numOctaves='2' seed='7'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .38  0 0 0 0 .42  0 0 0 6 -4.35'/></filter><rect width='360' height='360' filter='url(%23n)'/></svg>");background-size:300px}
+
+/* nav pill */
+.nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;max-width:980px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px 6px 6px 20px;border-radius:999px;
+  background:rgba(241,242,243,.62);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 20px 50px -20px rgba(18,23,28,.35)}
+.nav b{font:800 26px/1 var(--disp);letter-spacing:.02em;white-space:nowrap}
+.nav .links{display:none;gap:26px;font-size:15px;font-weight:500}
+.nav .links a{text-decoration:none;opacity:.75}.nav .links a:hover{opacity:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 22px;border-radius:999px;font:700 16px/1 var(--body);text-decoration:none;border:0;cursor:pointer;transition:transform .16s,background .16s}
+.btn:active{transform:scale(.97)}
+.btn.main{background:var(--blue);color:#fff}.btn.main:hover{background:var(--blue-d)}
+.btn.ghost{background:rgba(255,255,255,.5);color:var(--ink);border:1px solid rgba(18,23,28,.15)}
+
+/* hero */
+.hero{position:relative;padding-top:0}
+.hero-photo{position:relative;height:68svh;min-height:480px;overflow:hidden}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.hero-photo::after{content:"";position:absolute;inset:auto 0 0 0;height:46%;background:linear-gradient(to bottom,rgba(229,231,232,0),var(--concrete) 92%)}
+.hero-copy{position:relative;margin-top:-120px;padding:0 var(--pad) 20px;z-index:2}
+.name{font:900 clamp(64px,20vw,150px)/.8 var(--disp);letter-spacing:.005em;text-transform:uppercase;color:var(--ink)}
+.name span{display:block;overflow:hidden;padding-top:.06em}
+.name i{display:block;font-style:normal;animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+.name span:nth-child(2) i{animation-delay:.12s;color:var(--navy)}
+@keyframes rise{from{transform:translateY(105%)}to{transform:none}}
+.sub{margin-top:22px;font-size:19px;max-width:30ch;font-weight:500}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.hero-card{margin:26px var(--pad) 0;padding:18px 20px;border-radius:24px;background:rgba(241,242,243,.6);-webkit-backdrop-filter:blur(24px) saturate(170%);backdrop-filter:blur(24px) saturate(170%);border:1px solid rgba(255,255,255,.6);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 24px 60px -24px rgba(18,23,28,.35);animation:float .9s .5s cubic-bezier(.2,.8,.2,1) both}
+@keyframes float{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.hero-card .row{display:flex;align-items:baseline;gap:12px}
+.hero-card .big{font:900 64px/.9 var(--disp)}
+.hero-card .stars{color:var(--blue);letter-spacing:3px;font-size:18px}
+.hero-card small{display:block;font-size:14px;color:#3b4550}
+.hero-card p{margin-top:10px;font-size:15px;line-height:1.5}
+
+/* switcher */
+section{position:relative}
+.wrap{padding:clamp(72px,11vw,130px) var(--pad)}
+h2{font:900 clamp(56px,15vw,120px)/.84 var(--disp);text-transform:uppercase;letter-spacing:.005em;word-spacing:.12em}
+.lede{margin-top:16px;max-width:46ch;font-size:18px;color:#2b333b}
+.stage{margin-top:34px;position:relative;border-radius:28px;overflow:hidden;background:var(--ink);padding:14px}
+.chips{position:relative;z-index:3;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:2px 2px 14px}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;min-height:46px;padding:0 20px;border-radius:999px;font:700 15px/1 var(--body);color:#eef1f3;cursor:pointer;background:rgba(255,255,255,.1);-webkit-backdrop-filter:blur(18px) saturate(150%);backdrop-filter:blur(18px) saturate(150%);border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.25);transition:background .18s,color .18s,transform .16s}
+.chip:active{transform:scale(.97)}
+.chip[aria-selected=true]{background:rgba(58,120,184,.95);border-color:rgba(255,255,255,.4);color:#fff}
+.shots{display:grid;gap:10px;grid-template-columns:1fr 1fr;transition:opacity .25s}
+.shots.out{opacity:0}
+.shots figure{border-radius:16px;overflow:hidden;aspect-ratio:3/4;background:#222}
+.shots figure:only-child{grid-column:1/-1;aspect-ratio:4/3}
+.shots img{width:100%;height:100%;object-fit:cover}
+.cap{color:#dfe4e8;font-size:17px;padding:18px 6px 6px;max-width:58ch}
+.cap b{color:#fff}
+
+/* review */
+.quote{background:var(--ink);color:#f1f2f3;overflow:hidden}
+.quote .wrap{position:relative}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;pointer-events:none;animation:drift 26s ease-in-out infinite alternate}
+.orb.a{width:420px;height:420px;background:var(--blue);right:-140px;top:-80px;opacity:.38}
+.orb.b{width:360px;height:360px;background:var(--navy);left:-120px;bottom:-60px;animation-delay:-9s}
+@keyframes drift{to{transform:translate(-40px,50px)}}
+.bigq{position:relative;font:800 clamp(46px,12.4vw,104px)/.95 var(--disp);letter-spacing:.005em;word-spacing:.1em;max-width:15ch}
+.who{position:relative;margin-top:22px;font-size:16px;color:#c7ced4}
+.count{position:relative;margin-top:44px;display:flex;gap:34px;flex-wrap:wrap;align-items:baseline}
+.count b{font:900 76px/.9 var(--disp);color:#fff}
+.count span{display:block;font-size:15px;color:#c7ced4}
+
+/* services as rows */
+.rows{margin-top:40px;border-top:2px solid var(--ink)}
+.rows li{list-style:none;display:grid;gap:6px;padding:24px 0;border-bottom:1px solid rgba(18,23,28,.22)}
+.rows h3{font:800 clamp(34px,8.5vw,52px)/.95 var(--disp);text-transform:uppercase}
+.rows p{max-width:52ch;color:#2b333b}
+
+/* reviews */
+.rev{display:grid;gap:14px;margin-top:36px}
+.card{padding:26px;border-radius:24px;background:var(--paper);border:1px solid rgba(18,23,28,.08)}
+.card:nth-child(2){border-radius:24px 24px 24px 6px}
+.card q{display:block;quotes:none;font-size:18px;line-height:1.55}
+.card cite{display:block;margin-top:14px;font:700 15px var(--body);font-style:normal;color:#3b4550}
+.mapl{display:inline-block;margin-top:22px;font-weight:700;color:var(--blue-d)}
+
+/* quote section */
+.get{position:relative;color:#f1f2f3;overflow:hidden;background:var(--ink)}
+.get>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.get::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,rgba(18,23,28,.55),rgba(18,23,28,.35))}
+.get .wrap{position:relative;z-index:2}
+.panel{margin-top:30px;padding:26px 22px;border-radius:28px;background:rgba(18,23,28,.52);-webkit-backdrop-filter:blur(26px) saturate(160%);backdrop-filter:blur(26px) saturate(160%);border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 30px 70px -24px rgba(0,0,0,.6)}
+.sent{font:700 clamp(24px,6.4vw,34px)/1.7 var(--body)}
+.sent input,.sent select{font:700 inherit;font-size:inherit;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);border-radius:14px;padding:2px 14px;min-height:46px;max-width:100%;width:auto;vertical-align:middle;-webkit-appearance:none;appearance:none}
+.sent input{width:min(100%,14ch)}
+.sent input::placeholder{color:rgba(255,255,255,.5);font-weight:500}
+.sent input:focus,.sent select:focus{outline:3px solid #8fbbe6;outline-offset:1px}
+.sent select option{color:#12171c}
+.panel .btn{margin-top:22px;width:100%;min-height:56px;font-size:18px}
+.note{margin-top:12px;font-size:14px;color:#cbd2d8}
+.facts{margin-top:44px;display:grid;gap:18px}
+.facts h3{font:800 28px/1 var(--disp);text-transform:uppercase;letter-spacing:.02em;margin-bottom:6px}
+.facts a{font-weight:700}
+.hrs{display:grid;grid-template-columns:auto 1fr;gap:2px 20px;font-size:16px}
+.hrs dt{color:#cbd2d8}
+
+footer{background:var(--ink);color:#aab2b9;padding:26px var(--pad) 120px;font-size:14px;border-top:1px solid rgba(255,255,255,.12)}
+
+/* dock */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));max-width:520px;margin:auto;display:flex;gap:8px;padding:8px;border-radius:999px;background:rgba(241,242,243,.62);-webkit-backdrop-filter:blur(22px) saturate(170%);backdrop-filter:blur(22px) saturate(170%);border:1px solid rgba(255,255,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 20px 50px -18px rgba(18,23,28,.5)}
+.dock .btn{flex:1;min-height:52px;font-size:17px}
+
+@media(min-width:900px){
+  body{padding-bottom:0}
+  .dock{display:none}
+  footer{padding-bottom:30px}
+  .nav .links{display:flex}
+  .hero{display:grid;grid-template-columns:1.2fr .8fr;min-height:100svh;align-items:end;padding:110px var(--pad) 56px;gap:44px}
+  .hero-photo{grid-column:2;grid-row:1/3;height:min(84svh,860px);border-radius:32px;order:2}
+  .hero-photo::after{display:none}
+  .hero-copy{grid-column:1;grid-row:1;margin:0;padding:0;align-self:end}
+  .name{font-size:clamp(110px,10.2vw,150px)}
+  .hero>*{min-width:0}
+  .sub{font-size:22px}
+  .hero-card{grid-column:1;grid-row:2;margin:0;max-width:470px}
+  .hero-photo img{object-position:50% 30%}
+  .shots{grid-template-columns:1.2fr 1fr}
+  .shots figure{aspect-ratio:4/5}
+  .shots figure:only-child{aspect-ratio:16/9}
+  .stage{padding:22px}
+  .rows li{grid-template-columns:minmax(320px,5fr) 7fr;align-items:baseline;gap:40px}
+  .rev{grid-template-columns:repeat(3,1fr)}
+  .get .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:start}
+  .facts{margin-top:30px}
+  .panel{margin-top:0}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .name i,.hero-card,.orb{animation:none}
+  .shots{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <b>Smoothstone Epoxy</b>
+  <nav class="links" aria-label="Sections"><a href="#coat">Where we coat</a><a href="#work">What we do</a><a href="#reviews">Reviews</a><a href="#quote">Get a quote</a></nav>
+  <a class="btn main" href="tel:+17788788777">Call now</a>
+</header>
+
+<main>
+<section class="hero speck">
+  <div class="hero-photo"><img src="img/p7.jpg" alt="Garage with black walls, hex lighting and a grey flake epoxy floor finished by Smoothstone Epoxy" width="1050" height="1400" fetchpriority="high"></div>
+  <div class="hero-copy">
+    <h1 class="name" aria-label="Smoothstone Epoxy"><span><i>Smoothstone</i></span><span><i>Epoxy</i></span></h1>
+    <p class="sub">Custom floor coatings for garages, patios, steps, shops and gyms in Surrey, BC.</p>
+    <div class="cta">
+      <a class="btn main" href="tel:+17788788777">Call (778) 878-8777</a>
+      <a class="btn ghost" href="#quote">Text for a quote</a>
+    </div>
+  </div>
+  <aside class="hero-card" aria-label="Google rating">
+    <div class="row"><span class="big" data-count="4.9">4.9</span><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+    <small>55 reviews on Google</small>
+    <p>"Jas and his team were fantastic."<br><small>Chris M., Google</small></p>
+  </aside>
+</section>
+
+<section id="coat" class="wrap">
+  <h2>Where we coat</h2>
+  <p class="lede">Pick a surface to see their finished jobs.</p>
+  <div class="stage">
+    <div class="chips" role="tablist" aria-label="Surfaces">
+      <button class="chip" role="tab" aria-selected="true" data-k="garage">Garages</button>
+      <button class="chip" role="tab" aria-selected="false" data-k="patio">Patios</button>
+      <button class="chip" role="tab" aria-selected="false" data-k="steps">Steps</button>
+      <button class="chip" role="tab" aria-selected="false" data-k="shop">Shops and gyms</button>
+    </div>
+    <div class="shots" id="shots" aria-live="polite"></div>
+    <p class="cap" id="cap"></p>
+  </div>
+</section>
+
+<section class="quote" id="proof">
+  <div class="orb a"></div><div class="orb b"></div>
+  <div class="wrap">
+    <p class="bigq">"If you want Epoxy Jas is your guy."</p>
+    <p class="who">Vishal K., Google. "Awesome service, product and exceptional work. Highly suggest"</p>
+    <div class="count">
+      <div><b data-count="4.9">4.9</b><span>Google rating</span></div>
+      <div><b data-count="55">55</b><span>Google reviews</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="work" class="wrap">
+  <h2>What they do</h2>
+  <ul class="rows">
+    <li><h3>Flake floors</h3><p>Their signature polyaspartic flake system, laid over a moisture vapour barrier when the slab needs the extra prep.</p></li>
+    <li><h3>Steps and outdoors</h3><p>A 3-layer waterproofing and slip-resistant system built to handle the elements.</p></li>
+    <li><h3>Shops and offices</h3><p>Old vinyl pulled up, stubborn adhesive prepped out, then a new floor down.</p></li>
+    <li><h3>Gyms</h3><p>Gym epoxy floors, including a Coal Harbour fit-out.</p></li>
+    <li><h3>Residential, commercial, industrial</h3><p>It says so on the trailer. Let's coat it.</p></li>
+  </ul>
+</section>
+
+<section id="reviews" class="wrap" style="padding-top:0">
+  <h2>What clients say</h2>
+  <div class="rev">
+    <div class="card"><q>Service and quality of work was excellent. Easy to communicate with, very flexible. Price very reasonable. My garage looks amazing. I would definitely recommend them to anyone,</q><cite>Adele E., Google</cite></div>
+    <div class="card"><q>Jas and his team were fantastic. We had a really short turnaround time and they went out of there way to make sure they got it done under the deadline. Great and easy communication, 10/10 service.</q><cite>Chris M., Google</cite></div>
+    <div class="card"><q>The team at Smoothstone Epoxy did an amazing job on my floor and brought life into my shop. Jas made sure I was provided with all the information needed and answered any questions I had in detail. He kept me updated throughout the whole process, and I wouldn’t recommend anyone else but them for epoxy flooring.</q><cite>Pristine Finishes, Google</cite></div>
+  </div>
+  <a class="mapl" href="https://www.google.com/maps/place/Smoothstone+Epoxy+Ltd./data=!4m7!3m6!1s0x5485db743f53d9ab:0xa67837f36373aed6!8m2!3d49.216128!4d-122.3435034!16s%2Fg%2F11mw0nhdkz!19sChIJq9lTP3TbhVQR1q5zY_M3eKY" rel="noopener">Read all 55 reviews on Google</a>
+</section>
+
+<section id="quote" class="get">
+  <img src="img/p8.jpg" alt="" loading="lazy">
+  <div class="wrap grid">
+    <div>
+      <h2>Get a quote</h2>
+      <div class="facts">
+        <div><h3>Where</h3><p>Surrey, BC</p></div>
+        <div><h3>Hours</h3>
+          <dl class="hrs"><dt>Mon to Sat</dt><dd>8 a.m. to 8 p.m.</dd><dt>Sunday</dt><dd>8 a.m. to 6 p.m.</dd></dl></div>
+        <div><h3>Call</h3><a href="tel:+17788788777">(778) 878-8777</a></div>
+      </div>
+    </div>
+    <form class="panel" id="qf" autocomplete="off">
+      <p class="sent">Hi, I'm <input id="n" name="n" placeholder="your name" aria-label="Your name" required> and I need a <select id="w" aria-label="What you need"><option>garage floor</option><option>patio floor</option><option>steps</option><option>shop or gym floor</option><option>different floor</option></select> done in <input id="c" placeholder="your city" aria-label="Your city"></p>
+      <button class="btn main" type="submit">Text this to Smoothstone</button>
+      <p class="note">Opens your messages app with this ready to send to (778) 878-8777.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>Preview built by JPF. Not live yet.</footer>
+
+<div class="dock" role="group" aria-label="Contact">
+  <a class="btn ghost" href="sms:+17788788777">Text</a>
+  <a class="btn main" href="tel:+17788788777">Call now</a>
+</div>
+
+<script>
+(function(){
+  var S={
+    garage:{i:['img/p7.jpg','img/p11.jpg'],a:['Garage floor with black walls and hex lights','Garage floor with a lifted truck parked on it'],c:'<b>Garages.</b> Their signature polyaspartic flake system, with a moisture vapour barrier first when the slab needs it.'},
+    patio:{i:['img/p8.jpg','img/p12.jpg'],a:['Dark flake floor on a covered patio','Light flake floor on a patio outside french doors'],c:'<b>Patios and porches.</b> Flake finish on outdoor slabs.'},
+    steps:{i:['img/p9.jpg'],a:['Concrete steps with a light flake finish and black railing'],c:'<b>Steps.</b> A 3-layer waterproofing and slip-resistant system built to handle the elements.'},
+    shop:{i:['img/p6.jpg','img/p2.jpg'],a:['Finished gym floor, wide view with glass doors','Shop office floor mid-prep with a dust extractor'],c:'<b>Shops and gyms.</b> Old vinyl and stubborn adhesive prepped out first, then the new floor. Gym epoxy floors too, including Coal Harbour.'}
+  };
+  var shots=document.getElementById('shots'),cap=document.getElementById('cap'),chips=document.querySelectorAll('.chip');
+  function show(k){
+    var d=S[k];shots.innerHTML='';
+    d.i.forEach(function(s,n){var f=document.createElement('figure'),im=document.createElement('img');im.src=s;im.alt=d.a[n];im.loading='lazy';f.appendChild(im);shots.appendChild(f)});
+    cap.innerHTML=d.c;
+  }
+  chips.forEach(function(b){b.addEventListener('click',function(){
+    chips.forEach(function(x){x.setAttribute('aria-selected',x===b)});
+    shots.classList.add('out');
+    setTimeout(function(){show(b.dataset.k);shots.classList.remove('out')},220);
+  })});
+  show('garage');
+
+  var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  document.querySelectorAll('[data-count]').forEach(function(el){
+    var end=parseFloat(el.dataset.count),dec=(el.dataset.count.split('.')[1]||'').length;
+    if(rm)return;
+    var run=false;
+    function go(){if(run)return;run=true;var t0=performance.now();(function f(t){var p=Math.min(1,(t-t0)/1200),e=1-Math.pow(1-p,3);el.textContent=(end*e).toFixed(dec);if(p<1)requestAnimationFrame(f)})(t0)}
+    if('IntersectionObserver' in window){new IntersectionObserver(function(es,o){if(es[0].isIntersecting){go();o.disconnect()}}).observe(el)}else go();
+  });
+
+  document.getElementById('qf').addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=document.getElementById('n').value.trim(),w=document.getElementById('w').value,c=document.getElementById('c').value.trim();
+    var body="Hi, I'm "+n+" and I need a "+w+" done"+(c?" in "+c:"")+". Can I get a quote?";
+    location.href='sms:+17788788777?&body='+encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
