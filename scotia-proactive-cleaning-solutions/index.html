@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Scotia Proactive Cleaning Solutions | House and commercial cleaning, Cole Harbour NS</title>
+<meta name="description" content="House cleaning, deep cleaning, carpet and sofa cleaning and commercial cleaning in HRM, Truro and surrounding communities. Call (782) 446-0004.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@500;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ direction: calm harbour-blue trust page, two doors (stores and offices / homes), real floors as the hero
+ palette: frost #f3f8fb (page) / harbour ink #0a2a45 (logo wordmark) / logo blue #1797d4 (logo bar; text-safe #0e6aa3) / floor grey #3a3f45 (clinic runner carpet photo)
+ fonts: Host Grotesk 800 display + Source Serif 4 body and quotes
+ signature: two-doors glass switch that swaps photos, services and the prefilled text
+ order: hero, two doors, runner-carpet lead quote, review glass cards, area and hours, fill-in quote
+ motion: one hero load sequence (photo settles, headline lines rise, glass card floats in); switch crossfade; orbs drift slowly
+*/
+:root{
+  --frost:#f3f8fb; --ink:#0a2a45; --blue:#1797d4; --blue-t:#0e6aa3; --grey:#3a3f45;
+  --ink-a:10,42,69; --line:rgba(10,42,69,.14);
+  --r-pill:999px; --r-big:26px; --r-sm:14px;
+  --display:"Host Grotesk",system-ui,sans-serif; --body:"Source Serif 4",Georgia,serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--frost);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.6;overflow-x:hidden;padding-bottom:96px}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+h1,h2,h3{font-family:var(--display);font-weight:800;line-height:.98;letter-spacing:-.025em;word-spacing:.12em}
+.glass{background:rgba(243,248,251,.62);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 20px 60px -20px rgba(var(--ink-a),.35)}
+.glass-dark{background:rgba(10,42,69,.5);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 20px 60px -20px rgba(var(--ink-a),.5);color:#fff}
+
+/* nav */
+.nav{position:fixed;z-index:30;top:12px;left:12px;right:12px;max-width:1180px;margin-inline:auto;border-radius:var(--r-pill);padding:8px 8px 8px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.nav b{font-family:var(--display);font-weight:800;font-size:16px;letter-spacing:-.01em;line-height:1.1}
+.nav .links{display:none;gap:26px;font-family:var(--display);font-weight:500;font-size:15px}
+.nav .links a{text-decoration:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--display);font-weight:700;font-size:16px;line-height:1;text-decoration:none;border:0;border-radius:var(--r-pill);padding:15px 22px;background:var(--blue-t);color:#fff;cursor:pointer;min-height:48px;transition:transform .2s,background .2s}
+.btn:hover{background:var(--ink)}
+.btn:active{transform:scale(.97)}
+.btn.ghost{background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.4)}
+.btn.ghost:hover{background:rgba(255,255,255,.3)}
+.nav .btn{padding:12px 18px;min-height:44px;white-space:nowrap}
+.nav .full{display:none}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:var(--ink)}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 70%;animation:settle 1.8s cubic-bezier(.2,.7,.2,1) both}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,42,69,.5) 0%,rgba(10,42,69,.35) 25%,rgba(10,42,69,.82) 52%,rgba(10,42,69,.95) 100%)}
+.hero .wrap{position:relative;z-index:2;padding:130px 0 54px}
+.hero .shop{font-family:var(--display);font-weight:500;font-size:16px;margin-bottom:14px;max-width:30ch}
+.hero h1{font-size:clamp(60px,17vw,172px)}
+.hero h1 span{display:block;animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.hero h1 span:nth-child(2){animation-delay:.12s;color:#bfe6f7}
+.hero h1 span:nth-child(3){animation-delay:.24s}
+.hero .sub{margin-top:22px;font-size:19px;max-width:34ch}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.hero .cta .btn:first-child{background:var(--blue);color:var(--ink)}
+.hero .cta .btn:first-child:hover{background:#fff}
+.rate{margin-top:30px;border-radius:var(--r-big);padding:18px 20px;max-width:380px;animation:floatin 1s .6s cubic-bezier(.2,.7,.2,1) both}
+.rate .big{font-family:var(--display);font-weight:800;font-size:44px;line-height:1;letter-spacing:-.03em}
+.rate .big small{font-size:16px;font-weight:500;letter-spacing:0;margin-left:8px}
+.rate p{font-size:16px;line-height:1.45;margin-top:8px}
+.rate cite{display:block;font-style:normal;font-family:var(--display);font-size:14px;opacity:.9;margin-top:6px}
+@keyframes rise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+@keyframes floatin{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes settle{from{transform:scale(1.12)}to{transform:scale(1)}}
+
+/* sections */
+section{padding:84px 0;position:relative}
+h2{font-size:clamp(40px,7vw,84px);max-width:14ch}
+.lede{max-width:52ch;margin-top:18px;color:#26425a}
+
+/* two doors */
+.doors{overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;pointer-events:none;animation:drift 26s ease-in-out infinite alternate}
+.orb.a{width:420px;height:420px;background:radial-gradient(circle,#7cc9ec,transparent 70%);top:-80px;right:-120px}
+.orb.b{width:380px;height:380px;background:radial-gradient(circle,#a9c3d6,transparent 70%);bottom:-100px;left:-120px;animation-duration:32s}
+@keyframes drift{to{transform:translate(-40px,50px)}}
+.switch{display:inline-flex;gap:4px;padding:5px;border-radius:var(--r-pill);margin-top:30px;position:relative;z-index:2}
+.switch button{font-family:var(--display);font-weight:700;font-size:16px;border:0;background:transparent;color:var(--ink);padding:13px 22px;border-radius:var(--r-pill);cursor:pointer;min-height:48px;transition:background .25s,color .25s}
+.switch button[aria-selected=true]{background:var(--ink);color:#fff}
+.door{display:none;margin-top:30px;position:relative;z-index:2}
+.door.on{display:grid;gap:26px;animation:fade .45s ease both}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.set{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:auto auto;gap:10px}
+.set img{width:100%;height:100%;object-fit:cover;border-radius:var(--r-big)}
+.set img:first-child{grid-row:span 2;min-height:340px;aspect-ratio:3/4}
+.set img:not(:first-child){border-radius:18px;aspect-ratio:1/1}
+.door h3{font-size:clamp(30px,5vw,48px);margin-bottom:16px}
+.door ul{list-style:none;padding:0;border-top:1px solid var(--line)}
+.door li{padding:15px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;font-size:18px}
+.door li span{font-family:var(--display);font-size:14px;color:var(--blue-t);font-weight:700;white-space:nowrap}
+.door .btn{margin-top:22px}
+
+/* runner quote */
+.runner{background:var(--grey);color:#fff;padding:0}
+.runner .grid{display:grid}
+.runner img{width:100%;height:240px;object-fit:cover;object-position:50% 40%}
+.runner .q{padding:56px 20px 64px;width:min(1180px,100%);margin-inline:auto}
+.runner blockquote{font-family:var(--display);font-weight:700;font-size:clamp(30px,5.6vw,64px);line-height:1.04;letter-spacing:-.02em;word-spacing:.1em;max-width:20ch}
+.runner cite{display:block;margin-top:22px;font-style:normal;font-family:var(--display);font-size:16px;color:#bfe6f7}
+
+/* reviews */
+.reviews{overflow:hidden}
+.rgrid{display:grid;gap:14px;margin-top:38px;position:relative;z-index:2}
+.rc{border-radius:var(--r-big);padding:26px}
+.rc q{display:block;quotes:"\201C" "\201D";font-size:19px;line-height:1.55}
+.rc cite{display:block;margin-top:16px;font-style:normal;font-family:var(--display);font-weight:700;font-size:15px}
+.rc cite small{font-weight:500;color:#3e5a72;font-size:14px;margin-left:6px}
+.rc:nth-child(1){border-radius:var(--r-big) var(--r-big) var(--r-big) 6px}
+
+/* area */
+.area .cols{display:grid;gap:36px;margin-top:34px}
+.hours{list-style:none;padding:0;border-top:1px solid var(--line)}
+.hours li{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:17px}
+.hours li b{font-family:var(--display);font-weight:700}
+.where p{font-size:20px;max-width:30ch}
+.where a{color:var(--blue-t);font-weight:600}
+.where .tel{display:block;font-family:var(--display);font-weight:800;font-size:clamp(34px,8vw,56px);letter-spacing:-.025em;text-decoration:none;margin:16px 0 6px;line-height:1}
+
+/* quote */
+.quote{background:var(--ink);color:#fff;overflow:hidden}
+.quote .orb.a{background:radial-gradient(circle,#1797d4,transparent 70%);opacity:.45;top:-120px;left:-100px;right:auto}
+.quote .orb.b{background:radial-gradient(circle,#3a6f93,transparent 70%);opacity:.5;right:-120px;left:auto;bottom:-120px}
+.quote h2{max-width:12ch}
+.qpanel{margin-top:34px;border-radius:var(--r-big);padding:26px 22px;position:relative;z-index:2}
+.fill{font-family:var(--display);font-weight:500;font-size:clamp(22px,4.2vw,36px);line-height:1.9;letter-spacing:-.01em}
+.fill input,.fill select{font:inherit;font-weight:700;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);border-radius:12px;padding:2px 12px;margin:2px 2px;width:auto;max-width:100%;min-height:48px;-webkit-appearance:none;appearance:none}
+.fill input{width:min(100%,12ch)}
+.fill input.wide{width:min(100%,22ch)}
+.fill select{padding-right:30px;background-image:linear-gradient(45deg,transparent 50%,#fff 50%),linear-gradient(135deg,#fff 50%,transparent 50%);background-position:calc(100% - 17px) 55%,calc(100% - 12px) 55%;background-size:5px 5px;background-repeat:no-repeat}
+.fill select option{color:var(--ink)}
+.fill input::placeholder{color:rgba(255,255,255,.6);font-weight:500}
+.fill input:focus,.fill select:focus{outline:0;border-color:var(--blue);box-shadow:0 0 0 3px rgba(23,151,212,.5)}
+.qpanel .btn{margin-top:22px;background:var(--blue);color:var(--ink)}
+.qpanel .btn:hover{background:#fff}
+.note{font-size:15px;margin-top:14px;color:#c9dbe8}
+
+footer{padding:34px 0 20px;font-size:15px;color:#3e5a72;text-align:left}
+.quote + footer{background:var(--frost)}
+
+/* dock */
+.dock{position:fixed;z-index:40;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));max-width:520px;margin-inline:auto;border-radius:var(--r-pill);padding:7px;display:flex;gap:7px}
+.dock a{flex:1;text-align:center;border-radius:var(--r-pill);padding:14px 10px;font-family:var(--display);font-weight:700;font-size:16px;text-decoration:none;min-height:48px;display:flex;align-items:center;justify-content:center}
+.dock .call{background:var(--blue);color:var(--ink)}
+.dock .txt{background:rgba(255,255,255,.2);color:#fff}
+
+@media(min-width:820px){
+  body{padding-bottom:0;font-size:19px}
+  .wrap{width:min(1180px,100% - 80px)}
+  .nav .links{display:flex}
+  .nav .full{display:inline;margin-left:.3em}.nav .short{display:none}
+  .hero h1{font-size:clamp(80px,8.3vw,112px)}
+  .hero h1 span{display:inline-block;margin-right:.18em}
+  .hero::after{background:linear-gradient(180deg,rgba(10,42,69,.5) 0%,rgba(10,42,69,.45) 30%,rgba(10,42,69,.88) 55%,rgba(10,42,69,.95) 100%)}
+  .nav{top:18px}
+  .hero .wrap{padding-bottom:70px}
+  .hero img.bg{object-position:50% 62%}
+  section{padding:130px 0}
+  .door.on{grid-template-columns:1.1fr 1fr;align-items:center;gap:56px}
+  .set img:first-child{min-height:520px}
+  .rgrid{grid-template-columns:repeat(2,1fr);gap:18px}
+  .rc{padding:34px}
+  .runner .grid{grid-template-columns:.8fr 1.4fr;align-items:stretch}
+  .runner img{height:100%;min-height:440px}
+  .runner .q{padding:90px 64px;display:flex;flex-direction:column;justify-content:center;margin:0}
+  .area .cols{grid-template-columns:1fr 1fr;gap:80px}
+  .qpanel{padding:48px 52px;max-width:980px}
+  .dock{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<header class="nav glass" id="top">
+  <b>Scotia Proactive<br>Cleaning Solutions</b>
+  <nav class="links" aria-label="Sections"><a href="#doors">Services</a><a href="#reviews">Reviews</a><a href="#hours">Hours</a><a href="#quote">Free quote</a></nav>
+  <a class="btn" href="tel:+17824460004">Call <span class="full">(782) 446-0004</span><span class="short">now</span></a>
+</header>
+
+<main>
+<section class="hero" aria-label="Scotia Proactive Cleaning Solutions">
+  <img class="bg" src="img/p7.jpg" alt="Cleaned living room with wood-look floor, vacuum and armchair" fetchpriority="high">
+  <div class="wrap">
+    <p class="shop">Scotia Proactive Cleaning Solutions. House and commercial cleaning from Cole Harbour, NS.</p>
+    <h1><span>Stores.</span><span>Offices.</span><span>Homes.</span></h1>
+    <p class="sub">Cleaning across HRM, Truro and surrounding communities. Message us for a free quote.</p>
+    <div class="cta">
+      <a class="btn" href="tel:+17824460004">Call (782) 446-0004</a>
+      <a class="btn ghost" href="#quote">Get a free quote</a>
+    </div>
+    <div class="rate glass-dark">
+      <div class="big">5.0<small>from 20 Google reviews</small></div>
+      <p>&ldquo;Their team is well-managed, reliable, and consistently delivers &hellip;&rdquo;</p>
+      <cite>Refresh Nova Cleaners, Google</cite>
+    </div>
+  </div>
+</section>
+
+<section class="doors" id="doors">
+  <div class="orb a"></div><div class="orb b"></div>
+  <div class="wrap">
+    <h2>Pick your door.</h2>
+    <p class="lede">Reviewers hire Scotia Proactive for retail locations and offices, and for their own homes. Choose what you need cleaned.</p>
+    <div class="switch glass" role="tablist" aria-label="What do you need cleaned">
+      <button role="tab" id="t-biz" aria-selected="true" aria-controls="d-biz" data-door="biz">Stores and offices</button>
+      <button role="tab" id="t-home" aria-selected="false" aria-controls="d-home" data-door="home">Homes</button>
+    </div>
+
+    <div class="door on" id="d-biz" role="tabpanel" aria-labelledby="t-biz">
+      <div class="set">
+        <img src="img/p6.jpg" alt="Polished retail floor in a store aisle" loading="lazy">
+        <img src="img/p8.jpg" alt="Scotia Proactive team member machine-scrubbing a store aisle" loading="lazy">
+        <img src="img/p1.jpg" alt="Team member cleaning in a retail store" loading="lazy">
+      </div>
+      <div>
+        <h3>Commercial and office cleaning</h3>
+        <ul>
+          <li>Retail locations <span>Halifax, Dartmouth, Burnside</span></li>
+          <li>Office cleaning <span>Burnside</span></li>
+          <li>Machine-scrubbed floors <span>On site</span></li>
+        </ul>
+        <a class="btn" href="#quote" data-pick="a store or office">Ask about a store or office</a>
+      </div>
+    </div>
+
+    <div class="door" id="d-home" role="tabpanel" aria-labelledby="t-home" hidden>
+      <div class="set">
+        <img src="img/p5.jpg" alt="Empty room with freshly cleaned dark floor" loading="lazy">
+        <img src="img/p9.jpg" alt="Cleaned bathroom with tiled floor" loading="lazy">
+        <img src="img/p3.jpg" alt="Cleaned bathroom with tub and toilet" loading="lazy">
+      </div>
+      <div>
+        <h3>House cleaning</h3>
+        <ul>
+          <li>House cleaning <span>One-time</span></li>
+          <li>Deep cleaning <span>Kitchens, bathrooms</span></li>
+          <li>Regular cleaning <span>Biweekly or monthly</span></li>
+          <li>Carpet and sofa cleaning <span>Send a photo</span></li>
+        </ul>
+        <a class="btn" href="#quote" data-pick="a home">Ask about a home</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="runner" aria-label="Customer review">
+  <div class="grid">
+    <img src="img/p4-runner.jpg" alt="Charcoal entrance runner on a clean white tile floor" loading="lazy">
+    <div class="q">
+      <blockquote>&ldquo;An outstanding commercial cleaning company and a truly reliable partner for our business.&rdquo;</blockquote>
+      <cite>Amanjot S., Google</cite>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="orb a"></div><div class="orb b"></div>
+  <div class="wrap">
+    <h2>5.0 on Google.</h2>
+    <p class="lede">20 reviews. Word for word.</p>
+    <div class="rgrid">
+      <figure class="rc glass"><q>We had them come in for both our office space and our home in Halifax, and honestly, they did an outstanding job.</q><cite>Guri S.<small>Google</small></cite></figure>
+      <figure class="rc glass"><q>If you need a reliable cleaning service in Halifax, Scotia Proactive Cleaning Services is the best choice. Their professional team provides exceptional commercial and office cleaning in the Burnside area.</q><cite>Mandeep S.<small>Google</small></cite></figure>
+      <figure class="rc glass"><q>We had a bad tenant eviction and our beautiful house was left in very bad condition. We hired Scotia Proactive Cleaning Solutions for cleaning and this was our first time hiring someone for cleaning.</q><cite>Bilquis F.<small>Google</small></cite></figure>
+      <figure class="rc glass"><q>We have been working with Scotia Proactive Cleaning as subcontractors for our retail locations in Halifax, Dartmouth, and Burnside, and the experience has been excellent.</q><cite>Refresh Nova Cleaners<small>Google</small></cite></figure>
+    </div>
+  </div>
+</section>
+
+<section class="area" id="hours">
+  <div class="wrap">
+    <h2>Open when you need us.</h2>
+    <div class="cols">
+      <ul class="hours" aria-label="Hours">
+        <li><b>Monday to Friday</b><span>Open 24 hours</span></li>
+        <li><b>Saturday</b><span>8 a.m. to 9 p.m.</span></li>
+        <li><b>Sunday</b><span>8 a.m. to 10 p.m.</span></li>
+      </ul>
+      <div class="where">
+        <p>Serving HRM, Truro and surrounding communities.</p>
+        <a class="tel" href="tel:+17824460004">(782) 446-0004</a>
+        <p>41 Caldwell Rd, Cole Harbour, NS B2V 1A2</p>
+        <p style="margin-top:12px"><a href="https://www.instagram.com/scotiaproactive/" rel="noopener">@scotiaproactive on Instagram</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quote" id="quote">
+  <div class="orb a"></div><div class="orb b"></div>
+  <div class="wrap">
+    <h2>Get a free quote.</h2>
+    <form class="qpanel glass-dark" id="qf" autocomplete="on">
+      <div class="fill">
+        Hi, I&rsquo;m
+        <input id="f-name" name="name" type="text" placeholder="your name" aria-label="Your name" autocomplete="given-name" required>
+        and I need cleaning for
+        <select id="f-what" name="what" aria-label="What needs cleaning">
+          <option>a home</option><option>a store or office</option><option>carpets or a sofa</option><option>a deep clean</option>
+        </select>
+        in
+        <input id="f-where" class="wide" name="where" type="text" placeholder="your area" aria-label="Your area" required>.
+        Best time to talk:
+        <input id="f-when" class="wide" name="when" type="text" placeholder="e.g. weekday mornings" aria-label="Best time">.
+      </div>
+      <button class="btn" type="submit">Text this to Scotia Proactive</button>
+      <p class="note">This opens a text to (782) 446-0004 on your phone. Nothing is sent until you press send.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">Preview built by JPF. Not live yet.</div></footer>
+
+<div class="dock glass-dark" role="group" aria-label="Call or text">
+  <a class="call" href="tel:+17824460004">Call now</a>
+  <a class="txt" href="sms:+17824460004">Text us</a>
+</div>
+
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('[data-door]'));
+  var sel=document.getElementById('f-what');
+  function show(k){
+    tabs.forEach(function(t){t.setAttribute('aria-selected',t.dataset.door===k)});
+    ['biz','home'].forEach(function(d){
+      var el=document.getElementById('d-'+d);
+      var on=d===k;el.hidden=!on;el.classList.toggle('on',on);
+    });
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.door)})});
+  [].slice.call(document.querySelectorAll('[data-pick]')).forEach(function(b){
+    b.addEventListener('click',function(){
+      for(var i=0;i<sel.options.length;i++){if(sel.options[i].text===b.dataset.pick){sel.selectedIndex=i}}
+    });
+  });
+  document.getElementById('qf').addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=document.getElementById('f-name').value.trim(),
+        w=sel.value,
+        a=document.getElementById('f-where').value.trim(),
+        t=document.getElementById('f-when').value.trim();
+    var body="Hi, I'm "+n+" and I need cleaning for "+w+" in "+a+"."+(t?" Best time to talk: "+t+".":"")+" Could I get a free quote?";
+    location.href="sms:+17824460004?&body="+encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
