@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Garage Floors 4 Less - Calgary | Garage floor coatings, Okotoks AB</title>
+<meta name="description" content="Garage floor coating installers in Okotoks, AB serving Calgary. 4.9 stars on Google. Call (587) 229-9205.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;500;700&family=Kanit:ital,wght@0,500;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ direction: work-van poster. Their flake floor owns the top, giant italic Kanit headline, one yellow band, a flake loupe to inspect the floor.
+ palette: asphalt #111214 (flake black, p9) / flake grey #8b9096 (p9 floor) / bone #f1f0ec (garage walls p10) / yellow #ffd21f (logo + truck, p7, p12)
+ fonts: Kanit (display, italic 800) + Chivo (body)
+ signature: drag-to-magnify flake loupe on their real floor photo
+ order: hero, loupe, what they install, job photos, reviews, hours+area, quote sentence, footer
+ motion: one hero load sequence; loupe responds to the finger; reduced-motion respected */
+:root{--ink:#111214;--ink2:#1a1c1f;--grey:#8b9096;--bone:#f1f0ec;--y:#ffd21f;--r-pill:999px;--r-big:26px;--r-sm:14px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Chivo',system-ui,sans-serif;background:var(--ink);color:var(--bone);font-size:17px;line-height:1.55;overflow-x:hidden;padding-bottom:96px}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--y);outline-offset:3px;border-radius:8px}
+.d{font-family:'Kanit',sans-serif;font-style:italic;font-weight:800;line-height:.92;letter-spacing:-.01em;word-spacing:.12em}
+.wrap{padding:0 22px;max-width:1240px;margin:0 auto}
+
+/* nav */
+nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 6px 6px 18px;border-radius:var(--r-pill);background:rgba(17,18,20,.5);border:1px solid rgba(255,255,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 20px 60px -20px rgba(0,0,0,.5);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%)}
+nav b{font-family:'Kanit';font-style:italic;font-weight:800;font-size:17px;line-height:1.1}
+nav .links{display:none;gap:22px;font-size:15px}
+nav .links a{text-decoration:none;opacity:.85}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 22px;border-radius:var(--r-pill);font-family:'Kanit';font-weight:700;font-size:17px;text-decoration:none;border:0;cursor:pointer;transition:transform .18s,background .18s}
+.btn:active{transform:scale(.97)}
+.btn.y{background:var(--y);color:var(--ink)}
+.btn.y:hover{background:#ffe055}
+.btn.g{background:rgba(255,255,255,.1);color:var(--bone);border:1px solid rgba(255,255,255,.3)}
+nav .btn{min-height:44px;padding:0 18px}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:110px 0 130px;background:#0b0c0d url(img/p9.jpg) center/cover;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(17,18,20,.55) 0%,rgba(17,18,20,.72) 45%,rgba(17,18,20,.96) 100%)}
+.hero h1{font-size:clamp(60px,17vw,150px)}
+.hero h1 span{display:block}
+.hero h1 .y{color:var(--y)}
+.hero p.sub{max-width:34ch;margin-top:22px;font-size:18px;color:#e5e4df}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.badge{display:inline-flex;align-items:center;gap:8px;margin-bottom:20px;padding:7px 14px;border-radius:var(--r-pill);background:rgba(17,18,20,.5);border:1px solid rgba(255,255,255,.2);font-size:14px;-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
+.badge i{width:9px;height:9px;border-radius:50%;background:var(--grey)}
+.badge.open i{background:#3ddc84}
+.rate{position:absolute;right:22px;top:112px;width:min(260px,calc(100% - 44px));padding:16px 18px;border-radius:var(--r-big);background:rgba(17,18,20,.5);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 20px 60px -20px rgba(0,0,0,.6);-webkit-backdrop-filter:blur(24px) saturate(160%);backdrop-filter:blur(24px) saturate(160%)}
+.rate .n{font-family:'Kanit';font-weight:800;font-size:44px;line-height:1;color:var(--y)}
+.rate .n small{font-size:15px;color:var(--bone);font-weight:500;margin-left:6px}
+.rate q{display:block;font-size:14.5px;margin-top:8px;quotes:none}
+.rate cite{display:block;font-style:normal;font-size:13.5px;color:#cfcec9;margin-top:4px}
+.in{opacity:0;transform:translateY(22px);animation:in .8s cubic-bezier(.2,.7,.2,1) forwards}
+.in.a2{animation-delay:.12s}.in.a3{animation-delay:.24s}.in.a4{animation-delay:.38s}.in.a5{animation-delay:.6s}
+@keyframes in{to{opacity:1;transform:none}}
+
+/* yellow band */
+.band{background:var(--y);color:var(--ink);padding:26px 0}
+.band .wrap{display:flex;flex-wrap:wrap;gap:6px 34px;justify-content:space-between;align-items:center}
+.band b{font-family:'Kanit';font-style:italic;font-weight:800;font-size:clamp(24px,5vw,40px);line-height:1}
+.band a{font-family:'Kanit';font-weight:800;font-size:clamp(26px,5.5vw,44px);text-decoration:none;font-style:italic}
+
+section{padding:84px 0}
+h2{font-size:clamp(44px,9vw,104px);margin-bottom:22px}
+.lede{max-width:46ch;color:#d8d7d2}
+
+/* loupe */
+.loupe-grid{display:grid;gap:34px;align-items:center}
+.loupe{position:relative;aspect-ratio:1/1;border-radius:var(--r-big);overflow:hidden;background:url(img/p9.jpg) center/cover;touch-action:none;cursor:none;box-shadow:0 30px 80px -30px #000;max-width:560px;width:100%}
+.lens{position:absolute;width:168px;height:168px;border-radius:50%;border:3px solid var(--y);background-image:url(img/p9.jpg);background-repeat:no-repeat;box-shadow:0 14px 40px rgba(0,0,0,.6),inset 0 0 0 2px rgba(0,0,0,.4);pointer-events:none;transform:translate(-50%,-50%)}
+.loupe small{position:absolute;left:14px;bottom:14px;padding:8px 14px;border-radius:var(--r-pill);background:rgba(17,18,20,.55);border:1px solid rgba(255,255,255,.2);font-size:14px;-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
+
+/* what */
+.what{background:var(--bone);color:var(--ink)}
+.what .lede{color:#2b2d31}
+.rows{margin-top:40px;border-top:2px solid var(--ink)}
+.row{display:grid;gap:6px;padding:22px 0;border-bottom:1px solid rgba(17,18,20,.25)}
+.row h3{font-family:'Kanit';font-style:italic;font-weight:800;font-size:clamp(28px,5vw,44px);line-height:1}
+.row p{max-width:52ch;color:#2b2d31}
+.src{font-size:14px;margin-top:20px;color:#555}
+.src a{color:#111}
+
+/* jobs */
+.jobs{display:grid;gap:12px;grid-template-columns:1fr}
+.jobs figure{border-radius:var(--r-big);overflow:hidden;position:relative;background:#222}
+.jobs img{width:100%;height:100%;object-fit:cover}
+.jobs .w{aspect-ratio:4/3}
+.jobs .t{aspect-ratio:4/5}
+.jobs figcaption{position:absolute;left:12px;bottom:12px;padding:6px 13px;font-size:14px;border-radius:var(--r-pill);background:rgba(17,18,20,.55);border:1px solid rgba(255,255,255,.2);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+
+/* reviews */
+.rev{background:var(--ink2)}
+.big{font-family:'Kanit';font-weight:700;font-size:clamp(26px,4.6vw,52px);line-height:1.12;max-width:26ch;margin:6px 0 16px}
+.big::before{content:"\201C";color:var(--y)}
+.who{color:#cfcec9;font-size:15px}
+.rgrid{display:grid;gap:14px;margin-top:44px}
+.card{padding:22px;border-radius:var(--r-big);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.18)}
+.card p{font-size:16px}
+.card .who{margin-top:12px}
+.stars{color:var(--y);letter-spacing:2px;font-size:15px}
+
+/* hours */
+.hrs{display:grid;gap:36px}
+dl{display:grid;grid-template-columns:auto 1fr;gap:10px 28px;max-width:420px;font-size:17px}
+dt{font-weight:700}
+dd.cl{color:var(--grey)}
+.today{color:var(--y)}
+
+/* quote */
+.quote{background:var(--y);color:var(--ink)}
+.panel{padding:26px 22px;border-radius:var(--r-big);background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.7);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 20px 60px -20px rgba(17,18,20,.35);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);max-width:860px}
+.sentence{font-family:'Kanit';font-weight:700;font-size:clamp(24px,4.4vw,38px);line-height:1.5}
+.sentence input,.sentence select{font:inherit;font-weight:700;color:var(--ink);background:rgba(255,255,255,.7);border:1px solid rgba(17,18,20,.25);border-radius:12px;padding:2px 12px;min-height:46px;max-width:100%;margin:2px 0;transition:box-shadow .15s}
+.sentence input{width:min(9em,100%)}
+.sentence input:focus,.sentence select:focus{outline:none;box-shadow:0 0 0 3px var(--ink)}
+.panel .btn{background:var(--ink);color:var(--y);margin-top:20px;min-height:54px;font-size:19px}
+.note{font-size:14px;margin-top:12px;color:#33343a}
+.panel,.quote h2{position:relative}
+
+footer{padding:34px 0 20px;font-size:14px;color:#bdbcb7;text-align:center}
+footer a{color:var(--y)}
+
+/* dock */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:12px;display:flex;gap:8px;padding:7px;border-radius:var(--r-pill);background:rgba(17,18,20,.55);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 20px 60px -20px rgba(0,0,0,.7);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);max-width:520px;margin:0 auto}
+.dock .btn{flex:1;min-height:50px}
+
+@media(min-width:760px){
+ body{padding-bottom:0}
+ nav .links{display:flex}
+ .dock{display:none}
+ .wrap{padding:0 44px}
+ section{padding:130px 0}
+ .loupe-grid{grid-template-columns:1fr 1fr;gap:70px}
+ .jobs{grid-template-columns:repeat(6,1fr)}
+ .jobs .a{grid-column:span 4;aspect-ratio:auto}
+ .jobs .b{grid-column:span 2;aspect-ratio:auto}
+ .jobs .c{grid-column:span 2}
+ .jobs .d2{grid-column:span 2}
+ .jobs .e{grid-column:span 2}
+ .rgrid{grid-template-columns:repeat(3,1fr)}
+ .hrs{grid-template-columns:1fr 1fr}
+ .row{grid-template-columns:1fr 1.2fr;gap:40px;align-items:baseline}
+ .rate{top:auto;bottom:48px;right:44px}
+ .panel{padding:40px}
+ .hero{padding-bottom:64px;min-height:min(100svh,860px)}
+}
+@media(max-width:759px){.rate{position:relative;top:auto;right:auto;margin:0 0 16px;width:100%}.hero .wrap{width:100%}}
+@media(prefers-reduced-motion:reduce){.in{animation:none;opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav>
+ <b>Garage Floors 4 Less</b>
+ <div class="links"><a href="#floor">The floor</a><a href="#jobs">Jobs</a><a href="#reviews">Reviews</a><a href="#hours">Hours</a></div>
+ <a class="btn y" href="tel:+15872299205">Call</a>
+</nav>
+
+<header class="hero">
+ <div class="wrap">
+  <aside class="rate in a4" aria-label="Google rating">
+   <div class="n">4.9<small>37 Google reviews</small></div>
+   <q>The crew was very professional and were done in a short period of time.</q>
+   <cite>BJ H., Google</cite>
+  </aside>
+  <div class="badge in" id="open"><i></i><span>Okotoks, AB &middot; serving Calgary</span></div>
+  <h1 class="d"><span class="in a2">Garage floors</span><span class="y in a3">for less.</span></h1>
+  <p class="sub in a4">Garage floor coatings by Garage Floors 4 Less - Calgary. Free garage floor assessment.</p>
+  <div class="cta in a5"><a class="btn y" href="tel:+15872299205">Call (587) 229-9205</a><a class="btn g" href="#quote">Get a free quote</a></div>
+ </div>
+</header>
+
+<div class="band"><div class="wrap"><b>Free garage floor assessment</b><a href="tel:+15872299205">(587) 229-9205</a></div></div>
+
+<section id="floor">
+ <div class="wrap loupe-grid">
+  <div>
+   <h2 class="d">Look closer.</h2>
+   <p class="lede">This is one of their finished flake floors. Drag your finger or mouse across it to look at the flake up close.</p>
+  </div>
+  <div class="loupe" id="loupe" role="img" aria-label="Close-up of a finished flake garage floor. Move the pointer to magnify.">
+   <div class="lens" id="lens"></div>
+   <small>Their floor, magnified</small>
+  </div>
+ </div>
+</section>
+
+<section class="what">
+ <div class="wrap">
+  <h2 class="d">What goes down.</h2>
+  <p class="lede">From their own posts about the work.</p>
+  <div class="rows">
+   <div class="row"><h3>FloorX2 coating system</h3><p>The premium garage floor coating they install.</p></div>
+   <div class="row"><h3>Core Fusion Bond</h3><p>The bond technology behind the FloorX2 coating, built for long-lasting performance.</p></div>
+   <div class="row"><h3>Free garage floor assessment</h3><p>They look at your floor first and then quote it. Ask for a free quote below.</p></div>
+  </div>
+  <p class="src">Source: <a href="https://www.instagram.com/garagefloors4lesscalgary/" rel="noopener">Garage Floors 4 Less Calgary on Instagram</a>.</p>
+ </div>
+</section>
+
+<section id="jobs">
+ <div class="wrap">
+  <h2 class="d">Their floors.</h2>
+  <div class="jobs">
+   <figure class="w a"><img src="img/p10.jpg" alt="Finished flake garage floor with grey slat wall and cabinets" loading="lazy"></figure>
+   <figure class="t b"><img src="img/p7-truck.jpg" alt="Garage Floors 4 Less work truck" loading="lazy"></figure>
+   <figure class="w c"><img src="img/p11.jpg" alt="Coated garage floor with bike and wall storage" loading="lazy"></figure>
+   <figure class="w d2"><img src="img/p8.jpg" alt="Dark flake floor with black base edge" loading="lazy"></figure>
+   <figure class="w e"><img src="img/p12.jpg" alt="Garage Floors 4 Less van parked inside a shop bay" loading="lazy"></figure>
+  </div>
+ </div>
+</section>
+
+<section class="rev" id="reviews">
+ <div class="wrap">
+  <h2 class="d">4.9 on Google.</h2>
+  <p class="lede">37 reviews. Word for word.</p>
+  <p class="big" style="margin-top:36px">Service from Shayne was outstanding! He was extremely quick in his responses and very accommodating when I needed to change my install date.</p>
+  <p class="who">BJ H., Google</p>
+  <div class="rgrid">
+   <div class="card"><div class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>Great work by Garage for Less Alberta south! Shout out to Shayne who did the quote and organized the work! He also was able to get us in 2 weeks early!</p><p class="who">Kevin J., Google</p></div>
+   <div class="card"><div class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>The installation took about 7 hours and looks just like in their brochure advertising material. The two installers were diligent and answered all questions about what they were doing.</p><p class="who">Foon D., Google</p></div>
+   <div class="card"><div class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>Outstanding experience from start to finish. Shayne walked us through their solution and how it would work for our garage, and gave us a clear quote up front.</p><p class="who">Julian G., Google</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="hours">
+ <div class="wrap hrs">
+  <div>
+   <h2 class="d">Open six days.</h2>
+   <p class="lede">Based in Okotoks, AB, serving Calgary.</p>
+  </div>
+  <dl id="hrs">
+   <dt data-d="1">Monday</dt><dd>8 a.m. to 7 p.m.</dd>
+   <dt data-d="2">Tuesday</dt><dd>8 a.m. to 7 p.m.</dd>
+   <dt data-d="3">Wednesday</dt><dd>8 a.m. to 7 p.m.</dd>
+   <dt data-d="4">Thursday</dt><dd>8 a.m. to 7 p.m.</dd>
+   <dt data-d="5">Friday</dt><dd>8 a.m. to 7 p.m.</dd>
+   <dt data-d="6">Saturday</dt><dd>9 a.m. to 5 p.m.</dd>
+   <dt data-d="0">Sunday</dt><dd class="cl">Closed</dd>
+  </dl>
+ </div>
+</section>
+
+<section class="quote" id="quote">
+ <div class="wrap">
+  <h2 class="d">Free quote.</h2>
+  <form class="panel" id="qf">
+   <p class="sentence">Hi, it's <input id="qn" placeholder="your name" aria-label="Your name" autocomplete="name"> in <input id="qa" placeholder="your area" aria-label="Your area" autocomplete="address-level2">. I'd like <select id="qt" aria-label="What you need"><option>a free quote</option><option>a free garage floor assessment</option><option>a garage floor coating</option></select>.</p>
+   <button class="btn" type="submit">Text this to (587) 229-9205</button>
+   <p class="note">Opens a text message on your phone. Nothing is sent until you press send.</p>
+  </form>
+ </div>
+</section>
+
+<footer><div class="wrap">Garage Floors 4 Less - Calgary &middot; Okotoks, AB &middot; <a href="tel:+15872299205">(587) 229-9205</a><br>Preview built by JPF. Not live yet.</div></footer>
+
+<div class="dock"><a class="btn y" href="tel:+15872299205">Call</a><a class="btn g" href="sms:+15872299205">Text</a></div>
+
+<script>
+(function(){
+ // open now (Mountain time)
+ var H={0:null,1:[8,19],2:[8,19],3:[8,19],4:[8,19],5:[8,19],6:[9,17]};
+ try{
+  var p=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Edmonton',weekday:'short',hour:'numeric',hour12:false}).formatToParts(new Date());
+  var wd=p.find(function(x){return x.type==='weekday'}).value,hr=+p.find(function(x){return x.type==='hour'}).value%24;
+  var m={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6},d=m[wd],h=H[d];
+  var b=document.getElementById('open');
+  if(h&&hr>=h[0]&&hr<h[1]){b.classList.add('open');b.querySelector('span').textContent='Open now · Okotoks, AB · serving Calgary'}
+  var t=document.querySelector('#hrs dt[data-d="'+d+'"]');if(t){t.classList.add('today');t.nextElementSibling.classList.add('today')}
+ }catch(e){}
+ // loupe
+ var box=document.getElementById('loupe'),lens=document.getElementById('lens'),Z=3;
+ function mv(x,y){
+  var r=box.getBoundingClientRect();x=Math.max(0,Math.min(r.width,x));y=Math.max(0,Math.min(r.height,y));
+  lens.style.left=x+'px';lens.style.top=y+'px';
+  lens.style.backgroundSize=(r.width*Z)+'px '+(r.height*Z)+'px';
+  lens.style.backgroundPosition=(-(x*Z-84))+'px '+(-(y*Z-84))+'px';
+ }
+ function ev(e){var r=box.getBoundingClientRect();mv(e.clientX-r.left,e.clientY-r.top)}
+ box.addEventListener('pointermove',ev);box.addEventListener('pointerdown',ev);
+ function init(){var r=box.getBoundingClientRect();mv(r.width*.5,r.height*.55)}
+ init();addEventListener('resize',init);
+ // quote -> sms
+ document.getElementById('qf').addEventListener('submit',function(e){
+  e.preventDefault();
+  var n=document.getElementById('qn').value.trim()||'a new customer',a=document.getElementById('qa').value.trim()||'Calgary';
+  var body="Hi, it's "+n+" in "+a+". I'd like "+document.getElementById('qt').value+".";
+  location.href='sms:+15872299205?&body='+encodeURIComponent(body);
+ });
+})();
+</script>
+</body>
+</html>
