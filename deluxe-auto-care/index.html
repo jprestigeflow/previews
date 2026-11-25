@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Deluxe Auto Care | Mobile car detailing, vinyl wrap, PPF and ceramic coating in Surrey, BC</title>
+<meta name="description" content="Deluxe Auto Care, car detailing in Surrey, BC. 5.0 on Google from 108 reviews. Call or text (778) 710-1465.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Six+Caps&family=Wix+Madefor+Text:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ direction: satin-black build story. A matte wrap is the one thing this shop shows off, so the page is matte charcoal with chrome greys and one amber.
+ palette: satin #121314 (matte wrap in their photos), gunmetal #232628 (wrap sheen), chrome #c4c8cd (26 inch wheels), bone #ecebe7 (text), amber #f08a1c (headlight marker lens in their lamp photo).
+ fonts: Six Caps (ultra tall display) + Wix Madefor Text (body).
+ signature: Tired-to-head-turner slider, same 2007 Escalade before and after, then the build steps in their own words.
+ order: hero, slider, build steps, services, reviews, quote sentence, visit.
+ motion: one load sequence (headline lines rise, glass card floats in), count-up numbers, slider drag. Nothing else moves.
+*/
+:root{
+  --ink:#121314; --gun:#232628; --gun2:#1a1c1e; --chrome:#c4c8cd; --bone:#ecebe7; --amber:#f08a1c;
+  --mute:#9ea3a9;
+  --disp:'Six Caps','Arial Narrow',Impact,sans-serif;
+  --body:'Wix Madefor Text',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--bone);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+.disp{font-family:var(--disp);font-weight:400;line-height:.86;letter-spacing:.012em;word-spacing:.12em;text-transform:uppercase}
+
+/* nav glass pill */
+.nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;max-width:1180px;margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:8px 8px 8px 22px;border-radius:999px;
+  background:rgba(18,19,20,.55);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);
+  border:1px solid rgba(255,255,255,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 20px 60px -20px rgba(0,0,0,.6)}
+.nav b{font-family:var(--disp);font-weight:400;font-size:30px;line-height:1;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+.nav .links{display:none;gap:26px;font-size:15px}
+.nav .links a{text-decoration:none;color:var(--chrome);padding:10px 0}
+.nav .links a:hover{color:var(--bone)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 24px;border-radius:999px;background:var(--amber);color:#1a1004;font-weight:700;font-size:16px;text-decoration:none;border:0;cursor:pointer;font-family:var(--body);transition:transform .18s,filter .18s}
+.btn:hover{filter:brightness(1.08)}
+.btn:active{transform:scale(.98)}
+.btn.ghost{background:transparent;color:var(--bone);border:1px solid rgba(255,255,255,.35)}
+
+/* hero */
+.hero{position:relative;padding-top:88px;overflow:hidden;background:radial-gradient(120% 60% at 15% 0%,#1d2023 0%,var(--ink) 60%)}
+.hero h1{font-size:calc((100vw - 40px)/3.7);padding:22px 0 0;white-space:nowrap}
+.hero h1 span{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.02em}
+.hero h1 span i{display:block;font-style:normal;transform:translateY(104%);animation:rise .9s cubic-bezier(.2,.8,.2,1) forwards}
+.hero h1 span:nth-child(2) i{animation-delay:.12s;color:var(--chrome)}
+.hero h1 span:nth-child(3) i{animation-delay:.24s}
+@keyframes rise{to{transform:none}}
+.hero .sub{max-width:34ch;color:var(--chrome);margin:22px 0 22px;font-size:18px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero .stage{position:relative;margin-top:30px}
+.hero .stage img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:56% 50%;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 18%);mask-image:linear-gradient(to bottom,transparent 0,#000 18%)}
+.glass-card{position:absolute;left:16px;right:16px;bottom:16px;padding:16px 18px;border-radius:24px;
+  background:rgba(18,19,20,.52);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);
+  border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 20px 60px -20px rgba(0,0,0,.7);
+  opacity:0;transform:translateY(24px);animation:float .9s .7s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes float{to{opacity:1;transform:none}}
+.glass-card .score{display:flex;align-items:baseline;gap:12px}
+.glass-card .score strong{font-family:var(--disp);font-weight:400;font-size:58px;line-height:.8;color:var(--amber)}
+.glass-card .score span{font-size:15px;color:var(--bone)}
+.glass-card p{font-size:15px;color:var(--bone);margin-top:8px;line-height:1.45}
+.glass-card p em{font-style:normal;color:var(--mute)}
+
+/* sections */
+section{padding:84px 0}
+h2{font-size:clamp(68px,17vw,120px)}
+.lede{color:var(--chrome);max-width:46ch;margin-top:18px}
+
+/* signature slider */
+.ba{background:var(--gun2)}
+.ba .frame{position:relative;margin-top:34px;border-radius:26px;overflow:hidden;aspect-ratio:1/1;touch-action:pan-y;user-select:none;-webkit-user-select:none;background:#000}
+.ba .frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba .after{clip-path:inset(0 0 0 50%)}
+.ba .handle{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--bone);pointer-events:none}
+.ba .knob{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:var(--bone);
+  background:rgba(18,19,20,.5);-webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);border:1px solid rgba(255,255,255,.35);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 10px 30px -10px rgba(0,0,0,.7);pointer-events:none}
+.ba .chip{position:absolute;bottom:14px;padding:8px 14px;border-radius:14px;font-size:14px;font-weight:700;background:rgba(18,19,20,.55);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.2)}
+.ba .chip.l{left:14px}.ba .chip.r{right:14px;color:var(--amber)}
+.ba input[type=range]{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.ba .src{margin-top:14px;font-size:14px;color:var(--mute)}
+
+/* build steps */
+.steps{margin-top:40px}
+.step{display:grid;gap:18px;padding:34px 0;border-top:1px solid rgba(255,255,255,.12)}
+.step .n{font-family:var(--disp);font-size:72px;line-height:.8;color:var(--amber)}
+.step h3{font-family:var(--body);font-weight:700;font-size:21px;line-height:1.3;margin-bottom:6px}
+.step p{color:var(--chrome);max-width:44ch}
+.step .ph{border-radius:20px;overflow:hidden;aspect-ratio:3/2;background:var(--gun)}
+.step .ph img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.step.in .ph img{transform:none}
+.step.nophoto{padding-bottom:28px}
+.src{font-size:14px;color:var(--mute)}
+.src a{color:var(--chrome)}
+
+/* services */
+.svc{background:var(--gun2)}
+.svc ul{list-style:none;margin-top:34px;display:grid;gap:0}
+.svc li{padding:18px 0;border-top:1px solid rgba(255,255,255,.12);display:flex;gap:16px;align-items:baseline;justify-content:space-between;flex-wrap:wrap}
+.svc li strong{font-family:var(--disp);font-weight:400;font-size:44px;line-height:.9;letter-spacing:.02em;text-transform:uppercase}
+.svc li span{color:var(--chrome);font-size:16px;max-width:36ch}
+
+/* reviews */
+.rev{position:relative;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;animation:drift 26s ease-in-out infinite alternate}
+.orb.a{width:420px;height:420px;background:rgba(240,138,28,.18);top:8%;right:-120px}
+.orb.b{width:520px;height:520px;background:rgba(196,200,205,.12);bottom:-120px;left:-160px;animation-duration:32s}
+@keyframes drift{to{transform:translate(-50px,40px)}}
+.rev .wrap{position:relative}
+.big{margin-top:34px}
+.big blockquote{font-family:var(--body);font-weight:500;font-size:clamp(23px,5.6vw,38px);line-height:1.3;max-width:30ch}
+.big cite{display:block;margin-top:18px;font-style:normal;color:var(--chrome);font-size:16px}
+.more{display:grid;gap:16px;margin-top:44px}
+.rc{padding:22px;border-radius:24px;background:rgba(236,235,231,.07);-webkit-backdrop-filter:blur(22px) saturate(150%);backdrop-filter:blur(22px) saturate(150%);border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 20px 60px -24px rgba(0,0,0,.6)}
+.rc p{font-size:17px;line-height:1.5}
+.rc cite{display:block;margin-top:12px;font-style:normal;font-size:15px;color:var(--chrome)}
+.nums{display:flex;gap:34px;margin-top:36px;flex-wrap:wrap}
+.nums div strong{display:block;font-family:var(--disp);font-weight:400;font-size:96px;line-height:.82;color:var(--amber)}
+.nums div span{font-size:15px;color:var(--chrome)}
+
+/* quote */
+.quote{position:relative;overflow:hidden;background:var(--gun2)}
+.panel{position:relative;margin-top:34px;padding:26px 22px;border-radius:28px;background:rgba(18,19,20,.5);-webkit-backdrop-filter:blur(24px) saturate(160%);backdrop-filter:blur(24px) saturate(160%);border:1px solid rgba(255,255,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 20px 60px -20px rgba(0,0,0,.7)}
+.sentence{font-size:clamp(22px,5.4vw,32px);line-height:1.9;font-weight:500}
+.sentence input,.sentence select{font:inherit;color:var(--bone);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:4px 12px;min-height:44px;margin:2px 2px;max-width:100%;width:auto;-webkit-appearance:none;appearance:none}
+.sentence input::placeholder{color:rgba(236,235,231,.45)}
+.sentence input:focus,.sentence select:focus{outline:none;border-color:var(--amber);box-shadow:0 0 0 3px rgba(240,138,28,.35)}
+.sentence select option{color:#111}
+.sentence .w-n{width:min(100%,11ch)}.sentence .w-c{width:min(100%,12ch)}
+.panel .row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:22px}
+.panel small{color:var(--chrome);font-size:14px}
+
+/* visit */
+.visit dl{display:grid;gap:22px;margin-top:34px}
+.visit dt{color:var(--mute);font-size:14px}
+.visit dd{font-size:20px;line-height:1.4}
+.visit dd a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35)}
+footer{padding:34px 0 120px;color:var(--mute);font-size:14px;border-top:1px solid rgba(255,255,255,.1)}
+
+/* dock */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));display:flex;gap:8px;padding:8px;border-radius:999px;
+  background:rgba(18,19,20,.58);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 20px 60px -20px rgba(0,0,0,.8)}
+.dock a{flex:1;min-height:50px;display:flex;align-items:center;justify-content:center;border-radius:999px;font-weight:700;font-size:17px;text-decoration:none;transition:transform .18s}
+.dock a:active{transform:scale(.98)}
+.dock .call{background:var(--amber);color:#1a1004}
+.dock .text{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2)}
+
+@media(min-width:820px){
+  body{font-size:18px}
+  .nav .links{display:flex}
+  .dock{display:none}
+  footer{padding-bottom:40px}
+  .hero{min-height:min(100vh,900px);display:flex;align-items:flex-end;padding:120px 0 64px}
+  .hero .stage{position:absolute;top:0;bottom:0;right:0;left:42%;margin:0;z-index:0}
+  .hero .stage img{height:100%;aspect-ratio:auto;object-position:50% 60%;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 38%);mask-image:linear-gradient(to right,transparent 0,#000 38%)}
+  .hero .wrap{position:relative;z-index:2}
+  .hero h1{font-size:clamp(150px,14.5vw,210px);padding:0}
+  .hero .copy{max-width:none}.hero .sub{max-width:36ch}
+  .glass-card{left:auto;right:max(40px,calc((100vw - 1180px)/2));bottom:64px;width:340px}
+  .step{grid-template-columns:110px 1fr 1.15fr;align-items:center;gap:40px}
+  .step:nth-child(even) .ph{order:-1}
+  .step:nth-child(even){grid-template-columns:1.15fr 110px 1fr}
+  .step .n{font-size:110px}
+  .svc ul{grid-template-columns:1fr 1fr;column-gap:60px}
+  .more{grid-template-columns:repeat(3,1fr)}
+  .visit dl{grid-template-columns:repeat(3,1fr);gap:40px}
+  .ba .frame{aspect-ratio:16/8}
+  section{padding:130px 0}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero h1 span i{animation:none;transform:none}
+  .glass-card{animation:none;opacity:1;transform:none}
+  .orb{animation:none}
+  .step .ph img{transform:none;transition:none}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <b>Deluxe Auto Care</b>
+  <div class="links"><a href="#build">The build</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#quote">Get a quote</a></div>
+  <a class="btn" href="tel:+17787101465">Call (778) 710-1465</a>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="copy">
+      <p style="color:var(--amber);font-weight:700;font-size:16px;margin-top:6px">Mobile car detailing in Surrey, BC</p>
+      <h1 class="disp"><span><i>Tired in.</i></span><span><i>Head-turner</i></span><span><i>out.</i></span></h1>
+      <p class="sub">Detailing, paint correction, ceramic coating, PPF and vinyl wrap. Call, text or DM to book.</p>
+      <div class="cta"><a class="btn" href="tel:+17787101465">Call (778) 710-1465</a><a class="btn ghost" href="#quote">Get a quote</a></div>
+    </div>
+  </div>
+  <div class="stage">
+    <img src="img/c-lot.jpg" alt="Matte black Cadillac Escalade after a satin black wrap by Deluxe Auto Care" width="1050" height="600" fetchpriority="high">
+    <div class="glass-card">
+      <div class="score"><strong>5.0</strong><span>on Google from 108 reviews</span></div>
+      <p>&ldquo;Amazing job on my car!&rdquo; <em>Ramneet G., Google</em></p>
+    </div>
+  </div>
+</header>
+
+<section class="ba" id="build">
+  <div class="wrap">
+    <h2 class="disp">Same truck.<br>Pull to see.</h2>
+    <p class="lede">A 2007 Escalade, before and after Deluxe Auto Care's build. Drag the handle.</p>
+    <div class="frame" id="frame">
+      <img src="img/c-before.jpg" alt="Before: the stock 2007 Cadillac Escalade" style="object-position:50% 62%">
+      <img class="after" id="after" src="img/c-profile.jpg" alt="After: the same Escalade in satin black on 26 inch wheels" style="object-position:50% 58%">
+      <div class="handle" id="handle"><div class="knob" aria-hidden="true">&#8644;</div></div>
+      <span class="chip l">Before</span><span class="chip r">After</span>
+      <input id="range" type="range" min="0" max="100" value="50" aria-label="Slide between before and after">
+    </div>
+    <p class="src">Photos from their <a href="https://www.instagram.com/p/DgHDXmjFOnG/">Instagram post</a>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="disp">How the build went</h2>
+    <p class="lede">Steps and wording from the shop's own post on this Escalade.</p>
+    <div class="steps">
+      <div class="step nophoto">
+        <div class="n">1</div>
+        <div><h3>Polish the paint first</h3><p>The heavily contaminated paint gets polished so the vinyl wrap can stick to a clean, smooth surface.</p></div>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <div><h3>Satin black wrap</h3><p>Full disassembly of the vehicle, plus a new chrome grill.</p></div>
+        <div class="ph"><img src="img/c-wrap.jpg" alt="Satin black vinyl wrap going onto the front fender" loading="lazy"></div>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <div><h3>Lights and tint</h3><p>LED headlights, park lights and fog lights. Window tint at 5% front, 5% back and 50% windshield.</p></div>
+        <div class="ph"><img src="img/c-lamp.jpg" alt="Headlight on the wrapped Escalade" loading="lazy"></div>
+      </div>
+      <div class="step">
+        <div class="n">4</div>
+        <div><h3>Lowered, on 26s</h3><p>Once it was wrapped, a 2/4 Belltech lowering kit and 26 inch wheels.</p></div>
+        <div class="ph"><img src="img/c-wheel.jpg" alt="26 inch chrome wheel on the lowered Escalade" loading="lazy"></div>
+      </div>
+      <div class="step">
+        <div class="n">5</div>
+        <div><h3>Brakes and exhaust</h3><p>Drilled and slotted rotors with bright orange caliper paint. A custom dual side exit exhaust for a little more rumble and a nostalgic old school look.</p></div>
+        <div class="ph"><img src="img/c-caliper.jpg" alt="Drilled and slotted rotor with orange caliper" loading="lazy"></div>
+      </div>
+      <div class="step">
+        <div class="n">6</div>
+        <div><h3>Head-turner</h3><p>&ldquo;It all started with a vision. And we turned the vision into reality, it got tons of compliments and turned heads, everywhere it went.&rdquo;</p></div>
+        <div class="ph"><img src="img/c-front.jpg" alt="Finished satin black Escalade, front three quarter view" loading="lazy"></div>
+      </div>
+    </div>
+    <p class="src" style="margin-top:8px">Source: <a href="https://www.instagram.com/p/DgHDXmjFOnG/">their Instagram post</a>.</p>
+  </div>
+</section>
+
+<section class="svc" id="services">
+  <div class="wrap">
+    <h2 class="disp">What they do</h2>
+    <p class="lede">From their Instagram profile, posts and Google reviews.</p>
+    <ul>
+      <li><strong>Detailing</strong><span>Mobile automotive detailing, inside and out.</span></li>
+      <li><strong>Paint correction</strong><span>Multi-stage correction and polishing.</span></li>
+      <li><strong>Ceramic coating</strong><span>Paint correction plus coating.</span></li>
+      <li><strong>Paint sealant</strong><span>Polish plus paint sealant.</span></li>
+      <li><strong>Vinyl wrap</strong><span>Satin black and more.</span></li>
+      <li><strong>PPF</strong><span>Paint protection film.</span></li>
+      <li><strong>Interior clean</strong><span>Seat shampoo and a full interior detail.</span></li>
+      <li><strong>Window tint</strong><span>Front, back and windshield.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="rev" id="reviews">
+  <div class="orb a"></div><div class="orb b"></div>
+  <div class="wrap">
+    <h2 class="disp">What clients say</h2>
+    <div class="nums">
+      <div><strong data-count="5" data-dec="1">5.0</strong><span>Google rating</span></div>
+      <div><strong data-count="108">108</strong><span>Google reviews</span></div>
+    </div>
+    <div class="big">
+      <blockquote>&ldquo;I would say Joven did a great job on my Tesla model 3. I went in around 5pm and it was done with the wash and inside cleanup within an hour and 30 minutes which is quick.&rdquo;</blockquote>
+      <cite>Sarbjeet K., Google</cite>
+    </div>
+    <div class="more">
+      <div class="rc"><p>&ldquo;Amazing job on my car! The seats came out super clean after the shampoo, and the whole interior looks and smells fresh.&rdquo;</p><cite>Ramneet G., Google</cite></div>
+      <div class="rc"><p>&ldquo;I recently had my car detailed and couldn&rsquo;t be happier with the results.&rdquo;</p><cite>B D., Google</cite></div>
+      <div class="rc"><p>&ldquo;Absolutely amazing experience! I brought my Jeep in for a full detail and I&rsquo;m seriously impressed with the results.&rdquo;</p><cite>Tashu 101, Google</cite></div>
+    </div>
+    <p class="src" style="margin-top:22px"><a href="https://www.google.com/maps/place/Deluxe+auto+care/data=!4m7!3m6!1s0x5485dbde14540001:0x28d83a880929421e!8m2!3d49.1287857!4d-122.8811145!16s%2Fg%2F11t4d_w9mg!19sChIJAQBUFN7bhVQRHkIpCYg62Cg?authuser=0&hl=en">Read all reviews on Google Maps</a></p>
+  </div>
+</section>
+
+<section class="quote" id="quote">
+  <div class="wrap">
+    <h2 class="disp">Get a quote</h2>
+    <p class="lede">Fill in the sentence. It opens a text to the shop.</p>
+    <form class="panel" id="qf" autocomplete="off">
+      <p class="sentence">Hi, I'm <input class="w-n" id="qn" placeholder="your name" aria-label="Your name" required>
+      and I need <select id="qs" aria-label="What you need"><option>a detail</option><option>paint correction</option><option>ceramic coating</option><option>a vinyl wrap</option><option>PPF</option><option>window tint</option><option>something else</option></select>
+      for my <input class="w-c" id="qc" placeholder="car" aria-label="Your car" required>.</p>
+      <div class="row"><button class="btn" type="submit">Text this to the shop</button><small>Opens your messages app to (778) 710-1465.</small></div>
+    </form>
+  </div>
+</section>
+
+<section class="visit">
+  <div class="wrap">
+    <h2 class="disp">Find them</h2>
+    <dl>
+      <div><dt>Area</dt><dd>Mobile automotive detailing, Surrey, BC</dd></div>
+      <div><dt>Address</dt><dd>12320 69a Ave, Surrey, BC V3W 0A5</dd></div>
+      <div><dt>Hours</dt><dd>Open 24 hours, every day (Google listing)</dd></div>
+      <div><dt>Call or text</dt><dd><a href="tel:+17787101465">(778) 710-1465</a></dd></div>
+      <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/deluxeautocare_/">@deluxeautocare_</a></dd></div>
+    </dl>
+  </div>
+</section>
+
+<footer><div class="wrap">Preview built by JPF. Not live yet.</div></footer>
+
+<div class="dock" role="group" aria-label="Call or text">
+  <a class="call" href="tel:+17787101465">Call</a>
+  <a class="text" href="sms:+17787101465">Text</a>
+</div>
+
+<script>
+(function(){
+  // slider
+  var r=document.getElementById('range'),a=document.getElementById('after'),h=document.getElementById('handle');
+  function set(v){a.style.clipPath='inset(0 0 0 '+v+'%)';h.style.left=v+'%'}
+  r.addEventListener('input',function(){set(r.value)});set(50);
+  // quote form -> sms
+  document.getElementById('qf').addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=qn.value.trim(),s=qs.value,c=qc.value.trim();
+    var body="Hi, I'm "+n+" and I need "+s+" for my "+c+".";
+    location.href='sms:+17787101465?&body='+encodeURIComponent(body);
+  });
+  // reveal + count (content is visible without JS)
+  var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if('IntersectionObserver' in window){
+    document.querySelectorAll('.step').forEach(function(s){s.classList.remove('in')});
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(!e.isIntersecting)return;io.unobserve(e.target);
+      if(e.target.classList.contains('step'))e.target.classList.add('in');
+    })},{threshold:.25});
+    document.querySelectorAll('.step,.nums').forEach(function(s){io.observe(s)});
+    if(rm)document.querySelectorAll('.step').forEach(function(s){s.classList.add('in')});
+  }else{document.querySelectorAll('.step').forEach(function(s){s.classList.add('in')})}
+  var nio=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(!e.isIntersecting||rm)return;nio.unobserve(e.target);
+    var el=e.target,end=parseFloat(el.dataset.count),dec=+el.dataset.dec||0,t0=null;
+    function f(t){t0=t0||t;var p=Math.min((t-t0)/1100,1);p=1-Math.pow(1-p,3);el.textContent=(end*p).toFixed(dec);if(p<1)requestAnimationFrame(f)}
+    requestAnimationFrame(f);
+  })},{threshold:.6});
+  document.querySelectorAll('[data-count]').forEach(function(el){nio.observe(el)});
+})();
+</script>
+</body>
+</html>
