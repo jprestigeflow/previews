@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Blow Dust Zone Ltd. | Semi truck interior detailing, Calgary</title>
+<meta name="description" content="Semi truck interior detailing in Calgary, AB. 5.0 on Google from 107 reviews. Call (403) 313-7803.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600;700&family=Russo+One&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ direction: cab-tour-led. Night-cab dark page, steering-wheel orange, one tap-through "walk the cab" tour using their own interior photos.
+ palette: night #101214 (dash black, p8) / cab grey #b9bcbd (dash plastic, p8) / bone #f1efea / wheel orange #d0701f (Peterbilt steering wheel, p9)
+ fonts: Russo One (display, heavy truck-stencil feel) + Commissioner (body)
+ signature: Walk the cab, glass chips switch between dash, sleeper, storage, door, seat
+ order: hero > walk the cab > services + area/hours > lead review + more reviews > quote sentence > footer
+ motion: one hero load sequence; tour photo cross-fade on tap; reduced-motion respected */
+:root{--night:#101214;--night2:#181b1e;--grey:#b9bcbd;--bone:#f1efea;--or:#d0701f;--or2:#e8883a;--line:rgba(241,239,234,.14)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--night);color:var(--bone);font:400 17px/1.6 Commissioner,system-ui,sans-serif;overflow-x:hidden;padding-bottom:96px}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--or2);outline-offset:3px;border-radius:6px}
+.d{font-family:'Russo One',Impact,sans-serif;font-weight:400;line-height:.98;letter-spacing:0;word-spacing:.05em}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+.glass{background:rgba(24,27,30,.55);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 24px 60px -24px rgba(0,0,0,.6)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;border-radius:999px;font:700 17px Commissioner;text-decoration:none;border:0;cursor:pointer;transition:transform .17s,background .17s}
+.btn:active{transform:scale(.98)}
+.btn.main{background:var(--or);color:#140c04}.btn.main:hover{background:var(--or2)}
+.btn.ghost{background:rgba(255,255,255,.08);color:var(--bone);border:1px solid rgba(255,255,255,.25)}
+/* nav */
+nav{position:fixed;z-index:20;top:12px;left:12px;right:12px;max-width:1000px;margin-inline:auto;height:58px;border-radius:999px;display:flex;align-items:center;justify-content:space-between;padding:0 8px 0 22px}
+nav b{font:400 17px 'Russo One';word-spacing:.1em}
+nav a.btn{min-height:44px;padding:0 20px;font-size:16px}
+nav .links{display:none;gap:26px;font-weight:500}
+nav .links a{text-decoration:none;opacity:.85}
+@media(min-width:800px){nav .links{display:flex}}
+/* hero */
+.hero{padding:88px 0 0;position:relative;overflow:hidden}
+.hero h1{font-size:clamp(64px,14.5vw,148px)}
+.hero h1 span{display:block}
+.hero h1 .o{color:var(--or)}
+.hero p.lead{max-width:34ch;margin:16px 0 20px;color:#d6d4cf;font-size:18px}
+.hero .cta{display:flex;gap:10px}.hero .cta .btn{padding:0 18px;font-size:16px}@media(min-width:600px){.hero .cta .btn{padding:0 26px;font-size:17px}}
+.stage{position:relative;margin-top:28px;height:min(86vw,640px);min-height:400px}
+.stage img{width:100%;height:100%;object-fit:cover;object-position:50% 62%;-webkit-mask-image:linear-gradient(#0000,#000 22%);mask-image:linear-gradient(#0000,#000 22%)}
+.rate{position:absolute;left:20px;bottom:20px;border-radius:24px;padding:18px 22px;max-width:330px}
+.rate .n{font:400 46px/1 'Russo One';color:var(--or2)}
+.rate small{display:block;font-size:15px;color:#e8e6e1;margin-top:6px;line-height:1.4}
+.rate q{display:block;margin-top:10px;font-size:15px;quotes:none;border-top:1px solid var(--line);padding-top:10px}
+@media(min-width:800px){.rate{left:max(20px,calc((100vw - 1180px)/2));bottom:36px}}
+.load{opacity:0;transform:translateY(22px);animation:in .8s cubic-bezier(.2,.7,.2,1) forwards}
+.l1{animation-delay:.05s}.l2{animation-delay:.18s}.l3{animation-delay:.3s}.l4{animation-delay:.42s}.l5{animation-delay:.7s}
+@keyframes in{to{opacity:1;transform:none}}
+/* tour */
+section{padding:96px 0}
+h2{font-size:clamp(38px,7vw,76px);margin-bottom:14px}
+.tour{background:var(--bone);color:var(--night)}
+.tour .sub{max-width:52ch;color:#3a3d40}
+.tv{margin-top:34px;display:grid;gap:18px}
+.view{position:relative;border-radius:28px;overflow:hidden;background:#000;aspect-ratio:4/5;max-height:80vh}
+.view img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .45s}
+.view img.on{opacity:1}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip{min-height:46px;padding:0 20px;border-radius:999px;font:600 16px Commissioner;color:var(--night);background:rgba(255,255,255,.6);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid rgba(16,18,20,.18);box-shadow:inset 0 1px 0 #fff;cursor:pointer;transition:transform .17s,background .17s}
+.chip:active{transform:scale(.97)}
+.chip[aria-pressed=true]{background:var(--night);color:var(--bone);border-color:var(--night)}
+.cap{font-size:16px;color:#3a3d40;min-height:3.2em;max-width:46ch}
+@media(min-width:900px){.tv{grid-template-columns:1.25fr 1fr;align-items:end;gap:48px}.view{aspect-ratio:4/3}}
+/* services */
+.svc{display:grid;gap:44px;margin-top:40px}
+.svc dl div{padding:22px 0;border-top:1px solid var(--line)}
+.svc dt{font:400 24px 'Russo One';color:var(--bone);margin-bottom:4px;word-spacing:.08em}
+.svc dd{color:#c9c7c2;max-width:46ch}
+.info{border-radius:26px;padding:28px}
+.info h3{font:400 22px 'Russo One';margin-bottom:10px;word-spacing:.08em}
+.info p{color:#dcdad5}
+.info .hrs{margin:14px 0;padding:14px 0;border-block:1px solid var(--line)}
+.info b{color:var(--or2)}
+@media(min-width:900px){.svc{grid-template-columns:1.3fr 1fr;align-items:start;gap:72px}}
+/* reviews */
+.rev{background:var(--night2);position:relative;overflow:hidden}
+.big{font:400 clamp(26px,4.6vw,52px)/1.18 'Russo One';max-width:22ch;margin:26px 0 14px;word-spacing:.1em}
+.by{color:var(--grey);font-size:16px}
+.cards{display:grid;gap:14px;margin-top:50px}
+.card{border-radius:22px;padding:24px;background:rgba(255,255,255,.05);border:1px solid var(--line)}
+.card p{font-size:16.5px}.card .by{margin-top:10px}
+@media(min-width:900px){.cards{grid-template-columns:repeat(2,1fr)}.cards .card:first-child{grid-column:span 2}}
+/* quote */
+.quote{position:relative;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.38;pointer-events:none;animation:dr 26s ease-in-out infinite alternate}
+.orb.a{width:420px;height:420px;background:var(--or);left:-120px;top:20px}
+.orb.b{width:380px;height:380px;background:#5b6770;right:-100px;bottom:-60px;animation-delay:-9s}
+@keyframes dr{to{transform:translate(60px,40px)}}
+.panel{position:relative;border-radius:28px;padding:32px 24px;max-width:860px}
+.panel .say{font:400 clamp(24px,4.4vw,42px)/1.5 'Russo One';word-spacing:.1em}
+.panel input,.panel select{font:600 inherit;font-family:Commissioner,sans-serif;font-size:.62em;color:var(--bone);background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);border-radius:14px;padding:6px 14px;min-height:48px;max-width:100%;vertical-align:middle;margin:2px 0}
+.panel select option{color:#111}
+.panel input::placeholder{color:#a9aaa8}
+.panel input:focus,.panel select:focus{outline:3px solid var(--or2);outline-offset:1px}
+.panel .btn{margin-top:26px}
+.note{margin-top:14px;font-size:15px;color:#d0cec9}
+footer{padding:36px 0 20px;border-top:1px solid var(--line);color:#a9aaa8;font-size:15px}
+/* dock */
+.dock{position:fixed;z-index:30;left:12px;right:12px;bottom:12px;max-width:520px;margin-inline:auto;border-radius:999px;display:flex;gap:8px;padding:8px}
+.dock .btn{flex:1;min-height:52px}
+@media(min-width:900px){.dock{display:none}body{padding-bottom:0}}
+@media(prefers-reduced-motion:reduce){.load{animation:none;opacity:1;transform:none}.orb{animation:none}html{scroll-behavior:auto}.view img{transition:none}}
+</style>
+</head>
+<body>
+<nav class="glass">
+  <b>Blow Dust Zone</b>
+  <span class="links"><a href="#tour">Walk the cab</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#quote">Get a quote</a></span>
+  <a class="btn main" href="tel:+14033137803">Call now</a>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1 class="d"><span class="load l1">Your cab,</span><span class="load l2 o">blown clean.</span></h1>
+    <p class="lead load l3">Blow Dust Zone Ltd. details semi truck interiors in Calgary, Alberta.</p>
+    <div class="cta load l4"><a class="btn main" href="tel:+14033137803">Call now</a><a class="btn ghost" href="#quote">Text for a quote</a></div>
+  </div>
+  <div class="stage load l4">
+    <img src="img/p8.jpg" alt="Freightliner Cascadia cab interior, dash and floor detailed clean" width="1400" height="1050">
+    <aside class="rate glass load l5">
+      <div class="n">5.0</div>
+      <small>on Google from 107 reviews</small>
+      <q>&ldquo;Best semi truck detailing in calgary&rdquo;<br><span style="color:var(--grey)">jagdeep D., Google</span></q>
+    </aside>
+  </div>
+</header>
+
+<section class="tour" id="tour">
+  <div class="wrap">
+    <h2 class="d">Walk the cab.</h2>
+    <p class="sub">Tap through real cabs they have detailed. Dash, sleeper, door panels, seats.</p>
+    <div class="tv">
+      <div class="view" id="view">
+        <img class="on" src="img/p9.jpg" alt="Peterbilt cab with orange steering wheel, detailed" style="object-position:50% 40%">
+        <img src="img/p7.jpg" alt="Semi truck sleeper with bed and cabinets, detailed" loading="lazy">
+        <img src="img/p10.jpg" alt="Sleeper storage area with cargo net, detailed" loading="lazy">
+        <img src="img/p11.jpg" alt="Driver door panel and dash, detailed" loading="lazy">
+        <img src="img/p12.jpg" alt="Semi truck seats, detailed" loading="lazy" style="object-position:50% 30%">
+      </div>
+      <div>
+        <div class="chips" role="group" aria-label="Pick a part of the cab">
+          <button class="chip" aria-pressed="true" data-i="0">Dash</button>
+          <button class="chip" aria-pressed="false" data-i="1">Sleeper</button>
+          <button class="chip" aria-pressed="false" data-i="2">Storage</button>
+          <button class="chip" aria-pressed="false" data-i="3">Door</button>
+          <button class="chip" aria-pressed="false" data-i="4">Seats</button>
+        </div>
+        <p class="cap" id="cap" aria-live="polite" style="margin-top:20px">Peterbilt cab. Photo from Blow Dust Zone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <h2 class="d">What they do</h2>
+    <div class="svc">
+      <dl>
+        <div><dt>Semi truck interior detailing</dt><dd>Restores the look of the cab interior. Stains and built-up dirt come out.</dd></div>
+        <div><dt>Deep steam cleaning and sanitization</dt><dd>Listed on their Instagram for truck interiors.</dd></div>
+        <div><dt>Winter prep package</dt><dd>Posted Nov 20 to get your vehicle ready for Calgary winter. DM or call for what is in it.</dd></div>
+        <div><dt>They come to you</dt><dd>&ldquo;They will come to your truck wherever it is parked.&rdquo; Yograj S., Google</dd></div>
+      </dl>
+      <aside class="info glass">
+        <h3>Where and when</h3>
+        <p>176 Martinvalley Crescent NE<br>Calgary, AB T3J 4L6</p>
+        <p class="hrs"><b>Open every day</b><br>9 a.m. to 8 p.m.</p>
+        <p>Call <a href="tel:+14033137803"><b>(403) 313-7803</b></a></p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="rev" id="reviews">
+  <div class="wrap">
+    <h2 class="d">What drivers say</h2>
+    <p class="big">&ldquo;My semi looks like new again!&rdquo;</p>
+    <p class="by">Sukh D., Google. 5 stars</p>
+    <div class="cards">
+      <div class="card"><p>&ldquo;Excellent detailing service! My semi truck looks brand new inside. They paid great attention to every detail, and the quality of their work exceeded my expectations. Professional, friendly, and completed the job on time. I highly recommend them to anyone looking to get their truck detailed. Thank you for the amazing work.&rdquo;</p><p class="by">Sukhi M., Google. 5 stars</p></div>
+      <div class="card"><p>&ldquo;I got my truck cleaned by them. They did a fabulous job. They will come to your truck wherever it is parked. Rates are very genuine and their work is very neat and most importantly these guys are very puntual, will not waste your time.&rdquo;</p><p class="by">Yograj S., Google. 5 stars</p></div>
+      <div class="card"><p>&ldquo;Contacted them for Semi-truck detailing. They nailed it. I am very pleased with their work.&rdquo;</p><p class="by">R D S., Google. 5 stars</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="quote" id="quote">
+  <div class="orb a"></div><div class="orb b"></div>
+  <div class="wrap">
+    <h2 class="d">Get a quote</h2>
+    <form class="panel glass" id="qf">
+      <p class="say">Hi, I'm <input id="nm" name="n" placeholder="your name" autocomplete="given-name" required size="11" aria-label="Your name"> and I need <select id="sv" aria-label="What you need"><option>an interior detail</option><option>a steam clean</option><option>the winter prep package</option><option>some help choosing</option></select> for my <select id="tk" aria-label="Vehicle"><option>semi truck</option><option>truck</option><option>vehicle</option></select>.</p>
+      <button class="btn main" type="submit">Send this as a text</button>
+      <p class="note">Opens a text to (403) 313-7803. You press send.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Blow Dust Zone Ltd. 176 Martinvalley Crescent NE, Calgary, AB. (403) 313-7803<br>Preview built by JPF. Not live yet.</div>
+</footer>
+
+<div class="dock glass">
+  <a class="btn main" href="tel:+14033137803">Call</a>
+  <a class="btn ghost" href="sms:+14033137803">Text</a>
+</div>
+
+<script>
+(function(){
+  var caps=["Peterbilt cab. Photo from Blow Dust Zone.","Sleeper bunk and cabinets in a semi.","Sleeper storage with cargo net.","Driver door panel and dash.","Seats and cab floor."];
+  var imgs=document.querySelectorAll('#view img'),chips=document.querySelectorAll('.chip'),cap=document.getElementById('cap');
+  chips.forEach(function(c){c.addEventListener('click',function(){
+    var i=+c.dataset.i;
+    imgs.forEach(function(m,k){m.classList.toggle('on',k===i)});
+    chips.forEach(function(x){x.setAttribute('aria-pressed',x===c)});
+    cap.textContent=caps[i];
+  })});
+  document.getElementById('qf').addEventListener('submit',function(e){
+    e.preventDefault();
+    var b="Hi, I'm "+document.getElementById('nm').value.trim()+" and I need "+document.getElementById('sv').value+" for my "+document.getElementById('tk').value+".";
+    location.href="sms:+14033137803?&body="+encodeURIComponent(b);
+  });
+})();
+</script>
+</body>
+</html>
