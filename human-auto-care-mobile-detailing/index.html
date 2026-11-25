@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Human Auto Care - Mobile Car Detailing in Fredericton, NB</title>
+<meta name="description" content="Mobile car detailing in Fredericton, NB. We come to your home, apartment or workplace. 4.9 stars from 116 Google reviews.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Mulish:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+/* Design plan
+ direction: dark premium cabin tour, leather-and-mat, editorial serif, glass layer
+ palette: night #14110f, mat #1d1e20 (rubber mats p6/p12), cognac #b9702f (tan seats p10), bone #efe8dc (Lexus interior p12), steel #8b9399 (white Mercedes p8)
+ fonts: Cormorant Garamond display + Mulish body
+ signature: pick-a-job chooser with their Instagram jobs
+ order: hero, promise, services, job chooser, cabin strip, reviews, area+hours, quote
+ motion: one hero load sequence, no other scroll effects */
+:root{--night:#14110f;--mat:#1d1e20;--cog:#c47b36;--cog-d:#8f531c;--bone:#efe8dc;--steel:#a3aab0;--r-pill:999px;--r-big:26px;--r-sm:14px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--night);color:var(--bone);font:400 17px/1.6 'Mulish',system-ui,sans-serif;overflow-x:hidden;padding-bottom:96px}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cog);outline-offset:3px}
+.serif{font-family:'Cormorant Garamond',Georgia,serif}
+.glass{background:rgba(20,17,15,.55);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 20px 60px -20px rgba(0,0,0,.6)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:var(--r-pill);background:var(--cog);color:#1a0f05;font-weight:800;font-size:17px;text-decoration:none;border:0;cursor:pointer;transition:transform .18s,background .18s}
+.btn:hover{background:#d78a43}.btn:active{transform:scale(.98)}
+.btn.ghost{background:transparent;color:var(--bone);border:1px solid rgba(239,232,220,.45)}
+/* nav */
+nav{position:fixed;z-index:20;top:12px;left:12px;right:12px;max-width:760px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 6px 6px 20px;border-radius:var(--r-pill)}
+nav b{font:600 20px/1 'Cormorant Garamond',serif;letter-spacing:.01em;white-space:nowrap}
+nav .links{display:none;gap:22px;font-size:15px;font-weight:600}
+nav .links a{text-decoration:none;opacity:.85}
+nav .btn{min-height:44px;padding:0 20px;font-size:15px}
+@media(min-width:760px){nav .links{display:flex}}
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 62%;animation:push 2.4s cubic-bezier(.2,.7,.2,1) both}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,17,15,.55) 0%,rgba(20,17,15,0) 28%,rgba(20,17,15,.5) 45%,rgba(20,17,15,.95) 100%)}
+.hero .in{position:relative;z-index:2;width:100%;max-width:1240px;margin:0 auto;padding:0 22px 112px}
+.hero h1 span{display:block}.hero h1{font:600 clamp(58px,17vw,128px)/.9 'Cormorant Garamond',serif;letter-spacing:-.01em;word-spacing:.12em;max-width:none;animation:rise 1s .5s cubic-bezier(.2,.7,.2,1) both}
+.hero p.sub{margin:18px 0 22px;max-width:30em;font-size:18px;animation:rise 1s .7s both}
+.hero .acts{display:flex;flex-wrap:wrap;gap:12px;animation:rise 1s .85s both}
+.hcard{position:absolute;z-index:3;right:16px;top:84px;width:min(230px,56vw);padding:16px 18px;border-radius:var(--r-big);animation:float 1.2s 1.1s both}
+.hcard .n{font:600 46px/1 'Cormorant Garamond',serif}
+.hcard small{display:block;font-size:14px;color:var(--bone);opacity:.9;margin-top:4px}
+.stars{color:var(--cog);letter-spacing:2px;font-size:15px}
+@keyframes push{from{transform:scale(1.14)}to{transform:scale(1)}}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes float{from{opacity:0;transform:translateY(-14px) scale(.96)}to{opacity:1;transform:none}}
+section{padding:84px 22px}
+.wrap{max-width:1100px;margin:0 auto}
+h2{font:600 clamp(40px,9vw,84px)/.98 'Cormorant Garamond',serif;word-spacing:.1em;margin-bottom:22px}
+/* promise + services */
+.promise{background:var(--bone);color:#1b1510}
+.promise .grid{display:grid;gap:36px}
+.promise h2{color:#1b1510}
+.promise p.lead{font-size:19px;max-width:36em}
+.svc{list-style:none;border-top:1px solid rgba(27,21,16,.25)}
+.svc li{padding:18px 0;border-bottom:1px solid rgba(27,21,16,.25);display:grid;gap:2px}
+.svc strong{font:600 28px/1.1 'Cormorant Garamond',serif}
+.svc span{font-size:16px;color:#4a3d31}
+@media(min-width:860px){.promise .grid{grid-template-columns:1fr 1fr;gap:80px;align-items:start}}
+/* chooser */
+.pick{background:var(--mat)}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0 26px}
+.chip{min-height:46px;padding:0 20px;border-radius:var(--r-pill);font:700 16px 'Mulish',sans-serif;color:var(--bone);cursor:pointer;background:rgba(239,232,220,.1);-webkit-backdrop-filter:blur(18px) saturate(150%);backdrop-filter:blur(18px) saturate(150%);border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.25);transition:transform .15s,background .15s}
+.chip:active{transform:scale(.97)}
+.chip[aria-selected=true]{background:var(--cog);color:#1a0f05;border-color:var(--cog)}
+.stage{display:grid;gap:24px}
+.stage .ph{border-radius:var(--r-big);overflow:hidden;aspect-ratio:4/5;background:#000}
+.stage .ph img{width:100%;height:100%;object-fit:cover}
+.stage h3{font:600 clamp(34px,7vw,56px)/1 'Cormorant Garamond',serif;margin-bottom:10px}
+.stage p{max-width:26em;margin-bottom:18px}
+.stage a.src{font-size:15px;color:var(--steel)}
+@media(min-width:860px){.stage{grid-template-columns:5fr 6fr;align-items:center;gap:64px}}
+/* cabin strip */
+.strip{padding:84px 0}
+.strip .wrap{padding:0 22px}
+.rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 22px 20px;-webkit-overflow-scrolling:touch}
+.rail figure{flex:0 0 min(74vw,340px);scroll-snap-align:center;border-radius:var(--r-big);overflow:hidden;aspect-ratio:3/4;background:#000}
+.rail img{width:100%;height:100%;object-fit:cover}
+.rail figure.w{flex-basis:min(86vw,520px);aspect-ratio:4/3;align-self:center}
+/* reviews */
+.rev{background:var(--bone);color:#1b1510}
+.rev h2{color:#1b1510}
+.big{font:500 clamp(28px,5.2vw,52px)/1.12 'Cormorant Garamond',serif;max-width:21em;margin:12px 0 10px}
+.who{font-size:15px;font-weight:700;color:var(--cog-d)}
+.more{display:grid;gap:18px;margin-top:44px}
+.more blockquote{padding:22px;border-radius:var(--r-big);background:rgba(255,255,255,.55);border:1px solid rgba(27,21,16,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 20px 50px -28px rgba(27,21,16,.4);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);font-size:16px}
+.more cite{display:block;margin-top:10px;font-style:normal;font-weight:700;font-size:14px;color:var(--cog-d)}
+@media(min-width:860px){.more{grid-template-columns:repeat(3,1fr)}}
+/* area */
+.area .grid{display:grid;gap:30px}
+.area dl{display:grid;gap:6px}
+.area dt{font:600 26px 'Cormorant Garamond',serif;color:var(--cog)}
+.area dd{margin-bottom:14px}
+.area .num{font:600 clamp(40px,9vw,84px)/1 'Cormorant Garamond',serif}
+@media(min-width:860px){.area .grid{grid-template-columns:1fr 1fr;gap:80px}}
+/* quote */
+.quote{position:relative;overflow:hidden}
+.quote>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.55)}
+.panel{position:relative;max-width:760px;margin:0 auto;padding:30px 24px;border-radius:var(--r-big)}
+.panel h2{font-size:clamp(36px,8vw,64px)}
+.sent{font:500 clamp(22px,4.6vw,30px)/1.9 'Cormorant Garamond',serif}
+.sent input,.sent select{font:700 17px 'Mulish',sans-serif;color:var(--bone);background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);border-radius:var(--r-sm);padding:8px 12px;min-height:44px;margin:0 2px;max-width:100%;width:100%}
+.sent select option{color:#111}
+.sent input::placeholder{color:rgba(239,232,220,.6)}
+.sent .row{display:block}
+.panel .btn{margin-top:18px;width:100%}
+.note{font-size:14px;margin-top:12px;opacity:.85}
+footer{padding:30px 22px 20px;text-align:center;font-size:14px;color:var(--steel)}
+/* dock */
+.dock{position:fixed;z-index:30;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));display:flex;gap:8px;padding:7px;border-radius:var(--r-pill);max-width:520px;margin:0 auto}
+.dock a{flex:1;min-height:48px;border-radius:var(--r-pill);display:flex;align-items:center;justify-content:center;font-weight:800;text-decoration:none;transition:transform .15s}
+.dock a:active{transform:scale(.98)}
+.dock .c{background:var(--cog);color:#1a0f05}
+.dock .t{background:rgba(239,232,220,.12);border:1px solid rgba(255,255,255,.2)}
+@media(min-width:860px){.dock{display:none}body{padding-bottom:0}.hero .in{padding-bottom:56px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav class="glass" aria-label="Main">
+  <b>Human Auto Care</b>
+  <div class="links"><a href="#services">Services</a><a href="#jobs">Recent jobs</a><a href="#reviews">Reviews</a><a href="#quote">Quote</a></div>
+  <a class="btn" href="tel:+15064763065">Call</a>
+</nav>
+
+<header class="hero">
+  <img src="img/p10.jpg" alt="Tan leather rear seats inside a car after a full interior detail">
+  <div class="hcard glass">
+    <div class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    <div class="n">4.9</div>
+    <small>116 Google reviews</small>
+  </div>
+  <div class="in">
+    <h1><span>Clean car.</span> <span>Done at your door.</span></h1>
+    <p class="sub">Mobile car detailing in Fredericton, NB. We come to your home, apartment or workplace.</p>
+    <div class="acts"><a class="btn" href="tel:+15064763065">Call (506) 476-3065</a><a class="btn ghost" href="#quote">Get a quote</a></div>
+  </div>
+</header>
+
+<section class="promise" id="services">
+  <div class="wrap grid">
+    <div>
+      <h2>Human Auto Care, mobile car detailing.</h2>
+      <p class="lead">No shop visit. Park where you live or work in Fredericton and nearby areas, and the detail happens there.</p>
+    </div>
+    <ul class="svc">
+      <li><strong>Full interior and exterior detail</strong><span>Inside and out, at your home or apartment.</span></li>
+      <li><strong>Interior detail</strong><span>Dirt, dust and the small details, cleaned and refreshed.</span></li>
+      <li><strong>Pet hair removal</strong><span>Built-up hair and debris taken out of seats and carpet.</span></li>
+      <li><strong>Interior restoration</strong><span>For the badly neglected cab. One Ford F-150 took 5 hours.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="pick" id="jobs">
+  <div class="wrap">
+    <h2>Pick a recent job.</h2>
+    <div class="chips" role="tablist" aria-label="Recent jobs">
+      <button class="chip" role="tab" aria-selected="true" data-i="0">Toyota Camry</button>
+      <button class="chip" role="tab" aria-selected="false" data-i="1">Honda CR-V</button>
+      <button class="chip" role="tab" aria-selected="false" data-i="2">Toyota Corolla</button>
+    </div>
+    <div class="stage" aria-live="polite">
+      <div class="ph"><img id="jimg" src="img/p1c.jpg" alt="Toyota Camry after its detail"></div>
+      <div>
+        <h3 id="jt">Toyota Camry</h3>
+        <p id="jp">Full interior and exterior detail, completed right at the customer's apartment.</p>
+        <a class="src" id="jl" href="https://www.instagram.com/p/Dekw31utEg5/" target="_blank" rel="noopener">See the post on Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="strip">
+  <div class="wrap"><h2>Inside the cabin.</h2></div>
+  <div class="rail" tabindex="0" aria-label="Photos of their work">
+    <figure><img src="img/p11.jpg" alt="Ford truck front cabin, steering wheel under a protective cover" loading="lazy"></figure>
+    <figure class="w"><img src="img/p7.jpg" alt="Mazda interior cleaned" loading="lazy"></figure>
+    <figure><img src="img/p12.jpg" alt="Rubber floor mat and Lexus sill plate" loading="lazy"></figure>
+    <figure class="w"><img src="img/p9.jpg" alt="Grey Ram pickup" loading="lazy"></figure>
+    <figure><img src="img/p6.jpg" alt="Corolla rear floor mats" loading="lazy"></figure>
+    <figure class="w"><img src="img/p8.jpg" alt="White Mercedes SUV" loading="lazy"></figure>
+  </div>
+</section>
+
+<section class="rev" id="reviews">
+  <div class="wrap">
+    <h2>4.9 stars. 116 reviews.</h2>
+    <p class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+    <p class="big">&ldquo;Amazing job! My car was spotless and honestly looked as good as new. Very professional, friendly, and kind. You can tell they really take pride in their work. Super happy with the results and would definitely recommend!&rdquo;</p>
+    <p class="who">Lissa S., Google</p>
+    <div class="more">
+      <blockquote>&ldquo;Wonderful, friendly service. My car looks brand new again and it's almost 7 years old. Much attention to detail and care went into this service and I would happily book again and recommend to family and friends.&rdquo;<cite>Rachel L., Google</cite></blockquote>
+      <blockquote>&ldquo;Attention to details. Fabulous service. Pictures can't describe the fresh look. Professional, friendly and humble "Human" recommended for your best car cleaning service. Thanks Manav for your generous and genuine efforts. Best of luck.&rdquo;<cite>Rahul B., Google</cite></blockquote>
+      <blockquote>&ldquo;I had seen and heard so many good things on this guy so I contacted him and got him to do a full detail on my old truck and he went above and beyond. I would strongly recommend him to anyone looking for quality work and great price as well. Won't be the last time I use him thats for sure.&rdquo;<cite>Kevin A., Google</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="area">
+  <div class="wrap grid">
+    <div>
+      <h2>We drive to you.</h2>
+      <p>Fredericton and nearby areas. Your home, apartment or workplace.</p>
+      <p style="margin-top:10px">37 Morning Gate Dr, Fredericton, NB</p>
+    </div>
+    <dl>
+      <dt>Hours</dt><dd>8 a.m. to 6 p.m., every day of the week.</dd>
+      <dt>Phone</dt><dd><a href="tel:+15064763065">(506) 476-3065</a></dd>
+      <dt>Instagram</dt><dd><a href="https://www.instagram.com/human.autocare/" target="_blank" rel="noopener">@human.autocare</a></dd>
+    </dl>
+  </div>
+</section>
+
+<section class="quote" id="quote">
+  <img src="img/p12.jpg" alt="">
+  <div class="panel glass">
+    <h2>Ask for a quote.</h2>
+    <form class="sent" id="qf">
+      <span class="row">Hi, I'm <input id="qn" placeholder="your name" autocomplete="given-name" required> and I drive a <input id="qv" placeholder="car or truck" required>.</span>
+      <span class="row">I need a <select id="qs"><option>full interior and exterior detail</option><option>interior detail</option><option>pet hair removal</option><option>interior restoration</option><option>not sure yet</option></select> in <input id="qa" placeholder="your area" value="Fredericton"></span>
+      <button class="btn" type="submit">Text Human Auto Care</button>
+    </form>
+    <p class="note">This opens a text message to (506) 476-3065. You send it yourself.</p>
+  </div>
+</section>
+
+<footer>Preview built by JPF. Not live yet.</footer>
+
+<div class="dock glass"><a class="c" href="tel:+15064763065">Call now</a><a class="t" href="#quote">Text a quote</a></div>
+
+<script>
+const J=[
+ {t:"Toyota Camry",p:"Full interior and exterior detail, completed right at the customer's apartment.",i:"img/p1c.jpg",l:"https://www.instagram.com/p/Dekw31utEg5/"},
+ {t:"Honda CR-V",p:"Thorough interior detail at the customer's apartment, with the focus on quality workmanship and attention to detail.",i:"img/p4.jpg",l:"https://www.instagram.com/p/DeSzk_6NFB1/"},
+ {t:"Toyota Corolla",p:"Interior detail completed right at the customer's apartment. No shop visit needed.",i:"img/p6.jpg",l:"https://www.instagram.com/p/DeDUTd7tUes/"}];
+const $=s=>document.querySelector(s);
+document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
+ const j=J[c.dataset.i];
+ document.querySelectorAll('.chip').forEach(x=>x.setAttribute('aria-selected',x===c));
+ $('#jimg').src=j.i;$('#jimg').alt=j.t+" after its detail";$('#jt').textContent=j.t;$('#jp').textContent=j.p;$('#jl').href=j.l;
+}));
+$('#qf').addEventListener('submit',e=>{
+ e.preventDefault();
+ const b="Hi, I'm "+$('#qn').value+" and I drive a "+$('#qv').value+". I need a "+$('#qs').value+" in "+($('#qa').value||'Fredericton')+". Can I get a quote?";
+ location.href="sms:+15064763065?&body="+encodeURIComponent(b);
+});
+</script>
+</body>
+</html>
