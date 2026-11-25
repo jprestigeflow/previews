@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Général mobile detailing | Mobile car detailing in Gatineau, QC</title>
+<meta name="description" content="Général mobile detailing. Mobile car detailing in Gatineau, QC. Call (819) 329-6871.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#111314">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500;700;800&family=Radio+Canada:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Plan: night-garage walk-around. Palette: asphalt #111314 (Lambo/driveway), graphite #25282a, bone #ece8e1 (AMG body),
+   seat orange #d6491f (AMG seats), bronze #b98c4e (Lambo wheels). Fonts Oxanium + Radio Canada.
+   Signature: walk-around switcher. Motion: one load sequence, counters. */
+:root{--bg:#111314;--gr:#25282a;--bone:#ece8e1;--or:#d6491f;--or2:#f06a3f;--br:#b98c4e;--mut:#a9a8a3;
+--d:'Oxanium',system-ui,sans-serif;--b:'Radio Canada',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{font-family:var(--b);background:var(--bg);color:var(--bone);font-size:17px;line-height:1.6;overflow-x:hidden;padding-bottom:96px}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--or2);outline-offset:3px}
+.wrap{width:min(1180px,100% - 40px);margin:0 auto}
+h1,h2,h3{font-family:var(--d);line-height:.98;letter-spacing:-.01em;word-spacing:.08em}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:999px;font:700 17px var(--d);text-decoration:none;border:0;cursor:pointer;transition:transform .18s,background .18s,box-shadow .18s}
+.btn:active{transform:scale(.98)}
+.btn.p{background:var(--or);color:#fff;box-shadow:0 10px 30px -10px rgba(214,73,31,.7)}
+.btn.p:hover{background:var(--or2)}
+.glass{background:rgba(26,29,31,.52);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 20px 60px -20px rgba(0,0,0,.6)}
+/* nav */
+nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 8px 8px 20px;border-radius:999px}
+nav b{font:800 15px var(--d);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+nav .links{display:none;gap:26px;font-size:15px}
+nav .links a{text-decoration:none;color:var(--mut);transition:color .18s}
+nav .links a:hover{color:var(--bone)}
+nav .btn{min-height:44px;padding:0 20px;font-size:15px}
+@media(min-width:820px){nav .links{display:flex}}
+/* hero */
+.hero{position:relative;min-height:100svh;padding-top:104px;display:flex;flex-direction:column;overflow:hidden}
+.hero .ph{position:absolute;inset:36% 0 0 0;z-index:0}
+.hero .ph img{width:100%;height:100%;object-fit:cover;object-position:62% 60%}
+.hero .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--bg) 0%,rgba(17,19,20,.35) 30%,rgba(17,19,20,0) 55%,rgba(17,19,20,.55) 100%)}
+.hero .in{position:relative;z-index:2}
+h1{font-weight:800;font-size:clamp(48px,13.4vw,76px);max-width:none}
+h1 span{display:block}
+.hero p.sub{margin-top:18px;color:var(--bone);max-width:30ch;font-size:18px}
+.hero .cta{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}
+.hero .card{position:relative;z-index:2;margin-top:auto;margin-bottom:24px;align-self:flex-start;padding:18px 20px;border-radius:26px;max-width:340px}
+.card .big{font:800 44px/1 var(--d)}
+.card .st{color:var(--or2);letter-spacing:3px;font-size:15px}
+.card p{font-size:15px;line-height:1.45;margin-top:8px}
+.card small{color:var(--mut);font-size:14px}
+@media(min-width:900px){
+ .hero{padding-top:130px}.hero .ph{inset:0}
+ .hero .ph::after{background:linear-gradient(90deg,var(--bg) 0%,var(--bg) 30%,rgba(17,19,20,.4) 58%,rgba(17,19,20,0) 85%),linear-gradient(0deg,var(--bg) 0%,rgba(17,19,20,0) 22%)}
+ .hero .ph img{object-position:70% 55%}
+ h1{font-size:clamp(100px,9.6vw,140px)}
+ .hero .card{position:absolute;right:max(20px,calc((100vw - 1180px)/2));bottom:56px;margin:0;max-width:360px}
+ .hero .wrapb{padding-bottom:40px}
+}
+.ld{opacity:0;transform:translateY(18px);animation:in .9s cubic-bezier(.2,.7,.2,1) forwards}
+.ld.d1{animation-delay:.15s}.ld.d2{animation-delay:.35s}.ld.d3{animation-delay:.55s}.ld.d4{animation-delay:.8s}
+@keyframes in{to{opacity:1;transform:none}}
+/* sections */
+section{padding:88px 0}
+h2{font-weight:800;font-size:clamp(40px,10.5vw,64px);max-width:12ch}
+.lead{color:var(--mut);margin-top:16px;max-width:46ch}
+/* walk-around */
+.walk{background:var(--gr);position:relative;overflow:hidden}
+.walk::before,.walk::after{content:"";position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;animation:drift 26s ease-in-out infinite alternate}
+.walk::before{width:420px;height:420px;background:rgba(214,73,31,.22);right:-120px;top:-80px}
+.walk::after{width:380px;height:380px;background:rgba(185,140,78,.16);left:-140px;bottom:-100px;animation-delay:-9s}
+@keyframes drift{to{transform:translate(50px,40px)}}
+.stage{position:relative;margin-top:36px;border-radius:26px;overflow:hidden;aspect-ratio:4/3.4;background:#000;z-index:1}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s}
+.stage img.on{opacity:1}
+.chips{position:absolute;left:12px;right:12px;bottom:12px;display:flex;gap:8px;flex-wrap:wrap;z-index:3}
+.chip{min-height:44px;padding:0 18px;border-radius:999px;font:600 15px var(--d);color:var(--bone);cursor:pointer;transition:background .18s,transform .18s;background:rgba(26,29,31,.55);-webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}
+.chip:active{transform:scale(.98)}
+.chip[aria-pressed=true]{background:var(--or);border-color:var(--or2);color:#fff}
+.cap{position:relative;z-index:1;margin-top:16px;color:var(--mut);font-size:15px;min-height:26px}
+@media(min-width:900px){.stage{aspect-ratio:16/8.2}.walk .hd{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end}}
+/* services */
+.svc{list-style:none;margin-top:36px;border-top:1px solid rgba(255,255,255,.14)}
+.svc li{padding:22px 0;border-bottom:1px solid rgba(255,255,255,.14);display:grid;gap:2px}
+.svc h3{font-size:26px;font-weight:700;line-height:1.1}
+.svc em{font-style:normal;color:var(--mut);font-size:15px}
+@media(min-width:900px){.svc{display:grid;grid-template-columns:1fr 1fr;column-gap:60px}.svc li{grid-template-columns:1fr;}}
+.svc-wrap{display:grid;gap:40px}
+@media(min-width:900px){.svc-wrap{grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}.svc{margin-top:0}}
+/* reviews */
+.rv{overflow:hidden;background:linear-gradient(180deg,var(--bg),#16191a)}
+.num{display:flex;gap:40px;margin-top:28px;flex-wrap:wrap}
+.num div{font:800 clamp(52px,14vw,88px)/1 var(--d)}
+.num small{display:block;font:500 15px var(--b);color:var(--mut);margin-top:6px}
+.num .or{color:var(--or2)}
+blockquote.q{margin-top:44px;font:700 clamp(25px,6.3vw,40px)/1.2 var(--d);max-width:26ch;word-spacing:.05em}
+.by{margin-top:14px;color:var(--mut);font-size:15px}
+.rg{display:grid;gap:16px;margin-top:44px;position:relative}
+.rg::before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(214,73,31,.2);filter:blur(80px);right:-80px;top:20%;pointer-events:none}
+.rg figure{position:relative;padding:24px;border-radius:24px}
+.rg q{display:block;quotes:none;font-size:17px;line-height:1.55}
+.rg figcaption{margin-top:12px;color:var(--mut);font-size:15px}
+@media(min-width:900px){.rg{grid-template-columns:1fr 1fr}}
+/* quote */
+.qt .panel{border-radius:28px;padding:28px 22px;margin-top:32px;position:relative;overflow:hidden}
+.qtbg{position:absolute;inset:0;z-index:0}
+.qtbg img{width:100%;height:100%;object-fit:cover}
+.qtbg::after{content:"";position:absolute;inset:0;background:rgba(17,19,20,.72)}
+.qtwrap{position:relative;margin-top:30px;border-radius:30px;overflow:hidden}
+.qtwrap .panel{margin:0;z-index:1;background:rgba(26,29,31,.62)}
+form.sent{font-size:clamp(22px,5.6vw,30px);line-height:1.8;font-family:var(--d);font-weight:500}
+.f{display:inline-block;min-height:46px;min-width:130px;max-width:100%;padding:4px 14px;margin:2px 0;border-radius:14px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.1);color:var(--bone);font:500 17px var(--b);vertical-align:middle;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.f::placeholder{color:#b9b7b0}
+select.f option{color:#111}
+.f:focus{outline:2px solid var(--or2);outline-offset:2px}
+form .btn{margin-top:20px;width:100%}
+.note{margin-top:12px;color:var(--mut);font-size:14px}
+@media(min-width:900px){.qt .panel{padding:56px}.qt form .btn{width:auto}}
+/* contact */
+.ct{padding-bottom:70px}
+.ct .tel{display:block;font:800 clamp(40px,11.5vw,104px)/1 var(--d);text-decoration:none;margin-top:18px;color:var(--bone);word-spacing:0}
+.ct .tel:hover{color:var(--or2)}
+dl{margin-top:34px;display:grid;gap:18px;max-width:560px}
+dt{color:var(--mut);font-size:15px}
+dd{font-size:18px}
+footer{padding:26px 0 30px;color:var(--mut);font-size:14px;border-top:1px solid rgba(255,255,255,.1)}
+/* dock */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:12px;max-width:460px;margin:0 auto;display:flex;gap:8px;padding:8px;border-radius:999px}
+.dock .btn{flex:1;min-height:48px;padding:0 10px;font-size:16px}
+.dock .btn.s{background:rgba(255,255,255,.12);color:var(--bone);border:1px solid rgba(255,255,255,.2)}
+@media(min-width:900px){.dock{display:none}body{padding-bottom:0}}
+.rv-in{opacity:0;transform:translateY(14px);transition:opacity .8s,transform .8s}
+.rv-in.v{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.ld,.rv-in{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav class="glass" aria-label="Main">
+  <b>Général mobile detailing</b>
+  <div class="links"><a href="#walk">Work</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#quote">Get a quote</a></div>
+  <a class="btn p" href="tel:+18193296871">Call</a>
+</nav>
+
+<header class="hero">
+  <div class="ph"><img src="img/p12.jpg" alt="Matte black Lamborghini with bronze wheels, detailed in a Gatineau driveway" fetchpriority="high"></div>
+  <div class="wrap in wrapb">
+    <h1><span class="ld d1">Mobile</span><span class="ld d2">detailing</span><span class="ld d3">that comes</span><span class="ld d3">to you.</span></h1>
+    <p class="sub ld d3">Général mobile detailing. Car detailing in Gatineau, QC.</p>
+    <div class="cta ld d4"><a class="btn p" href="tel:+18193296871">Call (819) 329-6871</a><a class="btn glass" style="color:var(--bone)" href="#quote">Get a quote</a></div>
+  </div>
+  <div class="wrap" style="position:relative;z-index:2;margin-top:auto;width:min(1180px,100% - 40px)">
+    <div class="card glass ld d4" style="position:relative;right:auto;bottom:auto">
+      <div class="st" aria-label="5 stars">★★★★★</div>
+      <div class="big">5.0 <small>on Google, 137 reviews</small></div>
+      <p>"Made it feel like I was driving a new car off the lot."</p>
+      <small>Geo P., Google</small>
+    </div>
+  </div>
+</header>
+
+<section class="walk" id="walk">
+  <div class="wrap">
+    <div class="hd">
+      <h2>Walk around the work.</h2>
+      <p class="lead">Real cars from their Instagram. Tap a chip to switch.</p>
+    </div>
+    <div class="stage" id="stage">
+      <img class="on" src="img/p3.jpg" alt="White Mercedes-AMG GTS after detailing" data-cap="AMG GTS. A job they posted as In-N-Out.">
+      <img src="img/p11.jpg" alt="Matte black Lamborghini with bronze wheels" data-cap="Lamborghini. Their post: only In-N-Out.">
+      <img src="img/p9.jpg" alt="Orange and black leather AMG cabin" data-cap="Cabin of the AMG GTS.">
+      <img src="img/p7.jpg" alt="AMG GTS at night after the wash" data-cap="After dark, a wet AMG GTS.">
+      <div class="chips" role="group" aria-label="Choose a photo">
+        <button class="chip" aria-pressed="true" data-i="0">AMG GTS</button>
+        <button class="chip" aria-pressed="false" data-i="1">Lamborghini</button>
+        <button class="chip" aria-pressed="false" data-i="2">Cabin</button>
+        <button class="chip" aria-pressed="false" data-i="3">After dark</button>
+      </div>
+    </div>
+    <p class="cap" id="cap" aria-live="polite">AMG GTS. A job they posted as In-N-Out.</p>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap svc-wrap">
+    <div>
+      <h2>What they do.</h2>
+      <p class="lead">Straight from their own post. Call or text to pick what your car needs.</p>
+    </div>
+    <ul class="svc">
+      <li><h3>Wash and restoration</h3><em>Lavage et remise à neuf</em></li>
+      <li><h3>Oxygen treatment against smoke and bacteria</h3><em>Traitement à l'oxygène</em></li>
+      <li><h3>Paint polish and repair</h3><em>Polissage et réparation de peinture</em></li>
+      <li><h3>Headlight restoration</h3><em>Restauration de phares</em></li>
+      <li><h3>Ceramic coating</h3><em>Revêtement céramique</em></li>
+      <li><h3>Windshield repair</h3><em>Réparation de pare-brise</em></li>
+    </ul>
+  </div>
+</section>
+
+<section class="rv" id="reviews">
+  <div class="wrap">
+    <h2>Owners say it plain.</h2>
+    <div class="num"><div class="or"><span data-n="5.0" data-d="1">5.0</span><small>Google rating</small></div><div><span data-n="137">137</span><small>Google reviews</small></div></div>
+    <blockquote class="q rv-in">"Phenomenal work on our family car, which had salt caked into the carpets."</blockquote>
+    <p class="by">Mounir K., Google</p>
+    <div class="rg">
+      <figure class="glass rv-in"><q>Did a great job detailing a used car I bought and made it feel like I was driving a new car off the lot. Very thorough work and can tell Laith puts a lot of care and consideration into what he does.</q><figcaption>Geo P., Google</figcaption></figure>
+      <figure class="glass rv-in"><q>Very good service Laith was available from 8 pm to 1 am for me to clean my car and offered me the best possible service with transportation. Super nice aftercare as well with an air freshener and other complementary items. 100% recommend</q><figcaption>Firas H., Google</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="qt" id="quote">
+  <div class="wrap">
+    <h2>Tell them what you drive.</h2>
+    <div class="qtwrap">
+      <div class="qtbg"><img src="img/p1.jpg" alt=""></div>
+      <div class="panel glass">
+        <form class="sent" id="qf">
+          Hi, I'm <input class="f" id="qn" required placeholder="your name" aria-label="Your name" autocomplete="given-name">.
+          I drive a <input class="f" id="qc" required placeholder="car" aria-label="Your car">
+          and I need
+          <select class="f" id="qs" aria-label="What you need">
+            <option>a wash and restoration</option>
+            <option>an oxygen treatment</option>
+            <option>paint polish or repair</option>
+            <option>headlight restoration</option>
+            <option>ceramic coating</option>
+            <option>windshield repair</option>
+          </select>.
+          <button class="btn p" type="submit">Text this to (819) 329-6871</button>
+        </form>
+        <p class="note">Opens your messages app with this text ready to send.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ct">
+  <div class="wrap">
+    <h2>Book your car in.</h2>
+    <a class="tel" href="tel:+18193296871">(819) 329-6871</a>
+    <dl>
+      <div><dt>Area</dt><dd>Gatineau, QC. They come to you.</dd></div>
+      <div><dt>Hours</dt><dd>Not listed. Call or text to book.</dd></div>
+      <div><dt>Find them</dt><dd>Rue Lambert, Gatineau, QC J8X 1B2<br><a href="https://www.instagram.com/general.mobile.detailing/" rel="noopener">@general.mobile.detailing on Instagram</a></dd></div>
+    </dl>
+  </div>
+</section>
+
+<footer><div class="wrap">Preview built by JPF. Not live yet.</div></footer>
+
+<div class="dock glass" role="group" aria-label="Call or text">
+  <a class="btn p" href="tel:+18193296871">Call</a>
+  <a class="btn s" href="sms:+18193296871">Text</a>
+</div>
+
+<script>
+(function(){
+  var imgs=[].slice.call(document.querySelectorAll('#stage img')),chips=[].slice.call(document.querySelectorAll('.chip')),cap=document.getElementById('cap');
+  chips.forEach(function(c){c.addEventListener('click',function(){
+    var i=+c.dataset.i;imgs.forEach(function(m,k){m.classList.toggle('on',k===i)});
+    chips.forEach(function(x){x.setAttribute('aria-pressed',x===c)});cap.textContent=imgs[i].dataset.cap;});});
+  var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('v');
+    var n=e.target.querySelector&&e.target.querySelector('[data-n]');io.unobserve(e.target)}})},{threshold:.15});
+  document.querySelectorAll('.rv-in').forEach(function(el){io.observe(el)});
+  var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;co.unobserve(e.target);
+    var t=parseFloat(e.target.dataset.n),dec=e.target.dataset.d?1:0;if(rm)return;var s=null;
+    function f(ts){s=s||ts;var p=Math.min((ts-s)/1200,1);e.target.textContent=(t*(1-Math.pow(1-p,3))).toFixed(dec);if(p<1)requestAnimationFrame(f)}
+    requestAnimationFrame(f)})},{threshold:.5});
+  document.querySelectorAll('[data-n]').forEach(function(el){co.observe(el)});
+  document.getElementById('qf').addEventListener('submit',function(e){e.preventDefault();
+    var s=document.getElementById('qs');
+    var m="Hi, I'm "+document.getElementById('qn').value.trim()+". I drive a "+document.getElementById('qc').value.trim()+" and I need "+s.value+".";
+    location.href="sms:+18193296871?&body="+encodeURIComponent(m);});
+})();
+</script>
+</body>
+</html>
