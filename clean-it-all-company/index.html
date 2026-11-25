@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Clean-It All Company | Cleaning in Calgary</title>
+<meta name="description" content="Clean-It All Company. Home, office and warehouse cleaning in Calgary. Call (250) 300-5460.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Wix+Madefor+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* PLAN: direction = space-picker-led. Palette: leaf #1a4120 (promo panel green), grass #2f7d32 (promo badge green),
+   sun #f2c81c (yellow banner on their promo), paper #f4f6ee, ink #0f1f12. Fonts DM Serif Display + Wix Madefor Text.
+   Signature = "What are we cleaning?" picker. Motion = hero load only + picker photo swap. */
+:root{--leaf:#1a4120;--grass:#2f7d32;--sun:#f2c81c;--paper:#f4f6ee;--ink:#0f1f12;--mute:#4d5c50;--r-pill:999px;--r-lg:26px;--r-sm:14px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Wix Madefor Text',system-ui,sans-serif;font-size:17px;line-height:1.55;color:var(--ink);background:var(--paper);overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+h1,h2,h3{font-family:'DM Serif Display',serif;font-weight:400;letter-spacing:-.01em;word-spacing:.12em;line-height:1.02}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;border-radius:var(--r-pill);font-weight:700;font-size:16px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:transform .16s,background .16s,box-shadow .16s}
+.btn:active{transform:scale(.98)}
+.btn.sun{background:var(--sun);color:var(--ink)}.btn.sun:hover{background:#ffd940}
+.btn.ghost{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.4)}
+.btn.ghost:hover{background:rgba(255,255,255,.24)}
+.btn.dark{background:var(--leaf);color:#fff}.btn.dark:hover{background:var(--grass)}
+
+/* nav pill */
+nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;display:flex;justify-content:space-between;align-items:center;gap:10px;max-width:880px;margin-inline:auto;padding:6px 6px 6px 20px;border-radius:var(--r-pill);
+ background:rgba(26,65,32,.55);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 20px 50px -20px rgba(15,31,18,.5);color:#fff}
+nav b{font-family:'DM Serif Display',serif;font-weight:400;font-size:21px;white-space:nowrap}
+nav .links{display:none;gap:22px;font-size:15px;font-weight:500}
+nav .links a{text-decoration:none;opacity:.9}nav .links a:hover{opacity:1}
+nav .btn{min-height:44px;padding:0 20px;font-size:15px}
+@media(min-width:760px){nav .links{display:flex}}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;background:var(--leaf);overflow:hidden}
+.hero>img{position:absolute;top:0;left:0;width:100%;height:56%;object-fit:cover;object-position:50% 62%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,65,32,.25) 0%,rgba(26,65,32,0) 18%,rgba(26,65,32,.55) 36%,var(--leaf) 56%)}
+.hero .wrap{position:relative;z-index:2;padding:330px 0 104px;display:grid;gap:28px}
+.hero h1{font-size:clamp(54px,15vw,148px);max-width:9.5em}
+.hero h1 span{display:block;animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.hero h1 span:nth-child(2){animation-delay:.12s}.hero h1 span:nth-child(3){animation-delay:.24s}
+.hero p.sub{font-size:19px;max-width:30em;text-shadow:0 1px 12px rgba(0,0,0,.4)}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px}
+.gcard{border-radius:var(--r-lg);padding:20px 22px;max-width:380px;background:rgba(15,31,18,.5);-webkit-backdrop-filter:blur(24px) saturate(170%);backdrop-filter:blur(24px) saturate(170%);border:1px solid rgba(255,255,255,.25);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 24px 60px -24px rgba(0,0,0,.6);animation:float .9s .5s cubic-bezier(.2,.7,.2,1) both}
+.gcard .stars{color:var(--sun);font-size:20px;letter-spacing:2px}
+.gcard strong{font-family:'DM Serif Display',serif;font-weight:400;font-size:40px;line-height:1;margin-right:8px}
+.gcard p{font-size:15px;margin-top:8px;line-height:1.45}
+.gcard small{display:block;margin-top:8px;font-size:14px;opacity:.85}
+@media(min-width:900px){.hero>img{left:auto;right:0;width:60%;height:100%;object-position:50% 55%}
+.hero::after{background:linear-gradient(90deg,var(--leaf) 0%,var(--leaf) 38%,rgba(26,65,32,.55) 52%,rgba(26,65,32,0) 70%),linear-gradient(0deg,rgba(26,65,32,.7),rgba(26,65,32,0) 30%)}
+.hero .wrap{grid-template-columns:1.5fr 1fr;align-items:end;padding:120px 0 64px}.hero h1{font-size:clamp(90px,10.5vw,138px)}.gcard{justify-self:end}}
+@keyframes rise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+@keyframes float{from{opacity:0;transform:translateY(24px) scale(.97)}to{opacity:1;transform:none}}
+
+section{padding:88px 0}
+@media(min-width:900px){section{padding:136px 0}}
+h2{font-size:clamp(38px,8vw,84px);margin-bottom:22px}
+
+/* picker */
+.picker{background:var(--paper)}
+.picker .grid{display:grid;gap:28px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 22px}
+.chip{min-height:46px;padding:0 20px;border-radius:var(--r-pill);font:600 16px 'Wix Madefor Text',sans-serif;color:var(--leaf);background:rgba(255,255,255,.6);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid rgba(26,65,32,.25);box-shadow:inset 0 1px 0 rgba(255,255,255,.8);cursor:pointer;transition:transform .16s,background .16s,color .16s}
+.chip:active{transform:scale(.97)}
+.chip[aria-selected=true]{background:var(--leaf);color:#fff;border-color:var(--leaf)}
+.pk-text p{max-width:32em;color:var(--mute)}
+.pk-text blockquote{margin:14px 0 22px;padding-left:16px;border-left:4px solid var(--sun);font-size:18px;color:var(--ink);max-width:30em}
+.pk-text blockquote cite{display:block;font-size:14px;color:var(--mute);font-style:normal;margin-top:4px}
+.pk-photo{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/5;background:var(--leaf);box-shadow:0 30px 70px -30px rgba(26,65,32,.6)}
+.pk-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .45s}
+.pk-photo img.off{opacity:0}
+@media(min-width:900px){.picker .grid{grid-template-columns:1fr 1.05fr;gap:72px;align-items:center}.pk-photo{aspect-ratio:1/1.05}}
+
+/* terms */
+.terms{background:var(--leaf);color:#fff}
+.terms .wrap{display:grid;gap:40px}
+.terms h2{color:#fff}.terms h2 em{color:var(--sun)}
+.terms ul{list-style:none;padding:0}
+.terms li{display:flex;justify-content:space-between;gap:20px;align-items:baseline;padding:20px 0;border-top:1px solid rgba(255,255,255,.22);font-family:'DM Serif Display',serif;font-size:clamp(28px,6vw,46px);line-height:1.1}
+.terms li:last-child{border-bottom:1px solid rgba(255,255,255,.22)}
+.terms li span{font:400 15px 'Wix Madefor Text',sans-serif;opacity:.75;max-width:14em;text-align:right}
+.terms p{max-width:34em;opacity:.9}
+@media(min-width:900px){.terms .wrap{grid-template-columns:1fr 1.2fr;gap:80px;align-items:start}}
+
+/* promo */
+.promo{background:var(--sun);color:var(--ink);padding:64px 0}
+.promo .wrap{display:grid;gap:18px;align-items:center}
+.promo h2{margin:0;font-size:clamp(40px,10vw,110px)}
+.promo p{max-width:30em;font-weight:500}.promo small{display:block;font-size:14px;margin-top:6px;opacity:.75}
+@media(min-width:900px){.promo .wrap{grid-template-columns:1.3fr 1fr;gap:60px}}
+
+/* work */
+.work .head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:end;margin-bottom:28px}
+.work .head h2{margin:0}
+.mosaic{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.mosaic figure{overflow:hidden;border-radius:var(--r-sm);aspect-ratio:3/4;background:var(--leaf)}
+.mosaic figure:nth-child(1){grid-column:span 2;aspect-ratio:16/10;border-radius:var(--r-lg)}
+.mosaic img{width:100%;height:100%;object-fit:cover}
+@media(min-width:900px){.mosaic{grid-template-columns:repeat(12,1fr);grid-auto-rows:260px;gap:16px}
+ .mosaic figure,.mosaic figure:nth-child(1){aspect-ratio:auto;grid-column:span 3}
+ .mosaic figure:nth-child(1){grid-column:span 6;grid-row:span 2;border-radius:var(--r-lg)}
+ .mosaic figure:nth-child(2){grid-column:span 3;grid-row:span 2}}
+
+/* reviews */
+.reviews{background:#e8eddc}
+.lead-q{font-family:'DM Serif Display',serif;font-size:clamp(28px,5.4vw,56px);line-height:1.12;max-width:20em;word-spacing:.08em}
+.lead-q+cite,.rv cite{display:block;margin-top:16px;font-style:normal;font-weight:600}
+.lead-q+cite small,.rv cite small{font-weight:400;color:var(--mute)}
+.rv-row{display:grid;gap:14px;margin-top:48px}
+.rv{padding:24px;border-radius:var(--r-lg);background:rgba(255,255,255,.6);-webkit-backdrop-filter:blur(18px) saturate(150%);backdrop-filter:blur(18px) saturate(150%);border:1px solid rgba(255,255,255,.8);box-shadow:inset 0 1px 0 #fff,0 20px 50px -28px rgba(26,65,32,.4)}
+.rv p{font-size:16px}
+@media(min-width:900px){.rv-row{grid-template-columns:repeat(3,1fr);gap:20px}}
+
+/* quote */
+.quote{position:relative;background:var(--leaf);color:#fff;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;animation:drift 26s ease-in-out infinite alternate;pointer-events:none}
+.orb.a{width:420px;height:420px;background:var(--grass);top:-120px;left:-100px}
+.orb.b{width:360px;height:360px;background:var(--sun);opacity:.28;bottom:-140px;right:-80px;animation-delay:-9s}
+@keyframes drift{to{transform:translate(60px,40px)}}
+.quote .wrap{position:relative;display:grid;gap:36px}
+.quote h2{color:#fff}
+.info{font-size:17px;max-width:24em}.info b{display:block;font-family:'DM Serif Display',serif;font-weight:400;font-size:24px;margin-top:18px}
+.panel{padding:26px;border-radius:var(--r-lg);background:rgba(244,246,238,.12);-webkit-backdrop-filter:blur(24px) saturate(160%);backdrop-filter:blur(24px) saturate(160%);border:1px solid rgba(255,255,255,.28);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 30px 70px -30px rgba(0,0,0,.6)}
+.sentence{font-family:'DM Serif Display',serif;font-size:clamp(24px,5vw,34px);line-height:1.5;word-spacing:.1em}
+.sentence select,.sentence input{font:600 17px 'Wix Madefor Text',sans-serif;color:#fff;min-height:44px;padding:0 14px;margin:4px 2px;border-radius:var(--r-sm);background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);max-width:100%;vertical-align:middle}
+.sentence select option{color:var(--ink)}
+.sentence input::placeholder{color:rgba(255,255,255,.7)}
+.sentence select:focus,.sentence input:focus{outline:3px solid var(--sun);outline-offset:1px}
+.panel .btn{margin-top:18px;width:100%}
+.panel small{display:block;margin-top:12px;font-size:14px;opacity:.8}
+@media(min-width:900px){.quote .wrap{grid-template-columns:1fr 1.15fr;gap:80px;align-items:center}}
+
+footer{background:var(--ink);color:#c9d3c8;padding:36px 0 120px;font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+@media(min-width:760px){footer{padding-bottom:36px}}
+
+/* dock */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:12px;display:flex;gap:8px;padding:8px;border-radius:var(--r-pill);background:rgba(26,65,32,.6);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.25);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 20px 50px -18px rgba(0,0,0,.55)}
+.dock .btn{flex:1;min-height:48px}
+@media(min-width:760px){.dock{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav>
+ <b>Clean-It All</b>
+ <div class="links"><a href="#spaces">Spaces</a><a href="#work">Work</a><a href="#reviews">Reviews</a><a href="#quote">Quote</a></div>
+ <a class="btn sun" href="tel:+12503005460">Call (250) 300-5460</a>
+</nav>
+
+<header class="hero">
+ <img src="img/p6.jpg" alt="Clean-It All cleaner running a floor scrubber across a warehouse floor">
+ <div class="wrap">
+  <div>
+   <h1><span>Cleaning,</span><span>off your</span><span>plate.</span></h1>
+   <p class="sub" style="margin-top:22px">Clean-It All Company cleans homes, offices and warehouses in Calgary.</p>
+   <div class="cta" style="margin-top:22px"><a class="btn sun" href="tel:+12503005460">Call (250) 300-5460</a><a class="btn ghost" href="#quote">Get a quote</a></div>
+  </div>
+  <div class="gcard">
+   <div><strong>4.9</strong><span class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+   <p>38 Google reviews</p>
+   <p>&ldquo;They provide an exceptional service.&rdquo;</p>
+   <small>Dejan A., Google</small>
+  </div>
+ </div>
+</header>
+
+<section class="picker" id="spaces">
+ <div class="wrap grid">
+  <div class="pk-text">
+   <h2>What are we cleaning?</h2>
+   <div class="chips" role="tablist" aria-label="Type of space"></div>
+   <div id="pk-body"></div>
+   <a class="btn dark" id="pk-cta" href="#quote">Ask for a quote</a>
+  </div>
+  <div class="pk-photo"><img id="pk-a" alt=""><img id="pk-b" class="off" alt=""></div>
+ </div>
+</section>
+
+<section class="terms">
+ <div class="wrap">
+  <div>
+   <h2>Not sure what you need? <em>We come to you.</em></h2>
+   <p>&ldquo;We&rsquo;ll come to you, assess your space, and provide a customized quote based on your cleaning needs.&rdquo; Their words, from their Instagram.</p>
+  </div>
+  <ul>
+   <li>No Contract Policy</li>
+   <li>3-Month Trial Period</li>
+   <li>Custom Cleaning Packages</li>
+   <li>24/7 Hotline</li>
+  </ul>
+ </div>
+</section>
+
+<section class="promo">
+ <div class="wrap">
+  <h2>2 hours for $100 + GST.</h2>
+  <div>
+   <p>Residential cleaning. Labour, cleaning supplies and transportation included.</p>
+   <small>From their Instagram post, Nov 21 2026. Ask them if the offer is still on.</small>
+  </div>
+ </div>
+</section>
+
+<section class="work" id="work">
+ <div class="wrap">
+  <div class="head"><h2>On the job in Calgary.</h2><a class="btn dark" href="tel:+12503005460">Call (250) 300-5460</a></div>
+  <div class="mosaic">
+   <figure><img src="img/p7.jpg" alt="Clean-It All company van" loading="lazy" style="object-position:50% 60%"></figure>
+   <figure><img src="img/p3.jpg" alt="Cleaner working on a commercial kitchen hood" loading="lazy"></figure>
+   <figure><img src="img/p2c.jpg" alt="Cleaner in protective suit and gloves" loading="lazy"></figure>
+   <figure><img src="img/p5.jpg" alt="Cleaner mopping a wood kitchen floor" loading="lazy"></figure>
+   <figure><img src="img/p8c.jpg" alt="Cleaner making up a bed" loading="lazy" style="object-position:70% 50%"></figure>
+  </div>
+ </div>
+</section>
+
+<section class="reviews" id="reviews">
+ <div class="wrap">
+  <h2>38 Google reviews. 4.9 stars.</h2>
+  <blockquote class="lead-q">&ldquo;Clean-It All Company has been taking care of our place since 2020. They provide an exceptional service.&rdquo;</blockquote>
+  <cite>Dejan A. <small>Google</small></cite>
+  <div class="rv-row">
+   <div class="rv"><p>&ldquo;We hired them for a move-out clean and they did an amazing job. The house was absolutely spotless when they were done, and they really took the time to get all the little details.&rdquo;</p><cite>The LA &amp; CO <small>Google</small></cite></div>
+   <div class="rv"><p>&ldquo;Highly recommend, Best cleaning service, It was move out basement. They clean each and every corner with high quality products.&rdquo;</p><cite>Himmat S. <small>Google</small></cite></div>
+   <div class="rv"><p>&ldquo;I had a wonderful experience with Clean-It All! From the moment they arrived, the team was incredibly friendly, professional, and easy to communicate with.&rdquo;</p><cite>Tishbite <small>Google</small></cite></div>
+  </div>
+ </div>
+</section>
+
+<section class="quote" id="quote">
+ <div class="orb a"></div><div class="orb b"></div>
+ <div class="wrap">
+  <div>
+   <h2>Get your quote.</h2>
+   <div class="info">
+    <p>Fill in the sentence. It opens a text to Clean-It All.</p>
+    <b>Calgary, Alberta</b>
+    7220 44 St SE #2F, Calgary, AB T2C 3A7
+    <b>Open every day, 8 a.m. to 6 p.m.</b>
+    <a href="tel:+12503005460" style="font-weight:700">(250) 300-5460</a>
+   </div>
+  </div>
+  <form class="panel" id="qf">
+   <div class="sentence">Hi, I&rsquo;m
+    <input id="qn" name="n" placeholder="your name" aria-label="Your name" required autocomplete="given-name">.
+    I need
+    <select id="qt" aria-label="What to clean"><option>home cleaning</option><option>deep cleaning</option><option>move-in or move-out cleaning</option><option>office cleaning</option><option>warehouse cleaning</option></select>
+    in
+    <input id="qa" name="a" placeholder="your area" aria-label="Your area" autocomplete="address-level2">.
+    Can you send me a quote?</div>
+   <button class="btn sun" type="submit">Text Clean-It All</button>
+   <small>Opens your messaging app with this text. Nothing is sent until you press send.</small>
+  </form>
+ </div>
+</section>
+
+<footer><div class="wrap"><span>Preview built by JPF. Not live yet.</span><span>Clean-It All Company, Calgary</span></div></footer>
+
+<div class="dock"><a class="btn ghost" href="tel:+12503005460">Call</a><a class="btn sun" href="sms:+12503005460">Text</a></div>
+
+<script>
+const S=[
+ {k:'Home',t:'Home cleaning',img:'img/p4.jpg',pos:'50% 40%',alt:'Cleaner mopping a living room',body:'Regular cleaning and deep cleaning to keep your home fresh and spotless.',q:'Tired of cleaning? Let us take that off your hands!',v:'home cleaning'},
+ {k:'Move-out',t:'Move-in and move-out',img:'img/p8c.jpg',pos:'70% 50%',alt:'Cleaner making up a bed',body:'Move-in and move-out cleaning, for the empty house or the basement suite.',q:'It was move out basement. They clean each and every corner with high quality products.',who:'Himmat S., Google',v:'move-in or move-out cleaning'},
+ {k:'Office',t:'Office cleaning',img:'img/p1c.jpg',pos:'40% 50%',alt:'Cleaner wiping a hallway handrail',body:'A clean and welcoming office for your team and customers.',q:'We’ll take care of the cleaning so you can focus on running your business.',v:'office cleaning'},
+ {k:'Warehouse',t:'Warehouse cleaning',img:'img/p10.jpg',pos:'50% 60%',alt:'Cleaner working in a warehouse',body:'Commercial cleaning for warehouses that need to stay organized and ready for business every day.',q:'A clean workspace plays an important role in that.',v:'warehouse cleaning'}
+];
+const chips=document.querySelector('.chips'),body=document.getElementById('pk-body'),A=document.getElementById('pk-a'),B=document.getElementById('pk-b');
+let cur=0,front=A;
+function show(i,first){
+ cur=i;
+ chips.querySelectorAll('.chip').forEach((c,j)=>c.setAttribute('aria-selected',j===i));
+ const s=S[i];
+ body.innerHTML='<p>'+s.body+'</p><blockquote>“'+s.q+'”<cite>'+(s.who||'Clean-It All, Instagram')+'</cite></blockquote>';
+ const back=front===A?B:A;
+ back.src=s.img;back.alt=s.alt;back.style.objectPosition=s.pos;
+ const go=()=>{back.classList.remove('off');front.classList.add('off');front=back};
+ if(first){back.classList.remove('off');front=back}else{back.onload=go;if(back.complete)go()}
+ document.getElementById('qt').value=s.v;
+}
+S.forEach((s,i)=>{const b=document.createElement('button');b.className='chip';b.type='button';b.role='tab';b.textContent=s.k;b.onclick=()=>show(i);chips.appendChild(b)});
+show(0,true);if(!A.getAttribute('src'))A.src=B.src;
+document.getElementById('pk-cta').addEventListener('click',()=>{document.getElementById('qt').value=S[cur].v});
+document.getElementById('qf').addEventListener('submit',e=>{
+ e.preventDefault();
+ const n=qn.value.trim(),a=qa.value.trim(),t=qt.value;
+ const msg='Hi, I’m '+n+'. I need '+t+(a?' in '+a:'')+'. Can you send me a quote?';
+ location.href='sms:+12503005460?&body='+encodeURIComponent(msg);
+});
+</script>
+</body>
+</html>
