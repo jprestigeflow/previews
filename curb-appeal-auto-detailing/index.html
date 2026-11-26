@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Curb Appeal Auto Detailing | Mobile detailing in Salmon Arm and the Shuswap</title>
+<meta name="description" content="Mobile auto detailing in Salmon Arm and the Shuswap. Interior and exterior packages, ceramic, boats, RVs and campers. Call (250) 253-9012.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Gantari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ direction: driveway job-board. Light paper page, one fire-engine red. Mobile detailer, so the pitch is "we come to you" and the proof is a chooser of real jobs (fire trucks / RVs / cars) plus a carbon hood polish slider.
+ palette: paper #efede7 (neutral warm), ink #14171a, red #d0261f (red CA shield in their logo + Silver Creek fire trucks), steel #6c7479, white.
+ fonts: Fugaz One (display) + Gantari (body)
+ signature: job chooser + hood before/after slider (ig12 / ig15, same framing)
+ order: hero, chooser, hood slider, fire dept band, services, reviews, area+hours, quote, footer
+ motion: one load rise on hero, slider drag, tab swap. reduced-motion respected. */
+:root{--paper:#efede7;--ink:#14171a;--red:#d0261f;--steel:#6c7479;--white:#fff;--line:rgba(20,23,26,.12)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font-family:'Gantari',system-ui,sans-serif;font-size:17px;line-height:1.55;overflow-x:hidden;padding-bottom:96px}
+img{display:block;max-width:100%}
+a{color:inherit}
+.d{font-family:'Fugaz One',sans-serif;font-weight:400;line-height:.98;letter-spacing:0;word-spacing:.12em}
+.wrap{width:min(1180px,100% - 32px);margin:0 auto}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 26px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none;border:0;cursor:pointer;transition:transform .18s,background .18s;font-family:inherit}
+.btn:active{transform:scale(.97)}
+.btn.red{background:var(--red);color:#fff}.btn.red:hover{background:#b01d17}
+.btn.ghost{background:rgba(255,255,255,.5);border:1px solid rgba(20,23,26,.18);color:var(--ink)}
+.glass{background:rgba(255,255,255,.58);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 22px 60px -24px rgba(20,23,26,.35)}
+
+/* nav */
+nav{position:fixed;top:12px;left:50%;transform:translateX(-50%);width:min(1180px,100% - 24px);z-index:50;border-radius:999px;display:flex;align-items:center;justify-content:space-between;padding:6px 6px 6px 20px;min-height:54px}
+nav .logo{font-family:'Fugaz One';font-size:19px;text-decoration:none;white-space:nowrap}
+nav .logo i{color:var(--red);font-style:normal}
+nav .links{display:none;gap:26px;font-weight:600;font-size:15px}
+nav .links a{text-decoration:none}
+nav .btn{min-height:42px;padding:0 20px;font-size:15px}
+@media(min-width:860px){nav .links{display:flex}}
+
+/* hero */
+.hero{padding:92px 0 56px;position:relative}
+.hero h1{font-size:clamp(54px,15vw,118px);margin-bottom:22px}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero-grid{display:grid;gap:22px}
+.hero .lede{font-size:19px;max-width:30em;color:#2c3236}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.shot{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:1/1;background:#cfcbc2}
+.shot img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);animation:settle 1.4s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes settle{to{transform:scale(1)}}
+.rise{opacity:0;transform:translateY(18px);animation:rise .9s .1s cubic-bezier(.2,.7,.2,1) forwards}
+.rise.b{animation-delay:.3s}.rise.c{animation-delay:.5s}
+@keyframes rise{to{opacity:1;transform:none}}
+.card{position:absolute;left:12px;right:12px;bottom:12px;border-radius:22px;padding:14px 18px;display:flex;gap:14px;align-items:center;animation:rise .9s .8s both}
+.card b{font-family:'Fugaz One';font-size:38px;line-height:1}
+.card span{font-size:14.5px;line-height:1.35;font-weight:500}
+@media(min-width:900px){
+ .hero{padding:120px 0 80px}
+ .hero-grid{grid-template-columns:1.05fr 1fr;align-items:center;gap:48px}
+ .hero h1{margin-right:-90px;position:relative;z-index:2}
+ .shot{aspect-ratio:4/5}
+ .card{left:auto;right:18px;bottom:auto;top:18px;max-width:340px}
+}
+
+/* strip */
+.strip{background:var(--ink);color:var(--paper);padding:14px 0;font-weight:600;font-size:15px}
+.strip .wrap{display:flex;flex-wrap:wrap;gap:6px 28px;justify-content:space-between}
+.strip b{color:#ff6b62;font-weight:700}
+
+section{padding:72px 0}
+@media(min-width:900px){section{padding:120px 0}}
+h2{font-size:clamp(40px,10vw,84px);margin-bottom:18px}
+h2 em{font-style:normal;color:var(--red)}
+.sub{max-width:34em;color:#3a4146;margin-bottom:30px}
+
+/* chooser */
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 10px;margin-bottom:18px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;min-height:48px;padding:0 24px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.55);font:700 16px 'Gantari';cursor:pointer;transition:all .18s;color:var(--ink)}
+.tab:active{transform:scale(.97)}
+.tab[aria-selected=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.panel[hidden]{display:none}
+.panel .say{font-size:19px;max-width:34em;margin-bottom:18px;font-weight:500}
+.mosaic{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mosaic figure{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:1/1;background:#d9d5cb}
+.mosaic figure.wide{grid-column:span 2;aspect-ratio:16/10}
+.mosaic img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.mosaic figure:hover img{transform:scale(1.04)}
+.mosaic figcaption{position:absolute;left:10px;bottom:10px;background:rgba(20,23,26,.72);color:#fff;font-size:13.5px;font-weight:600;padding:5px 12px;border-radius:999px}
+@media(min-width:900px){
+ .mosaic{grid-template-columns:repeat(6,1fr);gap:14px}
+ .mosaic figure{grid-column:span 2;aspect-ratio:4/5}
+ .mosaic figure.wide{grid-column:span 3;aspect-ratio:4/3}
+}
+
+/* slider */
+.hood{background:var(--ink);color:var(--paper)}
+.hood h2 em{color:#ff6b62}
+.hood .sub{color:#c9ccc9}
+.hood-grid{display:grid;gap:30px}
+.cmp{position:relative;border-radius:26px;overflow:hidden;aspect-ratio:1/1;max-width:720px;width:100%;background:#000;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.cmp .top{clip-path:inset(0 0 0 50%)}
+.cmp .bar{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;transform:translateX(-1px);pointer-events:none}
+.cmp .knob{position:absolute;top:50%;left:50%;width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.35);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.7);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 10px 30px rgba(0,0,0,.4);pointer-events:none;color:#fff;font-size:18px;letter-spacing:-2px}
+.cmp input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.chip{position:absolute;top:14px;padding:6px 14px;border-radius:999px;font-weight:700;font-size:13.5px;color:#fff;background:rgba(20,23,26,.45);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.3);pointer-events:none}
+.chip.l{left:14px}.chip.r{right:14px}
+.hood blockquote{border-left:3px solid #ff6b62;padding-left:16px;font-size:17px;color:#e8e6e0;margin-top:20px;max-width:28em}
+.hood small{display:block;color:#98a0a3;margin-top:10px;font-size:14px}
+@media(min-width:900px){.hood-grid{grid-template-columns:1fr 1.1fr;align-items:center;gap:64px}.hood-grid .cmp{justify-self:end}}
+
+/* fire */
+.fire .band{display:grid;gap:12px}
+.fire .band figure{border-radius:24px;overflow:hidden;aspect-ratio:4/3}
+.fire .band img{width:100%;height:100%;object-fit:cover}
+.fire .tall{aspect-ratio:1/1}
+.fire .quote{font-size:clamp(24px,5vw,36px);font-family:'Fugaz One';line-height:1.15;margin:30px 0 8px;max-width:20em;word-spacing:.1em}
+.fire .quote em{font-style:normal;color:var(--red)}
+.fire .who{color:var(--steel);font-size:14.5px}
+@media(min-width:900px){.fire .band{grid-template-columns:1.4fr 1fr 1fr;grid-auto-rows:1fr}.fire .band figure:first-child{grid-row:span 2;aspect-ratio:auto}.fire .band figure{aspect-ratio:auto}}
+
+/* services */
+.svc{border-top:1px solid var(--line)}
+.svc li{list-style:none;display:grid;grid-template-columns:44px 1fr;gap:6px 12px;padding:22px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.svc .n{font-family:'Fugaz One';color:var(--red);font-size:22px}
+.svc h3{font-family:'Fugaz One';font-weight:400;font-size:clamp(26px,6vw,40px);line-height:1.05;word-spacing:.1em}
+.svc p{grid-column:2;color:#3a4146;max-width:34em}
+@media(min-width:900px){.svc li{grid-template-columns:70px 1fr 1fr;padding:30px 0}.svc p{grid-column:3}}
+
+/* reviews */
+.rev{background:#e6e2d8;position:relative;overflow:hidden}
+.rev .lead{font-family:'Fugaz One';font-size:clamp(28px,6.4vw,58px);line-height:1.08;max-width:19em;word-spacing:.1em;margin:6px 0 14px}
+.rev .by{font-weight:700}
+.rev .by span{color:var(--steel);font-weight:500}
+.rgrid{display:grid;gap:12px;margin-top:44px}
+.rc{border-radius:22px;padding:22px}
+.rc p{font-size:16.5px}
+.rc .by{margin-top:12px;font-size:15px}
+.stars{color:var(--red);letter-spacing:3px;font-size:15px;margin-bottom:8px}
+@media(min-width:900px){.rgrid{grid-template-columns:repeat(2,1fr)}}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;pointer-events:none;animation:drift 26s ease-in-out infinite alternate}
+.orb.a{width:340px;height:340px;background:#d0261f;right:-80px;top:40%}
+.orb.b{width:300px;height:300px;background:#9aa4a8;left:-90px;bottom:-60px;animation-delay:-9s}
+@keyframes drift{to{transform:translate(-40px,30px)}}
+
+/* area */
+.area-grid{display:grid;gap:28px}
+.hours{width:100%;border-collapse:collapse;font-size:17px}
+.hours td{padding:12px 0;border-bottom:1px solid var(--line)}
+.hours td:last-child{text-align:right;font-weight:700}
+.hours .off td:last-child{color:var(--steel);font-weight:500}
+.bignum{font-family:'Fugaz One';font-size:clamp(34px,9vw,64px);line-height:1;text-decoration:none;display:inline-block;margin:12px 0 4px;word-spacing:.05em}
+.bignum:hover{color:var(--red)}
+@media(min-width:900px){.area-grid{grid-template-columns:1.1fr 1fr;gap:80px}}
+
+/* quote */
+.quote-sec{position:relative;overflow:hidden;background:var(--ink);color:var(--paper)}
+.quote-sec .orb.a{right:-100px;top:10%;opacity:.6}
+.quote-sec .orb.b{background:#4a5a62;left:-120px;bottom:-80px;opacity:.7}
+.qp{position:relative;border-radius:28px;padding:26px 22px;background:rgba(255,255,255,.1);-webkit-backdrop-filter:blur(24px) saturate(150%);backdrop-filter:blur(24px) saturate(150%);border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 30px 80px -30px rgba(0,0,0,.6)}
+.qp .fill{font-size:clamp(20px,4.6vw,30px);line-height:2.1;font-weight:500}
+.qp input,.qp select{font:inherit;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);border-radius:14px;padding:4px 12px;min-height:46px;margin:0 2px;max-width:100%}
+.qp select option{color:#000}
+.qp input::placeholder{color:rgba(255,255,255,.55)}
+.qp input:focus,.qp select:focus{outline:none;border-color:#ff6b62;box-shadow:0 0 0 3px rgba(255,107,98,.3)}
+.qp .btn{margin-top:22px;width:100%}
+.qp .note{margin-top:12px;font-size:14px;color:#c9ccc9}
+@media(min-width:900px){.qp{padding:44px 52px;max-width:900px}.qp .btn{width:auto}}
+
+footer{background:var(--ink);color:#aeb3b3;padding:30px 0 40px;font-size:14.5px;border-top:1px solid rgba(255,255,255,.1)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+
+/* dock */
+.dock{position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:60;border-radius:999px;display:flex;gap:6px;padding:6px}
+.dock a{flex:1;min-height:50px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-weight:700;text-decoration:none;font-size:16px;transition:transform .18s}
+.dock a:active{transform:scale(.97)}
+.dock .c{background:var(--red);color:#fff}
+.dock .t{color:var(--ink)}
+@media(min-width:900px){.dock{left:auto;right:20px;width:300px}body{padding-bottom:90px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rise,.card{opacity:1;transform:none}.shot img{transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav class="glass">
+  <a class="logo" href="#top">Curb Appeal <i>Auto Detailing</i></a>
+  <div class="links"><a href="#jobs">The work</a><a href="#hood">Hood polish</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#quote">Book</a></div>
+  <a class="btn red" href="tel:+12502539012">Call</a>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <h1 class="d rise">We come to <em>your driveway.</em></h1>
+      <p class="lede rise b">Curb Appeal Auto Detailing is mobile. Lloyd detailing cars, boats, RVs and fire trucks across Salmon Arm and the Shuswap.</p>
+      <div class="cta rise c">
+        <a class="btn red" href="tel:+12502539012">Call (250) 253-9012</a>
+        <a class="btn ghost" href="#quote">Text a quote request</a>
+      </div>
+    </div>
+    <div class="shot">
+      <img src="img/hero.jpg" alt="Silver Creek Command fire department truck detailed by Curb Appeal Auto Detailing" fetchpriority="high">
+      <div class="card glass"><b>5.0</b><span>Google rating from 38 reviews.<br>"...from the comfort of our driveway is a major win." Jenna R.</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="strip"><div class="wrap"><span><b>Mobile</b> detailing</span><span>Salmon Arm and the Shuswap</span><span>Mon to Thu 9 to 5 &middot; Fri 9 to 6</span></div></div>
+
+<section id="jobs">
+  <div class="wrap">
+    <h2 class="d">What we've <em>detailed.</em></h2>
+    <p class="sub">Real jobs from Curb Appeal's own posts. Pick one.</p>
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" aria-selected="true" data-t="fire">Fire trucks</button>
+      <button class="tab" role="tab" aria-selected="false" data-t="rv">RVs &amp; campers</button>
+      <button class="tab" role="tab" aria-selected="false" data-t="car">Cars &amp; SUVs</button>
+    </div>
+
+    <div class="panel" id="p-fire">
+      <p class="say">Command trucks and an engine truck for the Silver Creek Fire Department, inside and out.</p>
+      <div class="mosaic">
+        <figure class="wide"><img src="img/ig24.jpg" alt="Silver Creek Command door under soap" loading="lazy"><figcaption>Command truck, mid-wash</figcaption></figure>
+        <figure><img src="img/ig9.jpg" alt="Silver Creek engine truck" loading="lazy"><figcaption>Engine truck</figcaption></figure>
+        <figure><img src="img/ig19.jpg" alt="Command truck at the Silver Creek hall" loading="lazy"><figcaption>Command truck</figcaption></figure>
+        <figure><img src="img/ig26.jpg" alt="Fire truck cab interior detailed" loading="lazy"><figcaption>Cab interior</figcaption></figure>
+        <figure><img src="img/ig2.jpg" alt="Fire department truck" loading="lazy"><figcaption>Fleet work</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="panel" id="p-rv" hidden>
+      <p class="say">RVs, campers and travel trailers. Curb Appeal lists RVs and "everything in between."</p>
+      <div class="mosaic">
+        <figure class="wide"><img src="img/g10.jpg" alt="Truck camper" loading="lazy"><figcaption>Truck camper</figcaption></figure>
+        <figure><img src="img/g2.jpg" alt="Motorhome under foam" loading="lazy"><figcaption>Motorhome, foamed</figcaption></figure>
+        <figure><img src="img/rv-bus.jpg" alt="Large motorhome" loading="lazy" style="object-position:50% 70%"><figcaption>Motorhome</figcaption></figure>
+        <figure><img src="img/g1.jpg" alt="Travel trailer" loading="lazy"><figcaption>Trailer</figcaption></figure>
+        <figure><img src="img/g9.jpg" alt="Camper close up" loading="lazy"><figcaption>Camper panel</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="panel" id="p-car" hidden>
+      <p class="say">Interior and exterior packages on everyday cars, plus paint and hood polishing.</p>
+      <div class="mosaic">
+        <figure class="wide"><img src="img/ig14.jpg" alt="Ford Focus RS before hood polish" loading="lazy"><figcaption>Focus RS, carbon hood</figcaption></figure>
+        <figure><img src="img/g5.jpg" alt="Porsche Macan" loading="lazy" style="object-position:50% 60%"><figcaption>Porsche Macan</figcaption></figure>
+        <figure><img src="img/g8.jpg" alt="Mercedes-AMG GLC" loading="lazy" style="object-position:50% 60%"><figcaption>Mercedes-AMG GLC</figcaption></figure>
+        <figure><img src="img/g3.jpg" alt="Jeep interior" loading="lazy"><figcaption>Jeep interior</figcaption></figure>
+        <figure><img src="img/ig17.jpg" alt="Focus RS carbon hood after polish" loading="lazy"><figcaption>Carbon hood, polished</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hood" id="hood">
+  <div class="wrap hood-grid">
+    <div>
+      <h2 class="d">Carbon fibre, <em>brought back.</em></h2>
+      <p class="sub">A Ford Focus RS with a tired carbon fibre hood. Drag across to see it half polished.</p>
+      <blockquote>"Finished polishing up the hood here, gave some life back in the carbon fibre. Looks much better."</blockquote>
+      <small>Curb Appeal on Instagram, September 4</small>
+    </div>
+    <div class="cmp" id="cmp">
+      <img src="img/ig12.jpg" alt="Focus RS carbon hood before polishing">
+      <img class="top" src="img/ig15.jpg" alt="Same hood part way through polishing">
+      <div class="bar"></div><div class="knob">&lsaquo;&rsaquo;</div>
+      <span class="chip l">Before</span><span class="chip r">Mid-polish</span>
+      <input type="range" min="0" max="100" value="50" aria-label="Drag to compare the hood before and during polishing">
+    </div>
+  </div>
+</section>
+
+<section class="fire">
+  <div class="wrap">
+    <h2 class="d">Fleet work for the <em>fire hall.</em></h2>
+    <div class="band">
+      <figure><img src="img/ig28.jpg" alt="Silver Creek Command truck" loading="lazy" style="object-position:30% 55%"></figure>
+      <figure class="tall"><img src="img/ig27.jpg" alt="Fire services truck at the hall" loading="lazy"></figure>
+      <figure class="tall"><img src="img/ig7.jpg" alt="Fire engine in the bay" loading="lazy"></figure>
+    </div>
+    <p class="quote">"Been helping get there command trucks all cleaned up and <em>ready to deploy</em> when the call rings."</p>
+    <p class="who">Curb Appeal, on detailing for the Silver Creek Fire Department</p>
+  </div>
+</section>
+
+<section id="services" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="d">What you can <em>book.</em></h2>
+    <ul class="svc">
+      <li><span class="n">01</span><h3>Interior detailing packages</h3><p>Seats, floors, dash and the dog hair. A reviewer's Jeep looked "brand new inside and out."</p></li>
+      <li><span class="n">02</span><h3>Exterior detailing packages</h3><p>Wash and finish on cars, SUVs and trucks, done where you park.</p></li>
+      <li><span class="n">03</span><h3>Ceramic detail packages</h3><p>Available. Ask Lloyd which package fits your vehicle.</p></li>
+      <li><span class="n">04</span><h3>Paint and hood polishing</h3><p>Like the carbon fibre hood above.</p></li>
+      <li><span class="n">05</span><h3>RVs, campers and boats</h3><p>Travel trailers, motorhomes, truck campers and boats, "and everything in between."</p></li>
+      <li><span class="n">06</span><h3>Fleet vehicles</h3><p>Work for the Silver Creek Fire Department, command trucks and an engine truck.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="rev" id="reviews">
+  <div class="orb a"></div><div class="orb b"></div>
+  <div class="wrap" style="position:relative">
+    <h2 class="d">5.0 on Google. <em>38 reviews.</em></h2>
+    <p class="lead">"11/10 service and delivery! Lloyd is a master of his craft. Being able to work with flexible schedules and from the comfort of our driveway is a major win."</p>
+    <p class="by">Jenna R. <span>Google</span></p>
+    <div class="rgrid">
+      <div class="rc glass"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"I have 2 rottweilers and my jeep was very dirty and covered in dog hair. When Loyd was done my jeep seriously looked brand new inside and out!!"</p><p class="by">Nadeen H. <span>Google</span></p></div>
+      <div class="rc glass"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Lloyd came to detail our 2025 Subaru this week. We highly recommend Curb Appeal Auto Detail - Lloyd did an amazing job at making our Subaru look better than new."</p><p class="by">May B. <span>Google</span></p></div>
+      <div class="rc glass"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"He did a brilliant job on our filthy truck and camper that had been used for a journey across Canada."</p><p class="by">Pat R. <span>Google</span></p></div>
+      <div class="rc glass"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Lloyd is a total pro - super friendly, professional, and his communication was top-notch from start to finish. I honestly didn't think my car could look this good again."</p><p class="by">Becky M. <span>Google</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="area">
+  <div class="wrap area-grid">
+    <div>
+      <h2 class="d">Salmon Arm <em>and the Shuswap.</em></h2>
+      <p class="sub">Curb Appeal is mobile, so there is no shop to drive to. Call or text and book a time.</p>
+      <a class="bignum" href="tel:+12502539012">(250) 253-9012</a>
+    </div>
+    <div>
+      <table class="hours">
+        <tr><td>Monday to Thursday</td><td>9 a.m. to 5 p.m.</td></tr>
+        <tr><td>Friday</td><td>9 a.m. to 6 p.m.</td></tr>
+        <tr class="off"><td>Saturday</td><td>Closed</td></tr>
+        <tr class="off"><td>Sunday</td><td>Closed</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="quote-sec" id="quote">
+  <div class="orb a"></div><div class="orb b"></div>
+  <div class="wrap" style="position:relative">
+    <h2 class="d">Get a <em>quote.</em></h2>
+    <form class="qp" id="qf">
+      <div class="fill">
+        Hi Lloyd, I'm <input id="qn" placeholder="your name" autocomplete="name" size="12">. I need a
+        <select id="qt"><option>car</option><option>SUV or truck</option><option>RV or camper</option><option>boat</option><option>fleet vehicle</option><option>something else</option></select>
+        done with
+        <select id="qs"><option>an interior package</option><option>an exterior package</option><option>a ceramic detail</option><option>a paint polish</option><option>whatever you recommend</option></select>
+        at <input id="ql" placeholder="your town" size="12">.
+      </div>
+      <button class="btn red" type="submit">Text this to Lloyd</button>
+      <p class="note">Opens a text message to (250) 253-9012. Nothing is sent until you press send.</p>
+    </form>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>Curb Appeal Auto Detailing &middot; Salmon Arm, BC</span><span>Preview built by JPF. Not live yet.</span></div></footer>
+
+<div class="dock glass"><a class="t" href="sms:+12502539012">Text</a><a class="c" href="tel:+12502539012">Call now</a></div>
+
+<script>
+(function(){
+ // tabs
+ var tabs=document.querySelectorAll('.tab');
+ tabs.forEach(function(t){t.addEventListener('click',function(){
+  tabs.forEach(function(x){x.setAttribute('aria-selected',x===t)});
+  document.querySelectorAll('.panel').forEach(function(p){p.hidden=p.id!=='p-'+t.dataset.t});
+ })});
+ // slider
+ var c=document.getElementById('cmp'),r=c.querySelector('input'),top=c.querySelector('.top'),bar=c.querySelector('.bar'),kn=c.querySelector('.knob');
+ function set(v){top.style.clipPath='inset(0 0 0 '+v+'%)';bar.style.left=v+'%';kn.style.left=v+'%'}
+ r.addEventListener('input',function(){set(r.value)});
+ // form
+ document.getElementById('qf').addEventListener('submit',function(e){
+  e.preventDefault();
+  var n=document.getElementById('qn').value.trim()||'a customer',l=document.getElementById('ql').value.trim();
+  var body="Hi Lloyd, I'm "+n+". I need a "+document.getElementById('qt').value+" done with "+document.getElementById('qs').value+(l?" at "+l:"")+". Can you send me a quote?";
+  location.href='sms:+12502539012?&body='+encodeURIComponent(body);
+ });
+})();
+</script>
+</body>
+</html>
