@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Corsa Auto Spa | Mobile Detailing & Ceramic Coating, Vaughan</title>
+<meta name="description" content="Corsa Auto Spa: mobile car detailing and ceramic coating in Vaughan and York Region. 5.0 on Google from 80 reviews. Call or text (647) 451-1727.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Readex+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN — Corsa Auto Spa (marque-index-led, light)
+   Direction: a light, gallery-quiet "car catalogue". Their own sign-off "detailed to perfection" set huge in a didone; the cars do the shouting.
+   Palette: chalk #f2f3f1 (Cayenne GTS chalk paint, p6) / gloss ink #121518 (black Jetta GLI, p11) / Urus SE blue #86a3ba→#8eaecb (band video) / steel #2e4b66 (text-safe shade of the Urus) / mist #dfe4e8.
+   Fonts: Prata (display, didone, sentence case) + Readex Pro (body, labels).
+   Signature: the Marque Index: big serif list of the makes they've posted or been reviewed for; tap one and the panel swaps to that car + what was done.
+   Order: hero (GLI) / we come to you (rinse + 911 pair) / marque index / services list / 1,000+ reel band / reviews / area + hours / fill-in quote / footer.
+   Motion: one load sequence (headline lines lift, photo settles from 1.04, glass card floats in); count-ups once; gentle photo reveals. Reduced motion = static. */
+:root{
+  --chalk:#f2f3f1; --paper:#fbfbfa; --ink:#121518; --ink2:#3c434a; --urus:#8eaecb; --urus-d:#2e4b66; --mist:#dfe4e8;
+  --r-big:26px; --r-sm:15px;
+  --disp:'Prata', 'Didot', Georgia, serif; --body:'Readex Pro', system-ui, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--chalk);color:var(--ink);font-family:var(--body);font-weight:300;font-size:17px;line-height:1.6;overflow-x:hidden;padding-bottom:0}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--urus-d);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1240px,100% - 32px);margin-inline:auto}
+h1,h2,h3{text-wrap:balance;font-family:var(--disp);font-weight:400;letter-spacing:-.015em;word-spacing:.08em;line-height:1}
+
+/* nav */
+.nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:50;width:min(1180px,100% - 24px);display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 8px 8px 22px;border-radius:999px;
+  background:rgba(251,251,250,.62);backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);
+  border:1px solid rgba(255,255,255,.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 20px 60px -24px rgba(18,21,24,.35)}
+.brand{font-family:var(--disp);font-size:21px;text-decoration:none;letter-spacing:.01em;white-space:nowrap}
+.brand small{font-family:var(--body);font-size:13px;color:var(--ink2);margin-left:8px;letter-spacing:0}
+.nav ul{display:flex;gap:26px;list-style:none;font-size:15px}
+.nav ul a{text-decoration:none;color:var(--ink2)}
+.nav ul a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:46px;padding:0 22px;border-radius:999px;font:500 15px/1 var(--body);text-decoration:none;border:0;cursor:pointer;transition:transform .18s ease,background .18s ease,box-shadow .18s ease}
+.btn:active{transform:scale(.98)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:#262b30}
+.btn-blue{background:var(--urus);color:var(--ink)}
+.btn-blue:hover{background:#a3bfd8}
+.btn-line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px rgba(18,21,24,.25)}
+.btn-line:hover{box-shadow:inset 0 0 0 1px var(--ink)}
+
+/* hero */
+.hero{padding:130px 0 0}
+.hero h1{font-size:clamp(54px,11.2vw,158px);line-height:.94}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ln span{display:inline-block}
+.hero-row{display:grid;grid-template-columns:1fr auto;align-items:end;gap:32px;margin-top:28px}
+.hero-sub{max-width:34ch;font-size:18px;color:var(--ink2);margin-bottom:18px}
+.hero-sub strong{font-weight:500;color:var(--ink)}
+.hero-cta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-photo{position:relative;margin-top:40px;border-radius:var(--r-big);overflow:hidden;height:600px;background:#cfd3d6}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 24%}
+.hero-card{position:absolute;left:22px;bottom:22px;max-width:360px;padding:18px 20px;border-radius:22px;
+  background:rgba(251,251,250,.66);backdrop-filter:blur(24px) saturate(170%);-webkit-backdrop-filter:blur(24px) saturate(170%);
+  border:1px solid rgba(255,255,255,.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 20px 60px -20px rgba(18,21,24,.45)}
+.hero-card .score{display:flex;align-items:baseline;gap:10px}
+.hero-card .score b{font-family:var(--disp);font-weight:400;font-size:40px;line-height:1}
+.hero-card .score span{font-size:14px;color:var(--ink2)}
+.stars{display:inline-flex;gap:3px;margin:6px 0 8px}
+.stars i{width:14px;height:14px;background:var(--urus-d);clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.hero-card q{display:block;font-size:15px;line-height:1.45}
+.hero-card cite{display:block;font-style:normal;font-size:14px;color:var(--ink2);margin-top:4px}
+.hero-tag{position:absolute;right:22px;top:22px;font-size:14px;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+
+/* come to you */
+.come{padding:140px 0 120px}
+.come-grid{display:grid;grid-template-columns:5fr 7fr;gap:64px;align-items:center}
+.come h2{font-size:clamp(40px,5.4vw,76px)}
+.come p{max-width:44ch;color:var(--ink2);margin-top:22px}
+.come .rule{width:72px;height:3px;background:var(--urus);border-radius:3px;margin:28px 0 0}
+.pair{display:grid;grid-template-columns:1.15fr 1fr;gap:14px;align-items:end}
+.pair figure{border-radius:20px;overflow:hidden;background:#cfd3d6}
+.pair figure:first-child{aspect-ratio:4/3.4}
+.pair figure:last-child{aspect-ratio:4/4.8;margin-bottom:-56px}
+.pair img{width:100%;height:100%;object-fit:cover}
+figcaption.cap{font-size:14px;color:var(--ink2);margin-top:10px}
+
+/* marque index */
+.index{background:var(--paper);padding:130px 0 140px;border-top:1px solid var(--mist);border-bottom:1px solid var(--mist)}
+.index-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:56px}
+.index-head h2{font-size:clamp(40px,5.4vw,76px)}
+.index-head p{max-width:36ch;color:var(--ink2)}
+.index-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:56px;align-items:start}
+.marques{list-style:none;border-top:1px solid var(--mist)}
+.marques button{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:16px 4px 14px;border-bottom:1px solid var(--mist);transition:color .2s ease,padding .25s ease}
+.marques .mk{font-family:var(--disp);font-size:clamp(36px,4.4vw,64px);line-height:1.05;color:#9aa3ab;transition:color .2s ease}
+.marques .md{font-size:14px;color:var(--ink2);text-align:right}
+.marques button:hover .mk{color:var(--ink2)}
+.marques button[aria-selected="true"] .mk{color:var(--ink)}
+.marques button[aria-selected="true"]{padding-left:18px;box-shadow:inset 3px 0 0 var(--urus)}
+.panel{position:sticky;top:96px}
+.stage{position:relative;border-radius:var(--r-big);overflow:hidden;aspect-ratio:1/1;background:#cfd3d6}
+.stage video{object-position:45% 60%}
+.stage > *{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .45s ease}
+.stage > .on{opacity:1}
+.stage .qcard{display:flex;flex-direction:column;justify-content:flex-end;padding:40px;background:radial-gradient(120% 90% at 80% 10%,#c5d6e5 0%,#9fbad3 45%,#7d9bb7 100%)}
+.stage .qcard p{font-family:var(--disp);font-size:clamp(26px,2.6vw,38px);line-height:1.2;color:var(--ink);max-width:22ch}
+.stage .qcard span{font-size:15px;margin-top:18px;color:var(--ink)}
+.chip{position:absolute;left:18px;bottom:18px;right:auto;z-index:3;padding:12px 16px;border-radius:var(--r-sm);max-width:calc(100% - 36px);
+  background:rgba(251,251,250,.7);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);
+  border:1px solid rgba(255,255,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 14px 40px -16px rgba(18,21,24,.45);font-size:15px;line-height:1.4}
+.chip b{font-weight:500}
+.chip.hide{opacity:0}
+.panel-note{margin-top:16px;color:var(--ink2);font-size:15px;min-height:3em;max-width:52ch}
+
+/* services */
+.services{padding:140px 0}
+.svc-grid{display:grid;grid-template-columns:5fr 7fr;gap:64px}
+.svc-grid h2{font-size:clamp(40px,5.4vw,76px);position:sticky;top:110px}
+.svc-grid h2 + p{margin-top:20px;color:var(--ink2);max-width:30ch}
+.svc{list-style:none}
+.svc li{display:grid;grid-template-columns:1fr 1.1fr;gap:24px;padding:28px 0;border-top:1px solid #d3d8dc}
+.svc li:last-child{border-bottom:1px solid #d3d8dc}
+.svc h3{font-size:clamp(28px,2.8vw,40px);line-height:1.1}
+.svc p{color:var(--ink2);font-size:16px;align-self:center}
+
+/* reel band */
+.band{background:var(--ink);color:#e9ecef;padding:120px 0;overflow:hidden}
+.band-grid{display:grid;grid-template-columns:1fr minmax(0,440px);gap:64px;align-items:center}
+.band h2{font-size:clamp(64px,10vw,150px);color:#fff}
+.band h2 small{display:block;font-family:var(--body);font-weight:300;font-size:clamp(18px,1.6vw,22px);letter-spacing:0;word-spacing:normal;color:#c9d2da;margin-top:18px;max-width:30ch;line-height:1.45}
+.stats{display:flex;gap:48px;margin-top:48px;flex-wrap:wrap}
+.stats div b{display:block;font-family:var(--disp);font-weight:400;font-size:48px;color:var(--urus);line-height:1}
+.stats div span{font-size:14px;color:#aeb8c1}
+.reel{border-radius:var(--r-big);overflow:hidden;aspect-ratio:720/740;background:#222}
+.reel video{width:100%;height:100%;object-fit:cover}
+.band .src{font-size:14px;color:#8f9aa4;margin-top:12px}
+
+/* reviews */
+.reviews{position:relative;padding:150px 0;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;pointer-events:none;animation:drift 26s ease-in-out infinite alternate}
+.orb.a{width:520px;height:520px;background:#b8cde0;left:-140px;top:120px}
+.orb.b{width:460px;height:460px;background:#dfe7ee;right:-120px;bottom:40px;animation-duration:30s}
+@keyframes drift{to{transform:translate(60px,-40px) scale(1.08)}}
+.lead-q{position:relative;max-width:1060px}
+.lead-q blockquote{font-family:var(--disp);font-size:clamp(32px,4.4vw,62px);line-height:1.14;letter-spacing:-.01em}
+.lead-q cite{display:block;font-style:normal;margin-top:24px;font-size:16px;color:var(--ink2)}
+.rv-grid{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:80px}
+.rv{padding:28px;border-radius:24px;background:rgba(251,251,250,.6);backdrop-filter:blur(22px) saturate(150%);-webkit-backdrop-filter:blur(22px) saturate(150%);
+  border:1px solid rgba(255,255,255,.6);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 24px 60px -30px rgba(18,21,24,.35)}
+.rv p{font-size:17px;line-height:1.55}
+.rv footer{margin-top:16px;font-size:14px;color:var(--ink2);display:flex;justify-content:space-between;gap:12px}
+.rv-more{position:relative;margin-top:28px;font-size:15px;color:var(--ink2)}
+
+/* area + hours */
+.area{padding:130px 0;background:var(--paper);border-top:1px solid var(--mist)}
+.area-grid{display:grid;grid-template-columns:7fr 5fr;gap:72px}
+.area h2{font-size:clamp(40px,5.4vw,76px)}
+.towns{display:flex;flex-wrap:wrap;gap:10px 10px;margin-top:34px;list-style:none}
+.towns li{padding:10px 18px;border-radius:999px;border:1px solid #cdd4da;font-size:16px}
+.towns li.home{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hours{list-style:none;border-top:1px solid #d3d8dc}
+.hours li{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid #d3d8dc;font-size:16px}
+.hours li.today{font-weight:500}
+.hours li.today span:first-child::after{content:"  today";color:var(--urus-d);font-weight:400}
+.area h3{font-family:var(--body);font-weight:500;font-size:16px;letter-spacing:0;margin-bottom:12px}
+.area .addr{margin-top:22px;color:var(--ink2);font-size:15px}
+
+/* quote */
+.quote{position:relative;padding:150px 0 160px;overflow:hidden}
+.quote .orb.a{left:auto;right:-100px;top:40px}
+.quote .orb.b{left:-120px;right:auto;bottom:0}
+.qpanel{position:relative;max-width:980px;margin-inline:auto;padding:56px;border-radius:30px;
+  background:rgba(251,251,250,.58);backdrop-filter:blur(26px) saturate(160%);-webkit-backdrop-filter:blur(26px) saturate(160%);
+  border:1px solid rgba(255,255,255,.6);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 30px 80px -30px rgba(18,21,24,.35)}
+.qpanel h2{font-size:clamp(38px,4.6vw,64px);margin-bottom:28px}
+.fill{font-family:var(--disp);font-size:clamp(24px,2.6vw,36px);line-height:1.9}
+.fill input,.fill select{font:inherit;font-size:.82em;color:var(--urus-d);background:rgba(255,255,255,.55);border:1px solid rgba(46,75,102,.25);border-radius:12px;padding:2px 12px;margin:0 2px;min-height:44px;max-width:100%;vertical-align:baseline;transition:box-shadow .18s ease,border-color .18s}
+.fill input{width:9.5em}
+.fill input:focus,.fill select:focus{outline:none;border-color:var(--urus-d);box-shadow:0 0 0 3px rgba(142,174,203,.55)}
+.fill input::placeholder{color:#8b98a4}
+.qrow{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:34px}
+.qrow small{font-size:14px;color:var(--ink2)}
+
+footer.foot{background:var(--ink);color:#c3cbd2;padding:72px 0 120px;font-size:15px}
+.foot-grid{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;align-items:end}
+.foot .brand{color:#fff;font-size:34px}
+.foot a{color:#fff}
+.foot .jpf{margin-top:32px;color:#8f9aa4;font-size:14px}
+
+/* dock */
+.dock{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom));z-index:60;display:none;gap:8px;padding:7px;border-radius:999px;width:min(420px,100% - 24px);
+  background:rgba(251,251,250,.68);backdrop-filter:blur(22px) saturate(170%);-webkit-backdrop-filter:blur(22px) saturate(170%);
+  border:1px solid rgba(255,255,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 18px 50px -14px rgba(18,21,24,.5)}
+.dock .btn{flex:1}
+
+/* reveals */
+.rv-in{transition:opacity .9s ease,transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.js .rv-in{opacity:0;transform:scale(1.035)}
+.js .rv-in.seen{opacity:1;transform:none}
+
+/* load sequence */
+.js .hero h1 .ln span{transform:translateY(105%);transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.js .hero-photo img{transform:scale(1.05);transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.js .hero-card{opacity:0;transform:translateY(18px);transition:opacity .7s ease .75s,transform .8s cubic-bezier(.2,.8,.2,1) .75s}
+.js .hero-sub,.js .hero-cta{opacity:0;transition:opacity .7s ease .5s}
+.loaded .hero h1 .ln span{transform:none}
+.loaded .hero h1 .ln:nth-child(2) span{transition-delay:.12s}
+.loaded .hero-photo img{transform:none}
+.loaded .hero-card{opacity:1;transform:none}
+.loaded .hero-sub,.loaded .hero-cta{opacity:1}
+
+@media (min-width:901px){
+  .hero{padding-top:118px}
+  .hero .wrap{display:grid;grid-template-columns:minmax(0,1.14fr) minmax(0,1fr);grid-template-rows:auto 1fr;column-gap:44px}
+  .hero h1{grid-column:1;grid-row:1;font-size:min(9vw,116px);align-self:end;padding-top:40px}
+  .hero-row{grid-column:1;grid-row:2;grid-template-columns:1fr;align-items:start;align-content:start;gap:26px;margin-top:34px}
+  .hero-photo{grid-column:2;grid-row:1 / span 2;margin-top:0;height:clamp(560px,calc(100vh - 150px),720px)}
+  .hero-photo img{object-position:34% 50%}
+  .hero-card{left:-64px;bottom:34px}
+  .hero-photo{overflow:visible}
+  .hero-photo img{border-radius:var(--r-big)}
+}
+@media (max-width:900px){
+  body{font-size:16px}
+  .nav{padding:6px 6px 6px 18px}
+  .nav ul{display:none}
+  .brand small{display:none}
+  .nav .btn{min-height:42px;padding:0 16px;font-size:14px}
+  .hero{padding-top:104px}
+  .hero h1{font-size:clamp(50px,14.6vw,64px)}
+  .hero-row{grid-template-columns:1fr;gap:22px;margin-top:22px}
+  .hero-sub{font-size:17px;margin-bottom:14px}
+  .hero-cta .btn{flex:1}
+  .hero-photo{margin-top:30px;height:auto;min-height:0;aspect-ratio:4/4.2;border-radius:22px}
+  .hero-photo img{object-position:30% 30%}
+  .hero-card{left:12px;right:12px;bottom:12px;max-width:none;padding:14px 16px}
+  .hero-card .score b{font-size:34px}
+  .hero-tag{right:16px;top:16px}
+  .come{padding:96px 0 110px}
+  .come-grid,.index-grid,.svc-grid,.band-grid,.area-grid{grid-template-columns:1fr;gap:44px}
+  .index{padding:96px 0}
+  .index-head{flex-direction:column;align-items:start;margin-bottom:36px}
+  .panel{position:relative;top:0;order:-1}
+  .stage{aspect-ratio:4/4.4}
+  .marques .mk{font-size:36px}
+  .services{padding:96px 0}
+  .svc-grid h2{position:static}
+  .svc li{grid-template-columns:1fr;gap:6px;padding:22px 0}
+  .band{padding:96px 0}
+  .stats{gap:32px}
+  .reviews{padding:100px 0}
+  .rv-grid{grid-template-columns:1fr;margin-top:52px}
+  .rv{padding:22px}
+  .pair{grid-template-columns:1fr 1fr;gap:10px}
+  .pair figure:first-child{grid-column:1 / -1;aspect-ratio:4/3}
+  .pair figure:last-child{grid-column:1 / -1;aspect-ratio:4/3.4;margin-bottom:0}
+  .area{padding:96px 0}
+  .quote{padding:96px 0 110px}
+  .qpanel{padding:30px 20px;border-radius:26px}
+  .fill{font-size:24px;line-height:2}
+  .fill input{width:100%;margin:4px 0}
+  .fill select{width:100%;margin:4px 0}
+  .qrow .btn{flex:1}
+  .dock{display:flex;opacity:0;pointer-events:none;transform:translate(-50%,16px);transition:opacity .25s ease,transform .3s ease}
+  .dock.show{opacity:1;pointer-events:auto;transform:translate(-50%,0)}
+  footer.foot{padding-bottom:130px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .js .rv-in,.js .hero h1 .ln span,.js .hero-photo img,.js .hero-card,.js .hero-sub,.js .hero-cta{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js');document.body.classList.add('js')</script>
+
+<nav class="nav" aria-label="Main">
+  <a class="brand" href="#top">Corsa Auto Spa<small>Mobile detailing</small></a>
+  <ul>
+    <li><a href="#cars">The cars</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#area">Area &amp; hours</a></li>
+  </ul>
+  <a class="btn btn-ink" href="tel:+16474511727">Call (647) 451-1727</a>
+</nav>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <h1><span class="ln"><span>Detailed to</span></span><span class="ln"><span>perfection.</span></span></h1>
+      <div class="hero-row">
+        <p class="hero-sub"><strong>Mobile car detailing and ceramic coating</strong> in Vaughan and across York Region. We come to your driveway.</p>
+        <div class="hero-cta">
+          <a class="btn btn-blue" href="#quote">Text for a quote</a>
+          <a class="btn btn-line" href="tel:+16474511727">Call now</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="img/hero-gli.jpg" alt="Black Volkswagen Jetta GLI with a fresh gloss finish, parked in a Vaughan-area driveway" fetchpriority="high">
+        <span class="hero-tag">Volkswagen Jetta GLI</span>
+        <div class="hero-card">
+          <div class="score"><b>5.0</b><span>on Google, from 80 reviews</span></div>
+          <div class="stars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <q>Interior and exterior look brand new</q>
+          <cite>Liam J., Google</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="come">
+    <div class="wrap come-grid">
+      <div>
+        <h2>The spa comes to you.</h2>
+        <p>Corsa Auto Spa is a mobile detailer. Interior and exterior work is done at your home, across Vaughan, York Region and the GTA.</p>
+        <div class="rule"></div>
+      </div>
+      <div class="pair">
+        <figure class="rv-in"><img src="img/urus-rinse.jpg" alt="Corsa detailer rinsing a blue Lamborghini Urus" loading="lazy"></figure>
+        <figure class="rv-in"><img src="img/wash-911.jpg" alt="Hand wash on a bronze Porsche 911 in a residential driveway" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="index" id="cars">
+    <div class="wrap">
+      <div class="index-head">
+        <h2>The cars in the driveway.</h2>
+        <p>Makes from Corsa's own Instagram posts and Google reviews. Tap one to see the car and what was done.</p>
+      </div>
+      <div class="index-grid">
+        <ul class="marques" role="tablist" aria-label="Car makes">
+          <li><button role="tab" aria-selected="true" data-i="0"><span class="mk">Lamborghini</span><span class="md">Urus SE</span></button></li>
+          <li><button role="tab" aria-selected="false" data-i="1"><span class="mk">Porsche</span><span class="md">Cayenne GTS</span></button></li>
+          <li><button role="tab" aria-selected="false" data-i="2"><span class="mk">Audi</span><span class="md">S5</span></button></li>
+          <li><button role="tab" aria-selected="false" data-i="3"><span class="mk">BMW</span><span class="md">Interior</span></button></li>
+          <li><button role="tab" aria-selected="false" data-i="4"><span class="mk">Toyota</span><span class="md">2021 Sienna</span></button></li>
+          <li><button role="tab" aria-selected="false" data-i="5"><span class="mk">Jeep</span><span class="md">Inside and out</span></button></li>
+        </ul>
+        <div class="panel">
+          <div class="stage" aria-live="polite">
+            <video class="on" data-i="0" src="video/urus.mp4" poster="video/urus-poster.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Blue Lamborghini Urus SE after a Corsa detail"></video>
+            <img data-i="1" src="img/cayenne-gts.jpg" alt="Chalk Porsche Cayenne GTS on a lawn after a detail" loading="lazy">
+            <img data-i="2" src="img/audi-s5.jpg" alt="Black Audi on a paver driveway after a full detail" loading="lazy">
+            <img data-i="3" src="img/p10.jpg" alt="BMW interior with cognac leather seats after an interior detail" loading="lazy">
+            <div class="qcard" data-i="4"><p>“Madu did a stunning job detailing our 2021 Sienna. The vehicle looks spotless and basically new.”</p><span>Maki, Google</span></div>
+            <div class="qcard" data-i="5"><p>“My over 12 year old vehicle looks like “off the lot” clean!”</p><span>Jess, Google</span></div>
+            <div class="chip"><b>Lamborghini Urus SE.</b> “One of the craziest colours I’ve ever seen!”</div>
+          </div>
+          <p class="panel-note">Detailed to perfection, in the words of the Instagram post.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="wrap svc-grid">
+      <div>
+        <h2>What we do.</h2>
+        <p>Every job is done on site, at your home. Text us the car and what it needs.</p>
+      </div>
+      <ul class="svc">
+        <li><h3>Interior detailing</h3><p>From dirty to clean, done at the comfort of your home.</p></li>
+        <li><h3>Exterior detailing</h3><p>Hand wash and finish on site, like the Urus and 911 above.</p></li>
+        <li><h3>Full interior &amp; exterior</h3><p>The full Corsa treatment, the way the brand new Audi S5 got it.</p></li>
+        <li><h3>Ceramic coating</h3><p>Coating work across York Region and the GTA.</p></li>
+        <li><h3>Paint protection film</h3><p>PPF, as a BMW M4 Competition owner describes in his review below.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap band-grid">
+      <div>
+        <h2><span data-count="1000">1,000</span>+<small>vehicles detailed and ceramic coated across York Region and the GTA, by Corsa’s own count.</small></h2>
+        <div class="stats">
+          <div><b data-count="5" data-dec="1">5.0</b><span>Google rating</span></div>
+          <div><b data-count="80">80</b><span>Google reviews</span></div>
+        </div>
+      </div>
+      <figure>
+        <div class="reel rv-in"><video src="video/reel-clean.mp4" poster="video/reel-clean-poster.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Montage of cars Corsa has detailed"></video></div>
+        <figcaption class="src">From the Corsa Auto Spa Instagram.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="reviews" id="reviews">
+    <div class="orb a"></div><div class="orb b"></div>
+    <div class="wrap">
+      <div class="lead-q">
+        <blockquote>“His communication was excellent and he kept me updated during the whole process. If you are looking for a detailer, Madu is the best person for the job.”</blockquote>
+        <cite>Maki, Google review, 5 stars</cite>
+      </div>
+      <div class="rv-grid">
+        <article class="rv"><p>“I recently brought my BMW M4 Competition to Corsa Auto Spa for detailing and PPF, and I couldn’t be happier with the results. The attention to detail was outstanding, and the quality of the work exceeded my expectations. …”</p><footer><span>Tariq J., Google</span><span>5 stars</span></footer></article>
+        <article class="rv"><p>“Corsa Auto was professional honest and a great company to deal with. He was good communicating from the booking through our whole experience. I never felt upsold on the packages. This was my first auto detailing. …”</p><footer><span>Leigh H., Google</span><span>5 stars</span></footer></article>
+        <article class="rv"><p>“I was looking online for someone who could detail my Audi S5 and Corsaauto Spa came up on my Instagram. I decided to give them a go and the results spoke for themselves. Super happy with it all around. Interior and exterior look brand new …”</p><footer><span>Liam J., Google</span><span>5 stars</span></footer></article>
+        <article class="rv"><p>“Recently had an inside and out detailing done on my Jeep and I am super happy with the end results. My over 12 year old vehicle looks like “off the lot” clean! What used to be a salt stained mess on the driver side, is looking so clean and …”</p><footer><span>Jess, Google</span><span>5 stars</span></footer></article>
+      </div>
+      <p class="rv-more">5.0 average across 80 Google reviews.</p>
+    </div>
+  </section>
+
+  <section class="area" id="area">
+    <div class="wrap area-grid">
+      <div>
+        <h2>Vaughan, York Region and the GTA.</h2>
+        <ul class="towns">
+          <li class="home">Vaughan</li><li>Woodbridge</li><li>Maple</li><li>Kleinburg</li><li>Richmond Hill</li><li>Markham</li><li>Thornhill</li><li>King City</li><li>Nobleton</li><li>Mississauga</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Hours</h3>
+        <ul class="hours" id="hours">
+          <li data-d="1"><span>Monday</span><span>8 a.m. to 8:30 p.m.</span></li>
+          <li data-d="2"><span>Tuesday</span><span>8 a.m. to 8:30 p.m.</span></li>
+          <li data-d="3"><span>Wednesday</span><span>8 a.m. to 8:30 p.m.</span></li>
+          <li data-d="4"><span>Thursday</span><span>8 a.m. to 8:30 p.m.</span></li>
+          <li data-d="5"><span>Friday</span><span>8 a.m. to 8:30 p.m.</span></li>
+          <li data-d="6"><span>Saturday</span><span>8 a.m. to 8:30 p.m.</span></li>
+          <li data-d="0"><span>Sunday</span><span>8 a.m. to 8 p.m.</span></li>
+        </ul>
+        <p class="addr">Based on Major MacKenzie Dr., Vaughan, ON L4H 0C1</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote" id="quote">
+    <div class="orb a"></div><div class="orb b"></div>
+    <div class="wrap">
+      <form class="qpanel" id="qform">
+        <h2>Get a quote by text.</h2>
+        <p class="fill">
+          Hi Corsa, I’m <input id="qn" aria-label="Your name" name="n" placeholder="your name" autocomplete="given-name" required>
+          I’ve got a <input id="qc" aria-label="Your car" name="c" placeholder="year, make, model" required>
+          in <input id="qa" aria-label="Your town" name="a" placeholder="your town">
+          and I’d like <select id="qs" aria-label="Service" name="s">
+            <option>an interior detail</option>
+            <option>an exterior detail</option>
+            <option>a full interior &amp; exterior detail</option>
+            <option>ceramic coating</option>
+            <option>PPF</option>
+          </select>
+        </p>
+        <div class="qrow">
+          <button class="btn btn-ink" type="submit">Open text to Corsa</button>
+          <small>Opens your messages app with this note to (647) 451-1727.</small>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand">Corsa Auto Spa</div>
+        <p>Mobile detailing &amp; ceramic coating, Vaughan and York Region</p>
+      </div>
+      <div>
+        <p><a href="tel:+16474511727">(647) 451-1727</a></p>
+        <p><a href="https://www.instagram.com/corsaauto.spa/" rel="noopener">@corsaauto.spa on Instagram</a></p>
+      </div>
+    </div>
+    <p class="jpf">Preview built by JPF. Not live yet.</p>
+  </div>
+</footer>
+
+<div class="dock" aria-label="Contact">
+  <a class="btn btn-line" href="sms:+16474511727">Text</a>
+  <a class="btn btn-ink" href="tel:+16474511727">Call now</a>
+</div>
+
+<script>
+(function(){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){ document.body.classList.add('loaded'); }); });
+
+  var dock=document.querySelector('.dock');
+  function dk(){ dock.classList.toggle('show', scrollY>420); } addEventListener('scroll',dk,{passive:true}); dk();
+
+  // reveals
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('seen'); io.unobserve(e.target);} });
+  },{rootMargin:'0px 0px -8% 0px'}) : null;
+  document.querySelectorAll('.rv-in').forEach(function(el){ io ? io.observe(el) : el.classList.add('seen'); });
+
+  // count up
+  function count(el){
+    var to = +el.dataset.count, dec = +(el.dataset.dec||0), t0 = null, dur = 1300;
+    if(reduce){ return; }
+    function step(t){ if(!t0) t0=t; var p=Math.min(1,(t-t0)/dur), v=to*(1-Math.pow(1-p,3));
+      el.textContent = dec ? v.toFixed(dec) : Math.round(v).toLocaleString('en-CA'); if(p<1) requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  }
+  var cio = 'IntersectionObserver' in window ? new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ count(e.target); cio.unobserve(e.target);} });
+  },{threshold:.6}) : null;
+  document.querySelectorAll('[data-count]').forEach(function(el){ cio && cio.observe(el); });
+
+  // marque index
+  var notes = [
+    ['<b>Lamborghini Urus SE.</b> “One of the craziest colours I’ve ever seen!”','Detailed to perfection, in the words of the Instagram post.'],
+    ['<b>Porsche Cayenne GTS.</b> “Not your average grocery getter.”','Detailed to perfection, from the Corsa Instagram.'],
+    ['<b>Audi S5.</b> Full interior &amp; exterior, detailed to perfection.','“Brand new Audi S5 received the full Corsa Auto Spa treatment.” Liam J. found Corsa on Instagram for his S5.'],
+    ['<b>BMW interior.</b> Cognac leather, after the detail.','Tariq J. brought his BMW M4 Competition in for detailing and PPF.'],
+    ['','A 2021 Toyota Sienna, from a Google review.'],
+    ['','A Jeep, inside and out, from a Google review.']
+  ];
+  var tabs = document.querySelectorAll('.marques button'), items = document.querySelectorAll('.stage [data-i]'),
+      chip = document.querySelector('.chip'), note = document.querySelector('.panel-note');
+  function show(i){
+    tabs.forEach(function(t){ t.setAttribute('aria-selected', t.dataset.i==i ? 'true':'false'); });
+    items.forEach(function(m){ var on = m.dataset.i==i; m.classList.toggle('on', on);
+      if(m.tagName==='VIDEO'){ if(on && !reduce){ m.play().catch(function(){}); } else { m.pause(); } } });
+    chip.innerHTML = notes[i][0]; chip.classList.toggle('hide', !notes[i][0]); note.innerHTML = notes[i][1];
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){ show(+t.dataset.i); });
+    t.addEventListener('mouseenter', function(){ if(matchMedia('(hover:hover)').matches) show(+t.dataset.i); });
+    t.addEventListener('keydown', function(e){
+      var i=+t.dataset.i, n=tabs.length;
+      if(e.key==='ArrowDown'||e.key==='ArrowRight'){ e.preventDefault(); i=(i+1)%n; }
+      else if(e.key==='ArrowUp'||e.key==='ArrowLeft'){ e.preventDefault(); i=(i-1+n)%n; } else return;
+      tabs[i].focus(); show(i);
+    });
+  });
+  if(reduce){ document.querySelectorAll('video').forEach(function(v){ v.removeAttribute('autoplay'); v.pause(); }); }
+
+  // today in hours (Toronto)
+  try{
+    var d = new Date(new Date().toLocaleString('en-US',{timeZone:'America/Toronto'})).getDay();
+    var li = document.querySelector('#hours [data-d="'+d+'"]'); if(li) li.classList.add('today');
+  }catch(e){}
+
+  // quote by text
+  document.getElementById('qform').addEventListener('submit', function(e){
+    e.preventDefault();
+    var f = e.target, n=f.n.value.trim(), c=f.c.value.trim(), a=f.a.value.trim(), s=f.s.value;
+    var msg = 'Hi Corsa, I’m '+n+'. I’ve got a '+c+(a?' in '+a:'')+' and I’d like '+s+'. Can I get a quote?';
+    var sep = /iPhone|iPad|Mac/.test(navigator.userAgent) ? '&' : '?';
+    location.href = 'sms:+16474511727'+sep+'body='+encodeURIComponent(msg);
+  });
+})();
+</script>
+</body>
+</html>
