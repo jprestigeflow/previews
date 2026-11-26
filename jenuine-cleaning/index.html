@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Jenuine Cleaning | House cleaning in Steinbach, MB</title>
+<meta name="description" content="Jenuine Cleaning: house cleaning in Steinbach, Manitoba. 5.0 on Google from 15 reviews. Call or text (204) 355-7396.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&family=Gilda+Display&display=swap" rel="stylesheet">
+<style>
+/* Design plan (Jenuine Cleaning, Nov 25 2026)
+   Direction: light "room-by-room" walk through a finished home. White page, blush tint from their heart logo, one cocoa accent.
+   Palette: paper #fdfbfa (white walls in p2) / blush #f6e6e8 (logo heart fill, sampled) / cocoa #95644a (logo lettering, sampled) / ink #2a1f1d (deep cocoa) / floor grey #8c8580 (vinyl floor in p2).
+   Fonts: Gilda Display (display, soft high-contrast serif that echoes the logo script) + Afacad (body).
+   Signature: before/after slider on their own jobs (jetted tub, entryway) with glass chips + handle.
+   Order: hero kitchen > intro + est. 2019 heart > room by room > before/after > reviews over blush orbs > how people book > quote sentence + hours > footer.
+   Motion: one load sequence (photo settles, headline lines rise, glass card floats in); gentle .rv reveals on photos only; rating counts up once. */
+:root{
+  --paper:#fdfbfa;--blush:#f6e6e8;--blush2:#efd6d9;--cocoa:#95644a;--cocoa-d:#7a4f39;--ink:#2a1f1d;--floor:#8c8580;--line:rgba(42,31,29,.12);
+  --disp:"Gilda Display",Georgia,serif;--body:"Afacad",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.55;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--cocoa);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1200px,100% - 40px);margin-inline:auto}
+
+/* nav */
+.nav{position:fixed;top:14px;left:14px;right:14px;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  max-width:1180px;margin:0 auto;padding:8px 8px 8px 14px;border-radius:999px;
+  background:rgba(253,251,250,.62);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);
+  border:1px solid rgba(255,255,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 20px 60px -20px rgba(42,31,29,.3)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{width:44px;height:40px;object-fit:cover;border-radius:10px;mix-blend-mode:multiply}
+.brand span{font-family:var(--disp);font-size:21px;letter-spacing:.01em}
+.nav ul{display:flex;gap:26px;list-style:none;font-size:16px}
+.nav ul a{text-decoration:none;opacity:.8}
+.nav ul a:hover{opacity:1}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 22px;border-radius:999px;border:0;
+  font:600 16px/1 var(--body);text-decoration:none;cursor:pointer;transition:transform .17s ease,background .17s ease}
+.pill:active{transform:scale(.98)}
+.pill.main{background:var(--cocoa);color:#fff}
+.pill.main:hover{background:var(--cocoa-d)}
+.pill.soft{background:rgba(255,255,255,.7);color:var(--ink);border:1px solid var(--line)}
+
+/* hero */
+.hero{position:relative;height:100svh;min-height:640px;max-height:1000px;overflow:hidden;background:#e9e6e2}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 62%;transform:scale(1.07);animation:settle 1.4s cubic-bezier(.2,.7,.2,1) forwards}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(253,251,250,.93) 0%,rgba(253,251,250,.8) 32%,rgba(253,251,250,.2) 50%,rgba(253,251,250,0) 60%)}
+.hero-copy{position:relative;z-index:2;padding-top:118px}
+.hero h1{font-family:var(--disp);font-weight:400;font-size:clamp(58px,9vw,128px);line-height:.94;letter-spacing:-.015em;word-spacing:.08em}
+.hero h1 span{display:block;opacity:0;transform:translateY(24px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+.hero h1 span:nth-child(2){animation-delay:.12s;color:var(--cocoa)}
+.hero h1 span:nth-child(3){animation-delay:.24s}
+.hero .sub{margin-top:18px;font-size:19px;max-width:30ch;opacity:0;animation:rise .8s .45s forwards}
+.hero-card{position:absolute;z-index:3;right:max(20px,calc((100% - 1200px)/2));bottom:40px;width:min(380px,calc(100% - 40px));padding:22px 24px;border-radius:26px;
+  background:rgba(253,251,250,.66);-webkit-backdrop-filter:blur(24px) saturate(170%);backdrop-filter:blur(24px) saturate(170%);
+  border:1px solid rgba(255,255,255,.6);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 24px 60px -20px rgba(42,31,29,.35);
+  opacity:0;transform:translateY(18px);animation:rise .9s .7s cubic-bezier(.2,.7,.2,1) forwards}
+.hero-card .score{display:flex;align-items:baseline;gap:10px}
+.hero-card .score b{font-family:var(--disp);font-weight:400;font-size:46px;line-height:1}
+.hero-card .score small{font-size:16px;color:#5d514d}
+.stars{color:var(--cocoa);letter-spacing:2px;font-size:15px}
+.hero-card q{display:block;margin-top:10px;font-family:var(--disp);font-size:22px;line-height:1.25}
+.hero-card cite{display:block;margin-top:8px;font-style:normal;font-size:15px;color:#5d514d}
+.hero-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px;opacity:0;animation:rise .8s .55s forwards}
+@keyframes settle{to{transform:scale(1)}}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* intro */
+.intro{padding:130px 0 110px}
+.intro .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:60px;align-items:end}
+.intro h2{font-family:var(--disp);font-weight:400;font-size:clamp(40px,5.4vw,76px);line-height:1.02;letter-spacing:-.01em;word-spacing:.06em}
+.intro p{font-size:19px;max-width:46ch;color:#4a3e3a}
+.intro p+p{margin-top:14px}
+.estd{display:flex;align-items:center;gap:16px;margin-top:30px}
+.estd img{width:92px;height:84px;object-fit:cover;mix-blend-mode:multiply}
+.estd span{font-size:16px;color:#5d514d;line-height:1.35}
+
+/* rooms */
+.rooms{padding:0 0 120px}
+.rooms h2,.ba h2,.revs h2,.book h2,.quote h2{font-family:var(--disp);font-weight:400;font-size:clamp(38px,4.8vw,64px);line-height:1.04;letter-spacing:-.01em;word-spacing:.06em}
+.rooms .head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:44px}
+.rooms .head p{max-width:38ch;color:#4a3e3a}
+.room-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+.room{position:relative;margin:0;overflow:hidden;border-radius:24px;background:#eee}
+.room img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.room.rv img{transform:scale(1.06)}
+.room.rv.in img{transform:none}
+.room figcaption{position:absolute;left:14px;bottom:14px;padding:8px 16px;border-radius:999px;font-size:16px;font-weight:500;
+  background:rgba(253,251,250,.72);-webkit-backdrop-filter:blur(18px) saturate(150%);backdrop-filter:blur(18px) saturate(150%);border:1px solid rgba(255,255,255,.6)}
+.r1{grid-column:1/8;aspect-ratio:4/5}
+.r2{grid-column:8/13;aspect-ratio:3/4;align-self:end}
+.r3{grid-column:1/5;aspect-ratio:3/4}
+.r4{grid-column:5/9;aspect-ratio:3/4;margin-top:80px}
+.r5{grid-column:9/13;aspect-ratio:3/4}
+
+/* before / after */
+.ba{background:var(--blush);padding:120px 0;position:relative;overflow:hidden}
+.ba .wrap{display:grid;grid-template-columns:1fr 1.25fr;gap:60px;align-items:center}
+.ba p.lead{margin-top:18px;max-width:40ch;color:#4a3e3a}
+.chips{display:flex;gap:8px;margin-top:28px;flex-wrap:wrap}
+.chip{min-height:46px;padding:0 20px;border-radius:15px;font:500 16px var(--body);color:var(--ink);cursor:pointer;
+  background:rgba(255,255,255,.55);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.8);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7);transition:background .17s,transform .17s}
+.chip:active{transform:scale(.98)}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.ba .src{margin-top:20px;font-size:15px;color:#6b5e59}
+.ba .src a{color:var(--cocoa-d)}
+.slider{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:950/680;box-shadow:0 30px 70px -30px rgba(42,31,29,.45);background:#ddd;touch-action:pan-y;user-select:none}
+.slider img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.slider .after{clip-path:inset(0 0 0 var(--x,50%))}
+.slider .bar{position:absolute;top:0;bottom:0;left:var(--x,50%);width:2px;background:#fff;transform:translateX(-1px)}
+.slider .knob{position:absolute;top:50%;left:var(--x,50%);width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:999px;display:grid;place-items:center;
+  background:rgba(253,251,250,.6);-webkit-backdrop-filter:blur(16px) saturate(160%);backdrop-filter:blur(16px) saturate(160%);border:1px solid rgba(255,255,255,.8);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 10px 30px -8px rgba(42,31,29,.4)}
+.slider .knob svg{width:26px;height:26px;stroke:var(--ink)}
+.slider .tag{position:absolute;top:14px;padding:6px 14px;border-radius:999px;font-size:15px;font-weight:600;background:rgba(42,31,29,.72);color:#fff}
+.slider .tag.l{left:14px}.slider .tag.r{right:14px;background:rgba(253,251,250,.85);color:var(--ink)}
+.slider input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+
+/* reviews */
+.revs{position:relative;padding:130px 0;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.75;animation:drift 26s ease-in-out infinite alternate;pointer-events:none}
+.orb.a{width:520px;height:520px;background:radial-gradient(circle,#f3d7db,transparent 70%);top:20%;left:-120px}
+.orb.b{width:460px;height:460px;background:radial-gradient(circle,#ead2c4,transparent 70%);bottom:-80px;right:-100px;animation-duration:30s}
+@keyframes drift{to{transform:translate(60px,-40px)}}
+.revs .wrap{position:relative}
+.lead-q{max-width:980px}
+.lead-q blockquote{font-family:var(--disp);font-size:clamp(30px,3.8vw,52px);line-height:1.16;letter-spacing:-.005em}
+.lead-q cite{display:block;margin-top:22px;font-style:normal;font-size:17px;color:#5d514d}
+.count{display:flex;align-items:baseline;gap:14px;margin:70px 0 30px;flex-wrap:wrap}
+.count b,.count b span{font-family:var(--disp);font-weight:400;font-size:clamp(64px,8vw,110px);line-height:.9;color:var(--cocoa)}
+.count span{font-size:18px;color:#4a3e3a}
+.count a{color:var(--cocoa-d)}
+.rgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.rcard{padding:28px;border-radius:24px;background:rgba(255,255,255,.55);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);
+  border:1px solid rgba(255,255,255,.75);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 20px 60px -24px rgba(42,31,29,.25)}
+.rcard p{font-size:18px;line-height:1.55}
+.rcard cite{display:flex;justify-content:space-between;gap:10px;margin-top:16px;font-style:normal;font-size:15px;color:#5d514d}
+
+/* how people book */
+.book{padding:110px 0;border-top:1px solid var(--line)}
+.book .wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:60px}
+.book ol{list-style:none}
+.book li{display:grid;grid-template-columns:1fr 1.3fr;gap:24px;padding:26px 0;border-bottom:1px solid var(--line)}
+.book li:first-child{padding-top:0}
+.book h3{font-family:var(--disp);font-weight:400;font-size:30px;line-height:1.1}
+.book li p{color:#4a3e3a;font-size:17px}
+.book li p em{font-style:normal;color:var(--ink)}
+
+/* quote */
+.quote{position:relative;padding:120px 0 140px;overflow:hidden}
+.quote>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.quote::before{content:"";position:absolute;inset:0;background:rgba(253,251,250,.35)}
+.quote .wrap{position:relative;display:grid;grid-template-columns:1.25fr 1fr;gap:28px;align-items:start}
+.panel{padding:40px;border-radius:28px;background:rgba(253,251,250,.72);-webkit-backdrop-filter:blur(26px) saturate(170%);backdrop-filter:blur(26px) saturate(170%);
+  border:1px solid rgba(255,255,255,.7);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 30px 70px -24px rgba(42,31,29,.35)}
+.fill{margin-top:22px;font-family:var(--disp);font-size:clamp(24px,2.5vw,32px);line-height:1.75}
+.fill input,.fill select{font:inherit;color:var(--cocoa-d);background:rgba(255,255,255,.65);border:1px solid rgba(149,100,74,.35);border-radius:14px;padding:0 12px;height:46px;vertical-align:middle;max-width:100%;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.8);transition:box-shadow .17s,border-color .17s}
+.fill input{width:9ch}
+.fill input.wide{width:11ch}
+.fill input:focus,.fill select:focus{outline:none;border-color:var(--cocoa);box-shadow:0 0 0 3px rgba(149,100,74,.22)}
+.panel .pill{margin-top:26px}
+.panel small{display:block;margin-top:12px;font-size:15px;color:#5d514d}
+.info{display:grid;gap:18px}
+.info .panel{padding:30px}
+.info h3{font-family:var(--disp);font-weight:400;font-size:28px;margin-bottom:12px}
+.hours{list-style:none;font-size:17px}
+.hours li{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--line)}
+.hours li:last-child{border:0}
+.info p{font-size:17px;color:#4a3e3a}
+.info .phone{display:block;font-family:var(--disp);font-size:34px;text-decoration:none;margin-top:6px}
+
+footer{padding:60px 0 50px;border-top:1px solid var(--line);font-size:16px;color:#5d514d}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer .jpf{font-weight:600;color:var(--ink)}
+
+/* dock */
+.dock{display:none}
+
+.rv{opacity:0;transition:opacity .9s ease}
+.rv.in{opacity:1}
+
+@media (max-width:900px){
+  body{font-size:17px}
+  .nav ul{display:none}
+  .hero{height:92svh;min-height:600px}
+  .hero>img{object-position:62% 70%}
+  .hero::after{background:linear-gradient(180deg,rgba(253,251,250,.94) 0%,rgba(253,251,250,.7) 30%,rgba(253,251,250,0) 50%)}
+  .hero-copy{padding-top:104px}
+  .hero h1{font-size:60px}
+  .hero .sub{font-size:18px}
+  .hero-cta{display:none}
+  .hero-card{left:16px;right:16px;width:auto;bottom:96px;padding:18px 20px}
+  .hero-card q{font-size:20px}
+  .intro{padding:80px 0 70px}
+  .intro .wrap,.ba .wrap,.book .wrap,.quote .wrap{grid-template-columns:1fr;gap:34px}
+  .rooms{padding-bottom:80px}
+  .rooms .head{display:block}
+  .rooms .head p{margin-top:14px}
+  .room-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .r1{grid-column:1/3;aspect-ratio:4/5}
+  .r2{grid-column:1/2}.r3{grid-column:2/3}
+  .r4{grid-column:1/2;margin-top:0}.r5{grid-column:2/3}
+  .room{border-radius:18px}
+  .room figcaption{left:10px;bottom:10px;font-size:15px;padding:6px 12px}
+  .ba,.revs,.book{padding:80px 0}
+  .slider{border-radius:22px}
+  .rgrid{grid-template-columns:1fr}
+  .rcard{padding:22px}
+  .book li{grid-template-columns:1fr;gap:8px}
+  .quote{padding:80px 0 90px}
+  .panel{padding:26px 22px}
+  .fill{line-height:1.9;font-size:24px}
+  footer{padding-bottom:120px}
+  .dock{display:flex;position:fixed;z-index:50;left:12px;right:12px;bottom:12px;gap:8px;padding:7px;border-radius:999px;
+    background:rgba(253,251,250,.66);-webkit-backdrop-filter:blur(22px) saturate(170%);backdrop-filter:blur(22px) saturate(170%);
+    border:1px solid rgba(255,255,255,.6);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 18px 50px -16px rgba(42,31,29,.4)}
+  .dock .pill{flex:1;min-height:50px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .hero>img{transform:none}.hero h1 span,.hero .sub,.hero-card,.hero-cta{opacity:1;transform:none}
+  .rv{opacity:1}.room.rv img{transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <a class="brand" href="#top"><img src="img/logo-mark.jpg" alt="Jenuine Cleaning heart logo"><span>Jenuine Cleaning</span></a>
+  <ul>
+    <li><a href="#rooms">Rooms</a></li>
+    <li><a href="#before-after">Before &amp; after</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#quote">Get a quote</a></li>
+  </ul>
+  <a class="pill main" href="tel:+12043557396">Call</a>
+</nav>
+
+<header class="hero" id="top">
+  <img src="img/p2.jpg" alt="Bright white kitchen with island and pendant lights after a Jenuine clean" fetchpriority="high">
+  <div class="wrap hero-copy">
+    <h1><span>Home,</span><span>Jenuinely</span><span>clean.</span></h1>
+    <p class="sub">House cleaning in Steinbach, Manitoba, by Jennifer and her team.</p>
+    <div class="hero-cta">
+      <a class="pill main" href="#quote">Get a quote by text</a>
+      <a class="pill soft" href="tel:+12043557396">(204) 355-7396</a>
+    </div>
+  </div>
+  <aside class="hero-card" aria-label="Google rating">
+    <div class="score"><b data-count="5.0">5.0</b><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><small>15 Google reviews</small></div>
+    <q>And clean is an understatement.</q>
+    <cite>Kate I., Google</cite>
+  </aside>
+</header>
+
+<main>
+<section class="intro">
+  <div class="wrap">
+    <h2>The small details, done until they're white again.</h2>
+    <div>
+      <p>Doors, baseboards, windowsills, the toaster. That's the list one client gave after Jenuine Cleaning left her house.</p>
+      <p>Reviewers keep naming the same things: on time, hard working, friendly, and flexible about what you need.</p>
+      <div class="estd"><img src="img/logo-mark.jpg" alt="" aria-hidden="true"><span>Jenuine Cleaning<br>Est. 2019, Steinbach MB</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="rooms" id="rooms">
+  <div class="wrap">
+    <div class="head">
+      <h2>Room by room.</h2>
+      <p>Real homes after a clean, from their Google listing. Kitchens, bathrooms, living rooms.</p>
+    </div>
+    <div class="room-grid">
+      <figure class="room r1 rv"><img src="img/p3.jpg" alt="White floating vanity and vessel sink in a clean bathroom" loading="lazy"><figcaption>Bathroom</figcaption></figure>
+      <figure class="room r2 rv"><img src="img/p6.jpg" alt="Tidy living room with sectional and coffee table" loading="lazy"><figcaption>Living room</figcaption></figure>
+      <figure class="room r3 rv"><img src="img/p4.jpg" alt="Kitchen island and counters wiped clean" loading="lazy"><figcaption>Kitchen</figcaption></figure>
+      <figure class="room r4 rv"><img src="img/p8.jpg" alt="Clean black sink under the kitchen window" loading="lazy"><figcaption>Sink and window</figcaption></figure>
+      <figure class="room r5 rv"><img src="img/p1.jpg" alt="Open main floor from the couch to the kitchen" loading="lazy"><figcaption>Main floor</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="ba" id="before-after">
+  <div class="wrap">
+    <div>
+      <h2>Drag the line. See the difference.</h2>
+      <p class="lead">Two of their own before-and-after jobs. Left side is how they found it, right side is how they left it.</p>
+      <div class="chips" role="group" aria-label="Choose a job">
+        <button class="chip" type="button" aria-pressed="true" data-b="img/tub-before.jpg" data-a="img/tub-after.jpg" data-r="950/680" data-l="Jetted tub">Jetted tub</button>
+        <button class="chip" type="button" aria-pressed="false" data-b="img/entry-before.jpg" data-a="img/entry-after.jpg" data-r="920/1000" data-l="Entryway">Entryway</button>
+      </div>
+      <p class="src">More on their Instagram, <a href="https://www.instagram.com/jenuine.cleaning/" rel="noopener">@jenuine.cleaning</a></p>
+    </div>
+    <div class="slider" id="slider" style="--x:50%">
+      <img class="before" src="img/tub-before.jpg" alt="Jetted tub before cleaning">
+      <img class="after" src="img/tub-after.jpg" alt="Jetted tub after cleaning, bright white">
+      <span class="tag l">Before</span><span class="tag r">After</span>
+      <span class="bar" aria-hidden="true"></span>
+      <span class="knob" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span>
+      <input type="range" min="0" max="100" value="50" aria-label="Before and after: move to compare">
+    </div>
+  </div>
+</section>
+
+<section class="revs" id="reviews">
+  <span class="orb a" aria-hidden="true"></span><span class="orb b" aria-hidden="true"></span>
+  <div class="wrap">
+    <div class="lead-q rv">
+      <blockquote>&ldquo;Jenuine Cleaning is the BEST! Jennifer takes immense pride in what she does, consistently going above and beyond.&rdquo;</blockquote>
+      <cite>Debbi B., Google</cite>
+    </div>
+    <div class="count">
+      <b><span data-count="5.0">5.0</span></b>
+      <span>out of 5 from <span data-count="15">15</span> reviews on <a href="https://www.google.com/maps/place/?q=place_id:ChIJWThRJYh8NIwR09-9_Nh_98w" rel="noopener">Google</a></span>
+    </div>
+    <div class="rgrid">
+      <article class="rcard"><p>&ldquo;It&rsquo;s the small details for me, my doors, baseboards and windowsills are white again!&rdquo;</p><cite><span>Kate I., Google</span><span class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></cite></article>
+      <article class="rcard"><p>&ldquo;We hired Jennifer and her team for monthly cleanings and boy, did they live up to their attention to detail and client centric approach.&rdquo;</p><cite><span>Jeff S., Google</span><span class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></cite></article>
+      <article class="rcard"><p>&ldquo;They moved my furniture and cleaned top to bottom. Would highly recommend!&rdquo;</p><cite><span>Esther E., Google</span><span class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></cite></article>
+      <article class="rcard"><p>&ldquo;Jenuine&rsquo;s team shows up on time, works hard, and is always willing to work with clients to ensure the best experience and desired results.&rdquo;</p><cite><span>Debbi B., Google</span><span class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></cite></article>
+    </div>
+  </div>
+</section>
+
+<section class="book">
+  <div class="wrap">
+    <h2>How people book Jenuine.</h2>
+    <ol>
+      <li><h3>Monthly cleanings</h3><p><em>&ldquo;We hired Jennifer and her team for monthly cleanings.&rdquo;</em> Jeff S.</p></li>
+      <li><h3>A yearly spring clean</h3><p><em>&ldquo;I&rsquo;ve relied on Jenuine for my annual &ldquo;spring clean&rdquo; for several years.&rdquo;</em> Victoria P.</p></li>
+      <li><h3>Top to bottom</h3><p><em>&ldquo;They moved my furniture and cleaned top to bottom.&rdquo;</em> Esther E.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="quote" id="quote">
+  <img src="img/p2.jpg" alt="" aria-hidden="true" loading="lazy">
+  <div class="wrap">
+    <form class="panel" id="qf">
+      <h2>Ask for a quote.</h2>
+      <p class="fill">
+        Hi Jennifer, I'm <input name="n" placeholder="name" aria-label="Your name" required autocomplete="given-name">
+        in <input class="wide" name="t" placeholder="Steinbach" aria-label="Your town">.
+        I'd like
+        <select name="k" aria-label="Type of clean">
+          <option>a monthly clean</option>
+          <option>a spring clean</option>
+          <option>a top-to-bottom clean</option>
+          <option>a one-time clean</option>
+        </select>
+        for my <input name="h" placeholder="3 bed house" aria-label="Your home" class="wide">.
+      </p>
+      <button class="pill main" type="submit">Text this to Jenuine</button>
+      <small>Opens a text to (204) 355-7396 on your phone. Nothing is sent until you press send.</small>
+    </form>
+    <div class="info">
+      <div class="panel">
+        <h3>Call or text</h3>
+        <a class="phone" href="tel:+12043557396">(204) 355-7396</a>
+        <p>Based in Steinbach, Manitoba.</p>
+      </div>
+      <div class="panel">
+        <h3>Hours</h3>
+        <ul class="hours">
+          <li><span>Monday to Friday</span><span>8 a.m. to 4:30 p.m.</span></li>
+          <li><span>Saturday</span><span>Closed</span></li>
+          <li><span>Sunday</span><span>Closed</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Jenuine Cleaning, house cleaning in Steinbach, MB. <a href="tel:+12043557396">(204) 355-7396</a></span>
+    <span class="jpf">Preview built by JPF. Not live yet.</span>
+  </div>
+</footer>
+
+<div class="dock" aria-label="Contact">
+  <a class="pill soft" href="sms:+12043557396">Text</a>
+  <a class="pill main" href="tel:+12043557396">Call Jenuine</a>
+</div>
+
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // reveals
+  var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15}):null;
+  document.querySelectorAll('.rv').forEach(function(el){io&&!reduce?io.observe(el):el.classList.add('in')});
+  // count up once
+  var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;cio.unobserve(e.target);
+    var el=e.target,end=parseFloat(el.dataset.count),dec=el.dataset.count.indexOf('.')>-1?1:0,t0=null;if(reduce)return;
+    function step(t){t0=t0||t;var p=Math.min((t-t0)/1100,1),v=end*(1-Math.pow(1-p,3));el.textContent=v.toFixed(dec);if(p<1)requestAnimationFrame(step)}
+    requestAnimationFrame(step)})},{threshold:.6});
+  document.querySelectorAll('.count [data-count]').forEach(function(el){cio.observe(el)});
+  // slider
+  var s=document.getElementById('slider'),r=s.querySelector('input'),b=s.querySelector('.before'),a=s.querySelector('.after');
+  r.addEventListener('input',function(){s.style.setProperty('--x',r.value+'%')});
+  document.querySelectorAll('.chip').forEach(function(c){c.addEventListener('click',function(){
+    document.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',x===c)});
+    b.src=c.dataset.b;a.src=c.dataset.a;b.alt=c.dataset.l+' before cleaning';a.alt=c.dataset.l+' after cleaning';
+    s.style.aspectRatio=c.dataset.r;r.value=50;s.style.setProperty('--x','50%')})});
+  // quote to sms
+  document.getElementById('qf').addEventListener('submit',function(e){e.preventDefault();var f=e.target;
+    var msg='Hi Jennifer, I\'m '+(f.n.value||'')+(f.t.value?' in '+f.t.value:'')+'. I\'d like '+f.k.value+(f.h.value?' for my '+f.h.value:'')+'. Can I get a quote?';
+    location.href='sms:+12043557396?&body='+encodeURIComponent(msg)});
+})();
+</script>
+</body>
+</html>
