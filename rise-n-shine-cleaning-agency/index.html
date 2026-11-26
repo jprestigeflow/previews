@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Rise'n Shine Cleaning Agency | Residential cleaning in Airdrie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* TIER 2 · CLEANING · "Fresh air"
+   direction: the moment after the last wipe. Cool, bright, quiet; a soft serif that feels like a well-kept home; trust before anything else.
+   palette: air #f2f5f4 (fresh-painted wall) / mist #e2eae7 / spruce ink #1a2826 / mute #566461 / accent #b8645a (picked from their photos)
+   fonts: Gloock (display, sentence case) + Golos Text (body)
+   signature: the wipe, a glass squeegee bar crosses each room photo and leaves it clear behind it
+   order: headline + wiped photo with review glass, trust (rating + lead review + glass review wall), rooms, what they clean, hours + area, quote by text, phone
+   motion: one load (headline settles, the first wipe crosses the hero photo, glass card floats in); each room photo is wiped once when it enters; rating counts up once */
+:root{--air:#f2f5f4;--mist:#e2eae7;--ink:#1a2826;--mute:#566461;--line:rgba(26,40,38,.13);--acc:#b8645a;--acc-ink:#141414;--acc-rgb:184,100,90;--g:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--air);color:var(--ink);font-family:"Golos Text",system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:96px}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{position:relative;width:min(1240px,100% - 2*var(--g));margin-inline:auto}
+.d{font-family:Gloock,Georgia,serif;font-weight:400;line-height:.98;letter-spacing:-.025em}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+section{position:relative;padding:92px 0;overflow-x:clip}
+h2.d{font-size:clamp(46px,12vw,110px)}
+.lede{color:var(--mute);font-size:17px;max-width:40ch;margin-top:16px}
+
+.glass{background:rgba(255,255,255,.6);-webkit-backdrop-filter:blur(24px) saturate(170%);backdrop-filter:blur(24px) saturate(170%);border:1px solid rgba(255,255,255,.75);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 22px 60px -22px rgba(26,40,38,.28)}
+nav{position:fixed;top:12px;left:12px;right:12px;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:12px;border-radius:999px;padding:6px 6px 6px 18px}
+nav .nm{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+nav .nm::before{content:"";flex:0 0 10px;height:10px;border-radius:50%;background:var(--acc)}
+nav .links{display:none}
+.pill{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 22px;border-radius:999px;background:var(--ink);color:#fff;font-weight:600;font-size:15px;white-space:nowrap;border:0;cursor:pointer;font-family:inherit;transition:transform .16s,filter .18s}
+.pill.acc{background:var(--acc);color:var(--acc-ink)}
+.pill.line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px rgba(26,40,38,.3)}
+.pill:hover{filter:brightness(1.07)}.pill:active{transform:scale(.98)}
+
+.orbs{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.orb{position:absolute;border-radius:50%;animation:drift 28s ease-in-out infinite alternate}
+.o1{width:460px;height:460px;right:-180px;top:-80px;background:radial-gradient(circle,rgba(var(--acc-rgb),.24),rgba(var(--acc-rgb),0) 68%)}
+.o2{width:380px;height:380px;left:-160px;top:40%;background:radial-gradient(circle,rgba(140,190,210,.26),rgba(140,190,210,0) 68%);animation-duration:33s;animation-direction:alternate-reverse}
+@keyframes drift{to{transform:translate(30px,40px) scale(1.08)}}
+
+/* hero */
+.hero{position:relative;padding:96px 0 40px;overflow-x:clip}
+.hero .wrap{display:flex;flex-direction:column}.hero .frame{order:2}.hero .s{order:3}.hero .btns{order:4}
+.hero h1{position:relative;z-index:1;font-size:clamp(52px,14.6vw,150px)}
+.hero h1 span{display:block}
+.hero h1 span:nth-child(2){color:var(--acc)}
+.hero .s{position:relative;z-index:1;margin-top:18px;font-size:18px;max-width:32ch;color:#2f3d3b}
+.frame{position:relative;z-index:1;margin-top:24px;border-radius:30px;overflow:hidden;height:min(112vw,600px);background:var(--mist)}
+.frame img{width:100%;height:100%;object-fit:cover}
+.wipe{position:relative;overflow:hidden}
+.wipe .haze{position:absolute;inset:0;z-index:1;pointer-events:none;-webkit-backdrop-filter:blur(6px) saturate(.5) brightness(1.12);backdrop-filter:blur(6px) saturate(.5) brightness(1.12);background:rgba(242,245,244,.18);clip-path:inset(0 0 0 0)}
+.wipe .bar{position:absolute;top:-4%;bottom:-4%;left:0;width:16px;z-index:2;pointer-events:none;border-radius:999px;background:rgba(255,255,255,.55);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.9);box-shadow:0 0 30px rgba(255,255,255,.8);opacity:0}
+.wipe.go .haze{clip-path:inset(0 0 0 100%);transition:clip-path 1.25s cubic-bezier(.6,0,.25,1)}
+.wipe.go .bar{animation:sweep 1.25s cubic-bezier(.6,0,.25,1) forwards}
+@keyframes sweep{0%{left:-16px;opacity:1}92%{opacity:1}100%{left:100%;opacity:0}}
+.hcard{position:absolute;z-index:3;left:12px;right:12px;top:12px;border-radius:24px;padding:14px 18px}
+.hcard .top{display:flex;align-items:center;gap:10px;font-size:15px;color:var(--mute)}
+.hcard .top b{font-family:Gloock,serif;font-weight:400;font-size:30px;color:var(--ink);line-height:1}
+.st{color:var(--acc);letter-spacing:2px;font-size:15px}
+.hcard q{display:block;quotes:none;margin-top:8px;font-size:18px;font-weight:500;line-height:1.4}
+.hcard .who{display:block;font-size:14px;color:var(--mute);margin-top:4px}
+.hero .btns{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+
+/* trust */
+.trust .big{display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap}
+.trust .big b{font-family:Gloock,serif;font-weight:400;font-size:clamp(120px,36vw,260px);line-height:.8;letter-spacing:-.04em}
+.trust .big small{display:block;font-size:15px;color:var(--mute);margin-top:6px}
+.trust .big .st{font-size:20px}
+.lead{position:relative;z-index:1;margin-top:44px}
+.lead q{display:block;quotes:none;font-family:Gloock,serif;font-size:clamp(28px,7.2vw,52px);line-height:1.18;letter-spacing:-.015em;max-width:24ch}
+.who{margin-top:16px;font-size:15px;color:var(--mute)}
+.wall{position:relative;z-index:1;display:grid;gap:14px;margin-top:48px}
+.wall figure{border-radius:24px;padding:22px}
+.wall q{display:block;quotes:none;font-size:17px}
+.trust .note{position:relative;z-index:1;margin-top:28px;font-size:14px;color:var(--mute)}
+
+/* rooms */
+.rooms{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:36px}
+.rooms figure{border-radius:22px;overflow:hidden;aspect-ratio:4/5;background:var(--mist)}
+.rooms figure:nth-child(3n+1){grid-column:1/-1;aspect-ratio:5/4}
+.rooms img{width:100%;height:100%;object-fit:cover}
+.rooms figure:last-child:nth-child(3n+2){grid-column:1/-1;aspect-ratio:5/4}
+.two{display:grid;gap:72px}
+
+/* services */
+.svc{columns:1;margin-top:32px}
+.svc li{list-style:none;break-inside:avoid;display:flex;gap:14px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line);font-size:20px;font-weight:500}
+.svc li::before{content:"";flex:0 0 8px;height:8px;border-radius:50%;background:var(--acc);transform:translateY(-3px)}
+
+/* hours */
+.hrs{margin-top:30px;border-radius:26px;padding:8px 22px}
+.hrs div{display:flex;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:17px}
+.hrs div:last-child{border-bottom:0}
+.hrs b{font-weight:600}.hrs .closed{color:var(--mute)}
+.area{font-size:20px;margin-top:22px;max-width:30ch}
+.area a{border-bottom:2px solid var(--acc)}
+
+/* quote */
+.qf{position:relative;z-index:1;border-radius:30px;padding:26px 20px 22px;margin-top:34px}
+.qf .say{font-family:Gloock,serif;font-size:clamp(24px,6vw,38px);line-height:1.6;letter-spacing:-.01em}
+.qf input,.qf select{font:500 .62em "Golos Text",sans-serif;color:var(--ink);background:rgba(255,255,255,.7);border:1px solid rgba(26,40,38,.16);border-radius:14px;padding:4px 12px;min-height:46px;max-width:100%;box-shadow:inset 0 1px 0 #fff;vertical-align:middle;transition:border-color .18s,box-shadow .18s}
+.qf input:focus,.qf select:focus{outline:none;border-color:var(--acc);box-shadow:0 0 0 3px rgba(var(--acc-rgb),.22)}
+.qf input[name=n]{width:8em}.qf input[name=s]{width:12em}
+.qf .row{display:flex;flex-wrap:wrap;gap:12px 16px;align-items:center;margin-top:20px}
+.qf small{font-size:14px;color:var(--mute)}
+
+.call{padding:30px 0 30px}
+.call .num{display:block;margin-top:8px;max-width:100%;overflow-x:clip}
+.ln{display:block;width:max-content;white-space:nowrap;padding-right:.04em}
+.call .num:hover{color:var(--acc)}
+footer{border-top:1px solid var(--line);padding:26px 0 30px;font-size:14px;color:var(--mute);display:flex;flex-direction:column;gap:6px}
+.dock{position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:60;display:flex;gap:6px;padding:6px;border-radius:999px}
+.dock a{flex:1;min-height:50px;display:flex;align-items:center;justify-content:center;border-radius:999px;font-weight:600;font-size:16px;transition:transform .16s}
+.dock a:first-child{background:var(--ink);color:#fff}
+.dock a:last-child{box-shadow:inset 0 0 0 1.5px rgba(26,40,38,.25)}
+.dock a:active{transform:scale(.98)}
+
+.js .hero h1 span,.js .hero .s{opacity:0;transform:translateY(24px)}
+.js .hcard{opacity:0;transform:translateY(18px) scale(.97)}
+.ready .hero h1 span,.ready .hero .s{opacity:1;transform:none;transition:opacity .9s,transform 1s cubic-bezier(.2,.8,.2,1)}
+.ready .hero h1 span:nth-child(2){transition-delay:.1s}.ready .hero .s{transition-delay:.25s}
+.ready .hcard{opacity:1;transform:none;transition:opacity .8s 1.45s,transform 1s cubic-bezier(.2,.8,.2,1) 1.45s}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .9s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+@media (min-width:900px){
+  :root{--g:40px}
+  body{padding-bottom:0}
+  nav{top:18px;left:28px;right:28px}
+  nav .links{display:flex;gap:4px}
+  nav .links a{font-size:15px;padding:10px 16px;border-radius:999px;transition:background .16s}
+  nav .links a:hover{background:rgba(255,255,255,.7)}
+  .hero{padding-top:130px}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:0 60px;align-items:end}
+  .hero .frame{order:0}
+  .frame{margin-top:0;height:min(76vh,700px);grid-row:1/4;grid-column:2}
+  .hcard{left:auto;right:16px;top:auto;bottom:16px;width:330px}
+  .hero .s{font-size:20px}
+  .hero h1{font-size:clamp(64px,7.2vw,112px)}
+  .hero .wrap{grid-template-columns:1fr 1fr}
+  section{padding:150px 0}
+  .trust .wrap{display:grid;grid-template-columns:auto 1fr;gap:20px 80px;align-items:end}
+  .trust .lead{margin-top:0}
+  .wall,.trust .note{grid-column:1/-1}
+  .wall{grid-template-columns:repeat(3,1fr)}
+  .rooms{grid-template-columns:repeat(3,1fr);gap:14px}
+  .rooms figure:nth-child(3n+1){grid-column:auto;aspect-ratio:4/5}
+  .rooms figure:nth-child(4n+1){grid-column:span 2;aspect-ratio:auto}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+  .svc{columns:2;column-gap:40px}
+  .qf{padding:44px 48px 40px}
+  .dock{display:none}
+  footer{flex-direction:row;justify-content:space-between}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+  .js .hero h1 span,.js .hero .s,.js .hcard,.rv{opacity:1!important;transform:none!important}
+  .wipe .haze,.wipe .bar{display:none}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+
+<nav class="glass" aria-label="Main">
+  <a class="nm" href="#top">Rise'n Shine Cleaning Agency</a>
+  <div class="links"><a href="#reviews">Reviews</a><a href="#rooms">Their work</a><a href="#services">Services</a><a href="#quote">Quote</a></div>
+  <a class="pill" href="tel:+14035855321">Call</a>
+</nav>
+
+<header class="hero" id="top">
+  <div class="orbs" aria-hidden="true"><span class="orb o1"></span><span class="orb o2"></span></div>
+  <div class="wrap">
+    <h1 class="d"><span>Clean homes</span><span>in Airdrie.</span></h1>
+    <p class="s">Residential cleaning in Airdrie.</p>
+    <div class="frame wipe" id="heroWipe"><img src="img/p6.jpg" alt="Rise'n Shine Cleaning Agency, Airdrie" style="object-position:53% 42%" fetchpriority="high"><span class="haze"></span><span class="bar"></span>
+      <a class="hcard glass" href="#reviews"><span class="top"><b>4.9</b><span class="st" aria-label="4.9 stars">★★★★★</span><span>31 Google reviews</span></span><q>Tanya is very professional and accommodating.</q><span class="who">Natasha’sway, Google</span></a>
+    </div>
+    <div class="btns"><a class="pill acc" href="#quote">Get a quote by text</a><a class="pill line" href="tel:+14035855321">(403) 585-5321</a></div>
+  </div>
+</header>
+
+
+<section class="trust" id="reviews">
+  <div class="orbs" aria-hidden="true"><span class="orb o2" style="left:auto;right:-140px;top:10%"></span></div>
+  <div class="wrap">
+    <div class="big rv"><b data-count="4.9">4.9</b><div><span class="st">★★★★★</span><small>from 31 Google reviews</small></div></div>
+    <figure class="lead rv"><q>Tanya was able to accommodate us on very short notice. Her staff arrived on time (in fact early) and her ladies did an excellent job of cleaning our townhouse from top to bottom.</q><figcaption class="who">Valmore K., Google</figcaption></figure>
+    <div class="wall"><figure class="glass rv"><q>Rise'n Shine Cleaning takes care of my home for a bi-weekly basis, and I’m consistently impressed with their outstanding service! The staff is not only incredibly thorough with the cleaning but also friendly and professional.</q><figcaption class="who">Angelina B., Google</figcaption></figure><figure class="glass rv"><q>Jolene and Anecita were punctual and detailed in their cleaning, I was impressed by the quality of their work.</q><figcaption class="who">Rotimi A., Google</figcaption></figure><figure class="glass rv"><q>I’ve been booking house cleaning services frequently through Rise and Shine and it’s obviously been a great experience as I continue to book them. Tanya is very professional and accommodating. Her cleaners are thorough and always do a great job. I will…</q><figcaption class="who">Natasha’sway, Google</figcaption></figure></div>
+    <p class="note">Every review here is quoted word for word from Google.</p>
+  </div>
+</section>
+
+
+
+<section id="rooms" style="padding-top:20px">
+  <div class="wrap">
+    <h2 class="d rv">Their work</h2>
+    <p class="lede rv">Rooms from Rise'n Shine Cleaning Agency's own photos.</p>
+    <div class="rooms"><figure class="wipe"><img src="img/p4.jpg" alt="Rise'n Shine Cleaning Agency work photo 2" style="object-position:46% 45%" loading="lazy"><span class="haze"></span><span class="bar"></span></figure><figure class="wipe"><img src="img/p5.jpg" alt="Rise'n Shine Cleaning Agency work photo 3" style="object-position:52% 55%" loading="lazy"><span class="haze"></span><span class="bar"></span></figure><figure class="wipe"><img src="img/p9.jpg" alt="Rise'n Shine Cleaning Agency work photo 4" style="object-position:53% 46%" loading="lazy"><span class="haze"></span><span class="bar"></span></figure><figure class="wipe"><img src="img/p10.jpg" alt="Rise'n Shine Cleaning Agency work photo 5" style="object-position:50% 46%" loading="lazy"><span class="haze"></span><span class="bar"></span></figure><figure class="wipe"><img src="img/p7.jpg" alt="Rise'n Shine Cleaning Agency work photo 6" style="object-position:49% 49%" loading="lazy"><span class="haze"></span><span class="bar"></span></figure><figure class="wipe"><img src="img/p8.jpg" alt="Rise'n Shine Cleaning Agency work photo 7" style="object-position:51% 50%" loading="lazy"><span class="haze"></span><span class="bar"></span></figure><figure class="wipe"><img src="img/p3.jpg" alt="Rise'n Shine Cleaning Agency work photo 8" style="object-position:52% 51%" loading="lazy"><span class="haze"></span><span class="bar"></span></figure><figure class="wipe"><img src="img/p1.jpg" alt="Rise'n Shine Cleaning Agency work photo 9" style="object-position:50% 51%" loading="lazy"><span class="haze"></span><span class="bar"></span></figure></div>
+  </div>
+</section>
+
+
+<section id="services" style="padding-top:20px">
+  <div class="wrap two">
+    <div>
+      <h2 class="d rv">What they clean</h2>
+      <ul class="svc"><li>Residential cleaning</li></ul>
+      <p class="lede">As Rise'n Shine Cleaning Agency lists it on their own pages.</p>
+    </div>
+    <div>
+      <h2 class="d rv">Where</h2>
+      <p class="area rv">Based in Airdrie, AB. Their Google listing says open 24 hours, every day. <a href="https://www.google.com/maps/place/Rise%27n+Shine+Cleaning+Agency/data=!4m7!3m6!1s0x53715fc632ca74a5:0xffd77681a36460f9!8m2!3d51.0860872!4d-114.0440112!16s%2Fg%2F11ngtmy2wv!19sChIJpXTKMsZfcVMR-WBko4F21_8?authuser=0&amp;hl=en&amp;g_ep=EgoyMDI2MTEyMi4wIJJjKgBIAVAD&amp;rclk=1" target="_blank" rel="noopener">Google Maps</a></p>
+      
+    </div>
+  </div>
+</section>
+
+<section id="quote" style="padding-top:20px">
+  <div class="orbs" aria-hidden="true"><span class="orb o1" style="top:30%"></span><span class="orb o2"></span></div>
+  <div class="wrap">
+    <h2 class="d rv">Quote by text</h2>
+    <p class="lede rv">Fill in the gaps. It opens a text to Rise'n Shine Cleaning Agency, ready to send.</p>
+    <form class="qf glass rv" id="qf" data-name="Rise'n Shine Cleaning Agency">
+      <p class="say">Hi Rise'n Shine Cleaning Agency, I'm <input name="n" aria-label="Your name" placeholder="your name" autocomplete="given-name">. I'd like <select name="w" aria-label="What you need"><option>Residential cleaning</option><option>something else</option></select> for <input name="s" aria-label="The place" placeholder="2 bed condo, deep clean">.</p>
+      <div class="row"><button class="pill acc" type="submit">Text this to Rise'n Shine Cleaning Agency</button><small>Add the date that works for you.</small></div>
+    </form>
+  </div>
+</section>
+
+<section class="call">
+  <div class="wrap"><p class="lede" style="margin:0">Or call</p><a class="d num" href="tel:+14035855321" data-fit data-max="200"><span class="ln">(403) 585-5321</span></a></div>
+</section>
+
+<footer class="wrap"><span>Rise'n Shine Cleaning Agency, Airdrie, AB. (403) 585-5321</span><span>Preview built by JPF. Not live yet.</span></footer>
+<div class="dock glass"><a href="tel:+14035855321">Call 403 585 5321</a><a href="sms:+14035855321">Text</a></div>
+
+<script>
+(()=>{
+const root=document.documentElement,still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function fit(){document.querySelectorAll('[data-fit]').forEach(el=>{el.style.fontSize='100px';const w=el.clientWidth;let m=0;el.querySelectorAll('.ln').forEach(s=>m=Math.max(m,s.getBoundingClientRect().width));if(m)el.style.fontSize=Math.min(+el.dataset.max||400,100*w/m*.99)+'px'})}
+fit();(document.fonts&&document.fonts.ready||Promise.resolve()).then(fit);addEventListener('resize',fit);
+const ready=()=>{if(root.classList.contains('ready'))return;root.classList.add('ready');setTimeout(()=>document.getElementById('heroWipe').classList.add('go'),350)};
+addEventListener('load',()=>requestAnimationFrame(ready));setTimeout(ready,1400);
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add(e.target.classList.contains('wipe')?'go':'in');io.unobserve(e.target)}}),{threshold:.3});
+document.querySelectorAll('.rv,.rooms .wipe').forEach(el=>io.observe(el));
+const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;co.unobserve(e.target);if(still)return;const b=e.target,n=+b.dataset.count,t0=performance.now();(function f(t){const p=Math.min(1,(t-t0)/1100);b.textContent=(n*(1-Math.pow(1-p,3))).toFixed(1);if(p<1)requestAnimationFrame(f)})(t0)}),{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(b=>co.observe(b));
+document.getElementById('qf').addEventListener('submit',e=>{e.preventDefault();const f=e.target,n=f.n.value.trim(),w=f.w.value.trim(),s=f.s.value.trim();
+ const b='Hi '+f.dataset.name+', '+(n?"I'm "+n+". ":'')+"I'd like "+(w||'a cleaning quote')+(s?' for '+s:'')+'.';location.href='sms:+14035855321?&body='+encodeURIComponent(b)});
+})();
+</script>
+</body>
+</html>
