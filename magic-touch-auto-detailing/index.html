@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Magic Touch Auto Detailing | Car detailing in Burnaby, BC</title>
+<meta name="description" content="Magic Touch Auto Detailing, car detailing in Burnaby, BC. Call or text (604) 600-2939.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@500;700;800&family=Maven+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ 1 Direction: dark-premium, cabin-tour-led. Night-garage black, one blue accent, chrome-grey type.
+ 2 Palette: ink #0b0e13 (dark Mustang dash), graphite #171c24 (seat fabric), steel #aeb7c4 (gearshift chrome),
+   mist #e9edf2, accent blue #2a74ff (the blue on the 5.0 engine cover in their photo), line rgba(255,255,255,.14).
+ 3 Fonts: Gemunu Libre 800 display + Maven Pro body.
+ 4 Signature: "Cabin tour", glass chips switch between their real Mustang interior photos (wheel, dash, seats, rear, console, engine bay).
+ 5 Order: hero video > rating strip > cabin tour > lead review + glass reviews > Hummer + services > quote sentence > find us > footer.
+ 6 Motion: one load entrance, gentle reveal on photos, count-up rating, orbs drift; reduced-motion respected. */
+:root{--ink:#0b0e13;--gr:#171c24;--steel:#aeb7c4;--mist:#e9edf2;--blue:#2a74ff;--line:rgba(255,255,255,.14)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{overflow-x:clip;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--mist);font:400 17px/1.6 'Maven Pro',system-ui,sans-serif;overflow-x:hidden;padding-bottom:96px}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,.disp{font-family:'Gemunu Libre',sans-serif;font-weight:800;text-transform:uppercase;line-height:.88;letter-spacing:.005em;word-spacing:.12em}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.glass{background:rgba(23,28,36,.5);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 20px 60px -20px rgba(0,0,0,.6)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;border-radius:999px;font:600 16px 'Maven Pro',sans-serif;text-decoration:none;border:1px solid var(--line);transition:transform .18s,background .18s}
+.btn:active{transform:scale(.98)}
+.btn.main{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn.main:hover{background:#4c88ff}
+.btn.ghost:hover{background:rgba(255,255,255,.08)}
+
+/* nav */
+nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;max-width:980px;margin:0 auto;border-radius:999px;display:flex;align-items:center;justify-content:space-between;padding:6px 6px 6px 22px;min-height:56px}
+nav b{font:800 22px 'Gemunu Libre';text-transform:uppercase;letter-spacing:.04em;word-spacing:.15em}
+nav .links{display:none;gap:26px;font-size:15px}
+nav .links a{text-decoration:none;color:var(--steel)}
+nav .links a:hover{color:#fff}
+nav .btn{min-height:44px;padding:0 20px}
+@media(min-width:760px){nav .links{display:flex}}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;padding:110px 20px 36px}
+.hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero:after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(11,14,19,.55) 0%,rgba(11,14,19,.05) 30%,rgba(11,14,19,.55) 62%,var(--ink) 100%)}
+.hero .in{position:relative;z-index:2;width:100%;max-width:1180px;margin:0 auto}
+.hero h1{font-size:clamp(64px,19vw,104px);margin-bottom:22px}
+.hero h1 span{display:block}
+.hero h1 .a{color:var(--blue)}
+.hero p.lede{max-width:520px;color:#d3d9e2;margin-bottom:26px;text-shadow:0 1px 14px rgba(0,0,0,.6)}
+.hero .cta{display:flex;gap:10px;flex-wrap:wrap}
+.hcard{position:absolute;z-index:3;right:20px;top:92px;border-radius:24px;padding:14px 18px;display:none}
+.hcard .n{font:800 46px/1 'Gemunu Libre'}
+.hcard small{display:block;color:var(--steel);font-size:14px;line-height:1.35}
+@media(min-width:760px){.hcard{display:block;top:auto;bottom:44px;right:max(24px,calc(50% - 590px));max-width:290px;padding:20px 24px}.hero{padding:120px 40px 56px}.hero h1{font-size:clamp(110px,12vw,176px)}}
+.hcard.mob{position:relative;right:auto;top:auto;margin-top:22px;border-radius:22px;max-width:330px;display:flex;gap:14px;align-items:center}
+@media(min-width:760px){.hcard.mob{display:none}}
+
+/* load */
+.in>*,.hcard{opacity:0;transform:translateY(18px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+.in h1{animation-delay:.1s}.in .lede{animation-delay:.3s}.in .cta{animation-delay:.45s}.in .hcard{animation-delay:.6s}.hcard:not(.mob){animation-delay:.7s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+section{position:relative;padding:84px 20px}
+.wrap{max-width:1180px;margin:0 auto}
+.eyebrow{color:var(--blue);font:600 14px 'Maven Pro';margin-bottom:14px}
+h2{font-size:clamp(48px,12.5vw,104px);margin-bottom:24px}
+
+/* strip */
+.strip{padding:0 20px}
+.strip .wrap{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.strip div{padding:26px 0}
+.strip div+div{border-left:1px solid var(--line);padding-left:20px}
+.strip .big{font:800 clamp(48px,11vw,84px)/1 'Gemunu Libre'}
+.strip small{display:block;color:var(--steel);font-size:15px}
+
+/* tour */
+.tour .stage{position:relative;border-radius:26px;overflow:hidden;background:var(--gr);aspect-ratio:1/1;margin-top:10px}
+.tour .stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.04);transition:opacity .6s,transform 1.6s}
+.tour .stage img.on{opacity:1;transform:scale(1)}
+.tour .cap{position:absolute;left:14px;bottom:14px;border-radius:999px;padding:8px 18px;font-size:15px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.chip{min-height:44px;padding:0 20px;border-radius:999px;cursor:pointer;font:500 15px 'Maven Pro';color:var(--mist);background:rgba(255,255,255,.06);border:1px solid var(--line);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);transition:all .18s}
+.chip:active{transform:scale(.97)}
+.chip[aria-pressed=true]{background:var(--blue);border-color:var(--blue);color:#fff}
+@media(min-width:900px){.tour .grid{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:end}.tour .stage{aspect-ratio:4/3.4}.tour .chips{flex-direction:column;align-items:flex-start}}
+
+/* reviews */
+.rev{overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);background:radial-gradient(circle,rgba(42,116,255,.5),transparent 70%);animation:drift 26s ease-in-out infinite alternate;pointer-events:none}
+.orb.o1{width:420px;height:420px;right:-120px;top:20px}
+.orb.o2{width:360px;height:360px;left:-140px;bottom:-60px;background:radial-gradient(circle,rgba(174,183,196,.28),transparent 70%);animation-duration:32s}
+@keyframes drift{to{transform:translate(-50px,40px)}}
+.rev .wrap{position:relative;z-index:1}
+blockquote.lead{font:700 clamp(30px,7.5vw,60px)/1.02 'Gemunu Libre';text-transform:none;letter-spacing:0;margin-bottom:12px;max-width:900px}
+.who{color:var(--steel);font-size:15px}
+.rcards{display:grid;gap:14px;margin-top:40px}
+.rc{border-radius:24px;padding:24px}
+.rc p{margin-bottom:12px}
+.stars{color:var(--blue);letter-spacing:3px;font-size:15px}
+@media(min-width:800px){.rcards{grid-template-columns:1fr 1fr}}
+
+/* work */
+.work .row{display:grid;gap:30px}
+.work figure{border-radius:26px;overflow:hidden;position:relative}
+.work figure img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/4.6}
+.work figcaption{position:absolute;left:14px;bottom:14px;border-radius:999px;padding:6px 16px;font-size:14px}
+.svc{list-style:none;margin-top:8px}
+.svc li{display:flex;justify-content:space-between;gap:16px;padding:20px 0;border-top:1px solid var(--line);font:700 clamp(28px,6vw,40px)/1 'Gemunu Libre';text-transform:uppercase;word-spacing:.1em}
+.svc li:last-child{border-bottom:1px solid var(--line)}
+.svc li span{font:400 15px 'Maven Pro';color:var(--steel);text-transform:none;align-self:center;text-align:right}
+.note{color:var(--steel);font-size:15px;margin-top:14px}
+@media(min-width:900px){.work .row{grid-template-columns:.8fr 1.2fr;gap:64px;align-items:center}}
+
+/* quote */
+.quote{overflow:hidden}.quote .panel{border-radius:30px;padding:34px 22px;max-width:900px;position:relative;z-index:1}
+.sentence{font:700 clamp(26px,6.4vw,46px)/1.5 'Gemunu Libre';text-transform:none}
+.sentence input,.sentence select{font:inherit;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:0 12px;min-height:48px;max-width:100%;width:250px;margin:2px 2px;-webkit-appearance:none;appearance:none}
+.sentence select{width:auto;padding-right:30px;background-image:linear-gradient(45deg,transparent 50%,#fff 50%),linear-gradient(135deg,#fff 50%,transparent 50%);background-position:calc(100% - 17px) 55%,calc(100% - 12px) 55%;background-size:5px 5px;background-repeat:no-repeat}
+.sentence select option{color:#111}
+.sentence input::placeholder{color:rgba(255,255,255,.5)}
+.sentence input:focus,.sentence select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(42,116,255,.35)}
+.quote .btn{margin-top:22px}
+.quote .or{margin-top:14px;color:var(--steel);font-size:15px}
+
+/* find */
+.find .cols{display:grid;gap:26px}
+.find h3{font-size:30px;margin-bottom:6px}
+.find p{color:#d3d9e2}
+.find a.big{font:800 clamp(40px,11vw,76px)/1 'Gemunu Libre';text-decoration:none;display:inline-block;margin:6px 0 20px}
+@media(min-width:800px){.find .cols{grid-template-columns:1.2fr 1fr 1fr;gap:56px}}
+footer{padding:36px 20px;border-top:1px solid var(--line);color:var(--steel);font-size:14px;text-align:center}
+
+/* dock */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));margin:0 auto;max-width:440px;border-radius:999px;display:flex;gap:6px;padding:6px}
+.dock a{flex:1;min-height:48px;border-radius:999px;display:flex;align-items:center;justify-content:center;font:600 16px 'Maven Pro';text-decoration:none;transition:transform .18s}
+.dock a:active{transform:scale(.97)}
+.dock .c{background:var(--blue);color:#fff}
+@media(min-width:900px){.dock{display:none}body{padding-bottom:0}}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s}
+.rv.in2{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.in>*,.hcard,.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav class="glass">
+  <b>Magic Touch</b>
+  <div class="links"><a href="#tour">Cabin tour</a><a href="#reviews">Reviews</a><a href="#work">Services</a><a href="#quote">Quote</a></div>
+  <a class="btn main" href="tel:+16046002939">Call</a>
+</nav>
+
+<header class="hero">
+  <img class="poster" src="video/hero-clean.jpg" alt="Rear seat of a GMC Hummer EV detailed by Magic Touch">
+  <video autoplay muted loop playsinline preload="metadata" poster="video/hero-clean.jpg" aria-hidden="true"><source src="video/hero-clean.mp4" type="video/mp4"></video>
+  <div class="in">
+    <h1><span>Inside.</span><span>Outside.</span><span class="a">Like new.</span></h1>
+    <p class="lede">Magic Touch Auto Detailing. Car detailing in Burnaby, BC.</p>
+    <div class="cta"><a class="btn main" href="tel:+16046002939">Call (604) 600-2939</a><a class="btn ghost" href="#quote">Get a quote</a></div>
+    <div class="glass hcard mob"><span class="n">4.8</span><small>Google rating<br>66 reviews</small></div>
+  </div>
+  <div class="glass hcard"><span class="n">4.8</span> <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><small>66 Google reviews<br>"it looks like new again." Medical L., Google</small></div>
+</header>
+
+<div class="strip rv"><div class="wrap">
+  <div><span class="big" data-n="4.8">4.8</span><small>Google rating</small></div>
+  <div><span class="big" data-n="66" data-int="1">66</span><small>Google reviews</small></div>
+</div></div>
+
+<section class="tour" id="tour"><div class="wrap">
+  <div class="grid">
+    <div>
+      <p class="eyebrow">Cabin tour</p>
+      <h2>Look closer.</h2>
+      <div class="stage rv" id="stage">
+        <img class="on" src="img/c5.jpg" alt="Steering wheel and driver seat of a Ford Mustang, cleaned" loading="lazy" data-cap="Wheel and driver seat">
+        <img src="img/c6.jpg" alt="Mustang dash and vents, cleaned" loading="lazy" data-cap="Dash and vents">
+        <img src="img/c10.jpg" alt="Mustang front seat" loading="lazy" data-cap="Front seat">
+        <img src="img/c9.jpg" alt="Mustang rear seat" loading="lazy" data-cap="Rear seat">
+        <img src="img/c11.jpg" alt="Mustang centre console and floor mats" loading="lazy" data-cap="Console and mats">
+        <img src="img/c12.jpg" alt="Mustang 5.0 engine bay" loading="lazy" data-cap="Engine bay">
+        <div class="cap glass" id="cap">Wheel and driver seat</div>
+      </div>
+    </div>
+    <div>
+      <p class="note" style="margin:0 0 6px">A Ford Mustang, from their own posts. Tap through.</p>
+      <div class="chips" id="chips">
+        <button class="chip" aria-pressed="true" data-i="0">Wheel</button>
+        <button class="chip" aria-pressed="false" data-i="1">Dash</button>
+        <button class="chip" aria-pressed="false" data-i="2">Front seat</button>
+        <button class="chip" aria-pressed="false" data-i="3">Rear seat</button>
+        <button class="chip" aria-pressed="false" data-i="4">Console</button>
+        <button class="chip" aria-pressed="false" data-i="5">Engine bay</button>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section class="rev" id="reviews">
+  <div class="orb o1"></div><div class="orb o2"></div>
+  <div class="wrap">
+    <p class="eyebrow">What people say on Google</p>
+    <blockquote class="lead rv">"Tooo clean. Been going here every time I needed detailing. Amazing job every time."</blockquote>
+    <p class="who rv">Vedaste N., Google, 5 stars</p>
+    <div class="rcards">
+      <div class="glass rc rv"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Amazing service! Daniel did a full detailing and polish on my car, and it looks like new again. He removed or greatly reduced many of the imperfections, and the attention to detail was outstanding."</p><span class="who">Medical L., Google</span></div>
+      <div class="glass rc rv"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"I am extremely happy with the service provided by magic touch. My car was cleaned very thoroughly. The owner even washed the exterior of my car"</p><span class="who">Jenny L., Google</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="work"><div class="wrap">
+  <div class="row">
+    <figure class="rv"><img src="img/hummer.jpg" alt="GMC Hummer EV outside the Magic Touch shop in Burnaby" loading="lazy"><figcaption class="glass">GMC Hummer EV, Burnaby</figcaption></figure>
+    <div>
+      <p class="eyebrow">What they do</p>
+      <h2>Full detail.</h2>
+      <ul class="svc">
+        <li>Full detailing <span>interior and exterior</span></li>
+        <li>Polish <span>reduces imperfections</span></li>
+        <li>Interior clean <span>seats, dash, mats</span></li>
+        <li>Exterior wash <span>by the owner</span></li>
+      </ul>
+      <p class="note">Services come from their Google reviews. Call or text for what is included and the price.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="quote" id="quote">
+  <div class="orb o1" style="top:-40px"></div>
+  <div class="wrap">
+    <p class="eyebrow">Free quote by text</p>
+    <h2>Tell Daniel's team.</h2>
+    <div class="glass panel">
+      <form class="sentence" id="qf">
+        Hi, I have a
+        <input id="car" placeholder="your vehicle" aria-label="Your vehicle" required>
+        and need a
+        <select id="svc" aria-label="Service"><option>full detail</option><option>polish</option><option>interior clean</option><option>exterior wash</option></select>.
+        My name is
+        <input id="nm" placeholder="your name" aria-label="Your name" required>.
+        <br><button class="btn main" type="submit">Text this to Magic Touch</button>
+        <p class="or">Opens your messages with the text ready. Or call <a href="tel:+16046002939">(604) 600-2939</a>.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="find" id="find"><div class="wrap">
+  <p class="eyebrow">Find us</p>
+  <a class="big" href="tel:+16046002939">(604) 600-2939</a>
+  <div class="cols">
+    <div><h3>Where</h3><p>Back alley, 6965 Antrim Ave<br>Burnaby, BC V5J 4M5</p></div>
+    <div><h3>Hours</h3><p>Hours are not posted online. Call or text to book a time.</p></div>
+    <div><h3>Area</h3><p>Burnaby, BC</p></div>
+  </div>
+</div></section>
+
+<footer>Magic Touch Auto Detailing, Burnaby BC. Preview built by JPF. Not live yet.</footer>
+
+<div class="dock glass"><a class="c" href="tel:+16046002939">Call</a><a href="sms:+16046002939">Text</a></div>
+
+<script>
+(function(){
+  var imgs=[].slice.call(document.querySelectorAll('#stage img')),chips=[].slice.call(document.querySelectorAll('.chip')),cap=document.getElementById('cap');
+  function show(i){imgs.forEach(function(m,k){m.classList.toggle('on',k===i)});chips.forEach(function(c,k){c.setAttribute('aria-pressed',k===i)});cap.textContent=imgs[i].dataset.cap;}
+  chips.forEach(function(c){c.addEventListener('click',function(){show(+c.dataset.i)})});
+  var cur=0,t=setInterval(function(){cur=(cur+1)%imgs.length;show(cur)},4200);
+  document.getElementById('chips').addEventListener('click',function(){clearInterval(t)});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in2');io.unobserve(e.target);
+    e.target.querySelectorAll('[data-n]').forEach(function(el){var to=+el.dataset.n,int=el.dataset.int,s=performance.now();(function f(n){var p=Math.min(1,(n-s)/1100),v=to*(1-Math.pow(1-p,3));el.textContent=int?Math.round(v):v.toFixed(1);if(p<1)requestAnimationFrame(f)})(s)})}})},{threshold:.15});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+  document.getElementById('qf').addEventListener('submit',function(e){e.preventDefault();
+    var b="Hi, I have a "+car.value+" and need a "+svc.value+". My name is "+nm.value+".";
+    location.href="sms:+16046002939?&body="+encodeURIComponent(b)});
+})();
+</script>
+</body>
+</html>
