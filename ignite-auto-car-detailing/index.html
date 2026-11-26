@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Ignite Auto Car Detailing | Detailing, Paint Correction &amp; Ceramic Coating in Surrey, BC</title>
+<meta name="description" content="Ignite Auto Car Detailing in Surrey, BC. Detailing, paint correction and ceramic coatings. 4.9 on Google from 57 reviews. Open every day 9 a.m. to 7 p.m.">
+<meta name="theme-color" content="#f4f1ea">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600;1,800&family=Fira+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero-mclaren-huracan.jpg">
+<style>
+/* DESIGN PLAN
+   Direction: light bone showroom, giant high-contrast serif, finished supercars own the top. Layout: foam-to-finish-led.
+   Palette: bone #f4f1ea (white McLaren / siding, p11) · gloss ink #141416 (Huracan + Mustang paint) · flame gold #bf8d44 (Ignite flame banner, p7; text-safe #8a6122) · slate #5d6468 (wet driveway, p11) · R8 red #d92026 (p9, tiny).
+   Fonts: Playfair Display 800/italic (display) + Fira Sans (body).
+   Signature: foam-to-finish slider on their Audi R8 (p8 foam vs p9 done), glass handle chip with their flame.
+   Order: hero > services index > R8 slider > ceramic video band > cars in the bay > reviews > visit/hours > text-a-quote sentence > footer.
+   Motion: one load entrance (photo settles from 1.06, lines rise, glass card floats in), photo clip reveals on scroll, rating counts up once. Reduced motion = static. */
+:root{
+  --bone:#f4f1ea; --paper:#fbfaf6; --ink:#141416; --ink2:#2a2b2e; --slate:#5d6468; --mist:#d9d5cc;
+  --gold:#bf8d44; --gold-t:#8a6122; --red:#d92026;
+  --serif:"Playfair Display", Georgia, serif; --sans:"Fira Sans", system-ui, sans-serif;
+  --pad:clamp(20px,5vw,72px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bone);color:var(--ink);font:400 17px/1.6 var(--sans);overflow-x:hidden;padding-bottom:0}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+.wrap{padding-inline:var(--pad);max-width:1440px;margin-inline:auto}
+.flame{display:inline-block;width:.8em;height:1em;vertical-align:-.12em}
+.flame path{fill:var(--gold)}
+.lbl{font:500 13px/1.3 var(--sans);letter-spacing:.08em;color:var(--slate)}
+.lbl b{color:var(--gold-t);font-weight:600}
+
+/* glass */
+.glass{background:rgba(251,250,246,.62);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);
+  border:1px solid rgba(255,255,255,.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 20px 60px -20px rgba(20,20,22,.32)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:48px;padding:0 24px;border-radius:999px;
+  font:600 16px/1 var(--sans);text-decoration:none;border:0;cursor:pointer;transition:transform .18s ease,background .18s ease,color .18s}
+.btn:active{transform:scale(.98)}
+.btn-ink{background:var(--ink);color:var(--paper)}
+.btn-ink:hover{background:#000}
+.btn-gold{background:var(--gold);color:var(--ink)}
+.btn-gold:hover{background:#cc9a50}
+.btn-line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn-line:hover{background:var(--ink);color:var(--paper)}
+
+/* nav */
+.nav{position:fixed;top:12px;left:12px;right:12px;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  max-width:1180px;margin-inline:auto;border-radius:999px;padding:6px 6px 6px 20px}
+.brand{display:flex;align-items:center;gap:8px;font:800 19px/1 var(--serif);text-decoration:none;letter-spacing:-.01em}
+.brand .flame{width:16px;height:20px}
+.nav ul{display:flex;gap:26px;list-style:none;font-size:15px}
+.nav ul a{text-decoration:none;color:var(--ink2)}
+.nav ul a:hover{color:var(--gold-t)}
+.nav .btn{min-height:44px;padding:0 18px;font-size:15px}
+@media (max-width:860px){.nav ul{display:none}}
+
+/* hero */
+.hero{padding-top:104px;position:relative}
+.hero .eyebrow{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;margin-bottom:18px}
+.hero h1{font:800 clamp(66px,13.4vw,200px)/.9 var(--serif);letter-spacing:-.025em;word-spacing:.08em;position:relative;z-index:2}
+.hero h1 .l{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .l span{display:inline-block}
+.hero h1 em{font-style:italic;color:var(--gold-t)}
+.hero h1 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.hero-row{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-top:-1.1em;position:relative;z-index:1}
+.hero-photo{position:relative;margin-top:-0.42em;z-index:1}
+.hero-photo .frame{overflow:hidden;border-radius:28px;height:min(76vh,760px);min-height:440px}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:56% 62%;transform-origin:60% 70%}
+.hero-photo figcaption{position:absolute;left:20px;top:20px;font-size:13px;color:var(--paper);background:rgba(20,20,22,.45);padding:6px 12px;border-radius:999px;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.rate{position:absolute;right:24px;bottom:24px;width:min(360px,calc(100% - 32px));border-radius:24px;padding:20px 22px}
+.rate .top{display:flex;align-items:baseline;gap:10px}
+.rate .num{font:800 46px/1 var(--serif)}
+.rate .stars{color:var(--gold);letter-spacing:2px;font-size:16px}
+.rate .cnt{font-size:14px;color:var(--ink2)}
+.rate q{display:block;margin-top:10px;font:italic 600 17px/1.4 var(--serif)}
+.rate cite{display:block;margin-top:6px;font:500 13px var(--sans);font-style:normal;color:var(--slate)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding-block:28px 0}
+.hero-cta p{max-width:46ch;color:var(--ink2);font-size:17px}
+.hero-cta .btns{display:flex;gap:10px;flex-wrap:wrap}
+
+/* services */
+.svc{padding-block:clamp(88px,12vw,160px) clamp(64px,8vw,120px)}
+.svc-head{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;margin-bottom:48px}
+.h2{font:800 clamp(44px,6.4vw,96px)/.95 var(--serif);letter-spacing:-.02em;word-spacing:.06em}
+.h2 em{font-style:italic;color:var(--gold-t)}
+.svc-head p{color:var(--ink2);max-width:44ch;justify-self:end}
+.svc ol{list-style:none;border-top:1px solid var(--mist)}
+.svc li{display:grid;grid-template-columns:72px 1fr 1.1fr;gap:20px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--mist)}
+.svc li .n{font:600 14px var(--sans);color:var(--gold-t)}
+.svc li h3{font:600 clamp(28px,3.4vw,46px)/1.05 var(--serif);letter-spacing:-.01em}
+.svc li p{color:var(--ink2);font-size:16px;max-width:48ch}
+.svc li p small{display:block;margin-top:4px;font-size:14px;color:var(--slate)}
+
+/* slider */
+.ff{background:var(--ink);color:var(--paper);padding-block:clamp(80px,11vw,150px);border-radius:36px;margin-inline:12px}
+.ff .h2 em{color:var(--gold)}
+.ff-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.ff-head p{color:#c9c6bf;max-width:40ch}
+.ba{position:relative;aspect-ratio:4/3;border-radius:26px;overflow:hidden;touch-action:pan-y;user-select:none;-webkit-user-select:none;max-width:1100px;margin-inline:auto;cursor:ew-resize;background:#222}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba .after{clip-path:inset(0 0 0 var(--x,50%))}
+.ba .line{position:absolute;top:0;bottom:0;left:var(--x,50%);width:2px;margin-left:-1px;background:var(--paper)}
+.ba .chip{position:absolute;top:50%;left:var(--x,50%);transform:translate(-50%,-50%);display:flex;align-items:center;gap:10px;height:52px;padding:0 18px;border-radius:999px;color:var(--ink);font:600 14px var(--sans);white-space:nowrap}
+.ba .chip .flame{width:14px;height:18px}
+.ba .tag{position:absolute;bottom:16px;padding:8px 14px;border-radius:999px;font:500 14px var(--sans);color:var(--ink)}
+.ba .tag.l{left:16px}.ba .tag.r{right:16px}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.ff .note{margin-top:18px;text-align:center;font-size:14px;color:#a9a59d}
+
+/* video band */
+.band{padding-block:clamp(88px,12vw,160px) 0}
+.band-grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,5vw,72px);align-items:center}
+.band video{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:28px;background:#ddd}
+.band p{color:var(--ink2);margin-top:20px;max-width:40ch}
+
+/* cars */
+.cars{padding-block:clamp(88px,12vw,160px)}
+.cars .h2{margin-bottom:40px}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+.car{position:relative;overflow:hidden;border-radius:22px;background:#ddd}
+.car img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.car:hover img{transform:scale(1.03)}
+.car span{position:absolute;left:14px;bottom:14px;padding:7px 13px;border-radius:999px;font:500 14px var(--sans);color:var(--ink)}
+.c1{grid-column:span 7;aspect-ratio:4/3}
+.c2{grid-column:span 5;aspect-ratio:auto}
+.c3{grid-column:span 4;aspect-ratio:3/4}
+.c4{grid-column:span 4;aspect-ratio:3/4}
+.c5{grid-column:span 4;aspect-ratio:3/4}
+.c6{grid-column:span 12;aspect-ratio:21/8}
+.c1 img{object-position:50% 70%}
+.c3 img{object-position:50% 60%}
+.c6 img{object-position:50% 88%}
+
+/* reviews */
+.rev{padding-block:clamp(88px,12vw,160px);position:relative;overflow:hidden;background:var(--paper);border-radius:36px;margin-inline:12px}
+.orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.45;pointer-events:none}
+.orb.a{width:520px;height:520px;background:radial-gradient(circle,#e7cfa4,transparent 70%);right:-120px;top:-80px;animation:drift 26s ease-in-out infinite alternate}
+.orb.b{width:440px;height:440px;background:radial-gradient(circle,#cfd3d4,transparent 70%);left:-140px;bottom:-60px;animation:drift 30s ease-in-out infinite alternate-reverse}
+@keyframes drift{to{transform:translate(40px,30px)}}
+.rev .wrap{position:relative}
+.lead{max-width:1100px}
+.lead .big{font:600 clamp(32px,4.6vw,68px)/1.12 var(--serif);letter-spacing:-.015em;word-spacing:.04em}
+.lead .big em{font-style:italic;color:var(--gold-t)}
+.lead cite{display:block;margin-top:22px;font:500 15px var(--sans);font-style:normal;color:var(--slate)}
+.score{display:flex;align-items:baseline;gap:16px;margin-bottom:40px}
+.score .num{font:800 clamp(72px,9vw,128px)/1 var(--serif)}
+.score .of{font-size:15px;color:var(--ink2)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:64px}
+.card{border-radius:22px;padding:24px}
+.card p{font-size:16px;line-height:1.55}
+.card cite{display:block;margin-top:14px;font:500 14px var(--sans);font-style:normal;color:var(--slate)}
+.card .st{color:var(--gold-t);letter-spacing:2px;font-size:14px;margin-bottom:10px}
+
+/* visit */
+.visit{padding-block:clamp(88px,12vw,160px) clamp(48px,6vw,80px)}
+.visit-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,6vw,96px);align-items:start}
+.addr{font:600 clamp(30px,3.6vw,52px)/1.1 var(--serif);margin-top:24px}
+.addr a{text-decoration:none;border-bottom:2px solid var(--gold)}
+.hours{border-top:1px solid var(--mist)}
+.hours div{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--mist);font-size:16px}
+.hours div b{font-weight:500}
+.phone-big{display:block;margin-top:28px;font:800 clamp(40px,6vw,88px)/1 var(--serif);text-decoration:none;letter-spacing:-.02em;white-space:nowrap}
+.phone-big:hover{color:var(--gold-t)}
+.visit .sub{color:var(--ink2);margin-top:14px;max-width:44ch}
+
+/* quote */
+.quote{padding-block:clamp(40px,6vw,80px) clamp(96px,12vw,160px)}
+.qpanel{position:relative;border-radius:28px;overflow:hidden;background:url(img/corvette.jpg) center 70%/cover}
+.qpanel::before{content:"";position:absolute;inset:0;background:rgba(20,20,22,.25)}
+.qform{position:relative;margin:clamp(16px,5vw,64px);max-width:860px;border-radius:26px;padding:clamp(24px,4vw,48px)}
+.qform h2{font:800 clamp(36px,4.6vw,64px)/1 var(--serif);letter-spacing:-.02em;margin-bottom:20px}
+.qform h2 em{font-style:italic;color:var(--gold-t)}
+.sentence{font:600 clamp(22px,2.6vw,34px)/1.7 var(--serif)}
+.sentence input,.sentence select{font:inherit;font-family:var(--sans);font-weight:500;font-size:.72em;color:var(--ink);background:rgba(255,255,255,.65);
+  border:1px solid rgba(20,20,22,.14);border-radius:14px;padding:4px 12px;min-height:44px;vertical-align:middle;max-width:100%;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.8);transition:border-color .18s, box-shadow .18s}
+.sentence input:focus,.sentence select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(191,141,68,.3)}
+.sentence input{width:9em}
+.sentence input.car-in{width:11em}
+.qform .row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:24px}
+.qform .row small{font-size:14px;color:var(--ink2)}
+
+/* footer */
+footer{background:var(--ink);color:#cfccc5;padding:56px 0 120px;border-radius:36px 36px 0 0}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:end}
+footer .brand{color:var(--paper);font-size:28px}
+footer p{font-size:15px}
+footer a{color:var(--paper)}
+
+/* phone dock */
+.dock{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:60;display:none;gap:8px;padding:6px;border-radius:999px}
+.dock a{flex:1}
+.dock .btn{width:100%}
+
+/* motion */
+.reveal{clip-path:inset(0 0 0 0)}
+.js .reveal{clip-path:inset(12% 0 0 0 round 22px);opacity:.001;transition:clip-path 1s cubic-bezier(.2,.7,.2,1),opacity .6s ease}
+.js .reveal.in{clip-path:inset(0 0 0 0 round 0);opacity:1}
+.js .hero h1 .l span{transform:translateY(105%);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+.js .hero h1 .l:nth-child(2) span{animation-delay:.12s}
+.js .hero-photo img{animation:settle 1.4s cubic-bezier(.2,.7,.2,1) both}
+.js .rate{opacity:0;animation:floatin .9s .55s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes rise{to{transform:none}}
+@keyframes settle{from{transform:scale(1.07)}to{transform:none}}
+@keyframes floatin{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .reveal{clip-path:none;opacity:1}
+  .js .hero h1 .l span{transform:none}.js .rate{opacity:1}
+}
+
+@media (min-width:900px){
+  .hero h1{font-size:clamp(110px,11.6vw,176px)}
+  .hero h1 .l{display:inline-block;margin-right:.18em}
+  .hero-photo{margin-top:-.3em}
+  .hero-photo .frame{height:min(66vh,700px)}
+  .hero-photo img{object-position:50% 80%}
+  .rate{top:16px;right:16px;bottom:auto;width:290px;padding:16px 18px}
+  .rate .num{font-size:40px}
+  .rate q{font-size:15px;margin-top:6px}
+}
+/* tablet / phone */
+@media (max-width:960px){
+  .svc-head,.band-grid,.visit-grid{grid-template-columns:1fr}
+  .svc-head p{justify-self:start}
+  .cards{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .hero{padding-top:92px}
+  .hero h1{font-size:clamp(64px,19vw,84px)}
+  .hero-photo{margin-top:-.32em}
+  .hero-photo .frame{height:auto;aspect-ratio:1/1;min-height:0;border-radius:24px}
+  .hero-photo img{object-position:40% 70%}
+  .rate{position:relative;left:auto;right:auto;bottom:auto;margin:-56px 12px 0;width:auto;padding:16px 18px;border-radius:22px}
+  .hide-s{display:none}
+  .c6 img{object-position:50% 92%}
+  .rate .num{font-size:38px}
+  .rate q{font-size:16px}
+  .hero-cta{padding-top:22px}
+  .hero-cta .btns{width:100%}
+  .hero-cta .btns .btn{flex:1}
+  .svc li{grid-template-columns:44px 1fr;gap:6px 12px;padding:22px 0}
+  .svc li p{grid-column:2}
+  .ff,.rev{margin-inline:8px;border-radius:28px}
+  .ba{aspect-ratio:4/5}
+  .ba .r8-foam{object-position:40% 50%}
+  .ba .after{object-position:62% 50%}
+  .grid{gap:10px}
+  .c1,.c2,.c6{grid-column:span 12}
+  .c2{aspect-ratio:4/5}
+  .c3,.c4{grid-column:span 6}
+  .c5{grid-column:span 12;aspect-ratio:4/3}
+  .c6{aspect-ratio:4/3}
+  .cards{grid-template-columns:1fr}
+  .score{margin-bottom:28px}
+  .sentence{line-height:1.9}
+  .sentence input,.sentence input.car-in{width:100%;display:block;margin:4px 0}
+  .sentence select{width:100%;display:block;margin:4px 0}
+  .qform{margin:12px}
+  .dock{display:flex}
+  footer{padding-bottom:140px}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="fl" viewBox="0 0 24 30"><path d="M12 0c1.2 5.6 6 8.6 7.9 13.4 2.6 6.7-1.6 15.4-7.9 16.6C5.4 31.3.6 25.6 1.9 19.3c.8-3.9 3.6-6 4.9-9.3.7 2.4.4 4.6 2 6.2.2-6 1.4-10.8 3.2-16.2z"/></symbol>
+</svg>
+
+<nav class="nav glass" aria-label="Main">
+  <a class="brand" href="#top"><svg class="flame"><use href="#fl"/></svg>Ignite Auto</a>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#finish">Foam to finish</a></li>
+    <li><a href="#cars">Cars</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#visit">Visit</a></li>
+  </ul>
+  <a class="btn btn-ink" href="tel:+12366888185">Call</a>
+</nav>
+
+<main id="top">
+<header class="hero wrap">
+  <div class="eyebrow lbl"><span><b>Car detailing</b> &amp; ceramic coating</span><span>Surrey, BC</span><span>Open daily 9&ndash;7</span></div>
+  <h1><span class="sr">Ignite Auto Car Detailing, Surrey BC: </span><span class="l"><span>Gloss,</span></span><span class="l"><span><em>ignited.</em></span></span></h1>
+  <figure class="hero-photo">
+    <div class="frame"><img src="img/hero-mclaren-huracan.jpg" alt="White McLaren 720S with doors up and a black Lamborghini Huracan on a wet driveway after detailing by Ignite Auto" width="1400" height="1050" fetchpriority="high"></div>
+    <figcaption>McLaren 720S + Lamborghini Hurac&aacute;n</figcaption>
+    <div class="rate glass" aria-label="Google rating">
+      <div class="top"><span class="num" data-count="4.9">4.9</span><span><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><br><span class="cnt"><span data-count="57">57</span> Google reviews</span></span></div>
+      <q>My car looks and feels brand new inside and out.</q>
+      <cite>Gurveer S., Google</cite>
+    </div>
+  </figure>
+  <div class="hero-cta">
+    <p>Ignite Auto Car Detailing: detailing, paint correction and ceramic coatings out of 124 St in Surrey.</p>
+    <div class="btns">
+      <a class="btn btn-gold" href="tel:+12366888185">Call <span class="hide-s">(236) 688-8185</span></a>
+      <a class="btn btn-line" href="#quote">Text for a quote</a>
+    </div>
+  </div>
+</header>
+
+<section class="svc wrap" id="services" aria-labelledby="svc-h">
+  <div class="svc-head">
+    <h2 class="h2" id="svc-h">What comes <em>through</em> the bay.</h2>
+    <p>Daily drivers, trucks and supercars. Ask Aksh what your car actually needs: reviewers say he gives straight advice.</p>
+  </div>
+  <ol>
+    <li><span class="n">01</span><h3>Full detail</h3><p>Interior and exterior, every surface.<small>Spills and smells too: one customer's milk spill came out of the carpet.</small></p></li>
+    <li><span class="n">02</span><h3>Paint correction</h3><p>Oversprayed paint corrected before the coating goes on.</p></li>
+    <li><span class="n">03</span><h3>Ceramic coating</h3><p>Applied panel by panel under the lights.<small>He also teaches coating classes, says one reviewer.</small></p></li>
+    <li><span class="n">04</span><h3>Maintenance wash</h3><p>Regular foam washes between details.</p></li>
+    <li><span class="n">05</span><h3>Engine bay</h3><p>Including a 1958 Cadillac Fleetwood that sat for a year.</p></li>
+    <li><span class="n">06</span><h3>Aviation detailing</h3><p>Yes, a helicopter.</p></li>
+  </ol>
+</section>
+
+<section class="ff" id="finish" aria-labelledby="ff-h">
+  <div class="wrap">
+    <div class="ff-head">
+      <h2 class="h2" id="ff-h">Foam on.<br><em>Foam off.</em></h2>
+      <p>The same Audi R8: in the foam bath on the driveway, then parked back in the garage. Drag to compare.</p>
+    </div>
+    <div class="ba" id="ba">
+      <img class="r8-foam" src="img/r8-foam.jpg" alt="Red Audi R8 covered in snow foam during a wash" width="787" height="590" loading="lazy">
+      <img class="after" src="img/r8-done.jpg" alt="The same red Audi R8 clean and glossy in a garage" width="787" height="590" loading="lazy">
+      <span class="tag l glass">In the foam</span><span class="tag r glass">Done</span>
+      <span class="line" aria-hidden="true"></span>
+      <span class="chip glass" aria-hidden="true">&larr; <svg class="flame"><use href="#fl"/></svg> &rarr;</span>
+      <input type="range" min="0" max="100" value="50" aria-label="Compare foam and finished photos">
+    </div>
+    <p class="note">Audi R8 &middot; photos from Ignite Auto</p>
+  </div>
+</section>
+
+<section class="band wrap" aria-labelledby="band-h">
+  <div class="band-grid">
+    <div>
+      <h2 class="h2" id="band-h">Ceramic, <em>by hand.</em></h2>
+      <p>Coating going onto a white car, one panel at a time, under the hex lights.</p>
+    </div>
+    <video class="reveal" src="video/ceramic.mp4" poster="video/ceramic-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Ceramic coating being applied by hand to a white car"></video>
+  </div>
+</section>
+
+<section class="cars wrap" id="cars" aria-labelledby="cars-h">
+  <h2 class="h2" id="cars-h">Recently <em>in the bay.</em></h2>
+  <div class="grid">
+    <figure class="car c1 reveal"><img src="img/p9.jpg" alt="Red Audi R8 after detailing" loading="lazy" width="1400" height="1050"><span class="glass">Audi R8</span></figure>
+    <figure class="car c2 reveal"><img src="img/p7.jpg" alt="Black Ford Mustang in the Ignite Auto shop under the flame banner" loading="lazy" width="1050" height="1400"><span class="glass">Mustang, in the shop</span></figure>
+    <figure class="car c3 reveal"><img src="img/corvette.jpg" alt="White Chevrolet Corvette C7 being washed in front of a lit-up garage" loading="lazy" width="747" height="1000"><span class="glass">Corvette C7</span></figure>
+    <figure class="car c4 reveal"><img src="img/p10.jpg" alt="Black Shelby GT500 in an underground parkade" loading="lazy" width="788" height="1400"><span class="glass">Shelby GT500</span></figure>
+    <figure class="car c5 reveal"><img src="img/p12.jpg" alt="White Ford F-150 after detailing" loading="lazy" width="1050" height="1400"><span class="glass">Ford F-150</span></figure>
+    <figure class="car c6 reveal"><img src="img/charger.jpg" alt="Purple Dodge Charger getting a maintenance wash" loading="lazy" width="788" height="560"><span class="glass">Dodge Charger, maintenance wash</span></figure>
+  </div>
+</section>
+
+<section class="rev" id="reviews" aria-labelledby="rev-h">
+  <span class="orb a"></span><span class="orb b"></span>
+  <div class="wrap">
+    <div class="score"><span class="num" data-count="4.9">4.9</span><span class="of" id="rev-h">on Google<br>from 57 reviews</span></div>
+    <blockquote class="lead">
+      <p class="big">&ldquo;Owner Aksh very friendly and gives you <em>genuine advise</em> which actually your car needs. Price are reasonable too.&rdquo;</p>
+      <cite>JP V., Google</cite>
+    </blockquote>
+    <div class="cards">
+      <blockquote class="card glass"><div class="st" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Absolutely blown away by the incredible detailing job done on my 1958 Cadillac Fleetwood!&rdquo;</p><cite>Mantej G., Google</cite></blockquote>
+      <blockquote class="card glass"><div class="st" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;He&rsquo;s best in town, so polite, true to words and morals.&rdquo;</p><cite>Deep S., Google</cite></blockquote>
+      <blockquote class="card glass"><div class="st" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;The team was professional, friendly, and paid incredible attention to every detail.&rdquo;</p><cite>Gurveer S., Google</cite></blockquote>
+      <blockquote class="card glass"><div class="st" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;I had a milk gallon spill all over my carpet in the car and the smell was just not going away.&rdquo;</p><cite>NV V., Google</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="visit wrap" id="visit" aria-labelledby="visit-h">
+  <div class="visit-grid">
+    <div>
+      <p class="lbl"><b>Visit</b> &middot; Surrey, BC</p>
+      <h2 class="addr" id="visit-h"><a href="https://www.google.com/maps/place/Ignite+Auto+Car+Detailing/data=!4m7!3m6!1s0x5485db2922fa216d:0xf157ffca76ad8b56!8m2!3d49.1289262!4d-122.8794306!16s%2Fg%2F11vdk71f_0!19sChIJbSH6IinbhVQRVoutdsr_V_E" target="_blank" rel="noopener">6929 124 St,<br>Surrey, BC</a></h2>
+      <a class="phone-big" href="tel:+12366888185">236 688 8185</a>
+      <p class="sub">Call or text to book. See more work on Instagram: <a href="https://www.instagram.com/the.ignite.auto/" target="_blank" rel="noopener">@the.ignite.auto</a></p>
+    </div>
+    <div class="hours" aria-label="Hours">
+      <div><b>Monday</b><span>9 a.m. &ndash; 7 p.m.</span></div>
+      <div><b>Tuesday</b><span>9 a.m. &ndash; 7 p.m.</span></div>
+      <div><b>Wednesday</b><span>9 a.m. &ndash; 7 p.m.</span></div>
+      <div><b>Thursday</b><span>9 a.m. &ndash; 7 p.m.</span></div>
+      <div><b>Friday</b><span>9 a.m. &ndash; 7 p.m.</span></div>
+      <div><b>Saturday</b><span>9 a.m. &ndash; 7 p.m.</span></div>
+      <div><b>Sunday</b><span>9 a.m. &ndash; 7 p.m.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="quote wrap" id="quote" aria-labelledby="q-h">
+  <div class="qpanel">
+    <form class="qform glass" id="qf">
+      <h2 id="q-h">Text Aksh <em>a quote.</em></h2>
+      <p class="sentence">Hi, I&rsquo;m <input name="n" placeholder="your name" aria-label="Your name" autocomplete="given-name" required>.
+        My car is a <input class="car-in" name="c" placeholder="year, make, model" aria-label="Your car" required>
+        and I&rsquo;m after <select name="s" aria-label="Service">
+          <option>a full detail</option><option>paint correction</option><option>a ceramic coating</option>
+          <option>a maintenance wash</option><option>an interior clean</option><option>an engine bay clean</option>
+        </select>.</p>
+      <div class="row"><button class="btn btn-ink" type="submit">Send as a text</button><small>Opens your messages app with this filled in.</small></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><a class="brand" href="#top"><svg class="flame"><use href="#fl"/></svg>Ignite Auto</a><p style="margin-top:10px">Ignite Auto Car Detailing &middot; 6929 124 St, Surrey, BC &middot; <a href="tel:+12366888185">(236) 688-8185</a></p></div>
+    <p>Preview built by JPF. Not live yet.</p>
+  </div>
+</footer>
+
+<div class="dock glass" aria-label="Quick contact">
+  <a class="btn btn-gold" href="tel:+12366888185">Call</a>
+  <a class="btn btn-ink" href="sms:+12366888185">Text</a>
+</div>
+
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  var ba=document.getElementById('ba'), r=ba.querySelector('input');
+  function set(v){ba.style.setProperty('--x',v+'%')}
+  r.addEventListener('input',function(){set(r.value)});
+  set(50);
+  var f=document.getElementById('qf');
+  f.addEventListener('submit',function(e){e.preventDefault();
+    var b='Hi, I\'m '+f.n.value.trim()+'. My car is a '+f.c.value.trim()+' and I\'m after '+f.s.value+'.';
+    location.href='sms:+12366888185?&body='+encodeURIComponent(b);});
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){io.observe(el)});
+  }
+  setTimeout(function(){els.forEach(function(el){el.classList.add('in')})},2500);
+  var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var nums=document.querySelectorAll('[data-count]');
+  if(!rm) nums.forEach(function(n){
+    var end=parseFloat(n.dataset.count), dec=n.dataset.count.indexOf('.')>-1?1:0, done=false;
+    var o=new IntersectionObserver(function(es){if(es[0].isIntersecting&&!done){done=true;o.disconnect();
+      var t0=performance.now();(function step(t){var p=Math.min(1,(t-t0)/1100);p=1-Math.pow(1-p,3);n.textContent=(end*p).toFixed(dec);if(p<1)requestAnimationFrame(step)})(t0);}});
+    o.observe(n);
+  });
+})();
+</script>
+</body>
+</html>
