@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Yellow Star Mobile Car Wash &amp; Detailing | Surrey, BC</title>
+<meta name="description" content="Mobile car wash and detailing in Surrey, Delta and New Westminster. We wash your car at your doorstep.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ direction: dispatch-line-led. Dark doorstep-wash film on top, then an area line picker (Delta / Surrey / New West) with each real phone line.
+ palette: ink #080c0d (promo graphic background), star yellow #FCD40C (logo + Book Now button, sampled), foam #eef2f0, wet asphalt #161e21, steel #8a979b (driveway photos)
+ fonts: Tilt Warp (display) + DM Sans (body)
+ signature: line picker, tap an area, get that area's number + call/text buttons
+ order: hero video, dispatch line, services rows, interior video band, jobs strip, reviews, fill-in quote, footer
+ motion: hero text settles in once, count-up on rating, gentle photo reveal, reduced-motion respected */
+:root{--ink:#080c0d;--asph:#161e21;--yel:#FCD40C;--foam:#eef2f0;--steel:#8a979b;--r-pill:999px;--r-big:26px;--r-sm:15px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--foam);font-family:'DM Sans',system-ui,sans-serif;font-size:17px;line-height:1.55;overflow-x:hidden;padding-bottom:96px}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,.disp{font-family:'Tilt Warp','DM Sans',sans-serif;font-weight:400;letter-spacing:-.01em;word-spacing:.12em;line-height:.98}
+:focus-visible{outline:3px solid var(--yel);outline-offset:3px}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+.glass{background:rgba(22,30,33,.55);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 20px 60px -20px rgba(0,0,0,.6)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:48px;padding:0 26px;border-radius:var(--r-pill);font-weight:700;text-decoration:none;border:0;cursor:pointer;font:700 16px 'DM Sans',sans-serif;transition:transform .18s,background .18s}
+.btn:active{transform:scale(.97)}
+.btn.y{background:var(--yel);color:var(--ink)}
+.btn.y:hover{background:#ffe04a}
+.btn.g{color:var(--foam)}
+.btn.g:hover{background:rgba(255,255,255,.12)}
+
+/* nav */
+nav{position:fixed;top:12px;left:12px;right:12px;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 6px 6px 18px;border-radius:var(--r-pill);max-width:1180px;margin-inline:auto}
+nav .brand{display:flex;align-items:center;gap:8px;font-family:'Tilt Warp';font-size:17px;text-decoration:none;white-space:nowrap}
+nav .brand svg{width:22px;height:22px;flex:none}
+nav .links{display:none;gap:26px;font-size:15px}
+nav .links a{text-decoration:none;opacity:.85}
+nav .links a:hover{opacity:1;color:var(--yel)}
+nav .btn{min-height:44px;padding:0 20px}
+@media(min-width:860px){nav .links{display:flex}}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(8,12,13,.35) 0%,rgba(8,12,13,0) 25%,rgba(8,12,13,.55) 62%,var(--ink) 100%)}
+.hero .in{padding:110px 0 110px;width:min(1180px,100% - 40px);margin-inline:auto;display:grid;gap:22px}
+.hero h1{font-size:clamp(40px,12.6vw,150px);text-transform:uppercase}
+.hero h1 span{display:block}
+.hero h1 .y{color:var(--yel)}
+.hero p.sub{font-size:19px;max-width:30ch;opacity:.95}
+.hero .row{display:flex;flex-wrap:wrap;gap:10px}
+.hcard{position:absolute;right:20px;top:92px;padding:14px 18px;border-radius:var(--r-big);display:none;gap:4px;max-width:250px}
+.hcard b{font-family:'Tilt Warp';font-size:34px;font-weight:400;color:var(--yel);line-height:1}
+.hcard small{font-size:13px;opacity:.9;display:block}
+@media(min-width:700px){.hcard{display:grid}.hero .in{grid-template-columns:1fr;padding-bottom:70px}.hero h1{font-size:clamp(90px,10.5vw,170px)}}
+.hero .rise{opacity:0;transform:translateY(22px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+.hero .rise:nth-child(2){animation-delay:.15s}.hero .rise:nth-child(3){animation-delay:.3s}
+@keyframes rise{to{opacity:1;transform:none}}
+.hero video{animation:zoom 2.2s ease-out both}
+@keyframes zoom{from{transform:scale(1.12)}to{transform:scale(1)}}
+
+section{padding:88px 0}
+@media(min-width:900px){section{padding:140px 0}}
+.eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--yel);font-weight:700;margin-bottom:16px}
+h2{font-size:clamp(40px,9vw,92px);text-transform:uppercase}
+h2 em{font-style:normal;color:var(--yel)}
+
+/* dispatch line */
+#line{background:var(--ink);position:relative;overflow:hidden}
+#line .orb{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(252,212,12,.16),transparent 65%);right:-160px;top:-80px;animation:drift 26s ease-in-out infinite alternate;pointer-events:none}
+@keyframes drift{to{transform:translate(-60px,80px)}}
+.line-grid{display:grid;gap:36px;position:relative}
+@media(min-width:900px){.line-grid{grid-template-columns:1fr 1.1fr;align-items:end;gap:80px}}
+.line-lead{max-width:46ch;margin-top:20px;font-size:18px;opacity:.88}
+.picker{padding:22px;border-radius:var(--r-big)}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.tab{min-height:44px;padding:0 18px;border-radius:var(--r-pill);border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:var(--foam);font:700 15px 'DM Sans';cursor:pointer;transition:all .18s}
+.tab:active{transform:scale(.97)}
+.tab[aria-selected=true]{background:var(--yel);color:var(--ink);border-color:var(--yel)}
+.picker .area{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel)}
+.picker .num{display:block;font-family:'Tilt Warp';font-size:clamp(34px,9.4vw,60px);line-height:1.05;margin:6px 0 20px;text-decoration:none;word-spacing:0}
+.picker .num:hover{color:var(--yel)}
+.picker .row{display:flex;gap:10px;flex-wrap:wrap}
+.picker .note{margin-top:18px;font-size:14px;color:var(--steel)}
+
+/* services */
+#services{background:var(--foam);color:var(--ink)}
+#services h2 em{color:var(--ink);background:var(--yel);padding:0 .12em;border-radius:8px}
+#services .eyebrow{color:#7a6400}
+.svc{margin-top:48px;border-top:2px solid var(--ink)}
+.svc li{list-style:none;display:grid;grid-template-columns:48px 1fr;gap:6px 14px;padding:24px 0;border-bottom:1px solid rgba(8,12,13,.25)}
+.svc .n{font-family:'Tilt Warp';font-size:20px;color:#7a6400;padding-top:4px}
+.svc h3{font-size:clamp(26px,6.6vw,44px);text-transform:uppercase}
+.svc p{grid-column:2;max-width:52ch;opacity:.8}
+@media(min-width:900px){.svc li{grid-template-columns:90px 1fr 1fr;align-items:baseline}.svc p{grid-column:3}}
+
+/* video band */
+.band{position:relative;height:min(78vh,640px);overflow:hidden;isolation:isolate;display:flex;align-items:flex-end}
+.band video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.band::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(8,12,13,.5),rgba(8,12,13,0) 40%,rgba(8,12,13,.75))}
+.band h2{padding-bottom:40px;font-size:clamp(38px,9vw,100px)}
+
+/* jobs */
+#jobs{background:var(--asph)}
+.jobs{margin-top:44px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.jobs figure{overflow:hidden;border-radius:var(--r-sm);background:#000;aspect-ratio:4/5}
+.jobs figure:nth-child(1){grid-column:1/-1;aspect-ratio:16/10}
+.jobs img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.jobs figure:hover img{transform:scale(1.05)}
+@media(min-width:900px){.jobs{grid-template-columns:repeat(6,1fr);gap:14px}.jobs figure,.jobs figure:nth-child(n){grid-column:span 2;aspect-ratio:4/5}.jobs figure:nth-child(1){grid-column:span 4;grid-row:span 2;aspect-ratio:auto}.jobs figure:nth-child(2),.jobs figure:nth-child(3){grid-column:span 2}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s,transform .9s cubic-bezier(.2,.7,.2,1)}
+.reveal.on{opacity:1;transform:none}
+.cap{font-size:14px;color:var(--steel);margin-top:14px}
+
+/* reviews */
+#reviews{background:var(--ink);position:relative;overflow:hidden}
+#reviews .orb{position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(252,212,12,.12),transparent 65%);left:-200px;bottom:-120px;animation:drift 30s ease-in-out infinite alternate}
+.score{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin:18px 0 44px}
+.score b{font-family:'Tilt Warp';font-weight:400;font-size:clamp(72px,20vw,170px);line-height:.9;color:var(--yel)}
+.score span{font-size:18px;max-width:20ch;line-height:1.35}
+.lead-q{font-family:'Tilt Warp';font-size:clamp(26px,6.3vw,56px);line-height:1.08;max-width:22ch;word-spacing:.1em;margin-bottom:12px;position:relative}
+.who{font-size:15px;color:var(--steel);margin-bottom:46px}
+.rv{display:grid;gap:14px;position:relative}
+@media(min-width:900px){.rv{grid-template-columns:repeat(3,1fr)}}
+.rv figure{padding:24px;border-radius:var(--r-big)}
+.rv blockquote{font-size:17px;margin-bottom:14px}
+.rv figcaption{font-size:14px;color:var(--steel)}
+
+/* quote */
+#quote{background:var(--yel);color:var(--ink)}
+#quote .eyebrow{color:var(--ink);opacity:.7}
+.sent{margin-top:34px;font-family:'Tilt Warp';font-size:clamp(19px,5vw,46px);line-height:1.7;word-spacing:.1em}
+.sent select,.sent input{font:inherit;color:var(--ink);background:rgba(255,255,255,.5);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(8,12,13,.35);border-radius:14px;padding:2px 12px;margin:2px 0;min-height:48px;max-width:100%;box-shadow:inset 0 1px 0 rgba(255,255,255,.7)}
+.sent input{width:min(220px,100%)}.sent select,.sent input{font-size:inherit}
+.sent select{appearance:none;-webkit-appearance:none;padding-right:12px}
+.sent input::placeholder{color:rgba(8,12,13,.5)}
+.sent input:focus,.sent select:focus{outline:3px solid var(--ink);outline-offset:2px}
+.qpanel{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.qpanel .btn{background:var(--ink);color:var(--yel);min-height:56px;font-size:18px}
+.qpanel small{font:400 14px 'DM Sans',sans-serif;max-width:34ch;opacity:.8}
+
+footer{padding:44px 0 36px;font-size:14px;color:var(--steel);background:var(--ink)}
+footer .wrap{display:grid;gap:8px}
+footer b{color:var(--foam)}
+
+/* dock */
+.dock{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;display:flex;gap:8px;padding:7px;border-radius:var(--r-pill);max-width:460px;margin-inline:auto}
+.dock .btn{flex:1;min-height:48px;padding:0 12px}
+@media(min-width:900px){.dock{display:none}body{padding-bottom:0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero .rise,.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav class="glass" aria-label="Main">
+  <a class="brand" href="#top"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#FCD40C" d="M12 1.5l3 7.2 7.7.6-5.9 5 1.9 7.6L12 17.9 5.3 21.9l1.9-7.6-5.9-5 7.7-.6z"/></svg>Yellow Star</a>
+  <div class="links"><a href="#line">Your area</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#quote">Quote</a></div>
+  <a class="btn y" href="tel:+17788064904">Call Surrey</a>
+</nav>
+
+<header class="hero" id="top">
+  <img class="poster" src="video/hero-poster.jpg" alt="" aria-hidden="true">
+  <video src="video/hero.mp4" poster="video/hero-poster.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+  <div class="glass hcard rise" style="animation-delay:.7s"><b>4.9</b><small>Google rating, 73 reviews</small><small>Mobile car wash and detailing, Surrey BC</small></div>
+  <div class="in">
+    <h1><span class="rise">No line.</span><span class="rise y">No drive.</span><span class="rise">No waiting.</span></h1>
+    <p class="sub rise">Mobile car wash and detailing. We wash your car at your doorstep.</p>
+    <div class="row rise">
+      <a class="btn y" href="tel:+17788064904">Call (778) 806-4904</a>
+      <a class="btn g glass" href="#quote">Get a quote by text</a>
+    </div>
+  </div>
+</header>
+
+<section id="line">
+  <div class="orb" aria-hidden="true"></div>
+  <div class="wrap line-grid">
+    <div>
+      <div class="eyebrow">We come to you</div>
+      <h2>Pick your <em>city.</em> Get your line.</h2>
+      <p class="line-lead">Yellow Star serves Delta, Surrey and New Westminster. Each area has its own booking number. Tap yours.</p>
+    </div>
+    <div class="picker glass" role="group" aria-label="Choose your area">
+      <div class="tabs" role="tablist">
+        <button class="tab" role="tab" aria-selected="false" data-a="Delta" data-n="604-600-8466" data-t="+16046008466">Delta</button>
+        <button class="tab" role="tab" aria-selected="true" data-a="Surrey" data-n="778-806-4904" data-t="+17788064904">Surrey</button>
+        <button class="tab" role="tab" aria-selected="false" data-a="New Westminster" data-n="778-806-4914" data-t="+17788064914">New Westminster</button>
+      </div>
+      <div class="area" id="pArea">Surrey line</div>
+      <a class="num" id="pNum" href="tel:+17788064904">778-806-4904</a>
+      <div class="row">
+        <a class="btn y" id="pCall" href="tel:+17788064904">Call now</a>
+        <a class="btn g" id="pText" href="sms:+17788064904" style="border:1px solid rgba(255,255,255,.25)">Text</a>
+      </div>
+      <p class="note">Google lists the business as open 24 hours, 7 days a week.</p>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="eyebrow">What they do</div>
+    <h2>Your car, <em>cleaned</em> at home.</h2>
+    <ul class="svc">
+      <li><span class="n">01</span><h3>Doorstep car wash</h3><p>"No buckets. No mess. No scratched paint. Just a professional shine, at your door."</p></li>
+      <li><span class="n">02</span><h3>Interior detailing</h3><p>Meticulous interior detailing and care for every surface of your car, from vents to seats.</p></li>
+      <li><span class="n">03</span><h3>Carpet and interior cleaning</h3><p>Car interior cleaning and carpet cleaning, done where you park.</p></li>
+      <li><span class="n">04</span><h3>Waxing and polishing</h3><p>Their Instagram calls Yellow Star a car waxing and polishing specialist.</p></li>
+      <li><span class="n">05</span><h3>Weekly wash</h3><p>Book Yellow Star every week and keep it clean. "No effort. Just shine."</p></li>
+    </ul>
+    <p class="cap" style="color:#444">Services taken from the business's own Instagram posts. Ask them for the exact list and pricing.</p>
+  </div>
+</section>
+
+<div class="band">
+  <video src="video/band.mp4" poster="video/band-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+  <div class="wrap"><h2>The inside gets <em>the care too.</em></h2></div>
+</div>
+
+<section id="jobs">
+  <div class="wrap">
+    <div class="eyebrow">Recent jobs</div>
+    <h2>Real cars. <em>Real shine.</em></h2>
+    <div class="jobs">
+      <figure class="reveal"><img src="img/y-porsche.jpg" alt="Black SUV with doors open after a detail, driveway in Surrey" loading="lazy"></figure>
+      <figure class="reveal"><img src="img/y-camaro.jpg" alt="Matte grey coupe with black wheels, doors open" loading="lazy"></figure>
+      <figure class="reveal"><img src="img/y-volvo.jpg" alt="Classic black coupe with red leather seats" loading="lazy"></figure>
+      <figure class="reveal"><img src="img/y-foam.jpg" alt="Foam cannon full of soap beside a car" loading="lazy"></figure>
+      <figure class="reveal"><img src="img/y-purple.jpg" alt="Car covered in thick purple foam" loading="lazy"></figure>
+      <figure class="reveal"><img src="img/y-vents.jpg" alt="Clean dashboard vents and console" loading="lazy"></figure>
+    </div>
+    <p class="cap">Photos from Yellow Star's Instagram and Google listing.</p>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="orb" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="eyebrow">What customers say</div>
+    <div class="score"><b id="score" data-to="4.9">4.9</b><span>on Google from <strong id="cnt" data-to="73">73</strong> reviews</span></div>
+    <p class="lead-q">"Very good service they are quick,excellent and on time. Excellent detail and great price."</p>
+    <p class="who">Jag B., Google</p>
+    <div class="rv">
+      <figure class="glass"><blockquote>"This place is very good with affordable rates and impeccable work. I definitely recommend everyone to come here for your auto detailing."</blockquote><figcaption>Manjit J., Google</figcaption></figure>
+      <figure class="glass"><blockquote>"Excellent work done and good customer service Highly recommended"</blockquote><figcaption>Amandeep S., Google</figcaption></figure>
+      <figure class="glass"><blockquote>"The convenience of having their dedicated team come directly to my location was a game changer"</blockquote><figcaption>Arun S., Google</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="quote">
+  <div class="wrap">
+    <div class="eyebrow">Free quote by text</div>
+    <h2>Tell them what you drive.</h2>
+    <form class="sent" id="qf" autocomplete="off">
+      Hi Yellow Star, I'm
+      <input id="qn" name="name" placeholder="your name" aria-label="Your name" required>.
+      I need a
+      <select id="qs" aria-label="Service"><option>doorstep car wash</option><option>interior detail</option><option>carpet and interior cleaning</option><option>wax and polish</option><option>weekly wash</option></select>
+      for my
+      <input id="qc" name="car" placeholder="car" aria-label="Your car" required>
+      in
+      <select id="qa" aria-label="Area"><option>Surrey</option><option>Delta</option><option>New Westminster</option></select>.
+      <div class="qpanel"><button class="btn" type="submit">Send as a text</button><small>Opens your messages app with this text ready to send to (778) 806-4904.</small></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><b>Yellow Star Mobile Car Wash &amp; Detailing</b> · Car detailing service · Delta, Surrey, New Westminster, BC</div>
+    <div>Listed on Google: 13058 107A Ave, Surrey, BC V3T 2G8 · <a href="tel:+17788064904">(778) 806-4904</a></div>
+    <div>Preview built by JPF. Not live yet.</div>
+  </div>
+</footer>
+
+<div class="dock glass" role="group" aria-label="Call or text">
+  <a class="btn y" href="tel:+17788064904">Call</a>
+  <a class="btn g" href="sms:+17788064904">Text</a>
+</div>
+
+<script>
+(function(){
+  // picker
+  var tabs=document.querySelectorAll('.tab'),num=document.getElementById('pNum'),ar=document.getElementById('pArea'),pc=document.getElementById('pCall'),pt=document.getElementById('pText');
+  tabs.forEach(function(t){t.addEventListener('click',function(){
+    tabs.forEach(function(x){x.setAttribute('aria-selected',x===t)});
+    ar.textContent=t.dataset.a+' line';num.textContent=t.dataset.n;
+    num.href=pc.href='tel:'+t.dataset.t;pt.href='sms:'+t.dataset.t;
+  })});
+  // reveal
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(e,i){e.style.transitionDelay=(i%3)*90+'ms';io.observe(e)});
+  // count up
+  var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var sc=document.getElementById('score'),ct=document.getElementById('cnt');
+  if(!rm&&'IntersectionObserver' in window){
+    var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;co.disconnect();var t0=performance.now();
+      (function f(t){var p=Math.min(1,(t-t0)/1400),k=1-Math.pow(1-p,3);sc.textContent=(4.9*k).toFixed(1);ct.textContent=Math.round(73*k);if(p<1)requestAnimationFrame(f)})(t0)})},{threshold:.5});
+    co.observe(sc);
+  }
+  // quote -> sms
+  document.getElementById('qf').addEventListener('submit',function(e){e.preventDefault();
+    var m="Hi Yellow Star, I'm "+qn.value.trim()+". I need a "+qs.value+" for my "+qc.value.trim()+" in "+qa.value+".";
+    location.href='sms:+17788064904?&body='+encodeURIComponent(m);
+  });
+  var v=document.querySelectorAll('video');if(rm)v.forEach(function(x){x.removeAttribute('autoplay');x.pause()});
+})();
+</script>
+</body>
+</html>
