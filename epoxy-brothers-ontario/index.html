@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Epoxy Brothers Ontario | Epoxy, polished concrete and rubber surfacing in Aylmer, ON</title>
+<meta name="description" content="Epoxy flake garage floors, polished concrete, rubber surfacing and driveway restoration. Aylmer, Ontario. (519) 619-3875">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,500;0,700;0,800;1,700&family=Spectral:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ direction: surface catalog. Their floors are the product, so the page reads like a specimen book: numbered plates, big photos, concrete-paper light page.
+ palette: paper #ebe9e4 (polished concrete in ig19/g2), ink #111518 (flake garage g4), pool blue #2c7bbf + deep #123f73 (blue rubber pool deck ig28/ig32), amber #c98a3c (warm polished winery floor ig35), stone #8a8f93
+ fonts: Rethink Sans 800 (display) + Spectral (body/quotes)
+ signature: surface chooser (Flake / Polished / Rubber / Driveway) with their photos + damaged-to-restored driveway slider
+ order: hero (pool deck) > chooser > job strip > lead review > services list > quote sentence > footer
+ motion: one hero load-in, gentle reveals, count-up, chooser crossfade
+*/
+:root{--paper:#ebe9e4;--paper2:#dedcd6;--ink:#111518;--ink2:#1b2126;--blue:#2c7bbf;--blue2:#123f73;--amber:#c98a3c;--stone:#8a8f93;--line:rgba(17,21,24,.14);
+--sans:'Rethink Sans',system-ui,sans-serif;--serif:'Spectral',Georgia,serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{overflow-x:clip;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:17px;line-height:1.6;overflow-x:hidden;padding-bottom:92px}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+.sans{font-family:var(--sans)}
+.eyebrow{font-family:var(--sans);font-weight:700;font-size:13px;letter-spacing:.06em;color:var(--blue2)}
+h1,h2,h3{font-family:var(--sans);font-weight:800;line-height:.96;letter-spacing:-.025em;word-spacing:.08em}
+/* glass */
+.glass{background:rgba(236,234,229,.55);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.45);box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 20px 60px -20px rgba(17,21,24,.4)}
+.glass.dark{background:rgba(17,21,24,.5);border-color:rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 20px 60px -20px rgba(0,0,0,.5);color:#fff}
+/* nav */
+nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;margin:auto;max-width:1100px;border-radius:999px;display:flex;align-items:center;justify-content:space-between;padding:6px 6px 6px 20px;height:56px}
+nav .logo{font-family:var(--sans);font-weight:800;font-size:17px;letter-spacing:-.01em;text-decoration:none;white-space:nowrap}
+nav .links{display:none;gap:26px;font-family:var(--sans);font-weight:500;font-size:15px}
+nav .links a{text-decoration:none;opacity:.85}
+.btn{font-family:var(--sans);font-weight:700;font-size:16px;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 24px;border-radius:999px;border:0;text-decoration:none;cursor:pointer;transition:transform .18s,background .18s}
+.btn:active{transform:scale(.97)}
+.btn.blue{background:var(--blue);color:#fff}.btn.blue:hover{background:var(--blue2)}
+.btn.ink{background:var(--ink);color:#fff}
+.btn.ghost{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.4)}
+nav .btn{min-height:44px;padding:0 18px;font-size:15px}
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;background:var(--ink);overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:settle 2.4s cubic-bezier(.2,.7,.2,1) both}
+.hero .d{display:none}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,18,.35) 0%,rgba(10,14,18,0) 28%,rgba(10,14,18,.2) 48%,rgba(10,14,18,.88) 100%)}
+.hero .in{position:relative;z-index:2;padding:110px 0 34px;width:100%}
+.hero h1{font-size:clamp(58px,17vw,92px);max-width:9ch;animation:up 1s .25s cubic-bezier(.2,.7,.2,1) both}
+.hero h1 em{font-style:normal;color:#8fc4ee}
+.hero p.lead{font-size:18px;max-width:30ch;margin:16px 0 22px;color:#eef2f4;animation:up 1s .45s both}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:10px;animation:up 1s .6s both}
+.rate{margin-top:26px;border-radius:24px;padding:16px 18px;max-width:420px;animation:up 1s .8s both}
+.rate .row{display:flex;align-items:baseline;gap:10px;font-family:var(--sans)}
+.rate b{font-size:40px;font-weight:800;line-height:1}
+.rate span{font-size:15px;font-weight:500}
+.rate q{display:block;margin-top:8px;font-size:16px;line-height:1.45;quotes:none;font-style:italic}
+.rate small{display:block;margin-top:6px;font-family:var(--sans);font-size:13px;opacity:.85}
+@keyframes up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes settle{from{transform:scale(1.08)}to{transform:scale(1)}}
+/* sections */
+section{padding:84px 0;overflow-x:clip}
+.head{display:grid;gap:14px;margin-bottom:36px}
+.head h2{font-size:clamp(42px,11vw,76px);max-width:11ch}
+.head p{max-width:46ch;color:#3a4147}
+/* chooser */
+#surfaces{background:var(--paper)}
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 22px}
+.tab{font-family:var(--sans);font-weight:700;font-size:16px;min-height:46px;padding:0 20px;border-radius:999px;background:rgba(255,255,255,.55);border:1px solid rgba(17,21,24,.14);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);cursor:pointer;color:var(--ink);transition:transform .18s,background .18s,color .18s;display:inline-flex;align-items:center;gap:10px}
+.tab i{font-style:normal;font-size:12px;opacity:.55}
+.tab:active{transform:scale(.97)}
+.tab[aria-selected=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tab[aria-selected=true] i{opacity:.7}
+.panel{display:none}
+.panel.on{display:grid;gap:20px;animation:fade .5s both}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.plate{position:relative;border-radius:26px;overflow:hidden;background:var(--ink);aspect-ratio:4/5}
+.plate img{width:100%;height:100%;object-fit:cover}
+.plate .tag{position:absolute;left:14px;bottom:14px;border-radius:999px;padding:8px 16px;font-family:var(--sans);font-weight:700;font-size:13px}
+.copy h3{font-size:clamp(38px,9vw,58px);margin-bottom:14px}
+.copy blockquote{font-style:italic;font-size:19px;line-height:1.55;border-left:3px solid var(--blue);padding-left:16px;margin:16px 0}
+.copy cite{display:block;font-family:var(--sans);font-style:normal;font-size:13px;font-weight:500;margin-top:6px;color:#4a5157}
+.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:18px}
+.thumbs button{border:0;padding:0;border-radius:14px;overflow:hidden;aspect-ratio:1;cursor:pointer;opacity:.6;outline-offset:2px;transition:opacity .2s,transform .2s;background:var(--ink)}
+.thumbs button img{width:100%;height:100%;object-fit:cover}
+.thumbs button.on,.thumbs button:hover{opacity:1}
+.thumbs button:active{transform:scale(.96)}
+/* compare */
+.cmp{position:relative;border-radius:26px;overflow:hidden;aspect-ratio:4/5;background:var(--ink);touch-action:pan-y;user-select:none}
+.cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cmp .after{clip-path:inset(0 0 0 var(--p,50%))}
+.cmp .bar{position:absolute;top:0;bottom:0;left:var(--p,50%);width:2px;background:#fff;transform:translateX(-1px)}
+.cmp .knob{position:absolute;top:50%;left:var(--p,50%);width:52px;height:52px;margin:-26px 0 0 -26px;border-radius:50%;display:grid;place-items:center;font-family:var(--sans);font-weight:800;font-size:18px;color:#fff;pointer-events:none}
+.cmp input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.cmp .lab{position:absolute;top:14px;border-radius:999px;padding:7px 14px;font-family:var(--sans);font-weight:700;font-size:13px;pointer-events:none}
+.cmp .l1{left:14px}.cmp .l2{right:14px}
+/* strip */
+#jobs{background:var(--ink);color:#fff;padding-bottom:70px}
+#jobs .eyebrow{color:#8fc4ee}
+#jobs .head p{color:#c9d0d5}
+.strip{scroll-padding-left:16px;display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 16px 10px;margin:0 -16px;scrollbar-width:none}
+.strip::-webkit-scrollbar{display:none}
+.job{flex:0 0 78%;scroll-snap-align:start}
+.job .ph{border-radius:22px;overflow:hidden;aspect-ratio:3/4;background:#222}
+.job .ph img{width:100%;height:100%;object-fit:cover}
+.job p{font-size:16px;line-height:1.5;margin-top:14px;color:#d9dee2}
+.job b{font-family:var(--sans);display:block;font-size:20px;color:#fff;margin-bottom:2px;letter-spacing:-.01em}
+/* review */
+#words{background:var(--paper2);overflow:hidden}
+.big{font-family:var(--sans);font-weight:700;font-size:clamp(26px,6.4vw,46px);line-height:1.12;letter-spacing:-.02em;max-width:26ch}
+.who{font-family:var(--sans);font-weight:500;font-size:15px;margin-top:20px;color:#3a4147}
+.stars{color:var(--amber);letter-spacing:3px;font-size:18px;margin-bottom:14px}
+.more{display:grid;gap:14px;margin-top:44px}
+.rv{border-radius:22px;padding:22px}
+.rv p{font-size:16px}
+.rv .who{margin-top:12px}
+.orbs{position:relative}
+.orbs:before,.orbs:after{content:"";position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;z-index:0;animation:drift 26s ease-in-out infinite alternate}
+.orbs:before{width:280px;height:280px;background:radial-gradient(circle,var(--blue),transparent 70%);right:-60px;top:-40px}
+.orbs:after{width:260px;height:260px;background:radial-gradient(circle,var(--amber),transparent 70%);left:-80px;bottom:-60px;animation-delay:-9s}
+.orbs>*{position:relative;z-index:1}
+@keyframes drift{to{transform:translate(40px,-30px)}}
+/* services */
+.svc{list-style:none;border-top:1px solid var(--line)}
+.svc li{display:grid;grid-template-columns:44px 1fr;gap:6px 14px;padding:22px 0;border-bottom:1px solid var(--line)}
+.svc .n{font-family:var(--sans);font-weight:700;font-size:14px;color:var(--blue2);padding-top:6px}
+.svc h3{font-size:30px;line-height:1.05;letter-spacing:-.02em}
+.svc p{grid-column:2;font-size:16px;color:#3a4147}
+/* quote */
+#quote{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+#quote img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+#quote:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,18,.55),rgba(10,14,18,.8))}
+#quote .wrap{position:relative;z-index:2}
+.qp{border-radius:28px;padding:26px 20px;max-width:760px}
+.qp h2{font-size:clamp(40px,10vw,64px);margin-bottom:8px}
+.qp .sub{color:#e5e9ec;margin-bottom:22px}
+.sentence{font-family:var(--sans);font-weight:500;font-size:clamp(20px,5vw,26px);line-height:1.9;color:#fff}
+.sentence input,.sentence select{font:inherit;font-weight:700;color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.4);border-radius:14px;padding:4px 12px;min-height:44px;max-width:100%;margin:2px 0;-webkit-appearance:none;appearance:none}
+.sentence select{padding-right:30px;background-image:linear-gradient(45deg,transparent 50%,#fff 50%),linear-gradient(135deg,#fff 50%,transparent 50%);background-position:calc(100% - 17px) 55%,calc(100% - 12px) 55%;background-size:5px 5px;background-repeat:no-repeat}
+.sentence select option{color:#111}
+.sentence input::placeholder{color:rgba(255,255,255,.55);font-weight:500}
+.sentence input:focus,.sentence select:focus{outline:0;border-color:#8fc4ee;box-shadow:0 0 0 3px rgba(143,196,238,.4)}
+.qp .btn{margin-top:20px;width:100%}
+.qp .note{font-family:var(--sans);font-size:13px;margin-top:12px;color:#d3d9de}
+.contact{display:grid;gap:4px;margin-top:34px;font-family:var(--sans)}
+.contact a.tel{font-size:clamp(34px,9vw,56px);font-weight:800;letter-spacing:-.025em;text-decoration:none}
+.contact span{font-size:15px;color:#d3d9de}
+footer{background:#0b0e11;color:#aab2b8;padding:26px 0 30px;font-family:var(--sans);font-size:14px}
+footer .wrap{display:grid;gap:6px}
+/* dock */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));margin:auto;max-width:460px;border-radius:999px;display:flex;gap:6px;padding:6px}
+.dock a{flex:1;min-height:48px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-weight:700;font-size:16px;text-decoration:none;transition:transform .18s}
+.dock a:active{transform:scale(.97)}
+.dock .c{background:var(--blue);color:#fff}
+.dock .t{color:var(--ink)}
+.rv-in{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s}
+.rv-in.vis{opacity:1;transform:none}
+@media(min-width:820px){
+ body{font-size:18px;padding-bottom:0}
+ .dock{display:none}
+ nav .links{display:flex}
+ .hero .m{display:none}.hero .d{display:block}
+ .hero .in{padding:140px 0 56px}
+ .hero h1{font-size:clamp(100px,12vw,168px);max-width:8ch}
+ .hero .row2{display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px}
+ .hero p.lead{font-size:21px;max-width:34ch}
+ .rate{margin:0}
+ section{padding:130px 0}
+ .tabs{display:flex;margin:0 0 28px}
+ .panel.on{grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+ .plate,.cmp{aspect-ratio:5/5}
+ .job{flex-basis:340px}
+ .strip{padding:0 max(16px,calc((100vw - 1180px)/2));margin:0 calc(50% - 50vw);scroll-padding-left:max(16px,calc((100vw - 1180px)/2))}
+ .more{grid-template-columns:repeat(2,1fr)}
+ .svc li{grid-template-columns:80px 1fr 1.1fr;align-items:baseline;padding:34px 0}
+ .svc p{grid-column:auto}
+ .svc h3{font-size:44px}
+ .qp{padding:48px}
+ .qp .btn{width:auto}
+ .head{grid-template-columns:1fr 1fr;align-items:end}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv-in{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav class="glass">
+ <a class="logo" href="#top">Epoxy Brothers</a>
+ <div class="links"><a href="#surfaces">Surfaces</a><a href="#jobs">Recent jobs</a><a href="#words">Reviews</a><a href="#quote">Quote</a></div>
+ <a class="btn blue" href="#quote">Get a quote</a>
+</nav>
+
+<header class="hero" id="top">
+ <img class="m" src="img/ig28.jpg" alt="Blue rubber surfacing around a backyard pool" style="object-position:50% 40%">
+ <img class="d" src="img/ig27.jpg" alt="Blue rubber surfacing around a backyard pool, with a drain line into a stone-look driveway" style="object-position:50% 14%">
+ <div class="in"><div class="wrap">
+  <div class="row2">
+  <div>
+   <h1>Concrete, <em>finished.</em></h1>
+   <p class="lead">Epoxy flake, polished concrete and rubber surfacing for garages, basements and backyards in Aylmer, Ontario.</p>
+   <div class="ctas"><a class="btn blue" href="#quote">Get a free quote</a><a class="btn ghost" href="tel:+15196193875">(519) 619-3875</a></div>
+  </div>
+  <div class="rate glass dark">
+   <div class="row"><b><span data-count="5" data-dec="1" style="font-size:inherit;font-weight:inherit">5.0</span></b><span>on Google from <span data-count="18" style="font-weight:700">18</span> reviews</span></div>
+   <q>Hard-working guys who stand behind their work...and they do great work! Highly recommended!</q>
+   <small>Ken B., Google</small>
+  </div>
+  </div>
+ </div></div>
+</header>
+
+<section id="surfaces"><div class="wrap">
+ <div class="head"><div><div class="eyebrow">Surfaces we do</div><h2>Pick a surface. See the job.</h2></div><p>Every photo here is a floor they finished. Tap a surface to see their work, in their words.</p></div>
+ <div class="tabs" role="tablist">
+  <button class="tab" role="tab" aria-selected="true" data-t="flake"><i>01</i>Flake</button>
+  <button class="tab" role="tab" aria-selected="false" data-t="polished"><i>02</i>Polished</button>
+  <button class="tab" role="tab" aria-selected="false" data-t="rubber"><i>03</i>Rubber</button>
+  <button class="tab" role="tab" aria-selected="false" data-t="drive"><i>04</i>Driveway</button>
+ </div>
+
+ <div class="panel on" id="p-flake">
+  <div class="plate"><img src="img/ig43.jpg" alt="Creekbed flake epoxy garage floor" data-main><span class="tag glass dark">Creekbed flake</span></div>
+  <div class="copy">
+   <h3>Epoxy flake garage floors</h3>
+   <blockquote>Classic blends with multiple colours work well in a variety of spaces since there's many colours to pull from. They also do a fantastic job hiding dust and dirt which make them low maintenance.<cite>Epoxy Brothers, on Creekbed flake (Instagram)</cite></blockquote>
+   <a class="btn ink" href="#quote">Quote a flake floor</a>
+   <div class="thumbs"><button class="on" data-src="img/ig43.jpg" aria-label="Flake photo 1"><img src="img/ig43.jpg" alt=""></button><button data-src="img/ig42.jpg" aria-label="Flake photo 2"><img src="img/ig42.jpg" alt=""></button><button data-src="img/g4.jpg" aria-label="Flake photo 3"><img src="img/g4.jpg" alt=""></button><button data-src="img/g8.jpg" aria-label="Flake photo 4"><img src="img/g8.jpg" alt=""></button></div>
+  </div>
+ </div>
+
+ <div class="panel" id="p-polished">
+  <div class="plate"><img src="img/g2.jpg" alt="Polished concrete floor with exposed aggregate" data-main><span class="tag glass dark">Polished concrete</span></div>
+  <div class="copy">
+   <h3>Polished concrete</h3>
+   <blockquote>We warmed up this winery with a low gloss polished concrete floor. We specialize in bringing together challenging aspects of design projects.<cite>Epoxy Brothers, Instagram</cite></blockquote>
+   <p>Also in a basement makeover: polished concrete floors, with rubber surfacing in the home gym.</p><br>
+   <a class="btn ink" href="#quote">Quote a polished floor</a>
+   <div class="thumbs"><button class="on" data-src="img/g2.jpg" aria-label="Polished photo 1"><img src="img/g2.jpg" alt=""></button><button data-src="img/ig36.jpg" aria-label="Winery polished floor"><img src="img/ig36.jpg" alt=""></button><button data-src="img/ig19.jpg" aria-label="Basement polished floor"><img src="img/ig19.jpg" alt=""></button><button data-src="img/ig35.jpg" aria-label="Winery lounge floor"><img src="img/ig35.jpg" alt=""></button></div>
+  </div>
+ </div>
+
+ <div class="panel" id="p-rubber">
+  <div class="plate"><img src="img/ig28.jpg" alt="Blue rubber pool surround" data-main><span class="tag glass dark">Rubber surfacing</span></div>
+  <div class="copy">
+   <h3>Rubber surfacing</h3>
+   <blockquote>No shoes required in this backyard! Head to toe with rubber surfacing means no dirt tracking in and out of the pool, house or hot tub. Durable, slip resistant, and dog paw approved.<cite>Epoxy Brothers, Instagram</cite></blockquote>
+   <p>Also used in a basement home gym for low impact and low maintenance.</p><br>
+   <a class="btn ink" href="#quote">Quote a rubber surface</a>
+   <div class="thumbs"><button class="on" data-src="img/ig28.jpg" aria-label="Pool photo 1"><img src="img/ig28.jpg" alt=""></button><button data-src="img/ig32.jpg" aria-label="Pool photo 2"><img src="img/ig32.jpg" alt=""></button><button data-src="img/ig26.jpg" aria-label="Pool deck with dog"><img src="img/ig26.jpg" alt=""></button><button data-src="img/ig24.jpg" aria-label="Home gym"><img src="img/ig24.jpg" alt=""></button></div>
+  </div>
+ </div>
+
+ <div class="panel" id="p-drive">
+  <div class="cmp" id="cmp" style="--p:50%">
+   <img src="img/ig7.jpg" alt="Driveway before restoration">
+   <img class="after" src="img/ig1.jpg" alt="Driveway after restoration">
+   <div class="bar"></div><div class="knob glass dark">&#8596;</div>
+   <span class="lab l1 glass dark">Damaged</span><span class="lab l2 glass dark">Restored</span>
+   <input type="range" min="0" max="100" value="50" aria-label="Drag to compare the driveway before and after">
+  </div>
+  <div class="copy">
+   <h3>Driveway restoration</h3>
+   <blockquote>This heavily damaged driveway has been restored back to its full potential and then some. Contact us today for a free in person consultation to see how we can transform your exterior concrete from dull and damaged, to decorative and beautiful!<cite>Epoxy Brothers, Instagram</cite></blockquote>
+   <a class="btn ink" href="#quote">Quote a driveway</a>
+  </div>
+ </div>
+</div></section>
+
+<section id="jobs"><div class="wrap">
+ <div class="head"><div><div class="eyebrow">Recent jobs</div><h2>From their Instagram.</h2></div><p>Real jobs they posted this year.</p></div>
+</div>
+<div class="wrap"><div class="strip">
+ <div class="job"><div class="ph"><img loading="lazy" src="img/ig32.jpg" alt="Blue rubber pool deck"></div><p><b>Backyard pool, head to toe rubber</b>Dirt stays out of the pool, house and hot tub.</p></div>
+ <div class="job"><div class="ph"><img loading="lazy" src="img/ig36.jpg" alt="Winery polished concrete"></div><p><b>Winery, low gloss polish</b>Polished pre-poured architectural steps, with colour matched toppings that blend the exposed foundation walls.</p></div>
+ <div class="job"><div class="ph"><img loading="lazy" src="img/ig16.jpg" alt="Basement polished concrete"></div><p><b>Basement makeover</b>Polished concrete floors, rubber in the home gym.</p></div>
+ <div class="job"><div class="ph"><img loading="lazy" src="img/g4.jpg" alt="Flake floor in a long garage of classic cars"></div><p><b>Long garage, dark flake</b>Epoxy flake underneath a row of classic cars.</p></div>
+ <div class="job"><div class="ph"><img loading="lazy" src="img/g3.jpg" alt="Glossy white floor in a long hall"></div><p><b>Gloss white hall</b>Posted on their Google listing.</p></div>
+ <div class="job"><div class="ph"><img loading="lazy" src="img/ig12.jpg" alt="Garage floor"></div><p><b>The cherry on top of an outfitted garage</b>September 2026.</p></div>
+</div></div></section>
+
+<section id="words"><div class="wrap orbs">
+ <div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+ <p class="big rv-in">Our concrete Garage floor has slowly degraded and the surface became rough catching all the dirt in winter, I reached out to Epoxy Brothers , who came out surveyed the floor and came and resurfaced the floor, They have done the most incredible job we are so happy with the finished result. I would recommend to anyone.</p>
+ <div class="who">Ross G., Google</div>
+ <div class="more">
+  <div class="rv glass rv-in"><p>Epoxy Brothers did a great job on our garage floor. Excellent workmanship, attention to detail. They met all their commitments in a timely fashion. Highly recommended</p><div class="who">Margie M., Google</div></div>
+  <div class="rv glass rv-in"><p>Epoxy brothers came out in a time crunch and helped us level our hot tub pad before it was delivered. I trusted another company to do our pad and it was very uneven. Thanks for coming so quickly and keeping it within a reasonable budget to fix! The exposed stone look, looks great as well!!</p><div class="who">Adam M., Google</div></div>
+  <div class="rv glass rv-in"><p>The Epoxy Brothers went above and beyond to finish our floor. We have a large indoor space we needed done in a cramped timeline and they made it happen. They also returned later to touch up a couple spots after our other contractors were finished. We&rsquo;re so glad we ending up choosing them for our project.</p><div class="who">Cassandra C., Google</div></div>
+  <div class="rv glass rv-in"><p>Hard-working guys who stand behind their work...and they do great work! Highly recommended!</p><div class="who">Ken B., Google</div></div>
+ </div>
+</div></section>
+
+<section><div class="wrap">
+ <div class="head"><div><div class="eyebrow">What they do</div><h2>One crew, every surface.</h2></div><p>Aylmer, Ontario. Free in-person consultations.</p></div>
+ <ul class="svc">
+  <li class="rv-in"><span class="n">01</span><h3>Epoxy flake garage floors</h3><p>Creekbed flake and other blends, in garages and other spaces.</p></li>
+  <li class="rv-in"><span class="n">02</span><h3>Polished concrete</h3><p>Basements, wineries and more, including polished architectural steps.</p></li>
+  <li class="rv-in"><span class="n">03</span><h3>Rubber surfacing</h3><p>Pool decks and surrounds, home gyms. Durable and slip resistant.</p></li>
+  <li class="rv-in"><span class="n">04</span><h3>Concrete resurfacing and driveway restoration</h3><p>Dull and damaged exterior concrete made decorative.</p></li>
+  <li class="rv-in"><span class="n">05</span><h3>Hot tub pads</h3><p>Levelled for delivery, with an exposed stone finish, per a customer review.</p></li>
+ </ul>
+</div></section>
+
+<section id="quote">
+ <img class="bg" src="img/ig31.jpg" alt="">
+ <div class="wrap">
+  <div class="qp glass dark">
+   <div class="eyebrow" style="color:#8fc4ee">Free in-person consultation</div>
+   <h2>Tell us the floor.</h2>
+   <p class="sub">Fill in the sentence. It opens a text to Epoxy Brothers with your details.</p>
+   <form id="qf" class="sentence" onsubmit="return false">
+    Hi, I'm <input id="qn" placeholder="your name" size="12" autocomplete="name" required>. I need
+    <select id="qs"><option>an epoxy flake garage floor</option><option>polished concrete</option><option>rubber surfacing</option><option>my driveway restored</option><option>a hot tub pad</option><option>something else</option></select>
+    in <input id="qc" placeholder="your town" size="11" autocomplete="address-level2">.
+    <button class="btn blue" type="submit">Text my quote request</button>
+   </form>
+   <p class="note">Opens your messages app. Nothing is sent until you press send.</p>
+  </div>
+  <div class="contact"><span>Or call</span><a class="tel" href="tel:+15196193875">(519) 619-3875</a><span>53885 Heritage Line, Aylmer, ON N5H 2R1</span></div>
+ </div>
+</section>
+
+<footer><div class="wrap"><div>Epoxy Brothers Ontario Ltd &middot; Aylmer, Ontario</div><div>Preview built by JPF. Not live yet.</div></div></footer>
+
+<div class="dock glass"><a class="t" href="sms:+15196193875">Text</a><a class="c" href="tel:+15196193875">Call now</a></div>
+
+<script>
+(function(){
+ var tabs=document.querySelectorAll('.tab');
+ tabs.forEach(function(t){t.addEventListener('click',function(){
+  tabs.forEach(function(x){x.setAttribute('aria-selected',x===t)});
+  document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('on')});
+  document.getElementById('p-'+t.dataset.t).classList.add('on');
+ })});
+ document.querySelectorAll('.thumbs').forEach(function(g){
+  g.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){
+   g.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+   var im=g.closest('.panel').querySelector('[data-main]');im.src=b.dataset.src;
+  })});
+ });
+ var c=document.getElementById('cmp'),r=c.querySelector('input');
+ r.addEventListener('input',function(){c.style.setProperty('--p',r.value+'%')});
+ document.getElementById('qf').addEventListener('submit',function(){
+  var n=document.getElementById('qn').value.trim(),s=document.getElementById('qs').value,t=document.getElementById('qc').value.trim();
+  var m="Hi, I'm "+(n||'(name)')+". I need "+s+(t?" in "+t:"")+". Can I get a quote?";
+  location.href='sms:+15196193875?&body='+encodeURIComponent(m);
+ });
+ function count(el){var to=parseFloat(el.dataset.count),d=parseInt(el.dataset.dec||0),t0=null;
+  function f(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/1400);k=1-Math.pow(1-k,3);el.textContent=(to*k).toFixed(d);if(k<1)requestAnimationFrame(f)}
+  requestAnimationFrame(f)}
+ if(!matchMedia('(prefers-reduced-motion:reduce)').matches)document.querySelectorAll('[data-count]').forEach(count);
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}})},{threshold:.15});
+ document.querySelectorAll('.rv-in').forEach(function(e){io.observe(e)});
+ setTimeout(function(){document.querySelectorAll('.rv-in').forEach(function(e){if(e.getBoundingClientRect().top<innerHeight)e.classList.add('vis')})},50);
+})();
+</script>
+</body>
+</html>
