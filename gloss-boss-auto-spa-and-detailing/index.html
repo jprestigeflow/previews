@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Gloss Boss Auto Spa &amp; Detailing | Car detailing in Kingston, ON</title>
+<meta name="description" content="Gloss Boss Auto Spa &amp; Detailing, 1404 Bath Rd, Kingston ON. Detailing, window tint, ceramic coating, paint correction. Open every day 9 a.m. to 7 p.m. Call (343) 422-3379.">
+<meta name="theme-color" content="#f3f3ef">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700;800;900&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400;1,7..72,500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/p3.jpg">
+<style>
+/*
+  DESIGN PLAN (Gloss Boss, Kingston, Nov 25 2026)
+  1 Direction: light "garage white" page, sign-black type, their wall yellow used like a highlighter. Bright and clean, like the shop on a sunny day.
+  2 Palette: garage white #f3f3ef (base) / sign black #151412 (banner) / wall yellow #f4d312 (storefront, accent) / sign gold #c8a24a (lettering on the banner) / asphalt #7e7c77 (their lot)
+  3 Fonts: League Spartan 800 (geometric caps like their banner) + Literata (body, review quotes)
+  4 Signature: "The banner" - the black and gold shop banner rebuilt in type; tap a service painted on it to see proof
+  5 Order: hero (GLE in front of the shop) / off the lot (Mustang band + 4-up) / the banner / lot clip / reviews / quote sentence / visit / footer
+  6 Motion: one load sequence (photo settles, headline rises, glass card floats in); photos unmask once on scroll; rating counts up once
+*/
+:root{
+  --white:#f3f3ef; --paper:#fbfbf8; --ink:#151412; --ink-2:#3a3935; --yellow:#f4d312; --yellow-soft:#f7e46a;
+  --gold:#c8a24a; --asphalt:#7e7c77; --line:rgba(21,20,18,.12);
+  --display:"League Spartan",system-ui,sans-serif; --body:"Literata",Georgia,serif;
+  --gut:clamp(16px,5vw,64px); --ease:cubic-bezier(.2,.7,.1,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:hidden;padding-bottom:96px}
+@media(min-width:900px){body{padding-bottom:0}}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:6px}
+.display{font-family:var(--display);font-weight:800;letter-spacing:-.02em;line-height:.9;word-spacing:.06em}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:.005em;text-decoration:none;border:0;cursor:pointer;transition:transform .16s var(--ease),background .2s,box-shadow .2s}
+.btn:active{transform:scale(.98)}
+.btn-y{background:var(--yellow);color:var(--ink);box-shadow:0 10px 30px -12px rgba(150,120,0,.55),inset 0 1px 0 rgba(255,255,255,.6)}
+.btn-y:hover{background:#ffe02a}
+.btn-k{background:var(--ink);color:#fff}
+.btn-k:hover{background:#2a2925}
+.btn-o{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* glass */
+.glass{background:rgba(251,251,248,.62);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 20px 60px -20px rgba(21,20,18,.32)}
+
+/* nav */
+.nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;height:58px;border-radius:999px;display:flex;align-items:center;justify-content:space-between;padding:0 8px 0 22px;max-width:1180px;margin:0 auto}
+.brand{font-family:var(--display);font-weight:900;font-size:20px;letter-spacing:-.01em;text-decoration:none;display:flex;align-items:baseline;gap:8px}
+.brand i{font-style:normal;display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 2px var(--ink)}
+.brand small{font-family:var(--body);font-weight:400;font-size:14px;color:var(--ink-2);letter-spacing:0}
+.nav ul{display:none;list-style:none;gap:30px}
+.nav ul a{text-decoration:none;font-family:var(--display);font-weight:600;font-size:16px}
+.nav ul a:hover{text-decoration:underline;text-decoration-color:var(--yellow);text-decoration-thickness:3px;text-underline-offset:6px}
+.nav .btn{min-height:44px;padding:0 18px;font-size:15px}
+@media(min-width:900px){.nav{top:16px;left:24px;right:24px}.nav ul{display:flex}}
+@media(max-width:899px){.brand small{display:none}}
+
+/* hero */
+.hero{position:relative;min-height:100svh}
+.hero-photo{position:relative;height:72svh;min-height:520px;overflow:hidden}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 62%;transform-origin:50% 60%}
+.hero-photo::after{content:"";position:absolute;inset:auto 0 0 0;height:28%;background:linear-gradient(to bottom,rgba(243,243,239,0),var(--white) 88%)}
+.hero-copy{position:relative;z-index:2;margin-top:-15svh;padding:0 var(--gut)}
+.hero h1{font-size:clamp(56px,15.5vw,124px)}
+.hero h1 span{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 span b{display:block;font-weight:inherit}
+.hero h1 .hl b{display:inline;background:linear-gradient(transparent 58%,var(--yellow) 58%,var(--yellow) 92%,transparent 92%);padding:0 .04em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hero-sub{margin-top:22px;max-width:30em;font-size:17px;color:var(--ink-2)}
+.hero-cta{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px}
+.rate-card{position:absolute;z-index:3;right:var(--gut);top:calc(76svh - 23svh - 120px);border-radius:24px;padding:16px 20px 16px 18px;display:flex;gap:14px;align-items:center;max-width:300px}
+.rate-card .big{font-family:var(--display);font-weight:800;font-size:44px;line-height:1}
+.rate-card .stars{display:flex;gap:2px;margin-bottom:2px}
+.rate-card .stars svg{width:15px;height:15px;fill:var(--ink)}
+.rate-card p{font-size:14px;line-height:1.35;color:var(--ink-2)}
+@media(max-width:899px){.rate-card{top:auto;bottom:auto;position:relative;right:auto;margin:30px var(--gut) 0;display:inline-flex}}
+@media(min-width:900px){
+  .hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);min-height:100vh;align-items:end;padding:0 0 0 var(--gut)}
+  .hero-photo{grid-column:2;grid-row:1;height:calc(100vh - 32px);min-height:640px;margin:16px 16px 16px 0;border-radius:28px}
+  .hero-photo img{object-position:50% 62%}
+  .hero-photo::after{display:none}
+  .hero-copy{grid-column:1;grid-row:1;margin:0;padding:0 40px 9vh 0;align-self:end}
+  .hero h1{font-size:clamp(84px,8.6vw,132px)}
+  .rate-card{top:auto;bottom:9vh;right:auto;left:calc(52.5% - 150px)}
+}
+
+/* sections */
+section{position:relative}
+.wrap{max-width:1240px;margin:0 auto;padding:0 var(--gut)}
+.sec{padding:clamp(72px,11vw,150px) 0}
+.h2{font-family:var(--display);font-weight:800;font-size:clamp(44px,9vw,92px);line-height:.92;letter-spacing:-.02em;word-spacing:.06em}
+.lede{font-size:18px;color:var(--ink-2);max-width:32em;margin-top:18px}
+.mask{clip-path:inset(12% 0 0 0 round 22px);transition:clip-path 1.1s var(--ease)}
+.mask.in{clip-path:inset(0 0 0 0 round 22px)}
+
+/* off the lot */
+.lot-head{display:grid;gap:18px;margin-bottom:40px}
+@media(min-width:900px){.lot-head{grid-template-columns:1.2fr 1fr;align-items:end;margin-bottom:56px}}
+.band{position:relative;border-radius:22px;overflow:hidden;height:clamp(380px,62vw,720px)}
+.band img{width:100%;height:100%;object-fit:cover;object-position:46% 60%}
+.cap{font-size:15px;color:var(--ink-2);margin-top:14px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.cap strong{font-family:var(--display);font-weight:700;font-size:17px;color:var(--ink)}
+.rail{margin-top:clamp(36px,6vw,64px);display:grid;grid-auto-flow:column;grid-auto-columns:72%;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.rail figure{scroll-snap-align:start}
+.rail .ph{aspect-ratio:3/4;border-radius:18px;overflow:hidden;background:#ddd}
+.rail img{width:100%;height:100%;object-fit:cover}
+.rail figcaption{margin-top:12px;font-size:15px;line-height:1.45;color:var(--ink-2)}
+.rail figcaption strong{display:block;font-family:var(--display);font-weight:700;font-size:18px;color:var(--ink);letter-spacing:-.005em}
+@media(min-width:900px){.rail{grid-auto-flow:row;grid-template-columns:repeat(4,1fr);gap:20px;overflow:visible}.rail figure:nth-child(even){margin-top:56px}}
+
+/* the banner (signature) */
+.wall{background:
+  repeating-linear-gradient(to bottom,rgba(0,0,0,0) 0 22px,rgba(120,95,0,.16) 22px 24px,rgba(255,255,255,.22) 24px 25px),
+  var(--yellow);}
+.wall .intro{max-width:40em;margin-bottom:clamp(32px,5vw,56px)}
+.wall .intro p{font-size:18px;margin-top:16px;color:#2b2a26}
+.banner{background:var(--ink);color:#fff;border-radius:26px;padding:clamp(26px,4vw,48px);display:grid;gap:28px;box-shadow:0 40px 80px -40px rgba(60,48,0,.6)}
+.banner-name{font-family:var(--display);font-weight:800;color:var(--gold);font-size:clamp(54px,11vw,124px);line-height:.88;letter-spacing:-.01em}
+.banner-name small{display:block;color:#fff;font-weight:600;font-size:.235em;letter-spacing:.06em;margin-top:.5em}
+.svc{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.svc button{width:100%;min-height:46px;text-align:left;padding:10px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:#fff;font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;transition:background .18s,color .18s,transform .16s}
+.svc button:hover{background:rgba(255,255,255,.1)}
+.svc button:active{transform:scale(.98)}
+.svc button[aria-selected="true"]{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
+@media(min-width:900px){.banner{grid-template-columns:1.3fr 1fr;align-items:center}.svc{grid-template-columns:1fr}.svc button{min-height:44px;padding:8px 16px;font-size:16px}}
+.proof{margin-top:18px;border-radius:26px;padding:clamp(20px,3vw,32px);display:grid;gap:22px;background:rgba(251,251,248,.72)}
+@media(min-width:900px){.proof{grid-template-columns:1fr 1.1fr;align-items:center;margin:-40px 40px 0;position:relative}}
+.proof h3{font-family:var(--display);font-weight:800;font-size:clamp(30px,4.4vw,46px);line-height:1;letter-spacing:-.015em}
+.proof p{margin-top:12px;color:var(--ink-2);font-size:16.5px}
+.proof ul{margin-top:12px;list-style:none;display:grid;gap:6px;font-size:16px}
+.proof ul li{padding-left:22px;position:relative}
+.proof ul li::before{content:"";position:absolute;left:0;top:.62em;width:12px;height:3px;border-radius:2px;background:var(--ink)}
+.proof .src{font-size:14px;color:var(--asphalt);margin-top:14px}
+.proof blockquote{font-style:italic;font-size:17px;line-height:1.55;margin-top:14px}
+.proof blockquote cite{display:block;font-style:normal;font-size:14px;color:var(--asphalt);margin-top:6px}
+.proof-media{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.proof-media img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px}
+.proof-media.one{grid-template-columns:1fr}
+.proof-media.one img{aspect-ratio:auto;height:auto}
+.proof .act{margin-top:18px}
+.fade{animation:pf .35s var(--ease)}
+@keyframes pf{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* video band */
+.clip{position:relative;height:clamp(320px,56vw,680px);overflow:hidden;background:var(--ink)}
+.clip video{width:100%;height:100%;object-fit:cover}
+.clip .chip{position:absolute;left:var(--gut);bottom:22px;border-radius:16px;padding:12px 18px;font-size:15px;max-width:min(420px,calc(100% - 32px))}
+.clip .chip strong{font-family:var(--display);font-weight:700;font-size:17px;display:block}
+
+/* reviews */
+.revs{overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;pointer-events:none;animation:drift 26s ease-in-out infinite alternate}
+.orb.a{width:520px;height:520px;background:var(--yellow-soft);right:-160px;top:30%}
+.orb.b{width:420px;height:420px;background:#e6e1d3;left:-140px;bottom:-60px;animation-duration:31s}
+@keyframes drift{to{transform:translate(-60px,40px) scale(1.08)}}
+.score{display:flex;align-items:flex-end;gap:18px;margin-bottom:34px}
+.score .n{font-family:var(--display);font-weight:800;font-size:clamp(84px,16vw,150px);line-height:.8;letter-spacing:-.03em}
+.score p{font-size:16px;color:var(--ink-2);line-height:1.4;padding-bottom:6px}
+.lead-q{font-size:clamp(21px,3.4vw,38px);line-height:1.38;font-weight:400;max-width:24em;position:relative;z-index:1}
+.lead-q::before{content:"\201C";display:block;font-family:var(--display);font-weight:800;font-size:110px;line-height:.6;height:44px;color:var(--yellow);-webkit-text-stroke:2px var(--ink)}
+.lead-q cite{display:block;margin-top:20px;font-style:normal;font-family:var(--display);font-weight:700;font-size:17px}
+.lead-q cite span{font-family:var(--body);font-weight:400;color:var(--asphalt);font-size:15px}
+.cards{margin-top:clamp(44px,7vw,80px);display:grid;gap:14px;position:relative;z-index:1}
+@media(min-width:760px){.cards{grid-template-columns:1fr 1fr}}
+@media(min-width:1100px){.cards{grid-template-columns:repeat(4,1fr)}}
+.card{border-radius:22px;padding:22px}
+.card p{font-size:16px;line-height:1.55}
+.card cite{display:block;margin-top:14px;font-style:normal;font-family:var(--display);font-weight:700;font-size:16px}
+.card cite span{font-family:var(--body);font-weight:400;color:var(--asphalt);font-size:14px}
+
+/* quote sentence */
+.ask{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.ask .bg{position:absolute;inset:0;opacity:.42}
+.ask .bg img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.ask .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(21,20,18,.55),rgba(21,20,18,.85))}
+.ask .wrap{position:relative}
+.ask .h2{color:#fff}
+.ask .lede{color:#d9d7d0}
+.form{margin-top:34px;border-radius:28px;padding:clamp(22px,4vw,44px);background:rgba(28,27,24,.5);-webkit-backdrop-filter:blur(24px) saturate(150%);backdrop-filter:blur(24px) saturate(150%);border:1px solid rgba(255,255,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 30px 70px -30px rgba(0,0,0,.6);max-width:980px}
+.sentence{font-size:clamp(22px,3.2vw,34px);line-height:1.9;font-weight:400}
+.sentence input,.sentence select{font:inherit;color:var(--yellow);background:rgba(255,255,255,.08);border:0;border-bottom:2px solid rgba(255,255,255,.4);border-radius:10px 10px 4px 4px;padding:0 10px;min-height:46px;max-width:100%;width:7.5em;vertical-align:baseline;transition:border-color .2s,background .2s}
+.sentence input.w{width:9.5em}
+.sentence select{width:auto;cursor:pointer;-webkit-appearance:none;appearance:none;padding-right:30px;background-image:linear-gradient(45deg,transparent 50%,#f4d312 50%),linear-gradient(-45deg,transparent 50%,#f4d312 50%);background-position:calc(100% - 16px) 55%,calc(100% - 10px) 55%;background-size:6px 6px;background-repeat:no-repeat}
+.sentence select option{color:#151412}
+.sentence input::placeholder{color:rgba(255,255,255,.45)}
+.sentence input:focus,.sentence select:focus{outline:none;border-bottom-color:var(--yellow);background:rgba(244,211,18,.12)}
+.form .row{margin-top:26px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.form .note{font-size:14px;color:#bdbab2}
+
+/* visit */
+.visit{display:grid;gap:40px}
+@media(min-width:900px){.visit{grid-template-columns:1.1fr 1fr;align-items:start}}
+.facts{display:grid;gap:0;border-top:1px solid var(--line)}
+.facts div{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.facts dt{font-family:var(--display);font-weight:700;font-size:16px}
+.facts dd{font-size:17px}
+.facts a{text-decoration-color:var(--yellow);text-decoration-thickness:3px;text-underline-offset:4px}
+.visit .ph{border-radius:22px;overflow:hidden;aspect-ratio:4/5}
+.visit .ph img{width:100%;height:100%;object-fit:cover;object-position:40% 50%}
+.bigphone{display:inline-block;margin-top:26px;font-family:var(--display);font-weight:800;font-size:clamp(40px,7vw,76px);letter-spacing:-.02em;line-height:1;text-decoration:none;background:linear-gradient(transparent 62%,var(--yellow) 62%,var(--yellow) 94%,transparent 94%)}
+
+footer{padding:40px var(--gut) 40px;border-top:1px solid var(--line);font-size:14px;color:var(--ink-2);display:flex;flex-wrap:wrap;gap:10px 30px;justify-content:space-between;max-width:1240px;margin:0 auto}
+
+/* dock */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));border-radius:999px;padding:7px;display:grid;grid-template-columns:1.4fr 1fr;gap:7px}
+.dock .btn{min-height:52px;padding:0 12px}
+@media(min-width:900px){.dock{display:none}}
+
+/* load sequence */
+.js .hero-photo img{transform:scale(1.08);opacity:.001;transition:transform 1.3s var(--ease),opacity .7s ease}
+.js .hero h1 b{transform:translateY(105%);transition:transform .9s var(--ease)}
+.js .hero-sub,.js .hero-cta{opacity:0;transform:translateY(10px);transition:opacity .6s ease .75s,transform .6s var(--ease) .75s}
+.js .rate-card{opacity:0;transform:translateY(16px) scale(.97);transition:opacity .7s ease .95s,transform .9s var(--ease) .95s}
+.ready .hero-photo img{transform:none;opacity:1}
+.ready .hero h1 b{transform:none}
+.ready .hero h1 span:nth-child(2) b{transition-delay:.12s}
+.ready .hero h1 span:nth-child(3) b{transition-delay:.24s}
+.ready .hero-sub,.ready .hero-cta,.ready .rate-card{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .hero-photo img,.js .hero h1 b,.js .hero-sub,.js .hero-cta,.js .rate-card{opacity:1;transform:none}
+  .mask{clip-path:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+
+<nav class="nav glass" aria-label="Main">
+  <a class="brand" href="#top"><i aria-hidden="true"></i>Gloss Boss <small>Auto Spa &amp; Detailing</small></a>
+  <ul>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#banner">Services</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#visit">Visit</a></li>
+  </ul>
+  <a class="btn btn-k" href="tel:+13434223379">Call</a>
+</nav>
+
+<header class="hero" id="top">
+  <figure class="hero-photo">
+    <img src="img/p3.jpg" alt="Black Mercedes-Benz GLE, freshly detailed, parked in front of the yellow Gloss Boss shop on Bath Road" width="787" height="1400" fetchpriority="high">
+  </figure>
+  <div class="hero-copy">
+    <h1 class="display"><span><b>The full</b></span><span class="hl"><b>Gloss Boss</b></span><span><b>treatment.</b></span></h1>
+    <p class="hero-sub">Auto spa and detailing at 1404 Bath Rd in Kingston. Detailing, window tint, ceramic coating, paint correction and more. Open every day, 9 to 7.</p>
+    <div class="hero-cta">
+      <a class="btn btn-y" href="tel:+13434223379"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>(343) 422-3379</a>
+      <a class="btn btn-o" href="#ask">Get a price</a>
+    </div>
+  </div>
+  <aside class="rate-card glass" aria-label="Google rating">
+    <div class="big"><span data-count="5" data-dec="1">5.0</span></div>
+    <div>
+      <div class="stars" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6L10 14.8 4.6 17.8l1.2-6L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6L10 14.8 4.6 17.8l1.2-6L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6L10 14.8 4.6 17.8l1.2-6L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6L10 14.8 4.6 17.8l1.2-6L1.4 7.7l6-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6L10 14.8 4.6 17.8l1.2-6L1.4 7.7l6-.7z"/></svg></div>
+      <p>14 Google reviews. &ldquo;&hellip;my vehicle looked amazing after the detailing.&rdquo;</p>
+    </div>
+  </aside>
+</header>
+
+<main>
+<section class="sec" id="work">
+  <div class="wrap">
+    <div class="lot-head">
+      <h2 class="h2">Fresh off<br>the lot.</h2>
+      <p class="lede">We don&rsquo;t chase volume. We focus on quality, craftsmanship, and results that turn heads. A few of the cars that rolled out of the bay lately.</p>
+    </div>
+    <figure>
+      <div class="band mask"><img src="img/p9.jpg" alt="Black Ford Mustang convertible with red calipers outside the Gloss Boss shop" loading="lazy" width="1400" height="1050"></div>
+      <figcaption class="cap"><strong>Ford Mustang convertible</strong><span>Out front at 1404 Bath Rd, Kingston</span></figcaption>
+    </figure>
+    <div class="rail" role="list">
+      <figure role="listitem"><div class="ph mask"><img src="img/x3.jpg" alt="Red BMW X3 after a full detail, in front of the shop" loading="lazy"></div><figcaption><strong>BMW X3</strong>Just got the full Gloss Boss treatment.</figcaption></figure>
+      <figure role="listitem"><div class="ph mask"><img src="img/p7.jpg" alt="Black BMW sedan in the bay, hex lights reflected in the hood" loading="lazy"></div><figcaption><strong>Black BMW</strong>In the bay under the hex lights.</figcaption></figure>
+      <figure role="listitem"><div class="ph mask"><img src="img/p5.jpg" alt="Black Mercedes-AMG E53 in the yellow wash bay" loading="lazy"></div><figcaption><strong>Mercedes-AMG E53</strong>In the yellow bay.</figcaption></figure>
+      <figure role="listitem"><div class="ph mask"><img src="img/p12.jpg" alt="Close-up of a black BMW with the yellow shop reflected in the paint" loading="lazy"></div><figcaption><strong>The wall in the paint</strong>Our yellow shop, reflected in a BMW.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec wall" id="banner" aria-labelledby="banner-h">
+  <div class="wrap">
+    <div class="intro">
+      <h2 class="h2" id="banner-h">It&rsquo;s all on the banner.</h2>
+      <p>Everything we do is painted on the sign over our door. Tap a service to see the work behind it.</p>
+    </div>
+    <div class="banner">
+      <div class="banner-name">GLOSS BOSS<small>AUTO SPA AND DETAILING +</small></div>
+      <ul class="svc" role="tablist" aria-label="Services on our banner">
+        <li><button role="tab" data-k="tint" aria-selected="false">Window tint</button></li>
+        <li><button role="tab" data-k="stickers" aria-selected="false">Stickers</button></li>
+        <li><button role="tab" data-k="ceramic" aria-selected="false">Ceramic coating</button></li>
+        <li><button role="tab" data-k="correction" aria-selected="false">Paint correction</button></li>
+        <li><button role="tab" data-k="detailing" aria-selected="true">Detailing</button></li>
+        <li><button role="tab" data-k="chrome" aria-selected="false">Chrome delete</button></li>
+        <li><button role="tab" data-k="caliper" aria-selected="false">Caliper paint</button></li>
+        <li><button role="tab" data-k="wrap" aria-selected="false">Full car wrap</button></li>
+        <li><button role="tab" data-k="wheels" aria-selected="false">Alloy wheels</button></li>
+      </ul>
+    </div>
+    <div class="proof glass" id="proof" role="tabpanel" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="clip" aria-label="Cars on our lot">
+  <video src="video/lineup.mp4" poster="video/lineup-poster.jpg" muted loop playsinline autoplay preload="metadata"></video>
+  <div class="chip glass"><strong>On the lot, Bath Rd</strong>Lined up in front of the yellow wall.</div>
+</section>
+
+<section class="sec revs" id="reviews">
+  <div class="orb a" aria-hidden="true"></div><div class="orb b" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="score"><div class="n"><span data-count="5" data-dec="1">5.0</span></div><p>on Google<br>from <span data-count="14">14</span> reviews</p></div>
+    <blockquote class="lead-q">Great experience with Gloss Boss Auto Spa &amp; Detailing! The service was excellent, the staff was friendly and professional, and my vehicle looked amazing after the detailing. They paid attention to the small details and did a very thorough job. Highly recommended for anyone looking for quality car detailing in Kingston!<cite>Khushi J. <span>Google review</span></cite></blockquote>
+    <div class="cards">
+      <figure class="card glass"><p>&ldquo;Highly recommend Gloss Boss Auto Detailing! They do an amazing job and really pay attention to every little detail. The car came out looking super clean, fresh, and almost brand new.&rdquo;</p><cite>Amol M. <span>Google</span></cite></figure>
+      <figure class="card glass"><p>&ldquo;I would gladly give this car detailing and car wash service a well-deserved 10 out of 10 stars.&rdquo;</p><cite>Vip K. <span>Google</span></cite></figure>
+      <figure class="card glass"><p>&ldquo;Absolutely amazing experience! I got my car tinted here and couldn&rsquo;t be happier with the service.&rdquo;</p><cite>Manpreet K. <span>Google</span></cite></figure>
+      <figure class="card glass"><p>&ldquo;Communication was excellent from start to finish, they were punctual and professional, and the pricing was very affordable compared to other places.&rdquo;</p><cite>Lincoln B. <span>Google</span></cite></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec ask" id="ask">
+  <div class="bg" aria-hidden="true"><img src="img/p7.jpg" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <h2 class="h2">Get a price<br>by text.</h2>
+    <p class="lede">Fill in the blanks. It opens a text to our phone, ready to send.</p>
+    <form class="form" id="q" novalidate>
+      <p class="sentence">Hi Gloss Boss, I&rsquo;m <input name="n" autocomplete="given-name" placeholder="your name" aria-label="Your name">. I drive a <input class="w" name="c" placeholder="car, e.g. BMW X3" aria-label="Your car"> and I&rsquo;d like <select name="s" aria-label="Service">
+        <option>a full detail</option><option>window tint</option><option>ceramic coating</option><option>paint correction</option><option>a chrome delete</option><option>caliper paint</option><option>a full car wrap</option><option>stickers</option><option>alloy wheels</option></select>. Best day for me is <input name="d" placeholder="Saturday" aria-label="Best day">.</p>
+      <div class="row">
+        <button class="btn btn-y" type="submit">Text this to Gloss Boss</button>
+        <span class="note">Goes to (343) 422-3379. Add photos of the car in your text app.</span>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="sec" id="visit">
+  <div class="wrap visit">
+    <div>
+      <h2 class="h2">Come by<br>Bath Road.</h2>
+      <dl class="facts" style="margin-top:34px">
+        <div><dt>Where</dt><dd>1404 Bath Rd, unit C<br>Kingston, ON K7M 4X6</dd></div>
+        <div><dt>Hours</dt><dd>Every day, 9 a.m. to 7 p.m.</dd></div>
+        <div><dt>Book</dt><dd>Call, text, or DM <a href="https://www.instagram.com/glossboss_kingston/" rel="noopener" target="_blank">@glossboss_kingston</a></dd></div>
+        <div><dt>Map</dt><dd><a href="https://www.google.com/maps/place/Gloss+Boss+Auto+Spa+%26+Detailing/data=!4m7!3m6!1s0x4cd2ad5d2e1feb99:0x70a98248086d0940!8m2!3d44.2381531!4d-76.5518559!16s%2Fg%2F11nj3wnz2t!19sChIJmesfLl2t0kwRQAltCEiCqXA" rel="noopener" target="_blank">Directions on Google Maps</a></dd></div>
+      </dl>
+      <a class="bigphone" href="tel:+13434223379">(343) 422-3379</a>
+    </div>
+    <div class="ph mask"><img src="img/door.jpg" alt="The yellow shop entrance on Bath Road, a black car reflecting the wall" loading="lazy"></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <span>Gloss Boss Auto Spa &amp; Detailing, Kingston, Ontario</span>
+  <span>Preview built by JPF. Not live yet.</span>
+</footer>
+
+<div class="dock glass" aria-label="Contact">
+  <a class="btn btn-y" href="tel:+13434223379"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call now</a>
+  <a class="btn btn-k" href="sms:+13434223379">Text</a>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  requestAnimationFrame(function(){requestAnimationFrame(function(){root.classList.add('ready')})});
+
+  /* banner proof panels (facts: their sign, Instagram posts, Google reviews) */
+  var P={
+    detailing:{t:'Detailing',body:'<p>Our Detailing Package, posted as a $79 special in September 2026:</p><ul><li>Floor and mats shampoo</li><li>Interior surface polish</li><li>UV glass cleaner</li><li>Deep vent cleaning</li><li>Steam cleaning</li></ul><p class="src">Text us to check today&rsquo;s price for your car.</p>',media:['img/p11.jpg','Mercedes-AMG cabin with black and red leather, cleaned','img/p10.jpg','BMW cabin with light grey leather seats and clean mats']},
+    tint:{t:'Window tint',body:'<blockquote>&ldquo;Had a great experience getting my car tinted here&hellip; Communication was excellent from start to finish, they were punctual and professional, and the pricing was very affordable compared to other places.&rdquo;<cite>Lincoln B., Google</cite></blockquote><blockquote>&ldquo;I got my car tinted here and couldn&rsquo;t be happier with the service.&rdquo;<cite>Manpreet K., Google</cite></blockquote>',media:['img/sign.jpg','The Gloss Boss banner listing window tint']}
+  };
+  var generic=function(name){return {t:name,body:'<p>'+name+' is painted right on our banner at 1404 Bath Rd. Text a photo of your car and tell us what you have in mind to ask about price and timing.</p>',media:['img/sign.jpg','The Gloss Boss banner over the shop door, listing '+name.toLowerCase()]}};
+  var names={stickers:'Stickers',ceramic:'Ceramic coating',correction:'Paint correction',chrome:'Chrome delete',caliper:'Caliper paint',wrap:'Full car wrap',wheels:'Alloy wheels'};
+  var proof=document.getElementById('proof'), tabs=[].slice.call(document.querySelectorAll('.svc button'));
+  function show(k){
+    var d=P[k]||generic(names[k]);
+    var m=d.media, mh='<div class="proof-media'+(m.length<3?' one':'')+'">';
+    for(var i=0;i<m.length;i+=2) mh+='<img src="'+m[i]+'" alt="'+m[i+1]+'" loading="lazy">';
+    mh+='</div>';
+    proof.innerHTML='<div><h3>'+d.t+'</h3>'+d.body+'<div class="act"><a class="btn btn-k" href="sms:+13434223379?&body='+encodeURIComponent('Hi Gloss Boss, I\'d like a price on '+d.t.toLowerCase()+' for my car.')+'">Ask about '+d.t.toLowerCase()+'</a></div></div>'+mh;
+    proof.classList.remove('fade'); void proof.offsetWidth; proof.classList.add('fade');
+    tabs.forEach(function(b){b.setAttribute('aria-selected',b.dataset.k===k?'true':'false')});
+  }
+  tabs.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.k)})});
+  show('detailing');
+
+  /* reveals + count up */
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function count(el){
+    var to=parseFloat(el.dataset.count), dec=+(el.dataset.dec||0);
+    if(reduce){el.textContent=to.toFixed(dec);return}
+    var t0=null;function step(t){if(!t0)t0=t;var p=Math.min((t-t0)/1100,1),e=1-Math.pow(1-p,3);el.textContent=(to*e).toFixed(dec);if(p<1)requestAnimationFrame(step)}
+    requestAnimationFrame(step);
+  }
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target;if(el.classList.contains('mask'))el.classList.add('in');else count(el);io.unobserve(el)}})},{rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.mask,[data-count]').forEach(function(el){io.observe(el)});
+  } else document.querySelectorAll('.mask').forEach(function(el){el.classList.add('in')});
+
+  /* quote sentence -> sms */
+  document.getElementById('q').addEventListener('submit',function(ev){
+    ev.preventDefault();var f=ev.target;
+    var n=f.n.value.trim(),c=f.c.value.trim(),s=f.s.value,d=f.d.value.trim();
+    var msg='Hi Gloss Boss, I\'m '+(n||'[name]')+'. I drive a '+(c||'[car]')+' and I\'d like '+s+'.'+(d?' Best day for me is '+d+'.':'');
+    location.href='sms:+13434223379?&body='+encodeURIComponent(msg);
+  });
+})();
+</script>
+</body>
+</html>
