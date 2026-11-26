@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Brantford Clean Team | Affordable Home Cleaning in Brantford, ON</title>
+<meta name="description" content="Brantford Clean Team: house cleaning, deep cleans and move-out cleaning in Brantford, Ontario. Rated 5.0 on Google by 23 customers.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,500;0,700;0,800;1,500&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ direction: before-after-pairs-led. Light, airy, honest: the page is built around their own before/after jobs.
+ palette: bone #f6f4ef (wall + white trim in their kitchen photo), sage #cfd5ce (grey-green bathroom wall, p8), ink #17302d (shower-door shadows, deepened), mint #1f8a78 (aqua bedspread, p4, deepened for contrast), oak #8a6a4f (hardwood floor, p1)
+ fonts: Besley (display) + Outfit (body)
+ signature: two drag-to-compare before/after sliders (floor and shower glass) with glass handle chips
+ order: hero > lead review > before/after > services list > room set > reviews > fill-in quote > hours + area
+ motion: one staged hero load, soft rise on the glass card, counters, sliders; all off under reduced motion
+*/
+:root{--bone:#f6f4ef;--sage:#cfd5ce;--ink:#17302d;--mint:#1f8a78;--mintd:#17695b;--oak:#8a6a4f;--line:rgba(23,48,45,.14)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Outfit',system-ui,sans-serif;background:var(--bone);color:var(--ink);font-size:17px;line-height:1.55;overflow-x:hidden;padding-bottom:96px}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:'Besley',Georgia,serif;font-weight:700;letter-spacing:-.01em;line-height:1.04}
+:focus-visible{outline:3px solid var(--mint);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 26px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:transform .18s,background .18s,box-shadow .18s}
+.btn:active{transform:scale(.98)}
+.btn.main{background:var(--mint);color:#fff;box-shadow:0 12px 28px -12px rgba(31,138,120,.7)}
+.btn.main:hover{background:var(--mintd)}
+.btn.ghost{background:rgba(255,255,255,.55);color:var(--ink);border:1px solid rgba(23,48,45,.2)}
+.btn.ghost:hover{background:#fff}
+
+/* nav pill */
+nav{position:sticky;top:12px;z-index:50;width:min(1180px,100% - 24px);margin:12px auto 0;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 8px 8px 22px;border-radius:999px;background:rgba(246,244,239,.62);-webkit-backdrop-filter:blur(22px) saturate(170%);backdrop-filter:blur(22px) saturate(170%);border:1px solid rgba(255,255,255,.6);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 18px 50px -22px rgba(23,48,45,.35)}
+nav b{font-family:'Besley',serif;font-weight:800;font-size:18px;white-space:nowrap}
+nav .links{display:none;gap:26px;font-size:15px;font-weight:500}
+nav .links a{text-decoration:none;opacity:.8}
+nav .links a:hover{opacity:1}
+nav .btn{min-height:44px;padding:0 20px;font-size:15px;white-space:nowrap}
+@media(max-width:819px){nav b{font-size:16px}}
+
+/* hero */
+.hero{position:relative;margin-top:-68px;padding-top:68px;overflow:hidden}
+.hero .orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;pointer-events:none;animation:drift 26s ease-in-out infinite alternate}
+.o1{width:420px;height:420px;background:#8fd0bf;top:-80px;right:-120px}
+.o2{width:360px;height:360px;background:var(--sage);bottom:0;left:-140px;animation-delay:-9s}
+@keyframes drift{to{transform:translate(40px,30px)}}
+.hero-grid{position:relative;display:grid;gap:26px;padding:34px 0 56px}
+.hero h1{font-size:clamp(46px,13.4vw,72px);word-spacing:.08em;max-width:12ch}
+@media(min-width:820px){.hero h1{max-width:9em}}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--mint)}
+.hero p.lede{margin:18px 0 26px;font-size:19px;max-width:30ch;opacity:.85}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.photo{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/4.2;box-shadow:0 40px 80px -40px rgba(23,48,45,.55)}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:30% 60%}
+.gcard{position:absolute;left:14px;right:14px;bottom:14px;padding:16px 18px;border-radius:22px;background:rgba(246,244,239,.66);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 20px 50px -20px rgba(23,48,45,.35);display:flex;gap:16px;align-items:center}
+.gcard .num{font-family:'Besley',serif;font-weight:800;font-size:46px;line-height:1}
+.gcard small{display:block;font-size:14px;line-height:1.35}
+.stars{color:var(--mint);letter-spacing:2px;font-size:15px}
+.load{opacity:0;transform:translateY(16px);animation:in .8s cubic-bezier(.2,.7,.2,1) forwards}
+.l2{animation-delay:.12s}.l3{animation-delay:.24s}.l4{animation-delay:.4s}
+@keyframes in{to{opacity:1;transform:none}}
+
+/* lead quote */
+.lead{padding:30px 0 70px}
+.lead blockquote{font-family:'Besley',serif;font-weight:500;font-size:clamp(27px,7.2vw,50px);line-height:1.18;max-width:20em}
+.lead blockquote span{color:var(--mint)}
+.lead cite{display:block;margin-top:20px;font-style:normal;font-size:15px;opacity:.75}
+
+/* before after */
+.ba{background:var(--ink);color:var(--bone);padding:72px 0 80px;position:relative;overflow:hidden}
+.ba .orb{position:absolute;width:380px;height:380px;border-radius:50%;filter:blur(80px);background:var(--mint);opacity:.28;top:-100px;left:-100px;animation:drift 28s ease-in-out infinite alternate}
+.ba h2{font-size:clamp(36px,10vw,58px);max-width:11ch}
+.ba p.sub{margin:14px 0 36px;opacity:.78;max-width:34ch}
+.pairs{display:grid;gap:34px;position:relative}
+.pair figcaption{margin-top:12px;font-size:15px;opacity:.8}
+.cmp{position:relative;border-radius:26px;overflow:hidden;aspect-ratio:4/4.4;touch-action:pan-y;user-select:none;-webkit-user-select:none;background:#000;cursor:ew-resize;box-shadow:0 40px 70px -35px #000}
+.cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.cmp .top{clip-path:inset(0 50% 0 0)}
+.tag{position:absolute;top:14px;padding:6px 14px;border-radius:999px;font-size:13px;font-weight:600;background:rgba(23,48,45,.55);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.25);color:#fff;z-index:2}
+.tag.b{left:14px}.tag.a{right:14px}
+.bar{position:absolute;top:0;bottom:0;left:50%;width:2px;background:rgba(255,255,255,.85);z-index:3;pointer-events:none}
+.knob{position:absolute;top:50%;left:50%;width:52px;height:52px;margin:-26px 0 0 -26px;border-radius:50%;z-index:4;display:grid;place-items:center;background:rgba(246,244,239,.28);-webkit-backdrop-filter:blur(16px) saturate(160%);backdrop-filter:blur(16px) saturate(160%);border:1px solid rgba(255,255,255,.6);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 10px 30px -8px rgba(0,0,0,.5);pointer-events:none;color:#fff;font-size:18px}
+.cmp input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;z-index:5;margin:0}
+
+/* services */
+.svc{padding:84px 0 40px}
+.svc h2{font-size:clamp(34px,9.4vw,54px);max-width:12ch;margin-bottom:30px}
+.rows{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:44px 1fr;gap:6px 12px;padding:22px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.row i{font-style:normal;font-family:'Besley',serif;color:var(--mint);font-weight:700;font-size:20px}
+.row h3{font-size:24px}
+.row p{grid-column:2;opacity:.78;font-size:16px}
+
+/* rooms */
+.rooms{padding:50px 0 80px}
+.rooms h2{font-size:clamp(32px,8.6vw,50px);margin-bottom:26px;max-width:14ch}
+.set{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.set figure{border-radius:20px;overflow:hidden;background:var(--sage)}
+.set img{width:100%;height:100%;object-fit:cover}
+.set .w{grid-column:span 2;aspect-ratio:16/10}
+.set .t{aspect-ratio:3/4}
+.set .s{aspect-ratio:1/1}
+.set .s:last-child{grid-column:span 2;aspect-ratio:16/9}
+.set .s:last-child img{object-position:50% 45%}
+.nn{display:none}
+
+/* reviews */
+.rev{background:var(--sage);padding:76px 0 84px;position:relative;overflow:hidden}
+.rev .orb{position:absolute;width:340px;height:340px;border-radius:50%;filter:blur(70px);background:#8fd0bf;opacity:.5;right:-120px;top:40px;animation:drift 24s ease-in-out infinite alternate}
+.rev h2{font-size:clamp(32px,8.6vw,50px);margin-bottom:10px}
+.rev .score{margin-bottom:30px;opacity:.8}
+.cards{display:grid;gap:16px;position:relative}
+.card{padding:26px 24px;border-radius:24px;background:rgba(246,244,239,.6);-webkit-backdrop-filter:blur(20px) saturate(150%);backdrop-filter:blur(20px) saturate(150%);border:1px solid rgba(255,255,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 24px 50px -28px rgba(23,48,45,.4)}
+.card p{font-size:17px}
+.card cite{display:block;margin-top:14px;font-style:normal;font-weight:600;font-size:15px}
+
+/* quote */
+.quote{position:relative;padding:84px 0;overflow:hidden;color:var(--bone)}
+.quote>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.9)}
+.quote:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,48,45,.55),rgba(23,48,45,.8));z-index:1}
+.quote .wrap{position:relative;z-index:2}
+.panel{padding:30px 24px;border-radius:28px;background:rgba(23,48,45,.58);-webkit-backdrop-filter:blur(24px) saturate(150%);backdrop-filter:blur(24px) saturate(150%);border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 30px 70px -30px rgba(0,0,0,.6);max-width:760px}
+.panel h2{font-size:clamp(32px,8.6vw,50px);margin-bottom:22px}
+.sentence{font-size:20px;line-height:2.4}
+.sentence input,.sentence select{font:inherit;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);border-radius:14px;padding:6px 14px;min-height:44px;max-width:100%;width:200px;transition:border .18s,background .18s}
+.sentence select option{color:#17302d}
+.sentence input::placeholder{color:rgba(255,255,255,.6)}
+.sentence input:focus,.sentence select:focus{outline:none;border-color:#8fd0bf;box-shadow:0 0 0 3px rgba(143,208,191,.35);background:rgba(255,255,255,.18)}
+.panel .btn{margin-top:18px}
+.panel .note{margin-top:14px;font-size:14px;opacity:.8}
+
+/* hours */
+.info{padding:76px 0 60px}
+.info h2{font-size:clamp(32px,8.6vw,50px);margin-bottom:26px}
+.cols{display:grid;gap:30px}
+.hrs div{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-size:17px}
+.hrs div span:last-child{font-weight:500}
+.hrs .off span:last-child{opacity:.55}
+.area p{font-size:19px;max-width:28ch}
+.area .tel{display:inline-block;margin-top:18px;font-family:'Besley',serif;font-size:32px;font-weight:700;text-decoration:none}
+
+footer{padding:24px 0 30px;font-size:14px;opacity:.75;border-top:1px solid var(--line)}
+
+/* dock */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));display:flex;gap:8px;padding:8px;border-radius:999px;background:rgba(246,244,239,.66);-webkit-backdrop-filter:blur(22px) saturate(170%);backdrop-filter:blur(22px) saturate(170%);border:1px solid rgba(255,255,255,.6);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 20px 50px -18px rgba(23,48,45,.45)}
+.dock a{flex:1;min-height:48px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-weight:600;text-decoration:none;font-size:16px;transition:transform .18s}
+.dock a:active{transform:scale(.97)}
+.dock .c{background:var(--mint);color:#fff;flex:1.3}
+.dock .t{color:var(--ink)}
+
+.rise{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s}
+.rise.on{opacity:1;transform:none}
+
+@media(min-width:820px){
+ body{padding-bottom:0;font-size:18px}
+ nav .links{display:flex}
+ .dock{display:none}
+ .hero-grid{grid-template-columns:1.05fr 1fr;align-items:center;gap:56px;padding:60px 0 90px}
+ .hero h1{font-size:clamp(68px,6.6vw,96px)}
+ .photo{aspect-ratio:4/5}
+ .gcard{left:auto;width:300px;right:-1px;bottom:22px;margin-right:22px}
+ .pairs{grid-template-columns:1fr 1fr;gap:40px}
+ .row{grid-template-columns:70px 280px 1fr;padding:30px 0}
+ .row p{grid-column:3}
+ .row h3{font-size:30px}
+ .set{grid-template-columns:repeat(6,1fr);gap:14px}
+ .set .w{grid-column:span 4;aspect-ratio:auto;grid-row:span 2}
+ .set .t{grid-column:span 2;aspect-ratio:auto}
+ .set .s{grid-column:span 2;aspect-ratio:auto;height:100%}
+ .set .s:last-child{aspect-ratio:auto}
+ .nn{display:inline}
+ .cards{grid-template-columns:1fr 1fr 1fr}
+ .cols{grid-template-columns:1fr 1fr;gap:80px}
+ .sentence{font-size:24px}
+ .panel{padding:44px}
+ footer{padding-bottom:30px}
+}
+@media(prefers-reduced-motion:reduce){
+ *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+ .load,.rise{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <b>Brantford Clean Team</b>
+  <div class="links"><a href="#work">Before &amp; after</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#quote">Quote</a></div>
+  <a class="btn main" href="tel:+12262080866">Call <span class="nn">&nbsp;(226) 208-0866</span></a>
+</nav>
+
+<header class="hero">
+  <div class="orb o1"></div><div class="orb o2"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <h1 class="load">Home cleaning that <em>shows.</em></h1>
+      <p class="lede load l2">Affordable house cleaning, deep cleans and move-out cleans in Brantford, Ontario.</p>
+      <div class="cta load l3">
+        <a class="btn main" href="tel:+12262080866">Call (226) 208-0866</a>
+        <a class="btn ghost" href="#quote">Get a quote</a>
+      </div>
+    </div>
+    <div class="photo load l4">
+      <img src="img/p1.jpg" alt="Clean open kitchen with hardwood floors cleaned by Brantford Clean Team" fetchpriority="high">
+      <div class="gcard">
+        <div class="num" data-count="5" data-dec="1">5.0</div>
+        <div><span class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><small><b data-count="23">23</b> Google reviews<br>Open Mon to Fri, 9 a.m. to 3 p.m.</small></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="lead">
+  <div class="wrap rise">
+    <blockquote>&ldquo;Our house has never been so clean and the ladies are always so great with both <span>cats and our dog.</span>&rdquo;</blockquote>
+    <cite>Joanna S., Google</cite>
+  </div>
+</section>
+
+<section class="ba" id="work">
+  <div class="orb"></div>
+  <div class="wrap">
+    <h2 class="rise">Before. After. Drag it.</h2>
+    <p class="sub rise">Real jobs from Brantford Clean Team. Slide to see the difference.</p>
+    <div class="pairs">
+      <figure class="pair rise">
+        <div class="cmp" data-cmp>
+          <img src="img/ba1-after.jpg" alt="Living room floor after cleaning, shiny and clear" loading="lazy">
+          <img class="top" src="img/ba1-before.jpg" alt="Living room floor before cleaning, dusty and cluttered" loading="lazy">
+          <span class="tag b">Before</span><span class="tag a">After</span>
+          <div class="bar"></div><div class="knob">&#8596;</div>
+          <input type="range" min="0" max="100" value="50" aria-label="Compare living room floor before and after">
+        </div>
+        <figcaption>Floors, after the clean.</figcaption>
+      </figure>
+      <figure class="pair rise">
+        <div class="cmp" data-cmp>
+          <img src="img/ba2-after.jpg" alt="Shower glass and tile after cleaning" loading="lazy">
+          <img class="top" src="img/ba2-before.jpg" alt="Shower glass and tile before cleaning" loading="lazy">
+          <span class="tag b">Before</span><span class="tag a">After</span>
+          <div class="bar"></div><div class="knob">&#8596;</div>
+          <input type="range" min="0" max="100" value="50" aria-label="Compare shower glass before and after">
+        </div>
+        <figcaption>Shower glass and tile.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="svc" id="services">
+  <div class="wrap">
+    <h2 class="rise">What we clean.</h2>
+    <div class="rows rise">
+      <div class="row"><i>01</i><h3>Regular cleaning</h3><p>Bi-weekly house cleaning, so your home stays fresh between visits.</p></div>
+      <div class="row"><i>02</i><h3>Deep cleaning</h3><p>A full deep clean of the whole home, kitchens and bathrooms included.</p></div>
+      <div class="row"><i>03</i><h3>Move-out cleaning</h3><p>Leave the place ready for the next person.</p></div>
+      <div class="row"><i>04</i><h3>The forgotten spots</h3><p>From air vents to window tracks, the places most people skip.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="rooms">
+  <div class="wrap">
+    <h2 class="rise">Rooms we have left shining.</h2>
+    <div class="set rise">
+      <figure class="w"><img src="img/p8.jpg" alt="Clean double-vanity bathroom with mirrors" loading="lazy" style="object-position:50% 40%"></figure>
+      <figure class="t"><img src="img/p4.jpg" alt="Tidy bedroom with made bed" loading="lazy"></figure>
+      <figure class="t"><img src="img/p2.jpg" alt="Spotless glass shower and marble bathroom" loading="lazy"></figure>
+      <figure class="s"><img src="img/p6.jpg" alt="Clean white kitchen with wall ovens" loading="lazy"></figure>
+      <figure class="s"><img src="img/p10.jpg" alt="Bathroom with chandelier, clean tile floor" loading="lazy"></figure>
+      <figure class="s"><img src="img/p7.jpg" alt="Polished shower panel on white marble tile" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="rev" id="reviews">
+  <div class="orb"></div>
+  <div class="wrap">
+    <h2 class="rise">What customers say.</h2>
+    <p class="score rise"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5.0 from 23 Google reviews</p>
+    <div class="cards">
+      <div class="card rise"><p>&ldquo;Caroline and her team at Brantford Clean Team did a deep clean of some key areas of my home before an Open House. It was a fantastic experience. They were very friendly, efficient and thorough.&rdquo;</p><cite>Lisa C., Google</cite></div>
+      <div class="card rise"><p>&ldquo;Brantford Clean Team exceeded my expectations. I was blown away by how spotless my house was.&rdquo;</p><cite>Tina W., Google</cite></div>
+      <div class="card rise"><p>&ldquo;Caroline and her team did a complete deep clean of our home today. In short they did a fabulous job.&rdquo;</p><cite>Barry K., Google</cite></div>
+    </div>
+  </div>
+</section>
+
+<section class="quote" id="quote">
+  <img src="img/p4.jpg" alt="" loading="lazy">
+  <div class="wrap">
+    <form class="panel rise" id="qf">
+      <h2>Get a quote.</h2>
+      <div class="sentence">
+        Hi, I&rsquo;m <input id="nm" placeholder="your name" autocomplete="given-name" aria-label="Your name"> and I need a
+        <select id="sv" aria-label="Service"><option>regular clean</option><option>deep clean</option><option>move-out clean</option><option>something else</option></select>
+        in <input id="ar" value="Brantford" aria-label="Where"> .
+      </div>
+      <button class="btn main" type="submit">Text Caroline&rsquo;s team</button>
+      <p class="note">Opens a text message to (226) 208-0866. Or just call.</p>
+    </form>
+  </div>
+</section>
+
+<section class="info">
+  <div class="wrap cols">
+    <div>
+      <h2 class="rise">Hours.</h2>
+      <div class="hrs rise">
+        <div><span>Monday</span><span>9 a.m. to 3 p.m.</span></div>
+        <div><span>Tuesday</span><span>9 a.m. to 3 p.m.</span></div>
+        <div><span>Wednesday</span><span>9 a.m. to 3 p.m.</span></div>
+        <div><span>Thursday</span><span>9 a.m. to 3 p.m.</span></div>
+        <div><span>Friday</span><span>9 a.m. to 3 p.m.</span></div>
+        <div class="off"><span>Saturday</span><span>Closed</span></div>
+        <div class="off"><span>Sunday</span><span>Closed</span></div>
+      </div>
+    </div>
+    <div class="area rise">
+      <h2 style="font-size:clamp(32px,8.6vw,50px);margin-bottom:20px">Serving Brantford, Ontario.</h2>
+      <p>Affordable home cleaning for Brantford homes.</p>
+      <a class="tel" href="tel:+12262080866">(226) 208-0866</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">Preview built by JPF. Not live yet.</div></footer>
+
+<div class="dock">
+  <a class="c" href="tel:+12262080866">Call now</a>
+  <a class="t" href="sms:+12262080866">Text us</a>
+</div>
+
+<script>
+(function(){
+  var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  // reveal
+  var els=document.querySelectorAll('.rise');
+  if('IntersectionObserver' in window&&!rm){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});
+    els.forEach(function(e){io.observe(e)});
+  }else els.forEach(function(e){e.classList.add('on')});
+  // count up
+  if(!rm){
+    document.querySelectorAll('[data-count]').forEach(function(el){
+      var to=parseFloat(el.dataset.count),dec=parseInt(el.dataset.dec||0),t0=null;
+      function f(t){if(!t0)t0=t;var p=Math.min((t-t0)/1100,1);el.textContent=(to*(1-Math.pow(1-p,3))).toFixed(dec);if(p<1)requestAnimationFrame(f)}
+      el.textContent=(0).toFixed(dec);requestAnimationFrame(f);
+    });
+  }
+  // sliders
+  document.querySelectorAll('[data-cmp]').forEach(function(c){
+    var top=c.querySelector('.top'),bar=c.querySelector('.bar'),k=c.querySelector('.knob'),r=c.querySelector('input');
+    function set(v){top.style.clipPath='inset(0 '+(100-v)+'% 0 0)';bar.style.left=v+'%';k.style.left=v+'%'}
+    r.addEventListener('input',function(){set(r.value)});set(r.value);
+  });
+  // quote -> sms
+  document.getElementById('qf').addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=document.getElementById('nm').value.trim()||'a customer',s=document.getElementById('sv').value,a=document.getElementById('ar').value.trim()||'Brantford';
+    var body='Hi, I’m '+n+' and I need a '+s+' in '+a+'. Can I get a quote?';
+    location.href='sms:+12262080866?&body='+encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
