@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Mobile Detailing Bros | Mobile car detailing in Montreal</title>
+<meta name="description" content="Mobile Detailing Bros. Professional mobile car detailing at your doorstep across Greater Montreal. 5.0 on Google. Call (514) 462-8863.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ direction: doorstep dispatch. The van comes to your curb, so the page works like a dispatch ticket (area picker, live open/closed, one tap to text).
+ palette: asphalt ink #101416 (the driveway in their Kia Niro photo), curb slate #1d2427, bone #eef1ee, Niro paint #7a8c8a lifted to #a9c5bc (the one accent, from the Kia Niro in their Instagram post).
+ fonts: Bakbak One (display) + Rubik (body).
+ signature: "Where should the van park?" area picker that rewrites a dispatch ticket and the text message, with a live open/closed light from their Google hours.
+ order: hero photo, dispatch ticket, services list, foam video band, interiors set, reviews, fill-in quote, hours + footer.
+ motion: one hero load-in, count-up numbers, gentle photo reveals. Reduced-motion respected.
+*/
+:root{--ink:#101416;--slate:#1d2427;--slate2:#273034;--bone:#eef1ee;--mute:#9aa6a3;--acc:#a9c5bc;--accd:#7a8c8a;--r-big:26px;--r-sm:15px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--bone);font:400 16px/1.6 'Rubik',system-ui,sans-serif;overflow-x:hidden;padding-bottom:96px}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:6px}
+.d{font-family:'Bakbak One',sans-serif;font-weight:400;letter-spacing:-.005em;word-spacing:.1em;line-height:.95;text-transform:uppercase}
+.lab{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);font-weight:500}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+section{position:relative}
+html{overflow-x:hidden}body{overflow-x:hidden;position:relative}.quote,.hours,.services,.set{overflow:hidden}
+/* glass */
+.glass{background:rgba(16,20,22,.52);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 22px 60px -22px rgba(0,0,0,.55)}
+/* nav */
+nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:7px 7px 7px 20px;border-radius:999px}
+nav .logo{font-size:20px;text-decoration:none;line-height:1;white-space:nowrap}
+nav .logo b{color:var(--acc);font-weight:400}
+nav .links{display:none;gap:26px;font-size:14px}
+nav .links a{text-decoration:none;color:var(--bone);opacity:.85}
+nav .links a:hover{opacity:1;color:var(--acc)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 22px;border-radius:999px;background:var(--acc);color:#0d1214;font:500 15px/1 'Rubik',sans-serif;text-decoration:none;border:0;cursor:pointer;transition:transform .18s,background .18s}
+.btn:hover{background:#c0dad1}.btn:active{transform:scale(.97)}
+.btn.ghost{background:rgba(255,255,255,.08);color:var(--bone);border:1px solid rgba(255,255,255,.28)}
+.btn.ghost:hover{background:rgba(255,255,255,.16)}
+/* hero */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;padding:0 0 112px}
+.hero .ph{position:absolute;inset:0}
+.hero .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;transform:scale(1.08);animation:settle 1.6s cubic-bezier(.2,.7,.2,1) forwards}
+.hero .ph:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,20,22,.5) 0%,rgba(16,20,22,0) 20%,rgba(16,20,22,0) 40%,rgba(16,20,22,.8) 64%,var(--ink) 95%)}
+.hero .wrap{position:relative;z-index:2;width:100%}
+.hero .k{margin-bottom:14px;color:#cfe3dc;text-shadow:0 1px 12px rgba(0,0,0,.8)}
+h1{font-size:clamp(60px,17.5vw,96px);max-width:9ch}
+h1 span{display:block;opacity:0;transform:translateY(26px);animation:up .9s cubic-bezier(.2,.7,.2,1) forwards}
+h1 span:nth-child(2){animation-delay:.15s;color:var(--acc)}
+.hero p.sub{margin:18px 0 24px;max-width:30ch;font-size:17px;color:#dfe6e3;opacity:0;animation:up .9s .35s cubic-bezier(.2,.7,.2,1) forwards}
+.hero .cta{display:flex;gap:10px;flex-wrap:wrap;opacity:0;animation:up .9s .5s cubic-bezier(.2,.7,.2,1) forwards}
+.hcard{position:absolute;z-index:3;top:84px;right:14px;padding:14px 18px;border-radius:22px;max-width:210px;opacity:0;animation:up .9s .7s cubic-bezier(.2,.7,.2,1) forwards}
+.hcard .big{font-size:38px;line-height:1;color:var(--bone)}
+.hcard .big small{font-size:15px;color:var(--mute);font-family:'Rubik';letter-spacing:0}
+.hcard .t{font-size:13px;color:#dfe6e3;line-height:1.4;margin-top:6px}
+.stars{color:var(--acc);letter-spacing:3px;font-size:14px}
+@keyframes settle{to{transform:scale(1)}}
+@keyframes up{to{opacity:1;transform:none}}
+/* dispatch */
+.dispatch{padding:96px 0 80px;overflow:hidden}
+.dispatch h2,.services h2,.rev h2,.quote h2,.hours h2{font-size:clamp(44px,11.5vw,84px);margin:12px 0 18px}
+.dispatch .intro{color:#c5cfcc;max-width:46ch;margin-bottom:34px}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;animation:drift 26s ease-in-out infinite alternate}
+.orb.a{width:380px;height:380px;background:rgba(122,140,138,.28);right:-120px;top:20px}
+.orb.b{width:300px;height:300px;background:rgba(169,197,188,.12);left:-100px;bottom:-40px;animation-delay:-9s}
+@keyframes drift{to{transform:translate(-40px,30px)}}
+.areas{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px;position:relative;z-index:2}
+.chip{min-height:46px;padding:0 20px;border-radius:15px;font:500 15px/1 'Rubik',sans-serif;color:var(--bone);cursor:pointer;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.2);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);transition:transform .18s,background .18s,color .18s,border-color .18s}
+.chip:hover{background:rgba(255,255,255,.12)}
+.chip:active{transform:scale(.97)}
+.chip[aria-pressed=true]{background:var(--acc);color:#0d1214;border-color:var(--acc)}
+.ticket{position:relative;z-index:2;display:grid;gap:22px;border-radius:var(--r-big);padding:26px 24px;background:rgba(29,36,39,.7)}
+.ticket:before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--acc),transparent)}
+.ticket .row{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap}
+.ticket .where{font-size:clamp(40px,10.5vw,64px);color:var(--bone);min-height:1em}
+.status{display:inline-flex;align-items:center;gap:9px;padding:9px 16px;border-radius:999px;font-size:14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18)}
+.status i{width:9px;height:9px;border-radius:50%;background:#7a8c8a;display:block}
+.status.open i{background:#8be0a8;box-shadow:0 0 0 4px rgba(139,224,168,.18)}
+.ticket dl{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+.ticket dt{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.ticket dd{font-size:16px}
+.ticket .acts{display:flex;gap:10px;flex-wrap:wrap}
+/* services */
+.services{padding:80px 0 40px}
+.svc{list-style:none;margin-top:30px;border-top:1px solid rgba(255,255,255,.16)}
+.svc li{display:grid;grid-template-columns:48px 1fr;gap:6px 6px;padding:24px 0;border-bottom:1px solid rgba(255,255,255,.16)}
+.svc .n{font-family:'Bakbak One';color:var(--acc);font-size:18px;padding-top:6px}
+.svc h3{font:400 clamp(30px,8vw,44px)/1 'Bakbak One';text-transform:uppercase;word-spacing:.1em}
+.svc p{grid-column:2;color:#b9c4c1;max-width:48ch}
+.svc-grid{display:grid;gap:34px}
+.svc-photo{border-radius:var(--r-big);overflow:hidden;aspect-ratio:4/5;position:relative;max-height:620px}
+.svc-photo img{width:100%;height:100%;object-fit:cover}
+/* video band */
+.band{position:relative;margin:70px 0 0;height:min(78vw,520px);min-height:340px;overflow:hidden}
+.band video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.band:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--ink),rgba(16,20,22,.25) 25%,rgba(16,20,22,.35) 60%,var(--ink))}
+.band .wrap{position:absolute;z-index:2;left:0;right:0;bottom:36px}
+.band .d{font-size:clamp(38px,10vw,92px)}
+/* numbers */
+.nums{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:44px 0 10px}
+.nums div{border-left:1px solid rgba(255,255,255,.2);padding-left:14px}
+.nums b{display:block;font:400 clamp(40px,11vw,76px)/1 'Bakbak One';color:var(--bone)}
+.nums span{font-size:13.5px;color:var(--mute);line-height:1.35;display:block;margin-top:6px}
+/* interiors */
+.set{padding:70px 0 20px}
+.set h2{font-size:clamp(40px,10.5vw,76px);margin:12px 0 28px}
+.mosaic{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mosaic figure{overflow:hidden;border-radius:18px;position:relative;aspect-ratio:3/4}
+.mosaic figure:nth-child(1){grid-row:span 2;aspect-ratio:auto}
+.mosaic img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.mosaic figure:hover img{transform:scale(1.04)}
+.rv{opacity:0;transform:scale(.97);transition:opacity .9s,transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+/* reviews */
+.rev{padding:90px 0 50px;overflow:hidden}
+.lead{font:400 clamp(30px,7.4vw,58px)/1.08 'Bakbak One';word-spacing:.06em;max-width:20ch;margin:20px 0 14px;color:var(--bone);text-transform:none}
+.lead:before{content:"\201C";color:var(--acc)}
+.lead:after{content:"\201D";color:var(--acc)}
+.by{font-size:14px;color:var(--mute);margin-bottom:40px}
+.by b{color:var(--bone);font-weight:500}
+.cards{display:grid;gap:14px;position:relative;z-index:2}
+.card{padding:24px 22px;border-radius:22px;background:rgba(29,36,39,.62)}
+.card p{font-size:16px;color:#dde4e1}
+.card .by{margin:14px 0 0}
+/* quote */
+.quote{padding:90px 0 70px}
+.panel{border-radius:var(--r-big);padding:28px 22px;background:rgba(29,36,39,.62);position:relative;z-index:2}
+.fill{font-size:clamp(20px,5.6vw,30px);line-height:2.15;font-weight:400;color:#d7dfdc}
+.fill input,.fill select{font:500 inherit/1.2 'Rubik',sans-serif;font-size:max(16px,.82em);color:var(--bone);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.24);border-radius:12px;padding:6px 12px;min-height:46px;margin:0 2px;max-width:100%;width:auto;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.fill select{appearance:none;-webkit-appearance:none;padding-right:30px;background-image:linear-gradient(45deg,transparent 50%,var(--acc) 50%),linear-gradient(135deg,var(--acc) 50%,transparent 50%);background-position:calc(100% - 17px) 55%,calc(100% - 12px) 55%;background-size:5px 5px;background-repeat:no-repeat}
+.fill select option{color:#111;background:#fff}
+.fill input:focus,.fill select:focus{outline:2px solid var(--acc);border-color:var(--acc)}
+.fill input::placeholder{color:#7f8c89}
+.fill input.nm,.fill input.cr{display:block;width:100%;margin:4px 0 8px}
+.fill select{margin:4px 0 8px}
+.panel .btn{margin-top:20px;min-height:54px;font-size:16px}
+.note{font-size:13.5px;color:var(--mute);margin-top:14px}
+/* hours */
+.hours{padding:30px 0 60px}
+.hgrid{display:grid;gap:34px}
+.hlist{list-style:none;border-top:1px solid rgba(255,255,255,.16)}
+.hlist li{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.16);font-size:16px}
+.hlist li.today{color:var(--acc)}
+.hlist li span:last-child{color:inherit}
+.bignum{font:400 clamp(40px,11.4vw,100px)/1 'Bakbak One';display:block;text-decoration:none;color:var(--bone);margin:10px 0 18px;word-spacing:.06em}
+.bignum:hover{color:var(--acc)}
+footer{padding:30px 0 20px;font-size:14px;color:var(--mute);border-top:1px solid rgba(255,255,255,.12)}
+/* dock */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));display:flex;gap:8px;padding:7px;border-radius:999px;max-width:480px;margin:0 auto}
+.dock .btn{flex:1;min-height:48px}
+@media(min-width:760px){
+ body{padding-bottom:0}
+ nav .links{display:flex}
+ nav{padding-left:26px}
+ .dock{display:none}
+ .hero{padding-bottom:70px}
+ h1{font-size:clamp(100px,11vw,150px);max-width:none}
+ .hero .ph:after{background:linear-gradient(90deg,rgba(16,20,22,.88) 0%,rgba(16,20,22,.55) 40%,rgba(16,20,22,0) 70%),linear-gradient(180deg,rgba(16,20,22,.4) 0%,rgba(16,20,22,0) 20%,rgba(16,20,22,0) 60%,var(--ink) 100%)}
+ .fill input.nm,.fill input.cr{display:inline-block;width:auto;margin:0 2px}
+ .fill input.nm{width:11ch}.fill input.cr{width:16ch}
+ .fill select{margin:0 2px}
+ .hero p.sub{font-size:20px;max-width:34ch}
+ .hcard{top:auto;bottom:70px;right:40px;max-width:260px;padding:18px 22px}
+ .hero .ph img{object-position:50% 60%}
+ .ticket{grid-template-columns:1.3fr 1fr;padding:38px 40px;gap:34px}
+ .ticket .full{grid-column:1/-1}
+ .svc-grid{grid-template-columns:1.25fr 1fr;gap:70px;align-items:start}
+ .svc-photo{position:sticky;top:90px}
+ .cards{grid-template-columns:repeat(3,1fr)}
+ .mosaic{grid-template-columns:1.2fr 1fr 1fr}
+ .mosaic figure:nth-child(1){grid-row:span 2}
+ .hgrid{grid-template-columns:1fr 1fr;gap:80px}
+ .panel{padding:48px 52px}
+ .dispatch,.rev,.quote{padding-top:130px}
+ .wrap{padding:0 40px}
+}
+@media(prefers-reduced-motion:reduce){
+ *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+ h1 span,.hero p.sub,.hero .cta,.hcard{opacity:1;transform:none}
+ .hero .ph img{transform:none}.rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav class="glass" aria-label="Main">
+ <a class="logo d" href="#top">Detailing <b>Bros</b></a>
+ <div class="links"><a href="#where">Areas</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#quote">Get a quote</a></div>
+ <a class="btn" href="tel:+15144628863">Call now</a>
+</nav>
+
+<header class="hero" id="top">
+ <div class="ph"><img src="img/p2.jpg" alt="Kia Niro detailed in a driveway by Mobile Detailing Bros in Montreal" fetchpriority="high"></div>
+ <div class="hcard glass">
+  <div class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+  <div class="big d">5.0 <small>on Google</small></div>
+  <div class="t">28 reviews. Mobile detailing across Greater Montreal.</div>
+ </div>
+ <div class="wrap">
+  <div class="lab k">Mobile Detailing Bros &middot; Montreal</div>
+  <h1 class="d"><span>We come</span><span>to you.</span></h1>
+  <p class="sub">Professional mobile car detailing, done right at your doorstep.</p>
+  <div class="cta"><a class="btn" href="tel:+15144628863">Call (514) 462-8863</a><a class="btn ghost" href="#quote">Get a quote by text</a></div>
+ </div>
+</header>
+
+<section class="dispatch" id="where">
+ <div class="orb a"></div><div class="orb b"></div>
+ <div class="wrap">
+  <div class="lab">Dispatch</div>
+  <h2 class="d">Where should<br>the van park?</h2>
+  <p class="intro">Pick your side of town. Detailing Bros serves Montreal, Laval, the West Island, Longueuil, Brossard, Terrebonne, Ch&acirc;teauguay and surrounding areas.</p>
+  <div class="areas" role="group" aria-label="Choose your area" id="areas"></div>
+  <div class="ticket glass" aria-live="polite">
+   <div class="full row">
+    <div class="where d" id="where-out">Montreal</div>
+    <div class="status" id="status"><i></i><span id="status-t">Checking hours</span></div>
+   </div>
+   <dl>
+    <div><dt>Service</dt><dd>Mobile detailing at your door</dd></div>
+    <div><dt>Hours</dt><dd id="today-h">7 a.m. to 8 p.m.</dd></div>
+    <div><dt>Rating</dt><dd>5.0 &middot; 28 Google reviews</dd></div>
+    <div><dt>Phone</dt><dd>(514) 462-8863</dd></div>
+   </dl>
+   <div class="acts"><a class="btn" id="txt-area" href="sms:+15144628863">Text from <span id="txt-a">Montreal</span></a><a class="btn ghost" href="tel:+15144628863">Call</a></div>
+  </div>
+  <div class="nums" id="nums">
+   <div><b data-n="5" data-d="1">0</b><span>Google rating</span></div>
+   <div><b data-n="28">0</b><span>Google reviews</span></div>
+   <div><b data-n="7">0</b><span>areas named on their page</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="services" id="services">
+ <div class="wrap">
+  <div class="svc-grid">
+   <div>
+    <div class="lab">What they do</div>
+    <h2 class="d">Inside.<br>Outside.<br>At your curb.</h2>
+    <ul class="svc">
+     <li><span class="n">01</span><h3>Full detail</h3><p>Inside and out, done on the driveway. They post full details like an Audi SQ8 and a Kia Niro.</p></li>
+     <li><span class="n">02</span><h3>Interior deep clean</h3><p>Carpets, trunks and seats, as shown in their posts. Heidy R. wrote that her Ford Explorer looks brand new.</p></li>
+     <li><span class="n">03</span><h3>Foam wash</h3><p>Thick foam and a rinse at your door, as shown in their posts.</p></li>
+     <li><span class="n">04</span><h3>Ceramic coating</h3><p>They post about ceramic coating. Message them for yours.</p></li>
+    </ul>
+   </div>
+   <div class="svc-photo rv"><img src="img/p9.jpg" alt="Clean black leather rear seats in an SUV after an interior detail" loading="lazy"></div>
+  </div>
+ </div>
+ <div class="band rv">
+  <video src="video/band-crop.mp4" poster="video/band-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Foam and rinse on a car at the curb"></video>
+  <div class="wrap"><div class="d">Foam. Rinse.<br>No trip to the shop.</div></div>
+ </div>
+</section>
+
+<section class="set">
+ <div class="wrap">
+  <div class="lab">Their work</div>
+  <h2 class="d">Real jobs,<br>real driveways.</h2>
+  <div class="mosaic">
+   <figure class="rv"><img src="img/p3.jpg" alt="Kia Niro wheel and rear fender after detailing" loading="lazy"></figure>
+   <figure class="rv"><img src="img/p10.jpg" alt="Interior dash and centre console of a detailed car" loading="lazy"></figure>
+   <figure class="rv"><img src="img/p12.jpg" alt="Cleaned interior and front seats" loading="lazy"></figure>
+   <figure class="rv"><img src="img/p4.jpg" alt="Kia Niro parked on a Montreal street after detailing" loading="lazy"></figure>
+   <figure class="rv"><img src="img/p11.jpg" alt="Rear seat of a car before cleaning" loading="lazy"></figure>
+  </div>
+ </div>
+</section>
+
+<section class="rev" id="reviews">
+ <div class="orb a" style="top:100px"></div>
+ <div class="wrap">
+  <div class="lab">Google reviews &middot; 5.0 &middot; 28 reviews</div>
+  <blockquote class="lead d" style="margin-bottom:0"><span>Their attention to detail and willingness to accommodate my requests immediately set them apart</span></blockquote>
+  <p class="by" style="margin-top:14px"><b>Pary P.</b>, Google. Full review below.</p>
+  <div class="cards">
+   <div class="card glass"><p>&ldquo;I am amazed and super happy.&rdquo; &ldquo;My Ford Explorer looks brand new.&rdquo;</p><p class="by"><b>Heidy R.</b>, Google</p></div>
+   <div class="card glass"><p>&ldquo;I recently used Mobile Detailing Bros for car detailing and was thoroughly impressed! Scheduling was easy, and they arrived promptly with all the necessary equipment.&rdquo;</p><p class="by"><b>Carolyn M.</b>, Google</p></div>
+   <div class="card glass"><p>&ldquo;My car came out looking spotless, both inside and out.&rdquo;</p><p class="by"><b>Carlos F.</b>, Google</p></div>
+  </div>
+  <p class="by" style="margin-top:26px">&ldquo;Their attention to detail and willingness to accommodate my requests immediately set them apart from other similar services I've used in the past. The quality of their work truly speaks for itself. I would highly recommend their services to anyone in need of top-notch car detailing.&rdquo; <b>Pary P.</b>, Google</p>
+ </div>
+</section>
+
+<section class="quote" id="quote">
+ <div class="orb b" style="bottom:20px"></div>
+ <div class="wrap">
+  <div class="lab">Get a quote</div>
+  <h2 class="d">Tell them<br>where you are.</h2>
+  <form class="panel glass" id="qf" autocomplete="off">
+   <div class="fill">
+    Hi, I'm <input class="nm" id="q-name" placeholder="your name" aria-label="Your name" required>
+    in <select id="q-area" aria-label="Your area"></select>.
+    My car is a <input class="cr" id="q-car" placeholder="make and model" aria-label="Your vehicle" required>
+    and I need a <select id="q-svc" aria-label="Service needed"><option>full detail</option><option>interior deep clean</option><option>foam wash</option><option>ceramic coating</option></select>.
+   </div>
+   <button class="btn" type="submit">Text this to Detailing Bros</button>
+   <p class="note">This opens a text to (514) 462-8863 on your phone. Nothing is sent until you press send.</p>
+  </form>
+ </div>
+</section>
+
+<section class="hours">
+ <div class="wrap">
+  <div class="hgrid">
+   <div>
+    <div class="lab">Open six days</div>
+    <h2 class="d">Call. They<br>come to you.</h2>
+    <a class="bignum d" href="tel:+15144628863">(514) 462-8863</a>
+    <a class="btn ghost" href="https://www.instagram.com/detailingbros2025/" rel="noopener">See more jobs on Instagram</a>
+   </div>
+   <ul class="hlist" id="hlist">
+    <li data-d="1"><span>Monday</span><span>7 a.m. to 8 p.m.</span></li>
+    <li data-d="2"><span>Tuesday</span><span>7 a.m. to 8 p.m.</span></li>
+    <li data-d="3"><span>Wednesday</span><span>7 a.m. to 8 p.m.</span></li>
+    <li data-d="4"><span>Thursday</span><span>7 a.m. to 8 p.m.</span></li>
+    <li data-d="5"><span>Friday</span><span>7 a.m. to 8 p.m.</span></li>
+    <li data-d="6"><span>Saturday</span><span>7 a.m. to 8 p.m.</span></li>
+    <li data-d="0"><span>Sunday</span><span>Closed</span></li>
+   </ul>
+  </div>
+ </div>
+ <div class="wrap" style="margin-top:60px"><footer>Preview built by JPF. Not live yet.</footer></div>
+</section>
+
+<div class="dock glass" role="group" aria-label="Contact">
+ <a class="btn" href="tel:+15144628863">Call</a>
+ <a class="btn ghost" href="sms:+15144628863">Text</a>
+</div>
+
+<script>
+(function(){
+ var AREAS=['Montreal','Laval','West Island','Longueuil','Brossard','Terrebonne','Châteauguay'];
+ var PHONE='5144628863';
+ var cur='Montreal';
+ var box=document.getElementById('areas');
+ function smsHref(body){return 'sms:+1'+PHONE+'?&body='+encodeURIComponent(body)}
+ function setArea(a){
+  cur=a;
+  [].forEach.call(box.children,function(b){b.setAttribute('aria-pressed',b.textContent===a)});
+  document.getElementById('where-out').textContent=a;
+  document.getElementById('txt-a').textContent=a;
+  document.getElementById('txt-area').href=smsHref('Hi Detailing Bros, I\'m in '+a+'. Can you come detail my car?');
+  var q=document.getElementById('q-area');if(q)q.value=a;
+ }
+ AREAS.forEach(function(a){
+  var b=document.createElement('button');b.type='button';b.className='chip';b.textContent=a;b.setAttribute('aria-pressed','false');
+  b.onclick=function(){setArea(a)};box.appendChild(b);
+  var o=document.createElement('option');o.textContent=a;document.getElementById('q-area').appendChild(o);
+ });
+ setArea('Montreal');
+ document.getElementById('q-area').onchange=function(){setArea(this.value)};
+ /* live open/closed, Montreal time */
+ function mtl(){
+  var p=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Toronto',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date());
+  var o={};p.forEach(function(x){o[x.type]=x.value});
+  var days={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+  return {d:days[o.weekday],h:(+o.hour%24)+(+o.minute)/60};
+ }
+ var t=mtl(),open=t.d!==0&&t.h>=7&&t.h<20;
+ var st=document.getElementById('status');
+ st.className='status'+(open?' open':'');
+ document.getElementById('status-t').textContent=open?'Open now, until 8 p.m.':(t.d===0?'Closed today. Back Monday 7 a.m.':(t.h<7?'Opens today at 7 a.m.':'Closed now. Opens 7 a.m.'));
+ document.getElementById('today-h').textContent=t.d===0?'Closed Sunday':'Today 7 a.m. to 8 p.m.';
+ var li=document.querySelector('#hlist li[data-d="'+t.d+'"]');if(li)li.className='today';
+ /* form */
+ document.getElementById('qf').addEventListener('submit',function(e){
+  e.preventDefault();
+  var n=document.getElementById('q-name').value.trim(),c=document.getElementById('q-car').value.trim(),
+  a=document.getElementById('q-area').value,s=document.getElementById('q-svc').value;
+  location.href=smsHref('Hi Detailing Bros, I\'m '+n+' in '+a+'. My car is a '+c+' and I need a '+s+'. Can you give me a quote?');
+ });
+ /* reveal + count */
+ var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+ function count(el){
+  var n=+el.dataset.n,d=+el.dataset.d||0;
+  if(rm){el.textContent=n.toFixed(d);return}
+  var s=performance.now();
+  (function f(now){var k=Math.min(1,(now-s)/1300),e=1-Math.pow(1-k,3);el.textContent=(n*e).toFixed(d);if(k<1)requestAnimationFrame(f)})(s);
+ }
+ if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');if(x.target.dataset.n)count(x.target);io.unobserve(x.target)}})},{threshold:.15});
+  document.querySelectorAll('.rv,[data-n]').forEach(function(el){io.observe(el)});
+ }else{document.querySelectorAll('.rv').forEach(function(e){e.classList.add('in')});document.querySelectorAll('[data-n]').forEach(count)}
+})();
+</script>
+</body>
+</html>
