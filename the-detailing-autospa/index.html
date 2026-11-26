@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The Detailing Autospa | Car Detailing in Brampton, ON</title>
+<meta name="description" content="Car detailing in Brampton, ON. Interior, exterior, premium packages. 4.9 stars on Google. Call (647) 219-6540.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ direction: night-garage showroom. Warm black page, one orange accent, big italic racing display type, portrait video owns the top.
+ palette: base #14110f (warm black, photo asphalt/shadow), bone #efe8dc (foam / white paint on Lexus), steel #2a2622 (asphalt), accent #ff6a1a (orange Shelby GT500 in their post), muted #9a9186.
+ fonts: Racing Sans One (display) + Karla (body)
+ signature: "The Lineup" - tap a car from their real posts, photo + the job from their own caption.
+ order: hero, trust strip, lineup, interior band video, reviews, gallery strip, quote sentence, hours/area, footer
+ motion: hero load stagger, count-up rating, gentle photo scale on scroll; reduced-motion respected */
+:root{--bg:#14110f;--bg2:#1d1916;--steel:#2a2622;--bone:#efe8dc;--mute:#a79e92;--acc:#ff6a1a;--r:26px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--bone);font-family:'Karla',sans-serif;font-size:17px;line-height:1.55;overflow-x:hidden;padding-bottom:96px}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.disp{font-family:'Racing Sans One',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.005em;word-spacing:.14em;line-height:.92}
+.wrap{max-width:1240px;margin:0 auto;padding:0 22px}
+.lbl{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);font-weight:700}
+.glass{background:rgba(29,25,22,.55);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 20px 60px -20px rgba(0,0,0,.6)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;border-radius:999px;background:var(--acc);color:#14110f;font-weight:700;font-size:17px;text-decoration:none;border:0;cursor:pointer;transition:transform .18s,filter .18s;font-family:'Karla',sans-serif}
+.btn:hover{filter:brightness(1.08)}.btn:active{transform:scale(.98)}
+.btn.ghost{background:rgba(255,255,255,.08);color:var(--bone);border:1px solid rgba(255,255,255,.3)}
+
+/* nav */
+nav{position:fixed;top:12px;left:12px;right:12px;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:6px 6px 6px 20px;border-radius:999px;max-width:1100px;margin:0 auto}
+nav b{font-family:'Racing Sans One';font-weight:400;text-transform:uppercase;font-size:17px;letter-spacing:.02em;word-spacing:.12em}
+nav .links{display:none;gap:26px;font-size:15px}
+nav .links a{text-decoration:none;color:var(--mute);transition:color .18s}nav .links a:hover{color:var(--bone)}
+nav .btn{min-height:44px;padding:0 20px;font-size:15px}
+@media(min-width:820px){nav .links{display:flex}}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:var(--bg)}
+.hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,17,15,.55) 0%,rgba(20,17,15,0) 28%,rgba(20,17,15,.55) 62%,rgba(20,17,15,.96) 100%)}
+.hero .in{position:relative;z-index:2;width:100%;padding:0 22px 104px}
+.hero .cta .ghost{display:none}
+.hero h1{font-size:clamp(56px,16vw,80px)}
+.hero h1 span{color:var(--acc)}
+.hero .sub{margin:18px 0 24px;max-width:30ch;color:#e8dfd1;font-size:18px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.hcard{margin-top:26px;display:flex;align-items:center;gap:16px;padding:14px 20px;border-radius:22px;max-width:360px}
+.hcard .n{font-family:'Racing Sans One';font-size:44px;line-height:1;color:var(--acc)}
+.hcard small{display:block;font-size:14px;color:var(--bone)}
+.hcard small b{display:block;font-size:15px}
+@media(min-width:900px){
+ .hero{align-items:center;background:var(--bg)}
+ .hero video,.hero .poster{left:auto;right:4vw;top:90px;bottom:60px;width:min(36vw,470px);height:auto;border-radius:34px;object-position:50% 50%}
+ .hero:after{background:radial-gradient(900px 500px at 85% 60%,rgba(255,106,26,.16),transparent 70%)}
+ .hero .in{padding-bottom:40px;padding-top:90px;padding-left:max(22px,calc((100vw - 1240px)/2 + 22px));max-width:none}
+ .hero .cta .ghost{display:inline-flex}
+ .hero h1{font-size:clamp(100px,11vw,150px)}
+ .hero .sub{font-size:20px}
+ .hcard{position:absolute;right:calc(4vw + min(36vw,470px) - 60px);bottom:12%;margin:0;max-width:none}
+}
+.ld{opacity:0;transform:translateY(22px);animation:up .9s cubic-bezier(.2,.7,.2,1) forwards}
+.ld.d1{animation-delay:.15s}.ld.d2{animation-delay:.3s}.ld.d3{animation-delay:.45s}.ld.d4{animation-delay:.6s}
+@keyframes up{to{opacity:1;transform:none}}
+
+/* strip */
+.strip{border-block:1px solid #2f2a25;padding:22px 0;background:var(--bg2)}
+.strip .wrap{display:flex;flex-wrap:wrap;gap:10px 34px;justify-content:space-between;font-size:15px;color:var(--mute)}
+.strip b{color:var(--bone)}
+
+section{padding:84px 0}
+@media(min-width:900px){section{padding:140px 0}}
+h2{font-size:clamp(46px,12vw,92px);margin:10px 0 18px}
+h2 span{color:var(--acc)}
+.lede{color:var(--mute);max-width:46ch}
+
+/* lineup */
+.lineup{position:relative}
+.lu{display:grid;gap:26px;margin-top:38px}
+.stage{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;background:var(--steel);max-height:78vh;width:100%}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.05);transition:opacity .6s,transform 1.2s}
+.stage img.on{opacity:1;transform:none}
+.stage .cap{position:absolute;left:14px;right:14px;bottom:14px;padding:16px 20px;border-radius:22px}
+.cap .t{font-family:'Racing Sans One';text-transform:uppercase;font-size:26px;line-height:1.05;word-spacing:.1em}
+.cap .j{color:var(--bone);font-size:16px;margin-top:4px}
+.chips{display:flex;flex-direction:column;gap:10px}
+.chip{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;padding:10px 22px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);color:var(--bone);font:700 17px 'Karla',sans-serif;cursor:pointer;text-align:left;transition:background .2s,transform .18s,border-color .2s}
+.chip:active{transform:scale(.98)}
+.chip i{font-style:normal;font-size:14px;color:var(--mute);font-weight:400}
+.chip[aria-pressed=true]{background:rgba(255,106,26,.9);color:#14110f;border-color:transparent}
+.chip[aria-pressed=true] i{color:#14110f}
+@media(min-width:900px){.lu{grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:70px;align-items:center}.chips{gap:12px}.stage{max-height:none}}
+.note{font-size:14px;color:var(--mute);margin-top:18px}
+
+/* band */
+.band{position:relative;height:70vh;min-height:420px;overflow:hidden;padding:0}
+.band video,.band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.band:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,17,15,.85),rgba(20,17,15,.1) 70%)}
+.band .in{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:0 22px 44px}
+.band h2{max-width:11ch;margin:0}
+.band .in .wrap{padding:0}
+
+/* reviews */
+.rev{position:relative;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;pointer-events:none;animation:drift 26s ease-in-out infinite alternate}
+.o1{width:420px;height:420px;background:radial-gradient(circle,rgba(255,106,26,.55),transparent 70%);left:-120px;top:20%}
+.o2{width:360px;height:360px;background:radial-gradient(circle,rgba(239,232,220,.18),transparent 70%);right:-100px;bottom:5%;animation-delay:-9s}
+@keyframes drift{to{transform:translate(60px,-40px)}}
+.big{font-family:'Racing Sans One';text-transform:none;font-size:clamp(26px,6.4vw,50px);line-height:1.12;margin:26px 0 20px;max-width:24ch;word-spacing:.06em}
+.who{color:var(--mute);font-size:15px}.who b{color:var(--bone)}
+.rg{display:grid;gap:16px;margin-top:50px;position:relative;z-index:2}
+.rc{padding:26px;border-radius:24px}
+.rc p{font-size:16.5px}
+.rc .who{margin-top:14px}
+@media(min-width:900px){.rg{grid-template-columns:repeat(3,1fr);gap:22px}}
+.stars{color:var(--acc);letter-spacing:.2em;font-size:15px}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:36px}
+.gal img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:20px}
+.gal img:nth-child(odd){margin-top:0}.gal img:nth-child(even){transform:translateY(24px)}
+@media(min-width:900px){.gal{grid-template-columns:repeat(4,1fr);gap:20px}.gal img:nth-child(even){transform:translateY(44px)}}
+
+/* quote */
+.quote{position:relative;overflow:hidden;background:var(--bg2)}
+.qp{position:relative;z-index:2;margin-top:34px;padding:30px 24px;border-radius:28px}
+.qp .sent{font-family:'Racing Sans One';font-size:clamp(24px,5.6vw,40px);line-height:1.5;text-transform:none;word-spacing:.08em}
+.qp input,.qp select{font:700 inherit 'Karla';font-family:'Karla',sans-serif;font-size:17px;color:var(--bone);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.25);border-radius:14px;min-height:46px;padding:4px 14px;margin:4px 2px;max-width:100%;width:auto;color-scheme:dark;vertical-align:middle}
+.qp input{width:min(100%,220px)}
+.qp select option{background:#1d1916}
+.qp input:focus,.qp select:focus{outline:none;border-color:var(--acc);box-shadow:0 0 0 3px rgba(255,106,26,.35)}
+.qp .btn{margin-top:20px;width:100%}
+@media(min-width:700px){.qp{padding:48px}.qp .btn{width:auto}}
+.hint{font-size:14px;color:var(--mute);margin-top:14px}
+
+/* hours */
+.info{display:grid;gap:34px}
+.hrs{list-style:none;max-width:420px}
+.hrs li{display:flex;justify-content:space-between;gap:20px;padding:12px 0;border-bottom:1px solid #2f2a25;font-size:17px}
+.hrs li span:last-child{color:var(--mute)}
+.addr{font-family:'Racing Sans One';font-size:clamp(26px,6vw,40px);line-height:1.15;text-transform:uppercase;word-spacing:.1em}
+.ph{display:block;font-family:'Racing Sans One';font-size:clamp(38px,10.5vw,64px);white-space:nowrap;color:var(--acc);text-decoration:none;margin:14px 0 0;line-height:1;word-spacing:.05em}
+@media(min-width:900px){.info{grid-template-columns:1fr 1fr;gap:80px}}
+
+footer{padding:34px 0 20px;color:var(--mute);font-size:14px;border-top:1px solid #2f2a25;text-align:center}
+
+/* dock */
+.dock{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;display:flex;gap:8px;padding:8px;border-radius:999px;max-width:460px;margin:0 auto}
+.dock a{flex:1;min-height:48px;display:flex;align-items:center;justify-content:center;border-radius:999px;text-decoration:none;font-weight:700;font-size:16px;transition:transform .18s}
+.dock a:active{transform:scale(.97)}
+.dock .c{background:var(--acc);color:#14110f}
+.dock .t{background:rgba(255,255,255,.1);color:var(--bone)}
+@media(min-width:900px){.dock{width:380px;max-width:none;left:auto;right:24px;margin:0}body{padding-bottom:20px}}
+
+.rv{opacity:0;transform:translateY(20px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.ld,.rv{opacity:1;transform:none;animation:none;transition:none}.orb{animation:none}.stage img{transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav class="glass" aria-label="Main">
+ <b>The Detailing Autospa</b>
+ <div class="links"><a href="#lineup">The lineup</a><a href="#reviews">Reviews</a><a href="#quote">Get a quote</a><a href="#hours">Hours</a></div>
+ <a class="btn" href="tel:+16472196540">Call now</a>
+</nav>
+
+<header class="hero">
+ <img class="poster" src="video/hero-poster.jpg" alt="" aria-hidden="true">
+ <video src="video/hero.mp4" poster="video/hero-poster.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+ <div class="in">
+  <p class="lbl ld">Car detailing &middot; Brampton, ON</p>
+  <h1 class="disp ld d1">Brand<br>new.<br><span>Again.</span></h1>
+  <p class="sub ld d2">Interior, exterior and premium packages from The Detailing Autospa. Call to book your appointment.</p>
+  <div class="cta ld d3"><a class="btn" href="tel:+16472196540">Call (647) 219-6540</a><a class="btn ghost" href="#quote">Get a quote</a></div>
+  <div class="hcard glass ld d4"><div class="n" data-count="4.9">4.9</div><small><b>Google rating</b>83 reviews &middot; Brampton, ON</small></div>
+ </div>
+</header>
+
+<div class="strip"><div class="wrap">
+ <span><b>7 Sierra Peak Ct</b>, Brampton, ON</span>
+ <span>Open <b>8 a.m.</b> most days</span>
+ <span><b>4.9</b> stars &middot; 83 Google reviews</span>
+</div></div>
+
+<section class="lineup" id="lineup"><div class="wrap">
+ <p class="lbl rv">The lineup</p>
+ <h2 class="disp rv">Real cars.<br><span>Real jobs.</span></h2>
+ <p class="lede rv">Pick a car. Each one is a job from their own page.</p>
+ <div class="lu">
+  <div class="stage rv" id="stage">
+   <img class="on" src="img/p1.jpg" alt="Ferrari Testarossa detailed at The Detailing Autospa" id="im0">
+   <img src="img/p2.jpg" alt="Shelby GT500 interior detailing" loading="lazy">
+   <img src="img/p4.jpg" alt="Lamborghini Gallardo full detail" loading="lazy">
+   <img src="img/p5.jpg" alt="Mercedes 380 SL premium detailing" loading="lazy">
+   <img src="img/p6.jpg" alt="Range Rover complete premium detailing" loading="lazy">
+   <img src="img/p3.jpg" alt="BMW exterior detail" loading="lazy">
+   <div class="cap glass"><div class="t" id="ct">1988 V12 Ferrari Testarossa</div><div class="j" id="cj">Premium Package</div></div>
+  </div>
+  <div class="chips" role="group" aria-label="Choose a car">
+   <button class="chip" aria-pressed="true" data-i="0" data-t="1988 V12 Ferrari Testarossa" data-j="Premium Package">Ferrari Testarossa <i>Premium Package</i></button>
+   <button class="chip" aria-pressed="false" data-i="1" data-t="Shelby GT500" data-j="Interior detailing">Shelby GT500 <i>Interior detailing</i></button>
+   <button class="chip" aria-pressed="false" data-i="2" data-t="Lamborghini Gallardo" data-j="Full detail">Lamborghini Gallardo <i>Full detail</i></button>
+   <button class="chip" aria-pressed="false" data-i="3" data-t="Mercedes 380 SL" data-j="Premium detailing">Mercedes 380 SL <i>Premium detailing</i></button>
+   <button class="chip" aria-pressed="false" data-i="4" data-t="Range Rover" data-j="Complete premium detailing">Range Rover <i>Complete premium</i></button>
+   <button class="chip" aria-pressed="false" data-i="5" data-t="BMW" data-j="Exterior detail">BMW <i>Exterior detail</i></button>
+   <p class="note">Also on their page: Jaguar F-type inside and out, Volvo interior steam cleaning and shampoo, Nissan pickup exterior wash with bug and tar removal, Dodge Durango SRT interior.</p>
+  </div>
+ </div>
+</div></section>
+
+<section class="band">
+ <video src="video/band.mp4" poster="video/band-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+ <div class="in"><div class="wrap"><p class="lbl">Interior detailing</p><h2 class="disp">Inside <span>counts.</span></h2></div></div>
+</section>
+
+<section class="rev" id="reviews">
+ <div class="orb o1"></div><div class="orb o2"></div>
+ <div class="wrap" style="position:relative;z-index:2">
+  <p class="lbl rv"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> &nbsp;4.9 on Google &middot; 83 reviews</p>
+  <p class="big disp rv">&ldquo;The detailing auto spa made my car look brand new, they arrived on time, were professional and paid attention to every small detail.&rdquo;</p>
+  <p class="who rv"><b>Gurvinder L.</b>, Google</p>
+  <div class="rg">
+   <div class="rc glass rv"><p>&ldquo;Fantastic job done on my car by Sukhpreet. Real value for money. Would definitely recommend him to anyone that needs a simple to a fully professional car detailing.&rdquo;</p><p class="who"><b>Venkatakrishnan S.</b>, Google</p></div>
+   <div class="rc glass rv"><p>&ldquo;I had a great experience with The Detailing Autospa. Sukh did an excellent job on my car. I got ceramic coating along with full interior and exterior detailing, and the results were outstanding. The car looked very clean, glossy, and &hellip;&rdquo;</p><p class="who"><b>Parmod C.</b>, Google</p></div>
+   <div class="rc glass rv"><p>&ldquo;I recently got my car detailed here, and I&rsquo;m genuinely impressed with the level of care and attention they put into their work. They didn&rsquo;t rush the job and made sure everything was done to a high standard. &hellip;&rdquo;</p><p class="who"><b>Ritika T.</b>, Google</p></div>
+  </div>
+ </div>
+</section>
+
+<section style="padding-top:20px"><div class="wrap">
+ <p class="lbl rv">More from the driveway</p>
+ <div class="gal">
+  <img src="img/p11.jpg" alt="White Lexus after a foam wash" loading="lazy">
+  <img src="img/p8.jpg" alt="Jaguar F-type covered in foam" loading="lazy">
+  <img src="img/p12.jpg" alt="Clean Tesla interior with floor mats" loading="lazy">
+  <img src="img/p7.jpg" alt="Clean truck cab interior" loading="lazy">
+ </div>
+</div></section>
+
+<section class="quote" id="quote"><div class="orb o1" style="left:auto;right:-140px;top:-60px"></div>
+ <div class="wrap" style="position:relative;z-index:2">
+  <p class="lbl rv">Get a quote</p>
+  <h2 class="disp rv">Tell us <span>the car.</span></h2>
+  <form class="qp glass rv" id="qf">
+   <div class="sent">Hi, I&rsquo;m <input id="qn" placeholder="your name" aria-label="Your name" required autocomplete="name">. My <input id="qc" placeholder="car (e.g. BMW)" aria-label="Your car" required> needs
+    <select id="qs" aria-label="Service"><option>an interior detail</option><option>an exterior detail</option><option>a full detail</option><option>a premium package</option><option>ceramic coating</option><option>steam cleaning and shampoo</option></select>. Can you give me a price?</div>
+   <button class="btn" type="submit">Text this to The Detailing Autospa</button>
+   <p class="hint">Opens your messages app. Or call (647) 219-6540.</p>
+  </form>
+ </div>
+</section>
+
+<section id="hours"><div class="wrap info">
+ <div>
+  <p class="lbl rv">Find us</p>
+  <p class="addr rv" style="margin-top:12px">7 Sierra Peak Ct<br>Brampton, ON L6R 2B3</p>
+  <a class="ph rv" href="tel:+16472196540">(647) 219-6540</a>
+ </div>
+ <div>
+  <p class="lbl rv">Hours</p>
+  <ul class="hrs rv" style="margin-top:12px">
+   <li><span>Monday</span><span>8 a.m. to 9:30 p.m.</span></li>
+   <li><span>Tuesday</span><span>8 a.m. to 9:30 p.m.</span></li>
+   <li><span>Wednesday</span><span>8 a.m. to 9:30 p.m.</span></li>
+   <li><span>Thursday</span><span>8 a.m. to 9:30 p.m.</span></li>
+   <li><span>Friday</span><span>8 a.m. to 9:30 p.m.</span></li>
+   <li><span>Saturday</span><span>8 a.m. to 4:30 p.m.</span></li>
+   <li><span>Sunday</span><span>8 a.m. to 9:30 p.m.</span></li>
+  </ul>
+ </div>
+</div></section>
+
+<footer><div class="wrap">Preview built by JPF. Not live yet.</div></footer>
+
+<div class="dock glass"><a class="c" href="tel:+16472196540">Call</a><a class="t" href="sms:+16472196540">Text</a></div>
+
+<script>
+(function(){
+ var imgs=[].slice.call(document.querySelectorAll('#stage img')),chips=document.querySelectorAll('.chip');
+ chips.forEach(function(c){c.addEventListener('click',function(){
+  var i=+c.dataset.i;imgs.forEach(function(m,k){m.classList.toggle('on',k===i)});
+  chips.forEach(function(x){x.setAttribute('aria-pressed',x===c)});
+  document.getElementById('ct').textContent=c.dataset.t;document.getElementById('cj').textContent=c.dataset.j;
+ })});
+ var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
+ document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+ var n=document.querySelector('[data-count]');
+ if(n&&!matchMedia('(prefers-reduced-motion:reduce)').matches){var t0=null;(function f(t){if(!t0)t0=t;var p=Math.min((t-t0)/1400,1);n.textContent=(4.9*(1-Math.pow(1-p,3))).toFixed(1);if(p<1)requestAnimationFrame(f)})(performance.now())}
+ document.getElementById('qf').addEventListener('submit',function(e){e.preventDefault();
+  var b="Hi, I'm "+document.getElementById('qn').value+". My "+document.getElementById('qc').value+" needs "+document.getElementById('qs').value+". Can you give me a price?";
+  location.href="sms:+16472196540?&body="+encodeURIComponent(b);
+ });
+})();
+</script>
+</body>
+</html>
