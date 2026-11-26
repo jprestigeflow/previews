@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Revline Car Detailing Garage | Kingston, ON</title>
+<meta name="description" content="Revline Car Detailing Garage, 791 Montreal St, Kingston. Car detailing, window tint, engine bay cleaning. Call (343) 988-3200.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Days+One&family=Sen:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ direction: hex-bay-video-led. Dark slate garage, one full-screen walk-around video of the black RAV4 under their hex ceiling lights.
+ palette: ink #0b1014 (RAV4 paint) / wall slate #3a4953 + deep slate #1b252c (bay wall, p4) / hex white #eef4f6 (ceiling light strips) / Revline red #e5272e (logo on the wall, p4)
+ fonts: Days One (display) + Sen (body)
+ signature: Rate board. Tap a job on the board, the photo swaps. Prices only from their own posts.
+ order: hero video, bay story, rate board, band video, interiors reel, reviews, hours + area, quote sentence, footer
+ motion: one load-in on hero, reveal on scroll for 3 blocks only, count-up on rating. Reduced motion respected.
+*/
+:root{
+  --ink:#0b1014; --deep:#1b252c; --wall:#3a4953; --mist:#9fb0ba; --hex:#eef4f6; --red:#e5272e; --redtx:#ff5a60;
+  --r-pill:999px; --r-big:26px; --r-sm:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--hex);font-family:'Sen',system-ui,sans-serif;font-size:17px;line-height:1.55;overflow-x:hidden;padding-bottom:96px}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--redtx);outline-offset:3px}
+h1,h2,h3,.disp{font-family:'Days One',sans-serif;font-weight:400;letter-spacing:.005em;word-spacing:.08em;line-height:1.02}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto;position:relative;z-index:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:52px;padding:0 26px;border-radius:var(--r-pill);font-weight:700;font-size:16px;text-decoration:none;border:1px solid transparent;cursor:pointer;font-family:inherit;transition:transform .18s,background .18s,border-color .18s}
+.btn:active{transform:scale(.98)}
+.btn.red{background:var(--red);color:#fff;box-shadow:0 14px 34px -14px rgba(229,39,46,.7)}
+.btn.red:hover{background:#f13a41}
+.btn.ghost{background:rgba(238,244,246,.08);border-color:rgba(238,244,246,.35);color:var(--hex);-webkit-backdrop-filter:blur(18px) saturate(150%);backdrop-filter:blur(18px) saturate(150%)}
+.btn.ghost:hover{background:rgba(238,244,246,.16)}
+.glass{background:rgba(27,37,44,.52);border:1px solid rgba(238,244,246,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 24px 60px -24px rgba(0,0,0,.65);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%)}
+
+/* nav pill */
+.nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;display:flex;justify-content:space-between;align-items:center;max-width:1180px;margin-inline:auto;padding:8px 8px 8px 22px;border-radius:var(--r-pill)}
+.nav b{font-family:'Days One';font-weight:400;font-size:18px;letter-spacing:.04em}
+.nav b i{font-style:normal;color:var(--redtx)}
+.nav .links{display:none;gap:26px;font-weight:600;font-size:15px}
+.nav .links a{text-decoration:none;opacity:.85}
+.nav .links a:hover{opacity:1}
+.nav .btn{min-height:44px;padding:0 20px;font-size:15px}
+@media(min-width:820px){.nav .links{display:flex}}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:var(--ink)}
+.hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,16,20,.5) 0%,rgba(11,16,20,.05) 24%,rgba(11,16,20,.55) 58%,rgba(11,16,20,.96) 100%)}
+.hero .in{position:relative;z-index:2;width:min(1180px,100% - 40px);padding:130px 0 40px}
+.hero h1{font-size:clamp(44px,12.4vw,112px);max-width:9ch;text-shadow:0 4px 40px rgba(0,0,0,.5)}
+.hero h1 em{font-style:normal;color:var(--redtx)}
+.hero .sub{margin-top:20px;max-width:34ch;font-size:18px;color:#dbe5ea}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.hero .card{margin-top:30px;display:flex;align-items:center;gap:16px;padding:16px 22px;border-radius:var(--r-big);width:fit-content;max-width:100%}
+.hero .card .num{font-family:'Days One';font-size:42px;line-height:1}
+.hero .card small{display:block;color:var(--mist);font-size:14px;line-height:1.3}
+.hero .card .stars{color:#ffd166;letter-spacing:2px;font-size:15px}
+.load{opacity:0;transform:translateY(22px);animation:up .9s cubic-bezier(.2,.7,.2,1) forwards}
+.load.d1{animation-delay:.15s}.load.d2{animation-delay:.3s}.load.d3{animation-delay:.45s}.load.d4{animation-delay:.6s}
+@keyframes up{to{opacity:1;transform:none}}
+@media(min-width:900px){
+  .hero .in{padding-bottom:64px}
+  .hero .card{position:absolute;right:0;bottom:64px;margin:0}
+  .hero .in{display:block}
+  .hero .inner{position:relative}
+}
+
+section{padding:96px 0}
+.eyebrow{color:var(--redtx);font-weight:700;font-size:15px;margin-bottom:14px}
+h2{font-size:clamp(34px,8vw,72px)}
+.lede{color:#c3d0d7;max-width:46ch;margin-top:18px}
+
+/* bay */
+.bay{background:linear-gradient(180deg,var(--ink),var(--deep))}
+.bay .grid{display:grid;gap:30px}
+.bay figure{position:relative;border-radius:var(--r-big);overflow:hidden}
+.bay figure img{width:100%;height:100%;object-fit:cover}
+.bay .f1{aspect-ratio:4/5}
+.bay .f2{aspect-ratio:4/3}
+.bay figcaption{position:absolute;left:14px;bottom:14px;padding:9px 16px;border-radius:var(--r-pill);font-size:14px;font-weight:600}
+@media(min-width:900px){
+  .bay .grid{grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+  .bay .col{display:grid;gap:26px}
+}
+.facts{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:28px;color:var(--mist);font-size:15px}
+.facts b{color:var(--hex)}
+
+/* rate board */
+.board{background:var(--deep);position:relative;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.38;pointer-events:none;animation:drift 26s ease-in-out infinite alternate}
+.orb.a{width:420px;height:420px;background:var(--wall);left:-120px;top:-60px}
+.orb.b{width:340px;height:340px;background:#7c1a20;right:-100px;bottom:40px;opacity:.28;animation-duration:32s}
+@keyframes drift{to{transform:translate(50px,40px)}}
+.board .grid{position:relative;display:grid;gap:28px;margin-top:40px}
+.board .shot{position:relative;border-radius:var(--r-big);overflow:hidden;aspect-ratio:1/1;background:var(--ink)}
+.board .shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .45s}
+.board .shot img.on{opacity:1}
+.board .shot .tag{position:absolute;left:14px;bottom:14px;padding:9px 16px;border-radius:var(--r-sm);font-size:14px;font-weight:600}
+.rows{list-style:none;border-radius:var(--r-big);padding:8px 22px}
+.rows li{border-bottom:1px solid rgba(238,244,246,.14)}
+.rows li:last-child{border:0}
+.rows button{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:2px 14px;width:100%;padding:18px 0;min-height:64px;align-items:center}
+.rows button:focus-visible{outline:3px solid var(--redtx);outline-offset:2px;border-radius:8px}
+.rows .t{font-family:'Days One';font-size:clamp(19px,5vw,26px);line-height:1.15;transition:color .2s}
+.rows .p{font-family:'Days One';font-size:clamp(19px,5vw,26px);color:var(--redtx);text-align:right;white-space:nowrap}
+.rows .p.q{font-family:'Sen';font-size:15px;font-weight:700;color:var(--mist)}
+.rows .d{grid-column:1/-1;color:#b9c8d0;font-size:15px;line-height:1.45}
+.rows li.on .t{color:var(--redtx)}
+.rows li:not(.on) .t{color:var(--hex)}
+.board .note{position:relative;margin-top:18px;color:var(--mist);font-size:14px}
+.board .note a{color:var(--hex)}
+@media(min-width:900px){
+  .board .grid{grid-template-columns:1fr 1.05fr;align-items:stretch;gap:44px}
+  .board .shot{aspect-ratio:auto;min-height:560px}
+}
+
+/* band */
+.band{position:relative;height:min(78vh,640px);min-height:420px;overflow:hidden;padding:0;display:flex;align-items:flex-end}
+.band video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.band::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,16,20,.7),rgba(11,16,20,0) 30%,rgba(11,16,20,0) 55%,rgba(11,16,20,.8))}
+.band .wrap{position:relative;z-index:2;padding-bottom:34px;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.band .chip{padding:12px 20px;border-radius:var(--r-pill);font-weight:600;font-size:15px}
+.band h2{font-size:clamp(30px,7vw,64px);max-width:12ch}
+
+/* interiors */
+.inter{background:var(--ink)}
+.reel{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:34px 20px 20px;margin-top:6px;scrollbar-width:thin;scrollbar-color:var(--wall) transparent}
+.reel figure{flex:0 0 min(78vw,360px);scroll-snap-align:center;border-radius:var(--r-big);overflow:hidden;background:var(--deep)}
+.reel img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.reel figcaption{padding:12px 16px 16px;color:var(--mist);font-size:14px}
+.reel figcaption b{color:var(--hex);display:block;font-size:15px}
+@media(min-width:1000px){.reel{padding-left:max(20px,calc((100vw - 1180px)/2));padding-right:20px}.reel figure{flex-basis:320px}}
+
+/* reviews */
+.rev{background:linear-gradient(180deg,var(--ink),var(--deep));position:relative;overflow:hidden}
+.rev .big{margin-top:36px;font-family:'Days One';font-size:clamp(24px,6vw,50px);line-height:1.18;max-width:22ch;word-spacing:.06em}
+.rev .big q{quotes:"\201C" "\201D"}
+.rev .who{margin-top:20px;color:var(--mist);font-size:15px}
+.rev .who b{color:var(--hex)}
+.rev .two{position:relative;display:grid;gap:18px;margin-top:44px}
+.rev .two blockquote{padding:26px;border-radius:var(--r-big);font-size:17px}
+.rev .two cite{display:block;margin-top:16px;font-style:normal;color:var(--mist);font-size:14px}
+.rev .two cite b{color:var(--hex)}
+@media(min-width:800px){.rev .two{grid-template-columns:1fr 1fr}}
+
+/* visit */
+.visit{background:var(--deep)}
+.visit .cols{display:grid;gap:36px;margin-top:34px}
+.visit dl{display:grid;gap:22px}
+.visit dt{color:var(--mist);font-size:14px;font-weight:700}
+.visit dd{font-size:20px;line-height:1.35}
+.visit dd a{text-decoration-thickness:1px;text-underline-offset:4px}
+.hours{list-style:none;border-radius:var(--r-big);padding:8px 22px}
+.hours li{display:flex;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid rgba(238,244,246,.12);font-size:16px}
+.hours li:last-child{border:0}
+.hours li span:last-child{color:var(--mist)}
+.hours li.today{color:var(--redtx);font-weight:700}
+@media(min-width:860px){.visit .cols{grid-template-columns:1fr 1fr;gap:64px;align-items:start}}
+
+/* quote */
+.quote{background:var(--ink);position:relative;overflow:hidden}
+.quote .orb.a{left:auto;right:-140px;top:30px;background:#7c1a20;opacity:.3}
+.quote .orb.b{left:-140px;right:auto;bottom:-40px;background:var(--wall);opacity:.4}
+.qp{position:relative;margin-top:34px;padding:34px 24px;border-radius:var(--r-big);max-width:860px}
+.sent{font-size:clamp(20px,5vw,30px);line-height:2.05;font-weight:500}
+.sent input,.sent select{font:inherit;color:var(--hex);background:rgba(238,244,246,.1);border:1px solid rgba(238,244,246,.3);border-radius:12px;padding:3px 12px;min-height:46px;max-width:100%;width:11em;margin:0 2px;transition:border-color .18s,background .18s;-webkit-appearance:none;appearance:none}
+.sent input::placeholder{color:#8ea0aa}
+.sent input:focus,.sent select:focus{outline:none;border-color:var(--redtx);background:rgba(238,244,246,.16);box-shadow:0 0 0 3px rgba(255,90,96,.3)}
+.sent select{width:auto;padding-right:30px;background-image:linear-gradient(45deg,transparent 50%,var(--hex) 50%),linear-gradient(135deg,var(--hex) 50%,transparent 50%);background-position:calc(100% - 17px) 50%,calc(100% - 12px) 50%;background-size:5px 5px;background-repeat:no-repeat}
+.sent select option{background:var(--deep);color:var(--hex)}
+.qp .btn{margin-top:20px}
+.qp small{display:block;margin-top:14px;color:var(--mist);font-size:14px}
+
+footer{padding:40px 0 20px;background:var(--ink);color:var(--mist);font-size:14px;border-top:1px solid rgba(238,244,246,.1)}
+footer .wrap{display:grid;gap:8px}
+
+/* dock */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));display:flex;gap:8px;padding:8px;border-radius:var(--r-pill);max-width:440px;margin-inline:auto}
+.dock .btn{flex:1;min-height:52px;padding:0 10px}
+.dock .btn.ghost{background:rgba(238,244,246,.1)}
+@media(min-width:900px){.dock{display:none}body{padding-bottom:0}}
+
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .load,.rv{opacity:1;transform:none;animation:none;transition:none}
+  .orb{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header class="nav glass">
+  <b>REV<i>LINE</i></b>
+  <nav class="links"><a href="#bay">The garage</a><a href="#board">Rate board</a><a href="#reviews">Reviews</a><a href="#visit">Hours</a></nav>
+  <a class="btn red" href="tel:+13439883200">Call now</a>
+</header>
+
+<main>
+<section class="hero" aria-label="Revline Car Detailing Garage">
+  <img class="poster" src="video/hero-poster.jpg" alt="" fetchpriority="high">
+  <video autoplay muted loop playsinline poster="video/hero-poster.jpg" preload="auto" aria-hidden="true"><source src="video/hero.mp4" type="video/mp4"></video>
+  <div class="wrap in"><div class="inner">
+    <p class="eyebrow load">Car detailing garage &middot; Kingston, ON</p>
+    <h1 class="load d1">We bring them <em>to life.</em></h1>
+    <p class="sub load d2">Interior and exterior detailing, window tint and engine bay cleaning at 791 Montreal St.</p>
+    <div class="cta load d3">
+      <a class="btn red" href="tel:+13439883200">Call (343) 988-3200</a>
+      <a class="btn ghost" href="#quote">Get a quote</a>
+    </div>
+    <div class="card glass load d4">
+      <div class="num" data-count="4.8">4.8</div>
+      <div><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><small>76 Google reviews<br>Open 9 a.m. to 7 p.m., 7 days</small></div>
+    </div>
+  </div></div>
+</section>
+
+<section class="bay" id="bay">
+  <div class="wrap grid">
+    <div class="rv">
+      <p class="eyebrow">The garage</p>
+      <h2>Hex lights over the bay.</h2>
+      <p class="lede">Cars go into a bay with the Revline sign on the wall and a hex light ceiling. Their latest Instagram post is from Nov 16.</p>
+      <div class="facts"><span><b>791 Montreal St</b>, Kingston</span><span><b>7 days</b> a week, 9 to 7</span></div>
+      <div style="margin-top:30px"><a class="btn red" href="tel:+13439883200">Book a detail</a></div>
+    </div>
+    <div class="col rv">
+      <figure class="f1"><img src="img/p4.jpg" alt="Black Toyota RAV4 inside the Revline bay under hex ceiling lights" loading="lazy"><figcaption class="glass">Their bay, Montreal St</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="board" id="board">
+  <div class="orb a"></div><div class="orb b"></div>
+  <div class="wrap">
+    <p class="eyebrow">Rate board</p>
+    <h2>What they do. What they post.</h2>
+    <div class="grid">
+      <div class="shot" id="shot">
+        <img class="on" src="img/p8.jpg" alt="White Volkswagen Passat after a detail" data-k="0">
+        <img src="img/p7.jpg" alt="Clean rear seats and floor mats" data-k="1">
+        <img src="img/p6c.jpg" alt="Engine bay of a blue car, cleaned" data-k="2">
+        <img src="video/band-poster.jpg" alt="White car with tinted windows under hex lights" data-k="3">
+        <img src="img/p4.jpg" alt="Black RAV4 in the Revline bay" data-k="4">
+        <span class="tag glass" id="tag">Exterior shine</span>
+      </div>
+      <ul class="rows glass" id="rows">
+        <li class="on"><button type="button" data-k="0" data-tag="Exterior shine"><span class="t">Interior + exterior detail</span><span class="p q">Ask for price</span><span class="d">Full interior and exterior detailing. Their words: mirror-like shine.</span></button></li>
+        <li><button type="button" data-k="1" data-tag="Inside the cabin"><span class="t">Interior reset</span><span class="p q">Ask for price</span><span class="d">Interior photos from their own page.</span></button></li>
+        <li><button type="button" data-k="2" data-tag="Engine bay"><span class="t">Engine bay clean</span><span class="p">$35</span><span class="d">Their post: &ldquo;Engine bay clean, only $35.&rdquo;</span></button></li>
+        <li><button type="button" data-k="3" data-tag="Window tint, from $150"><span class="t">Window tint</span><span class="p">from $150</span><span class="d">Their post: premium tint with a lifetime warranty by Revline.</span></button></li>
+        <li><button type="button" data-k="4" data-tag="Ceramic coating"><span class="t">Ceramic coating</span><span class="p q">Ask for price</span><span class="d">A customer review says &ldquo;Got Ceramic Coating done on my car.&rdquo;</span></button></li>
+      </ul>
+    </div>
+    <p class="note">Prices come from their Instagram posts of <a href="https://www.instagram.com/p/DerpSU9pYVa/" rel="noopener">Oct 19</a> and <a href="https://www.instagram.com/p/DfxTcVhpEsO/" rel="noopener">Nov 15</a>. They also do custom car designs for special occasions. Confirm every price with them.</p>
+  </div>
+</section>
+
+<section class="band" aria-label="Window tint and detailing video">
+  <video autoplay muted loop playsinline poster="video/band-poster.jpg" preload="metadata" aria-hidden="true"><source src="video/band.mp4" type="video/mp4"></video>
+  <div class="wrap">
+    <h2>Gloss under the hex lights.</h2>
+    <span class="chip glass">Tint and detail, Kingston</span>
+  </div>
+</section>
+
+<section class="inter">
+  <div class="wrap rv">
+    <p class="eyebrow">Inside the cars</p>
+    <h2>Interiors, from their page.</h2>
+  </div>
+  <div class="reel" tabindex="0" aria-label="Interior photos, swipe">
+    <figure><img src="img/p10.jpg" alt="Clean dashboard and seats of a Honda" loading="lazy"><figcaption><b>Dash and seats</b>From their page.</figcaption></figure>
+    <figure><img src="img/p11.jpg" alt="Honda CR-V interior with a thank-you mat on the floor" loading="lazy"><figcaption><b>Thank you mat</b>From their page.</figcaption></figure>
+    <figure><img src="img/p12.jpg" alt="Volkswagen interior with blue ambient light" loading="lazy"><figcaption><b>Volkswagen cabin</b>From their page.</figcaption></figure>
+    <figure><img src="img/p9.jpg" alt="Silver sedan with doors open inside the hex-lit Revline bay" loading="lazy"><figcaption><b>In the bay</b>From their page.</figcaption></figure>
+  </div>
+</section>
+
+<section class="rev" id="reviews">
+  <div class="orb a" style="opacity:.25"></div>
+  <div class="wrap">
+    <p class="eyebrow">76 Google reviews &middot; 4.8</p>
+    <h2 class="rv">What customers wrote.</h2>
+    <p class="big rv"><q>Got Ceramic Coating done on my car. They make my car look more beautiful absolutely best in town and with very reasonable prices.</q></p>
+    <p class="who"><b>Ritik R.</b>, Google</p>
+    <div class="two">
+      <blockquote class="glass rv">Honestly, one of the best car detailing experiences! My car looks amazing after the full interior and exterior detailing.<cite><b>Abhi R.</b>, Google</cite></blockquote>
+      <blockquote class="glass rv">Done excellent work and price was very reasonable. Will recommend to everyone.<cite><b>Gurddat</b>, Google</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <p class="eyebrow">Find them</p>
+    <h2>Montreal St, Kingston.</h2>
+    <div class="cols">
+      <dl>
+        <div><dt>Address</dt><dd><a href="https://www.google.com/maps/place/Revline+Car+Detailing+Garage/data=!4m7!3m6!1s0x4cd2ab7e4b3f183f:0xf88e1bedfa81eec1!8m2!3d44.2530907!4d-76.484426!16s%2Fg%2F11yr_pzy6k!19sChIJPxg_S36r0kwRwe6B-u0bjvg" rel="noopener">791 Montreal St, Kingston, ON K7K 3J7</a></dd></div>
+        <div><dt>Phone</dt><dd><a href="tel:+13439883200">(343) 988-3200</a></dd></div>
+        <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/revlinegarage_kingston/" rel="noopener">@revlinegarage_kingston</a></dd></div>
+      </dl>
+      <ul class="hours glass" id="hours">
+        <li data-d="1"><span>Monday</span><span>9 a.m. to 7 p.m.</span></li>
+        <li data-d="2"><span>Tuesday</span><span>9 a.m. to 7 p.m.</span></li>
+        <li data-d="3"><span>Wednesday</span><span>9 a.m. to 7 p.m.</span></li>
+        <li data-d="4"><span>Thursday</span><span>9 a.m. to 7 p.m.</span></li>
+        <li data-d="5"><span>Friday</span><span>9 a.m. to 7 p.m.</span></li>
+        <li data-d="6"><span>Saturday</span><span>9 a.m. to 7 p.m.</span></li>
+        <li data-d="0"><span>Sunday</span><span>9 a.m. to 7 p.m.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="quote" id="quote">
+  <div class="orb a"></div><div class="orb b"></div>
+  <div class="wrap">
+    <p class="eyebrow">Get a quote</p>
+    <h2>Fill in the sentence.</h2>
+    <form class="qp glass" id="qf" autocomplete="off">
+      <p class="sent">Hi Revline, I'm
+        <input id="qn" type="text" placeholder="your name" aria-label="Your name" required>
+        and I have a
+        <input id="qc" type="text" placeholder="car make, model" aria-label="Your car" required>.
+        I need
+        <select id="qs" aria-label="Service">
+          <option>a full detail</option><option>an interior clean</option><option>an engine bay clean</option><option>window tint</option><option>ceramic coating</option><option>something else</option>
+        </select>.
+      </p>
+      <button class="btn red" type="submit">Text it to Revline</button>
+      <small>Opens your messages app with this text, ready to send to (343) 988-3200.</small>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>Revline Car Detailing Garage &middot; 791 Montreal St, Kingston, ON &middot; <a href="tel:+13439883200">(343) 988-3200</a></div>
+    <div>Preview built by JPF. Not live yet.</div>
+  </div>
+</footer>
+
+<div class="dock glass" role="group" aria-label="Call or text">
+  <a class="btn red" href="tel:+13439883200">Call</a>
+  <a class="btn ghost" href="#quote">Text a quote</a>
+</div>
+
+<script>
+(function(){
+  // rate board
+  var rows=document.getElementById('rows'),imgs=document.querySelectorAll('#shot img'),tag=document.getElementById('tag');
+  rows.addEventListener('click',function(e){
+    var b=e.target.closest('button');if(!b)return;
+    var k=b.getAttribute('data-k');
+    rows.querySelectorAll('li').forEach(function(li){li.classList.remove('on')});
+    b.parentNode.classList.add('on');
+    imgs.forEach(function(i){i.classList.toggle('on',i.getAttribute('data-k')===k)});
+    tag.textContent=b.getAttribute('data-tag');
+  });
+  // today in hours
+  var d=String(new Date().getDay());
+  var li=document.querySelector('#hours li[data-d="'+d+'"]');if(li)li.classList.add('today');
+  // reveal
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
+    els.forEach(function(e){io.observe(e)});
+  }else els.forEach(function(e){e.classList.add('in')});
+  // quote -> sms
+  document.getElementById('qf').addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=document.getElementById('qn').value.trim(),c=document.getElementById('qc').value.trim(),s=document.getElementById('qs').value;
+    var body="Hi Revline, I'm "+n+" and I have a "+c+". I need "+s+".";
+    location.href='sms:+13439883200?&body='+encodeURIComponent(body);
+  });
+  // pause videos when reduced motion
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('video').forEach(function(v){v.removeAttribute('autoplay');v.pause()})}
+})();
+</script>
+</body>
+</html>
