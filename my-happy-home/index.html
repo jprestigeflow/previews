@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>My Happy Home Inc. | House cleaning in Airdrie, AB</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Mulish:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+/* PLAN: light-editorial. Palette: paper #F4F0E8 (warm walls/light in p4,p10), ink #1E2B36 (navy of the shower curtain p7), mist #DDE2E4 (grey carpet p2), accent blue #3A6C9C (curtain blue p7).
+Fonts: Caprasimo (display) + Mulish. Signature: Room by room viewer with glass chips. Order: hero, claim, rooms, reviews, plans, hours, quote, footer. Motion: load settle, count-up, gentle reveal. */
+:root{--paper:#F4F0E8;--ink:#1E2B36;--mist:#DDE2E4;--blue:#3A6C9C;--blue-d:#2c557d}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font:400 17px/1.6 'Mulish',sans-serif;color:var(--ink);background:var(--paper);overflow-x:hidden;padding-bottom:96px}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.d{font-family:'Caprasimo',serif;font-weight:400;letter-spacing:-.005em;word-spacing:.12em;line-height:1}
+.lbl{font-size:14px;font-weight:800;letter-spacing:.06em;color:var(--blue)}
+/* nav */
+nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:8px 8px 8px 20px;border-radius:999px;background:rgba(244,240,232,.55);backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 20px 50px -22px rgba(30,43,54,.35)}
+.nn{display:none}nav b{white-space:nowrap;font-family:'Caprasimo';font-weight:400;font-size:18px}
+nav a.cta{min-height:44px;display:inline-flex;align-items:center;padding:0 20px;border-radius:999px;background:var(--blue);color:#fff;font-weight:800;text-decoration:none;transition:transform .18s,background .18s}
+nav a.cta:active,.btn:active{transform:scale(.98)}
+nav a.cta:hover{background:var(--blue-d)}
+/* hero */
+.hero{position:relative;min-height:100svh;display:grid;align-items:end;color:#fff;overflow:hidden;background:var(--ink)}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;animation:settle 1.4s cubic-bezier(.2,.7,.2,1) both}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,43,54,.15) 0%,rgba(30,43,54,0) 35%,rgba(30,43,54,.88) 100%)}
+.hero .in{position:relative;z-index:2;padding:0 22px 40px;max-width:1240px;margin:auto;width:100%;display:grid;gap:26px}
+h1{font-size:clamp(56px,16vw,150px);animation:rise 1s .35s cubic-bezier(.2,.7,.2,1) both}
+h1 span{color:#cfe2f4}
+.hero p.sub{font-size:18px;max-width:30em;animation:rise 1s .5s both}
+.glass-card{border-radius:26px;padding:18px 20px;background:rgba(30,43,54,.5);backdrop-filter:blur(22px) saturate(170%);-webkit-backdrop-filter:blur(22px) saturate(170%);border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 24px 60px -24px rgba(0,0,0,.5);max-width:420px;animation:rise 1s .7s both}
+.glass-card .big{font-family:'Caprasimo';font-size:44px;line-height:1}
+.glass-card q{display:block;margin-top:8px;font-size:15px;line-height:1.5;quotes:none}
+.glass-card small{display:block;margin-top:6px;font-size:14px;opacity:.85}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:999px;background:var(--blue);color:#fff;font-weight:800;text-decoration:none;border:0;font:inherit;font-weight:800;cursor:pointer;transition:transform .18s,background .18s}
+.btn:hover{background:var(--blue-d)}
+.btn.ghost{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.4)}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+@keyframes settle{from{transform:scale(1.12)}to{transform:scale(1)}}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+/* sections */
+section{padding:84px 22px}
+.wrap{max-width:1100px;margin:auto}
+h2{font-size:clamp(40px,9vw,84px);margin:12px 0 22px}
+.claim p{font-size:clamp(20px,3vw,28px);line-height:1.45;max-width:26em}
+.svc{margin-top:44px;border-top:1px solid rgba(30,43,54,.2)}
+.svc div{padding:22px 0;border-bottom:1px solid rgba(30,43,54,.2);display:grid;gap:4px}
+.svc strong{font-family:'Caprasimo';font-weight:400;font-size:28px}
+.svc span{font-size:16px;opacity:.8}
+.svc em{font-size:14px;font-style:normal;color:var(--blue);font-weight:800}
+/* rooms */
+.rooms{background:var(--ink);color:var(--paper);padding-left:0;padding-right:0}
+.rooms .head{padding:0 22px;max-width:1100px;margin:auto}
+.rooms .lbl{color:#9fc4e6}
+.stage{position:relative;max-width:1240px;margin:28px auto 0;aspect-ratio:4/5;overflow:hidden;background:#000}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s}
+.stage img.on{opacity:1}
+.chips{position:absolute;z-index:3;left:12px;right:12px;bottom:14px;display:flex;gap:8px;overflow-x:auto;padding:8px;border-radius:999px;background:rgba(30,43,54,.45);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.25);scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips button{flex:none;min-height:44px;padding:0 18px;border-radius:999px;border:0;background:transparent;color:#fff;font:800 15px 'Mulish';cursor:pointer;transition:background .18s,transform .18s}
+.chips button[aria-selected=true]{background:var(--blue)}
+.chips button:active{transform:scale(.97)}
+/* reviews */
+.lead q{display:block;font-family:'Caprasimo';font-size:clamp(28px,5.4vw,56px);line-height:1.15;quotes:none;word-spacing:.08em}
+.lead cite{display:block;margin-top:18px;font-style:normal;font-weight:800}
+.orbs{position:relative;margin-top:56px}
+.orbs:before,.orbs:after{content:"";position:absolute;border-radius:50%;filter:blur(40px);z-index:0;animation:drift 26s ease-in-out infinite alternate}
+.orbs:before{width:260px;height:260px;background:rgba(58,108,156,.28);left:-60px;top:-40px}
+.orbs:after{width:300px;height:300px;background:rgba(221,226,228,.9);right:-80px;bottom:-60px;animation-delay:-9s}
+@keyframes drift{to{transform:translate(40px,30px)}}
+.cards{position:relative;z-index:1;display:grid;gap:16px}
+.card{padding:24px;border-radius:24px;background:rgba(255,255,255,.55);backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.7);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 20px 60px -24px rgba(30,43,54,.3)}
+.card q{quotes:none;display:block;font-size:16px}
+.card cite{display:block;margin-top:12px;font-style:normal;font-weight:800;font-size:14px}
+.nums{display:flex;gap:40px;margin-top:36px;flex-wrap:wrap}
+.nums b{display:block;font-family:'Caprasimo';font-weight:400;font-size:64px;line-height:1;color:var(--blue)}
+.nums span{font-size:14px;font-weight:800}
+/* photo band */
+.band{display:grid;gap:0}
+.band img{width:100%;height:56vh;object-fit:cover}
+/* hours */
+.hours{background:var(--mist)}
+.hr{display:grid;gap:0;margin-top:22px}
+.hr div{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(30,43,54,.2);font-weight:600}
+.hr .x{opacity:.6}
+.phone{font-family:'Caprasimo';font-size:clamp(36px,9vw,72px);text-decoration:none;display:inline-block;margin-top:24px;color:var(--blue)}
+/* quote */
+.quote{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
+.quote:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:rgba(58,108,156,.5);filter:blur(60px);right:-120px;top:-80px;animation:drift 24s ease-in-out infinite alternate}
+.panel{position:relative;z-index:1;padding:28px 22px;border-radius:28px;background:rgba(244,240,232,.1);backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);border:1px solid rgba(255,255,255,.25);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 30px 70px -30px rgba(0,0,0,.6);font-size:clamp(20px,3.2vw,30px);line-height:2.1;max-width:760px}
+.panel input,.panel select{font:800 inherit;font-size:inherit;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);border-radius:14px;padding:4px 12px;min-height:44px;max-width:100%}
+.panel select option{color:var(--ink)}
+.panel input::placeholder{color:rgba(255,255,255,.55)}
+.panel input:focus,.panel select:focus{outline:3px solid #9fc4e6}
+.panel .btn{margin-top:18px;font-size:17px}
+.panel small{display:block;font-size:14px;line-height:1.5;opacity:.8;margin-top:12px}
+footer{padding:36px 22px;background:#16212a;color:#b9c3ca;font-size:14px;text-align:center}
+/* dock */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:12px;max-width:520px;margin:auto;display:flex;gap:8px;padding:8px;border-radius:999px;background:rgba(244,240,232,.6);backdrop-filter:blur(22px) saturate(170%);-webkit-backdrop-filter:blur(22px) saturate(170%);border:1px solid rgba(255,255,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 20px 50px -20px rgba(30,43,54,.45)}
+.dock a{flex:1;min-height:48px;display:flex;align-items:center;justify-content:center;border-radius:999px;font-weight:800;text-decoration:none;transition:transform .18s}
+.dock a:active{transform:scale(.98)}
+.dock .c{background:var(--blue);color:#fff}
+.dock .t{color:var(--ink);background:rgba(255,255,255,.5)}
+.rv{opacity:0;transform:translateY(20px);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+@media(min-width:800px){
+ .nn{display:inline}
+ .hero img{left:auto;right:0;width:54%;object-position:50% 30%}
+ .hero:after{background:linear-gradient(90deg,var(--ink) 40%,rgba(30,43,54,0) 62%)}
+ .hero .in{position:relative}
+ h1{font-size:clamp(56px,10.5vw,150px)}
+ .hero{background:var(--ink)}
+ body{padding-bottom:0}.dock{display:none}
+ section{padding:140px 40px}
+ .hero .in{padding:0 40px 64px;grid-template-columns:1fr auto;align-items:end}
+ .hero .in>div:first-child{grid-column:1/2}
+ .stage{aspect-ratio:16/9}
+ .cards{grid-template-columns:repeat(3,1fr)}
+ .svc div{grid-template-columns:1fr 1.2fr auto;align-items:baseline;gap:30px}
+ .band{grid-template-columns:1fr 1fr 1fr}.band img{height:70vh}
+ .hr{grid-template-columns:1fr 1fr;column-gap:60px}
+ .lead{max-width:1000px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav><b>My Happy Home</b><a class="cta" href="tel:+18254542430">Call <span class="nn">&nbsp;(825) 454-2430</span></a></nav>
+
+<header class="hero">
+ <img src="img/p3.jpg" alt="Cleaner wiping down a glass shower enclosure" fetchpriority="high">
+ <div class="in">
+  <div style="display:grid;gap:22px">
+   <h1 class="d">Home, <span>happily</span> clean.</h1>
+   <p class="sub">My Happy Home Inc. House cleaning in Airdrie, Alberta.</p>
+   <div class="row"><a class="btn" href="#quote">Get a quote</a><a class="btn ghost" href="tel:+18254542430">Call now</a></div>
+  </div>
+  <div class="glass-card"><div class="big">5.0 <span style="font-size:18px;font-family:Mulish;font-weight:800">on Google, 17 reviews</span></div><q>&ldquo;Laura and her team are simply the best.&rdquo;</q><small>Dee D., Google</small></div>
+ </div>
+</header>
+
+<section class="claim"><div class="wrap rv">
+ <span class="lbl">Airdrie, AB</span>
+ <h2 class="d">House cleaning, done with attention to detail.</h2>
+ <p>Customers say the team is professional, thorough and easy to deal with. Deep cleans, monthly visits, and a fresh start for a newly renovated home.</p>
+ <div class="svc">
+  <div><strong>Deep clean</strong><span>Customers describe a deep clean where every little detail was covered.</span><em>Mentioned in reviews</em></div>
+  <div><strong>Monthly cleaning</strong><span>Regular visits to keep the house in order, so you have time for other things.</span><em>Mentioned in reviews</em></div>
+  <div><strong>Newly renovated homes</strong><span>One customer had the team clean their newly renovated home.</span><em>Mentioned in reviews</em></div>
+ </div>
+</div></section>
+
+<section class="rooms">
+ <div class="head rv"><span class="lbl">Room by room</span><h2 class="d">See the rooms.</h2><p style="max-width:30em;opacity:.85">Photos from My Happy Home Inc. Tap a room.</p></div>
+ <div class="stage" id="stage">
+  <img class="on" src="img/p4.jpg" alt="Clean kitchen with maple cabinets" data-n="Kitchen">
+  <img src="img/p9.jpg" alt="Bright bathroom with marble tile floor" data-n="Bathroom">
+  <img src="img/p3.jpg" alt="Cleaner polishing a glass shower" data-n="Shower">
+  <img src="img/p10.jpg" alt="Kitchen counter and sink, clean" data-n="Counters">
+  <img src="img/p6.jpg" alt="Cleaner vacuuming a living room" data-n="Living room">
+  <img src="img/p8.jpg" alt="Front-load washer with its door open" data-n="Laundry">
+  <img src="img/p2.jpg" alt="Carpet with fresh vacuum lines" data-n="Carpet">
+  <div class="chips" role="tablist" id="chips"></div>
+ </div>
+</section>
+
+<section><div class="wrap">
+ <div class="lead rv"><span class="lbl">What customers say</span>
+  <q style="margin-top:14px">&ldquo;Their attention to detail is exceptional, the standard of cleaning is consistently outstanding, and the service is always professional, reliable, and genuinely thoughtful.&rdquo;</q>
+  <cite>Dee D., Google</cite></div>
+ <div class="nums rv"><div><b data-to="5.0" data-d="1">5.0</b><span>Google rating</span></div><div><b data-to="17">17</b><span>Google reviews</span></div></div>
+ <div class="orbs rv"><div class="cards">
+  <div class="card"><q>&ldquo;I had My Happy Home come to clean our newly renovated home. They took the time to give it an amazing deep clean and we now have a monthly plan to keep it up.&rdquo;</q><cite>Laurie R., Google</cite></div>
+  <div class="card"><q>&ldquo;We look forward to them coming every time and highly recommend this great team for your home too!&rdquo;</q><cite>Suzy R., Google</cite></div>
+  <div class="card"><q>&ldquo;Always a pleasure coming home to such a nice clean home. Laura and her team do a fantastic job cleaning and pay attention to every detail.&rdquo;</q><cite>Michelle G., Google</cite></div>
+ </div></div>
+</div></section>
+
+<div class="band"><img src="img/p7.jpg" alt="Clean bathtub with blue patterned curtain" loading="lazy"><img src="img/p5.jpg" alt="Tidy bathroom with vanity" loading="lazy"><img src="img/p10.jpg" alt="Clean kitchen counter" loading="lazy"></div>
+
+<section class="hours"><div class="wrap rv">
+ <span class="lbl">Hours and area</span>
+ <h2 class="d">Serving Airdrie, AB.</h2>
+ <div class="hr">
+  <div><span>Monday</span><span>9 a.m. to 5 p.m.</span></div>
+  <div><span>Tuesday</span><span>9 a.m. to 5 p.m.</span></div>
+  <div><span>Wednesday</span><span>9 a.m. to 5 p.m.</span></div>
+  <div><span>Thursday</span><span>9 a.m. to 5 p.m.</span></div>
+  <div><span>Friday</span><span>9 a.m. to 3 p.m.</span></div>
+  <div class="x"><span>Saturday</span><span>Closed</span></div>
+  <div class="x"><span>Sunday</span><span>Closed</span></div>
+ </div>
+ <a class="phone" href="tel:+18254542430">(825) 454-2430</a>
+</div></section>
+
+<section class="quote" id="quote"><div class="wrap">
+ <span class="lbl" style="color:#9fc4e6">Get a quote</span>
+ <h2 class="d">Tell us what you need.</h2>
+ <form class="panel" id="f">
+  Hi, I&rsquo;m <input id="nm" placeholder="your name" required aria-label="Your name" size="12">. I need a
+  <select id="sv" aria-label="What you need"><option>deep clean</option><option>monthly cleaning</option><option>clean for a newly renovated home</option><option>not sure yet</option></select>
+  in <input id="ar" value="Airdrie" aria-label="Your area" size="10">.
+  <div><button class="btn" type="submit">Text this to My Happy Home</button></div>
+  <small>Opens your text app with the message ready to send to (825) 454-2430.</small>
+ </form>
+</div></section>
+
+<footer>My Happy Home Inc. &middot; Airdrie, AB &middot; (825) 454-2430<br>Preview built by JPF. Not live yet.</footer>
+
+<div class="dock"><a class="c" href="tel:+18254542430">Call</a><a class="t" href="sms:+18254542430">Text</a></div>
+
+<script>
+const imgs=[...document.querySelectorAll('#stage img')],chips=document.getElementById('chips');
+imgs.forEach((im,i)=>{const b=document.createElement('button');b.textContent=im.dataset.n;b.setAttribute('role','tab');b.setAttribute('aria-selected',i==0);b.onclick=()=>{imgs.forEach((x,j)=>x.classList.toggle('on',j==i));[...chips.children].forEach((c,j)=>c.setAttribute('aria-selected',j==i))};chips.appendChild(b)});
+document.getElementById('f').addEventListener('submit',e=>{e.preventDefault();const m=`Hi, I'm ${nm.value}. I need a ${sv.value} in ${ar.value}.`;location.href='sms:+18254542430?&body='+encodeURIComponent(m)});
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+const co=new IntersectionObserver(es=>es.forEach(x=>{if(!x.isIntersecting)return;co.unobserve(x.target);const el=x.target,to=parseFloat(el.dataset.to),dc=el.dataset.d?1:0;let t0;const s=t=>{t0=t0||t;const p=Math.min((t-t0)/1200,1);el.textContent=(to*p).toFixed(dc);if(p<1)requestAnimationFrame(s)};requestAnimationFrame(s)}),{threshold:.6});
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches)document.querySelectorAll('[data-to]').forEach(e=>co.observe(e));
+</script>
+</body>
+</html>
