@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Cochrane Epoxy Experts | Epoxy floors in Cochrane, Alberta</title>
+<meta name="description" content="Flake, metallic and quartz epoxy floors in Cochrane, Alberta. 5.0 on Google from 20 reviews. Call (825) 962-8465.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ direction: floor-finish-chooser-led. Dark premium, their real floors own the top, quote button always in reach.
+ palette: graphite #121518 (shadow in their metallic floor) / slab #d8d6d1 (grey flake floor) / flake blue #4f6fa3 (blue flake garage photo) / copper #e98a5b (orange buttons on their own post graphics) / ember #f0b45c (golden-hour video, used only in glow)
+ fonts: Pathway Gothic One (display, caps) + Public Sans (body)
+ signature: finish chooser, Blue flake / Grey flake / Metallic, glass chips switch the big photo
+ order: hero > chooser > golden-hour video band > services list > jobs strip > reviews > quote
+ motion: one load sequence (photo settles, type rises, glass card floats in), reveals on photos only, counters count once
+*/
+:root{--ink:#121518;--ink2:#1b2025;--slab:#d8d6d1;--blue:#4f6fa3;--cu:#e98a5b;--ember:#f0b45c;--bone:#f3f1ec;
+--d:'Pathway Gothic One','Arial Narrow',sans-serif;--b:'Public Sans',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--bone);font:400 16px/1.6 var(--b);overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cu);outline-offset:3px}
+.glass{background:rgba(18,21,24,.5);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 20px 60px -20px rgba(0,0,0,.55)}
+.btn{white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;border-radius:999px;font:600 16px/1 var(--b);text-decoration:none;border:0;cursor:pointer;transition:transform .18s,background .18s,box-shadow .18s}
+.btn:active{transform:scale(.98)}
+.cu{background:var(--cu);color:#1a0f09}
+.cu:hover{background:#f19c72}
+.ghost{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.35);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.ghost:hover{background:rgba(255,255,255,.2)}
+/* nav */
+nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;max-width:1180px;margin:auto;height:60px;border-radius:999px;display:flex;align-items:center;justify-content:space-between;padding:0 8px 0 18px}
+nav .nm{font:400 19px/1 var(--d);white-space:nowrap;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;word-spacing:.12em}
+nav .r{display:flex;gap:10px;align-items:center}
+nav .tel{display:none;text-decoration:none;font-weight:600;padding:0 10px}
+nav .btn{min-height:44px;padding:0 16px;white-space:nowrap}
+@media(min-width:760px){nav .nm{font-size:22px;letter-spacing:.06em}nav .btn{padding:0 20px}}
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:#0c0e10}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 12%;transform:scale(1.1);animation:settle 1.8s cubic-bezier(.2,.7,.2,1) forwards}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,14,16,.55) 0,rgba(12,14,16,0) 28%,rgba(12,14,16,.25) 48%,rgba(12,14,16,.92) 100%)}
+.hero .in{position:relative;z-index:2;width:100%;max-width:1180px;margin:auto;padding:100px 20px 104px}
+h1{font:400 clamp(66px,min(19vw,25svh),230px)/.9 var(--d);text-transform:uppercase;letter-spacing:.012em;word-spacing:.14em;max-width:12ch;text-shadow:0 2px 30px rgba(0,0,0,.35)}
+h1 span{display:block;opacity:0;transform:translateY(40px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+h1 span:nth-child(2){animation-delay:.18s;color:var(--cu)}
+h1 span:nth-child(3){animation-delay:.3s}
+.hero p.sub{margin-top:20px;max-width:30ch;font-size:18px;color:#ece9e3;opacity:0;animation:rise .9s .5s forwards}
+.hero .cta{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px;opacity:0;animation:rise .9s .62s forwards}
+.hero .gc{position:relative;margin-top:28px;width:min(330px,100%);border-radius:24px;padding:16px 18px;opacity:0;transform:translateY(14px);animation:rise .9s .9s forwards}
+.gc .st{display:flex;align-items:baseline;gap:8px;font:400 40px/1 var(--d)}
+.gc .st small{font:500 13px var(--b);color:#e4e1db}
+.gc q{display:block;margin-top:8px;font-size:14px;line-height:1.45;quotes:none}
+.gc cite{display:block;margin-top:6px;font:500 13px var(--b);font-style:normal;color:#cfcbc4}
+@keyframes settle{to{transform:scale(1)}}
+@keyframes rise{to{opacity:1;transform:none}}
+/* sections */
+section{padding:88px 20px}
+.wrap{max-width:1180px;margin:auto}
+h2{font:400 clamp(46px,9vw,104px)/.95 var(--d);text-transform:uppercase;letter-spacing:.012em;word-spacing:.12em}
+.kick{font:500 14px/1.4 var(--b);color:var(--cu);margin-bottom:14px}
+/* chooser */
+#finish{background:var(--ink);position:relative;overflow:hidden}
+#finish:before{content:"";position:absolute;width:640px;height:640px;right:-220px;top:-120px;background:radial-gradient(closest-side,rgba(79,111,163,.35),transparent);filter:blur(10px);animation:drift 26s ease-in-out infinite alternate;pointer-events:none}
+@keyframes drift{to{transform:translate(-80px,120px)}}
+.chips{margin-top:32px;display:flex;gap:10px;flex-wrap:wrap;position:relative;z-index:2}
+.chip{min-height:48px;padding:0 22px;border-radius:999px;color:#fff;font:600 15px var(--b);cursor:pointer;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);transition:.18s}
+.chip:active{transform:scale(.98)}
+.chip[aria-selected=true]{background:var(--cu);color:#1a0f09;border-color:var(--cu)}
+.stage{margin-top:28px;display:grid;gap:20px;position:relative;z-index:2}
+.pic{position:relative;border-radius:26px;overflow:hidden;aspect-ratio:4/5;background:var(--ink2)}
+.pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s}
+.pic img.on{opacity:1}
+.info h3{font:400 clamp(38px,8vw,64px)/1 var(--d);text-transform:uppercase;letter-spacing:.02em;word-spacing:.1em}
+.info p{margin-top:14px;max-width:46ch;color:#d6d3cc;font-size:17px}
+.info .thumbs{margin-top:22px;display:flex;gap:10px}
+.thumbs button{width:72px;height:72px;border-radius:16px;overflow:hidden;border:2px solid transparent;padding:0;background:none;cursor:pointer;opacity:.6;transition:.18s}
+.thumbs button img{width:100%;height:100%;object-fit:cover}
+.thumbs button[aria-current=true]{border-color:var(--cu);opacity:1}
+.info .btn{margin-top:26px}
+/* band */
+.band{position:relative;height:72svh;min-height:440px;overflow:hidden;background:#222}
+.band video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.band:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(18,21,24,.85),rgba(18,21,24,0) 55%)}
+.band p{position:absolute;z-index:2;left:20px;bottom:28px;max-width:16ch;font:400 clamp(40px,8vw,88px)/.95 var(--d);text-transform:uppercase;word-spacing:.12em}
+.band p em{font-style:normal;color:var(--ember)}
+/* services */
+#svc{background:var(--bone);color:var(--ink)}
+#svc .kick{color:#a8482a}
+.rows{margin-top:40px;border-top:1px solid rgba(18,21,24,.25)}
+.row{display:grid;gap:6px;padding:26px 0;border-bottom:1px solid rgba(18,21,24,.25)}
+.row b{font:400 clamp(34px,7vw,64px)/1 var(--d);text-transform:uppercase;letter-spacing:.015em;word-spacing:.1em}
+.row span{max-width:56ch;color:#3b4046;font-size:16px}
+.row i{font:500 13px var(--b);font-style:normal;color:#a8482a}
+/* jobs */
+#jobs{padding-left:0;padding-right:0;background:var(--ink2)}
+#jobs .wrap{padding:0 20px}
+.strip{margin-top:34px;display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 20px 14px;scrollbar-width:thin}
+.strip figure{flex:0 0 min(72vw,300px);scroll-snap-align:start;border-radius:22px;overflow:hidden;aspect-ratio:3/4;background:#000}
+.strip img{width:100%;height:100%;object-fit:cover}
+/* reviews */
+#rev{position:relative;overflow:hidden;background:var(--ink)}
+#rev:before{content:"";position:absolute;width:520px;height:520px;left:-200px;bottom:-60px;background:radial-gradient(closest-side,rgba(233,138,91,.22),transparent);animation:drift 30s ease-in-out infinite alternate;pointer-events:none}
+.score{display:flex;gap:28px;align-items:baseline;flex-wrap:wrap}
+.score b{font:400 clamp(90px,22vw,200px)/.85 var(--d);color:var(--cu)}
+.score span{font:500 15px var(--b);color:#cfcbc4}
+.lead{margin-top:34px;font:400 clamp(30px,5.6vw,60px)/1.08 var(--d);max-width:30ch;word-spacing:.1em;letter-spacing:.01em;position:relative;z-index:2}
+.lead cite{display:block;margin-top:16px;font:500 15px var(--b);font-style:normal;color:#cfcbc4}
+.rc{margin-top:40px;display:grid;gap:14px;position:relative;z-index:2}
+.rc blockquote{border-radius:24px;padding:22px;font-size:15px;line-height:1.55}
+.rc cite{display:block;margin-top:10px;font:500 13px var(--b);font-style:normal;color:#cfcbc4}
+/* quote */
+#quote{background:linear-gradient(180deg,var(--ink),#0c0e10);position:relative;overflow:hidden}
+#quote:before{content:"";position:absolute;width:560px;height:560px;right:-200px;top:20px;background:radial-gradient(closest-side,rgba(240,180,92,.2),transparent);animation:drift 24s ease-in-out infinite alternate;pointer-events:none}
+.qg{display:grid;gap:34px;position:relative;z-index:2}
+.facts{margin-top:26px;display:grid;gap:14px;font-size:17px}
+.facts b{display:block;font:500 13px var(--b);color:var(--cu)}
+.facts a{font-weight:600}
+form{border-radius:28px;padding:24px;display:grid;gap:14px}
+label{display:grid;gap:6px;font:500 14px var(--b);color:#e4e1db}
+input,select,textarea{width:100%;min-height:50px;border-radius:14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);color:#fff;font:400 16px var(--b);padding:12px 14px}
+textarea{min-height:96px;resize:vertical}
+select option{color:#111}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--cu);outline-offset:1px;border-color:var(--cu)}
+form small{font-size:13px;color:#cfcbc4}
+footer{padding:34px 20px 120px;text-align:center;font-size:14px;color:#aeb2b6;background:#0c0e10}
+/* dock */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:12px;border-radius:999px;display:flex;gap:8px;padding:8px}
+.dock .btn{flex:1;min-height:48px;padding:0 10px}
+@media(min-width:760px){
+ nav .tel{display:inline}
+ section{padding:140px 40px}
+ #jobs{padding-left:0;padding-right:0}
+ .hero .in{padding:0 40px 110px}
+ .hero p.sub{font-size:21px}
+ .hero .gc{position:absolute;right:0;bottom:0;margin:0;width:300px}
+ .hero .in{position:relative}
+ .stage{grid-template-columns:1.25fr 1fr;align-items:center;gap:56px}
+ .pic{aspect-ratio:4/4.6}
+ .band p{left:max(40px,calc((100vw - 1180px)/2));bottom:48px}
+ .row{grid-template-columns:90px 1fr 1.2fr;align-items:baseline;gap:24px}
+ #jobs .wrap{padding:0 40px}
+ .strip{padding:0 max(40px,calc((100vw - 1180px)/2)) 14px}
+ .strip figure{flex-basis:300px}
+ .rc{grid-template-columns:repeat(2,1fr)}
+ .qg{grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+ form{padding:34px}
+ .dock{display:none}
+ footer{padding-bottom:40px}
+}
+@media(min-width:1100px){.rc{grid-template-columns:repeat(4,1fr)}}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.hero>img{transform:none}h1 span,.hero .sub,.hero .cta,.hero .gc{opacity:1;transform:none}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav class="glass" aria-label="Main">
+  <a class="nm" href="#top">Cochrane Epoxy Experts</a>
+  <div class="r"><a class="tel" href="tel:+18259628465">(825) 962-8465</a><a class="btn cu" href="#quote">Get a quote</a></div>
+</nav>
+
+<header class="hero" id="top">
+  <img src="img/p1.jpg" alt="Blue flake epoxy garage floor finished by Cochrane Epoxy Experts" fetchpriority="high">
+  <div class="in">
+    <h1><span>Epoxy floors.</span><span>Done right.</span></h1>
+    <p class="sub">Flake, metallic and quartz epoxy floors in Cochrane, Alberta.</p>
+    <div class="cta"><a class="btn cu" href="#quote">Get a quote</a><a class="btn ghost" href="tel:+18259628465">Call (825) 962-8465</a></div>
+  <div class="gc glass">
+    <div class="st">5.0<small>Google, 20 reviews</small></div>
+    <q>Alex and team were great! We are really happy with the job they did and the outcome!</q>
+    <cite>Matt B., Google</cite>
+  </div>
+  </div>
+</header>
+
+<section id="finish">
+  <div class="wrap">
+    <p class="kick">Their floors, from their own posts</p>
+    <h2>Pick a finish.</h2>
+    <div class="chips" role="tablist" aria-label="Floor finish">
+      <button class="chip" role="tab" aria-selected="true" data-k="blue">Blue flake</button>
+      <button class="chip" role="tab" aria-selected="false" data-k="grey">Grey flake</button>
+      <button class="chip" role="tab" aria-selected="false" data-k="metal">Metallic</button>
+    </div>
+    <div class="stage">
+      <div class="pic" id="pic"></div>
+      <div class="info">
+        <h3 id="ft"></h3>
+        <p id="fp"></p>
+        <div class="thumbs" id="th"></div>
+        <a class="btn cu" href="#quote">Quote this floor</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <video autoplay muted loop playsinline preload="metadata" poster="video/band-poster.jpg"><source src="video/band.mp4" type="video/mp4"></video>
+  <p>Golden hour on a <em>finished</em> floor.</p>
+</div>
+
+<section id="svc">
+  <div class="wrap">
+    <p class="kick">What they install</p>
+    <h2>Four systems.</h2>
+    <div class="rows">
+      <div class="row rv"><i>01</i><b>Flake epoxy garage floors</b><span>Built for Alberta winters, heavy vehicle traffic, oil spills and daily wear. Easy to clean and slip-resistant.</span></div>
+      <div class="row rv"><i>02</i><b>Metallic epoxy floors</b><span>Deep, reflective metallic pigments and a seamless high-gloss finish. For homes, basements, commercial spaces, garages and showrooms.</span></div>
+      <div class="row rv"><i>03</i><b>Quartz epoxy driveways</b><span>Quartz aggregate in the epoxy base for strength and grip, sealed against salt, oil and chemicals.</span></div>
+      <div class="row rv"><i>04</i><b>Commercial flake floors</b><span>Colour flakes over the base coat give grip underfoot and a sealed surface for business floors.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="jobs">
+  <div class="wrap">
+    <p class="kick">Recent work in Cochrane</p>
+    <h2>The jobs.</h2>
+  </div>
+  <div class="strip" tabindex="0" aria-label="Photos of finished floors">
+    <figure><img loading="lazy" src="img/p5.jpg" alt="Metallic epoxy floor in grey and white swirls"></figure>
+    <figure><img loading="lazy" src="img/p6.jpg" alt="High-gloss metallic epoxy floor with window reflections"></figure>
+    <figure><img loading="lazy" src="img/p2.jpg" alt="Blue flake garage floor and stairs"></figure>
+    <figure><img loading="lazy" src="img/p7.jpg" alt="Flake epoxy garage floor in golden hour light"></figure>
+    <figure><img loading="lazy" src="img/p4.jpg" alt="Close view of a metallic epoxy pour"></figure>
+    <figure><img loading="lazy" src="img/p8.jpg" alt="Grey flake garage floor"></figure>
+    <figure><img loading="lazy" src="img/p3.jpg" alt="Blue flake floor meeting the concrete apron"></figure>
+  </div>
+</section>
+
+<section id="rev">
+  <div class="wrap">
+    <div class="score"><b data-n="5.0">5.0</b><span>on Google from <strong data-c="20">20</strong> reviews</span></div>
+    <blockquote class="lead">Couldn’t be happier with the job Alex did. Super professional, easy to deal with, and his attention to detail was awesome. You can tell he really cares about the quality of his work and making sure everything is done RIGHT. …<cite>Tyler M., Google</cite></blockquote>
+    <div class="rc">
+      <blockquote class="glass">I’ve just had my garage floor completed, and I’m truly impressed with the quality and efficiency of the work  I highly recommend this company! …<cite>N. P., Google</cite></blockquote>
+      <blockquote class="glass">I was so happy with the results. They gave me exactly what I asked for and more with great timing and professional effort. I highly recommend! …<cite>Myla K., Google</cite></blockquote>
+      <blockquote class="glass">Very professional, polite, knowledgeable and their work is impeccable!!! I highly recommend.<cite>Manjot S., Google</cite></blockquote>
+      <blockquote class="glass">Alex and team were great! We are really happy with the job they did and the outcome!<cite>Matt B., Google</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="quote">
+  <div class="wrap qg">
+    <div>
+      <p class="kick">Get a quote</p>
+      <h2>Tell them about your floor.</h2>
+      <div class="facts">
+        <div><b>Call or text</b><a href="tel:+18259628465">(825) 962-8465</a></div>
+        <div><b>Hours (Google)</b>Every day, 7 a.m. to 9 p.m.</div>
+        <div><b>Area</b>Cochrane, Alberta</div>
+      </div>
+    </div>
+    <form class="glass" id="qf" autocomplete="on">
+      <label>Your name<input name="n" required autocomplete="name"></label>
+      <label>Floor type
+        <select name="t"><option>Flake garage floor</option><option>Metallic epoxy floor</option><option>Quartz driveway</option><option>Commercial floor</option><option>Not sure yet</option></select>
+      </label>
+      <label>Anything to add (size, where it is)<textarea name="m"></textarea></label>
+      <button class="btn cu" type="submit">Text my quote request</button>
+      <small>This opens a text to (825) 962-8465 on your phone.</small>
+    </form>
+  </div>
+</section>
+
+<footer>Preview built by JPF. Not live yet.</footer>
+
+<div class="dock glass" role="group" aria-label="Call or text">
+  <a class="btn ghost" href="tel:+18259628465">Call</a>
+  <a class="btn cu" href="#quote">Get a quote</a>
+</div>
+
+<script>
+(function(){
+  var F={
+    blue:{t:'Blue flake',p:'Flake epoxy garage floor. Built to handle Alberta winters, heavy vehicle traffic, oil spills and daily wear, and easy to clean.',i:['img/p1.jpg','img/p2.jpg','img/p3.jpg']},
+    grey:{t:'Grey flake',p:'Flake epoxy in custom colours. A seamless, slip-resistant finish that turns plain concrete into a floor that is easy to keep clean.',i:['img/p12.jpg','img/p8.jpg','img/p7.jpg']},
+    metal:{t:'Metallic',p:'Deep, reflective metallic pigments and a seamless high-gloss finish with a liquid-metal effect that catches every light.',i:['img/p11.jpg','img/p5.jpg','img/p6.jpg']}
+  };
+  var pic=document.getElementById('pic'),th=document.getElementById('th'),ft=document.getElementById('ft'),fp=document.getElementById('fp');
+  var cur='blue',idx=0;
+  function show(){
+    var d=F[cur];ft.textContent=d.t;fp.textContent=d.p;
+    pic.innerHTML='';th.innerHTML='';
+    d.i.forEach(function(s,k){
+      var im=new Image();im.src=s;im.alt=d.t+' epoxy floor by Cochrane Epoxy Experts';if(k===idx)im.className='on';pic.appendChild(im);
+      var b=document.createElement('button');b.setAttribute('aria-label',d.t+' photo '+(k+1));if(k===idx)b.setAttribute('aria-current','true');
+      var t=new Image();t.src=s;t.alt='';b.appendChild(t);
+      b.onclick=function(){idx=k;show()};th.appendChild(b);
+    });
+    requestAnimationFrame(function(){var o=pic.querySelector('img');if(o)o.classList.add('on')});
+  }
+  document.querySelectorAll('.chip').forEach(function(c){
+    c.onclick=function(){
+      document.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-selected','false')});
+      c.setAttribute('aria-selected','true');cur=c.dataset.k;idx=0;show();
+    };
+  });
+  show();
+  // reveals + counters
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+  document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
+  var red=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var co=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(!e.isIntersecting)return;co.unobserve(e.target);if(red)return;
+    var s=e.target,isS=s.hasAttribute('data-n'),end=parseFloat(s.dataset.n||s.dataset.c),t0=performance.now();
+    (function f(t){var p=Math.min(1,(t-t0)/1100),v=end*(1-Math.pow(1-p,3));s.textContent=isS?v.toFixed(1):Math.round(v);if(p<1)requestAnimationFrame(f)})(t0);
+  })},{threshold:.5});
+  document.querySelectorAll('[data-n],[data-c]').forEach(function(e){co.observe(e)});
+  // quote form -> sms
+  document.getElementById('qf').addEventListener('submit',function(ev){
+    ev.preventDefault();var f=ev.target;
+    var body='Hi, quote request from the Cochrane Epoxy Experts site. Name: '+f.n.value+'. Floor: '+f.t.value+'.'+(f.m.value?' '+f.m.value:'');
+    location.href='sms:+18259628465?&body='+encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
