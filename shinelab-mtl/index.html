@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>ShineLab.mtl | Mobile car detailing in Montréal</title>
+<meta name="description" content="ShineLab.mtl mobile car detailing in Montréal. Interior, exterior and full detailing. We come to you. (438) 969-8315.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tektur:wght@500;700;900&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ direction: dark-premium, before-after-led. A black detailing bay with white strip light (their hero photo), clean and clinical like a lab.
+ palette: bay black #080b0f (wall in hero photo) / wet floor #151b23 / car white #eef3f8 (white sedan) / ShineLab blue #3d8fe6 (blue in their SHINELAB logo on shirt + cards) / mist #9aa7b6.
+ fonts: Tektur (display) + Heebo (body)
+ signature: drag before/after slider using their own floor photo (dirty carpet vs clean carpet)
+ order: hero, services list, before/after, photo set, reviews, quote fill-in, hours + area
+ motion: one load entrance on hero, gentle reveals, count-up rating, glass layer on nav, hero card, dock, quote panel */
+:root{--bg:#080b0f;--bg2:#10151b;--floor:#151b23;--ink:#eef3f8;--mist:#9aa7b6;--blue:#3d8fe6;--blue2:#7db6f2;--line:rgba(255,255,255,.12)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:'Heebo',system-ui,sans-serif;font-size:17px;line-height:1.55;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--blue2);outline-offset:3px;border-radius:6px}
+.d{font-family:'Tektur',sans-serif;letter-spacing:-.01em}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+.glass{background:rgba(16,21,27,.55);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 24px 60px -24px rgba(0,0,0,.7)}
+
+/* nav pill */
+.nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 8px 8px 20px;border-radius:999px;max-width:960px;margin-inline:auto}
+.nav b{font:900 18px 'Tektur',sans-serif;letter-spacing:.02em}
+.nav b i{font-style:normal;color:var(--blue2)}
+.nav .links{display:none;gap:26px;font-size:15px;color:var(--mist)}
+.nav .links a{text-decoration:none;transition:color .2s}
+.nav .links a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 24px;border-radius:999px;background:var(--blue);color:#05101d;font:700 15px 'Heebo',sans-serif;text-decoration:none;border:0;cursor:pointer;transition:transform .18s,background .18s,box-shadow .18s;box-shadow:0 10px 30px -10px rgba(61,143,230,.8),inset 0 1px 0 rgba(255,255,255,.4)}
+.btn:hover{background:var(--blue2)}
+.btn:active{transform:scale(.97)}
+.btn.ghost{background:rgba(255,255,255,.08);color:var(--ink);box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)}
+.btn.ghost:hover{background:rgba(255,255,255,.16)}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;padding:96px 0 110px;isolation:isolate;overflow:hidden}
+.hero .ph{position:absolute;inset:0;z-index:-2}
+.hero .ph img{width:100%;height:100%;object-fit:cover;object-position:62% 40%;filter:brightness(1.35) contrast(1.05);transform:scale(1.12);animation:settle 1.8s cubic-bezier(.2,.7,.2,1) forwards}
+.hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(8,11,15,.85) 0%,rgba(8,11,15,.4) 32%,rgba(8,11,15,0) 52%,rgba(8,11,15,.6) 100%)}
+@keyframes settle{to{transform:scale(1)}}
+.eyebrow{font-size:14px;color:var(--blue2);letter-spacing:.14em;text-transform:uppercase;font-weight:500;margin-bottom:14px}
+h1{font:900 clamp(48px,13.2vw,72px)/.92 'Tektur',sans-serif;letter-spacing:-.02em;word-spacing:.12em;text-transform:uppercase}
+h1 span{color:var(--blue2);display:block;white-space:nowrap}
+.lede{margin-top:18px;font-size:18px;max-width:30ch;color:#dbe4ee}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.hero-card{align-self:flex-start;display:flex;gap:14px;align-items:center;padding:14px 18px;border-radius:24px;max-width:340px;opacity:0;animation:rise .9s .9s cubic-bezier(.2,.7,.2,1) forwards}
+.hero-card .n{font:900 40px/1 'Tektur',sans-serif;color:#fff}
+.hero-card small{display:block;font-size:13px;color:var(--mist);line-height:1.35}
+.hero-card q{display:block;font-size:14px;line-height:1.4;margin-top:4px;quotes:none;color:#fff}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.hero .copy>*{opacity:0;animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
+.hero .copy>*:nth-child(1){animation-delay:.15s}.hero .copy>*:nth-child(2){animation-delay:.3s}.hero .copy>*:nth-child(3){animation-delay:.5s}.hero .copy>*:nth-child(4){animation-delay:.65s}
+
+section{padding:84px 0}
+h2{font:900 clamp(40px,10.5vw,84px)/.95 'Tektur',sans-serif;letter-spacing:-.02em;word-spacing:.1em;text-transform:uppercase}
+h2 em{font-style:normal;color:var(--blue2)}
+.kicker{color:var(--mist);max-width:46ch;margin-top:16px}
+
+/* services */
+.svc{margin-top:42px;border-top:1px solid var(--line)}
+.svc li{list-style:none;display:grid;grid-template-columns:48px 1fr;gap:6px 14px;padding:22px 0;border-bottom:1px solid var(--line)}
+.svc .i{font:500 14px 'Tektur',sans-serif;color:var(--blue2);padding-top:7px}
+.svc h3{font:700 clamp(26px,7vw,40px)/1.05 'Tektur',sans-serif;text-transform:uppercase}
+.svc p{grid-column:2;color:var(--mist);max-width:52ch}
+.vehicles{margin-top:38px;display:flex;flex-wrap:wrap;gap:10px}
+.chip{padding:10px 16px;border-radius:15px;background:rgba(255,255,255,.06);border:1px solid var(--line);font-size:15px}
+
+/* before after */
+.ba-sec{background:var(--bg2);position:relative;overflow:hidden}
+.ba-sec:before{content:"";position:absolute;width:520px;height:520px;right:-200px;top:-120px;background:radial-gradient(circle,rgba(61,143,230,.28),transparent 65%);animation:drift 26s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate(-80px,120px)}}
+.ba{position:relative;margin-top:36px;border-radius:26px;overflow:hidden;aspect-ratio:788/700;max-width:760px;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:ew-resize;box-shadow:0 30px 80px -30px #000}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba .after{clip-path:inset(0 0 0 50%)}
+.ba .bar{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.2)}
+.ba .knob{position:absolute;top:50%;left:50%;width:56px;height:56px;margin:-28px;border-radius:50%;display:grid;place-items:center;font:700 15px 'Tektur',sans-serif;color:#fff}
+.ba .tag{position:absolute;bottom:14px;padding:7px 14px;border-radius:999px;font:500 13px 'Tektur',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#fff}
+.ba .tag.l{left:14px}.ba .tag.r{right:14px;color:#fff}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize}
+.ba-wrap{display:grid;gap:28px}
+
+/* set */
+.set{display:grid;gap:12px;margin-top:40px;grid-template-columns:1fr 1fr}
+.set figure{border-radius:20px;overflow:hidden;position:relative;background:var(--floor)}
+.set img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.set figure:hover img{transform:scale(1.04)}
+.set .a{grid-column:1/3;aspect-ratio:4/3}
+.set .b,.set .c{aspect-ratio:3/4}
+.set .d2{grid-column:1/3;aspect-ratio:4/3}
+
+/* reviews */
+.rev{position:relative;overflow:hidden}
+.rev:before{content:"";position:absolute;width:560px;height:560px;left:-240px;bottom:-140px;background:radial-gradient(circle,rgba(61,143,230,.22),transparent 66%);animation:drift 30s ease-in-out infinite alternate-reverse}
+.score{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.score .big{font:900 clamp(80px,26vw,170px)/.85 'Tektur',sans-serif;color:#fff}
+.score p{color:var(--mist);font-size:16px}
+.lead{font:500 clamp(26px,6.6vw,48px)/1.15 'Tektur',sans-serif;margin-top:40px;max-width:24ch;letter-spacing:-.01em}
+.lead cite{display:block;font:400 15px 'Heebo',sans-serif;color:var(--mist);margin-top:14px;font-style:normal}
+.cards{display:grid;gap:14px;margin-top:40px;position:relative}
+.card{padding:22px;border-radius:24px}
+.card q{display:block;quotes:none;font-size:17px;line-height:1.5}
+.card cite{display:block;margin-top:14px;font-size:14px;color:var(--mist);font-style:normal}
+
+/* quote */
+.quote{position:relative;overflow:hidden;background:var(--bg2)}
+.quote:before{content:"";position:absolute;width:640px;height:640px;left:50%;top:-220px;background:radial-gradient(circle,rgba(61,143,230,.26),transparent 64%);transform:translateX(-50%);animation:drift 28s ease-in-out infinite alternate}
+.qp{position:relative;margin-top:38px;padding:28px 22px;border-radius:28px;max-width:860px}
+.qp p{font:500 clamp(20px,5.4vw,30px)/2 'Heebo',sans-serif;color:var(--mist)}
+.qp input,.qp select{font:inherit;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:6px 14px;min-height:46px;margin:2px 4px;max-width:100%;transition:border-color .2s,box-shadow .2s}
+.qp select option{color:#000}
+.qp input::placeholder{color:#7e8b99}
+.qp input:focus,.qp select:focus{outline:none;border-color:var(--blue2);box-shadow:0 0 0 3px rgba(61,143,230,.35)}
+.qp .btn{margin-top:22px;width:100%}
+.note{font-size:14px;color:var(--mist);margin-top:12px}
+
+/* info */
+.info{display:grid;gap:36px;margin-top:40px}
+.hours{width:100%;max-width:460px;border-collapse:collapse}
+.hours td{padding:13px 0;border-bottom:1px solid var(--line);font-size:17px}
+.hours td:last-child{text-align:right;color:var(--mist)}
+.hours tr.x td:last-child{color:#6c7886}
+.area{font-size:20px;max-width:30ch}
+.big-phone{font:900 clamp(34px,10vw,64px)/1 'Tektur',sans-serif;text-decoration:none;display:inline-block;margin-top:18px;color:var(--blue2)}
+footer{padding:34px 0 120px;color:#6f7c8a;font-size:14px;border-top:1px solid var(--line)}
+
+/* dock */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));display:flex;gap:8px;padding:8px;border-radius:999px}
+.dock .btn{flex:1;min-height:50px}
+
+.rv{opacity:0;transform:translateY(18px);transition:opacity .8s,transform .8s}
+.rv.on{opacity:1;transform:none}
+
+@media(min-width:820px){
+ body{font-size:18px}
+ .nav .links{display:flex}
+ .dock{display:none}
+ footer{padding-bottom:40px}
+ .hero{padding:120px 0 56px}
+ .hero:after{background:linear-gradient(90deg,rgba(8,11,15,.8) 0%,rgba(8,11,15,.45) 36%,rgba(8,11,15,0) 62%),linear-gradient(180deg,rgba(8,11,15,.35),transparent 25%,transparent 75%,rgba(8,11,15,.5))}
+ .hero .ph img{object-position:50% 38%}
+ h1{font-size:clamp(96px,10.5vw,148px)}
+ .hero .row{display:flex;justify-content:space-between;align-items:flex-end;gap:30px}
+ section{padding:130px 0}
+ .svc li{grid-template-columns:90px 1fr 1.2fr;align-items:baseline;padding:30px 0}
+ .svc p{grid-column:3}
+ .ba-wrap{grid-template-columns:1fr 1fr;align-items:end;gap:60px}
+ .ba{margin-top:0;max-width:none}
+ .set{grid-template-columns:1.3fr 1fr 1fr;grid-template-rows:auto auto}
+ .set .a{grid-column:1;grid-row:1/3;aspect-ratio:auto}
+ .set .b,.set .c{aspect-ratio:3/4}
+ .set .d2{grid-column:2/4;aspect-ratio:16/9}
+ .cards{grid-template-columns:repeat(2,1fr)}
+ .qp{padding:46px}
+ .qp .btn{width:auto;padding:0 40px}
+ .info{grid-template-columns:1fr 1fr}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero .copy>*,.hero-card{opacity:1}.rv{opacity:1;transform:none}.hero .ph img{transform:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav glass" aria-label="Main">
+  <b>SHINE<i>LAB</i>.MTL</b>
+  <div class="links"><a href="#services">Services</a><a href="#work">Before / after</a><a href="#reviews">Reviews</a><a href="#quote">Quote</a></div>
+  <a class="btn" href="tel:+14389698315">Call (438) 969-8315</a>
+</nav>
+
+<header class="hero">
+  <div class="ph"><img src="img/p11.jpg" alt="ShineLab detailer washing a white car in a dark bay" width="1050" height="1400"></div>
+  <div class="wrap copy">
+    <p class="eyebrow">Mobile car detailing · Montréal</p>
+    <h1 class="d">We come.<span>You shine.</span></h1>
+    <p class="lede">Interior, exterior and full detailing. We come to you in Montréal and surrounding areas.</p>
+    <div class="cta"><a class="btn" href="#quote">Get a quote</a><a class="btn ghost" href="tel:+14389698315">Call now</a></div>
+  </div>
+  <div class="wrap"><div class="hero-card glass">
+    <div class="n" aria-label="5 out of 5">5.0</div>
+    <div><small>24 Google reviews</small><q>“It feels like new again.”</q><small>Karina T.</small></div>
+  </div></div>
+</header>
+
+<section id="services">
+  <div class="wrap">
+    <h2 class="rv">What we <em>do</em></h2>
+    <p class="kicker rv">Mobile service. We take care of every detail and handle everything on the spot.</p>
+    <ul class="svc rv">
+      <li><span class="i">01</span><h3>Interior</h3><p>Deep interior cleaning, not just a surface wipe. Seats and carpets, every corner.</p></li>
+      <li><span class="i">02</span><h3>Exterior</h3><p>A fresh, spotless exterior, down to the rims and door edges.</p></li>
+      <li><span class="i">03</span><h3>Full detailing</h3><p>Inside and out, from a mobile setup at your home or workplace.</p></li>
+      <li><span class="i">04</span><h3>Problem spots</h3><p>Stain and odor removal, pet hair extraction, salt stains, care for fabric and leather.</p></li>
+    </ul>
+    <div class="vehicles rv"><span class="chip">Cars &amp; SUVs</span><span class="chip">Pick-up trucks</span><span class="chip">Vans &amp; commercial vehicles</span><span class="chip">Truck cabins</span></div>
+  </div>
+</section>
+
+<section class="ba-sec" id="work">
+  <div class="wrap ba-wrap">
+    <div>
+      <h2 class="rv">Same floor. <em>Different</em> car.</h2>
+      <p class="kicker rv">Drag to compare. Real photos from ShineLab's Google listing.</p>
+    </div>
+    <div class="ba rv" id="ba">
+      <img src="img/ba-before.jpg" alt="Dirty car floor with debris before detailing" width="788" height="700">
+      <img class="after" src="img/ba-after.jpg" alt="Clean car floor after detailing" width="788" height="700">
+      <div class="bar" id="bar"><div class="knob glass" aria-hidden="true">&lt; &gt;</div></div>
+      <span class="tag l glass">Before</span><span class="tag r glass">After</span>
+      <input type="range" min="0" max="100" value="50" id="rng" aria-label="Before and after slider">
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="rv">Clean, <em>inside</em></h2>
+    <div class="set">
+      <figure class="a rv"><img loading="lazy" src="img/p7.jpg" alt="Spotless dark interior of a blue SUV with floor mat" width="1050" height="1400"></figure>
+      <figure class="b rv"><img loading="lazy" src="img/p12.jpg" alt="Clean light fabric front seat" width="1050" height="1400"></figure>
+      <figure class="c rv"><img loading="lazy" src="img/p9.jpg" alt="Clean centre console with ShineLab card" width="1050" height="1400"></figure>
+      <figure class="d2 rv"><img loading="lazy" src="img/p8.jpg" alt="Clean dashboard and centre stack" width="1050" height="1400" style="object-position:50% 40%"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="rev" id="reviews">
+  <div class="wrap">
+    <div class="score rv"><span class="big d" id="cnt" data-to="5.0">5.0</span><p>on Google<br><b id="cnt2" data-to="24">24</b> reviews</p></div>
+    <blockquote class="lead rv">“The interior looked almost new, and they removed stains I thought were permanent.”<cite>Adilya A., Google</cite></blockquote>
+    <div class="cards">
+      <div class="card glass rv"><q>This is the best service in Montreal! My car has never been this clean, even after visiting other car washes.</q><cite>Ди О., Google</cite></div>
+      <div class="card glass rv"><q>Honestly, I don't think the car shined this much even when we first bought it.</q><cite>Rott V., Google</cite></div>
+      <div class="card glass rv"><q>They did an amazing job detailing our car, it feels like new again.</q><cite>Karina T., Google</cite></div>
+      <div class="card glass rv"><q>Everything looks spotless and I couldn’t be happier with the results.</q><cite>Alina P., Google</cite></div>
+    </div>
+  </div>
+</section>
+
+<section class="quote" id="quote">
+  <div class="wrap">
+    <h2 class="rv">Get a <em>quote</em></h2>
+    <form class="qp glass rv" id="qf">
+      <p>Hi ShineLab, I'm
+        <input id="nm" placeholder="your name" autocomplete="given-name" aria-label="Your name" size="12">
+        and I have a
+        <input id="car" placeholder="car or truck" aria-label="Vehicle" size="13">
+        in
+        <input id="ar" placeholder="your area" aria-label="Area" size="12">.
+        I need
+        <select id="sv" aria-label="Service"><option>interior detailing</option><option>exterior detailing</option><option>full detailing</option><option>something else</option></select>.</p>
+      <button class="btn" type="submit">Text this to ShineLab</button>
+      <p class="note">Opens a text message to (438) 969-8315. Nothing is sent until you press send.</p>
+    </form>
+  </div>
+</section>
+
+<section>
+  <div class="wrap info">
+    <div>
+      <h2 class="rv">Hours</h2>
+      <table class="hours rv" style="margin-top:28px">
+        <tr class="x"><td>Wednesday</td><td>Closed</td></tr>
+        <tr class="x"><td>Thursday</td><td>Closed</td></tr>
+        <tr><td>Friday</td><td>7 a.m.–9 p.m.</td></tr>
+        <tr><td>Saturday</td><td>5–10 p.m.</td></tr>
+        <tr><td>Sunday</td><td>7 a.m.–10 p.m.</td></tr>
+        <tr><td>Monday</td><td>7 a.m.–10 p.m.</td></tr>
+        <tr><td>Tuesday</td><td>7 a.m.–10 p.m.</td></tr>
+      </table>
+    </div>
+    <div>
+      <h2 class="rv">We come <em>to you</em></h2>
+      <p class="area rv" style="margin-top:20px">Mobile detailing in Montréal and surrounding areas.</p>
+      <a class="big-phone rv" href="tel:+14389698315">(438) 969-8315</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">Preview built by JPF. Not live yet.</div></footer>
+
+<div class="dock glass" role="group" aria-label="Call or text">
+  <a class="btn" href="tel:+14389698315">Call</a>
+  <a class="btn ghost" href="sms:+14389698315">Text</a>
+</div>
+
+<script>
+(function(){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+  // before/after
+  var rng=document.getElementById('rng'),bar=document.getElementById('bar'),af=document.querySelector('.ba .after');
+  function set(v){af.style.clipPath='inset(0 0 0 '+v+'%)';bar.style.left=v+'%'}
+  rng.addEventListener('input',function(){set(rng.value)});
+  // quote form -> sms
+  document.getElementById('qf').addEventListener('submit',function(e){
+    e.preventDefault();
+    var g=function(i){return document.getElementById(i).value.trim()};
+    var t="Hi ShineLab, I'm "+(g('nm')||'(name)')+" and I have a "+(g('car')||'(vehicle)')+" in "+(g('ar')||'(area)')+". I need "+g('sv')+". Can I get a quote?";
+    location.href='sms:+14389698315?&body='+encodeURIComponent(t);
+  });
+})();
+</script>
+</body>
+</html>
