@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>R7 Pro Auto Detailing Solutions | Mobile Car Detailing, Delta BC</title>
+<meta name="description" content="Mobile car detailing in Delta, BC. Call or text (604) 399-9077.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Josefin+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ 1 Direction: black-and-gold showroom poster for a mobile (doorstep) detailer; big Roman caps, their own before/after photos as proof.
+ 2 Palette: ink #0a0907 (flyer black), garage #14110c, gold #E4B02B (logo + phone-bar gold on their flyer), cream #f4ecd8, smoke #a79f8c.
+ 3 Fonts: Cinzel (display) + Josefin Sans (body).
+ 4 Signature: before/after slider with four job views in glass chips (their own interior photos).
+ 5 Order: hero, doorstep line + services list, before/after, reviews (big quote + glass cards), hours + area, quote sentence.
+ 6 Motion: hero photo scales in then type settles (<1.4s), count-up on rating count, reduced-motion respected.
+*/
+:root{--ink:#0a0907;--gar:#14110c;--gold:#E4B02B;--cream:#f4ecd8;--smoke:#a79f8c;--line:rgba(244,236,216,.16)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--cream);font-family:'Josefin Sans',sans-serif;font-size:17px;line-height:1.55;overflow-x:hidden;padding-bottom:96px}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.disp{font-family:'Cinzel',serif;font-weight:900;letter-spacing:.01em;word-spacing:.14em;line-height:.98;text-transform:uppercase}
+.gold{color:var(--gold)}
+.eyebrow{font-size:14px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.glass{background:rgba(20,17,12,.52);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(244,236,216,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 20px 60px -20px rgba(0,0,0,.6)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;border-radius:999px;font-weight:700;font-size:16px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid var(--line);transition:transform .18s,background .18s;cursor:pointer;font-family:inherit;color:var(--cream);background:transparent}
+.btn:active{transform:scale(.98)}
+.btn.main{background:var(--gold);color:#1a1405;border-color:var(--gold)}
+.btn.main:hover{background:#f0c24a}
+.btn.ghost:hover{background:rgba(244,236,216,.1)}
+
+/* nav */
+nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;max-width:1100px;margin:0 auto;height:56px;border-radius:999px;display:flex;align-items:center;justify-content:space-between;padding:0 8px 0 22px}
+nav .mark{font-family:'Cinzel',serif;font-weight:900;font-size:19px;letter-spacing:.06em;text-decoration:none}
+nav .mark span{color:var(--gold)}
+nav .links{display:none;gap:26px;font-size:14px;letter-spacing:.16em;text-transform:uppercase}
+nav .links a{text-decoration:none;opacity:.85}
+nav .links a:hover{opacity:1;color:var(--gold)}
+nav .btn{min-height:44px;padding:0 20px;font-size:14px}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.hero .ph{position:absolute;inset:0;z-index:0}
+.hero .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;animation:zoom 1.4s cubic-bezier(.2,.7,.2,1) both}
+.hero .ph:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,9,7,.6) 0%,rgba(10,9,7,.15) 22%,rgba(10,9,7,.82) 42%,rgba(10,9,7,.97) 70%)}
+@keyframes zoom{from{transform:scale(1.18)}to{transform:scale(1)}}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.hero .in{position:relative;z-index:2;width:100%;max-width:1240px;margin:0 auto;padding:0 22px 40px}
+.hero h1{text-shadow:0 2px 24px rgba(0,0,0,.6);font-size:clamp(56px,16.5vw,76px);animation:rise .9s .5s both}
+.hero h1 em{font-style:normal;color:var(--gold);display:block}
+.hero .eyebrow{text-shadow:0 1px 14px rgba(0,0,0,.9)}
+.hero .sub{margin:18px 0 22px;max-width:30ch;font-size:19px;color:var(--cream);animation:rise .9s .7s both}
+.hero .cta{display:flex;gap:10px;flex-wrap:wrap;animation:rise .9s .85s both}
+.rate{margin-top:26px;border-radius:22px;padding:16px 20px;display:flex;gap:16px;align-items:center;max-width:380px;animation:rise .9s 1s both}
+.rate .n{font-family:'Cinzel',serif;font-weight:900;font-size:44px;line-height:1;color:var(--gold)}
+.rate .t{font-size:15px;line-height:1.35}
+.rate .st{color:var(--gold);letter-spacing:.2em;font-size:15px}
+
+/* sections */
+section{position:relative}
+.wrap{max-width:1240px;margin:0 auto;padding:0 22px}
+.pad{padding:84px 0}
+h2{font-size:clamp(40px,11.5vw,64px);margin:12px 0 0}
+
+/* doorstep + services */
+.door{background:var(--gar);border-top:1px solid var(--line)}
+.door .lead{font-size:20px;max-width:34ch;margin-top:22px;color:var(--cream)}
+.svc{list-style:none;margin-top:44px;border-top:1px solid var(--line);counter-reset:s}
+.svc li{counter-increment:s;display:flex;gap:16px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--line);font-size:20px}
+.svc li:before{content:counter(s,decimal-leading-zero);font-family:'Cinzel',serif;color:var(--gold);font-size:15px;font-weight:700;min-width:26px}
+.svc li span{font-size:15px;color:var(--smoke);margin-left:auto;text-align:right}
+
+/* before after */
+.ba{background:var(--ink);overflow:hidden}
+.ba .grid{display:grid;gap:34px;margin-top:34px}
+.stage{position:relative;width:100%;max-width:460px;aspect-ratio:484/690;border-radius:26px;overflow:hidden;border:1px solid var(--line);touch-action:pan-y;user-select:none;-webkit-user-select:none;background:#000}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.stage .bef{clip-path:inset(0 50% 0 0)}
+.stage .lab{position:absolute;top:14px;padding:6px 14px;border-radius:999px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;background:rgba(10,9,7,.6);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(244,236,216,.25)}
+.stage .lab.l{left:14px}.stage .lab.r{right:14px;color:var(--gold)}
+.stage .bar{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--gold);transform:translateX(-1px);pointer-events:none}
+.stage .knob{position:absolute;top:50%;left:50%;width:52px;height:52px;margin:-26px 0 0 -26px;border-radius:999px;display:grid;place-items:center;color:var(--gold);font-size:18px;letter-spacing:-2px;pointer-events:none}
+.stage input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;max-width:460px}
+.chip{min-height:44px;padding:0 18px;border-radius:16px;font:600 15px 'Josefin Sans',sans-serif;letter-spacing:.06em;color:var(--cream);cursor:pointer;transition:transform .18s,background .18s;background:rgba(244,236,216,.06);border:1px solid rgba(244,236,216,.22);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+.chip:active{transform:scale(.97)}
+.chip[aria-pressed=true]{background:var(--gold);color:#1a1405;border-color:var(--gold)}
+.ba .copy p{color:var(--smoke);max-width:40ch;margin-top:18px}
+.ba .hint{font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-top:20px}
+
+/* reviews */
+.rev{background:var(--gar);border-top:1px solid var(--line);overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.28;pointer-events:none;animation:drift 26s ease-in-out infinite alternate}
+.orb.a{width:380px;height:380px;background:#E4B02B;top:-90px;right:-120px}
+.orb.b{width:340px;height:340px;background:#7a5a14;bottom:-100px;left:-120px;animation-duration:32s}
+@keyframes drift{to{transform:translate(40px,30px)}}
+.big{position:relative;z-index:1;font-family:'Cinzel',serif;font-weight:500;font-size:clamp(25px,7.2vw,46px);line-height:1.22;margin-top:26px;max-width:26ch}
+.who{position:relative;z-index:1;margin-top:20px;font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.cards{position:relative;z-index:1;display:grid;gap:16px;margin-top:44px}
+.card{border-radius:24px;padding:26px}
+.card p{font-size:17px}
+.card .who{margin-top:14px}
+.tot{position:relative;z-index:1;margin-top:34px;font-size:15px;color:var(--smoke)}
+.tot b{color:var(--gold);font-family:'Cinzel',serif;font-size:22px}
+
+/* hours */
+.info .cols{display:grid;gap:44px;margin-top:34px}
+.hrs{list-style:none;border-top:1px solid var(--line)}
+.hrs li{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-size:17px}
+.hrs li b{font-weight:600}
+.hrs li span{color:var(--smoke)}
+.addr{font-size:19px;line-height:1.5}
+.addr small{display:block;color:var(--smoke);font-size:15px;margin-top:12px}
+
+/* quote */
+.quote{background:var(--gar);border-top:1px solid var(--line);overflow:hidden}
+.panel{position:relative;z-index:1;border-radius:28px;padding:28px 22px;margin-top:30px;max-width:860px}
+.sent{font-family:'Cinzel',serif;font-weight:500;font-size:clamp(20px,5.4vw,30px);line-height:2.1}
+.fld{font:inherit;color:var(--gold);background:rgba(244,236,216,.07);border:1px solid rgba(244,236,216,.25);border-radius:14px;padding:2px 12px;min-height:44px;width:100%;max-width:100%;font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:600}
+.fld::placeholder{color:rgba(244,236,216,.45)}
+.fld:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(228,176,43,.3)}
+.panel .btn{margin-top:20px;width:100%}
+.panel .fine{font-size:14px;color:var(--smoke);margin-top:12px}
+
+footer{padding:44px 22px 20px;text-align:center;font-size:14px;color:var(--smoke);border-top:1px solid var(--line)}
+
+/* dock */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));height:64px;border-radius:999px;display:flex;gap:8px;padding:8px;max-width:520px;margin:0 auto}
+.dock a{flex:1;display:flex;align-items:center;justify-content:center;border-radius:999px;font-weight:700;font-size:15px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:transform .18s;min-height:44px}
+.dock a:active{transform:scale(.97)}
+.dock .c{background:var(--gold);color:#1a1405}
+.dock .t{color:var(--cream);border:1px solid rgba(244,236,216,.28)}
+
+@media(min-width:900px){
+ body{font-size:18px;padding-bottom:0}
+ .dock{display:none}
+ nav .links{display:flex}
+ .hero .ph{left:auto;width:56%}
+ .hero .ph:after{background:linear-gradient(90deg,var(--ink) 0%,rgba(10,9,7,.5) 30%,rgba(10,9,7,0) 60%),linear-gradient(180deg,rgba(10,9,7,.4),rgba(10,9,7,0) 30%,rgba(10,9,7,.6) 100%)}
+ .hero .in{padding:0 48px 64px}
+ .hero h1{font-size:clamp(100px,10.4vw,148px);max-width:9ch}
+ .hero .sub{font-size:22px}
+ .rate{position:absolute;right:48px;bottom:64px;margin:0}
+ .pad{padding:140px 0}
+ .wrap{padding:0 48px}
+ h2{font-size:clamp(60px,6.4vw,96px)}
+ .door .split{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
+ .svc{margin-top:0}
+ .ba .grid{grid-template-columns:460px 1fr;gap:96px;align-items:center}
+ .cards{grid-template-columns:1fr 1fr}
+ .info .cols{grid-template-columns:1fr 1fr;gap:96px}
+ .panel{padding:48px}
+ .sent{line-height:2.3}
+ .fld{width:auto;min-width:200px}
+ .panel .btn{width:auto}
+}
+@media(max-width:899px){.hero{align-items:flex-end}.hero .in{padding-bottom:104px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav class="glass" aria-label="Main">
+ <a class="mark" href="#top">R7 <span>PRO</span></a>
+ <div class="links"><a href="#work">Work</a><a href="#reviews">Reviews</a><a href="#hours">Hours</a><a href="#quote">Quote</a></div>
+ <a class="btn main" href="tel:+16043999077">Call</a>
+</nav>
+
+<header class="hero" id="top">
+ <div class="ph"><img src="img/p9.jpg" alt="Freshly detailed front interior of a red minivan" fetchpriority="high"></div>
+ <div class="in">
+  <p class="eyebrow" style="margin-bottom:14px;animation:rise .9s .4s both">Mobile detailing &middot; Delta, BC</p>
+  <h1 class="disp">Back to <em>life.</em></h1>
+  <p class="sub">R7 Pro Auto Detailing Solutions. We come to you and bring your vehicle back to life.</p>
+  <div class="cta"><a class="btn main" href="tel:+16043999077">Call (604) 399-9077</a><a class="btn ghost" href="#quote">Get a quote</a></div>
+  <div class="rate glass">
+   <div class="n">5.0</div>
+   <div><div class="st" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="t"><b>107</b> Google reviews<br>Ravin and his team</div></div>
+  </div>
+ </div>
+</header>
+
+<section class="door pad" id="services">
+ <div class="wrap split">
+  <div>
+   <p class="eyebrow">At your doorstep</p>
+   <h2 class="disp">We come<br>to <span class="gold">you.</span></h2>
+   <p class="lead">Mobile service. We don&rsquo;t just vacuum. We take the time to remove stubborn pet hair from every hard-to-reach area.</p>
+  </div>
+  <ul class="svc">
+   <li>Steam interior detail</li>
+   <li>Seat and floor shampoo</li>
+   <li>Headliner clean</li>
+   <li>Hand wash, clay-bar polish, wax</li>
+   <li>Paint correction<span>to ceramic coating</span></li>
+   <li>Engine bay cleaning</li>
+   <li>Headlight restoration</li>
+   <li>Pet hair removal</li>
+  </ul>
+ </div>
+</section>
+
+<section class="ba pad" id="work">
+ <div class="wrap">
+  <p class="eyebrow">Their work</p>
+  <h2 class="disp">Before.<br><span class="gold">After.</span></h2>
+  <div class="grid">
+   <div>
+    <div class="stage" id="stage">
+     <img id="aft" src="img/b1_after.jpg" alt="Interior after detailing">
+     <img id="bef" class="bef" src="img/b1_before.jpg" alt="Interior before detailing">
+     <span class="lab l">Before</span><span class="lab r">After</span>
+     <div class="bar" id="bar"></div>
+     <div class="knob glass" aria-hidden="true">&lsaquo;&rsaquo;</div>
+     <input type="range" id="rng" min="0" max="100" value="50" aria-label="Drag to compare before and after">
+    </div>
+    <div class="chips" role="group" aria-label="Choose a job photo">
+     <button class="chip" data-k="b1" aria-pressed="true">Front seats</button>
+     <button class="chip" data-k="b2" aria-pressed="false">Rear cabin</button>
+     <button class="chip" data-k="b3" aria-pressed="false">Dash and console</button>
+     <button class="chip" data-k="b4" aria-pressed="false">Rear seats</button>
+    </div>
+   </div>
+   <div class="copy">
+    <p class="eyebrow">From their Instagram</p>
+    <p>Real jobs, posted by R7 Pro. Drag the line, or tap a job.</p>
+    <p class="hint">Drag the gold line</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="rev pad" id="reviews">
+ <div class="orb a"></div><div class="orb b"></div>
+ <div class="wrap">
+  <p class="eyebrow" style="position:relative;z-index:1">What customers say</p>
+  <blockquote>
+   <p class="big">&ldquo;Amazing job! Took the gross smell out of my car. Highly recommend and also very quick service. My seats were filthy and now they are spotless!&rdquo;</p>
+   <p class="who">Michelle E. &middot; Google</p>
+  </blockquote>
+  <div class="cards">
+   <div class="card glass"><p>&ldquo;Amazing detail service by Ravin and his team. Got 2 of my cars detailed on the same day and they spent a good 5 hours doing the cleaning and also removed all pet hair and cleaned the engine bays. Great customer service skills as well.&rdquo;</p><p class="who">Mohammad Q. &middot; Google</p></div>
+   <div class="card glass"><p>&ldquo;Huge shoutout to Mr. Ravin for an outstanding car interior detailing service. He went above and beyond by taking on extra jobs without hesitation and paid attention to every little detail.&rdquo;</p><p class="who">Prasad R. &middot; Google</p></div>
+  </div>
+  <p class="tot"><b id="cnt" data-to="107">107</b> reviews on Google &middot; 5.0 stars</p>
+ </div>
+</section>
+
+<section class="info pad" id="hours">
+ <div class="wrap">
+  <p class="eyebrow">Open every day</p>
+  <h2 class="disp">Book your <span class="gold">spot.</span></h2>
+  <div class="cols">
+   <ul class="hrs">
+    <li><b>Monday</b><span>8:30 am &ndash; 7 pm</span></li>
+    <li><b>Tuesday</b><span>8:30 am &ndash; 7 pm</span></li>
+    <li><b>Wednesday</b><span>8:30 am &ndash; 7 pm</span></li>
+    <li><b>Thursday</b><span>8:30 am &ndash; 7 pm</span></li>
+    <li><b>Friday</b><span>8 am &ndash; 7 pm</span></li>
+    <li><b>Saturday</b><span>8 am &ndash; 7:30 pm</span></li>
+    <li><b>Sunday</b><span>8 am &ndash; 7 pm</span></li>
+   </ul>
+   <div class="addr">
+    <p>Based in Delta, BC<br>9443 119A St, Delta, BC V4C 6P4</p>
+    <p style="margin-top:22px"><a class="gold" style="font-family:'Cinzel',serif;font-weight:700;font-size:28px;text-decoration:none" href="tel:+16043999077">(604) 399-9077</a></p>
+    <small>Call or text. Mobile service, they come to you.</small>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="quote pad" id="quote">
+ <div class="orb a" style="top:auto;bottom:-120px"></div>
+ <div class="wrap">
+  <p class="eyebrow" style="position:relative;z-index:1">Free quote</p>
+  <h2 class="disp" style="position:relative;z-index:1">Tell Ravin<br>what you <span class="gold">need.</span></h2>
+  <form class="panel glass" id="qf">
+   <p class="sent">Hi, I&rsquo;m <input class="fld" id="qn" placeholder="your name" autocomplete="name" aria-label="Your name">. I need <input class="fld" id="qs" placeholder="interior detail, ceramic coating..." aria-label="What you need"> for my <input class="fld" id="qv" placeholder="vehicle" aria-label="Your vehicle">.</p>
+   <button class="btn main" type="submit">Text my request</button>
+   <p class="fine">Opens a text message to (604) 399-9077. Nothing is sent until you press send.</p>
+  </form>
+ </div>
+</section>
+
+<footer>Preview built by JPF. Not live yet.</footer>
+
+<div class="dock glass"><a class="c" href="tel:+16043999077">Call</a><a class="t" href="sms:+16043999077">Text</a></div>
+
+<script>
+(function(){
+ var rng=document.getElementById('rng'),bef=document.getElementById('bef'),aft=document.getElementById('aft'),bar=document.getElementById('bar'),knob=document.querySelector('.knob');
+ function set(v){bef.style.clipPath='inset(0 '+(100-v)+'% 0 0)';bar.style.left=v+'%';knob.style.left=v+'%'}
+ rng.addEventListener('input',function(){set(rng.value)});
+ document.querySelectorAll('.chip').forEach(function(c){c.addEventListener('click',function(){
+  document.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed','false')});
+  c.setAttribute('aria-pressed','true');
+  var k=c.dataset.k;bef.src='img/'+k+'_before.jpg';aft.src='img/'+k+'_after.jpg';rng.value=50;set(50);
+ })});
+ set(50);
+ var cnt=document.getElementById('cnt'),to=107;
+ if(!matchMedia('(prefers-reduced-motion:reduce)').matches&&'IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){io.disconnect();var t0=performance.now();(function f(t){var p=Math.min(1,(t-t0)/1200);cnt.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(t0)}},{threshold:.6});
+  io.observe(cnt);
+ }
+ document.getElementById('qf').addEventListener('submit',function(e){
+  e.preventDefault();
+  var n=document.getElementById('qn').value.trim(),s=document.getElementById('qs').value.trim(),v=document.getElementById('qv').value.trim();
+  var body="Hi, I'm "+(n||'___')+". I need "+(s||'a detail')+" for my "+(v||'vehicle')+".";
+  location.href='sms:+16043999077?&body='+encodeURIComponent(body);
+ });
+})();
+</script>
+</body>
+</html>
