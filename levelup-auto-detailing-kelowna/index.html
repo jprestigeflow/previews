@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Levelup Auto Detailing Kelowna | Car detailing and ceramic coating</title>
+<meta name="description" content="Levelup Auto Detailing Kelowna. Interior and exterior detailing, ceramic coating, mobile or drop off. Call (250) 258-0986.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sarpanch:wght@600;700;800;900&family=Bai+Jamjuree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ 1 Direction: dark garage at dusk, orange paint is the only colour. Photo-led, tall phone-shaped photos, a Level picker as the signature.
+ 2 Palette: asphalt #0e1012 (wet driveway in their photos), panel #171a1d, bone #efe9df (Mercedes/Denali white paint), orange #d9682a (Corvette + 'Cuda paint, posts DfvquojMQGr / p8), steel #8b9196 (wheels).
+ 3 Fonts: Sarpanch 900 display + Bai Jamjuree body.
+ 4 Signature: "Pick your level" glass chips swap the real car photo + what the post says is done.
+ 5 Order: hero video + glass rating card, mobile/drop-off strip, Level picker, lineup of jobs, review lead + glass cards, quote sentence, hours/area, footer.
+ 6 Motion: hero entrance under 1.5s, count-up rating, gentle photo reveal; reduced-motion respected. */
+:root{--bg:#0e1012;--panel:#171a1d;--bone:#efe9df;--or:#d9682a;--or2:#f08a4b;--steel:#8b9196;--line:rgba(239,233,223,.14)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--bone);font:400 17px/1.55 'Bai Jamjuree',system-ui,sans-serif;overflow-x:hidden;padding-bottom:96px}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--or2);outline-offset:3px}
+.d{font-family:'Sarpanch',sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:-.01em;word-spacing:.12em;line-height:.9}
+.tag{font-size:14px;font-weight:600;color:var(--or2);letter-spacing:.04em}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+section{padding:72px 0}
+/* glass */
+.glass{background:rgba(23,26,29,.55);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 24px 60px -24px rgba(0,0,0,.6)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:999px;background:var(--or);color:#140a04;font:800 17px 'Sarpanch',sans-serif;text-transform:uppercase;letter-spacing:.04em;text-decoration:none;border:0;cursor:pointer;transition:transform .18s,background .18s}
+.btn:hover{background:var(--or2)}.btn:active{transform:scale(.98)}
+.btn.ghost{background:transparent;color:var(--bone);border:1px solid rgba(255,255,255,.35)}
+.btn.ghost:hover{background:rgba(255,255,255,.1)}
+/* nav */
+nav{position:fixed;z-index:30;top:12px;left:12px;right:12px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 8px 8px 20px;border-radius:999px;max-width:1180px;margin-inline:auto}
+nav .logo{font:900 18px 'Sarpanch',sans-serif;text-transform:uppercase;text-decoration:none;word-spacing:.1em}
+nav .logo b{color:var(--or2)}
+nav .links{display:none;gap:26px;font-weight:600;font-size:15px}
+nav .links a{text-decoration:none;opacity:.85}nav .links a:hover{opacity:1}
+nav .btn{min-height:44px;padding:0 20px;font-size:15px;flex:none}
+nav .logo{white-space:nowrap;font-size:16px}
+nav .btn .full{display:none}
+/* hero */
+.hero{position:relative;min-height:100svh;padding:0;display:grid;align-items:end;isolation:isolate;overflow:hidden}
+.hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(14,16,18,0) 0,rgba(14,16,18,0) 100%,var(--bg) 100%)}
+.hero video{inset:auto;top:76px;left:16px;width:calc(100% - 32px);height:42svh;border-radius:26px;z-index:-1}
+.hero .in{padding:calc(76px + 42svh + 22px) 0 40px;display:grid;gap:22px}
+.hero h1{font-size:clamp(52px,15vw,96px)}
+.hero h1 span{color:var(--or)}
+.hero p.lead{max-width:30ch;font-size:18px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px}
+.rate{border-radius:24px;padding:16px 18px;display:grid;gap:4px;max-width:340px}
+.rate .n{font:900 44px/1 'Sarpanch',sans-serif;color:var(--bone)}
+.rate .n small{font-size:16px;font-weight:700;color:var(--steel);margin-left:8px}
+.rate q{font-size:15px;line-height:1.4;quotes:none;opacity:.95}
+.rate cite{font-size:13px;font-style:normal;color:var(--steel)}
+.stars{color:var(--or2);letter-spacing:3px;font-size:15px}
+.in-load{opacity:0;transform:translateY(18px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+/* strip */
+.strip{padding:0;border-block:1px solid var(--line);background:var(--panel)}
+.strip .wrap{display:grid;gap:0}
+.strip div{padding:18px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;font-weight:500}
+.strip div:last-child{border:0}
+.strip b{font:800 20px 'Sarpanch',sans-serif;text-transform:uppercase;color:var(--or2)}
+/* picker */
+.pick h2,.lineup h2,.reviews h2,.quote h2,.visit h2{font-size:clamp(46px,13vw,92px);margin:10px 0 28px}
+.chips{display:flex;gap:10px;overflow-x:auto;padding:4px 2px 12px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;min-height:48px;padding:0 20px;border-radius:999px;font:800 16px 'Sarpanch',sans-serif;text-transform:uppercase;letter-spacing:.04em;color:var(--bone);cursor:pointer;background:rgba(23,26,29,.55);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.2);transition:transform .18s,background .18s}
+.chip:active{transform:scale(.98)}
+.chip[aria-selected=true]{background:var(--or);color:#140a04;border-color:var(--or)}
+.stage{display:grid;gap:26px;margin-top:10px}
+.shot{position:relative;border-radius:26px;overflow:hidden;aspect-ratio:4/5;background:var(--panel)}
+.shot img,.shot video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s}
+.shot .on{opacity:1}
+.info h3{font-size:34px;margin-bottom:8px}
+.info .cap{color:var(--steel);font-size:15px;margin-bottom:16px}
+.info ul{list-style:none;display:grid;gap:0}
+.info li{padding:12px 0 12px 22px;border-top:1px solid var(--line);position:relative}
+.info li::before{content:"";position:absolute;left:0;top:21px;width:10px;height:3px;background:var(--or)}
+.pick{position:relative;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0;animation:drift 26s ease-in-out infinite alternate}
+.orb.a{width:420px;height:420px;background:radial-gradient(circle,rgba(217,104,42,.28),transparent 70%);right:-120px;top:10%}
+.orb.b{width:380px;height:380px;background:radial-gradient(circle,rgba(139,145,150,.16),transparent 70%);left:-120px;bottom:5%}
+@keyframes drift{to{transform:translate(-40px,30px)}}
+.pick .wrap,.reviews .wrap,.quote .wrap{position:relative;z-index:1}
+/* lineup */
+.rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 20px 14px;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.rail figure{flex:none;width:72vw;max-width:340px;scroll-snap-align:start;position:relative;border-radius:22px;overflow:hidden;aspect-ratio:3/4}
+.rail img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.rail figure:hover img{transform:scale(1.04)}
+.rail figcaption{position:absolute;left:12px;bottom:12px;padding:8px 14px;border-radius:999px;font:700 13px 'Bai Jamjuree';letter-spacing:.02em}
+.lineup .note{margin-top:14px;color:var(--steel);font-size:15px}
+/* reviews */
+.lead-q{font:700 clamp(26px,7vw,52px)/1.12 'Sarpanch',sans-serif;max-width:22ch;text-transform:none;letter-spacing:0}
+.lead-q::before{content:"\201C";color:var(--or);font-size:1.6em;line-height:0;vertical-align:-.28em;margin-right:4px}
+.who{margin-top:16px;color:var(--steel);font-weight:600}
+.cards{display:grid;gap:14px;margin-top:40px}
+.card{border-radius:26px;padding:24px}
+.card p{font-size:16px}
+.card cite{display:block;margin-top:12px;font-style:normal;font-weight:600;color:var(--steel);font-size:14px}
+.reviews,.quote{position:relative;overflow:hidden}
+/* quote */
+.panel{border-radius:28px;padding:26px 22px}
+.sent{font:600 clamp(20px,5.6vw,30px)/1.9 'Bai Jamjuree',sans-serif}
+.sent input,.sent select{font:inherit;color:var(--bone);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:2px 12px;min-height:46px;max-width:100%;width:auto;margin:2px 0}
+.sent input{width:min(100%,260px)}
+.sent select option{color:#111}
+.sent input:focus,.sent select:focus{outline:none;border-color:var(--or2);box-shadow:0 0 0 3px rgba(240,138,75,.3)}
+.panel .btn{margin-top:20px;width:100%}
+.panel small{display:block;margin-top:12px;color:var(--steel);font-size:14px}
+/* visit */
+.visit .grid{display:grid;gap:30px}
+.hrs{list-style:none}
+.hrs li{display:flex;justify-content:space-between;padding:11px 0;border-top:1px solid var(--line)}
+.addr{font-size:20px;margin-bottom:20px}
+.addr a{color:var(--or2)}
+footer{padding:36px 0 24px;border-top:1px solid var(--line);color:var(--steel);font-size:14px}
+/* dock */
+.dock{position:fixed;z-index:40;left:12px;right:12px;bottom:12px;display:flex;gap:8px;padding:8px;border-radius:999px;max-width:520px;margin-inline:auto}
+.dock a{flex:1;min-height:52px;display:flex;align-items:center;justify-content:center;border-radius:999px;text-decoration:none;font:800 17px 'Sarpanch',sans-serif;text-transform:uppercase;letter-spacing:.04em;transition:transform .18s}
+.dock a:active{transform:scale(.97)}
+.dock .c{background:var(--or);color:#140a04}.dock .t{background:rgba(255,255,255,.1);color:var(--bone)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(min-width:880px){
+ body{padding-bottom:0;font-size:18px}
+ nav .links{display:flex}
+ section{padding:130px 0}
+ .hero .in{grid-template-columns:1.4fr 1fr;align-items:end;padding-bottom:70px}
+ .hero h1{font-size:clamp(90px,8.6vw,130px)}
+ nav .btn .full{display:inline}nav .logo{font-size:18px}
+ .hero video{left:auto;right:max(20px,calc((100vw - 1180px)/2));top:100px;bottom:40px;width:min(36vw,440px);height:auto;border-radius:28px;z-index:-1}
+ .hero .in{padding:120px 0 70px}
+ .hero::after{background:radial-gradient(60% 70% at 85% 40%,rgba(217,104,42,.16),transparent 70%)}
+ .hero .in{grid-template-columns:1.5fr .9fr}
+ .rate{position:relative;right:30px;margin-bottom:20px}
+ .rate{justify-self:end}
+ .strip .wrap{grid-template-columns:repeat(3,1fr);gap:40px}
+ .strip div{border:0;flex-direction:column;padding:28px 0;gap:4px}
+ .stage{grid-template-columns:minmax(0,.8fr) minmax(0,1fr);gap:70px;align-items:center}
+ .shot{aspect-ratio:4/5;max-height:80vh}
+ .rail{padding-inline:max(20px,calc((100vw - 1180px)/2))}
+ .rail figure{width:300px}
+ .cards{grid-template-columns:repeat(3,1fr)}
+ .panel{padding:48px 56px}
+ .visit .grid{grid-template-columns:1fr 1fr;gap:80px}
+ .dock{display:none}
+}
+@media(prefers-reduced-motion:reduce){.in-load,.rv{animation:none;opacity:1;transform:none;transition:none}.orb{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav class="glass">
+  <a class="logo" href="#top">Level<b>up</b> Detailing</a>
+  <div class="links"><a href="#levels">Levels</a><a href="#jobs">Jobs</a><a href="#reviews">Reviews</a><a href="#quote">Quote</a></div>
+  <a class="btn" href="tel:+12502580986">Call<span class="full">&nbsp;(250) 258-0986</span></a>
+</nav>
+
+<header class="hero" id="top">
+  <video autoplay muted loop playsinline poster="video/hero-poster.jpg"><source src="video/hero.mp4" type="video/mp4"></video>
+  <div class="wrap in">
+    <div style="display:grid;gap:22px">
+      <p class="tag in-load" style="animation-delay:.1s">Car detailing, Kelowna BC</p>
+      <h1 class="d in-load" style="animation-delay:.25s">Level up<br><span>your ride.</span></h1>
+      <p class="lead in-load" style="animation-delay:.45s">Levelup Auto Detailing Kelowna. Interior and exterior details, ceramic coating, mobile or drop off.</p>
+      <div class="cta in-load" style="animation-delay:.6s"><a class="btn" href="tel:+12502580986">Call (250) 258-0986</a><a class="btn ghost" href="#quote">Get a quote</a></div>
+    </div>
+    <div class="rate glass in-load" style="animation-delay:.8s">
+      <div class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="n"><span id="cnt">5.0</span><small>84 Google reviews</small></div>
+      <q>Jot, from Levelup did 3 cars for us and I can’t say enough about the detail they went to clean our vehicles.</q>
+      <cite>Ken M., Google</cite>
+    </div>
+  </div>
+</header>
+
+<div class="strip"><div class="wrap">
+  <div><span>Where</span><b>Mobile or drop off</b></div>
+  <div><span>Open</span><b>Daily 8 a.m. to 8 p.m.</b></div>
+  <div><span>Book</span><b>DM, text or call</b></div>
+</div></div>
+
+<section class="pick" id="levels">
+  <div class="orb a"></div><div class="orb b"></div>
+  <div class="wrap">
+    <p class="tag">What they post, job by job</p>
+    <h2 class="d">Pick your level.</h2>
+    <div class="chips" role="tablist" aria-label="Detail level">
+      <button class="chip" role="tab" aria-selected="true" data-i="0">Level 2</button>
+      <button class="chip" role="tab" aria-selected="false" data-i="1">Level 3 full</button>
+      <button class="chip" role="tab" aria-selected="false" data-i="2">Ceramic 5 year</button>
+      <button class="chip" role="tab" aria-selected="false" data-i="3">Ceramic 2 year RV</button>
+    </div>
+    <div class="stage">
+      <div class="shot rv">
+        <img class="on" src="img/p1.jpg" alt="White GMC Denali after a Level 2 detail" loading="lazy">
+        <img src="img/p3.jpg" alt="White Mercedes-Benz convertible after a Level 3 full detail" loading="lazy">
+        <img src="img/p5.jpg" alt="Black Range Rover with 5 year ceramic coating" loading="lazy">
+        <video muted loop playsinline preload="none" poster="video/band-poster.jpg" aria-label="RV with 2 year ceramic coating"><source src="video/band.mp4" type="video/mp4"></video>
+      </div>
+      <div class="info" aria-live="polite">
+        <h3 class="d" id="it">Level 2 Interior &amp; Exterior</h3>
+        <p class="cap" id="ic">GMC Denali, from their post</p>
+        <ul id="il"></ul>
+        <p style="margin-top:24px"><a class="btn" href="#quote">Ask about this</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lineup" id="jobs" style="padding-left:0;padding-right:0">
+  <div class="wrap"><p class="tag">Recent jobs from their Instagram</p><h2 class="d">The lineup.</h2></div>
+  <div class="rail">
+    <figure><img src="img/p6.jpg" alt="Orange Corvette convertible detailed" loading="lazy"><figcaption class="glass">Corvette</figcaption></figure>
+    <figure><img src="img/p8.jpg" alt="Orange Plymouth Cuda washed" loading="lazy"><figcaption class="glass">Plymouth ’Cuda</figcaption></figure>
+    <figure><img src="img/p2.jpg" alt="Lifted black Chevy truck with stripes" loading="lazy"><figcaption class="glass">Lifted truck</figcaption></figure>
+    <figure><img src="img/p9.jpg" alt="Black BMW X5 under blue sky" loading="lazy"><figcaption class="glass">BMW X5</figcaption></figure>
+    <figure><img src="img/p7.jpg" alt="Black Toyota Tundra with wet shine" loading="lazy"><figcaption class="glass">Toyota Tundra</figcaption></figure>
+    <figure><img src="img/p4.jpg" alt="Black and white RV" loading="lazy"><figcaption class="glass">RV</figcaption></figure>
+    <figure><img src="img/p10.jpg" alt="White Ram pickup" loading="lazy"><figcaption class="glass">Ram</figcaption></figure>
+    <figure><img src="img/p11.jpg" alt="Honda interior with quilted black and red seats" loading="lazy"><figcaption class="glass">Interior</figcaption></figure>
+    <figure><img src="img/p12.jpg" alt="Black Range Rover Sport" loading="lazy"><figcaption class="glass">Range Rover Sport</figcaption></figure>
+  </div>
+  <div class="wrap"><p class="note">Steam clean available. Vehicles from classics to RVs.</p></div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="orb a" style="top:0;left:-100px;right:auto"></div>
+  <div class="wrap">
+    <p class="tag">5.0 on Google, 84 reviews</p>
+    <h2 class="d">Customers say.</h2>
+    <blockquote class="lead-q">Jot, from Levelup did 3 cars for us and I can’t say enough about the detail they went to clean our vehicles. All other detailers don’t even come close. Exemplary service and detail. We would have them back anytime!</blockquote>
+    <p class="who">Ken M., Google</p>
+    <div class="cards">
+      <div class="card glass"><p>Booked Jot and his bud last minute and they were able to get me in early the next day for a detail and a nice wash! They did an amazing job, couldn't be happier. All for a fair price as well. Would recommend to anyone!!</p><cite>Jacqueline, Google</cite></div>
+      <div class="card glass"><p>Overall a 5 star experience. Excellent communication and setup. Arrived on time and job was done very well. Only needed my interior done and they knocked it out of the park! Would highly recommend.</p><cite>Blackcard S., Google</cite></div>
+      <div class="card glass"><p>Fast and profecional service!!! Took care of a mouse nest above the head liner and cleaned the inside of the …</p><cite>David R., Google</cite></div>
+    </div>
+  </div>
+</section>
+
+<section class="quote" id="quote">
+  <div class="orb b" style="right:-100px;left:auto"></div>
+  <div class="wrap">
+    <p class="tag">Texts straight to their phone</p>
+    <h2 class="d">Get a quote.</h2>
+    <form class="panel glass sent" id="qf">
+      Hi Levelup, I'm <input id="qn" placeholder="your name" aria-label="Your name" autocomplete="name" required>
+      and I drive a <input id="qv" placeholder="car, truck, RV" aria-label="Your vehicle" required>.
+      I'm looking for <select id="qs" aria-label="Service"><option>a Level 2 detail</option><option>a Level 3 full detail</option><option>ceramic coating</option><option>help choosing</option></select>
+      <button class="btn" type="submit">Text this to Levelup</button>
+      <small>Opens your messages with this sentence to (250) 258-0986. You can edit it before you send.</small>
+    </form>
+  </div>
+</section>
+
+<section class="visit">
+  <div class="wrap grid">
+    <div>
+      <p class="tag">Find them</p>
+      <h2 class="d">Kelowna, BC.</h2>
+      <p class="addr">1355 Findlay Rd, Kelowna, BC V1X 8B8<br><a href="tel:+12502580986">(250) 258-0986</a></p>
+      <a class="btn ghost" href="https://www.google.com/maps/place/Levelup+Auto+Detailing+Kelowna/data=!4m7!3m6!1s0x537df3fd2538933f:0xbe8822067e5b8a32!8m2!3d49.9057998!4d-119.3977616!16s%2Fg%2F11ks2m0x8_!19sChIJP5M4Jf3zfVMRMopbfgYiiL4" rel="noopener">Open in Google Maps</a>
+    </div>
+    <ul class="hrs">
+      <li><span>Monday</span><span>8 a.m. to 8 p.m.</span></li><li><span>Tuesday</span><span>8 a.m. to 8 p.m.</span></li><li><span>Wednesday</span><span>8 a.m. to 8 p.m.</span></li><li><span>Thursday</span><span>8 a.m. to 8 p.m.</span></li><li><span>Friday</span><span>8 a.m. to 8 p.m.</span></li><li><span>Saturday</span><span>8 a.m. to 8 p.m.</span></li><li><span>Sunday</span><span>8 a.m. to 8 p.m.</span></li>
+    </ul>
+  </div>
+</section>
+
+<footer><div class="wrap">Preview built by JPF. Not live yet.</div></footer>
+
+<div class="dock glass"><a class="c" href="tel:+12502580986">Call</a><a class="t" href="sms:+12502580986">Text</a></div>
+
+<script>
+const L=[
+ {t:'Level 2 Interior & Exterior',c:'GMC Denali, from their post',l:['Interior and exterior detailing','Deep clean, fresh interior','Glossy exterior finish']},
+ {t:'Level 3 Full Detail',c:'Mercedes-Benz, from their post',l:['Deep exterior cleaning','Detailed wheels and tires','Complete interior detailing','Seats, carpets and dashboard cleaned','Premium finishing touches']},
+ {t:'5 Year Ceramic Coating',c:'Range Rover, from their post',l:['Hydrophobic protection','Deep gloss and shine','Long-term paint protection','Water repellency']},
+ {t:'2 Year Ceramic Coating',c:'RV edition, from their post',l:['Deep gloss and enhanced shine','Hydrophobic water-beading','Easier cleaning and maintenance','Long-lasting paint protection']}
+];
+const chips=[...document.querySelectorAll('.chip')],media=[...document.querySelectorAll('.shot img,.shot video')];
+function pick(i){
+  chips.forEach((c,k)=>c.setAttribute('aria-selected',k===i));
+  media.forEach((m,k)=>{m.classList.toggle('on',k===i);if(m.tagName==='VIDEO'){k===i?m.play().catch(()=>{}):m.pause()}});
+  it.textContent=L[i].t;ic.textContent=L[i].c;il.innerHTML=L[i].l.map(x=>'<li>'+x+'</li>').join('');
+}
+chips.forEach((c,i)=>c.onclick=()=>pick(i));pick(0);
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
+  const el=document.getElementById('cnt');let s=null;
+  const f=t=>{s=s||t;const p=Math.min((t-s)/1400,1);el.textContent=(5*(1-Math.pow(1-p,3))).toFixed(1);if(p<1)requestAnimationFrame(f)};
+  setTimeout(()=>requestAnimationFrame(f),900);
+}
+document.getElementById('qf').addEventListener('submit',e=>{e.preventDefault();
+  const m="Hi Levelup, I'm "+qn.value.trim()+" and I drive a "+qv.value.trim()+". I'm looking for "+qs.value+".";
+  location.href='sms:+12502580986?&body='+encodeURIComponent(m);
+});
+</script>
+</body>
+</html>
