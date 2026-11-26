@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vaughan Auto Detailing | Car detailing in Woodbridge, Vaughan ON</title>
+<meta name="description" content="Vaughan Auto Detailing, car detailing at 10 Strada Dr, Woodbridge. Call (416) 902-0646.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0d1512">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vidaloka&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+1 Direction: storefront-led dark premium. Their own brick shop and green X5 open the page; the hex-light mirror clip is the proof.
+2 Palette: X5 black-green #0d1512 (their green X5), shop bone #efebe2, brick #9a4a35 (their shopfront), Rolls Phantom orange #e2692f (accent: buttons, one headline word, rule), steel #8d9a96 (grey X5).
+3 Fonts: Vidaloka (display) + Hind Siliguri (body).
+4 Signature: "Pick a job" file chooser (green X5 / grey X5 / wheels) with glass chips + hex mirror clip.
+5 Order: hero, proof, shop band, mirror + services, job chooser, Rolls band + lead quote, reviews, hours/area, quote sentence, footer.
+6 Motion: one load entrance, gentle photo reveals, count-up on rating. Reduced motion respected. */
+:root{
+  --ink:#0d1512;--ink2:#14201b;--bone:#efebe2;--brick:#9a4a35;--accent:#e2692f;--steel:#8d9a96;
+  --line:rgba(239,235,226,.16);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--bone);font-family:'Hind Siliguri',system-ui,sans-serif;font-size:17px;line-height:1.55;overflow-x:hidden;padding-bottom:96px}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.d{font-family:'Vidaloka',Georgia,serif;font-weight:400;letter-spacing:-.01em;word-spacing:.12em}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;border-radius:999px;background:var(--accent);color:#1a0d06;font-weight:700;font-size:17px;text-decoration:none;border:0;cursor:pointer;transition:transform .18s,filter .18s;font-family:inherit}
+.btn:hover{filter:brightness(1.08)}.btn:active{transform:scale(.97)}
+.btn.ghost{background:rgba(239,235,226,.08);color:var(--bone);border:1px solid rgba(239,235,226,.3)}
+
+/* glass nav */
+.nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;max-width:1180px;margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 8px 8px 20px;border-radius:999px;background:rgba(13,21,18,.5);backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(239,235,226,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 20px 50px -20px rgba(0,0,0,.6)}
+.nav b{font-family:'Vidaloka',serif;font-weight:400;font-size:19px;white-space:nowrap}
+.nav .links{display:none;gap:28px;font-weight:500}
+.nav .links a{text-decoration:none;opacity:.85}.nav .links a:hover{opacity:1;color:var(--accent)}
+.nav .btn{min-height:44px;padding:0 20px;font-size:16px;white-space:nowrap}.nav .lg{display:none}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:var(--ink)}
+.hero .ph{position:absolute;left:0;right:0;top:0;height:62svh}
+.hero .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 62%;transform:scale(1.12);animation:settle 1.6s cubic-bezier(.2,.7,.2,1) forwards}
+.hero .ph:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,21,18,.5) 0%,rgba(13,21,18,0) 20%,rgba(13,21,18,0) 55%,var(--ink) 100%)}
+.hero .in{position:relative;z-index:2;width:min(1180px,100% - 40px);margin:0 auto;padding:48svh 0 120px}
+.kick{font-size:15px;font-weight:600;color:var(--bone);opacity:.9;margin-bottom:14px}
+.kick i{display:inline-block;width:34px;height:2px;background:var(--accent);vertical-align:middle;margin-right:10px}
+h1{font-size:clamp(54px,15.5vw,96px);line-height:.98;max-width:9ch}
+h1 em{font-style:normal;color:var(--accent)}
+.hero p.lede{display:none;margin-top:20px;font-size:18px;max-width:30ch;opacity:.92}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.gcard{margin-top:26px;display:flex;gap:14px;align-items:center;max-width:380px;padding:14px 18px;border-radius:24px;background:rgba(13,21,18,.52);backdrop-filter:blur(22px) saturate(170%);-webkit-backdrop-filter:blur(22px) saturate(170%);border:1px solid rgba(239,235,226,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 24px 60px -24px rgba(0,0,0,.7)}
+.gcard strong{font-family:'Vidaloka',serif;font-weight:400;font-size:44px;line-height:1;color:var(--accent)}
+.gcard span{font-size:15px;line-height:1.35}
+.rise{opacity:0;transform:translateY(18px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+.r1{animation-delay:.25s}.r2{animation-delay:.4s}.r3{animation-delay:.55s}.r4{animation-delay:.7s}
+@keyframes rise{to{opacity:1;transform:none}}
+@keyframes settle{to{transform:scale(1)}}
+
+/* proof strip */
+.proof{border-bottom:1px solid var(--line)}
+.proof .wrap{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.proof div{padding:28px 0;border-top:1px solid var(--line)}
+.proof div:nth-child(-n+2){border-top:0}
+.proof div:nth-child(odd){padding-right:16px}
+.proof b{display:block;font-family:'Vidaloka',serif;font-weight:400;font-size:34px;line-height:1.05;white-space:nowrap}
+.proof small{display:block;font-size:15px;opacity:.75;margin-top:4px}
+
+section{padding:72px 0}
+h2{font-size:clamp(38px,10vw,72px);line-height:1.02}
+h2 em{font-style:normal;color:var(--accent)}
+.sub{margin-top:16px;max-width:46ch;opacity:.85}
+
+/* shop band */
+.shop{position:relative;padding:0}
+.shop img{width:100%;height:min(88svh,820px);object-fit:cover;object-position:50% 30%}
+.shop:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(13,21,18,.9),rgba(13,21,18,0) 55%)}
+.shop .cap{position:absolute;z-index:2;left:0;right:0;bottom:36px}
+.shop .cap h2{max-width:11ch;font-size:clamp(40px,11vw,84px)}
+.shop .cap p{margin-top:10px;opacity:.9}
+
+/* mirror + services */
+.mirror .grid{display:grid;gap:36px}
+.vid{position:relative;border-radius:28px;overflow:hidden;border:1px solid var(--line);aspect-ratio:720/760;background:#000;max-width:520px}
+.vid video{width:100%;height:100%;object-fit:cover}
+.vid .tag{position:absolute;left:14px;bottom:14px;padding:8px 16px;border-radius:999px;font-size:14px;font-weight:600;background:rgba(13,21,18,.5);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);border:1px solid rgba(239,235,226,.25);box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}
+.svc{margin-top:28px;list-style:none;border-top:1px solid var(--line)}
+.svc li{display:flex;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line);font-size:19px}
+.svc li span{font-family:'Vidaloka',serif;color:var(--accent);font-size:15px;min-width:26px}
+.svc small{display:block;font-size:15px;opacity:.65}
+
+/* job chooser */
+.jobs{background:var(--bone);color:var(--ink)}
+.jobs h2 em{color:var(--brick)}
+.jobs .sub{opacity:.75}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 22px}
+.chip{min-height:46px;padding:0 20px;border-radius:999px;border:1px solid rgba(13,21,18,.25);background:rgba(255,255,255,.55);backdrop-filter:blur(16px) saturate(150%);-webkit-backdrop-filter:blur(16px) saturate(150%);box-shadow:inset 0 1px 0 rgba(255,255,255,.8);color:var(--ink);font:600 16px 'Hind Siliguri',sans-serif;cursor:pointer;transition:transform .18s,background .18s,color .18s}
+.chip:active{transform:scale(.97)}
+.chip[aria-selected=true]{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+.stage{display:grid;gap:22px}
+.stage figure{border-radius:26px;overflow:hidden;background:#cfc9bd;aspect-ratio:4/4.2}
+.stage img{width:100%;height:100%;object-fit:cover;transition:opacity .35s}
+.stage .txt h3{font-size:30px;line-height:1.1}
+.stage .txt p{margin-top:10px;max-width:40ch;opacity:.85}
+.stage .txt a{display:inline-block;margin-top:14px;font-weight:700;color:var(--brick)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.pair img{border-radius:18px;aspect-ratio:1/1.15;object-fit:cover;width:100%}
+
+/* rolls + lead quote */
+.rolls .grid{display:grid;gap:32px;align-items:center}
+.rolls .vid{aspect-ratio:768/720;max-width:560px}
+.lead q{display:block;quotes:none;font-family:'Vidaloka',serif;font-size:clamp(26px,7vw,44px);line-height:1.2}
+.lead cite{display:block;margin-top:18px;font-style:normal;font-size:16px;opacity:.8}
+.lead cite:before{content:"";display:inline-block;width:30px;height:2px;background:var(--accent);vertical-align:middle;margin-right:10px}
+
+/* reviews */
+.revs{position:relative;overflow:hidden}
+.revs:before,.revs:after{content:"";position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;animation:drift 26s ease-in-out infinite alternate}
+.revs:before{width:420px;height:420px;background:rgba(154,74,53,.35);top:-80px;right:-120px}
+.revs:after{width:380px;height:380px;background:rgba(141,154,150,.18);bottom:-100px;left:-100px;animation-delay:-12s}
+@keyframes drift{to{transform:translate(-40px,30px)}}
+.rgrid{position:relative;z-index:1;display:grid;gap:14px;margin-top:34px}
+.rc{padding:24px;border-radius:24px;background:rgba(20,32,27,.55);backdrop-filter:blur(20px) saturate(150%);-webkit-backdrop-filter:blur(20px) saturate(150%);border:1px solid rgba(239,235,226,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 24px 60px -28px rgba(0,0,0,.7)}
+.rc p{font-size:17px}
+.rc footer{margin-top:14px;font-size:15px;opacity:.75}
+.stars{color:var(--accent);letter-spacing:2px;font-size:15px;margin-bottom:8px}
+
+/* visit */
+.visit .grid{display:grid;gap:36px}
+.hrs{list-style:none;margin-top:24px;border-top:1px solid var(--line);max-width:440px}
+.hrs li{display:flex;justify-content:space-between;gap:20px;padding:12px 0;border-bottom:1px solid var(--line)}
+.hrs li span:last-child{opacity:.85;text-align:right}
+.addr{font-family:'Vidaloka',serif;font-size:26px;line-height:1.25;margin-top:6px}
+.visit .photo img{border-radius:26px;width:100%;aspect-ratio:4/4.4;object-fit:cover;object-position:50% 40%}
+
+/* quote */
+.quote{position:relative;overflow:hidden;background:radial-gradient(900px 500px at 85% 0%,rgba(154,74,53,.45),transparent 60%),radial-gradient(700px 500px at 0% 100%,rgba(226,105,47,.18),transparent 60%),var(--ink2)}
+.qpanel{max-width:820px;padding:30px 24px;border-radius:30px;background:rgba(13,21,18,.5);backdrop-filter:blur(26px) saturate(170%);-webkit-backdrop-filter:blur(26px) saturate(170%);border:1px solid rgba(239,235,226,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 30px 80px -30px rgba(0,0,0,.7)}
+.sent{font-family:'Vidaloka',serif;font-size:clamp(22px,5.6vw,34px);line-height:1.9;margin-top:22px}
+.sent input,.sent select{font:inherit;font-family:'Hind Siliguri',sans-serif;font-size:18px;color:var(--bone);background:rgba(239,235,226,.08);border:1px solid rgba(239,235,226,.28);border-radius:14px;padding:6px 14px;min-height:46px;width:min(100%,260px);vertical-align:middle;box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+.sent select option{color:#111}
+.sent input:focus,.sent select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(226,105,47,.35)}
+.sent input::placeholder{color:rgba(239,235,226,.5)}
+.qpanel .btn{margin-top:22px}
+.qpanel small{display:block;margin-top:14px;opacity:.7;font-size:15px}
+
+footer.f{padding:36px 0 24px;border-top:1px solid var(--line);font-size:15px;opacity:.85}
+footer.f .wrap{display:flex;flex-direction:column;gap:6px}
+
+/* dock */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));display:flex;gap:8px;padding:8px;border-radius:999px;background:rgba(13,21,18,.55);backdrop-filter:blur(22px) saturate(170%);-webkit-backdrop-filter:blur(22px) saturate(170%);border:1px solid rgba(239,235,226,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 20px 50px -18px rgba(0,0,0,.8)}
+.dock a{flex:1;min-height:48px;display:flex;align-items:center;justify-content:center;border-radius:999px;text-decoration:none;font-weight:700;transition:transform .18s}
+.dock a:active{transform:scale(.97)}
+.dock .c{background:var(--accent);color:#1a0d06}
+.dock .t{background:rgba(239,235,226,.1);color:var(--bone)}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s}.rv.on{opacity:1;transform:none}
+
+@media(min-width:820px){
+  body{padding-bottom:0;font-size:18px}
+  .dock{display:none}
+  .nav .links{display:flex}
+  .nav{top:16px;padding-left:28px}
+  .hero .ph{left:46%;height:auto;bottom:0}.hero .ph img{object-position:50% 40%}.nav .lg{display:inline}.nav .sm{display:none}
+  .hero .ph:after{background:linear-gradient(90deg,var(--ink) 0%,rgba(13,21,18,.55) 22%,rgba(13,21,18,0) 55%),linear-gradient(180deg,rgba(13,21,18,.4),rgba(13,21,18,0) 20%,rgba(13,21,18,0) 70%,rgba(13,21,18,.85))}
+  .hero .in{padding:140px 0 72px}
+  h1{max-width:7.5ch;font-size:clamp(84px,8.8vw,132px)}
+  .hero p.lede{display:block;font-size:20px;max-width:34ch}
+  .gcard{position:absolute;right:0;bottom:64px;margin:0}
+  section{padding:120px 0}
+  .proof .wrap{grid-template-columns:repeat(4,1fr)}
+  .proof div{border-top:0;border-left:1px solid var(--line);padding:40px 24px}
+  .proof div:first-child{border-left:0;padding-left:0}
+  .proof b{font-size:56px}
+  .mirror .grid{grid-template-columns:5fr 6fr;gap:80px;align-items:center}
+  .stage{grid-template-columns:7fr 5fr;gap:56px;align-items:center}
+  .stage figure{aspect-ratio:1/1}
+  .rolls .grid{grid-template-columns:5fr 6fr;gap:80px}
+  .rgrid{grid-template-columns:1fr 1fr 1fr}
+  .visit .grid{grid-template-columns:6fr 5fr;gap:90px;align-items:center}
+  .qpanel{padding:54px 56px}
+  .shop .cap{bottom:64px}
+  footer.f .wrap{flex-direction:row;justify-content:space-between}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rise,.rv{opacity:1;transform:none}.hero .ph img{transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <b>Vaughan Auto Detailing</b>
+  <div class="links"><a href="#work">Work</a><a href="#reviews">Reviews</a><a href="#visit">Hours</a><a href="#quote">Quote</a></div>
+  <a class="btn" href="tel:+14169020646"><span class="lg">Call (416) 902-0646</span><span class="sm">Call</span></a>
+</nav>
+
+<header class="hero">
+  <div class="ph"><img src="img/p3.jpg" alt="Dark green BMW X5 parked in front of the Vaughan Auto Detailing shop" fetchpriority="high"></div>
+  <div class="in">
+    <p class="kick rise r1"><i></i>Car detailing, Woodbridge, Vaughan ON</p>
+    <h1 class="d rise r2">From dull to <em>mirror</em> finish</h1>
+    <p class="lede rise r3">Interior and exterior detailing, paint correction, ceramic coating, PPF and window tinting.</p>
+    <div class="cta rise r3">
+      <a class="btn" href="tel:+14169020646">Call (416) 902-0646</a>
+      <a class="btn ghost" href="#quote">Get a quote</a>
+    </div>
+    <div class="gcard rise r4">
+      <strong data-count="5.0">5.0</strong>
+      <span>57 Google reviews<br>"They did an amazing job!" Diana C.</span>
+    </div>
+  </div>
+</header>
+
+<div class="proof">
+  <div class="wrap">
+    <div><b><span data-count="5.0">5.0</span></b><small>Google rating</small></div>
+    <div><b><span data-count="57" data-int="1">57</span></b><small>Google reviews</small></div>
+    <div><b>Strada Dr</b><small>10 Strada Dr, Woodbridge</small></div>
+    <div><b>8:30</b><small>Opens Wed to Sat. Closed Sunday.</small></div>
+  </div>
+</div>
+
+<section class="shop" id="work" aria-label="The shop">
+  <img src="img/p4.jpg" alt="Green BMW X5 in front of the Vaughan Auto Detailing storefront on Strada Dr" loading="lazy">
+  <div class="cap wrap">
+    <h2 class="d">Brick shop. <em>Clean</em> cars.</h2>
+    <p>10 Strada Dr, Woodbridge, ON</p>
+  </div>
+</section>
+
+<section class="mirror">
+  <div class="wrap grid">
+    <div class="vid rv">
+      <video muted loop playsinline autoplay preload="metadata" poster="video/mirror-poster.jpg" aria-label="Hex lights reflecting in freshly detailed black paint"><source src="video/mirror.mp4" type="video/mp4"></video>
+      <span class="tag">Paint after detailing, BMW</span>
+    </div>
+    <div class="rv">
+      <h2 class="d">The difference is in the <em>details.</em></h2>
+      <p class="sub">That line is from their own post. These are the services they list on Instagram.</p>
+      <ul class="svc">
+        <li><span>01</span><div>Professional auto detailing<small>Full interior deep cleaning, exterior hand wash, rim cleaning, tire shine</small></div></li>
+        <li><span>02</span><div>Paint correction<small>2-stage paint correction on their BMW X5 package</small></div></li>
+        <li><span>03</span><div>Ceramic coating</div></li>
+        <li><span>04</span><div>Paint protection film (PPF)</div></li>
+        <li><span>05</span><div>Window tinting</div></li>
+        <li><span>06</span><div>Salt removal and stain removal<small>Listed on their 2024 BMW X5 job</small></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="jobs">
+  <div class="wrap">
+    <h2 class="d rv">Pick a <em>job.</em></h2>
+    <p class="sub rv">Real cars from their Instagram. Tap one.</p>
+    <div class="chips" role="tablist" aria-label="Jobs">
+      <button class="chip" role="tab" aria-selected="true" data-i="0">Green X5</button>
+      <button class="chip" role="tab" aria-selected="false" data-i="1">Grey X5</button>
+      <button class="chip" role="tab" aria-selected="false" data-i="2">Wheels and caliper</button>
+    </div>
+    <div class="stage">
+      <figure><img id="stImg" src="img/p2.jpg" alt="Dark green BMW X5 after detailing" loading="lazy"></figure>
+      <div class="txt">
+        <h3 class="d" id="stH">BMW X5, complete refresh</h3>
+        <p id="stP">Their post: "a complete interior and exterior refresh at Vaughan Auto Detailing, bringing out its beautiful finish inside and out."</p>
+        <a id="stA" href="https://www.instagram.com/p/Df2RS8aFCF1/" rel="noopener" target="_blank">See the original post</a>
+        <div class="pair"><img id="pA" src="img/p5.jpg" alt="Rear of the green BMW X5" loading="lazy"><img id="pB" src="img/p6.jpg" alt="BMW wheel with blue caliper" loading="lazy"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rolls">
+  <div class="wrap grid">
+    <div class="vid rv">
+      <video muted loop playsinline autoplay preload="metadata" poster="video/rolls-poster.jpg" aria-label="Rolls-Royce Phantom detailed inside and out"><source src="video/rolls.mp4" type="video/mp4"></video>
+      <span class="tag">Rolls-Royce Phantom</span>
+    </div>
+    <div class="lead rv">
+      <p class="kick"><i></i>Google review</p>
+      <q>I brought my car here the other day. They took me quickly and completed the inner and outer detailing service in a timely manner. They did an amazing job! My car had a lot of sand from a beach day and they took all of it out!</q>
+      <cite>Diana C., Google</cite>
+    </div>
+  </div>
+</section>
+
+<section class="revs" id="reviews">
+  <div class="wrap">
+    <h2 class="d rv">5.0 from <em>57</em> Google reviews.</h2>
+    <div class="rgrid">
+      <div class="rc rv"><div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>I took my car to Vaughan Auto Detailing for an interior and exterior, and they did an amazing job! My car looks spotless and feels brand new. The staff were professional, friendly, and paid great attention to detail.</p><footer>Roza B., Google</footer></div>
+      <div class="rc rv"><div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>The service provided was exceptional, demonstrating a high level of knowledge and professionalism throughout the entire process.</p><footer>Domenic G., Google</footer></div>
+      <div class="rc rv"><div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>I recently had my vehicle detailed at Vaughn auto detailing shop and couldn't be happier with the results. Ronan was extremely meticulous, patient and friendly.</p><footer>Claudia C., Google</footer></div>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap grid">
+    <div class="rv">
+      <h2 class="d">Come <em>by.</em></h2>
+      <p class="addr">10 Strada Dr<br>Woodbridge, ON L4L 5V2</p>
+      <ul class="hrs">
+        <li><span>Wednesday to Friday</span><span>8:30 a.m. to 6 p.m.</span></li>
+        <li><span>Saturday</span><span>8:30 a.m. to 4 p.m.</span></li>
+        <li><span>Sunday</span><span>Closed</span></li>
+        <li><span>Monday and Tuesday</span><span>Call to confirm</span></li>
+      </ul>
+      <p style="margin-top:22px"><a class="btn" href="tel:+14169020646">Call (416) 902-0646</a></p>
+    </div>
+    <div class="photo rv"><img src="img/p9.jpg" alt="Grey BMW X5 in front of the Vaughan Auto Detailing shop at golden hour" loading="lazy"></div>
+  </div>
+</section>
+
+<section class="quote" id="quote">
+  <div class="wrap">
+    <div class="qpanel rv">
+      <h2 class="d">Ask for a <em>quote.</em></h2>
+      <p class="sub">Fill in the sentence. It opens a text to (416) 902-0646.</p>
+      <form class="sent" id="qf" autocomplete="off">
+        Hi, I'm <input id="qn" placeholder="your name" required aria-label="Your name">. I drive a <input id="qc" placeholder="car, year" required aria-label="Your car"> and I need <select id="qs" aria-label="Service needed"><option>an interior and exterior detail</option><option>paint correction</option><option>ceramic coating</option><option>paint protection film</option><option>window tinting</option><option>help picking a service</option></select>.
+        <br><button class="btn" type="submit">Text my request</button>
+      </form>
+      <small>Or call (416) 902-0646.</small>
+    </div>
+  </div>
+</section>
+
+<footer class="f"><div class="wrap"><span>Vaughan Auto Detailing, 10 Strada Dr, Woodbridge, ON. Photos and reviews from their Instagram and Google listing.</span><span>Preview built by JPF. Not live yet.</span></div></footer>
+
+<div class="dock" role="group" aria-label="Call or text"><a class="c" href="tel:+14169020646">Call now</a><a class="t" href="sms:+14169020646">Text us</a></div>
+
+<script>
+(function(){
+  var jobs=[
+    {i:'img/p2.jpg',a:'img/p5.jpg',b:'img/p6.jpg',h:'BMW X5, complete refresh',p:'Their post: "a complete interior and exterior refresh at Vaughan Auto Detailing, bringing out its beautiful finish inside and out."',u:'https://www.instagram.com/p/Df2RS8aFCF1/',alt:'Dark green BMW X5 after detailing'},
+    {i:'img/p10.jpg',a:'img/p9.jpg',b:'img/p11.jpg',h:'2024 BMW X5, the full premium treatment',p:'Their post lists full interior deep cleaning, salt removal and stain removal on this 2024 X5.',u:'https://www.instagram.com/p/De7RdovFHXd/',alt:'Grey BMW X5 detailed in front of the shop'},
+    {i:'img/p12.jpg',a:'img/p6.jpg',b:'img/p5.jpg',h:'Rims and wheels',p:'Rim cleaning and tire shine are part of their complete detailing package, as shown on their BMW X5 post.',u:'https://www.instagram.com/p/Df2RS8aFCF1/',alt:'Black BMW wheel with red caliper'}
+  ];
+  var tabs=document.querySelectorAll('.chip'),im=document.getElementById('stImg');
+  tabs.forEach(function(t){t.addEventListener('click',function(){
+    var j=jobs[+t.dataset.i];
+    tabs.forEach(function(x){x.setAttribute('aria-selected',x===t)});
+    im.style.opacity=0;
+    setTimeout(function(){im.src=j.i;im.alt=j.alt;im.style.opacity=1},180);
+    document.getElementById('pA').src=j.a;document.getElementById('pB').src=j.b;
+    document.getElementById('stH').textContent=j.h;document.getElementById('stP').textContent=j.p;document.getElementById('stA').href=j.u;
+  })});
+  document.getElementById('qf').addEventListener('submit',function(e){
+    e.preventDefault();
+    var b="Hi Vaughan Auto Detailing, I'm "+qn.value.trim()+". I drive a "+qc.value.trim()+" and I need "+qs.value+". Can I get a quote?";
+    location.href='sms:+14169020646?&body='+encodeURIComponent(b);
+  });
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}})},{threshold:.12});
+    els.forEach(function(e){io.observe(e)});
+  }else els.forEach(function(e){e.classList.add('on')});
+  var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(!rm){document.querySelectorAll('[data-count]').forEach(function(el){
+    var end=parseFloat(el.dataset.count),int=el.dataset.int,t0=null;
+    function step(t){if(!t0)t0=t;var k=Math.min((t-t0)/1100,1),v=end*(1-Math.pow(1-k,3));el.textContent=int?Math.round(v):v.toFixed(1);if(k<1)requestAnimationFrame(step)}
+    requestAnimationFrame(step);
+  })}
+  if(rm)document.querySelectorAll('video').forEach(function(v){v.removeAttribute('autoplay');v.pause()});
+})();
+</script>
+</body>
+</html>
