@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The Tiny Cleaning Company | House cleaning in Ajax, ON</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* PLAN: uniform-yellow split. Direction: the yellow crew shirt owns the page; split hero, room-by-room signature viewer.
+Palette: ink #15171a (shirt print/logo black), uniform yellow #e9c23f (crew shirts, p4/p7), kitchen white #f7f5ef (their white kitchens p3), oak #a9794a (hardwood p1), award gold #c9a24a (p11).
+Fonts: Lilita One (display) + Outfit (body). Signature: room-by-room tab viewer. Order: hero, rooms, reviews, award+hours, quote, call. Motion: one hero load-in, gentle reveals. */
+:root{--ink:#15171a;--y:#e9c23f;--w:#f7f5ef;--oak:#a9794a;--gold:#c9a24a;--mut:#5b5f63}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Outfit,sans-serif;background:var(--w);color:var(--ink);font-size:17px;line-height:1.55;overflow-x:hidden;padding-bottom:96px}
+h1,h2,h3,.disp{font-family:'Lilita One',sans-serif;font-weight:400;letter-spacing:.005em;word-spacing:.12em;line-height:.98}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 8px 8px 20px;border-radius:999px;background:rgba(247,245,239,.62);backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 20px 60px -20px rgba(21,23,26,.3)}
+.sh{display:none}.nav b{white-space:nowrap;font-family:'Lilita One';font-weight:400;font-size:19px;letter-spacing:.01em}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 22px;border-radius:999px;background:var(--ink);color:var(--w);font-weight:600;text-decoration:none;border:0;font:600 16px Outfit;cursor:pointer;transition:transform .18s,background .18s}
+.btn:active{transform:scale(.97)}
+.btn.y{background:var(--y);color:var(--ink)}
+.hero{display:grid;grid-template-columns:1fr;min-height:100svh;background:var(--y)}
+.hero .txt{padding:92px 22px 34px;display:flex;flex-direction:column;justify-content:center}
+.hero h1{font-size:clamp(58px,17vw,118px);color:var(--ink);text-wrap:balance}
+.hero p{max-width:30em;margin:20px 0 26px;font-size:18px;font-weight:500}
+.hero .ph{position:relative;min-height:56vh;overflow:hidden}
+.hero .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;animation:zoom 1.6s cubic-bezier(.2,.7,.2,1) both}
+.glass{background:rgba(247,245,239,.6);backdrop-filter:blur(22px) saturate(170%);-webkit-backdrop-filter:blur(22px) saturate(170%);border:1px solid rgba(255,255,255,.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 20px 60px -20px rgba(21,23,26,.35)}
+.hcard{position:absolute;left:14px;right:14px;bottom:14px;border-radius:24px;padding:16px 20px;animation:rise .9s .5s both;max-width:420px}
+.hcard .big{font-family:'Lilita One';font-size:44px;line-height:1}
+.hcard small{display:block;font-size:14px;color:#2b2e31}
+@keyframes zoom{from{transform:scale(1.12)}to{transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+section{padding:72px 22px}
+.wrap{max-width:1100px;margin:auto}
+.lab{font-size:14px;font-weight:600;color:var(--mut);margin-bottom:12px}
+h2{font-size:clamp(44px,10vw,92px);margin-bottom:28px}
+/* rooms */
+@media(max-width:600px){.long{display:none}.sh{display:inline}.nav b{font-size:17px}}
+.rooms{background:var(--ink);color:var(--w)}
+.rooms .lab{color:#b8bcc0}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.tab{min-height:46px;padding:0 20px;border-radius:16px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:var(--w);font:600 16px Outfit;cursor:pointer;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:transform .18s,background .18s}
+.tab:active{transform:scale(.97)}
+.tab[aria-selected=true]{background:var(--y);color:var(--ink);border-color:var(--y)}
+.view{display:grid;gap:20px}
+.view .pic{border-radius:26px;overflow:hidden;aspect-ratio:4/5;background:#222}
+.view .pic img{width:100%;height:100%;object-fit:cover;display:block}
+.view h3{font-size:40px;color:var(--y);margin-bottom:10px}
+.view p{max-width:30em;color:#d8dadc}
+/* reviews */
+.lead{font-family:'Lilita One';font-size:clamp(30px,6.4vw,60px);line-height:1.08;max-width:18em;word-spacing:.1em}
+.by{margin-top:16px;font-weight:600}
+.rv{display:grid;gap:14px;margin-top:40px}
+.rv figure{background:#fff;border-radius:22px;padding:22px;border:1px solid #e6e2d6}
+.rv blockquote{font-size:17px}
+.rv figcaption{margin-top:12px;font-weight:600;font-size:15px}
+.stars{color:#b8901c;letter-spacing:.1em;font-size:18px}
+.score{display:flex;align-items:baseline;gap:14px;margin-bottom:26px;flex-wrap:wrap}
+.score .n{font-family:'Lilita One';font-size:clamp(80px,22vw,170px);line-height:.85}
+/* award + hours */
+.mid{background:var(--y)}
+.mid .wrap{display:grid;gap:34px}
+.award{border-radius:26px;overflow:hidden;max-width:340px;box-shadow:0 30px 60px -30px rgba(21,23,26,.5)}
+.award img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;object-position:50% 85%}
+.hours{list-style:none;border-top:2px solid var(--ink);max-width:420px}
+.hours li{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid rgba(21,23,26,.25);font-weight:500}
+.mid h3{font-size:42px;margin-bottom:14px}
+.svc{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 22px}
+.svc span{padding:9px 16px;border-radius:14px;background:rgba(247,245,239,.55);border:1px solid rgba(21,23,26,.2);font-weight:600;font-size:16px}
+/* quote */
+.quote{position:relative;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;z-index:0;animation:drift 26s ease-in-out infinite alternate}
+.o1{width:380px;height:380px;background:var(--y);top:-60px;right:-120px}
+.o2{width:320px;height:320px;background:var(--oak);bottom:-80px;left:-100px;opacity:.28}
+@keyframes drift{to{transform:translate(-40px,30px)}}
+.panel{position:relative;z-index:1;border-radius:28px;padding:28px 22px;max-width:760px}
+.panel p.s{font-size:clamp(22px,5vw,32px);line-height:1.9;font-weight:500}
+.fill{font:inherit;font-weight:700;border:0;border-bottom:3px solid var(--ink);background:rgba(255,255,255,.55);border-radius:12px 12px 0 0;padding:2px 10px;min-height:44px;color:var(--ink);max-width:100%}
+.fill:focus{outline:3px solid var(--y);outline-offset:2px}
+input.fill{width:11em}
+.panel .btn{margin-top:18px}
+footer{padding:34px 22px 20px;font-size:14px;color:var(--mut)}
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:12px;max-width:440px;margin:auto;display:flex;gap:8px;padding:8px;border-radius:999px}
+.dock a{flex:1}
+.rev{opacity:0;transform:translateY(16px);transition:opacity .7s,transform .7s}
+.rev.in{opacity:1;transform:none}
+@media(min-width:860px){
+ body{font-size:18px;padding-bottom:0}
+ .hero{grid-template-columns:1.1fr .9fr}
+ .hero .txt{padding:120px 56px 60px 7vw}
+ .hero .ph{min-height:100svh}
+ section{padding:130px 40px}
+ .view{grid-template-columns:.8fr 1.2fr;align-items:center;gap:56px}
+ .view .pic{aspect-ratio:4/5;max-height:80vh}
+ .rv{grid-template-columns:repeat(2,1fr)}
+ .mid .wrap{grid-template-columns:auto 1fr 1fr;align-items:start;gap:56px}
+ .dock{display:none}
+ .nav{top:16px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav class="nav"><b>The Tiny Cleaning Company</b><a class="btn y" href="tel:+19052608262"><span class="long">Call (905) 260-8262</span><span class="sh">Call</span></a></nav>
+
+<header class="hero">
+ <div class="txt">
+  <h1>Tiny team. Spotless homes.</h1>
+  <p>House cleaning in Ajax, Ontario. Move-in cleans, deep cleans and weekly visits, done by a crew in yellow shirts.</p>
+  <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href="#quote">Get a free quote</a><a class="btn" style="background:rgba(247,245,239,.6);color:var(--ink)" href="tel:+19052608262">Call now</a></div>
+ </div>
+ <div class="ph">
+  <img src="img/p4.jpg" alt="A cleaner in a yellow The Tiny Cleaning Company shirt wiping a tall window">
+  <div class="hcard glass"><span class="big">5.0</span> <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><small>47 Google reviews</small></div>
+ </div>
+</header>
+
+<section class="rooms" id="rooms">
+ <div class="wrap">
+  <p class="lab">From their own jobs</p>
+  <h2>Room by room.</h2>
+  <div class="tabs" role="tablist">
+   <button class="tab" role="tab" aria-selected="true" data-i="0">Kitchens</button>
+   <button class="tab" role="tab" aria-selected="false" data-i="1">Bathrooms</button>
+   <button class="tab" role="tab" aria-selected="false" data-i="2">Windows</button>
+   <button class="tab" role="tab" aria-selected="false" data-i="3">Move-in</button>
+   <button class="tab" role="tab" aria-selected="false" data-i="4">Storage</button>
+  </div>
+  <div class="view">
+   <div class="pic"><img id="vimg" src="img/p3.jpg" alt="A clean white kitchen with stainless steel stove and hood"></div>
+   <div><h3 id="vh">Kitchens</h3><p id="vp">White cabinets, stove and counters wiped down. They also do oven cleaning, with before and after posts on their Instagram.</p></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap rev">
+  <p class="lab">Google reviews</p>
+  <div class="score"><span class="n">5.0</span><div><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><br>from 47 Google reviews</div></div>
+  <p class="lead">&ldquo;The tiny cleaning company is amazing. Have them every week I look forward to coming home from work to a spotless house!&rdquo;</p>
+  <p class="by">Debbie G., Google</p>
+  <div class="rv">
+   <figure><blockquote>&ldquo;Excellent cleaning service! Communication was easy, the team was very nice, and the cleaning was done very well. I appreciated the attention to detail and would use them again.&rdquo;</blockquote><figcaption>Lais N., Google</figcaption></figure>
+   <figure><blockquote>&ldquo;A FANTASTIC job was done! These ladies did dishes, vacuumed, help organize items, and even went the extra mile to help put dishes away in organization racks. Will definitely be using their services again.&rdquo;</blockquote><figcaption>Mechaela A., Google</figcaption></figure>
+   <figure><blockquote>&ldquo;&hellip; Great job .very professionals , I would strongly recommend to any household or office cleaning . Especially deep cleaning&rdquo;</blockquote><figcaption>Sivaratnam S., Google</figcaption></figure>
+   <figure><blockquote>&ldquo;Five stars for The Tiny Cleaning Company! &hellip; absolutely amazing. We've been with them for over a &hellip;&rdquo;</blockquote><figcaption>Zeeshan V., Google</figcaption></figure>
+  </div>
+ </div>
+</section>
+
+<section class="mid" id="info">
+ <div class="wrap">
+  <div class="award rev"><img src="img/p11.jpg" alt="Canadian Choice Award nomination graphic: The Tiny Cleaning Company, nominated in Residential Cleaning Services"></div>
+  <div class="rev">
+   <h3>What they clean</h3>
+   <div class="svc"><span>House cleaning</span><span>Move-in cleaning</span><span>Deep cleaning</span><span>Oven cleaning</span><span>Bathrooms</span><span>Household or office</span></div>
+   <p>Based in Ajax, ON. Their posts mention homes in the Durham region.</p>
+  </div>
+  <div class="rev">
+   <h3>Hours</h3>
+   <ul class="hours"><li><span>Monday</span><span>8 a.m.–6 p.m.</span></li><li><span>Tuesday</span><span>8 a.m.–6 p.m.</span></li><li><span>Wednesday</span><span>8 a.m.–6 p.m.</span></li><li><span>Thursday</span><span>8 a.m.–6 p.m.</span></li><li><span>Friday</span><span>8 a.m.–6 p.m.</span></li><li><span>Saturday</span><span>12:30–5 p.m.</span></li><li><span>Sunday</span><span>Closed</span></li></ul>
+  </div>
+ </div>
+</section>
+
+<section class="quote" id="quote">
+ <div class="orb o1"></div><div class="orb o2"></div>
+ <div class="wrap">
+  <p class="lab">Free quote</p>
+  <h2>Tell them what you need.</h2>
+  <form class="panel glass" id="qf">
+   <p class="s">Hi, I'm <input class="fill" id="qn" placeholder="your name" aria-label="Your name" required> and I need
+   <select class="fill" id="qs" aria-label="Service"><option>house cleaning</option><option>move-in cleaning</option><option>deep cleaning</option><option>oven cleaning</option><option>office cleaning</option></select>
+   in <input class="fill" id="qc" value="Ajax" aria-label="City" style="width:7em">.</p>
+    <button class="btn" type="submit">Text my quote request</button>
+  </form>
+ </div>
+</section>
+
+<footer>Preview built by JPF. Not live yet.</footer>
+
+<div class="dock glass"><a class="btn y" href="tel:+19052608262">Call</a><a class="btn" href="sms:+19052608262">Text</a></div>
+
+<script>
+var R=[
+{h:"Kitchens",p:"White cabinets, stove and counters wiped down. They also do oven cleaning, with before and after posts on their Instagram.",i:"img/p3.jpg",a:"A clean white kitchen with stainless steel stove and hood"},
+{h:"Bathrooms",p:"Tubs, vanities and mirrors. Their move-in cleaning post says it gets every corner, fixture and surface ready.",i:"img/p7.jpg",a:"A cleaner in a yellow shirt dusting above a bathtub"},
+{h:"Windows",p:"Glass and frames cleaned from the ladder or from the floor.",i:"img/p10.jpg",a:"A cleaner on a ladder washing tall windows"},
+{h:"Move-in",p:"Empty rooms ready for a fresh start. Floors, windows and baseboards.",i:"img/p5.jpg",a:"An empty room with wood floors and a cleaner at the window"},
+{h:"Storage",p:"Cabinets and closets, vacuumed out.",i:"img/p9.jpg",a:"A cleaner vacuuming inside built-in cabinets"}];
+var t=document.querySelectorAll('.tab');
+t.forEach(function(b){b.onclick=function(){var r=R[b.dataset.i];t.forEach(function(x){x.setAttribute('aria-selected',x===b)});
+vimg.src=r.i;vimg.alt=r.a;vh.textContent=r.h;vp.textContent=r.p}});
+qf.onsubmit=function(e){e.preventDefault();var m="Hi, I'm "+qn.value+" and I need "+qs.value+" in "+qc.value+". Can I get a free quote?";
+location.href="sms:+19052608262?&body="+encodeURIComponent(m)};
+var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.1});
+document.querySelectorAll('.rev').forEach(function(e){io.observe(e)});
+</script>
+</body>
+</html>
