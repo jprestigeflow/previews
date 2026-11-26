@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>LOK &amp; SHINE AUTO SPA | Car detailing in Truro, NS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Khand:wght@500;600;700&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* PLAN: direction winter-salt-led (Truro, rust check season). palette ink #10151a (black truck photo), salt #e9edef, logo red #d4252d (flyer logo), steel #8b979f (wet tire/asphalt). fonts Khand + Be Vietnam Pro. signature: winter checklist selector (glass chips). order: hero, rating, checklist, gallery, reviews, visit+quote. motion: one load rise, reduced-motion off. */
+:root{--ink:#10151a;--ink2:#182027;--salt:#e9edef;--red:#d4252d;--redt:#ff5b62;--steel:#8b979f;--r:26px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Be Vietnam Pro',sans-serif;background:var(--ink);color:var(--salt);font-size:16px;line-height:1.6;overflow-x:hidden;padding-bottom:88px}
+a{color:inherit}
+h1,h2,h3{font-family:'Khand',sans-serif;font-weight:700;line-height:.92;letter-spacing:.005em;text-transform:uppercase}
+:focus-visible{outline:3px solid var(--redt);outline-offset:3px}
+.glass{background:rgba(16,21,26,.55);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 20px 60px -20px rgba(0,0,0,.6)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;border-radius:999px;background:var(--red);color:#fff;font-weight:600;text-decoration:none;border:0;font:600 16px 'Be Vietnam Pro';cursor:pointer;transition:transform .18s,background .18s}
+.btn:hover{background:#e0343c}.btn:active{transform:scale(.97)}
+.btn.ghost{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.3)}
+nav{position:fixed;z-index:30;top:12px;left:12px;right:12px;display:flex;justify-content:space-between;align-items:center;padding:6px 6px 6px 20px;border-radius:999px;max-width:1180px;margin:auto}
+nav b{font:700 22px 'Khand';letter-spacing:.04em;text-transform:uppercase}
+nav b i{font-style:normal;color:var(--redt)}
+nav .btn{min-height:44px;padding:0 20px}
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;padding:110px 20px 44px;overflow:hidden}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 60%;filter:saturate(.9)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,21,26,.35) 0,rgba(16,21,26,.1) 30%,rgba(16,21,26,.92) 100%)}
+.hero .in{position:relative;z-index:2;max-width:1180px;margin:auto;width:100%;display:grid;gap:22px}
+h1{font-size:clamp(70px,22vw,200px)}
+h1 em{font-style:normal;color:var(--redt);display:block}
+.hero p.lead{max-width:30ch;font-size:18px;color:#dfe5e8}
+.hero .acts{display:flex;gap:10px;flex-wrap:wrap}
+.card{border-radius:22px;padding:16px 20px;display:flex;gap:14px;align-items:center;max-width:340px}
+.card strong{font:700 46px 'Khand';line-height:1}
+.card span{font-size:14px;line-height:1.35}
+.rise{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}.d2{animation-delay:.15s}.d3{animation-delay:.3s}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+section{padding:72px 20px;max-width:1180px;margin:auto}
+.kick{color:var(--steel);font-size:14px;margin-bottom:14px}
+h2{font-size:clamp(46px,11vw,110px);margin-bottom:28px}
+/* checklist */
+.check{background:var(--ink2);max-width:none;padding:72px 0}
+.check .w{max-width:1180px;margin:auto;padding:0 20px}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.chip{min-height:46px;padding:0 20px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.22);color:var(--salt);font:500 15px 'Be Vietnam Pro';cursor:pointer;transition:.18s}
+.chip[aria-selected=true]{background:var(--red);border-color:var(--red);color:#fff}
+.panel{position:relative;border-radius:var(--r);overflow:hidden;min-height:340px;display:flex;align-items:flex-end}
+.panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.panel .tx{position:relative;margin:14px;padding:24px;border-radius:22px;max-width:560px}
+.panel h3{font-size:clamp(38px,8vw,64px);margin-bottom:10px}
+.panel p{font-size:16px}
+.panel small{display:block;margin-top:12px;color:var(--steel);font-size:14px}
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.gal img{width:100%;height:100%;object-fit:cover;border-radius:18px;display:block;aspect-ratio:3/4}
+.gal .wide{grid-column:span 2}.gal .wide img{aspect-ratio:4/3}
+.cap{color:var(--steel);font-size:14px;margin-top:14px}
+/* reviews */
+.big{font:600 clamp(28px,6vw,54px)/1.08 'Khand';text-transform:none;letter-spacing:0;max-width:20ch}
+.big+.by{margin:14px 0 40px;color:var(--steel);font-size:14px}
+.rv{display:grid;gap:12px}
+.rv blockquote{padding:22px;border-radius:22px;background:var(--ink2);border:1px solid rgba(255,255,255,.1);font-size:16px}
+.rv cite{display:block;margin-top:10px;font-style:normal;color:var(--steel);font-size:14px}
+/* visit */
+.visit{display:grid;gap:28px}
+.hrs{list-style:none;padding:0;max-width:340px}
+.hrs li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.addr{font-size:18px;margin-bottom:18px}
+.addr a{color:var(--redt)}
+form{padding:26px;border-radius:var(--r);display:grid;gap:12px}
+form h3{font-size:44px}
+label{font-size:14px;color:#cfd6da}
+input,select,textarea{width:100%;min-height:48px;padding:12px 16px;border-radius:14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);color:var(--salt);font:16px 'Be Vietnam Pro'}
+select option{color:#111}
+textarea{min-height:90px}
+footer{padding:36px 20px;text-align:center;color:var(--steel);font-size:14px}
+.dock{position:fixed;z-index:30;left:12px;right:12px;bottom:12px;display:flex;gap:8px;padding:8px;border-radius:999px;max-width:420px;margin:auto}
+.dock .btn{flex:1;min-height:48px;padding:0}
+@media(min-width:860px){
+ body{padding-bottom:0}.dock{display:none}
+ section{padding:120px 40px}.check .w{padding:0 40px}
+ .hero{padding:120px 40px 70px}.hero p.lead{font-size:20px}
+ .gal{grid-template-columns:repeat(6,1fr);gap:14px}
+ .gal figure:nth-child(1){grid-column:span 3;grid-row:span 2}.gal figure:nth-child(1) img{aspect-ratio:auto;height:100%}
+ .gal figure:nth-child(2),.gal figure:nth-child(3){grid-column:span 3}
+ .gal .wide{grid-column:span 3}.gal img{aspect-ratio:4/3}
+ .rv{grid-template-columns:repeat(2,1fr)}
+ .visit{grid-template-columns:1fr 1fr;gap:70px}
+ .panel{min-height:460px}
+}
+@media(prefers-reduced-motion:reduce){.rise{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav class="glass"><b>LOK <i>&amp;</i> SHINE</b><a class="btn" href="tel:+19029432153">Call (902) 943-2153</a></nav>
+
+<header class="hero">
+<img src="img/p8.jpg" alt="Black pickup with a deep shine outside the shop" width="1050" height="1400">
+<div class="in">
+<h1 class="rise">Lok &amp;<em>Shine</em></h1>
+<p class="lead rise d2">Auto spa and car detailing in Truro, Nova Scotia. Interior and exterior detailing, ceramic coating, undercoating and more.</p>
+<div class="acts rise d2"><a class="btn" href="tel:+19029432153">Call now</a><a class="btn ghost" href="#quote">Ask for a quote</a></div>
+<div class="card glass rise d3"><strong>4.9</strong><span>on Google from 40 reviews<br>21 Brunswick St, Truro</span></div>
+</div>
+</header>
+
+<section class="check" id="services" style="padding-left:0;padding-right:0"><div class="w">
+<p class="kick">Truro winters are hard on a vehicle.</p>
+<h2>The winter checklist</h2>
+<div class="chips" role="tablist" aria-label="Services">
+<button class="chip" role="tab" aria-selected="true" data-i="0">Undercoating</button>
+<button class="chip" role="tab" aria-selected="false" data-i="1">Interior &amp; exterior</button>
+<button class="chip" role="tab" aria-selected="false" data-i="2">Ceramic coating</button>
+<button class="chip" role="tab" aria-selected="false" data-i="3">Engine bay</button>
+<button class="chip" role="tab" aria-selected="false" data-i="4">Headlights</button>
+</div>
+<div class="panel" id="panel"><img id="pimg" src="img/p7.jpg" alt=""><div class="tx glass"><h3 id="pt"></h3><p id="pp"></p><small>From their Instagram posts.</small></div></div>
+</div></section>
+
+<section id="work">
+<p class="kick">Work from the shop</p>
+<h2>Cleaned. Detailed. Shining.</h2>
+<div class="gal">
+<figure class="wide"><img src="img/p9.jpg" alt="Back seats of a vehicle after interior detailing" loading="lazy"></figure>
+<figure><img src="img/p7.jpg" alt="Black wheel and tire with a wet shine" loading="lazy"></figure>
+<figure><img src="img/p8.jpg" alt="Black pickup truck, freshly detailed" loading="lazy"></figure>
+<figure class="wide"><img src="img/p10.jpg" alt="Jeep dashboard and front seats, cleaned" loading="lazy"></figure>
+<figure class="wide"><img src="img/p11.jpg" alt="Front seat and floor mat in a Passat" loading="lazy"></figure>
+</div>
+<p class="cap">Photos from LOK &amp; SHINE AUTO SPA on Instagram (@lok_and_shine_auto_spa).</p>
+</section>
+
+<section id="reviews">
+<p class="kick">4.9 on Google, 40 reviews</p>
+<p class="big">&ldquo;My car looks brand new. I got the deep interior clean and it was worth every penny.&rdquo;</p>
+<p class="by">Laura G., Google</p>
+<div class="rv">
+<blockquote>&ldquo;Wow!!! What great service !!! I dropped my car off in the morning and picked it up after work!! It&rsquo;s amazingly clean and detailed !! So clean the floors squeaked and the windows shined!! Thank you so much !!!&rdquo;<cite>De-Anne S., Google</cite></blockquote>
+<blockquote>&ldquo;I took my Mazda in . Its a 10 yr old car. They did an amazing job!! Looks like a new car inside again!! They spent 4 hrs detailing . Highly recommend. Very friendly and great workers!!&rdquo;<cite>Paula G., Google</cite></blockquote>
+<blockquote>&ldquo;I got my car cleaning done. They did a great job. My car was so messy because from inside because of winters.&rdquo;<cite>Rohit B., Google</cite></blockquote>
+</div>
+</section>
+
+<section class="visit" id="quote">
+<div>
+<p class="kick">Visit</p>
+<h2>Drop it off</h2>
+<p class="addr">21 Brunswick St, Truro, NS B2N 2G8<br><a href="tel:+19029432153">(902) 943-2153</a></p>
+<ul class="hrs"><li><span>Monday to Saturday</span><span>8 a.m. to 8 p.m.</span></li><li><span>Sunday</span><span>Closed</span></li></ul>
+</div>
+<form class="glass" id="f"><h3>Ask for a quote</h3>
+<label for="n">Your name</label><input id="n" autocomplete="name" required>
+<label for="v">Vehicle</label><input id="v" placeholder="Year, make, model">
+<label for="s">What do you need?</label>
+<select id="s"><option>Interior &amp; exterior detailing</option><option>Rust Check No Drip undercoating</option><option>Ceramic coating</option><option>Engine bay cleaning</option><option>Headlight restoration</option><option>Not sure yet</option></select>
+<label for="m">Anything else</label><textarea id="m"></textarea>
+<button class="btn" type="submit">Text this to LOK &amp; SHINE</button>
+</form>
+</section>
+
+<footer>LOK &amp; SHINE AUTO SPA, Truro NS<br>Preview built by JPF. Not live yet.</footer>
+
+<div class="dock glass"><a class="btn" href="tel:+19029432153">Call</a><a class="btn ghost" href="sms:+19029432153">Text</a></div>
+
+<script>
+const S=[
+["Undercoating","Rust Check No Drip Undercoating helps protect your vehicle's underbody, frame and vulnerable areas from rust, corrosion and road salt.","img/p7.jpg"],
+["Interior & exterior detailing","Professional automotive detailing, inside and out.","img/p10.jpg"],
+["Ceramic coating","Ceramic coating for long-lasting paint protection and a deep shine.","img/p8.jpg"],
+["Engine bay cleaning","Removes built-up dirt, dust, grease and grime from the engine compartment.","img/p9.jpg"],
+["Headlight restoration","Removes yellowing and cloudy buildup from headlights to restore clarity.","img/p11.jpg"]];
+const chips=[...document.querySelectorAll('.chip')];
+function show(i){chips.forEach((c,j)=>c.setAttribute('aria-selected',i==j));pt.textContent=S[i][0];pp.textContent=S[i][1]}
+chips.forEach(c=>c.onclick=()=>show(+c.dataset.i));show(0);
+f.onsubmit=e=>{e.preventDefault();const t=`Hi, quote request. Name: ${n.value}. Vehicle: ${v.value}. Need: ${s.value}. ${m.value}`;location.href='sms:+19029432153?&body='+encodeURIComponent(t)}
+</script>
+</body>
+</html>
