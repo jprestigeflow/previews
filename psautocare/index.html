@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>PS Auto Care | Car detailing &amp; ceramic coating in Abbotsford, BC</title>
+<meta name="description" content="PS Auto Care: detailing, ceramic coatings and paint correction in Abbotsford, BC. 5.0 on Google from 43 reviews. Call or text (672) 771-3030.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@500;700;800&family=Ubuntu+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/p8.jpg">
+<style>
+/* DESIGN PLAN
+   Direction: light daylight showroom. Bone page, gloss-black type, one caliper-red accent. The finished black E43 AMG owns the top. The page reads like the car's service file.
+   Palette: bone #f5f3ef (base) / gloss black #0d0f12 (paint, type) / asphalt #8f8d8b (lot, muted text #5f5d5b) / sky #97bce6 (p8 sky, orbs only) / caliper red #c0222c (AMG calipers p11 + p4; accent).
+   Fonts: Lexend Exa 800 (wide display, badge feel) + Ubuntu Sans (body).
+   Signature: "Car file" switcher, their two real jobs (E43 / GLE 63 S) with the job list from each Instagram caption, glass chips.
+   Order: hero / statement + services / car file / wheel band / review wall / recent cars log / quote sentence / where + hours / footer.
+   Motion: one load entrance (photo settles from 1.06, lines rise, glass card floats in), photo clip reveals on scroll, count-up on 5.0 and 43.
+*/
+:root{
+  --bone:#f5f3ef; --paper:#fbfaf8; --ink:#0d0f12; --ink2:#2a2c30; --mute:#5f5d5b; --asph:#8f8d8b;
+  --sky:#97bce6; --red:#c0222c; --redD:#9e1a23; --line:rgba(13,15,18,.12);
+  --disp:'Lexend Exa',system-ui,sans-serif; --body:'Ubuntu Sans',system-ui,sans-serif;
+  --pad:clamp(20px,5vw,72px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bone);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;overflow-x:hidden;padding-bottom:0}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:6px}
+.disp{font-family:var(--disp);font-weight:800;letter-spacing:-.06em;line-height:.92;word-spacing:.14em}
+.dot{display:inline-block;width:.5em;height:.5em;border-radius:50%;background:var(--red);vertical-align:.08em;margin-right:.45em;flex:none}
+.lab{font-size:14px;color:var(--mute);letter-spacing:.01em}
+
+/* glass */
+.glass{background:rgba(251,250,248,.62);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);
+  border:1px solid rgba(255,255,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 20px 60px -20px rgba(13,15,18,.32)}
+
+/* nav */
+.nav{position:fixed;top:12px;left:12px;right:12px;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:8px 8px 8px 18px;border-radius:999px;max-width:1180px;margin:0 auto}
+.brand{font-family:var(--disp);font-weight:800;font-size:15px;letter-spacing:-.04em;text-decoration:none;display:flex;align-items:center;white-space:nowrap}
+.nav ul{display:none;list-style:none;gap:26px;font-size:15px}
+.nav ul a{text-decoration:none;color:var(--ink2)}
+.nav ul a:hover{color:var(--red)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:46px;padding:0 22px;border-radius:999px;border:0;cursor:pointer;
+  font:600 16px/1 var(--body);text-decoration:none;transition:transform .16s ease,background .16s ease}
+.btn:active{transform:scale(.98)}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--redD)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:#24272c}
+.btn-line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.nav .btn{min-height:44px;padding:0 18px;font-size:15px}
+
+/* hero */
+.hero{position:relative;padding-top:92px;overflow:hidden;display:flex;flex-direction:column}
+.hero-text{display:contents}
+.hero h1{order:1}.hero-photo{order:2}.hero .lede{order:3}.hero-cta{order:4}
+.hero h1{font-size:clamp(50px,14.2vw,132px);padding:0 var(--pad);position:relative;z-index:3}
+.hero h1 span{display:block}
+.hero h1 .r{color:var(--red)}
+.hero .lede{padding:26px var(--pad) 0;max-width:560px;color:var(--ink2);position:relative;z-index:3;font-size:17px}
+.hero-photo{position:relative;margin-top:-30px;z-index:1}
+.hero-photo .ph{overflow:hidden;aspect-ratio:3/4;background:#cfd9e3}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.hero-card{position:relative;z-index:4;margin:-92px 16px 0;border-radius:24px;padding:18px 20px;display:grid;gap:6px}
+.hero-card .row{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.hero-card .big{font-family:var(--disp);font-weight:800;font-size:40px;letter-spacing:-.05em;line-height:1}
+.hero-card q{font-size:16px;color:var(--ink2);quotes:"\201C" "\201D"}
+.hero-cta{display:flex;gap:10px;flex-wrap:wrap;padding:22px var(--pad) 0}
+.hero-cta .btn{flex:1 1 150px}
+
+/* statement */
+.state{padding:96px var(--pad) 40px;max-width:1240px;margin:0 auto}
+.state h2{font-size:clamp(30px,6.4vw,64px);max-width:15ch}
+.state h2 em{font-style:normal;color:var(--red)}
+.svc{margin-top:48px;border-top:1px solid var(--line);list-style:none;counter-reset:s}
+.svc li{display:grid;grid-template-columns:44px 1fr;gap:6px 10px;padding:22px 0;border-bottom:1px solid var(--line);counter-increment:s}
+.svc li::before{content:"0" counter(s);font:500 14px/1.9 var(--disp);color:var(--asph);letter-spacing:-.02em}
+.svc h3{font-family:var(--disp);font-weight:700;font-size:clamp(20px,3.4vw,30px);letter-spacing:-.05em;line-height:1.1}
+.svc p{grid-column:2;color:var(--mute);font-size:16px;max-width:56ch}
+
+/* car file */
+.file{padding:72px 0 96px;position:relative;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;pointer-events:none;animation:drift 26s ease-in-out infinite alternate}
+.orb.a{width:520px;height:520px;background:radial-gradient(circle,#97bce6 0,rgba(151,188,230,0) 70%);top:-80px;right:-160px}
+.orb.b{width:420px;height:420px;background:radial-gradient(circle,rgba(192,34,44,.28) 0,rgba(192,34,44,0) 70%);bottom:40px;left:-160px;animation-duration:31s}
+@keyframes drift{to{transform:translate(-60px,50px) scale(1.08)}}
+.file-in{position:relative;max-width:1240px;margin:0 auto;padding:0 var(--pad)}
+.file-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:18px;margin-bottom:28px}
+.file-head h2{font-size:clamp(36px,8vw,84px)}
+.chips{display:flex;gap:8px;padding:6px;border-radius:999px;width:max-content;max-width:100%}
+.chip{min-height:44px;padding:0 18px;border-radius:999px;border:0;background:transparent;font:600 15px/1 var(--body);color:var(--ink2);cursor:pointer;transition:background .18s,color .18s,transform .16s;white-space:nowrap}
+.chip:active{transform:scale(.98)}
+.chip[aria-selected="true"]{background:var(--ink);color:#fff}
+.sheet{display:grid;gap:18px}
+.sheet[hidden]{display:none}
+.sheet .main{border-radius:26px;overflow:hidden;aspect-ratio:4/5;background:#dcdfe2}
+.sheet .main img{width:100%;height:100%;object-fit:cover}
+.card{border-radius:26px;padding:26px 24px;display:flex;flex-direction:column;gap:18px}
+.card .car{font-family:var(--disp);font-weight:800;font-size:clamp(26px,4.4vw,40px);letter-spacing:-.06em;line-height:1}
+.card .when{font-size:14px;color:var(--mute)}
+.jobs{list-style:none;display:grid;gap:0;border-top:1px solid var(--line)}
+.jobs li{display:flex;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);font-weight:500;font-size:17px}
+.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.thumbs img{border-radius:14px;aspect-ratio:3/4;object-fit:cover;width:100%;cursor:pointer;transition:transform .2s,outline-color .2s;outline:2px solid transparent;outline-offset:2px}
+.thumbs img:hover{transform:translateY(-2px)}
+.thumbs img.on{outline-color:var(--red)}
+.card .src{font-size:14px;color:var(--mute)}
+.card .src a{color:var(--ink)}
+
+/* wheel band */
+.band{position:relative;margin:0 auto;max-width:1240px;padding:0 var(--pad)}
+.band figure{border-radius:28px;overflow:hidden;position:relative;aspect-ratio:16/10}
+.band img{width:100%;height:100%;object-fit:cover}
+.band figcaption{position:absolute;left:16px;bottom:16px;right:16px;display:flex;justify-content:space-between;align-items:center;gap:12px;
+  padding:12px 18px;border-radius:999px;font-size:15px;font-weight:500;width:max-content;max-width:calc(100% - 32px)}
+
+/* reviews */
+.rev{padding:110px var(--pad) 90px;max-width:1240px;margin:0 auto}
+.score{display:flex;align-items:flex-end;gap:22px;flex-wrap:wrap;margin-bottom:46px}
+.score .n{font-family:var(--disp);font-weight:800;font-size:clamp(84px,22vw,200px);letter-spacing:-.08em;line-height:.8}
+.score .n small{font-size:.32em;letter-spacing:-.04em;color:var(--red);margin-left:.08em}
+.score p{color:var(--mute);font-size:16px;max-width:22ch;padding-bottom:6px}
+.score p b{color:var(--ink);font-weight:600}
+.lead-q{font-family:var(--disp);font-weight:700;font-size:clamp(24px,4.6vw,48px);letter-spacing:-.06em;line-height:1.12;max-width:24ch;word-spacing:.06em}
+.lead-q .r{color:var(--red)}
+.who{margin-top:18px;font-size:15px;color:var(--mute)}
+.wall{display:grid;gap:22px 28px;margin-top:56px}
+.wall blockquote{border-top:2px solid var(--ink);padding:22px 0 8px;display:flex;flex-direction:column;gap:14px}
+.wall blockquote p{font-size:16.5px;color:var(--ink2)}
+.wall cite{font-style:normal;font-size:14px;color:var(--mute)}
+
+/* recent cars log */
+.log{background:var(--ink);color:#eeece8;padding:96px var(--pad);border-radius:32px 32px 0 0}
+.log-in{max-width:1240px;margin:0 auto;display:grid;gap:40px}
+.log h2{font-size:clamp(34px,7.4vw,76px);color:#fff}
+.log h2 .r{color:#e2434c}
+.log ol{list-style:none;border-top:1px solid rgba(255,255,255,.14)}
+.log li{display:grid;grid-template-columns:1fr;gap:4px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.log li .car{font-family:var(--disp);font-weight:700;font-size:clamp(19px,3vw,26px);letter-spacing:-.05em;display:flex;align-items:center}
+.log li .job{color:#b8b5b0;font-size:16px;padding-left:calc(.5em + .45em + 2px)}
+.log .note{color:#a19e99;font-size:14px}
+.log .note a{color:#eeece8}
+
+/* quote */
+.quote{background:var(--ink);padding:0 var(--pad) 110px;position:relative;overflow:hidden}
+.quote .orb.a{top:auto;bottom:-200px;right:-120px;opacity:.35}
+.quote .orb.b{top:0;left:-140px;bottom:auto;opacity:.6}
+.qpanel{position:relative;max-width:1000px;margin:0 auto;border-radius:28px;padding:32px 22px;
+  background:rgba(32,34,38,.5);-webkit-backdrop-filter:blur(24px) saturate(150%);backdrop-filter:blur(24px) saturate(150%);
+  border:1px solid rgba(255,255,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 30px 70px -20px rgba(0,0,0,.6);color:#f1efeb}
+.qpanel h2{font-size:clamp(30px,6vw,58px);color:#fff;margin-bottom:22px}
+.fill{font-size:clamp(20px,3.2vw,30px);line-height:2;font-weight:400;color:#d9d6d1}
+.fill select{font-size:.85em}
+.fill input,.fill select{font:inherit;font-weight:600;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);border-radius:14px;
+  padding:2px 12px;min-height:44px;max-width:100%;vertical-align:middle;box-shadow:inset 0 1px 0 rgba(255,255,255,.1);-webkit-appearance:none;appearance:none}
+.fill select{padding-right:34px;background-image:linear-gradient(45deg,transparent 50%,#fff 50%),linear-gradient(135deg,#fff 50%,transparent 50%);
+  background-position:calc(100% - 18px) 55%,calc(100% - 12px) 55%;background-size:6px 6px;background-repeat:no-repeat}
+.fill select option{color:#111}
+.fill input:focus,.fill select:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 3px rgba(192,34,44,.45)}
+.fill input::placeholder{color:#8f8c88;font-weight:400}
+.fill .w-name{width:7.5em}.fill .w-car{width:9.5em}
+.qrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px;align-items:center}
+.qrow .lab{color:#a9a6a1}
+
+/* where */
+.where{padding:100px var(--pad) 120px;max-width:1240px;margin:0 auto;display:grid;gap:44px}
+.where h2{font-size:clamp(34px,7vw,72px)}
+.facts{display:grid;gap:0;border-top:1px solid var(--line)}
+.facts div{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:18px 0;border-bottom:1px solid var(--line)}
+.facts dt{font-size:14px;color:var(--mute);padding-top:3px}
+.facts dd{font-size:18px;font-weight:500}
+.facts dd a{text-decoration-color:var(--red);text-underline-offset:4px}
+.bigtel{white-space:nowrap;font-family:var(--disp);font-weight:800;font-size:clamp(34px,9.4vw,76px);letter-spacing:-.07em;text-decoration:none;display:inline-block;line-height:1;word-spacing:0}
+.bigtel:hover{color:var(--red)}
+footer{border-top:1px solid var(--line);padding:28px var(--pad) 110px;font-size:14px;color:var(--mute);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;max-width:1240px;margin:0 auto}
+
+/* dock */
+.dock{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:60;display:flex;gap:8px;padding:7px;border-radius:999px;
+  transform:translateY(140%);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.dock.show{transform:none}
+.dock .btn{flex:1;min-height:48px}
+
+/* reveal */
+.rv{clip-path:inset(12% 0 0 0 round 26px);transform:scale(1.03);transition:clip-path 1s cubic-bezier(.2,.7,.1,1),transform 1.2s cubic-bezier(.2,.7,.1,1)}
+.rv.in{clip-path:inset(0 0 0 0 round 26px);transform:none}
+
+/* load */
+.ld .hero-photo img{transform:scale(1.06)}
+.hero-photo img{transition:transform 1.4s cubic-bezier(.2,.7,.1,1)}
+.hero h1 span,.hero .lede,.hero-cta{transition:transform .9s cubic-bezier(.2,.8,.2,1),opacity .9s}
+.ld .hero h1 span,.ld .hero .lede,.ld .hero-cta{transform:translateY(28px);opacity:0}
+.hero h1 span:nth-child(2){transition-delay:.08s}.hero h1 span:nth-child(3){transition-delay:.16s}
+.hero .lede{transition-delay:.26s}.hero-cta{transition-delay:.32s}
+.hero-card{transition:transform 1s cubic-bezier(.2,.8,.2,1) .45s,opacity 1s .45s}
+.ld .hero-card{transform:translateY(30px);opacity:0}
+
+@media (min-width:760px){
+  .wall{grid-template-columns:repeat(2,1fr)}
+  .sheet{grid-template-columns:1.15fr 1fr;align-items:stretch}
+  .sheet .main{aspect-ratio:auto;min-height:640px}
+  .card{padding:34px}
+  .log-in{grid-template-columns:1fr 1.2fr;align-items:start}
+  .log li{grid-template-columns:1.1fr 1fr;align-items:center}
+  .log li .job{padding-left:0}
+  .where{grid-template-columns:1fr 1.1fr;align-items:start}
+  .qpanel{padding:54px 56px}
+  .dock{display:none}
+  footer{padding-bottom:40px}
+}
+@media (min-width:1024px){
+  .nav{padding-left:24px}
+  .nav ul{display:flex}
+  .hero{min-height:100vh;padding-top:0;display:grid;grid-template-columns:56% 44%}
+  .hero-text{display:flex;padding-top:150px;display:flex;flex-direction:column;justify-content:center;padding-bottom:110px}
+  .hero h1{font-size:clamp(76px,7.6vw,122px)}
+  .hero h1 span{white-space:nowrap}
+  .hero .lede{font-size:19px;padding-top:28px}
+  .hero-cta{padding-top:30px}
+  .hero-cta .btn{flex:0 0 auto;min-height:54px;padding:0 28px}
+  .hero-photo{margin:0;position:relative;height:100vh;min-height:720px}
+  .hero-photo .ph{position:absolute;inset:0;aspect-ratio:auto;border-radius:0 0 0 36px}
+  .hero-photo img{object-position:42% 62%}
+  .hero-card{position:absolute;left:-150px;bottom:64px;margin:0;width:360px;padding:22px 24px}
+  .wall{grid-template-columns:repeat(4,1fr)}
+  .state{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;padding-top:140px}
+  .svc{margin-top:8px}
+  .band figure{aspect-ratio:21/9}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{clip-path:none;transform:none}
+  .ld .hero h1 span,.ld .hero .lede,.ld .hero-cta,.ld .hero-card{opacity:1;transform:none}
+  .ld .hero-photo img{transform:none}
+}
+</style>
+</head>
+<body class="ld">
+
+<nav class="nav glass" aria-label="Main">
+  <a class="brand" href="#top"><span class="dot"></span>PS Auto Care</a>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#file">Recent work</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#where">Hours</a></li>
+  </ul>
+  <a class="btn btn-red" href="tel:+16727713030">Call</a>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-text">
+    <h1 class="disp" aria-label="A detail. Not a car wash."><span>A detail.</span><span>Not a</span><span class="r">car wash.</span></h1>
+    <p class="lede">PS Auto Care does detailing, ceramic coatings and paint correction in Abbotsford, BC. Call, text or DM to book.</p>
+    <div class="hero-cta">
+      <a class="btn btn-ink" href="tel:+16727713030">Call (672) 771-3030</a>
+      <a class="btn btn-line" href="#quote">Text for a quote</a>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <div class="ph"><img src="img/p8.jpg" alt="Black Mercedes-AMG E43 after a 5 year ceramic coating by PS Auto Care, in daylight" fetchpriority="high"></div>
+    <div class="hero-card glass">
+      <div class="row"><span class="big">5.0</span><span class="lab">on Google · 43 reviews</span></div>
+      <q>My car looks fantastic, and they didn't miss a spot.</q>
+      <span class="lab">Mac A., Google</span>
+    </div>
+  </div>
+</header>
+
+<section class="state" id="services">
+  <h2 class="disp">Detailing, <em>coatings</em> and correction for cars people care about.</h2>
+  <ul class="svc">
+    <li><h3>Interior &amp; exterior detail</h3><p>Inside and out, done by hand. The GLE 63 S below got the full interior and exterior detail.</p></li>
+    <li><h3>Ceramic coatings</h3><p>Up to a 5 year ceramic coating, or a 3 month ceramic sealant on top of an exterior detail.</p></li>
+    <li><h3>Paint correction</h3><p>Step 1 correction before a coating, so the gloss goes on clean paint.</p></li>
+    <li><h3>Customizations maintenance</h3><p>Vehicle customizations maintenance, and more. Ask about your car.</p></li>
+  </ul>
+</section>
+
+<section class="file" id="file" aria-labelledby="fileh">
+  <div class="orb a"></div><div class="orb b"></div>
+  <div class="file-in">
+    <div class="file-head">
+      <h2 class="disp" id="fileh">The car file.</h2>
+      <div class="chips glass" role="tablist" aria-label="Pick a car">
+        <button class="chip" role="tab" aria-selected="true" aria-controls="f-e43" id="t-e43">E43 AMG</button>
+        <button class="chip" role="tab" aria-selected="false" aria-controls="f-gle" id="t-gle">GLE 63 S AMG</button>
+      </div>
+    </div>
+
+    <div class="sheet" id="f-e43" role="tabpanel" aria-labelledby="t-e43">
+      <div class="main rv"><img src="img/p7.jpg" alt="Mercedes-AMG E43 front three-quarter after detail" loading="lazy" data-main></div>
+      <div class="card glass">
+        <div>
+          <p class="when">August 2026 · Abbotsford</p>
+          <p class="car"><span class="dot"></span>Mercedes E43 AMG</p>
+        </div>
+        <ul class="jobs">
+          <li><span class="dot"></span>5 Year Ceramic Coating</li>
+          <li><span class="dot"></span>Step 1 Correction</li>
+          <li><span class="dot"></span>Interior Detail</li>
+        </ul>
+        <div class="thumbs">
+          <img class="on" src="img/p7.jpg" alt="E43 front three-quarter" loading="lazy">
+          <img src="img/p9.jpg" alt="E43 rear three-quarter" loading="lazy">
+          <img src="img/p10.jpg" alt="E43 from the rear" loading="lazy">
+        </div>
+        <p class="src">From their Instagram, <a href="https://www.instagram.com/p/DcUhyiaD8aQ/" target="_blank" rel="noopener">@psautocare_</a></p>
+      </div>
+    </div>
+
+    <div class="sheet" id="f-gle" role="tabpanel" aria-labelledby="t-gle" hidden>
+      <div class="main"><img src="img/p1.jpg" alt="Mercedes-AMG GLE 63 S after interior and exterior detail, at dusk" loading="lazy" data-main></div>
+      <div class="card glass">
+        <div>
+          <p class="when">October 2026 · Abbotsford</p>
+          <p class="car"><span class="dot"></span>Mercedes GLE 63 S AMG</p>
+        </div>
+        <ul class="jobs">
+          <li><span class="dot"></span>Interior Detail</li>
+          <li><span class="dot"></span>Exterior Detail</li>
+        </ul>
+        <div class="thumbs">
+          <img class="on" src="img/p1.jpg" alt="GLE 63 S front" loading="lazy">
+          <img src="img/p3.jpg" alt="GLE 63 S rear with tail lights on" loading="lazy">
+          <img src="img/p5.jpg" alt="GLE 63 S interior, quilted seats and dash" loading="lazy">
+        </div>
+        <p class="src">From their Instagram, <a href="https://www.instagram.com/p/DegIjUiFH2Z/" target="_blank" rel="noopener">@psautocare_</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <figure class="rv"><img src="img/band-e43-wheel.jpg" alt="E43 AMG front wheel and red brake caliper after ceramic coating" loading="lazy">
+    <figcaption class="glass"><span><span class="dot"></span>E43 AMG · 5 year coating</span></figcaption></figure>
+</div>
+
+<section class="rev" id="reviews">
+  <div class="score">
+    <div class="n disp"><span data-count="5.0" data-dec="1">5.0</span><small>/5</small></div>
+    <p><b><span data-count="43">43</span> Google reviews.</b> Here is what people wrote, word for word.</p>
+  </div>
+  <p class="lead-q">“The attention to detail is top-notch and <span class="r">the car looked brand new</span> after the service.”</p>
+  <p class="who">Falcon P., Google</p>
+  <div class="wall">
+    <blockquote><p>“You truly get a detailing service and not just a "car wash". They are passionate about what …”</p><cite>Jimmy K., Google</cite></blockquote>
+    <blockquote><p>“He showed great amounts of professionalism, took his time, care, and used amazing products on my car.”</p><cite>Ekam S., Google</cite></blockquote>
+    <blockquote><p>“PSAutoCare did an awesome job detailing my car. It looks super clean, and they paid attention to all the details.”</p><cite>Angadveer S., Google</cite></blockquote>
+    <blockquote><p>“Interior detailing was done perfectly, no spots missed. Very professional and friendly service.”</p><cite>Falcon P., Google</cite></blockquote>
+  </div>
+</section>
+
+<section class="log" aria-labelledby="logh">
+  <div class="log-in">
+    <div>
+      <h2 class="disp" id="logh">Recently <span class="r">in&nbsp;the&nbsp;bay.</span></h2>
+    </div>
+    <div>
+      <ol>
+        <li><span class="car"><span class="dot"></span>Mercedes GLE 63 S AMG</span><span class="job">Interior &amp; Exterior Detail</span></li>
+        <li><span class="car"><span class="dot"></span>Mercedes E43 AMG</span><span class="job">5 Year Ceramic Coating, Step 1 Correction, Interior Detail</span></li>
+        <li><span class="car"><span class="dot"></span>Chrysler 300C SRT</span><span class="job">Exterior Detail + 3 month Ceramic Sealant</span></li>
+        <li><span class="car"><span class="dot"></span>Charger Hellcat</span><span class="job">Exterior Detail + 3 month Ceramic Sealant</span></li>
+        <li><span class="car"><span class="dot"></span>Mercedes GT 63 S</span><span class="job">Exterior Detail + 3 month Sealant</span></li>
+      </ol>
+      <p class="note" style="margin-top:18px">From their posts on <a href="https://www.instagram.com/psautocare_/" target="_blank" rel="noopener">Instagram @psautocare_</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="quote" id="quote" aria-labelledby="qh">
+  <div class="orb a"></div><div class="orb b"></div>
+  <form class="qpanel" id="qform">
+    <h2 class="disp" id="qh">Text for a quote.</h2>
+    <p class="fill">
+      Hi, I'm <input class="w-name" name="name" placeholder="your name" aria-label="Your name" autocomplete="given-name">.
+      I drive a <input class="w-car" name="car" placeholder="year, make, model" aria-label="Your car">
+      and I'd like
+      <select name="job" aria-label="Service">
+        <option>a full detail, in &amp; out</option>
+        <option>an interior detail</option>
+        <option>an exterior detail</option>
+        <option>a ceramic coating</option>
+        <option>paint correction</option>
+        <option>a 3 month sealant</option>
+        <option>something else</option>
+      </select>.
+    </p>
+    <div class="qrow">
+      <button class="btn btn-red" type="submit">Send as a text</button>
+      <span class="lab">Opens your messages to (672) 771-3030. Nothing is sent until you hit send.</span>
+    </div>
+  </form>
+</section>
+
+<section class="where" id="where">
+  <div>
+    <h2 class="disp">Abbotsford, BC.</h2>
+    <p style="margin-top:22px;color:var(--mute);max-width:40ch">Call, text or DM to book your appointment.</p>
+    <p style="margin-top:26px"><a class="bigtel" href="tel:+16727713030">672 771 3030</a></p>
+  </div>
+  <dl class="facts">
+    <div><dt>Address</dt><dd><a href="https://www.google.com/maps/search/?api=1&query=PsAutoCare%202713%20Janzen%20St%20Abbotsford%20BC" target="_blank" rel="noopener">2713 Janzen St, Abbotsford, BC V2T 2R7</a></dd></div>
+    <div><dt>Hours</dt><dd>Open 24 hours, every day (Google listing)</dd></div>
+    <div><dt>Book</dt><dd><a href="tel:+16727713030">Call</a> · <a href="sms:+16727713030">Text</a> · <a href="https://www.instagram.com/psautocare_/" target="_blank" rel="noopener">DM on Instagram</a></dd></div>
+    <div><dt>Services</dt><dd>Detailing, ceramic coatings, paint correction, vehicle customizations maintenance</dd></div>
+  </dl>
+</section>
+
+<footer>
+  <span>PS Auto Care · Abbotsford, BC</span>
+  <span>Preview built by JPF. Not live yet.</span>
+</footer>
+
+<div class="dock glass" id="dock">
+  <a class="btn btn-red" href="tel:+16727713030">Call</a>
+  <a class="btn btn-ink" href="sms:+16727713030">Text</a>
+</div>
+
+<script>
+(function(){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){ document.body.classList.remove('ld'); }); });
+
+  // car file tabs
+  var tabs = document.querySelectorAll('.chip');
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      tabs.forEach(function(x){
+        var on = x === t; x.setAttribute('aria-selected', on);
+        document.getElementById(x.getAttribute('aria-controls')).hidden = !on;
+      });
+    });
+  });
+  document.querySelectorAll('.sheet').forEach(function(s){
+    var main = s.querySelector('[data-main]');
+    s.querySelectorAll('.thumbs img').forEach(function(th){
+      th.addEventListener('click', function(){
+        main.src = th.src; main.alt = th.alt;
+        s.querySelectorAll('.thumbs img').forEach(function(x){ x.classList.toggle('on', x === th); });
+      });
+    });
+  });
+
+  // reveals + count up
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if (!e.isIntersecting) return;
+      var el = e.target; io.unobserve(el);
+      if (el.classList.contains('rv')) el.classList.add('in');
+      if (el.hasAttribute('data-count')) count(el);
+    });
+  }, {threshold:.2}) : null;
+  document.querySelectorAll('.rv,[data-count]').forEach(function(el){ if (io && !reduce) io.observe(el); else el.classList.add('in'); });
+  function count(el){
+    var end = parseFloat(el.dataset.count), dec = +(el.dataset.dec||0), t0 = null;
+    function step(t){ if(!t0) t0 = t; var p = Math.min((t - t0)/1100, 1), v = end * (1 - Math.pow(1 - p, 3));
+      el.textContent = v.toFixed(dec); if (p < 1) requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  }
+
+  // dock
+  var dock = document.getElementById('dock');
+  function onScroll(){ dock.classList.toggle('show', scrollY > 60 || innerWidth < 760); }
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  // quote -> sms
+  document.getElementById('qform').addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var f = ev.target.elements, name = f['name'].value.trim(), car = f['car'].value.trim();
+    var msg = 'Hi PS Auto Care, ' + (name ? "I'm " + name + '. ' : '') + (car ? 'I drive a ' + car + ' and ' : '') + "I'd like " + f['job'].value + '. Can I get a quote?';
+    location.href = 'sms:+16727713030?&body=' + encodeURIComponent(msg);
+  });
+})();
+</script>
+</body>
+</html>
