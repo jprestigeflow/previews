@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Auto Aura Detailing | Car detailing in Greater Sudbury</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@0,600;0,800;1,800&family=Hind+Madurai:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ direction: dark-premium, interior-led. Black paint hood owns the top, a seat/floor viewer is the signature.
+ palette: ink #0b0d10 (black paint in p1), graphite #151a1f (leather seats), bone #f1ece3 (cream seats p7), amber #e2a63b (autumn leaves + sun flare in p1), mist #9aa3ab.
+ fonts: Fira Sans Extra Condensed 800 italic + Hind Madurai.
+ signature: "Open the door" interior viewer (floors / rear / seats / cabin chips in glass).
+ order: hero, soap-steam line, viewer, services+hours, reviews, quote sentence, footer.
+ motion: hero scale-in + headline settle (1.2s), count-up on 4.9 and 59, no other motion. */
+:root{--ink:#0b0d10;--gr:#151a1f;--bone:#f1ece3;--amb:#e2a63b;--mist:#9aa3ab}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--ink)}
+body{font-family:'Hind Madurai',sans-serif;background:var(--ink);color:var(--bone);font-size:17px;line-height:1.55;overflow-x:hidden;padding-bottom:96px}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--amb);outline-offset:3px}
+.d{font-family:'Fira Sans Extra Condensed',sans-serif;font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:-.005em;word-spacing:.12em;line-height:.9}
+.glass{background:rgba(21,26,31,.55);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 20px 60px -20px rgba(0,0,0,.6)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;border-radius:999px;font-weight:600;font-size:16px;transition:transform .18s,background .18s;border:0;cursor:pointer;font-family:inherit}
+.btn:active{transform:scale(.98)}
+.btn.a{background:var(--amb);color:#1a1205}
+.btn.g{background:rgba(255,255,255,.08);color:var(--bone);border:1px solid rgba(255,255,255,.22)}
+/* nav */
+nav{position:fixed;top:12px;left:12px;right:12px;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:6px 6px 6px 20px;border-radius:999px;max-width:1100px;margin:0 auto}
+nav b{font-size:24px}
+nav .btn{min-height:44px;padding:0 20px}
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;animation:zoom 1.6s cubic-bezier(.2,.7,.2,1) both}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,13,16,.35) 0%,rgba(11,13,16,0) 28%,rgba(11,13,16,.55) 62%,var(--ink) 100%)}
+.hero .in{position:relative;z-index:2;width:100%;max-width:1200px;margin:0 auto;padding:0 20px 112px}
+h1{font-size:clamp(66px,min(17.5vw,17vh),168px);animation:rise 1.1s .35s cubic-bezier(.2,.7,.2,1) both}
+h1 em{font-style:italic;color:var(--amb)}
+.sub{margin-top:14px;max-width:34ch;font-size:18px;color:#e6e0d5;animation:rise 1.1s .55s both}
+.hcard{margin-top:18px;display:inline-flex;gap:16px;align-items:center;padding:14px 22px 14px 18px;border-radius:26px;animation:rise 1.1s .75s both}
+.hcard .n{font-size:52px;color:var(--amb)}
+.hcard small{display:block;font-size:14px;line-height:1.35;color:#dcd6cb}
+.hcard strong{display:block;font-weight:600;color:#fff}
+.cta{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap;animation:rise 1.1s .9s both}
+@keyframes zoom{from{transform:scale(1.12)}to{transform:scale(1)}}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+section{padding:88px 20px}
+.w{max-width:1100px;margin:0 auto}
+.lab{font-size:14px;color:var(--amb);letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:14px}
+h2{font-size:clamp(48px,9vw,104px);margin-bottom:22px}
+/* statement */
+.state{padding-top:40px}
+.state p.d{font-size:clamp(38px,7.4vw,92px);max-width:16ch;color:var(--bone)}
+.state p.d span{color:var(--mist)}
+.state .by{margin-top:22px;color:var(--mist);font-size:15px}
+/* viewer */
+.view{background:var(--gr);padding-left:0;padding-right:0}
+.view .w{padding:0 20px}
+.stage{position:relative;margin-top:28px;border-radius:28px;overflow:hidden;aspect-ratio:4/5;background:#000}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s}
+.stage img.on{opacity:1}
+.chips{position:absolute;left:12px;right:12px;bottom:12px;display:flex;gap:6px;padding:6px;border-radius:999px;overflow-x:auto;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips button{flex:1 0 auto;min-height:44px;padding:0 18px;border-radius:999px;border:0;background:transparent;color:var(--bone);font:600 15px 'Hind Madurai',sans-serif;cursor:pointer;transition:background .18s,transform .18s}
+.chips button:active{transform:scale(.97)}
+.chips button[aria-pressed=true]{background:var(--amb);color:#1a1205}
+.cap{margin-top:16px;color:var(--mist);font-size:15px}
+/* services */
+.sv{display:grid;gap:0;margin-top:30px;border-top:1px solid rgba(255,255,255,.14)}
+.sv div{padding:26px 0;border-bottom:1px solid rgba(255,255,255,.14);display:grid;grid-template-columns:56px 1fr;gap:6px 8px;align-items:baseline}
+.sv .k{font-size:34px;color:var(--amb)}
+.sv h3{font-size:34px;font-weight:800}
+.sv p{grid-column:2;color:#c9c3b8;font-size:16px}
+.info{margin-top:44px;display:grid;gap:26px}
+.info b{display:block;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--amb);font-weight:600;margin-bottom:4px}
+.info span{font-size:20px}
+/* reviews */
+.rv{position:relative;overflow:hidden;background:var(--ink)}
+.rv:before{content:"";position:absolute;width:520px;height:520px;right:-180px;top:-120px;border-radius:50%;background:radial-gradient(circle,rgba(226,166,59,.2),transparent 65%);animation:drift 26s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate(-90px,120px)}}
+.rv .w{position:relative}
+.big{font-size:clamp(34px,6vw,70px);line-height:1;margin:6px 0 16px;text-transform:none;font-style:italic;font-weight:600;letter-spacing:0;word-spacing:.05em}
+.who{color:var(--mist);font-size:15px}
+.rg{display:grid;gap:14px;margin-top:40px}
+.rc{padding:24px;border-radius:24px}
+.rc p{font-size:17px}
+.rc .who{margin-top:12px}
+/* quote */
+.q{background:var(--gr)}
+.qp{margin-top:26px;padding:26px 22px;border-radius:28px;font-size:21px;line-height:2.1}
+.qp input,.qp select{font:600 20px 'Hind Madurai',sans-serif;color:var(--bone);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:6px 12px;min-height:44px;max-width:100%}
+.qp input::placeholder{color:#8b949c}
+.qp input:focus,.qp select:focus{outline:2px solid var(--amb);outline-offset:1px}
+.qp select option{color:#111}
+.qp .btn{margin-top:18px;width:100%}
+.note{margin-top:12px;font-size:14px;color:var(--mist)}
+footer{padding:36px 20px 24px;color:var(--mist);font-size:14px;text-align:left;max-width:1100px;margin:0 auto}
+/* dock */
+.dock{position:fixed;left:12px;right:12px;bottom:12px;z-index:30;display:flex;gap:8px;padding:8px;border-radius:999px;max-width:520px;margin:0 auto}
+.dock .btn{flex:1}
+@media(max-width:819px){.cta{display:none}.hero .in{padding-bottom:104px}}
+@media(min-width:820px){
+ body{padding-bottom:0}
+ .dock{display:none}
+ .hero .in{padding:0 40px 64px}
+ section{padding:132px 40px}
+ .stage{aspect-ratio:16/9}
+ .sv{grid-template-columns:repeat(3,1fr);border-top:0;gap:36px}
+ .sv div{display:block;border-top:1px solid rgba(255,255,255,.14);border-bottom:0}
+ .info{grid-template-columns:repeat(3,1fr)}
+ .rg{grid-template-columns:repeat(3,1fr)}
+ .qp{font-size:28px;padding:44px}
+ .view .w{padding:0 40px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav class="glass"><b class="d">Auto Aura</b><a class="btn a" href="tel:+14377990503">Call (437) 799-0503</a></nav>
+
+<header class="hero">
+  <img src="img/p1.jpg" alt="Black SUV hood and headlight after a detail, Sudbury">
+  <div class="in">
+    <h1 class="d">Not magic.<br>Soap, steam,<br><em>detail.</em></h1>
+    <p class="sub">Car detailing in Greater Sudbury, Ontario. Inside and out, done with serious attention to detail.</p>
+    <div class="hcard glass"><span class="n d" data-n="4.9">4.9</span><small><strong><span data-n="59">59</span> Google reviews</strong>Auto Aura Detailing, Sudbury</small></div>
+    <div class="cta"><a class="btn a" href="#quote">Get a quote</a><a class="btn g" href="tel:+14377990503">Call now</a></div>
+  </div>
+</header>
+
+<section class="state">
+  <div class="w">
+    <p class="d">Your ride, <span>brought back to life.</span></p>
+    <p class="by">From their Instagram: "DM now to bring your ride back to life." Greater Sudbury, Ontario.</p>
+  </div>
+</section>
+
+<section class="view" id="work">
+  <div class="w">
+    <div class="lab">Their work</div>
+    <h2 class="d">Open the door.</h2>
+    <div class="stage" id="stage">
+      <img class="on" src="img/p9.jpg" alt="Front cabin, cleaned" data-k="Cabin">
+      <img src="img/p2.jpg" alt="Floor mat, cleaned" data-k="Floors">
+      <img src="img/p5.jpg" alt="Leather seats, cleaned" data-k="Seats">
+      <img src="img/p10.jpg" alt="Rear seats, cleaned" data-k="Rear">
+      <div class="chips glass" role="group" aria-label="Choose a view"></div>
+    </div>
+    <p class="cap">Photos from their Instagram and Google listing.</p>
+  </div>
+</section>
+
+<section>
+  <div class="w">
+    <div class="lab">What they do</div>
+    <h2 class="d">Detailing, done properly.</h2>
+    <div class="sv">
+      <div><span class="k d">01</span><h3 class="d">Interior detail</h3><p>One customer said the inside "looks brand new."</p></div>
+      <div><span class="k d">02</span><h3 class="d">Soap and steam</h3><p>Their own words: "Not magic. Just soap, steam, and serious attention to detail."</p></div>
+      <div><span class="k d">03</span><h3 class="d">Full detail</h3><p>Message them with your vehicle for a quote.</p></div>
+    </div>
+    <div class="info">
+      <div><b>Area</b><span>Greater Sudbury, Ontario</span></div>
+      <div><b>Hours</b><span>Every day, 9 a.m. to 5 p.m.</span></div>
+      <div><b>Call or text</b><span><a href="tel:+14377990503">(437) 799-0503</a></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="rv">
+  <div class="w">
+    <div class="lab"><span data-n="4.9">4.9</span> on Google, <span data-n="59">59</span> reviews</div>
+    <p class="big d">"This young man is very professional and does beautiful work. Our vehicles are show room clean."</p>
+    <p class="who">Lise C., Google</p>
+    <div class="rg">
+      <div class="rc glass"><p>"Really impressed with the service and the results. They were friendly and careful and the work is outstanding. Very fair price too."</p><p class="who">Gene G., Google</p></div>
+      <div class="rc glass"><p>"Very responsive to my messages and very thorough detailing job. Will use again in the future."</p><p class="who">Nikki B., Google</p></div>
+      <div class="rc glass"><p>"Great guys very good detailing and they did a wonderful job i love it"</p><p class="who">Omar D., Google</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="q" id="quote">
+  <div class="w">
+    <div class="lab">Free quote</div>
+    <h2 class="d">Tell them your ride.</h2>
+    <form class="qp glass" id="qf">
+      Hi, I'm <input id="qn" placeholder="your name" autocomplete="given-name" aria-label="Your name" size="10">. I drive a <input id="qv" placeholder="car or SUV" aria-label="Your vehicle" size="12"> and I need
+      <select id="qs" aria-label="What you need"><option>an interior detail</option><option>a full detail</option><option>a soap and steam clean</option><option>a quote</option></select>.
+      <button class="btn a" type="submit">Text this to Auto Aura</button>
+    </form>
+    <p class="note">Opens a text message to (437) 799-0503. Nothing is sent until you press send.</p>
+  </div>
+</section>
+
+<footer>Auto Aura Detailing, Greater Sudbury, Ontario. (437) 799-0503<br>Preview built by JPF. Not live yet.</footer>
+
+<div class="dock glass"><a class="btn g" href="sms:+14377990503">Text</a><a class="btn a" href="tel:+14377990503">Call now</a></div>
+
+<script>
+(function(){
+  var st=document.getElementById('stage'),imgs=[].slice.call(st.querySelectorAll('img')),box=st.querySelector('.chips');
+  imgs.forEach(function(im,i){var b=document.createElement('button');b.type='button';b.textContent=im.dataset.k;b.setAttribute('aria-pressed',i===0);b.onclick=function(){imgs.forEach(function(x,j){x.classList.toggle('on',j===i)});[].slice.call(box.children).forEach(function(c,j){c.setAttribute('aria-pressed',j===i)})};box.appendChild(b)});
+  document.getElementById('qf').addEventListener('submit',function(e){e.preventDefault();
+    var n=document.getElementById('qn').value||'a new customer',v=document.getElementById('qv').value||'vehicle',s=document.getElementById('qs').value;
+    location.href='sms:+14377990503?&body='+encodeURIComponent("Hi, I'm "+n+". I drive a "+v+" and I need "+s+".")});
+  var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(!rm&&'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;io.unobserve(e.target);var t=parseFloat(e.target.dataset.n),dec=String(t).indexOf('.')>-1?1:0,t0=performance.now();
+      (function f(now){var p=Math.min(1,(now-t0)/1200);e.target.textContent=(t*(1-Math.pow(1-p,3))).toFixed(dec);if(p<1)requestAnimationFrame(f)})(t0)})},{threshold:.6});
+    document.querySelectorAll('[data-n]').forEach(function(el){io.observe(el)});
+  }
+})();
+</script>
+</body>
+</html>
