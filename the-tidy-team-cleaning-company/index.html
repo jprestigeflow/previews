@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The Tidy Team Cleaning Company Inc | House cleaning in Sherwood Park, AB</title>
+<meta name="description" content="House cleaning, deep cleans and post move-in cleans in Sherwood Park, Alberta. 5.0 on Google, 30 reviews. Call (780) 707-1884.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ direction: price-menu-led. Soft blush page, one raspberry accent, a deep-clean price picker as the signature.
+ palette: blush #fbeff2 (their pink flyer background), raspberry #b3235c (flyer heading + logo pink), plum ink #2b1420 (derived dark of the raspberry),
+          rose #e9c4d1 (flyer sparkle pink), gold #c8993a (flyer CPA word / logo gold, used on stars only).
+ fonts: Shrikhand (display) + Nunito (body).
+ signature: November deep-clean menu: pick 3/6/8 hr, add oven/fridge, live total, text it.
+ order: hero photo > menu > rooms strip > numbers+reviews > area/hours > quote fill-in > footer.
+ motion: one hero entrance, gentle reveals, count up. reduced-motion respected. */
+:root{--blush:#fbeff2;--rasp:#b3235c;--rasp2:#8f1a49;--ink:#2b1420;--rose:#e9c4d1;--gold:#c8993a;--paper:#fff8fa}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Nunito',system-ui,sans-serif;background:var(--blush);color:var(--ink);font-size:17px;line-height:1.55;overflow-x:hidden;padding-bottom:96px}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--rasp);outline-offset:3px;border-radius:8px}
+.disp{font-family:'Shrikhand',serif;font-weight:400;letter-spacing:0;word-spacing:.12em;line-height:1.02}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+.eyebrow{font-size:14px;font-weight:800;color:var(--rasp);letter-spacing:.04em}
+.glass{background:rgba(255,248,250,.6);backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 20px 60px -22px rgba(43,20,32,.35)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;border-radius:999px;border:0;background:var(--rasp);color:#fff;font:800 16px/1 'Nunito',sans-serif;text-decoration:none;cursor:pointer;transition:transform .18s,background .18s}
+.btn:hover{background:var(--rasp2)}.btn:active{transform:scale(.98)}
+.btn.ghost{background:rgba(255,255,255,.55);color:var(--ink);border:1px solid rgba(43,20,32,.15)}
+.btn.ghost:hover{background:#fff}
+
+/* nav */
+nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 8px 8px 20px;border-radius:999px;max-width:1180px;margin-inline:auto}
+nav b{font-family:'Shrikhand',serif;font-weight:400;font-size:18px;color:var(--rasp);white-space:nowrap}
+nav .links{display:none;gap:26px;font-weight:700;font-size:15px}
+nav .links a{text-decoration:none}
+nav .btn{min-height:44px;padding:0 18px;font-size:15px}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:#3a2a2e}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 62%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,20,32,.35) 0%,rgba(43,20,32,.2) 30%,rgba(43,20,32,.6) 58%,rgba(43,20,32,.88) 100%)}
+.hero .wrap{position:relative;z-index:2;padding:120px 0 104px;display:grid;gap:26px}
+.hero h1{font-size:clamp(54px,15.5vw,128px);text-shadow:0 2px 30px rgba(43,20,32,.4)}
+.hero h1 em{font-style:normal;color:#ffc7da}
+.hero .sub{font-size:18px;max-width:34ch;font-weight:600}
+.hero .ctas{display:flex;gap:10px;flex-wrap:wrap}
+.hero .btn.ghost{background:rgba(255,255,255,.2);color:#fff;border-color:rgba(255,255,255,.4);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.hcard{border-radius:26px;padding:18px 20px;color:var(--ink);max-width:380px}
+.hcard .stars{color:var(--gold);letter-spacing:2px;font-size:18px}
+.hcard p{font-size:15px;margin-top:6px;line-height:1.45}
+.hcard small{display:block;margin-top:8px;font-weight:800;font-size:13px;color:var(--rasp)}
+.eb{display:inline-block;justify-self:start;color:var(--ink);background:rgba(255,248,250,.78);padding:6px 14px;border-radius:999px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.ent{opacity:0;transform:translateY(18px);animation:ent .9s cubic-bezier(.2,.7,.2,1) forwards}
+.e2{animation-delay:.15s}.e3{animation-delay:.3s}.e4{animation-delay:.5s}
+@keyframes ent{to{opacity:1;transform:none}}
+
+section{padding:72px 0}
+h2{font-size:clamp(38px,9vw,84px);margin:10px 0 18px}
+
+/* menu / signature */
+#menu{position:relative;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;pointer-events:none;animation:drift 26s ease-in-out infinite alternate}
+.orb.a{width:380px;height:380px;background:var(--rose);top:-80px;right:-120px}
+.orb.b{width:300px;height:300px;background:#f4d6a8;bottom:-60px;left:-100px;animation-duration:32s;opacity:.4}
+@keyframes drift{to{transform:translate(40px,30px) scale(1.1)}}
+.menu{position:relative;display:grid;gap:26px}
+.menu .intro p{max-width:46ch}
+.panel{border-radius:28px;padding:22px}
+.lbl{font-weight:800;font-size:14px;margin-bottom:10px;color:var(--rasp)}
+.hrs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.hrs label{cursor:pointer}
+.hrs input,.adds input{position:absolute;opacity:0;pointer-events:none}
+.chip{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:92px;border-radius:18px;background:rgba(255,255,255,.55);border:1.5px solid rgba(43,20,32,.12);transition:.18s;text-align:center}
+.chip b{font-family:'Shrikhand',serif;font-weight:400;font-size:30px;line-height:1.1}
+.chip span{font-size:14px;font-weight:700}
+.hrs input:checked+.chip{background:var(--rasp);color:#fff;border-color:var(--rasp);transform:translateY(-2px)}
+.hrs input:focus-visible+.chip,.adds input:focus-visible+.pill{outline:3px solid var(--ink);outline-offset:2px}
+.adds{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.pill{display:inline-flex;align-items:center;min-height:46px;padding:0 18px;border-radius:999px;background:rgba(255,255,255,.55);border:1.5px solid rgba(43,20,32,.12);font-weight:800;font-size:15px;cursor:pointer;transition:.18s}
+.adds input:checked+.pill{background:var(--ink);color:#fff;border-color:var(--ink)}
+.total{display:flex;align-items:baseline;justify-content:space-between;margin:22px 0 14px;padding-top:18px;border-top:1px dashed rgba(43,20,32,.25)}
+.total .n{font-family:'Shrikhand',serif;font-size:54px;color:var(--rasp);line-height:1}
+.total span{font-weight:700;font-size:15px}
+.note{font-size:14px;margin-top:12px;opacity:.8}
+
+/* rooms strip */
+.rooms{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.rooms figure{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:3/4;background:var(--rose)}
+.rooms figure:nth-child(1){grid-column:1/3;aspect-ratio:4/3}
+.rooms img{width:100%;height:100%;object-fit:cover}
+.rooms figcaption{position:absolute;left:10px;bottom:10px;padding:6px 14px;border-radius:999px;font-weight:800;font-size:14px;color:var(--ink)}
+.rooms figure.vid{display:none}
+
+/* reviews */
+.stats{display:flex;gap:34px;align-items:flex-end;margin-bottom:34px;flex-wrap:wrap}
+.stats .big{font-size:clamp(70px,20vw,140px);color:var(--rasp)}
+.stats p{font-weight:700;max-width:22ch}
+.lead{font-size:clamp(25px,6vw,44px);line-height:1.2;font-weight:700;max-width:24ch}
+.lead cite{display:block;margin-top:14px;font:800 15px 'Nunito',sans-serif;color:var(--rasp)}
+.revs{position:relative;display:grid;gap:14px;margin-top:40px}
+.rev{border-radius:24px;padding:22px}
+.rev p{font-size:16px}
+.rev cite{display:block;margin-top:12px;font-style:normal;font-weight:800;font-size:14px;color:var(--rasp)}
+.rev .stars{color:var(--gold);letter-spacing:2px}
+#reviews{position:relative;overflow:hidden}
+
+/* area */
+.band{background:var(--ink);color:#fff;border-radius:34px;padding:34px 26px;display:grid;gap:22px}
+.band h2{margin:0;color:#ffc7da}
+.band .row{display:grid;gap:14px}
+.band .k{font-size:13px;font-weight:800;color:#ffc7da;letter-spacing:.04em}
+.band .v{font-size:20px;font-weight:700}
+.band a{color:#fff}
+
+/* quote */
+.qwrap{position:relative;overflow:hidden}
+.qform{border-radius:30px;padding:26px 22px;font-size:clamp(20px,5vw,30px);line-height:2.1;font-weight:700}
+.qform input,.qform select{font:700 inherit;font-size:inherit;color:var(--rasp);background:rgba(255,255,255,.7);border:0;border-bottom:2.5px solid var(--rasp);border-radius:10px 10px 0 0;padding:2px 10px;min-height:46px;max-width:100%;width:11ch;transition:.18s}
+.qform select{width:auto}
+.qform input:focus,.qform select:focus{outline:none;background:#fff;box-shadow:0 0 0 3px rgba(179,35,92,.25)}
+.qform .btn{display:flex;width:100%;margin-top:20px;min-height:56px;font-size:18px}
+
+footer{padding:30px 0 20px;font-size:14px;text-align:center;opacity:.85}
+
+/* dock */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:12px;display:flex;gap:8px;padding:8px;border-radius:999px}
+.dock a{flex:1;display:flex;align-items:center;justify-content:center;min-height:50px;border-radius:999px;font-weight:800;font-size:17px;text-decoration:none;transition:transform .18s}
+.dock a:active{transform:scale(.98)}
+.dock .c{background:var(--rasp);color:#fff}
+.dock .t{background:rgba(255,255,255,.7);color:var(--ink)}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+
+@media(min-width:860px){
+ body{padding-bottom:0}.dock{display:none}
+ nav{left:50%;right:auto;transform:translateX(-50%);width:min(1100px,100% - 40px)}
+ nav .links{display:flex}
+ section{padding:130px 0}
+ .hero .wrap{grid-template-columns:1.9fr 1fr;align-items:end;padding-bottom:60px}
+ .hero .l{display:grid;gap:26px}
+ .hcard{justify-self:end}
+ .menu{grid-template-columns:1fr 1fr;align-items:center;gap:70px}
+ .panel{padding:34px}
+ .rooms{grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:auto auto;gap:14px}
+ .rooms figure:nth-child(1){grid-column:1;grid-row:1/3;aspect-ratio:auto}
+ .rooms figure{aspect-ratio:4/5}
+ .revs{grid-template-columns:repeat(3,1fr)}
+ .band{padding:60px;grid-template-columns:1.2fr 1fr}
+ .qform{padding:50px 56px}
+ .qform .btn{display:inline-flex;width:auto;padding:0 40px}
+}
+@media(prefers-reduced-motion:reduce){.ent{animation:none;opacity:1;transform:none}.orb{animation:none}.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav class="glass">
+  <b>The Tidy Team</b>
+  <div class="links"><a href="#menu">Deep clean menu</a><a href="#reviews">Reviews</a><a href="#area">Area and hours</a><a href="#quote">Get a quote</a></div>
+  <a class="btn" href="tel:+17807071884">Call (780) 707-1884</a>
+</nav>
+
+<header class="hero">
+  <img src="img/p1.jpg" alt="Bright finished living room with a grey sectional and wood-look floors" fetchpriority="high">
+  <div class="wrap">
+    <div class="l">
+      <p class="eyebrow ent eb">House cleaning in Sherwood Park, Alberta</p>
+      <h1 class="disp ent e2">Come home<br>to <em>tidy.</em></h1>
+      <p class="sub ent e3">The Tidy Team Cleaning Company Inc. House cleaning, deep cleans and post move-in cleans.</p>
+      <div class="ctas ent e3">
+        <a class="btn" href="tel:+17807071884">Call (780) 707-1884</a>
+        <a class="btn ghost" href="#menu">See the deep clean menu</a>
+      </div>
+    </div>
+    <div class="hcard glass ent e4">
+      <div class="stars" aria-hidden="true">★★★★★</div>
+      <strong>5.0 on Google, 30 reviews</strong>
+      <p>"My house looks great. Very friendly and efficient service and I couldn't be happier!"</p>
+      <small>Laura F., Google</small>
+    </div>
+  </div>
+</header>
+
+<section id="menu">
+  <div class="orb a"></div><div class="orb b"></div>
+  <div class="wrap menu">
+    <div class="intro rv">
+      <p class="eyebrow">November deep clean specials</p>
+      <h2 class="disp">Pick your clean.</h2>
+      <p>Their own November 2026 prices, posted on Instagram. Choose the hours, add an oven or fridge, then text it to them in one tap.</p>
+    </div>
+    <div class="panel glass rv">
+      <div class="lbl">How long</div>
+      <div class="hrs" role="radiogroup" aria-label="Deep clean length">
+        <label><input type="radio" name="hrs" value="125" data-h="3" checked><span class="chip"><b>$125</b><span>3 hour</span></span></label>
+        <label><input type="radio" name="hrs" value="230" data-h="6"><span class="chip"><b>$230</b><span>6 hour</span></span></label>
+        <label><input type="radio" name="hrs" value="300" data-h="8"><span class="chip"><b>$300</b><span>8 hour</span></span></label>
+      </div>
+      <div class="lbl" style="margin-top:20px">Add on, $30 each</div>
+      <div class="adds">
+        <label><input type="checkbox" id="oven"><span class="pill">+ Oven</span></label>
+        <label><input type="checkbox" id="fridge"><span class="pill">+ Fridge</span></label>
+      </div>
+      <div class="total"><span id="what">3 hour deep clean</span><div class="n" id="sum">$125</div></div>
+      <a class="btn" id="book" href="#" style="width:100%;min-height:54px">Text this to The Tidy Team</a>
+      <p class="note">Prices are from their November 2026 specials post. Text to confirm what is current.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:10px">
+  <div class="wrap">
+    <p class="eyebrow rv">Rooms they have cleaned</p>
+    <h2 class="disp rv">Kitchens to basements.</h2>
+    <div class="rooms rv">
+      <figure><img src="img/p9.jpg" alt="Kitchen stovetop and microwave" loading="lazy"><figcaption class="glass">Kitchen</figcaption></figure>
+      <figure><img src="img/p8.jpg" alt="Kitchen range with tile backsplash and wood hood" loading="lazy"><figcaption class="glass">Range and hood</figcaption></figure>
+      <figure><img src="img/p6.jpg" alt="Bathroom vanity and glass shower" loading="lazy"><figcaption class="glass">Bathroom</figcaption></figure>
+      <figure><img src="img/p2.jpg" alt="Family room with wood floors" loading="lazy"><figcaption class="glass">Family room</figcaption></figure>
+      <figure><img src="img/p4.jpg" alt="Laundry and mudroom with patterned tile" loading="lazy"><figcaption class="glass">Laundry room</figcaption></figure>
+    </div>
+    <p class="note" style="margin-top:12px">Photos from their Google listing.</p>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="orb a" style="top:auto;bottom:-100px"></div>
+  <div class="wrap">
+    <div class="stats rv">
+      <div class="big disp"><span id="cnt" data-to="5.0">5.0</span></div>
+      <p>on Google from <b id="cnt2" data-to="30">30</b> reviews</p>
+    </div>
+    <blockquote class="lead rv">"Excellent service! Very professional, friendly, and thorough. I would definitely recommend them!"<cite>Basmina A., Google</cite></blockquote>
+    <div class="revs">
+      <div class="rev glass rv"><div class="stars" aria-hidden="true">★★★★★</div><p>"Great cleaners. Very satisfied with their work especially with April. I'll definitely book again for their service."</p><cite>Edward P., Google</cite></div>
+      <div class="rev glass rv"><div class="stars" aria-hidden="true">★★★★★</div><p>"My house looks great. Very friendly and efficient service and I couldn't be happier!"</p><cite>Laura F., Google</cite></div>
+      <div class="rev glass rv"><div class="stars" aria-hidden="true">★★★★★</div><p>"Wonderful experience &amp; came ready and willing with all the equipment and cleaning tools needed, Which I love and appreciate because no one wants to be left with nasty rags to deal with."</p><cite>Gelous M., Google</cite></div>
+    </div>
+  </div>
+</section>
+
+<section id="area" style="padding-top:0">
+  <div class="wrap">
+    <div class="band rv">
+      <div><h2 class="disp">Sherwood Park, AB</h2><p style="margin-top:12px;max-width:34ch">House cleaning service. Also posts jobs from the Edmonton area on Instagram.</p></div>
+      <div class="row">
+        <div><div class="k">HOURS</div><div class="v">Open 24 hours, 7 days a week (per Google)</div></div>
+        <div><div class="k">CALL OR TEXT</div><div class="v"><a href="tel:+17807071884">(780) 707-1884</a></div></div>
+        <div><div class="k">GOOD FOR</div><div class="v">Deep cleans, post move-in cleans, oven and fridge add-ons</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="quote" class="qwrap" style="padding-top:20px">
+  <div class="orb b" style="bottom:-120px;left:auto;right:-100px"></div>
+  <div class="wrap">
+    <p class="eyebrow rv">Free to ask</p>
+    <h2 class="disp rv">Get a quote.</h2>
+    <form class="qform glass rv" id="qf" autocomplete="off">
+      Hi, I'm <input id="qn" placeholder="your name" aria-label="Your name"> and I need a
+      <select id="qs" aria-label="What you need"><option>deep clean</option><option>regular house clean</option><option>post move-in clean</option><option>something else</option></select>
+      in <input id="qa" placeholder="your area" aria-label="Your area" style="width:12ch">. Can you text me back?
+      <button class="btn" type="submit">Send as a text</button>
+    </form>
+  </div>
+</section>
+
+<footer>Preview built by JPF. Not live yet.</footer>
+
+<div class="dock glass">
+  <a class="c" href="tel:+17807071884">Call</a>
+  <a class="t" href="sms:+17807071884">Text</a>
+</div>
+
+<script>
+(function(){
+ var PH='+17807071884';
+ var sum=document.getElementById('sum'),what=document.getElementById('what'),book=document.getElementById('book');
+ function upd(){
+  var r=document.querySelector('input[name=hrs]:checked'),t=+r.value,h=r.dataset.h,adds=[];
+  if(document.getElementById('oven').checked){t+=30;adds.push('oven')}
+  if(document.getElementById('fridge').checked){t+=30;adds.push('fridge')}
+  var s=h+' hour deep clean'+(adds.length?' + '+adds.join(' + '):'');
+  sum.textContent='$'+t;what.textContent=s;
+  book.href='sms:'+PH+'?&body='+encodeURIComponent("Hi, I'd like the "+s+" ($"+t+"). When are you free?");
+ }
+ document.querySelectorAll('.menu input').forEach(function(i){i.addEventListener('change',upd)});upd();
+ document.getElementById('qf').addEventListener('submit',function(e){
+  e.preventDefault();
+  var n=document.getElementById('qn').value.trim()||'a customer',a=document.getElementById('qa').value.trim()||'Sherwood Park',s=document.getElementById('qs').value;
+  location.href='sms:'+PH+'?&body='+encodeURIComponent("Hi, I'm "+n+" and I need a "+s+" in "+a+". Can you text me back?");
+ });
+ var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+ var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
+ document.querySelectorAll('.rv').forEach(function(el){if(rm){el.classList.add('in')}else{io.observe(el)}});
+ if(!rm){
+  var c=document.getElementById('cnt'),c2=document.getElementById('cnt2'),done=false;
+  new IntersectionObserver(function(es,o){if(es[0].isIntersecting&&!done){done=true;o.disconnect();
+   var t0=performance.now();(function f(t){var p=Math.min(1,(t-t0)/1200);c.textContent=(5*p).toFixed(1);c2.textContent=Math.round(30*p);if(p<1)requestAnimationFrame(f)})(t0)}},{threshold:.5}).observe(c);
+ }
+})();
+</script>
+</body>
+</html>
