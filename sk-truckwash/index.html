@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>SK Truckwash | Truck and trailer wash in Sherwood Park, AB</title>
+<meta name="description" content="SK Truckwash, truck and trailer wash at 28 Strathmoor Dr, Sherwood Park. Call (587) 729-1313.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ direction: process-story-led. A wash bay in cold light. The page walks a rig through the bay: foam, hand, rinse, finish.
+ palette: concrete #e8ecee (wet bay floor, p11) / bay ink #0f171c (dark truck bay shadows) / sign blue #2a8bc7 (blue SK TRUCK WASH sign, p1) / sign red #c9282d (red trim on their building, p1, used tiny) / foam #f7f9fa (foam on the truck, p11)
+ fonts: Paytone One (display) + Karla (body)
+ signature: Bay chooser, four glass chips (Wash, Chrome, Paint and body, Seats-free) swap photo + text and pre-fill the text quote
+ order: hero photo, rating strip, bay chooser, big review, hours/area band, quote sentence form, footer
+ motion: hero scales in then headline settles, counters count once, no fade on every block */
+:root{--con:#e8ecee;--ink:#0f171c;--blue:#2a8bc7;--blueD:#1c6a9b;--red:#c9282d;--foam:#f7f9fa;--mut:#55636b}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:Karla,system-ui,sans-serif;font-size:17px;line-height:1.55;color:var(--ink);background:var(--con);overflow-x:hidden;padding-bottom:96px}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:'Paytone One',sans-serif;font-weight:400;line-height:.98;letter-spacing:0;word-spacing:.12em}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+.glass{background:rgba(247,249,250,.58);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 20px 60px -20px rgba(15,23,28,.35)}
+.glassD{background:rgba(15,23,28,.5);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 20px 60px -20px rgba(0,0,0,.5);color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;border-radius:999px;background:var(--blue);color:#fff;font-weight:700;font-size:17px;text-decoration:none;border:0;cursor:pointer;transition:transform .18s,background .18s;font-family:Karla,sans-serif}
+.btn:hover{background:var(--blueD)}.btn:active{transform:scale(.98)}
+.btn.ghost{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.45)}
+.btn.ghost:hover{background:rgba(255,255,255,.26)}
+/* nav */
+nav{position:fixed;z-index:30;top:12px;left:12px;right:12px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 8px 8px 18px;border-radius:999px;max-width:1180px;margin:0 auto}
+nav b{font-family:'Paytone One';font-weight:400;font-size:19px;white-space:nowrap}
+nav .btn{min-height:44px;padding:0 18px;font-size:16px}
+nav .links{display:none;gap:26px;font-weight:700}
+nav .links a{text-decoration:none}
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:var(--ink)}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:34% 50%;animation:zoom 1.6s cubic-bezier(.2,.7,.2,1) both}
+@keyframes zoom{from{transform:scale(1.14)}to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,23,28,.35) 0,rgba(15,23,28,0) 24%,rgba(15,23,28,.72) 44%,rgba(15,23,28,.95) 100%)}
+.hero .in{position:relative;z-index:2;width:100%;max-width:1180px;margin:0 auto;padding:0 20px 104px;display:grid;gap:22px}
+.hero .kick{font-weight:700;font-size:15px;color:#fff;text-shadow:0 1px 12px rgba(0,0,0,.8);margin-bottom:6px}
+.hero h1{font-size:clamp(58px,17vw,96px);text-shadow:0 2px 30px rgba(0,0,0,.35);animation:rise .9s .5s cubic-bezier(.2,.7,.2,1) both}
+.hero h1 em{font-style:normal;color:#6cc0f1}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.hero .row{display:flex;flex-wrap:wrap;gap:10px}
+.hcard{border-radius:24px;padding:16px 18px;max-width:430px;animation:rise .9s .9s cubic-bezier(.2,.7,.2,1) both}
+.hcard .big{font-family:'Paytone One';font-size:34px;line-height:1}
+.hcard small{display:block;font-size:14px;opacity:.9;margin-top:2px}
+.hcard p{display:none;margin-top:10px;font-size:15.5px;line-height:1.45}
+/* sections */
+section{padding:72px 20px}
+.wrap{max-width:1180px;margin:0 auto}
+h2{font-size:clamp(40px,10.5vw,76px);margin-bottom:22px}
+.lede{max-width:56ch;color:var(--mut)}
+/* signature chooser */
+#bays{background:var(--foam)}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin:26px 0 22px}
+.chip{min-height:48px;padding:0 20px;border-radius:999px;border:1px solid rgba(15,23,28,.18);background:rgba(232,236,238,.7);font:700 16px Karla,sans-serif;color:var(--ink);cursor:pointer;transition:transform .18s,background .18s,color .18s}
+.chip:active{transform:scale(.98)}
+.chip[aria-selected=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.stage{position:relative;border-radius:28px;overflow:hidden;background:var(--ink);min-height:440px;display:grid}
+.stage .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s}
+.stage .ph.on{opacity:1}
+.stage::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,23,28,0) 35%,rgba(15,23,28,.8) 100%)}
+.stage .cap{position:relative;z-index:2;align-self:end;margin:14px;padding:20px;border-radius:22px;max-width:520px}
+.stage .cap h3{font-size:34px;margin-bottom:8px}
+.stage .cap p{font-size:16px;margin-bottom:14px}
+.stage .cap .btn{min-height:46px}
+.svc{display:grid;gap:0;margin-top:36px;border-top:1px solid rgba(15,23,28,.18)}
+.svc div{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid rgba(15,23,28,.18);font-weight:700}
+.svc span{font-weight:400;color:var(--mut);text-align:right}
+/* strip photos */
+.duo{display:grid;gap:12px;padding:0 20px 72px;background:var(--foam)}
+.duo img{width:100%;height:340px;object-fit:cover;border-radius:22px}
+/* reviews */
+#reviews{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+#reviews::before{content:"";position:absolute;width:520px;height:520px;right:-180px;top:-140px;border-radius:50%;background:radial-gradient(closest-side,rgba(42,139,199,.38),transparent);animation:drift 24s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate(-60px,80px)}}
+#reviews .wrap{position:relative}
+.stat{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:28px}
+.stat .n{font-family:'Paytone One';font-size:clamp(64px,18vw,120px);line-height:.9;color:#6cc0f1}
+.stat .t{color:#b9c6ce;font-size:16px}
+blockquote.lead{font-family:'Paytone One';font-size:clamp(27px,7vw,50px);line-height:1.08;max-width:24ch;word-spacing:.1em}
+.who{margin-top:14px;color:#b9c6ce;font-size:15px}
+.rv{display:grid;gap:12px;margin-top:40px}
+.rv figure{border-radius:22px;padding:20px}
+.rv blockquote{font-size:16.5px}
+.rv figcaption{margin-top:10px;font-size:14px;opacity:.8}
+/* hours */
+#visit{background:var(--con)}
+.cols{display:grid;gap:36px}
+.hrs{border-top:1px solid rgba(15,23,28,.2)}
+.hrs div{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(15,23,28,.2)}
+.hrs div.today{color:var(--blueD);font-weight:700}
+.addr{font-family:'Paytone One';font-size:30px;line-height:1.1;margin-bottom:12px}
+.note{margin-top:16px;padding-left:14px;border-left:4px solid var(--red);color:var(--ink)}
+/* quote */
+#quote{background:var(--foam);position:relative;overflow:hidden}
+#quote::before{content:"";position:absolute;width:560px;height:560px;left:-220px;bottom:-200px;border-radius:50%;background:radial-gradient(closest-side,rgba(42,139,199,.28),transparent);animation:drift 28s ease-in-out infinite alternate}
+.qp{position:relative;border-radius:28px;padding:26px 22px;max-width:760px}
+.qp p.s{font-size:20px;line-height:2.1}
+.qp input,.qp select{font:700 18px Karla,sans-serif;color:var(--ink);background:rgba(255,255,255,.7);border:1px solid rgba(15,23,28,.2);border-radius:14px;min-height:46px;padding:0 12px;margin:0 2px;max-width:100%;width:auto}
+.qp input#nm{width:170px}.qp input#rig{width:190px}
+.qp input:focus,.qp select:focus{outline:3px solid var(--blue);outline-offset:1px;border-color:var(--blue)}
+.qp .btn{margin-top:20px;width:100%}
+.qp small{display:block;margin-top:12px;color:var(--mut);font-size:14px}
+footer{padding:36px 20px 40px;background:var(--ink);color:#b9c6ce;font-size:14.5px}
+footer .wrap{display:grid;gap:6px}
+/* dock */
+.dock{position:fixed;z-index:40;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));display:flex;gap:8px;padding:8px;border-radius:999px;max-width:520px;margin:0 auto}
+.dock a{flex:1;min-height:48px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px;text-decoration:none;transition:transform .18s}
+.dock a:active{transform:scale(.98)}
+.dock .c{background:var(--blue);color:#fff}
+.dock .t{background:rgba(15,23,28,.08);color:var(--ink)}
+@media(min-width:860px){
+ body{padding-bottom:0}
+ nav{left:50%;right:auto;transform:translateX(-50%);width:min(1180px,calc(100% - 32px))}
+ nav .links{display:flex}
+ .hcard p{display:block}
+ .hero::after{background:linear-gradient(90deg,rgba(15,23,28,.85) 0,rgba(15,23,28,.55) 45%,rgba(15,23,28,0) 75%),linear-gradient(180deg,rgba(15,23,28,.3) 0,rgba(15,23,28,0) 20%,rgba(15,23,28,0) 60%,rgba(15,23,28,.7) 100%)}
+ .hero .in{padding:0 32px 48px;grid-template-columns:1.3fr 1fr;align-items:end}
+ .hero h1{font-size:clamp(96px,10vw,150px)}
+ .hero .l{grid-column:1}.hero .hcard{grid-column:2;justify-self:end}
+ section{padding:130px 32px}
+ .stage{min-height:620px}
+ .stage .cap{margin:28px;padding:26px}
+ .duo{grid-template-columns:1.4fr 1fr 1fr;padding:0 32px 130px}
+ .duo img{height:480px}
+ .rv{grid-template-columns:repeat(3,1fr)}
+ .cols{grid-template-columns:1fr 1fr;gap:80px}
+ .qp{padding:44px 48px}.qp p.s{font-size:26px}
+ .qp .btn{width:auto}
+ .dock{display:none}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<nav class="glass">
+  <b>SK Truckwash</b>
+  <div class="links"><a href="#bays">The bay</a><a href="#reviews">Reviews</a><a href="#visit">Hours</a><a href="#quote">Text us</a></div>
+  <a class="btn" href="tel:+15877291313">Call (587) 729-1313</a>
+</nav>
+
+<header class="hero">
+  <img class="bg" src="img/p11.jpg" alt="A truck and trailer covered in foam in the SK Truckwash bay">
+  <div class="in">
+    <div class="l">
+      <p class="kick">Truck and trailer wash &middot; Sherwood Park, AB</p>
+      <h1>Rigs<br>washed <em>right.</em></h1>
+      <div class="row" style="margin-top:20px">
+        <a class="btn" href="tel:+15877291313">Call (587) 729-1313</a>
+        <a class="btn ghost" href="#quote">Text a quote request</a>
+      </div>
+    </div>
+    <aside class="hcard glassD">
+      <div class="big"><span data-count="4.8" data-dec="1">4.8</span> <span style="font-size:18px">on Google</span></div>
+      <small><span data-count="264">264</span> reviews</small>
+      <p>&ldquo;Hands down the best truckwash I've been to!&rdquo;<br><span style="opacity:.8">Taavi R., Google</span></p>
+    </aside>
+  </div>
+</header>
+
+<section id="bays">
+  <div class="wrap">
+    <h2>What goes through the bay</h2>
+    <p class="lede">SK Truckwash washes trucks and trailers, and does polish, paint and body work too. Pick one to see it. Their phone line is on every post: walk-ins, no appointments.</p>
+    <div class="chips" role="tablist" aria-label="Services">
+      <button class="chip" role="tab" aria-selected="true" data-i="0">Truck and trailer wash</button>
+      <button class="chip" role="tab" aria-selected="false" data-i="1">Polish and chrome</button>
+      <button class="chip" role="tab" aria-selected="false" data-i="2">Paint and body</button>
+    </div>
+    <div class="stage">
+      <img class="ph on" src="img/p1c.jpg" alt="A white Peterbilt at the SK Truck Wash bay door" style="object-position:50% 40%">
+      <img class="ph" src="img/p10.jpg" alt="Front of a polished chrome Peterbilt" style="object-position:50% 55%">
+      <video class="ph" src="video/hero.mp4" poster="video/hero-poster.jpg" muted loop playsinline preload="none" aria-label="Paint work on a truck cab"></video>
+      <div class="cap glass">
+        <h3 id="ct">Truck and trailer wash</h3>
+        <p id="cp">Trucks and trailers, and side-dump washes, in a covered bay. Posted by SK Truckwash: no appointments, call for details.</p>
+        <a class="btn" id="cb" href="#quote" data-svc="truck and trailer wash">Ask about a wash</a>
+      </div>
+    </div>
+    <div class="svc">
+      <div>Truck and trailer wash <span>Side-dump washes too</span></div>
+      <div>Truck polish <span>Chrome polish</span></div>
+      <div>Full body paint <span>Denting and painting</span></div>
+      <div>Custom seats <span>Seat customizing</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="duo">
+  <img src="img/p5c.jpg" alt="Black truck with green stripes and chrome stacks" style="object-position:30% 50%" loading="lazy">
+  <img src="img/p8.jpg" alt="White International truck with a bull bar inside the bay" loading="lazy">
+  <img src="img/p12.jpg" alt="Green truck hauling a flatbed trailer" style="object-position:30% 50%" loading="lazy">
+</div>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="stat"><span class="n"><span data-count="4.8" data-dec="1">4.8</span></span><span class="t">Google rating from<br><b style="color:#fff"><span data-count="264">264</span> reviews</b></span></div>
+    <blockquote class="lead">&ldquo;Hands down the best truckwash I've been to!&rdquo;</blockquote>
+    <p class="who">Taavi R., Google. He adds: &ldquo;Can't go here if you're on a rush, great work takes time!&rdquo;</p>
+    <div class="rv">
+      <figure class="glassD"><blockquote>&ldquo;They do a good job and listen to what you want done. I asked for a firehose rinse and to get the ice off my duals. He did exactly that and even got my windows and mirrors.&rdquo;</blockquote><figcaption>Chris P., Google</figcaption></figure>
+      <figure class="glassD"><blockquote>&ldquo;Great experience at SK Truck Wash! Got my truck washed here, and I&rsquo;m really happy with their service. The staff was friendly, professional, and did a great job.&rdquo;</blockquote><figcaption>Palav S., Google</figcaption></figure>
+      <figure class="glassD"><blockquote>&ldquo;Great job done by them highly recomended&rdquo;</blockquote><figcaption>Arshdeep B., Google</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="visit">
+  <div class="wrap cols">
+    <div>
+      <h2>Find the bay</h2>
+      <p class="addr">28 Strathmoor Dr #101<br>Sherwood Park, AB T8H 2B6</p>
+      <p class="lede">Trucks and trailers from Sherwood Park and around. Google lists SK Truckwash as a car wash.</p>
+      <p class="note">Their posts say no appointments. Call (587) 729-1313 for details.</p>
+      <p style="margin-top:22px"><a class="btn" href="https://www.google.com/maps/place/SK+Truckwash/data=!4m7!3m6!1s0x53a03dcb3b1e94fd:0xe7a383e52cae60e7!8m2!3d53.5669287!4d-113.3247781!16s%2Fg%2F11rg8tx02p!19sChIJ_ZQeO8s9oFMR52CuLOWDo-c" target="_blank" rel="noopener">Open in Google Maps</a></p>
+    </div>
+    <div>
+      <h2 style="font-size:clamp(34px,8vw,56px)">Hours</h2>
+      <div class="hrs" id="hrs">
+        <div data-d="1"><span>Monday</span><span>8 a.m. to 8 p.m.</span></div>
+        <div data-d="2"><span>Tuesday</span><span>8 a.m. to 8 p.m.</span></div>
+        <div data-d="3"><span>Wednesday</span><span>8 a.m. to 8 p.m.</span></div>
+        <div data-d="4"><span>Thursday</span><span>8 a.m. to 8 p.m.</span></div>
+        <div data-d="5"><span>Friday</span><span>8 a.m. to 8 p.m.</span></div>
+        <div data-d="6"><span>Saturday</span><span>8 a.m. to 7 p.m.</span></div>
+        <div data-d="0"><span>Sunday</span><span>9 a.m. to 5 p.m.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="quote">
+  <div class="wrap">
+    <h2>Text us what you're hauling</h2>
+    <form class="qp glass" id="qf" autocomplete="off">
+      <p class="s">Hi, it's <input id="nm" placeholder="your name" aria-label="Your name" required>. I need
+      <select id="sv" aria-label="What you need"><option>a truck and trailer wash</option><option>a side-dump wash</option><option>a polish</option><option>paint or body work</option><option>a custom seat</option></select>
+      for my <input id="rig" placeholder="rig / trailer" aria-label="Your rig"> in Sherwood Park.</p>
+      <button class="btn" type="submit">Send as a text</button>
+      <small>Opens a text message to (587) 729-1313. Nothing is sent until you press send.</small>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <b style="color:#fff">SK Truckwash &middot; 28 Strathmoor Dr #101, Sherwood Park, AB &middot; (587) 729-1313</b>
+    <span>Rating and reviews from Google. Photos from SK Truckwash's own posts and listing.</span>
+    <span>Preview built by JPF. Not live yet.</span>
+  </div>
+</footer>
+
+<div class="dock glass">
+  <a class="c" href="tel:+15877291313">Call now</a>
+  <a class="t" href="sms:+15877291313">Text us</a>
+</div>
+
+<script>
+(function(){
+  var D=[
+    ["Truck and trailer wash","Trucks and trailers, and side-dump washes, in a covered bay. Posted by SK Truckwash: no appointments, call for details.","Ask about a wash","truck and trailer wash"],
+    ["Polish and chrome","Truck polish and chrome polish, as posted on their page.","Ask about a polish","polish"],
+    ["Paint and body","Full body paint, denting and painting, as posted on their page.","Ask about paint","paint or body work"]];
+  var chips=document.querySelectorAll('.chip'),ph=document.querySelectorAll('.stage .ph');
+  function show(i){chips.forEach(function(c,k){c.setAttribute('aria-selected',k==i)});ph.forEach(function(p,k){p.classList.toggle('on',k==i);if(p.tagName=='VIDEO'){if(k==i){p.play&&p.play().catch(function(){})}else p.pause()}});
+    document.getElementById('ct').textContent=D[i][0];document.getElementById('cp').textContent=D[i][1];var b=document.getElementById('cb');b.textContent=D[i][2];b.dataset.svc=D[i][3]}
+  chips.forEach(function(c){c.addEventListener('click',function(){show(+c.dataset.i)})});
+  document.getElementById('cb').addEventListener('click',function(){var s=document.getElementById('sv'),v=this.dataset.svc;for(var i=0;i<s.options.length;i++){if(s.options[i].text.indexOf(v)>-1||(v=='polish'&&s.options[i].text=='a polish'))s.selectedIndex=i}});
+  var t=new Date().toLocaleString('en-US',{timeZone:'America/Edmonton',weekday:'short'});
+  var m={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[t];
+  var r=document.querySelector('.hrs div[data-d="'+m+'"]');if(r)r.className='today';
+  document.getElementById('qf').addEventListener('submit',function(e){e.preventDefault();
+    var msg="Hi, it's "+document.getElementById('nm').value+". I need "+document.getElementById('sv').value+" for my "+(document.getElementById('rig').value||'rig')+" in Sherwood Park.";
+    location.href='sms:+15877291313?&body='+encodeURIComponent(msg)});
+  var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(!rm&&'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting)return;io.unobserve(en.target);var el=en.target,to=parseFloat(el.dataset.count),dec=+el.dataset.dec||0,s=performance.now();
+      (function f(n){var p=Math.min(1,(n-s)/1100);el.textContent=(to*(1-Math.pow(1-p,3))).toFixed(dec);if(p<1)requestAnimationFrame(f);else el.textContent=to.toFixed(dec)})(s)})},{threshold:.6});
+    document.querySelectorAll('[data-count]').forEach(function(e){io.observe(e)});
+  }
+})();
+</script>
+</body>
+</html>
