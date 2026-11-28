@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>D.B Auto Care | Car Detailing in Brampton, ON</title>
+<meta name="description" content="D.B Auto Care, car detailing service at 18 Junetown Cir, Brampton. Exterior, interior and full details. 5.0 on Google.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Squada+One&family=Commissioner:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ direction: video-led, dark premium. Foam-soaked red Mustang video owns the top; one glass review card floats on it.
+ palette: graphite #0e1012 (wet driveway tarmac in their clips), foam #f2eee8 (snow foam), red #e3262d (their Mustang, accent only),
+          steel #8b9096 (IS350 champagne-grey paint, muted text), ink-2 #171a1d (panel).
+ fonts: Squada One (display) + Commissioner (body).
+ signature: "Pick the detail" dial: Exterior / Interior / Full chips swap their real job photos and captions.
+ order: hero video, numbers, dial, video band + services, reviews, quote sentence, area/hours, footer.
+ motion: one load entrance, gentle reveals, counters; reduced-motion respected. */
+:root{--bg:#0e1012;--bg2:#171a1d;--foam:#f2eee8;--red:#e3262d;--steel:#9aa0a6;--line:rgba(242,238,232,.14)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--foam);font-family:'Commissioner',system-ui,sans-serif;font-size:17px;line-height:1.55;overflow-x:hidden;padding-bottom:96px}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.d{font-family:'Squada One',Impact,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.005em;word-spacing:.12em;line-height:.92}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+.glass{background:rgba(23,26,29,.55);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 20px 60px -20px rgba(0,0,0,.6)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 26px;border-radius:999px;font-weight:700;font-size:16px;border:0;cursor:pointer;transition:transform .18s,background .18s;font-family:inherit}
+.btn:active{transform:scale(.98)}
+.btn.red{background:var(--red);color:#fff}.btn.red:hover{background:#f1383e}
+.btn.ghost{color:var(--foam);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.28)}
+.btn.ghost:hover{background:rgba(255,255,255,.16)}
+/* nav */
+nav{position:fixed;top:12px;left:12px;right:12px;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 8px 8px 20px;border-radius:999px;max-width:1180px;margin-inline:auto}
+nav b{font-size:24px;letter-spacing:.02em;white-space:nowrap}
+nav b i{color:var(--red);font-style:normal}
+nav .links{display:none;gap:26px;font-weight:500;font-size:15px;color:#d8d4cd}
+nav .links a:hover{color:#fff}
+nav .btn{min-height:44px;padding:0 20px}
+.show{display:inline}.hide{display:none}
+@media(min-width:820px){.show{display:none}.hide{display:inline}}
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(14,16,18,.55) 0%,rgba(14,16,18,.05) 28%,rgba(14,16,18,.55) 62%,var(--bg) 100%)}
+.hero .in{padding-top:130px;padding-bottom:40px}
+h1{font-size:clamp(64px,19vw,196px);color:var(--foam);max-width:9ch;text-shadow:0 2px 30px rgba(0,0,0,.35)}
+h1 em{font-style:normal;color:var(--red)}
+.hero p.sub{margin:18px 0 24px;font-size:18px;max-width:30ch;color:#e6e2db;text-shadow:0 1px 14px rgba(0,0,0,.6)}
+.hero .cta{display:flex;gap:10px;flex-wrap:wrap}
+.card{margin-top:34px;border-radius:26px;padding:20px 22px;max-width:430px}
+.card .st{color:var(--red);letter-spacing:3px;font-size:15px}
+.card q{display:block;quotes:none;font-size:16px;margin:6px 0 8px;line-height:1.45}
+.card small{color:#c9c5be;font-size:14px}
+/* entrance */
+.hero .in>*{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.hero h1{animation-delay:.1s}.hero .sub{animation-delay:.3s}.hero .cta{animation-delay:.42s}.hero .card{animation-delay:.6s}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+/* numbers */
+.nums{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.nums div{padding:30px 6px;text-align:left}
+.nums div+div{border-left:1px solid var(--line);padding-left:18px}
+.nums b{display:block;font-size:clamp(48px,11vw,110px);line-height:1;color:var(--foam)}
+.nums b sup{font-size:.4em;color:var(--red);vertical-align:top;margin-left:2px}
+.nums div>span{display:block;color:var(--steel);font-size:14px;margin-top:6px;line-height:1.35}
+section{padding:84px 0}
+h2{font-size:clamp(46px,10.5vw,112px);margin-bottom:12px}
+h2 em{font-style:normal;color:var(--red)}
+.lede{color:var(--steel);max-width:46ch}
+/* dial */
+.chips{display:flex;gap:8px;margin:30px 0 22px;flex-wrap:wrap}
+.chip{min-height:46px;padding:0 22px;border-radius:999px;color:var(--foam);font:600 16px 'Commissioner';cursor:pointer;transition:transform .18s,background .2s}
+.chip:active{transform:scale(.97)}
+.chip[aria-selected=true]{background:var(--red);border-color:var(--red)}
+.stage{display:grid;gap:18px}
+.shots{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;scrollbar-width:none}
+.shots::-webkit-scrollbar{display:none}
+.shots figure{flex:0 0 78%;scroll-snap-align:start;border-radius:22px;overflow:hidden;background:var(--bg2);aspect-ratio:4/5}
+.shots img{width:100%;height:100%;object-fit:cover}
+.cap{border-radius:22px;padding:22px}
+.cap h3{font-size:40px;margin-bottom:8px}
+.cap p{color:#d6d2cb;font-size:16px}
+.cap small{display:block;margin-top:12px;color:var(--steel);font-size:14px}
+/* band */
+.band{position:relative;min-height:80vh;display:flex;align-items:center;overflow:hidden;isolation:isolate;padding:0}
+.band video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.band::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(14,16,18,.88),rgba(14,16,18,.35))}
+.band .in{padding:70px 0}
+.band h2{max-width:8ch}
+.svc{list-style:none;margin-top:26px;border-top:1px solid var(--line);max-width:520px}
+.svc li{display:flex;justify-content:space-between;gap:12px;padding:15px 0;border-bottom:1px solid var(--line);font-size:19px;font-weight:600}
+.svc li span{color:var(--steel);font-weight:400;font-size:15px;text-align:right}
+/* reviews */
+.lead-q{font-family:'Squada One';font-size:clamp(30px,7vw,64px);line-height:1.02;text-transform:uppercase;max-width:20ch;margin:26px 0 12px;word-spacing:.1em}
+.lead-q::before{content:"\201C";color:var(--red)}
+.lead-q::after{content:"\201D";color:var(--red)}
+.who{color:var(--steel);font-size:15px}
+.rgrid{display:grid;gap:14px;margin-top:40px}
+.rc{border-radius:24px;padding:22px}
+.rc .st{color:var(--red);letter-spacing:3px;font-size:14px}
+.rc p{margin:8px 0 10px;font-size:16px}
+.rc small{color:var(--steel);font-size:14px}
+.orbs{position:relative;isolation:isolate;overflow:hidden}
+.orbs::before,.orbs::after{content:"";position:absolute;z-index:-1;border-radius:50%;filter:blur(70px);animation:drift 26s ease-in-out infinite alternate}
+.orbs::before{width:320px;height:320px;background:rgba(227,38,45,.22);top:20%;left:-80px}
+.orbs::after{width:380px;height:380px;background:rgba(154,160,166,.18);bottom:0;right:-100px;animation-duration:32s}
+@keyframes drift{to{transform:translate(60px,-40px)}}
+/* quote */
+.quote{background:var(--foam);color:#14171a}
+.quote h2{color:#14171a}
+.qp{border-radius:28px;padding:26px 22px;margin-top:28px;background:rgba(255,255,255,.62);border:1px solid rgba(255,255,255,.7);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);box-shadow:inset 0 1px 0 #fff,0 20px 60px -20px rgba(14,16,18,.3)}
+.sent{font-size:clamp(20px,4.4vw,32px);line-height:2.1;font-weight:500}
+.sent input,.sent select{font:inherit;color:#14171a;background:rgba(255,255,255,.7);border:1px solid rgba(14,16,18,.18);border-radius:14px;padding:2px 12px;min-height:46px;width:min(100%,15ch);vertical-align:middle;max-width:100%}
+.sent select{width:auto}
+.sent input:focus,.sent select:focus{outline:2px solid var(--red);border-color:var(--red)}
+.qp .btn{margin-top:20px;width:100%}
+.hint{font-size:14px;color:#4b5057;margin-top:12px}
+.orbq{position:relative;overflow:hidden}
+.orbq::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:rgba(227,38,45,.16);filter:blur(80px);right:-120px;top:-60px;z-index:0}
+.orbq .wrap{position:relative;z-index:1}
+/* area */
+.info{display:grid;gap:30px;margin-top:30px}
+.info h3{font-size:30px;margin-bottom:6px}
+.info p{color:#d6d2cb}
+.bigtel{font-family:'Squada One';font-size:clamp(46px,11vw,120px);line-height:1;display:block;margin-top:34px;letter-spacing:.01em}
+.bigtel:hover{color:var(--red)}
+footer{padding:30px 0 40px;color:var(--steel);font-size:14px;border-top:1px solid var(--line)}
+/* dock */
+.dock{position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:60;display:flex;gap:8px;padding:8px;border-radius:999px;max-width:440px;margin-inline:auto}
+.dock .btn{flex:1;min-height:48px}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.on{opacity:1;transform:none}
+@media(min-width:820px){
+ body{padding-bottom:0}
+ nav{left:50%;right:auto;transform:translateX(-50%);width:min(1000px,100% - 40px)}
+ nav .links{display:flex}
+ .dock{display:none}
+ section{padding:130px 0}
+ .hero .in{padding-bottom:64px}
+ .hero::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(14,16,18,.7),rgba(14,16,18,0) 65%)}
+ .hero .row{display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
+ .card{margin:0;flex:0 0 380px}
+ .stage{grid-template-columns:1.5fr 1fr;align-items:end}
+ .shots{overflow:visible}
+ .shots figure{flex:1;aspect-ratio:3/4}
+ .shots figure:nth-child(n+4){display:none}
+ .rgrid{grid-template-columns:repeat(3,1fr)}
+ .info{grid-template-columns:repeat(3,1fr)}
+ .band .in{padding:110px 0}
+ .nums div{padding:50px 10px}.nums div+div{padding-left:34px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav class="glass">
+ <b class="d">D.B <i>Auto</i> Care</b>
+ <div class="links"><a href="#detail">The detail</a><a href="#reviews">Reviews</a><a href="#quote">Get a quote</a><a href="#area">Hours</a></div>
+ <a class="btn red" href="tel:+19052301405"><span class="hide">Call (905) 230-1405</span><span class="show">Call</span></a>
+</nav>
+
+<header class="hero">
+ <img class="poster" src="video/hero-b-poster.jpg" alt="" aria-hidden="true">
+ <video autoplay muted loop playsinline preload="auto" poster="video/hero-b-poster.jpg"><source src="video/hero-b.mp4" type="video/mp4"></video>
+ <div class="wrap in">
+  <div class="row">
+   <div>
+    <h1 class="d">Showroom <em>shine.</em></h1>
+    <p class="sub">D.B Auto Care. Car detailing in Brampton, Ontario. Exterior, interior and full details.</p>
+    <div class="cta"><a class="btn red" href="#quote">Get a quote</a><a class="btn ghost" href="tel:+19052301405">Call (905) 230-1405</a></div>
+   </div>
+   <div class="card glass">
+    <div class="st" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    <q>Amazing service! My car looks brand new inside and out.</q>
+    <small>Kabir, Google &middot; 5.0 from 20 reviews</small>
+   </div>
+  </div>
+ </div>
+</header>
+
+<div class="wrap">
+ <div class="nums">
+  <div><b class="d"><span data-n="5" data-d="1">5.0</span></b><span>Google rating</span></div>
+  <div><b class="d"><span data-n="20">20</span></b><span>Google reviews</span></div>
+  <div><b class="d">24<sup>hrs</sup></b><span>Open 24 hours, 7 days, per Google</span></div>
+ </div>
+</div>
+
+<section id="detail">
+ <div class="wrap">
+  <h2 class="d rv">Pick the <em>detail.</em></h2>
+  <p class="lede rv">Real jobs from D.B Auto Care. Tap a service to see their work.</p>
+  <div class="chips" role="tablist">
+   <button class="chip glass" role="tab" aria-selected="true" data-k="ext">Exterior</button>
+   <button class="chip glass" role="tab" aria-selected="false" data-k="int">Interior</button>
+   <button class="chip glass" role="tab" aria-selected="false" data-k="full">Full detail</button>
+  </div>
+  <div class="stage">
+   <div class="shots" id="shots"></div>
+   <div class="cap glass" id="cap"></div>
+  </div>
+ </div>
+</section>
+
+<section class="band">
+ <video autoplay muted loop playsinline preload="metadata" poster="video/band-poster.jpg"><source src="video/band.mp4" type="video/mp4"></video>
+ <div class="wrap in">
+  <h2 class="d">Washed by <em>hand.</em></h2>
+  <ul class="svc">
+   <li>Exterior detail <span>wash and shine</span></li>
+   <li>Interior detail <span>seats, dash, floors</span></li>
+   <li>Full detail <span>inside and out</span></li>
+   <li>Truck wash and deep clean <span>from a review</span></li>
+  </ul>
+ </div>
+</section>
+
+<section id="reviews" class="orbs">
+ <div class="wrap">
+  <div class="who rv">5.0 on Google from 20 reviews</div>
+  <p class="lead-q rv">He did an amazing job with my car. I had a lot of dust and debris but now the car looks and feels like how I bought it brand new.</p>
+  <div class="who rv">Ayantha V., Google</div>
+  <div class="rgrid">
+   <div class="rc glass rv"><div class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Amazing work! He washed and deep cleaned my truck and I was genuinely impressed with the results."</p><small>Jas S., Google</small></div>
+   <div class="rc glass rv"><div class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Absolutely amazing service and cleaning !! My car felt brand new.. they pay attention to every small detail."</p><small>Ashmeen B., Google</small></div>
+   <div class="rc glass rv"><div class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"They did an amazing job&mdash;the car looked spotless, inside and out. The attention to detail was impressive, and everything was done professionally."</p><small>Kiyan P., Google</small></div>
+  </div>
+ </div>
+</section>
+
+<section class="quote orbq" id="quote">
+ <div class="wrap">
+  <h2 class="d rv">Get a <em>quote.</em></h2>
+  <form class="qp" id="qf">
+   <p class="sent">Hi D.B, I'm <input id="qn" placeholder="your name" aria-label="Your name" autocomplete="given-name">. I drive a <input id="qc" placeholder="car" aria-label="Your car">. I need a <select id="qs" aria-label="Service"><option>full detail</option><option>exterior detail</option><option>interior detail</option></select>.</p>
+   <button class="btn red" type="submit">Text my quote request</button>
+   <p class="hint">Opens a text message to (905) 230-1405. Nothing is sent until you press send.</p>
+  </form>
+ </div>
+</section>
+
+<section id="area">
+ <div class="wrap">
+  <h2 class="d rv">Find <em>us.</em></h2>
+  <div class="info">
+   <div><h3 class="d">Where</h3><p>18 Junetown Cir<br>Brampton, ON L6X 0W6</p></div>
+   <div><h3 class="d">Hours</h3><p>Open 24 hours, every day of the week (as listed on Google).</p></div>
+   <div><h3 class="d">Follow the work</h3><p>Instagram: @db.autocare_</p></div>
+  </div>
+  <a class="bigtel" href="tel:+19052301405">(905) 230-1405</a>
+ </div>
+</section>
+
+<footer><div class="wrap">Preview built by JPF. Not live yet.</div></footer>
+
+<div class="dock glass">
+ <a class="btn red" href="tel:+19052301405">Call</a>
+ <a class="btn ghost" href="sms:+19052301405">Text</a>
+</div>
+
+<script>
+const D={
+ ext:{t:"Exterior detail",p:"Exterior detail on this IS350. Restored the exterior on this beautiful civic!",s:"Captions from their Instagram posts.",i:["img/p2.jpg","img/c-civic.jpg"]},
+ int:{t:"Interior detail",p:"Interior Detail Complete. Book now!",s:"Caption from their Instagram post.",i:["img/p1.jpg","img/p11.jpg","img/p12.jpg"]},
+ full:{t:"Full detail",p:"M340 came in for a full detail, gave it the best shine it's ever had! Beautiful X7 came in for a full detail! Restored it to its showroom shine.",s:"Captions from their Instagram posts.",i:["img/c-m340.jpg","img/c-x7.jpg"]}
+};
+const shots=document.getElementById('shots'),cap=document.getElementById('cap');
+function show(k){const d=D[k];shots.innerHTML=d.i.map(s=>'<figure><img src="'+s+'" alt="'+d.t+' by D.B Auto Care" loading="lazy"></figure>').join('');shots.scrollLeft=0;cap.innerHTML='<h3 class="d">'+d.t+'</h3><p>'+d.p+'</p><small>'+d.s+'</small>';document.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-selected',c.dataset.k===k))}
+document.querySelectorAll('.chip').forEach(c=>c.onclick=()=>show(c.dataset.k));show('ext');
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+setTimeout(()=>document.querySelectorAll('.rv').forEach(e=>e.classList.add('on')),0&&0);
+document.getElementById('qf').addEventListener('submit',e=>{e.preventDefault();
+ const n=qn.value.trim()||'a customer',c=qc.value.trim()||'car';
+ const body="Hi D.B, I'm "+n+". I drive a "+c+". I need a "+qs.value+". Can I get a quote?";
+ location.href='sms:+19052301405?&body='+encodeURIComponent(body)});
+</script>
+</body>
+</html>
