@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Polish Perfection | Boat SeaDek and car detailing, Lakefield ON</title>
+<meta name="description" content="Custom SeaDek boat flooring, ceramic coating and car detailing in Lakefield, Ontario.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anta&family=Mulish:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+/* Plan: dark premium marine. Palette: ink #0b0e0c, graphite #151a17 (base from dark SeaDek), island green #7ddc2b (Larson job photos),
+   storm gray #b4bbc0 (Ranger photos), ruby #c9303f (Triton photos), bone #eef0ea. Fonts Anta + Mulish.
+   Signature: pick-the-colour chooser of their 3 real installs. Motion: one load entrance, hex grid drift, gentle reveals. */
+:root{--ink:#0b0e0c;--gr:#151a17;--g:#7ddc2b;--gray:#b4bbc0;--ruby:#c9303f;--bone:#eef0ea;--acc:#7ddc2b}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--bone);font:400 17px/1.6 Mulish,system-ui,sans-serif;overflow-x:hidden;padding-bottom:96px}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--g);outline-offset:3px}
+.d{font-family:Anta,sans-serif;font-weight:400;letter-spacing:-.01em;line-height:.98;word-spacing:.08em}
+.wrap{max-width:1240px;margin:0 auto;padding:0 22px}
+.glass{background:rgba(21,26,23,.55);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 20px 60px -20px rgba(0,0,0,.6)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;border-radius:999px;font:800 16px Mulish,sans-serif;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .18s,background .18s}
+.btn:active{transform:scale(.98)}
+.btn.p{background:var(--g);color:#0b1405}
+.btn.p:hover{background:#97ee4a}
+.btn.s{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.28);color:var(--bone);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
+/* nav */
+nav{position:fixed;z-index:50;top:12px;left:14px;right:14px;max-width:760px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 8px 8px 20px;border-radius:999px}
+nav b{font:400 19px Anta;letter-spacing:.02em;white-space:nowrap}
+nav .links{display:none;gap:22px;font-weight:600;font-size:15px}
+nav .links a{text-decoration:none;opacity:.85}
+nav .btn{min-height:44px;padding:0 20px}
+@media(min-width:760px){nav .links{display:flex}}
+/* hero */
+.hero{position:relative;min-height:100svh;display:grid;align-items:end;overflow:hidden}
+.hero .ph{position:absolute;inset:0}
+.hero .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;animation:zoom 1.6s cubic-bezier(.2,.7,.2,1) both}
+.hero .ph:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,14,12,.55) 0,rgba(11,14,12,0) 22%,rgba(11,14,12,.7) 38%,rgba(11,14,12,.96) 70%,var(--ink) 100%)}
+@keyframes zoom{from{transform:scale(1.18);opacity:.4}to{transform:none;opacity:1}}
+.hero .in{position:relative;padding:120px 22px 34px;max-width:1240px;margin:0 auto;width:100%}
+.hero h1{font-size:clamp(54px,15.5vw,150px);animation:rise .9s .35s cubic-bezier(.2,.7,.2,1) both}
+.hero h1 em{font-style:normal;color:var(--g)}
+.sub{margin:18px 0 24px;max-width:34ch;font-size:18px;color:#d6dbd2;animation:rise .9s .5s both}
+.cta{display:flex;gap:10px;flex-wrap:wrap;animation:rise .9s .6s both}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.hcard{margin-top:26px;border-radius:24px;padding:16px 18px;max-width:420px;animation:rise 1s .8s both}
+.hcard .r{display:flex;align-items:baseline;gap:10px}
+.hcard .r strong{font:400 40px Anta;color:var(--g);line-height:1}
+.hcard .r span{font-weight:800;font-size:15px}
+.hcard p{font-size:15px;margin-top:8px;color:#e6eae2;line-height:1.5}
+.hcard small{display:block;margin-top:6px;font-size:14px;color:#b9c0b4}
+@media(min-width:900px){
+ .hero .ph{left:auto;width:52%}
+ .hero .ph:after{background:linear-gradient(90deg,var(--ink) 0,rgba(11,14,12,0) 35%),linear-gradient(180deg,rgba(11,14,12,.4),rgba(11,14,12,0) 25%)}
+ .hero .in{padding:130px 40px 60px}
+ .hero h1{font-size:clamp(80px,8.6vw,124px);max-width:none}.hero h1 span,.hero h1 em{display:block}
+ .hero .col{max-width:760px;position:relative;z-index:2}
+ .hcard{position:absolute;right:40px;bottom:70px;margin:0;width:330px}
+}
+/* hex motif */
+.hex{position:absolute;inset:0;opacity:.07;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97'%3E%3Cpath d='M28 2l25 14v31L28 61 3 47V16z M28 61v36 M3 47L0 49 M53 47l3 2' fill='none' stroke='%237ddc2b' stroke-width='2'/%3E%3C/svg%3E");pointer-events:none;animation:drift 40s linear infinite}
+@keyframes drift{to{background-position:56px 97px}}
+section{padding:84px 0;position:relative}
+@media(min-width:900px){section{padding:140px 0}}
+.k{font-size:14px;font-weight:800;letter-spacing:.14em;color:var(--g)}
+h2{font-size:clamp(40px,9vw,92px);margin:10px 0 18px}
+.lead{max-width:52ch;color:#cdd3c8}
+/* chooser */
+#pick{background:var(--gr);overflow:hidden}
+#pick .orb{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,var(--acc),transparent 65%);opacity:.18;right:-160px;top:30%;transition:background .5s;animation:orb 26s ease-in-out infinite alternate}
+@keyframes orb{to{transform:translate(-60px,50px)}}
+.chips{display:flex;gap:10px;margin:28px 0 26px;flex-wrap:wrap}
+.chip{display:flex;align-items:center;gap:10px;min-height:48px;padding:0 20px 0 14px;border-radius:999px;font:800 15px Mulish;color:var(--bone);cursor:pointer;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);transition:transform .18s,background .2s}
+.chip:active{transform:scale(.98)}
+.chip i{width:20px;height:20px;border-radius:50%;border:2px solid rgba(255,255,255,.5)}
+.chip[aria-pressed=true]{background:rgba(255,255,255,.16);border-color:var(--acc);box-shadow:inset 0 1px 0 rgba(255,255,255,.35)}
+.stage{display:grid;gap:22px}
+.big{position:relative;border-radius:26px;overflow:hidden;aspect-ratio:3/4;background:#000}
+.big img{width:100%;height:100%;object-fit:cover;transition:opacity .35s}
+.thumbs{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory}
+.thumbs button{flex:0 0 76px;height:100px;border-radius:14px;overflow:hidden;border:2px solid transparent;padding:0;background:none;cursor:pointer;opacity:.6}
+.thumbs button[aria-current=true]{border-color:var(--acc);opacity:1}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+.info h3{font-size:clamp(34px,7vw,56px)}
+.info .boat{margin:6px 0 14px;color:var(--acc);font-weight:800}
+.info p{color:#cdd3c8;max-width:46ch}
+.info .src{margin-top:16px;font-size:14px;color:#98a094}
+@media(min-width:900px){.stage{grid-template-columns:minmax(0,420px) 1fr;gap:70px;align-items:center}.thumbs{margin-top:14px}}
+/* services */
+.svc{margin-top:44px;border-top:1px solid rgba(255,255,255,.14)}
+.svc div{display:grid;grid-template-columns:54px 1fr;gap:6px 14px;padding:26px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.svc b{font:400 26px Anta;color:var(--g)}
+.svc h3{font:400 clamp(26px,5vw,38px) Anta;line-height:1.05;word-spacing:.08em}
+.svc p{grid-column:2;color:#c4cbbf;max-width:56ch}
+@media(min-width:900px){.svc div{grid-template-columns:90px 1fr 1fr;align-items:baseline}.svc p{grid-column:3}}
+/* band */
+.band{height:70vh;min-height:380px;position:relative;overflow:hidden;padding:0}
+.band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%}
+.band:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--ink),transparent 25%,transparent 70%,var(--ink))}
+/* numbers */
+.nums{display:flex;gap:40px;flex-wrap:wrap;align-items:flex-end}
+.nums div strong{display:block;font:400 clamp(72px,18vw,150px) Anta;line-height:.9;color:var(--g)}
+.nums div span{font-weight:800;font-size:15px}
+/* reviews */
+#rev{background:var(--gr);overflow:hidden}
+#rev .orb2{position:absolute;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,#7ddc2b,transparent 65%);opacity:.14;left:-140px;bottom:-60px;animation:orb 30s ease-in-out infinite alternate}
+blockquote.big-q{font:400 clamp(28px,6.2vw,58px)/1.12 Anta;word-spacing:.08em;max-width:22em;margin:26px 0 14px}
+.who{font-weight:800;font-size:15px;color:var(--gray)}
+.rg{display:grid;gap:14px;margin-top:48px;position:relative}
+.rc{border-radius:22px;padding:22px}
+.rc p{font-size:16px}
+.rc .who{margin-top:12px;display:block}
+@media(min-width:900px){.rg{grid-template-columns:repeat(2,1fr);gap:18px}}
+/* visit */
+.visit{display:grid;gap:38px}
+.hrs{list-style:none;max-width:420px}
+.hrs li{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:16px}
+.hrs li b{font-weight:600}
+.phone{font:400 clamp(40px,10vw,84px) Anta;text-decoration:none;display:block;margin:8px 0;color:var(--g);word-spacing:.05em}
+@media(min-width:900px){.visit{grid-template-columns:1fr 1fr;gap:80px}}
+/* quote */
+#quote .panel{border-radius:28px;padding:30px 22px;position:relative}
+.fill{font:400 clamp(24px,5.2vw,40px)/1.55 Anta;word-spacing:.08em}
+.fill input,.fill select{font:400 inherit/1.2 Mulish;font-family:Mulish,sans-serif;font-size:18px;font-weight:600;color:var(--bone);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);border-radius:14px;min-height:48px;padding:0 14px;margin:2px 4px;max-width:100%;width:210px;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.fill select option{color:#000}
+.fill input::placeholder{color:#9aa294}
+.fill input:focus,.fill select:focus{outline:2px solid var(--g);border-color:var(--g)}
+.fill .btn{margin-top:22px;width:100%}
+.note{font-size:14px;color:#a8b0a3;margin-top:14px}
+@media(min-width:900px){#quote .panel{padding:56px}.fill .btn{width:auto}}
+footer{padding:40px 22px 30px;text-align:center;font-size:14px;color:#98a094}
+/* dock */
+.dock{position:fixed;z-index:60;left:14px;right:14px;bottom:max(14px,env(safe-area-inset-bottom));display:flex;gap:8px;padding:8px;border-radius:999px;max-width:460px;margin:0 auto}
+.dock .btn{flex:1;min-height:48px;padding:0 10px}
+@media(min-width:900px){.dock{display:none}body{padding-bottom:0}}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .8s,transform .8s}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav class="glass" aria-label="Main">
+  <b>Polish Perfection</b>
+  <div class="links"><a href="#pick">Colours</a><a href="#work">Services</a><a href="#rev">Reviews</a><a href="#visit">Visit</a></div>
+  <a class="btn p" href="tel:+17058687892">Call</a>
+</nav>
+
+<header class="hero">
+  <div class="ph"><img src="img/p4.jpg" alt="Custom black and Island Green SeaDek floor installed in a Larson boat" fetchpriority="high"></div>
+  <div class="in"><div class="col">
+    <h1 class="d"><span>Custom boat</span> <span>floors,</span> <em>cut to fit.</em></h1>
+    <p class="sub">SeaDek installs, ceramic coating and car detailing in Lakefield, Ontario.</p>
+    <div class="cta"><a class="btn p" href="tel:+17058687892">Call (705) 868-7892</a><a class="btn s" href="#quote">Get a quote</a></div>
+  </div>
+  <div class="hcard glass">
+    <div class="r"><strong>5.0</strong><span>262 Google reviews</span></div>
+    <p>&ldquo;Thanks to Pat and his workers for restoring my Toyota 4 Runner to showroom condition both inside and out.&rdquo;</p>
+    <small>Sam M., Google</small>
+  </div></div>
+</header>
+
+<section id="pick">
+  <div class="hex"></div><div class="orb"></div>
+  <div class="wrap" style="position:relative">
+    <div class="k">THREE RECENT SEADEK INSTALLS</div>
+    <h2 class="d">Pick the colour.</h2>
+    <p class="lead">Every kit is custom measured, precision cut and professionally installed to fit your boat. Tap a colourway to see the real job.</p>
+    <div class="chips" role="group" aria-label="Colourway">
+      <button class="chip" aria-pressed="true" data-i="0"><i style="background:#7ddc2b"></i>Island Green</button>
+      <button class="chip" aria-pressed="false" data-i="1"><i style="background:#b4bbc0"></i>Storm Gray</button>
+      <button class="chip" aria-pressed="false" data-i="2"><i style="background:#c9303f"></i>Ruby Red</button>
+    </div>
+    <div class="stage">
+      <div><div class="big"><img id="bigimg" src="img/p3.jpg" alt=""></div><div class="thumbs" id="thumbs"></div></div>
+      <div class="info"><h3 class="d" id="t">Black over Island Green</h3><div class="boat" id="b">Larson</div><p id="c"></p><div class="src" id="s"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="k">WHAT THEY DO</div>
+    <h2 class="d">Floors. Paint. Interiors.</h2>
+    <div class="svc">
+      <div class="rv"><b>01</b><h3>SeaDek boat flooring</h3><p>Custom measured, precision cut, installed to fit. Larson, Ranger and Triton jobs shown above, plus a Lowe fishing boat that swapped worn carpet for SeaDek.</p></div>
+      <div class="rv"><b>02</b><h3>Ceramic coating</h3><p>Paint correction and compound to remove imperfections, then a professional-grade ceramic coating. Done on cars and boats.</p></div>
+      <div class="rv"><b>03</b><h3>Full interior and exterior detail</h3><p>Deep cleaning and decontamination, paint enhancement and interior rejuvenation, from a Porsche 911 to a Honda Civic.</p></div>
+      <div class="rv"><b>04</b><h3>Boat restoration</h3><p>Scratches from lift rubs and sun-faded paint brought back, inside and out.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-hidden="true"><img src="img/p1.jpg" alt=""></section>
+
+<section id="num">
+  <div class="wrap">
+    <div class="nums rv">
+      <div><strong data-n="5.0" data-d="1">5.0</strong><span>Google rating</span></div>
+      <div><strong data-n="262">262</strong><span>Google reviews</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="rev">
+  <div class="hex"></div><div class="orb2"></div>
+  <div class="wrap" style="position:relative">
+    <div class="k">WHAT CUSTOMERS SAY</div>
+    <blockquote class="big-q">&ldquo;Outstanding quality work. They have done my boat multiple times and every time it looks brand new again.&rdquo;</blockquote>
+    <div class="who">Scott P., Google, 3 months ago</div>
+    <div class="rg">
+      <div class="rc glass rv"><p>&ldquo;Just picked up my 2008 Mastercraft X14. Absolutely amazing work by Pat, Issac and the team. With lots of scratches from lift rubs to sun faded paint the guys brought it back to its glory. The added touch of ceramic coating and new &hellip;&rdquo;</p><span class="who">Fred L., Google, 4 weeks ago</span></div>
+      <div class="rc glass rv"><p>&ldquo;Took my vehicle to Polish Perfection for the first time and was completely blown away by the results!! For context the interior of my car had not been cleaned in almost 2 years, covered in dust, dirt and dog hair. The seats were starting to &hellip;&rdquo;</p><span class="who">Jenny D., Google, 3 months ago</span></div>
+      <div class="rc glass rv"><p>&ldquo;I just picked up my Honda Civic which was well overdue to be detailed. I had been resigned that some stains were too severe or too old and that the upholstery's appearance could not be saved. I just wanted it cleaned as best as possible. I &hellip;&rdquo;</p><span class="who">Denise H., Google, 2 weeks ago</span></div>
+      <div class="rc glass rv"><p>&ldquo;Thanks to Pat and his workers for restoring my Toyota 4 Runner to showroom condition both inside and out. It was not an easy task. Many thanks.&rdquo;</p><span class="who">Sam M., Google, 2 months ago</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="visit">
+  <div class="wrap visit">
+    <div>
+      <div class="k">FIND THEM</div>
+      <h2 class="d">Lakefield, Ontario.</h2>
+      <p class="lead">1824 8th Line Smith, Lakefield, ON K0L 2H0</p>
+      <a class="phone" href="tel:+17058687892">(705) 868-7892</a>
+    </div>
+    <ul class="hrs" aria-label="Hours">
+      <li><b>Monday to Friday</b><span>9 a.m. to 6 p.m.</span></li>
+      <li><b>Saturday</b><span>9 a.m. to 6 p.m.</span></li>
+      <li><b>Sunday</b><span>Closed</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="quote" style="padding-top:20px">
+  <div class="wrap">
+    <div class="panel glass">
+      <div class="k" style="margin-bottom:14px">FREE QUOTE BY TEXT</div>
+      <form class="fill" id="qf">
+        Hi, I'm <input id="qn" placeholder="your name" aria-label="Your name" required autocomplete="name">. I need a quote for
+        <select id="qs" aria-label="Service"><option>SeaDek flooring</option><option>ceramic coating</option><option>a full detail</option><option>boat restoration</option></select>
+        on my <input id="qv" placeholder="boat or vehicle" aria-label="Boat or vehicle" required>.
+        <button class="btn p" type="submit">Text Polish Perfection</button>
+      </form>
+      <p class="note">Opens a text message to (705) 868-7892. Nothing is sent until you press send.</p>
+    </div>
+  </div>
+</section>
+
+<footer>Preview built by JPF. Not live yet.</footer>
+
+<div class="dock glass"><a class="btn s" href="tel:+17058687892">Call</a><a class="btn p" href="#quote">Text a quote</a></div>
+
+<script>
+const sets=[
+ {t:"Black over Island Green",b:"Larson",c:"No compromises on the details. Custom routed, precision fitted, and built to make a statement. Clean lines. Bold contrast.",s:"From their post, Nov 2026",img:["p3","p1","p2","p4"],acc:"#7ddc2b"},
+ {t:"Dark gray over storm gray",b:"Ranger",c:"A beautiful contrast and match to the remainder of the interior. Every kit is custom measured, precision cut, and professionally installed to fit your boat perfectly.",s:"From their post, Jul 2026",img:["p5","p6","p7","p8","p9"],acc:"#b4bbc0"},
+ {t:"Dark gray over Ruby Red",b:"Triton",c:"A complete upgrade, giving it a clean, factory inspired look while adding comfort, traction, and durability on the water.",s:"From their post, Jul 2026",img:["p10","p11","p12"],acc:"#c9303f"}
+];
+const big=document.getElementById('bigimg'),th=document.getElementById('thumbs');
+function show(i){const s=sets[i];document.documentElement.style.setProperty('--acc',s.acc);
+ document.getElementById('t').textContent=s.t;document.getElementById('b').textContent=s.b;
+ document.getElementById('c').textContent=s.c;document.getElementById('s').textContent=s.s;
+ document.querySelectorAll('.chip').forEach((c,j)=>c.setAttribute('aria-pressed',j==i));
+ th.innerHTML='';s.img.forEach((n,k)=>{const b=document.createElement('button');b.setAttribute('aria-label','Photo '+(k+1));b.innerHTML='<img src="img/'+n+'.jpg" alt="" loading="lazy">';b.onclick=()=>pic(n,b);th.appendChild(b)});
+ pic(s.img[0],th.firstChild);}
+function pic(n,btn){big.style.opacity=.2;setTimeout(()=>{big.src='img/'+n+'.jpg';big.alt='SeaDek install photo';big.style.opacity=1},150);
+ th.querySelectorAll('button').forEach(b=>b.removeAttribute('aria-current'));btn.setAttribute('aria-current','true')}
+document.querySelectorAll('.chip').forEach(c=>c.onclick=()=>show(+c.dataset.i));
+show(0);
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+document.getElementById('qf').addEventListener('submit',e=>{e.preventDefault();
+ const m="Hi Polish Perfection, I'm "+qn.value+". I need a quote for "+qs.value+" on my "+qv.value+".";
+ location.href='sms:+17058687892?&body='+encodeURIComponent(m)});
+</script>
+</body>
+</html>
