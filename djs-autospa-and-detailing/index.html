@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Djs AutoSpa &amp; Detailing | Car detailing in Leamington, ON</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* PLAN: bold-type-led dark premium. Palette: ink #060b16 (leather interiors), panel #0d1626, logo blue #2f7be0 (their logo), ice #dbe8fb, cream #f2efe6 (shirt).
+Fonts Zen Dots + Work Sans. Signature: ask-vs-got review toggle. Order: hero, numbers/hours, review toggle, services, photo set, merch, reviews, quote, footer. Motion: hero scale-in, gentle reveals, count-up. */
+:root{--ink:#060b16;--panel:#0d1626;--blue:#2f7be0;--ice:#dbe8fb;--cream:#f2efe6;--mute:#9fb0c8}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background:var(--ink);color:var(--ice);font:400 17px/1.6 'Work Sans',sans-serif;overflow-x:hidden;padding-bottom:96px}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.d{font-family:'Zen Dots',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.01em;word-spacing:.12em}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+section{padding:84px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:999px;background:var(--blue);color:#fff;font:600 16px 'Work Sans';text-decoration:none;border:0;cursor:pointer;transition:transform .18s,background .18s}
+.btn:hover{background:#4a8ff0}.btn:active{transform:scale(.97)}
+.btn.ghost{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.28)}
+/* glass */
+.glass{background:rgba(13,22,38,.5);backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 24px 60px -24px rgba(0,0,0,.6)}
+nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;max-width:860px;margin:0 auto;border-radius:999px;display:flex;align-items:center;justify-content:space-between;padding:6px 6px 6px 20px;min-height:56px}
+nav b{font-size:14px;color:#fff}
+nav .links{display:none;gap:26px;font-size:15px}
+nav .links a{text-decoration:none;color:var(--ice)}
+nav .btn{min-height:44px;padding:0 20px;font-size:15px}
+@media(min-width:760px){nav .links{display:flex}}
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;padding:0}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:58% 50%;animation:zoom 1.6s cubic-bezier(.2,.7,.2,1) both}
+@keyframes zoom{from{transform:scale(1.18)}to{transform:scale(1)}}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,11,22,.55),transparent 55%),linear-gradient(180deg,rgba(6,11,22,.55) 0%,rgba(6,11,22,0) 28%,rgba(6,11,22,.1) 45%,rgba(6,11,22,.92) 82%,var(--ink) 100%)}
+.hero .in{position:relative;z-index:2;width:100%;padding-bottom:104px}
+.hero h1{font-size:clamp(34px,10.2vw,84px);line-height:1.04;text-shadow:0 4px 30px rgba(0,0,0,.55);color:#fff;animation:up .9s .35s both}
+.hero h1 span{color:var(--blue);display:block}
+.hero .sub{margin:20px 0 26px;font-size:19px;max-width:30ch;color:var(--ice);animation:up .9s .55s both}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;animation:up .9s .7s both}
+@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.hcard{position:absolute;z-index:3;top:88px;right:16px;border-radius:24px;padding:16px 20px;animation:up 1s .9s both;max-width:240px}
+.hcard .n{font-size:34px;color:#fff;line-height:1}
+.hcard p{font-size:14px;line-height:1.4;color:var(--ice);margin-top:6px}
+.hcard .st{color:#ffd166;letter-spacing:2px;font-size:14px}
+@media(min-width:900px){.hcard{top:auto;bottom:70px;right:40px;padding:22px 26px;max-width:290px}.hcard .n{font-size:48px}.hero .in{padding-bottom:70px}}
+/* facts */
+.facts{display:grid;gap:34px;grid-template-columns:1fr}
+.facts .n{font-size:clamp(44px,12vw,84px);color:#fff;line-height:1}
+.facts .n i{font-style:normal;color:var(--blue)}
+.facts p{color:var(--mute);margin-top:8px;font-size:15px}
+@media(min-width:800px){.facts{grid-template-columns:repeat(3,1fr);gap:48px}}
+.rule{height:1px;background:linear-gradient(90deg,var(--blue),transparent);margin-bottom:60px;opacity:.7}
+/* signature */
+.sig{background:radial-gradient(60% 70% at 85% 20%,rgba(47,123,224,.22),transparent 70%),var(--panel);position:relative;overflow:hidden}
+.sig:before{content:"";position:absolute;right:-120px;bottom:-120px;width:380px;height:380px;border-radius:50%;border:2px solid rgba(47,123,224,.35);box-shadow:0 0 0 24px rgba(47,123,224,.08),0 0 0 60px rgba(47,123,224,.05)}
+.sig h2,.sec h2{font-size:clamp(28px,7.4vw,64px);line-height:1.08;color:#fff;margin-bottom:34px}
+.tog{display:inline-flex;border-radius:999px;padding:5px;margin-bottom:30px;position:relative;z-index:2}
+.tog button{border:0;background:none;color:var(--ice);font:600 15px 'Work Sans';min-height:46px;padding:0 22px;border-radius:999px;cursor:pointer;transition:background .2s,color .2s}
+.tog button[aria-pressed=true]{background:var(--blue);color:#fff}
+.sigbox{display:grid;gap:30px;position:relative;z-index:2;align-items:center}
+.sigbox .big{font-size:clamp(26px,6vw,52px);line-height:1.12;color:#fff;min-height:3.4em}
+.sigbox .who{color:var(--mute);margin-top:18px;font-size:15px}
+.sigbox .quote{font-size:19px;line-height:1.55;max-width:46ch;border-left:3px solid var(--blue);padding-left:18px}
+.sigbox img{border-radius:26px;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 55%}
+@media(min-width:900px){.sigbox{grid-template-columns:1.2fr .8fr;gap:60px}}
+/* services */
+.sec .lead{color:var(--mute);max-width:52ch;margin-bottom:40px}
+.svc{display:grid;gap:0}
+.svc div{display:grid;grid-template-columns:48px 1fr;gap:6px 14px;padding:26px 0;border-top:1px solid rgba(255,255,255,.13)}
+.svc div:last-child{border-bottom:1px solid rgba(255,255,255,.13)}
+.svc span{font-size:14px;color:var(--blue);padding-top:6px}
+.svc h3{font-size:clamp(20px,5vw,32px);color:#fff;font-weight:400;line-height:1.2}
+.svc p{grid-column:2;color:var(--mute);font-size:16px;max-width:54ch}
+@media(min-width:900px){.svc div{grid-template-columns:70px 1fr 1fr;align-items:baseline}.svc p{grid-column:3}}
+/* photos */
+.set{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+.set figure{overflow:hidden;border-radius:22px;position:relative;background:var(--panel)}
+.set img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.set figure:hover img{transform:scale(1.04)}
+.set .wide{grid-column:1/-1;aspect-ratio:16/10}
+.set .a,.set .b{aspect-ratio:3/4}
+@media(min-width:900px){.set{grid-template-columns:1.6fr 1fr 1fr;grid-template-rows:auto}.set .wide{grid-column:1;grid-row:1/3;aspect-ratio:auto;min-height:560px}.set .a,.set .b{aspect-ratio:auto}}
+.set figcaption{position:absolute;left:12px;bottom:12px;padding:6px 14px;border-radius:999px;font-size:13px;color:#fff}
+/* merch */
+.merch{display:grid;gap:28px;align-items:center;background:var(--cream);color:#122;border-radius:30px;padding:30px;overflow:hidden}
+.merch img{border-radius:20px;width:100%;max-width:380px;aspect-ratio:1;object-fit:cover}
+.merch h2{font-size:clamp(24px,6vw,44px);line-height:1.1;margin-bottom:14px;color:#0a1a33}
+.merch p{max-width:40ch;color:#2b3b52}
+.merch small{display:block;margin-top:12px;color:#5a6b82;font-size:14px}
+@media(min-width:800px){.merch{grid-template-columns:1fr 1fr;padding:46px 56px}.merch img{justify-self:end}}
+/* reviews */
+.rv{display:grid;gap:18px;position:relative}
+.rv:before{content:"";position:absolute;left:-60px;top:20%;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(47,123,224,.28),transparent 70%);animation:drift 26s ease-in-out infinite alternate;pointer-events:none}
+@keyframes drift{to{transform:translate(140px,60px)}}
+.rv figure{border-radius:24px;padding:26px;position:relative}
+.rv blockquote{font-size:18px;line-height:1.55;color:#fff}
+.rv figcaption{margin-top:14px;color:var(--mute);font-size:14px}
+.rv .st{color:#ffd166;letter-spacing:2px;font-size:14px}
+@media(min-width:900px){.rv{grid-template-columns:1fr 1fr 1fr}.rv .first{grid-column:1/-1}.rv .first blockquote{font-size:28px;max-width:44ch}}
+/* quote */
+.q{background:radial-gradient(55% 80% at 15% 100%,rgba(47,123,224,.3),transparent 70%),var(--ink)}
+.qp{border-radius:30px;padding:30px 24px;position:relative;z-index:2}
+.qp h2{font-size:clamp(26px,6.4vw,52px);line-height:1.1;color:#fff;margin-bottom:24px}
+.qp .sent{font-size:clamp(19px,4.6vw,26px);line-height:2.3;color:var(--ice)}
+.qp input,.qp select{font:500 17px 'Work Sans';color:#fff;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.26);border-radius:14px;min-height:48px;padding:0 14px;margin:0 4px;max-width:100%;color-scheme:dark}
+.qp input::placeholder{color:#8da0bc}
+.qp select option{color:#fff;background:#0d1626}
+.qp input:focus,.qp select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(47,123,224,.45)}
+.qp .btn{margin-top:22px;width:100%}
+.qp small{display:block;margin-top:14px;color:var(--mute);font-size:14px}
+@media(min-width:700px){.qp{padding:50px}.qp .btn{width:auto}}
+.visit{display:grid;gap:30px;margin-top:70px}
+.visit h3{font-size:15px;color:var(--blue);margin-bottom:8px;font-weight:400}
+.visit p{font-size:18px;color:#fff}
+.visit a{color:#fff}
+@media(min-width:800px){.visit{grid-template-columns:repeat(3,1fr)}}
+footer{padding:36px 22px 20px;text-align:center;color:var(--mute);font-size:14px;border-top:1px solid rgba(255,255,255,.1)}
+/* dock */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));margin:0 auto;max-width:420px;border-radius:999px;display:flex;gap:6px;padding:6px}
+.dock a{flex:1;min-height:52px;border-radius:999px;display:flex;align-items:center;justify-content:center;text-decoration:none;font:600 16px 'Work Sans';color:#fff;transition:transform .18s}
+.dock a:active{transform:scale(.97)}
+.dock .call{background:var(--blue)}
+@media(min-width:900px){.dock{display:none}body{padding-bottom:0}}
+.rv-in{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s}
+.rv-in.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv-in{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<nav class="glass" aria-label="Main">
+  <b class="d">Djs AutoSpa</b>
+  <div class="links"><a href="#ask">Reviews</a><a href="#services">Services</a><a href="#work">Work</a><a href="#quote">Quote</a></div>
+  <a class="btn" href="tel:+15199800819">Call</a>
+</nav>
+
+<header class="hero">
+  <img class="bg" src="img/p12.jpg" alt="Red Lamborghini Aventador with doors up in the driveway" width="1400" height="788">
+  <div class="hcard glass">
+    <div class="st" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    <div class="n d">4.8</div>
+    <p>34 Google reviews<br>Mon to Fri, 9 a.m. to 5 p.m.</p>
+  </div>
+  <div class="wrap in">
+    <h1 class="d">Djs AutoSpa<span>&amp; Detailing</span></h1>
+    <p class="sub">Car detailing in Leamington, Ontario. Inside and out.</p>
+    <div class="cta"><a class="btn" href="tel:+15199800819">Call (519) 980-0819</a><a class="btn ghost" href="#quote">Get a quote</a></div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="rule"></div>
+    <div class="facts">
+      <div class="rv-in"><div class="n d"><span data-count="4.8" data-dec="1">4.8</span></div><p>Google rating</p></div>
+      <div class="rv-in"><div class="n d"><span data-count="34">34</span><i>+</i></div><p>Google reviews, from people in the area</p></div>
+      <div class="rv-in"><div class="n d">Mon<i>&ndash;</i>Fri</div><p>Open 9 a.m. to 5 p.m. Closed Saturday and Sunday.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sig" id="ask">
+  <div class="wrap">
+    <h2 class="d">Asked for one seat.</h2>
+    <div class="tog glass" role="group" aria-label="Switch view">
+      <button type="button" aria-pressed="true" data-v="ask">What she asked</button>
+      <button type="button" aria-pressed="false" data-v="got">What she got</button>
+    </div>
+    <div class="sigbox">
+      <div>
+        <p class="big d" id="big">Just the front passenger seat.</p>
+        <p class="quote" id="quote-t">&ldquo;I only asked for the front passenger seat to be cleaned&rdquo;</p>
+        <p class="who">Christina W., Google review</p>
+      </div>
+      <img id="sigimg" src="img/p8.jpg" alt="Clean black leather interior of a blue Jeep" width="1050" height="1400" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="services">
+  <div class="wrap">
+    <h2 class="d rv-in">What they do</h2>
+    <p class="lead rv-in">Listed on Google as a car detailing service. Here is what their customers and their own posts show.</p>
+    <div class="svc">
+      <div class="rv-in"><span class="d">01</span><h3 class="d">Interior detail</h3><p>Seats, floors, trunk and rear cabin cleaned. One customer says the car "smells so fresh" and was "a mess due to our dog drooling and dropping hair all over."</p></div>
+      <div class="rv-in"><span class="d">02</span><h3 class="d">Inside and out</h3><p>Another customer: "he cleaned the entire vehicle inside and out." Cars, SUVs and trucks, from a Jeep to a Ram.</p></div>
+      <div class="rv-in"><span class="d">03</span><h3 class="d">Bronze and wax</h3><p>From their Instagram: "Came in for a Bronze and a wax.." Call to ask what goes in each package.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="work" style="padding-top:20px">
+  <div class="wrap">
+    <h2 class="d rv-in">Their work</h2>
+    <div class="set">
+      <figure class="wide rv-in"><img src="img/p12.jpg" alt="Red Lamborghini in the driveway" loading="lazy" style="object-position:60% 50%"><figcaption class="glass">Lamborghini Aventador</figcaption></figure>
+      <figure class="a rv-in"><img src="img/p11.jpg" alt="Rear seat of a pickup truck" loading="lazy"></figure>
+      <figure class="b rv-in"><img src="img/p9c.jpg" alt="Clean SUV cargo area" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:10px">
+  <div class="wrap">
+    <div class="merch rv-in">
+      <div>
+        <h2 class="d">Wear the logo</h2>
+        <p>Their Instagram, Nov 22: "New merch has arrived.." Ask about a shirt when you call.</p>
+        <small>Leamington, ON &middot; 519-980-0819</small>
+      </div>
+      <img src="img/p4.jpg" alt="Djs Auto Spa and Detailing logo printed on a shirt" loading="lazy" style="object-position:50% 20%">
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <h2 class="d rv-in">What people say</h2>
+    <div class="rv">
+      <figure class="glass first rv-in"><div class="st" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>&ldquo;Best vehicle detailing service. I only asked for the front passenger seat to be cleaned and he cleaned the entire vehicle inside and out! What an amazing surprise and for an excellent price too. Can't be beat!&rdquo;</blockquote><figcaption>Christina W., Google</figcaption></figure>
+      <figure class="glass rv-in"><div class="st" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>&ldquo;I just picked up my car 2018 Escape tonight and wow is it clean! It looks brand new. Fantastic work, thank you.&rdquo;</blockquote><figcaption>Janet M., Google</figcaption></figure>
+      <figure class="glass rv-in"><div class="st" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>&ldquo;Had my 2021 Ram Warlock detailed by Jeff. Was in pretty rough shape and was very happy with the job he did. The truck looked better than it did when first purchased!!&rdquo;</blockquote><figcaption>Rich G., Google</figcaption></figure>
+      <figure class="glass rv-in"><div class="st" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9734;</div><blockquote>&ldquo;DJ's did an awesome job on my car! It looks brand new again and smells so fresh.&rdquo;</blockquote><figcaption>Cheryl H., Google</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="q" id="quote">
+  <div class="wrap">
+    <form class="qp glass" id="qf">
+      <h2 class="d">Get a quote</h2>
+      <p class="sent">Hi, I'm <input id="fn" required placeholder="your name" autocomplete="given-name" aria-label="Your name" size="12"> and I need
+        <select id="fs" aria-label="What you need"><option>an interior clean</option><option>an inside and out detail</option><option>a wash and wax</option><option>something else</option></select>
+        for my <input id="fv" required placeholder="car or truck" aria-label="Your vehicle" size="14">.</p>
+      <button class="btn" type="submit">Text it to DJ's</button>
+      <small>Opens a text to (519) 980-0819 on your phone. Nothing is sent until you press send.</small>
+    </form>
+    <div class="visit">
+      <div class="rv-in"><h3 class="d">Call</h3><p><a href="tel:+15199800819">(519) 980-0819</a></p></div>
+      <div class="rv-in"><h3 class="d">Find them</h3><p>South side of building, 24 Seacliff Dr E #470, Leamington, ON N8H 0E5</p></div>
+      <div class="rv-in"><h3 class="d">Hours</h3><p>Mon to Fri, 9 a.m. to 5 p.m.<br>Closed Sat and Sun</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>Preview built by JPF. Not live yet.</footer>
+
+<div class="dock glass" aria-label="Call or text">
+  <a class="call" href="tel:+15199800819">Call</a>
+  <a href="sms:+15199800819">Text</a>
+</div>
+
+<script>
+(function(){
+  var big=document.getElementById('big'),qt=document.getElementById('quote-t'),im=document.getElementById('sigimg');
+  var V={ask:['Just the front passenger seat.','“I only asked for the front passenger seat to be cleaned”','img/p8.jpg'],
+         got:['The whole car, inside and out.','“he cleaned the entire vehicle inside and out! What an amazing surprise and for an excellent price too.”','img/p11.jpg']};
+  var h2=document.querySelector('.sig h2');
+  document.querySelectorAll('.tog button').forEach(function(b){b.addEventListener('click',function(){
+    document.querySelectorAll('.tog button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+    var v=V[b.dataset.v];big.textContent=v[0];qt.textContent=v[1];im.src=v[2];
+    h2.textContent=b.dataset.v==='ask'?'Asked for one seat.':'Got the whole car.';
+  })});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');
+    e.target.querySelectorAll('[data-count]').forEach(function(s){var t=parseFloat(s.dataset.count),dec=+s.dataset.dec||0,st=null;
+      if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+      (function f(ts){st=st||ts;var p=Math.min((ts-st)/1100,1);s.textContent=(t*p).toFixed(dec);if(p<1)requestAnimationFrame(f)})(performance.now?performance.now():0)});
+    io.unobserve(e.target)}})},{threshold:.15});
+  document.querySelectorAll('.rv-in').forEach(function(el){io.observe(el)});
+  document.getElementById('qf').addEventListener('submit',function(e){e.preventDefault();
+    var m="Hi DJ's, I'm "+fn.value+" and I need "+fs.value+" for my "+fv.value+".";
+    location.href='sms:+15199800819?&body='+encodeURIComponent(m)});
+})();
+</script>
+</body>
+</html>
