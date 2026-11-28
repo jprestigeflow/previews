@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Dynasty Auto Detailing | Car detailing, Edmonton and Leduc County</title>
+<meta name="description" content="Dynasty Auto Detailing. Interior and exterior detailing, paint correction and ceramic coatings. Mobile and drop-off. 5.0 on Google.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jockey+One&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ direction: dark premium showroom, one red accent, giant caps, before/after as the proof
+ palette: #0b0a0c garage black (shop corners) / #f3f0ec S5 white paint / #d23539 red leather seat + S5 tail light / #8b8f96 Nardo grey paint
+ fonts: Jockey One (display) + Prompt (body)
+ signature: "13 hours" before/after slider, Ram work truck, 3 pairs
+ order: hero, numbers, slider, services list, photo set, lead review + glass cards, hours/area, quote sentence, footer
+ motion: hero image scales in then type settles, numbers count once, reduced-motion respected
+*/
+:root{
+  --bg:#0b0a0c; --bg2:#141217; --ink:#f3f0ec; --mute:#a9a6a8; --red:#d23539; --red2:#ff5a5e; --grey:#8b8f96;
+  --line:rgba(243,240,236,.14);
+  --d:'Jockey One','Impact',sans-serif; --b:'Prompt',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--b);font-size:16px;line-height:1.6;overflow-x:hidden;padding-bottom:96px}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--red2);outline-offset:3px}
+.wrap{width:min(1240px,100% - 40px);margin:0 auto}
+.d{font-family:var(--d);font-weight:400;text-transform:uppercase;line-height:.9;letter-spacing:.005em;word-spacing:.08em}
+.lab{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-weight:500}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;border-radius:999px;font-weight:600;font-size:16px;border:1px solid transparent;cursor:pointer;transition:transform .18s,background .18s,border-color .18s;font-family:var(--b)}
+.btn:active{transform:scale(.97)}
+.btn.red{background:var(--red);color:#fff}
+.btn.red:hover{background:var(--red2)}
+.btn.glass{background:rgba(243,240,236,.08);border-color:rgba(243,240,236,.28);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}
+.btn.glass:hover{background:rgba(243,240,236,.16)}
+
+/* NAV pill */
+.nav{position:fixed;z-index:50;top:max(12px,env(safe-area-inset-top));left:14px;right:14px;max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 8px 8px 22px;border-radius:999px;background:rgba(11,10,12,.5);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(24px) saturate(170%);-webkit-backdrop-filter:blur(24px) saturate(170%);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 20px 60px -20px rgba(0,0,0,.6)}
+.nav b{font-family:var(--d);font-weight:400;font-size:22px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+.nav b i{font-style:normal;color:var(--red)}
+.nav nav{display:none;gap:28px;font-size:15px;color:var(--mute)}
+.nav nav a:hover{color:var(--ink)}
+.nav .btn{min-height:44px;padding:0 22px}
+@media(min-width:820px){.nav nav{display:flex}}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.hero .ph{position:absolute;inset:0;z-index:-2;background:url(img/p12.jpg) 50% 45%/cover no-repeat;animation:zoom 1.6s cubic-bezier(.2,.7,.2,1) both}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(11,10,12,.55) 0%,rgba(11,10,12,0) 28%,rgba(11,10,12,.7) 45%,rgba(11,10,12,.97) 85%,#0b0a0c 100%)}
+.hero .in{padding-top:110px;padding-bottom:104px}
+.hero h1{font-size:clamp(88px,26vw,200px);line-height:.84;margin-bottom:16px}
+.hero h1 span{display:block}
+.hero h1 .r{color:var(--ink);text-shadow:0 0 0 #000}
+.hero h1 .r::after{content:"";display:block;width:.9em;height:.07em;background:var(--red);margin-top:.06em}
+.hero .sub{max-width:34ch;font-size:16px;line-height:1.5;color:#e8e4e0;margin-bottom:18px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.gcard{display:flex;gap:16px;align-items:center;max-width:460px;padding:14px 18px;border-radius:24px;background:rgba(20,18,23,.55);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(24px) saturate(170%);-webkit-backdrop-filter:blur(24px) saturate(170%);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 20px 60px -20px rgba(0,0,0,.7)}
+.gcard .big{font-family:var(--d);font-size:54px;line-height:.9;color:var(--ink);flex:none}
+.gcard .big small{display:block;font-family:var(--b);font-size:12px;letter-spacing:.08em;color:var(--mute);margin-top:6px;text-transform:uppercase}
+.gcard p{font-size:14.5px;line-height:1.45;color:#ece8e4}
+.gcard p em{display:block;font-style:normal;color:var(--mute);font-size:13px;margin-top:4px}
+.stars{color:var(--red2);letter-spacing:2px;font-size:14px}
+@keyframes zoom{from{transform:scale(1.14);opacity:.4}to{transform:scale(1);opacity:1}}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.hero h1 span,.hero .sub,.hero .cta,.gcard{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.hero h1 span:nth-child(1){animation-delay:.5s}.hero h1 span:nth-child(2){animation-delay:.65s}
+.hero .sub{animation-delay:.85s}.hero .cta{animation-delay:.95s}.gcard{animation-delay:1.1s}
+@media(min-width:900px){
+  .hero{align-items:center}
+  .hero .ph{left:auto;right:0;width:50%;background-position:50% 40%;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 30%);mask-image:linear-gradient(90deg,transparent 0,#000 30%)}
+  .hero::before{background:linear-gradient(180deg,rgba(11,10,12,.5),rgba(11,10,12,0) 25%,rgba(11,10,12,0) 80%,#0b0a0c)}
+  .hero .in{padding-top:130px;padding-bottom:70px}
+  .hero h1{font-size:clamp(150px,17vw,260px)}
+  .hero .sub{font-size:19px}
+  .hero h1 .r{color:var(--red)}.hero h1 .r::after{display:none}
+}
+
+/* NUMBERS */
+.nums{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.nums .wrap{display:grid;grid-template-columns:1fr 1fr;}
+.nums .n{padding:30px 0 28px;border-bottom:1px solid var(--line)}
+.nums .n:nth-child(odd){padding-right:16px;border-right:1px solid var(--line)}
+.nums .n:nth-child(even){padding-left:20px}
+.nums .n:nth-last-child(-n+2){border-bottom:0}
+.nums .v{font-family:var(--d);font-size:clamp(56px,13vw,104px);line-height:.9}
+.nums .v sup{font-size:.45em;color:var(--red);vertical-align:top;position:relative;top:.12em}
+.nums .t{font-size:14px;color:var(--mute);margin-top:6px;line-height:1.4}
+@media(min-width:820px){
+  .nums .wrap{grid-template-columns:repeat(4,1fr)}
+  .nums .n{border-bottom:0!important;padding:46px 24px 42px!important;border-right:1px solid var(--line)!important}
+  .nums .n:first-child{padding-left:0!important}
+  .nums .n:last-child{border-right:0!important}
+}
+
+section{padding:84px 0}
+@media(min-width:820px){section{padding:140px 0}}
+h2.d{font-size:clamp(56px,15vw,132px);margin:12px 0 20px}
+h2.d .r{color:var(--red)}
+
+/* SLIDER (signature) */
+.sig{background:var(--bg)}
+.sig .grid{display:grid;gap:34px}
+@media(min-width:900px){.sig .grid{grid-template-columns:1fr 520px;gap:80px;align-items:center}}
+.sig p.lead{max-width:44ch;color:#d9d5d2;font-size:17px}
+.sig p.src{font-size:13px;color:var(--mute);margin-top:14px}
+.ba{position:relative;aspect-ratio:3/4;border-radius:28px;overflow:hidden;background:#000;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:ew-resize;box-shadow:0 40px 90px -30px rgba(210,53,57,.28),0 0 0 1px var(--line)}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba .after{clip-path:inset(0 0 0 var(--p,50%))}
+.ba .tag{position:absolute;top:16px;padding:8px 16px;border-radius:999px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;background:rgba(11,10,12,.5);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}
+.ba .tag.b{left:16px}.ba .tag.a{right:16px;background:rgba(210,53,57,.75)}
+.ba .h{position:absolute;top:0;bottom:0;left:var(--p,50%);width:2px;background:#fff;transform:translateX(-1px)}
+.ba .knob{position:absolute;top:50%;left:50%;width:56px;height:56px;margin:-28px;border-radius:50%;background:rgba(243,240,236,.18);border:1px solid rgba(255,255,255,.55);backdrop-filter:blur(14px) saturate(160%);-webkit-backdrop-filter:blur(14px) saturate(160%);box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 10px 30px rgba(0,0,0,.5);display:grid;place-items:center}
+.ba .knob::before{content:"\25C0  \25B6";color:#fff;font-size:11px;letter-spacing:4px;white-space:pre}
+.ba:focus-visible{outline:2px solid var(--red2);outline-offset:4px}
+.chips{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.chip{min-height:44px;padding:0 20px;border-radius:999px;font:500 14px var(--b);color:var(--ink);background:rgba(243,240,236,.07);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:inset 0 1px 0 rgba(255,255,255,.2);cursor:pointer;transition:transform .15s,background .15s}
+.chip:active{transform:scale(.97)}
+.chip[aria-pressed=true]{background:var(--red);border-color:var(--red)}
+
+/* SERVICES list */
+.svc{background:var(--bg2)}
+.svc .head{display:grid;gap:10px;margin-bottom:44px}
+.row{display:grid;grid-template-columns:44px 1fr;gap:6px 14px;padding:26px 0;border-top:1px solid var(--line);align-items:baseline}
+.row:last-child{border-bottom:1px solid var(--line)}
+.row .i{font-family:var(--d);font-size:20px;color:var(--red)}
+.row h3{font-family:var(--d);font-weight:400;text-transform:uppercase;font-size:clamp(34px,8.6vw,64px);line-height:.95;letter-spacing:.005em;word-spacing:.06em}
+.row p{grid-column:2;color:#cfcbc8;max-width:52ch;font-size:15.5px}
+@media(min-width:820px){
+  .row{grid-template-columns:70px 1fr 1fr;padding:34px 0}
+  .row p{grid-column:3}
+}
+
+/* PHOTO SET */
+.set .g{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.set figure{border-radius:22px;overflow:hidden;position:relative;background:#000}
+.set figure img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.set figure:hover img{transform:scale(1.04)}
+.set .f1{grid-column:1/3;aspect-ratio:4/3}
+.set .f2,.set .f3{aspect-ratio:3/4}
+.set figcaption{position:absolute;left:12px;bottom:12px;padding:7px 14px;border-radius:999px;font-size:13px;background:rgba(11,10,12,.55);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:inset 0 1px 0 rgba(255,255,255,.2)}
+.set .f1 img{object-position:50% 70%}
+@media(min-width:820px){
+  .set .g{grid-template-columns:1.25fr 1fr 1fr;gap:16px}
+  .set .f1{grid-column:auto;aspect-ratio:auto;min-height:620px}
+  .set .f2,.set .f3{aspect-ratio:auto}
+  .set .f3{margin-top:60px}
+}
+
+/* REVIEWS */
+.rev{position:relative;overflow:hidden;isolation:isolate}
+.orb{position:absolute;z-index:-1;border-radius:50%;filter:blur(90px);opacity:.5;animation:drift 26s ease-in-out infinite alternate}
+.orb.o1{width:420px;height:420px;background:radial-gradient(circle,#7a1f23,transparent 70%);top:-60px;right:-100px}
+.orb.o2{width:480px;height:480px;background:radial-gradient(circle,#3a3d44,transparent 70%);bottom:-120px;left:-140px;animation-duration:32s}
+@keyframes drift{to{transform:translate(60px,40px)}}
+.quote{font-family:var(--d);text-transform:uppercase;font-size:clamp(34px,8.4vw,86px);line-height:.98;word-spacing:.08em;margin:22px 0 22px;max-width:18ch}
+.quote::before{content:"\201C";color:var(--red)}
+.quote::after{content:"\201D";color:var(--red)}
+.who{font-size:15px;color:var(--mute)}
+.who b{color:var(--ink);font-weight:500}
+.cards{display:grid;gap:14px;margin-top:56px}
+@media(min-width:820px){.cards{grid-template-columns:repeat(3,1fr);gap:18px}}
+.rc{padding:26px 26px 24px;border-radius:26px;background:rgba(20,18,23,.5);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 20px 60px -24px rgba(0,0,0,.7)}
+.rc p{font-size:16px;color:#ece8e4;margin:10px 0 16px;line-height:1.55}
+
+/* WHERE */
+.where{background:var(--bg2)}
+.where .grid{display:grid;gap:44px}
+@media(min-width:900px){.where .grid{grid-template-columns:1fr 1fr;gap:100px}}
+.hrs{list-style:none;margin-top:24px}
+.hrs li{display:flex;justify-content:space-between;gap:12px;padding:14px 0;border-top:1px solid var(--line);font-size:16px}
+.hrs li:last-child{border-bottom:1px solid var(--line)}
+.hrs li span:last-child{color:var(--mute)}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.pill{padding:10px 20px;border-radius:999px;border:1px solid rgba(255,255,255,.22);font-size:15px;background:rgba(243,240,236,.06)}
+.pill.on{background:var(--red);border-color:var(--red)}
+.where p.t{color:#d4d0cd;max-width:44ch;font-size:17px}
+
+/* QUOTE */
+.quoteform{position:relative;isolation:isolate;overflow:hidden}
+.quoteform .orb.o3{width:520px;height:520px;background:radial-gradient(circle,#7a1f23,transparent 70%);right:-160px;top:20px;opacity:.45}
+.panel{margin-top:36px;padding:28px 22px;border-radius:28px;background:rgba(20,18,23,.5);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(26px) saturate(170%);-webkit-backdrop-filter:blur(26px) saturate(170%);box-shadow:inset 0 1px 0 rgba(255,255,255,.26),0 30px 80px -30px rgba(0,0,0,.8);max-width:900px}
+.sentence{font-family:var(--d);text-transform:uppercase;font-size:clamp(26px,7vw,52px);line-height:1.5;word-spacing:.08em}
+.sentence .f{font-family:var(--b);text-transform:none;font-size:17px;font-weight:500;display:inline-block;min-height:48px;min-width:130px;max-width:100%;padding:0 18px;margin:0 4px;vertical-align:middle;border-radius:14px;background:rgba(243,240,236,.08);border:1px solid rgba(255,255,255,.22);color:var(--ink);box-shadow:inset 0 1px 0 rgba(255,255,255,.12);transition:border-color .15s,background .15s}
+.sentence select.f{padding-right:30px;appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,#fff 50%),linear-gradient(135deg,#fff 50%,transparent 50%);background-position:calc(100% - 17px) 50%,calc(100% - 12px) 50%;background-size:5px 5px;background-repeat:no-repeat}
+.sentence select.f option{color:#111;background:#fff}
+.sentence .f::placeholder{color:#8f8b8d}
+.sentence .f:focus{outline:none;border-color:var(--red2);background:rgba(243,240,236,.13);box-shadow:0 0 0 3px rgba(210,53,57,.35)}
+.panel .go{margin-top:28px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.panel .go small{color:var(--mute);font-size:13.5px;max-width:34ch;line-height:1.4}
+
+footer{padding:56px 0 40px;border-top:1px solid var(--line)}
+footer .big{font-family:var(--d);font-size:clamp(46px,13vw,120px);line-height:.9;text-transform:uppercase;word-spacing:.08em}
+footer .big a:hover{color:var(--red)}
+footer p{color:var(--mute);font-size:14px;margin-top:22px}
+
+/* DOCK */
+.dock{position:fixed;z-index:60;left:14px;right:14px;bottom:max(14px,env(safe-area-inset-bottom));display:flex;gap:8px;padding:8px;border-radius:999px;background:rgba(11,10,12,.55);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(24px) saturate(170%);-webkit-backdrop-filter:blur(24px) saturate(170%);box-shadow:inset 0 1px 0 rgba(255,255,255,.24),0 20px 50px -16px rgba(0,0,0,.8);max-width:520px;margin:0 auto}
+.dock .btn{flex:1;min-height:52px;padding:0 12px}
+.dock .btn.glass{background:rgba(243,240,236,.1)}
+@media(min-width:820px){.hero .cta{margin-bottom:26px}.dock{display:none}body{padding-bottom:0}}
+
+.rv{opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <b>Dynasty<i>.</i> Auto Detailing</b>
+  <nav><a href="#proof">The proof</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#where">Hours</a></nav>
+  <a class="btn red" href="tel:+18257123065">Call</a>
+</header>
+
+<main>
+<section class="hero" style="padding:0">
+  <div class="ph" role="img" aria-label="Red quilted leather seat in an Audi S5 after a detail"></div>
+  <div class="wrap in">
+    <h1 class="d"><span>Back to</span><span class="r">life.</span></h1>
+    <p class="sub">Car detailing in Edmonton and Leduc County. Interior, exterior, paint correction and ceramic coating. Mobile or drop-off.</p>
+    <div class="cta">
+      <a class="btn red" href="tel:+18257123065">Call (825) 712-3065</a>
+      <a class="btn glass" href="#quote">Get a quote</a>
+    </div>
+    <div class="gcard">
+      <div class="big">5.0<small>24 Google reviews</small></div>
+      <p><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><br>Amazing work done. Totally feels like a new car now !<em>Saheb S., Google</em></p>
+    </div>
+  </div>
+</section>
+
+<div class="nums">
+  <div class="wrap">
+    <div class="n"><div class="v"><span data-c="5" data-d="1">5.0</span></div><div class="t">Google rating</div></div>
+    <div class="n"><div class="v"><span data-c="24">24</span></div><div class="t">Google reviews</div></div>
+    <div class="n"><div class="v"><span data-c="600">600</span><sup>+</sup></div><div class="t">cars detailed, per their Instagram</div></div>
+    <div class="n"><div class="v"><span data-c="13">13</span></div><div class="t">hours on one asphalt work truck</div></div>
+  </div>
+</div>
+
+<section class="sig" id="proof">
+  <div class="wrap grid">
+    <div class="rv">
+      <span class="lab">Their work</span>
+      <h2 class="d">13 hours.<br><span class="r">Drag it.</span></h2>
+      <p class="lead">An asphalt work truck, packed with embedded dirt, staining and wear. Dynasty pushed it as far as detailing could take it. Slide to see where it ended up.</p>
+      <p class="src">From their Instagram post, Nov 10 2026.</p>
+    </div>
+    <div class="rv">
+      <div class="ba" id="ba" tabindex="0" role="slider" aria-label="Before and after" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+        <img id="bImg" src="img/p1.jpg" alt="Truck interior before the detail" width="1050" height="1400">
+        <img id="aImg" class="after" src="img/p2.jpg" alt="Truck interior after the detail" width="1050" height="1400">
+        <span class="tag b">Before</span><span class="tag a">After</span>
+        <div class="h"><div class="knob"></div></div>
+      </div>
+      <div class="chips" role="group" aria-label="Pick a view">
+        <button class="chip" type="button" aria-pressed="true" data-b="img/p1.jpg" data-a="img/p2.jpg">Front seats</button>
+        <button class="chip" type="button" aria-pressed="false" data-b="img/p5.jpg" data-a="img/p6.jpg">Back seat</button>
+        <button class="chip" type="button" aria-pressed="false" data-b="img/p7.jpg" data-a="img/p8.jpg">Rear bench</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="svc" id="services">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="lab">What they do</span>
+      <h2 class="d" style="margin-bottom:0">Inside.<br>Outside. <span class="r">Sealed.</span></h2>
+    </div>
+    <div class="rv">
+      <div class="row"><span class="i">01</span><h3>Interior detail</h3><p>A full reset from top to bottom, with carpet shampooing and steam cleaning on every surface. Pet hair removal when it is needed.</p></div>
+      <div class="row"><span class="i">02</span><h3>Exterior detail</h3><p>Cleaned up and brought back to a fresh, glossy finish.</p></div>
+      <div class="row"><span class="i">03</span><h3>Interior + Exterior</h3><p>The Dynasty Interior + Exterior Package, inside and out. They also run a Standard Interior Detail Package for a solid reset.</p></div>
+      <div class="row"><span class="i">04</span><h3>Paint correction</h3><p>Clarity and gloss back in the paint, like the white Audi S5 below.</p></div>
+      <div class="row"><span class="i">05</span><h3>Ceramic coating</h3><p>Long-term protection locked in after the correction. That S5 got a 2-year coating.</p></div>
+      <div class="row"><span class="i">06</span><h3>Mobile detail</h3><p>Mobile interior details done right at your location. Drop-off is available too.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="set" style="padding-top:60px">
+  <div class="wrap">
+    <div class="g rv">
+      <figure class="f1"><img src="img/audi-front.jpg" alt="White Audi S5 after paint correction and ceramic coating" loading="lazy"><figcaption>Audi S5, paint correction + ceramic</figcaption></figure>
+      <figure class="f2"><img src="img/s5-side.jpg" alt="Gloss on the side of the white Audi S5" loading="lazy"></figure>
+      <figure class="f3"><img src="img/s5-rear.jpg" alt="Rear of the grey Audi S5 with a deep gloss finish" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="rev" id="reviews">
+  <span class="orb o1"></span><span class="orb o2"></span>
+  <div class="wrap">
+    <span class="lab rv">What customers say</span>
+    <blockquote class="rv">
+      <p class="quote">The absolute best detailing I have ever gotten. I’ve been to about 5 different detailers and no one has done as good of a job.</p>
+      <p class="who"><b>Harb C.</b>, Google &middot; 5 stars</p>
+    </blockquote>
+    <div class="cards rv">
+      <div class="rc"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><p>Great work on my car, couldn’t be happier. Amazing attention to detail, feels like a new interior again</p><span class="who"><b>Dario</b>, Google</span></div>
+      <div class="rc"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><p>Great experience! quick drop off and easy pick up. My car looks amazing, inside and out.</p><span class="who"><b>Cheislyn</b>, Google</span></div>
+      <div class="rc"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><p>I recently took my RAV4 to Dynasty Auto Detailing, and I couldn't be happier with the results. The team did an excellent job making my car look brand new again.</p><span class="who"><b>Amandeep S.</b>, Google</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="where" id="where">
+  <div class="wrap grid">
+    <div class="rv">
+      <span class="lab">Where and when</span>
+      <h2 class="d">Edmonton<br>&amp; <span class="r">Leduc County.</span></h2>
+      <p class="t">Serving Edmonton and surrounding areas. Mobile and drop-off are both available.</p>
+      <div class="pills"><span class="pill on">Mobile</span><span class="pill">Drop-off</span></div>
+    </div>
+    <div class="rv">
+      <span class="lab">Hours</span>
+      <ul class="hrs">
+        <li><span>Monday to Thursday</span><span>7 a.m. to 10 p.m.</span></li>
+        <li><span>Friday</span><span>8 a.m. to 10 p.m.</span></li>
+        <li><span>Saturday</span><span>8 a.m. to 10 p.m.</span></li>
+        <li><span>Sunday</span><span>8 a.m. to 10 p.m.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="quoteform" id="quote">
+  <span class="orb o3"></span>
+  <div class="wrap">
+    <span class="lab">Get a quote</span>
+    <h2 class="d">Tell them<br>what you <span class="r">drive.</span></h2>
+    <form class="panel rv" id="qf" autocomplete="off">
+      <p class="sentence">Hi Dynasty, I’m <input class="f" id="qn" placeholder="your name" aria-label="Your name" required> and I need
+        <select class="f" id="qs" aria-label="Service">
+          <option>an interior detail</option><option>an exterior detail</option><option>an interior + exterior detail</option><option>paint correction</option><option>a ceramic coating</option>
+        </select> on my
+        <input class="f" id="qv" placeholder="vehicle" aria-label="Your vehicle" required>.
+        <select class="f" id="qm" aria-label="Mobile or drop-off"><option>Mobile</option><option>Drop-off</option></select>
+      </p>
+      <div class="go">
+        <button class="btn red" type="submit">Text this to Dynasty</button>
+        <small>Opens a text to (825) 712-3065. Nothing is sent until you press send.</small>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="big"><a href="tel:+18257123065">(825) 712-3065</a></div>
+    <p>Dynasty Auto Detailing &middot; Edmonton and Leduc County &middot; <a href="https://www.instagram.com/dynastyautodetailingg/" rel="noopener" style="text-decoration:underline">@dynastyautodetailingg</a></p>
+    <p>Preview built by JPF. Not live yet.</p>
+  </div>
+</footer>
+
+<div class="dock" role="group" aria-label="Call or text">
+  <a class="btn red" href="tel:+18257123065">Call now</a>
+  <a class="btn glass" href="sms:+18257123065">Text</a>
+</div>
+
+<script>
+(function(){
+  // slider
+  var ba=document.getElementById('ba'),pos=50,drag=false;
+  function set(p){pos=Math.max(2,Math.min(98,p));ba.style.setProperty('--p',pos+'%');ba.setAttribute('aria-valuenow',Math.round(pos))}
+  function fromEvt(e){var r=ba.getBoundingClientRect();set((e.clientX-r.left)/r.width*100)}
+  ba.addEventListener('pointerdown',function(e){drag=true;ba.setPointerCapture(e.pointerId);fromEvt(e)});
+  ba.addEventListener('pointermove',function(e){if(drag)fromEvt(e)});
+  ba.addEventListener('pointerup',function(){drag=false});
+  ba.addEventListener('pointercancel',function(){drag=false});
+  ba.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'){set(pos-5);e.preventDefault()}if(e.key==='ArrowRight'){set(pos+5);e.preventDefault()}});
+  set(50);
+  var chips=document.querySelectorAll('.chip');
+  chips.forEach(function(c){c.addEventListener('click',function(){
+    chips.forEach(function(x){x.setAttribute('aria-pressed','false')});c.setAttribute('aria-pressed','true');
+    document.getElementById('bImg').src=c.dataset.b;document.getElementById('aImg').src=c.dataset.a;set(50);
+  })});
+  // nudge the slider once when it first shows
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  // reveals
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+  // count up once
+  if(!reduce){
+    var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;co.unobserve(e.target);
+      var el=e.target,end=parseFloat(el.dataset.c),dec=parseInt(el.dataset.d||0,10),t0=performance.now();
+      (function f(t){var k=Math.min(1,(t-t0)/1100),v=end*(1-Math.pow(1-k,3));el.textContent=v.toFixed(dec);if(k<1)requestAnimationFrame(f);else el.textContent=end.toFixed(dec)})(t0)
+    })},{threshold:.6});
+    document.querySelectorAll('[data-c]').forEach(function(el){co.observe(el)});
+  }
+  // quote form -> sms
+  document.getElementById('qf').addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=qn.value.trim(),v=qv.value.trim(),s=qs.value,m=qm.value.toLowerCase();
+    var body='Hi Dynasty, I’m '+n+' and I need '+s+' on my '+v+'. '+m.charAt(0).toUpperCase()+m.slice(1)+'. Thanks!';
+    location.href='sms:+18257123065?&body='+encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
