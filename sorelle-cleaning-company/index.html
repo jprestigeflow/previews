@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Sorelle Cleaning Company | House cleaning, Simcoe County ON</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* PLAN: light-editorial, full-screen photo top + room-by-room picker.
+ palette: espresso #2b1810 (their Black Friday graphic bg), cream #f4ebdc (same graphic), timber #b4783a (beams in great-room photo), linen #e9dcc6
+ fonts: Castoro (display, italic for emphasis) + Instrument Sans. signature: room picker with glass chips.
+ order: hero, trust strip, rooms picker, reviews, services, areas+hours, quote, footer. motion: one hero entrance, gentle reveals. */
+:root{--esp:#2b1810;--cream:#f4ebdc;--lin:#e9dcc6;--tim:#b4783a;--ink:#2b1810;--r:26px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:'Instrument Sans',sans-serif;background:var(--cream);color:var(--ink);font-size:17px;line-height:1.55;overflow-x:hidden;padding-bottom:0}
+h1,h2,h3,.serif{font-family:'Castoro',serif;font-weight:400}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--tim);outline-offset:3px}
+.glass{background:rgba(244,235,220,.62);backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.4);box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 20px 60px -20px rgba(43,24,16,.4)}
+.dglass{background:rgba(43,24,16,.5);backdrop-filter:blur(22px) saturate(150%);-webkit-backdrop-filter:blur(22px) saturate(150%);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 20px 60px -20px rgba(0,0,0,.5);color:var(--cream)}
+nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;display:flex;align-items:center;justify-content:space-between;padding:8px 8px 8px 20px;border-radius:999px;max-width:1100px;margin:auto}
+nav b{font-family:'Castoro',serif;font-weight:400;font-size:19px;letter-spacing:.01em}
+nav .links{display:none;gap:26px;font-size:15px;font-weight:500}
+nav .links a{text-decoration:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 24px;border-radius:999px;background:var(--esp);color:var(--cream);font-weight:600;font-size:16px;text-decoration:none;border:0;cursor:pointer;transition:transform .18s,background .18s;font-family:inherit}
+.btn:active{transform:scale(.98)}.btn:hover{background:#43261a}
+.btn.tim{background:var(--tim);color:#fff}.btn.tim:hover{background:#9a6429}
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:var(--cream);background:var(--esp);overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;transform:scale(1.08);animation:zoom 1.8s cubic-bezier(.2,.7,.2,1) forwards}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(43,24,16,.92) 0%,rgba(43,24,16,.72) 45%,rgba(43,24,16,.35) 75%,rgba(43,24,16,.2) 100%)}
+@keyframes zoom{to{transform:scale(1)}}
+.hero .in{position:relative;z-index:2;width:100%;max-width:1200px;margin:auto;padding:150px 22px 110px}
+.hero h1{font-size:clamp(54px,15vw,148px);line-height:.95;letter-spacing:-.01em;word-spacing:.08em;max-width:11ch;animation:up 1s .35s both}
+.hero h1 i{color:#e8b77a}
+.hero p.sub{font-size:19px;max-width:30ch;margin:20px 0 26px;animation:up 1s .55s both;opacity:.95}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;animation:up 1s .7s both}
+.hero .btn.out{background:transparent;border:1.5px solid rgba(244,235,220,.7)}
+@keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.hcard{position:absolute;z-index:3;left:16px;top:84px;padding:10px 16px;border-radius:18px;max-width:230px;animation:up 1s .9s both}
+.hcard .st{color:#e8b77a;letter-spacing:2px;font-size:15px}
+.hcard strong{font-family:'Castoro',serif;font-weight:400;font-size:24px;display:block;line-height:1.1}
+.hcard span.m{display:none}.hcard span{font-size:13.5px;opacity:.92}
+section{padding:84px 22px}
+.wrap{max-width:1100px;margin:auto}
+h2{font-size:clamp(40px,9vw,84px);line-height:1;letter-spacing:-.01em;word-spacing:.08em}
+h2 i{color:var(--tim)}
+.trust{background:var(--esp);color:var(--cream);padding:34px 22px}
+.trust .wrap{display:grid;gap:18px;grid-template-columns:1fr 1fr}
+.trust div{font-size:14.5px;opacity:.9}
+.trust b{display:block;font-family:'Castoro',serif;font-weight:400;font-size:28px;line-height:1.1;opacity:1;color:#e8b77a}
+.rooms{background:var(--cream)}
+.rooms .lede{max-width:46ch;margin:16px 0 30px;font-size:18px}
+.stage{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;background:var(--esp);max-height:78svh;margin:auto}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s}
+.stage img.on{opacity:1}
+.chips{position:absolute;left:12px;right:12px;bottom:12px;display:flex;gap:8px;overflow-x:auto;padding:8px;border-radius:999px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips button{flex:none;min-height:44px;padding:0 18px;border-radius:999px;border:0;background:transparent;color:var(--cream);font:600 15px 'Instrument Sans';cursor:pointer;transition:background .18s,transform .18s}
+.chips button:active{transform:scale(.97)}
+.chips button[aria-pressed=true]{background:var(--cream);color:var(--esp)}
+.cap{position:absolute;top:14px;left:14px;padding:8px 16px;border-radius:16px;font-size:14px}
+.tiles{display:grid;gap:14px;grid-template-columns:1fr 1fr;margin-top:14px}
+.tiles img{width:100%;height:100%;object-fit:cover;border-radius:22px;aspect-ratio:4/5}
+.tiles img:first-child{aspect-ratio:4/5}
+.reviews{background:var(--lin);position:relative;overflow:hidden}
+.reviews:before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;right:-180px;top:-120px;background:radial-gradient(circle,rgba(180,120,58,.35),transparent 70%);animation:drift 26s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate(-60px,90px)}}
+.big{font-family:'Castoro',serif;font-size:clamp(28px,6.4vw,54px);line-height:1.14;margin:26px 0 14px;max-width:24ch;position:relative}
+.who{font-size:15px;font-weight:600;position:relative}
+.rgrid{display:grid;gap:14px;margin-top:40px;position:relative}
+.rc{padding:24px;border-radius:22px}
+.rc p{margin-bottom:12px}.rc small{font-weight:600;font-size:14.5px}
+.svc{background:var(--cream)}
+.svc ul{list-style:none;padding:0;margin-top:32px;border-top:1px solid rgba(43,24,16,.25)}
+.svc li{display:grid;gap:4px;padding:22px 0;border-bottom:1px solid rgba(43,24,16,.25)}
+.svc li h3{font-size:28px}.svc li span{opacity:.85;max-width:52ch}
+.promo{margin-top:40px;padding:26px;border-radius:var(--r);background:var(--esp);color:var(--cream)}
+.promo h3{font-size:32px;color:#e8b77a}
+.area{background:var(--esp);color:var(--cream)}
+.area .cols{display:grid;gap:34px;margin-top:34px}
+.area h3{font-size:26px;color:#e8b77a;margin-bottom:8px}
+.area table{border-collapse:collapse;width:100%;max-width:380px}.area td{padding:8px 0;border-bottom:1px solid rgba(244,235,220,.2)}.area td:last-child{text-align:right}
+.quote{background:var(--lin);position:relative;overflow:hidden}
+.quote:before{content:"";position:absolute;width:600px;height:600px;border-radius:50%;left:-250px;bottom:-250px;background:radial-gradient(circle,rgba(180,120,58,.4),transparent 70%);animation:drift 30s ease-in-out infinite alternate-reverse}
+.qp{position:relative;margin-top:30px;padding:28px 22px;border-radius:var(--r);font-family:'Castoro',serif;font-size:clamp(22px,5vw,30px);line-height:2}
+.qp input,.qp select{font:inherit;font-size:20px;color:var(--esp);background:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.7);border-radius:14px;padding:4px 12px;min-height:44px;max-width:100%;width:210px}
+.qp input:focus,.qp select:focus{outline:3px solid var(--tim)}
+.qp input,.qp select{display:block;width:100%;margin:4px 0}.qp .btn{font-family:'Instrument Sans';margin-top:18px;width:100%}
+footer{background:var(--esp);color:var(--cream);padding:44px 22px 130px;font-size:14.5px}
+footer b{font-family:'Castoro',serif;font-weight:400;font-size:24px;display:block;margin-bottom:6px}
+footer small{display:block;margin-top:18px;opacity:.7}
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:12px;display:flex;gap:8px;padding:8px;border-radius:999px}
+.dock a{flex:1;min-height:48px;display:flex;align-items:center;justify-content:center;border-radius:999px;font-weight:600;text-decoration:none;font-size:16px;transition:transform .18s}
+.dock a:active{transform:scale(.97)}
+.dock .c{background:var(--tim);color:#fff}.dock .t{background:rgba(255,255,255,.55);color:var(--esp)}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+@media(min-width:820px){
+ body{font-size:18px}
+ nav .links{display:flex}
+ section{padding:130px 40px}
+ .hero .in{padding:0 40px 90px}
+ .hcard{left:auto;right:40px;top:100px;max-width:260px;padding:14px 18px}.hcard span.m{display:block}.hcard strong{font-size:30px}.qp input,.qp select{display:inline-block;width:210px}
+ .trust .wrap{grid-template-columns:repeat(4,1fr)}
+ .stage{aspect-ratio:16/10;max-height:none}
+ .stage img{object-position:50% 45%}
+ .tiles{grid-template-columns:repeat(4,1fr)}
+ .rgrid{grid-template-columns:repeat(3,1fr)}
+ .svc li{grid-template-columns:320px 1fr;align-items:baseline}
+ .area .cols{grid-template-columns:1.2fr 1fr 1fr}
+ .dock{left:auto;right:24px;width:380px}
+ footer{padding-bottom:140px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero img{transform:none}.rv{opacity:1;transform:none}}
+</style></head><body>
+
+<nav class="glass"><b>Sorelle Cleaning Co.</b><div class="links"><a href="#rooms">Their work</a><a href="#reviews">Reviews</a><a href="#services">Services</a><a href="#area">Area</a></div><a class="btn" href="tel:+17059184328">Call</a></nav>
+
+<header class="hero">
+<img src="img/p9.jpg" alt="Spotless timber-frame great room with dining table, cleaned by Sorelle Cleaning Company">
+<div class="hcard dglass"><span class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</span><strong>5.0 on Google</strong><span class="m">13 reviews. Homes, chalets, Airbnbs.</span></div>
+<div class="in">
+<h1>Come home to <i>clean.</i></h1>
+<p class="sub">House cleaning in Simcoe County, Ontario. Deep cleans, move-ins, recurring visits.</p>
+<div class="cta"><a class="btn tim" href="#quote">Get a quote</a><a class="btn out" href="tel:+17059184328">(705) 918-4328</a></div>
+</div>
+</header>
+
+<div class="trust"><div class="wrap">
+<div><b>5.0</b>Google rating, 13 reviews</div>
+<div><b>Homes + Airbnbs</b>Cleaned by the same team</div>
+<div><b>Recurring</b>Biweekly cleaning available</div>
+<div><b>Mon to Fri</b>9 a.m. to 3 p.m.</div>
+</div></div>
+
+<section class="rooms" id="rooms"><div class="wrap">
+<h2 class="rv">Room by room. <i>Spotless.</i></h2>
+<p class="lede rv">Tap a room. These are real homes Sorelle has cleaned.</p>
+<div class="stage rv" id="stage">
+<img class="on" src="img/p5.jpg" alt="Clean kitchen with quartz island" data-k="Kitchens">
+<img src="img/p3.jpg" alt="Clean bathroom with double vanity" data-k="Bathrooms">
+<img src="img/p4.jpg" alt="Clean living room with vaulted ceiling" data-k="Living rooms">
+<img src="img/p6.jpg" alt="Clean bedroom" data-k="Bedrooms">
+<img src="img/p12.jpg" alt="Oven cleaned inside and out" data-k="Ovens">
+<div class="cap dglass" id="cap">Kitchens</div>
+<div class="chips dglass" id="chips"></div>
+</div>
+<div class="tiles rv"><img src="img/p8.jpg" alt="Kitchen island under wood ceiling" loading="lazy"><img src="img/p7.jpg" alt="Bathroom with glass shower" loading="lazy"><img src="img/p2.jpg" alt="Range and hood, spotless" loading="lazy"><img src="img/p10.jpg" alt="Kitchenette under timber beams" loading="lazy"></div>
+</div></section>
+
+<section class="reviews" id="reviews"><div class="wrap">
+<h2 class="rv">Said it <i>better</i> than we could.</h2>
+<p class="big rv">&ldquo;Absolutely amazing cleaning service. Reliable, thorough, and consistently leaves the salon spotless.&rdquo;</p>
+<p class="who rv">Jess G., Google</p>
+<div class="rgrid">
+<div class="rc glass rv"><p>&ldquo;Fantastic Cleaning Company here in Wasaga Beach! Professional, excellent communication, great results , well priced .&rdquo;</p><small>Christine H., Google</small></div>
+<div class="rc glass rv"><p>&ldquo;Marilyn was amazing. We used Sorelle cleaning for our move in and Marilyn was very detailed and communicative with things she noticed as she cleaned.&rdquo;</p><small>Jessica T., Google</small></div>
+<div class="rc glass rv"><p>&ldquo;We&rsquo;ve had an excellent experience with Sorrelle Cleaners for our chalet in Clarksburg, Ontario. Their team is consistently professional, thorough, and reliable.&rdquo;</p><small>Adrian D., Google</small></div>
+</div>
+<p class="rv" style="margin-top:22px;font-size:15px">&ldquo;We recently used this cleaning company for a deep clean of our home and were very impressed with the level of care and effort put into the job.&rdquo; Kyle W., Google</p>
+</div></section>
+
+<section class="svc" id="services"><div class="wrap">
+<h2 class="rv">What we <i>clean.</i></h2>
+<ul>
+<li class="rv"><h3>Home cleaning</h3><span>Regular and recurring visits. Biweekly cleaning is available.</span></li>
+<li class="rv"><h3>Deep cleans</h3><span>Bathrooms, ovens and the details that get missed.</span></li>
+<li class="rv"><h3>Move-in cleans</h3><span>So the new place can start to feel like yours.</span></li>
+<li class="rv"><h3>Airbnbs and chalets</h3><span>Turnover-ready spaces for short-stay hosts and seasonal homes.</span></li>
+<li class="rv"><h3>Salons</h3><span>Commercial spaces too, kept spotless.</span></li>
+</ul>
+<div class="promo rv"><h3>$50 off your first clean</h3><p>When you sign up for recurring biweekly cleaning. Limited time. Their December schedule is almost completely booked, with a few spots left.</p></div>
+</div></section>
+
+<section class="area" id="area"><div class="wrap">
+<h2 class="rv">Where &amp; <i>when.</i></h2>
+<div class="cols">
+<div class="rv"><h3>Service area</h3><p>Simcoe County, Ontario. Clients in Wasaga Beach and Clarksburg.</p></div>
+<div class="rv"><h3>Hours</h3><table><tr><td>Monday to Friday</td><td>9 a.m. to 3 p.m.</td></tr><tr><td>Saturday</td><td>Closed</td></tr><tr><td>Sunday</td><td>Closed</td></tr></table></div>
+<div class="rv"><h3>Call or text</h3><p><a href="tel:+17059184328" style="font-family:Castoro,serif;font-size:30px">(705) 918-4328</a></p></div>
+</div></div></section>
+
+<section class="quote" id="quote"><div class="wrap">
+<h2 class="rv">Get a <i>quote.</i></h2>
+<form class="qp glass" id="qf" onsubmit="return go(event)">
+Hi Sorelle, I&rsquo;m <input id="n" placeholder="your name" required aria-label="Your name"> and I need a
+<select id="s" aria-label="Service"><option>home clean</option><option>deep clean</option><option>move-in clean</option><option>Airbnb or chalet clean</option><option>recurring biweekly clean</option></select>
+in <input id="w" placeholder="your town" aria-label="Your town">. Please text me back.
+<button class="btn tim" type="submit">Send as a text</button>
+</form>
+</div></section>
+
+<footer><b>Sorelle Cleaning Company</b>House cleaning service, Simcoe County, ON. (705) 918-4328. Mon to Fri 9 a.m. to 3 p.m.<small>Preview built by JPF. Not live yet.</small></footer>
+
+<div class="dock glass"><a class="c" href="tel:+17059184328">Call</a><a class="t" href="sms:+17059184328">Text</a></div>
+
+<script>
+const imgs=[...document.querySelectorAll('#stage img')],chips=document.getElementById('chips'),cap=document.getElementById('cap');
+imgs.forEach((im,i)=>{const b=document.createElement('button');b.textContent=im.dataset.k;b.setAttribute('aria-pressed',i==0);b.onclick=()=>{imgs.forEach((x,j)=>x.classList.toggle('on',i==j));[...chips.children].forEach((c,j)=>c.setAttribute('aria-pressed',i==j));cap.textContent=im.dataset.k};chips.appendChild(b)});
+function go(e){e.preventDefault();const m="Hi Sorelle, I'm "+n.value+" and I need a "+s.value+(w.value?" in "+w.value:"")+". Please text me back.";location.href="sms:+17059184328?&body="+encodeURIComponent(m);return false}
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+</script></body></html>
