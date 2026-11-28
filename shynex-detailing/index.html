@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shynex Detailing | Mobile car detailing in Leduc and Edmonton, AB</title>
+<meta name="description" content="Shynex Detailing. Mobile car detailing and headlight restoration, Leduc and Edmonton area. Call (604) 318-8357.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600;700&family=Yanone+Kaffeesatz:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ direction: poster-grid-video-led. Navy hero with their red C8 photo, foam-white body, one blue accent, a headlight video band as the signature.
+ palette: navy #06142e (flyer background), foam #edf1f6 (foam-wash photos), ink #0a1018, blue #0271fc (flyer "HEADLIGHT" banner, sampled from p4), steel #5b6773
+ fonts: Yanone Kaffeesatz (display) + Commissioner (body)
+ signature: Headlight band (their own video, $39 from their post) + sentence quote builder
+ order: hero, proof numbers, services list, headlight band, foam gallery, reviews, quote sentence, hours/area, footer
+ motion: hero load stagger, count-up, soft reveals on 3 blocks, orbs drift (off on reduced-motion)
+*/
+:root{--navy:#06142e;--navy2:#0b2149;--foam:#edf1f6;--ink:#0a1018;--blue:#0271fc;--blue-d:#0156c4;--steel:#5b6773;--line:#d5dce5}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Commissioner',system-ui,sans-serif;font-size:17px;line-height:1.55;color:var(--ink);background:var(--foam);overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:8px}
+.d{font-family:'Yanone Kaffeesatz',sans-serif;font-weight:700;text-transform:uppercase;line-height:.92;letter-spacing:.01em;word-spacing:.12em}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+
+/* nav pill */
+.nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;display:flex;align-items:center;justify-content:space-between;padding:8px 8px 8px 20px;border-radius:999px;background:rgba(6,20,46,.5);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 20px 50px -24px rgba(6,20,46,.6);color:#fff;max-width:1180px;margin-inline:auto}
+.nav b{font-family:'Yanone Kaffeesatz',sans-serif;font-size:24px;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+.nav a.call{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:999px;background:var(--blue);color:#fff;text-decoration:none;font-weight:600;font-size:15px;transition:transform .18s,background .18s}
+.nav a.call:hover{background:var(--blue-d)}.nav a.call:active{transform:scale(.97)}
+.nav .links{display:none;gap:26px;font-size:15px;font-weight:500;margin-left:auto;margin-right:22px}
+.nav .links a{text-decoration:none;opacity:.85}.nav .links a:hover{opacity:1}
+
+/* hero */
+.hero{position:relative;min-height:100svh;background:var(--navy);color:#fff;overflow:hidden;display:flex;align-items:flex-end}
+.hero .ph{position:absolute;inset:0}
+.hero .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 62%}
+.hero .ph:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,20,46,.55) 0,rgba(6,20,46,0) 22%,rgba(6,20,46,.2) 40%,rgba(6,20,46,.92) 78%,var(--navy) 100%)}
+.hero .in{position:relative;width:100%;padding:0 20px 104px}
+.hero h1{font-size:clamp(88px,27vw,150px)}
+.hero h1 span{display:block;color:#fff}
+.hero h1 span+span{color:var(--blue);-webkit-text-stroke:0}
+.tag{text-wrap:balance;margin-top:14px;font-size:19px;font-weight:500;max-width:36ch;color:#e9eef7}
+.sub{margin-top:6px;font-size:15px;color:#b9c6dc}
+.cta{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;transition:transform .18s,background .18s,box-shadow .18s;border:1px solid transparent;cursor:pointer;font-family:inherit}
+.btn:active{transform:scale(.98)}
+.btn.main{background:var(--blue);color:#fff;box-shadow:0 14px 34px -14px var(--blue)}.btn.main:hover{background:var(--blue-d)}
+.btn.ghost{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.3);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+.gcard{position:absolute;z-index:2;top:84px;right:16px;max-width:236px;padding:14px 16px;border-radius:24px;background:rgba(6,20,46,.46);-webkit-backdrop-filter:blur(24px) saturate(170%);backdrop-filter:blur(24px) saturate(170%);border:1px solid rgba(255,255,255,.25);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 24px 60px -24px rgba(0,0,0,.6)}
+.gcard .r{display:flex;align-items:baseline;gap:8px}.gcard .r b{font-family:'Yanone Kaffeesatz';font-size:44px;line-height:1;font-weight:700}
+.gcard .st{color:#7db5ff;letter-spacing:2px;font-size:14px}
+.gcard p{font-size:14px;line-height:1.4;color:#e7eefb;margin-top:4px}
+.gcard small{display:block;margin-top:4px;color:#b9c6dc;font-size:13px}
+
+/* proof strip */
+.proof{background:var(--ink);color:#fff;padding:34px 0}
+.proof .wrap{display:grid;grid-template-columns:1fr 1fr;gap:26px 16px}
+.proof .n{font-family:'Yanone Kaffeesatz';font-size:52px;white-space:nowrap;font-weight:700;line-height:1;color:#fff}
+.proof .n i{font-style:normal;color:var(--blue)}
+.proof p{font-size:15px;color:#aab6c8;margin-top:2px}
+
+/* services */
+section{padding:76px 0}
+h2.d{font-size:clamp(52px,14vw,96px);margin-bottom:28px}
+h2.d em{font-style:normal;color:var(--blue)}
+.svc{border-top:1px solid var(--ink)}
+.row{display:grid;grid-template-columns:44px 1fr;gap:6px 14px;padding:26px 0;border-bottom:1px solid var(--line)}
+.row .no{font-family:'Yanone Kaffeesatz';font-size:30px;color:var(--blue);font-weight:700;line-height:1.1}
+.row h3{font-family:'Yanone Kaffeesatz';font-size:40px;font-weight:700;text-transform:uppercase;line-height:1}
+.row p{grid-column:2;color:#2d3846;max-width:52ch}
+.row .pr{grid-column:2;display:inline-block;margin-top:6px;font-weight:700;color:var(--blue-d)}
+.mob{margin-top:26px;display:flex;gap:12px;align-items:center;font-size:16px;color:var(--steel)}
+.mob:before{content:"";width:34px;height:2px;background:var(--blue)}
+
+/* headlight band */
+.hl{background:var(--navy);color:#fff;position:relative;overflow:hidden;isolation:isolate}
+.hl:before,.hl:after{content:"";position:absolute;z-index:-1;border-radius:50%;filter:blur(70px);opacity:.5;animation:drift 26s ease-in-out infinite alternate}
+.hl:before{width:420px;height:420px;background:radial-gradient(circle,#0271fc,transparent 70%);top:-120px;right:-100px}
+.hl:after{width:380px;height:380px;background:radial-gradient(circle,#1b3f86,transparent 70%);bottom:-140px;left:-120px;animation-delay:-9s}
+@keyframes drift{to{transform:translate(-60px,50px)}}
+.hl .grid{display:grid;gap:30px}
+.vid{position:relative;border-radius:26px;overflow:hidden;aspect-ratio:16/10;background:#000;box-shadow:0 30px 70px -30px #000}
+.vid video{width:100%;height:100%;object-fit:cover}
+.vid .chip{position:absolute;left:12px;bottom:12px;padding:10px 18px;border-radius:999px;background:rgba(6,20,46,.5);-webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);border:1px solid rgba(255,255,255,.28);box-shadow:inset 0 1px 0 rgba(255,255,255,.3);font-weight:600;font-size:15px}
+.hl .price{font-family:'Yanone Kaffeesatz';font-size:clamp(96px,26vw,150px);line-height:.85;font-weight:700;color:#fff}
+.hl .price small{font-size:.32em;color:#9fc4ff;margin-right:8px;letter-spacing:.03em}
+.hl p.t{color:#c9d5ea;max-width:42ch;margin:14px 0 22px}
+.fine{font-size:13px;color:#8fa1bf;margin-top:16px}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gal figure{position:relative;border-radius:22px;overflow:hidden;background:#cfd8e3;aspect-ratio:4/5}
+.gal figure:nth-child(1){grid-column:1/-1;aspect-ratio:4/4.4;border-radius:28px}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.gal figure:hover img{transform:scale(1.03)}
+.gcap{margin-top:16px;color:var(--steel);font-size:15px}
+
+/* reviews */
+.rev{position:relative;background:#fff;isolation:isolate;overflow:hidden}
+.rev:before{content:"";position:absolute;z-index:-1;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(2,113,252,.22),transparent 70%);filter:blur(50px);right:-160px;top:40%;animation:drift 28s ease-in-out infinite alternate}
+.lead{font-family:'Yanone Kaffeesatz';font-weight:600;font-size:clamp(40px,10.5vw,76px);line-height:1;text-transform:none;max-width:20ch}
+.lead + .by{margin-top:18px;font-weight:600}
+.by span{color:var(--steel);font-weight:400}
+.cards{display:grid;gap:14px;margin-top:40px}
+.card{padding:22px;border-radius:24px;background:rgba(237,241,246,.7);-webkit-backdrop-filter:blur(20px) saturate(160%);backdrop-filter:blur(20px) saturate(160%);border:1px solid rgba(255,255,255,.8);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 20px 50px -26px rgba(6,20,46,.35)}
+.card q{display:block;quotes:none;font-size:17px;line-height:1.5}
+.card .by{margin-top:12px;font-size:15px;font-weight:600}
+.stars{color:var(--blue);letter-spacing:3px;font-size:15px;margin-bottom:8px}
+
+/* quote */
+.quote{background:var(--navy);color:#fff;position:relative;isolation:isolate;overflow:hidden}
+.quote:before{content:"";position:absolute;z-index:-1;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(2,113,252,.5),transparent 70%);filter:blur(70px);left:-200px;top:-120px;animation:drift 24s ease-in-out infinite alternate}
+.panel{margin-top:6px;padding:26px 22px;border-radius:28px;background:rgba(255,255,255,.08);-webkit-backdrop-filter:blur(26px) saturate(170%);backdrop-filter:blur(26px) saturate(170%);border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 30px 70px -30px #000}
+.sent{font-family:'Yanone Kaffeesatz';font-size:clamp(34px,9vw,52px);line-height:1.22;font-weight:600}
+.sent input{display:inline-block;font:inherit;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);border-radius:14px;padding:2px 14px;min-height:46px;width:min(100%,15ch);outline:none;vertical-align:middle;transition:border-color .2s,box-shadow .2s}
+.sent input::placeholder{color:#8fa1bf}
+.sent input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(2,113,252,.4)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 6px}
+.chips label{cursor:pointer}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips span{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.06);font-size:16px;font-weight:500;transition:all .18s}
+.chips input:checked+span{background:var(--blue);border-color:var(--blue);box-shadow:0 10px 26px -10px var(--blue)}
+.chips input:focus-visible+span{outline:3px solid #fff;outline-offset:2px}
+.panel .btn{margin-top:22px;width:100%}
+.panel .note{font-size:14px;color:#9fb0cb;margin-top:12px}
+
+/* hours */
+.info{display:grid;gap:34px}
+.hrs{border-top:1px solid var(--ink)}
+.hrs div{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--line);font-size:16px}
+.big{font-family:'Yanone Kaffeesatz';font-weight:700;font-size:clamp(44px,12vw,64px);line-height:1;text-decoration:none;color:var(--blue-d);display:inline-block;margin:6px 0 14px}
+.areas{color:#2d3846;max-width:44ch}
+
+footer{background:var(--ink);color:#aab6c8;padding:30px 0 120px;font-size:14px}
+footer b{color:#fff}
+
+/* dock */
+.dock{position:fixed;z-index:60;left:50%;transform:translateX(-50%);bottom:max(14px,env(safe-area-inset-bottom));display:flex;gap:6px;padding:6px;border-radius:999px;background:rgba(6,20,46,.58);-webkit-backdrop-filter:blur(24px) saturate(170%);backdrop-filter:blur(24px) saturate(170%);border:1px solid rgba(255,255,255,.24);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 20px 50px -18px rgba(6,20,46,.7);width:min(340px,100% - 28px)}
+.dock a{flex:1;display:flex;align-items:center;justify-content:center;min-height:50px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;color:#fff;transition:transform .18s,background .18s}
+.dock a:first-child{background:var(--blue);flex:1.35}
+.dock a:last-child{background:rgba(255,255,255,.1)}
+.dock a:active{transform:scale(.97)}
+
+/* motion */
+.js .hero h1,.js .hero .tag,.js .hero .sub,.js .hero .cta{opacity:0;transform:translateY(22px);animation:up .8s cubic-bezier(.2,.7,.2,1) forwards}
+.js .hero .tag{animation-delay:.15s}.js .hero .sub{animation-delay:.22s}.js .hero .cta{animation-delay:.3s}
+.js .gcard{opacity:0;transform:translateY(-14px);animation:up .9s .5s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes up{to{opacity:1;transform:none}}
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .hero h1,.js .hero .tag,.js .hero .sub,.js .hero .cta,.js .gcard,.js .rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+
+@media (min-width:860px){
+ footer{padding-bottom:40px}
+ .dock{display:none}
+ .nav .links{display:flex}
+ .nav{left:24px;right:24px}
+ .hero{align-items:stretch;min-height:max(100svh,720px)}
+ .hero .ph{left:46%}
+ .hero .ph:after{background:linear-gradient(90deg,var(--navy) 0,rgba(6,20,46,0) 30%),linear-gradient(180deg,rgba(6,20,46,.4),rgba(6,20,46,0) 25%)}
+ .hero .in{width:min(1180px,100% - 80px);margin:0 auto;padding:0 0 70px;align-self:flex-end}
+ .hero h1{font-size:200px}
+ .tag{font-size:24px;max-width:40ch}
+ .gcard{top:auto;bottom:70px;right:max(40px,calc((100% - 1180px)/2));max-width:290px;padding:18px 20px}
+ .proof .wrap{grid-template-columns:repeat(4,1fr)}
+ .proof .n{font-size:84px}
+ section{padding:120px 0}
+ .row{grid-template-columns:70px 1.1fr 1.4fr;align-items:baseline;padding:34px 0}
+ .row h3{font-size:60px}.row p,.row .pr{grid-column:3;grid-row:1}
+ .row p{padding-top:6px}
+ .row .pr{grid-row:2}
+ .row .no{font-size:36px}
+ .hl .grid{grid-template-columns:1.15fr 1fr;align-items:center;gap:70px}
+ .gal{grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:auto auto}
+ .gal figure{aspect-ratio:auto;min-height:300px}
+ .gal figure:nth-child(1){grid-column:1;grid-row:1/3;aspect-ratio:auto}
+ .cards{grid-template-columns:repeat(3,1fr)}
+ .panel{padding:44px 48px;max-width:980px}
+ .panel .btn{width:auto;min-width:280px}
+ .info{grid-template-columns:1fr 1fr;gap:90px}
+}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main">
+ <b>Shynex</b>
+ <div class="links"><a href="#services">Services</a><a href="#headlights">Headlights</a><a href="#reviews">Reviews</a><a href="#quote">Quote</a></div>
+ <a class="call" href="tel:+16043188357">Call (604) 318-8357</a>
+</nav>
+
+<header class="hero">
+ <div class="ph"><img src="img/p6.jpg" alt="Red Corvette parked in a driveway, detailed by Shynex Detailing" fetchpriority="high"></div>
+ <aside class="gcard" aria-label="Google rating">
+  <div class="r"><b>5.0</b><span class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+  <p>&ldquo;Never rushes and does it carefully!&rdquo;</p>
+  <small>Shazzad H. &middot; Google &middot; 29 reviews</small>
+ </aside>
+ <div class="in">
+  <h1 class="d"><span>Shynex</span><span>Detailing</span></h1>
+  <p class="tag">Bringing back the shine, one car at a time.</p>
+  <p class="sub">Mobile car detailing and headlight restoration. Leduc and Edmonton area, Alberta.</p>
+  <div class="cta">
+   <a class="btn main" href="tel:+16043188357">Call (604) 318-8357</a>
+   <a class="btn ghost" href="#quote">Get a quote</a>
+  </div>
+ </div>
+</header>
+
+<div class="proof">
+ <div class="wrap">
+  <div class="rv"><div class="n"><span data-count="5" data-dec="1">5.0</span><i>&#9733;</i></div><p>Google rating</p></div>
+  <div class="rv"><div class="n"><span data-count="29">29</span></div><p>Google reviews</p></div>
+  <div class="rv"><div class="n">9<i>am</i>&ndash;9<i>pm</i></div><p>Open every day</p></div>
+  <div class="rv"><div class="n">Mobile</div><p>Leduc and Edmonton area</p></div>
+ </div>
+</div>
+
+<section id="services">
+ <div class="wrap">
+  <h2 class="d rv">What we <em>do</em></h2>
+  <div class="svc">
+   <div class="row rv"><span class="no">01</span><h3>Headlight restoration</h3><p>Foggy, yellowed headlights brought back clear, so you can see the road at night.</p><span class="pr">From $39</span></div>
+   <div class="row rv"><span class="no">02</span><h3>Foam wash</h3><p>A thick foam wash at your driveway, on cars, trucks and SUVs.</p></div>
+   <div class="row rv"><span class="no">03</span><h3>Interior detailing</h3><p>Seats, dash and floors cleaned out. One customer says he keeps the car and truck clean every time.</p></div>
+  </div>
+  <p class="mob rv">Premium mobile car detailing. Edmonton and surrounding areas.</p>
+ </div>
+</section>
+
+<section class="hl" id="headlights">
+ <div class="wrap grid">
+  <div class="rv">
+   <div class="vid">
+    <video src="video/band.mp4" poster="video/band-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Headlight being restored"></video>
+    <span class="chip">Headlight restoration</span>
+   </div>
+  </div>
+  <div class="rv">
+   <h2 class="d" style="font-size:clamp(46px,12vw,80px);margin-bottom:6px">Foggy headlights?</h2>
+   <div class="price"><small>from</small>$39</div>
+   <p class="t">It&rsquo;s dark and you can&rsquo;t see? Get your headlights restored.</p>
+   <a class="btn main" href="sms:+16043188357?&body=Hi%20Shynex%2C%20I%20need%20my%20headlights%20restored.">Text about headlights</a>
+   <p class="fine">Starting price from Shynex&rsquo;s Instagram post. Final price depends on the car.</p>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <h2 class="d rv">Real <em>jobs</em></h2>
+  <div class="gal rv">
+   <figure><img src="img/p8.jpg" alt="SUV covered in foam during a wash" loading="lazy" style="object-position:50% 55%"></figure>
+   <figure><img src="img/p10.jpg" alt="Mercedes coupe covered in foam in a driveway" loading="lazy"></figure>
+   <figure><img src="img/p12.jpg" alt="Corvette covered in foam" loading="lazy"></figure>
+   <figure><img src="img/p11.jpg" alt="SUV foam wash on a front lawn" loading="lazy"></figure>
+   <figure><img src="img/p1.jpg" alt="Cloudy headlight before restoration" loading="lazy"></figure>
+  </div>
+  <p class="gcap">Photos from Shynex Detailing&rsquo;s own jobs.</p>
+ </div>
+</section>
+
+<section class="rev" id="reviews">
+ <div class="wrap">
+  <h2 class="d rv">What <em>owners</em> say</h2>
+  <blockquote class="lead rv">&ldquo;Great service! Very professional, clean, and the car came out looking brand new. Definitely recommend!&rdquo;</blockquote>
+  <p class="by rv">Kebba S. <span>&middot; Google</span></p>
+  <div class="cards">
+   <div class="card rv"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><q>&ldquo;Excellent service! Highly recommended. Never rushes and does it carefully!&rdquo;</q><p class="by">Shazzad H. <span>&middot; Google</span></p></div>
+   <div class="card rv"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><q>&ldquo;Great service done by shynex detailing on my headlights&rdquo;</q><p class="by">Abhishek L. <span>&middot; Google</span></p></div>
+   <div class="card rv"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><q>&ldquo;Awesome good worked really hard worker I really recommend he keeps your car clean truck clean everything really clean I&rsquo;m really happy with this work he cleans my car every time&rdquo;</q><p class="by">Carlos A. <span>&middot; Google</span></p></div>
+  </div>
+ </div>
+</section>
+
+<section class="quote" id="quote">
+ <div class="wrap">
+  <h2 class="d rv">Get a <em style="color:#6fb0ff">quote</em></h2>
+  <form class="panel rv" id="qf" autocomplete="off">
+   <div class="sent">Hi Shynex, I&rsquo;m <input id="nm" placeholder="your name" aria-label="Your name"> and I need</div>
+   <div class="chips" role="group" aria-label="What do you need">
+    <label><input type="checkbox" name="s" value="headlight restoration"><span>Headlights</span></label>
+    <label><input type="checkbox" name="s" value="a foam wash"><span>Foam wash</span></label>
+    <label><input type="checkbox" name="s" value="interior detailing"><span>Interior</span></label>
+   </div>
+   <div class="sent">for my <input id="car" placeholder="car or truck" aria-label="Your vehicle"> in <input id="ar" placeholder="your area" aria-label="Your area"></div>
+   <button class="btn main" type="submit">Text this to Shynex</button>
+   <p class="note">Opens a text to (604) 318-8357. You press send.</p>
+  </form>
+ </div>
+</section>
+
+<section>
+ <div class="wrap info">
+  <div class="rv">
+   <h2 class="d">Hours</h2>
+   <div class="hrs">
+    <div><span>Monday to Sunday</span><b>9 a.m. &ndash; 9 p.m.</b></div>
+   </div>
+   <p class="areas" style="margin-top:20px">Based in Leduc, AB. Mobile service in Edmonton and surrounding areas.</p>
+  </div>
+  <div class="rv">
+   <h2 class="d">Call <em>Shynex</em></h2>
+   <a class="big" href="tel:+16043188357">(604) 318-8357</a>
+   <p class="areas">Call or text. Open every day.</p>
+  </div>
+ </div>
+</section>
+
+<footer><div class="wrap"><b>Shynex Detailing</b> &middot; Leduc, AB &middot; (604) 318-8357<br>Preview built by JPF. Not live yet.</div></footer>
+
+<div class="dock" role="group" aria-label="Contact">
+ <a href="tel:+16043188357">Call now</a>
+ <a href="sms:+16043188357">Text</a>
+</div>
+
+<script>
+document.documentElement.classList.add('js');
+(function(){
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+ document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+ var red=matchMedia('(prefers-reduced-motion:reduce)').matches;
+ document.querySelectorAll('[data-count]').forEach(function(el){
+  if(red)return;var t=+el.dataset.count,d=+el.dataset.dec||0,o=new IntersectionObserver(function(es){if(!es[0].isIntersecting)return;o.disconnect();var s=performance.now();(function f(n){var p=Math.min(1,(n-s)/1200);el.textContent=(t*(1-Math.pow(1-p,3))).toFixed(d);if(p<1)requestAnimationFrame(f)})(s)});o.observe(el)});
+ document.getElementById('qf').addEventListener('submit',function(e){
+  e.preventDefault();
+  var n=document.getElementById('nm').value.trim(),c=document.getElementById('car').value.trim(),a=document.getElementById('ar').value.trim();
+  var s=[].map.call(document.querySelectorAll('input[name=s]:checked'),function(x){return x.value});
+  var m='Hi Shynex, '+(n?"I'm "+n+' and ':'')+'I need '+(s.length?s.join(' and '):'a quote')+(c?' for my '+c:'')+(a?' in '+a:'')+'. Thanks!';
+  location.href='sms:+16043188357?&body='+encodeURIComponent(m);
+ });
+})();
+</script>
+</body>
+</html>
