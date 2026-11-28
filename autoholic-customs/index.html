@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Autoholic Customs | Window Tint, Ceramic Coating &amp; Detailing in Calgary</title>
+<meta name="description" content="Autoholic Customs, car detailing and window tint in Calgary. Call (403) 618-5263.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Chivo:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ 1 Direction: video-led, dark premium. "Done right" is the check-mark line on every one of their posts, so it is the headline.
+ 2 Palette: #080b10 base (black Defender + Audi paint), #121b26 panel (Audi blue-black shadow), #eef2f6 text,
+   #ff7a2f accent (orange sunset reflection on the Audi door + Mustang sky), #9aa7b5 muted.
+ 3 Fonts: Orbitron (wide display) + Chivo (body).
+ 4 Signature: tint shade chooser. Pick clear / 50 / 35 / 20 / 5 and the windows of their Audi A5 go darker.
+ 5 Order: video hero, rating strip, services list, shade chooser, work reel, review band, reviews, quote sentence, footer.
+ 6 Motion: hero entrance under 1.5s, rating counts up once, a few gentle reveals; all off for reduced motion. */
+:root{--bg:#080b10;--panel:#121b26;--tx:#eef2f6;--mu:#9aa7b5;--ac:#ff7a2f;--ln:rgba(255,255,255,.12);--disp:'Orbitron',system-ui,sans-serif;--body:'Chivo',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--tx);font:400 17px/1.6 var(--body);overflow-x:hidden;padding-bottom:96px}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ac);outline-offset:3px;border-radius:8px}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+.d{font-family:var(--disp);font-weight:900;text-transform:uppercase;letter-spacing:-.01em;line-height:1;word-spacing:.12em}
+.lab{font:700 13px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--ac)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;border-radius:999px;font:700 16px var(--body);text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .18s,background .18s,box-shadow .18s}
+.btn:active{transform:scale(.98)}
+.btn.p{background:var(--ac);color:#150a02}
+.btn.p:hover{box-shadow:0 10px 30px -8px rgba(255,122,47,.6)}
+.btn.g{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.28);color:var(--tx);-webkit-backdrop-filter:blur(20px) saturate(160%);backdrop-filter:blur(20px) saturate(160%)}
+
+/* NAV pill */
+.nav{position:fixed;z-index:50;top:max(12px,env(safe-area-inset-top));left:14px;right:14px;max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 8px 8px 20px;border-radius:999px;background:rgba(8,11,16,.5);border:1px solid rgba(255,255,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 20px 50px -20px rgba(0,0,0,.6);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%)}
+.nav b{font:800 15px var(--disp);letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+.nav b i{font-style:normal;color:var(--ac)}
+.nav .links{display:none;gap:26px;font:500 15px var(--body)}
+.nav .links a{text-decoration:none;color:var(--mu);transition:color .15s}.nav .links a:hover{color:var(--tx)}
+.nav .btn{min-height:44px;padding:0 20px;font-size:15px}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;isolation:isolate}
+.hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(8,11,16,.78) 0%,rgba(8,11,16,.18) 34%,rgba(8,11,16,.35) 58%,rgba(8,11,16,.96) 100%)}
+.hero .in{padding:110px 0 36px}
+.hero h1{font-size:clamp(54px,15.5vw,150px);margin:18px 0 0;text-shadow:0 4px 40px rgba(0,0,0,.5)}
+.hero h1 span{display:block}
+.hero h1 .o{color:var(--ac)}
+.hero .sub{margin-top:22px;max-width:520px;font-size:18px;color:#d6dde5}
+.hero .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.gcard{margin-top:30px;width:min(100%,420px);padding:18px 20px;border-radius:24px;background:rgba(18,27,38,.5);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 24px 60px -20px rgba(0,0,0,.6);-webkit-backdrop-filter:blur(24px) saturate(170%);backdrop-filter:blur(24px) saturate(170%)}
+.gcard .top{display:flex;align-items:baseline;gap:12px}
+.gcard .n{font:900 40px var(--disp)}
+.gcard .st{color:var(--ac);letter-spacing:2px;font-size:15px}
+.gcard p{font-size:15px;color:#e3e9ef;margin-top:6px;line-height:1.5}
+.gcard small{display:block;margin-top:8px;font-size:14px;color:var(--mu)}
+.load{opacity:0;transform:translateY(18px);animation:in .9s cubic-bezier(.2,.7,.2,1) forwards}
+.l2{animation-delay:.15s}.l3{animation-delay:.3s}.l4{animation-delay:.45s}.l5{animation-delay:.6s}
+@keyframes in{to{opacity:1;transform:none}}
+
+/* STRIP */
+.strip{border-block:1px solid var(--ln);background:var(--bg)}
+.strip .wrap{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.strip .c{padding:26px 0;border-bottom:1px solid var(--ln)}
+.strip .c:nth-child(odd){padding-right:16px}
+.strip .c:nth-child(even){padding-left:20px;border-left:1px solid var(--ln)}
+.strip .c:nth-last-child(-n+2){border-bottom:0}
+.strip .v{font:900 clamp(26px,7vw,48px)/1 var(--disp)}
+.strip .k{font-size:14px;color:var(--mu);margin-top:8px}
+
+section{padding:88px 0}
+h2{font-size:clamp(36px,9.4vw,88px)}
+h2 .o{color:var(--ac)}
+
+/* SERVICES list */
+.svc{margin-top:44px;border-top:1px solid var(--ln)}
+.svc li{list-style:none;display:grid;grid-template-columns:44px 1fr;gap:6px 14px;padding:22px 0;border-bottom:1px solid var(--ln);align-items:baseline}
+.svc .no{font:700 13px var(--disp);color:var(--ac)}
+.svc h3{font:800 clamp(20px,5.4vw,34px)/1.15 var(--disp);text-transform:uppercase;letter-spacing:-.005em;word-spacing:.1em}
+.svc p{grid-column:2;color:var(--mu);font-size:15px}
+.svc li{transition:padding-left .25s}.svc li:hover{padding-left:10px}
+.note{margin-top:22px;font-size:14px;color:var(--mu)}
+
+/* SHADE chooser */
+.shade{background:linear-gradient(180deg,var(--bg),#0c121a 40%,var(--bg));position:relative;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.28;pointer-events:none;animation:drift 26s ease-in-out infinite alternate}
+.orb.a{width:520px;height:520px;background:#1f3a55;left:-160px;top:10%}
+.orb.b{width:420px;height:420px;background:#8a3c14;right:-140px;bottom:6%;opacity:.2;animation-duration:30s}
+@keyframes drift{to{transform:translate(60px,-40px)}}
+.shade .grid{display:grid;gap:34px;position:relative}
+.car{position:relative;border-radius:26px;overflow:hidden;aspect-ratio:787/880;background:#000;border:1px solid var(--ln)}
+.car img{width:100%;height:100%;object-fit:cover}
+.car .glass{position:absolute;inset:0;background:linear-gradient(180deg,#c9def0,#708fb0);opacity:.6;transition:opacity .45s ease;mix-blend-mode:screen;
+ clip-path:polygon(14% 57%,19% 54%,40% 53%,43% 69%,15% 70%,14% 57%,43% 52%,45% 51%,78% 50.5%,100% 51.5%,100% 67%,58% 70%,43% 69%)}
+.car .tag{position:absolute;left:14px;bottom:14px;padding:10px 16px;border-radius:999px;background:rgba(8,11,16,.5);border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.25);-webkit-backdrop-filter:blur(20px) saturate(160%);backdrop-filter:blur(20px) saturate(160%);font:700 14px var(--body)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.chip{min-height:48px;min-width:64px;padding:0 20px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.22);color:var(--tx);font:800 16px var(--disp);cursor:pointer;-webkit-backdrop-filter:blur(18px) saturate(150%);backdrop-filter:blur(18px) saturate(150%);box-shadow:inset 0 1px 0 rgba(255,255,255,.2);transition:transform .18s,background .18s,border-color .18s}
+.chip:active{transform:scale(.97)}
+.chip[aria-pressed=true]{background:var(--ac);border-color:var(--ac);color:#150a02}
+.shade .big{font:900 clamp(64px,18vw,140px)/1 var(--disp);color:var(--tx);margin-top:10px}
+.shade .big small{font-size:.28em;color:var(--mu);margin-left:8px;letter-spacing:.04em}
+.shade p.t{color:#c6d0da;max-width:46ch;margin-top:12px}
+
+/* WORK */
+.reel{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 20px 24px;margin-top:40px;scrollbar-width:none}
+.reel::-webkit-scrollbar{display:none}
+.reel figure{flex:0 0 min(78vw,360px);scroll-snap-align:center;border-radius:24px;overflow:hidden;position:relative;aspect-ratio:3/4;background:var(--panel);border:1px solid var(--ln)}
+.reel img{width:100%;height:100%;object-fit:cover}
+.reel figcaption{position:absolute;left:12px;bottom:12px;padding:8px 14px;border-radius:999px;font:700 13px var(--body);background:rgba(8,11,16,.55);border:1px solid rgba(255,255,255,.2);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+
+/* BAND */
+.band{position:relative;min-height:70svh;display:flex;align-items:center;overflow:hidden;isolation:isolate;padding:80px 0}
+.band video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.band::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(8,11,16,.9),rgba(8,11,16,.55))}
+.band blockquote{font:800 clamp(24px,6.6vw,56px)/1.18 var(--disp);text-transform:none;letter-spacing:-.01em;max-width:18ch;word-spacing:.08em}
+.band cite{display:block;margin-top:24px;font:500 16px var(--body);font-style:normal;color:#cfd8e1}
+.band cite b{color:var(--ac)}
+
+/* REVIEWS */
+.rv{display:grid;gap:16px;margin-top:40px}
+.rc{padding:26px;border-radius:26px;background:rgba(18,27,38,.6);border:1px solid var(--ln);box-shadow:inset 0 1px 0 rgba(255,255,255,.1)}
+.rc .s{color:var(--ac);letter-spacing:2px;font-size:15px}
+.rc p{margin-top:12px;font-size:17px;line-height:1.55}
+.rc cite{display:block;margin-top:16px;font-style:normal;color:var(--mu);font-size:14px}
+
+/* QUOTE */
+.quote{position:relative;overflow:hidden}
+.panel{position:relative;padding:28px 22px;border-radius:28px;background:rgba(18,27,38,.55);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 30px 80px -30px rgba(0,0,0,.8);-webkit-backdrop-filter:blur(26px) saturate(170%);backdrop-filter:blur(26px) saturate(170%)}
+.sent{font:600 clamp(20px,5.2vw,30px)/2.1 var(--body);color:#dbe3eb}
+.sent input,.sent select{font:700 inherit;font-size:.82em;color:var(--tx);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);border-radius:14px;padding:6px 14px;min-height:46px;max-width:100%;width:auto;-webkit-appearance:none;appearance:none;transition:border-color .15s,box-shadow .15s}
+.sent input,.sent select{display:block;width:100%;margin:4px 0 14px}.sent .ln{display:block;line-height:1.5}
+.sent input::placeholder{color:#7f8c9a;font-weight:500}
+.sent input:focus,.sent select:focus{outline:none;border-color:var(--ac);box-shadow:0 0 0 3px rgba(255,122,47,.3)}
+.sent select option{color:#111;background:#fff}
+.panel .btn{margin-top:22px;width:100%}
+.panel small{display:block;margin-top:14px;color:var(--mu);font-size:14px}
+.facts{display:grid;gap:18px;margin-top:40px}
+.facts div{font-size:16px;color:#cfd8e1}.facts b{display:block;font:700 13px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--ac);margin-bottom:6px}
+.hrs{display:grid;grid-template-columns:auto 1fr;gap:2px 18px;font-size:15px}
+
+footer{padding:40px 0 30px;border-top:1px solid var(--ln);color:var(--mu);font-size:14px}
+footer b{color:var(--tx)}
+
+/* DOCK */
+.dock{position:fixed;z-index:60;left:14px;right:14px;bottom:max(14px,env(safe-area-inset-bottom));display:flex;gap:8px;padding:8px;border-radius:999px;background:rgba(8,11,16,.55);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 20px 50px -15px rgba(0,0,0,.7);-webkit-backdrop-filter:blur(24px) saturate(170%);backdrop-filter:blur(24px) saturate(170%);max-width:460px;margin:0 auto}
+.dock .btn{flex:1;min-height:48px;padding:0 12px}
+
+.js .rvl{opacity:0;transform:translateY(20px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}
+.js .rvl.on{opacity:1;transform:none}
+
+@media(min-width:820px){
+ body{font-size:18px;padding-bottom:0}
+ .nav .links{display:flex}
+ .dock{display:none}
+ .hero .in{padding:140px 0 56px}
+ .hero h1{font-size:clamp(96px,12.5vw,190px)}
+ .hero h1 span{display:inline}
+ .hero .layout{display:grid;grid-template-columns:1fr 420px;gap:50px;align-items:end}
+ .gcard{margin:0}
+ section{padding:140px 0}
+ .strip .wrap{grid-template-columns:repeat(4,1fr)}
+ .strip .c{border-bottom:0!important;padding:38px 20px!important;border-left:1px solid var(--ln)!important}
+ .strip .c:first-child{border-left:0!important;padding-left:0!important}
+ .svc li{grid-template-columns:80px 1.1fr 1fr;padding:30px 0}
+ .svc p{grid-column:3}
+ .shade .grid{grid-template-columns:minmax(0,.85fr) minmax(0,1fr);gap:80px;align-items:center}
+ .reel{padding-left:max(20px,calc((100vw - 1180px)/2));margin-top:56px}
+ .reel figure{flex-basis:340px}
+ .rv{grid-template-columns:1fr 1fr}
+ .sent input,.sent select{display:inline-block;width:auto;margin:0 4px}.sent input{width:240px}.sent .ln{display:inline}.sent{line-height:2.2}
+ .quote .grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+ .facts{margin-top:0}
+ .panel{padding:44px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.load,.js .rvl{opacity:1!important;transform:none!important}}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+
+<nav class="nav" aria-label="Main">
+  <b>Autoholic <i>Customs</i></b>
+  <div class="links"><a href="#services">Services</a><a href="#shade">Tint shades</a><a href="#work">Work</a><a href="#reviews">Reviews</a><a href="#quote">Quote</a></div>
+  <a class="btn p" href="tel:+14036185263">Call</a>
+</nav>
+
+<header class="hero">
+  <img class="poster" src="video/hero-clean-poster.jpg" alt="Black Land Rover Defender with window tint, Calgary" fetchpriority="high">
+  <video id="hv" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video>
+  <div class="wrap in">
+    <div class="layout">
+      <div>
+        <div class="lab load">Window tint &middot; Ceramic coating &middot; Detailing &middot; Calgary</div>
+        <h1 class="d load l2"><span>Done</span> <span class="o">right.</span></h1>
+        <p class="sub load l3">Autoholic Customs. Window tint, paint correction, ceramic coating and detailing for cars and trucks in Calgary.</p>
+        <div class="row load l4">
+          <a class="btn p" href="tel:+14036185263">Call (403) 618-5263</a>
+          <a class="btn g" href="#quote">Get a quote by text</a>
+        </div>
+      </div>
+      <div class="gcard load l5">
+        <div class="top"><span class="n" id="rt">4.3</span><span class="st" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+        <p>29 Google reviews. &ldquo;Absolutely impressed with the tint job! The finish is flawless, no bubbles or streaks.&rdquo;</p>
+        <small>Sarthak G., Google &middot; Open 8 a.m. to 10 p.m., 7 days</small>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="strip"><div class="wrap">
+  <div class="c"><div class="v"><span id="rt2" data-to="4.3" data-dec="1">4.3</span></div><div class="k">Google rating</div></div>
+  <div class="c"><div class="v"><span data-to="29">29</span></div><div class="k">Google reviews</div></div>
+  <div class="c"><div class="v">8 to 10</div><div class="k">Open daily, 8 a.m. to 10 p.m.</div></div>
+  <div class="c"><div class="v">NW YYC</div><div class="k">Calgary, Alberta</div></div>
+</div></div>
+
+<section id="services"><div class="wrap">
+  <div class="lab">What they do</div>
+  <h2 class="d" style="margin-top:18px">Everything<br>on the <span class="o">car.</span></h2>
+  <ul class="svc">
+    <li class="rvl"><span class="no">01</span><h3>Ceramic window tint</h3><p>The job behind most of their posts: Lexus GX470 with 5% back and 20% fronts, Ford F-150, Audi A5, Mustang.</p></li>
+    <li class="rvl"><span class="no">02</span><h3>Tail light tint</h3><p>Film on the lights, shown on a Mercedes-AMG.</p></li>
+    <li class="rvl"><span class="no">03</span><h3>Chrome delete</h3><p>Done together with tint on an Acura TLX.</p></li>
+    <li class="rvl"><span class="no">04</span><h3>Paint correction &amp; ceramic coating</h3><p>&ldquo;Removing swirl marks, light scratches, and imperfections,&rdquo; says one customer.</p></li>
+    <li class="rvl"><span class="no">05</span><h3>Undercoating</h3><p>Mentioned in a customer review next to a window tint job.</p></li>
+    <li class="rvl"><span class="no">06</span><h3>1-way privacy film</h3><p>For cars, and a garage turned into a private, cooler space.</p></li>
+    <li class="rvl"><span class="no">07</span><h3>Car detailing</h3><p>Interior vacuum and foam wash work, shown in the photos below.</p></li>
+  </ul>
+</div></section>
+
+<section class="shade" id="shade">
+  <div class="orb a"></div><div class="orb b"></div>
+  <div class="wrap grid">
+    <div class="car rvl">
+      <img src="img/audi-crop.jpg" alt="Audi A5 with tinted windows">
+      <div class="glass" id="glass"></div>
+      <span class="tag" id="tag">Clear glass</span>
+    </div>
+    <div class="rvl">
+      <div class="lab">Pick a shade</div>
+      <h2 class="d" style="margin-top:18px">How dark<br>do you <span class="o">go?</span></h2>
+      <div class="big" id="big">100<small>% light in</small></div>
+      <p class="t" id="ttxt">Clear glass. Tap a shade to see the windows go dark on their Audi A5.</p>
+      <div class="chips" role="group" aria-label="Tint shade">
+        <button class="chip" data-v="100" aria-pressed="true">Clear</button>
+        <button class="chip" data-v="50" aria-pressed="false">50%</button>
+        <button class="chip" data-v="35" aria-pressed="false">35%</button>
+        <button class="chip" data-v="20" aria-pressed="false">20%</button>
+        <button class="chip" data-v="5" aria-pressed="false">5%</button>
+      </div>
+      <p class="note">Picture preview only. Their Lexus GX470 post: 5% on the back, 20% on the fronts. Ask them which shade is right and legal for your car.</p>
+    </div>
+  </div>
+</section>
+
+<section id="work" style="padding-bottom:40px"><div class="wrap">
+  <div class="lab">Their work</div>
+  <h2 class="d" style="margin-top:18px">Seen on<br>the <span class="o">street.</span></h2>
+</div>
+<div class="reel" tabindex="0" aria-label="Photos of recent work">
+  <figure><img loading="lazy" src="img/p9.jpg" alt="Black Mercedes sedan on alloy wheels"><figcaption>Mercedes sedan</figcaption></figure>
+  <figure><img loading="lazy" src="img/p8.jpg" alt="Rear window tint film being applied to a Honda"><figcaption>Rear glass film going on</figcaption></figure>
+  <figure><img loading="lazy" src="img/p12.jpg" alt="White SUV covered in foam during a wash"><figcaption>Foam wash</figcaption></figure>
+  <figure><img loading="lazy" src="img/p10.jpg" alt="Clean cream interior of a Toyota SUV"><figcaption>Interior clean</figcaption></figure>
+  <figure><img loading="lazy" src="img/p11.jpg" alt="Clean cargo area of an SUV"><figcaption>Cargo area</figcaption></figure>
+  <figure><img loading="lazy" src="img/p7.jpg" alt="Hyundai SUV with hood up in the shop"><figcaption>In the shop</figcaption></figure>
+  <figure><img loading="lazy" src="img/audi-crop.jpg" alt="Audi A5 with window tint"><figcaption>Audi A5, done right</figcaption></figure>
+</div></section>
+
+<div class="band">
+  <video id="bv" muted loop playsinline autoplay preload="none" aria-hidden="true"></video>
+  <div class="wrap rvl">
+    <blockquote>&ldquo;They did a real good undercoating and window tint job on my car. Highly recommend.&rdquo;</blockquote>
+    <cite><b>Gurwinder S.</b> &middot; Google review</cite>
+  </div>
+</div>
+
+<section id="reviews"><div class="wrap">
+  <div class="lab">Google reviews</div>
+  <h2 class="d" style="margin-top:18px">4.3 from<br><span class="o">29</span> people.</h2>
+  <div class="rv">
+    <article class="rc rvl"><div class="s" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Absolutely impressed with the tint job! The finish is flawless, no bubbles or streaks, and it really enhances the look while keeping the interior cool. Highly recommend for quality and professionalism!&rdquo;</p><cite>Sarthak G. &middot; Google</cite></article>
+    <article class="rc rvl"><div class="s" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;I recently had paint correction and a ceramic coating done and the results exceeded my expectations. during the paint correction process, removing swirl marks, light scratches, and imperfections that I thought would never come out. The &hellip;&rdquo;</p><cite>Harsimrat M. &middot; Google</cite></article>
+  </div>
+</div></section>
+
+<section class="quote" id="quote">
+  <div class="orb b" style="bottom:auto;top:0"></div>
+  <div class="wrap grid">
+    <div class="panel rvl">
+      <div class="lab" style="margin-bottom:18px">Quote by text</div>
+      <form id="qf" class="sent" autocomplete="off">
+        <span class="ln">Hi Autoholic, I'm</span><input id="qn" placeholder="your name" aria-label="Your name" required>
+        <span class="ln">and I drive a</span><input id="qc" placeholder="car or truck" aria-label="Your vehicle">
+        <span class="ln">I need</span>
+        <select id="qs" aria-label="What you need">
+          <option>window tint</option><option>ceramic window tint</option><option>tail light tint</option><option>chrome delete</option><option>paint correction</option><option>ceramic coating</option><option>undercoating</option><option>privacy film</option><option>a detail</option>
+        </select>
+        <button class="btn p" type="submit">Text my request</button>
+      </form>
+      <small>Opens a text message to (403) 618-5263. Nothing is sent until you press send.</small>
+    </div>
+    <div class="facts rvl">
+      <div><b>Call</b><a href="tel:+14036185263" style="font:800 clamp(26px,6.4vw,40px) var(--disp);text-decoration:none">(403) 618-5263</a></div>
+      <div><b>Area</b>Calgary, Alberta (NW)</div>
+      <div><b>Hours</b><div class="hrs"><span>Monday to Sunday</span><span>8 a.m. to 10 p.m.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><b>Autoholic Customs</b> &middot; Calgary, AB &middot; (403) 618-5263<br>Preview built by JPF. Not live yet.</div></footer>
+
+<div class="dock" role="group" aria-label="Call or text">
+  <a class="btn p" href="tel:+14036185263">Call</a>
+  <a class="btn g" href="#quote">Text a quote</a>
+</div>
+
+<script>
+(function(){
+  var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  // videos: portrait clip on phones, wide clip on desktop
+  var wide=matchMedia('(min-width:820px)').matches;
+  var hv=document.getElementById('hv'); hv.src=wide?'video/band.mp4':'video/hero-clean.mp4';
+  if(wide){document.querySelector('.hero .poster').src='video/band-poster.jpg'}
+  var bv=document.getElementById('bv'); bv.src='video/band.mp4'; bv.preload='auto';
+  if(rm){hv.removeAttribute('autoplay');bv.removeAttribute('autoplay')}
+  else{hv.play&&hv.play().catch(function(){});bv.play&&bv.play().catch(function(){})}
+  // reveal
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.rvl').forEach(function(el){io.observe(el)});
+  // count up
+  var cu=document.querySelectorAll('[data-to]');
+  var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;io2.unobserve(e.target);var el=e.target,to=+el.dataset.to,d=+el.dataset.dec||0;if(rm){return}var t0=performance.now();(function f(t){var p=Math.min(1,(t-t0)/1200),v=to*(1-Math.pow(1-p,3));el.textContent=v.toFixed(d);if(p<1)requestAnimationFrame(f)})(t0)})},{threshold:.6});
+  cu.forEach(function(el){io2.observe(el)});
+  // shade chooser
+  var g=document.getElementById('glass'),tag=document.getElementById('tag'),big=document.getElementById('big'),tt=document.getElementById('ttxt');
+  var op={100:.6,50:.5,35:.34,20:.17,5:.04};
+  var txt={100:'Clear glass. Tap a shade to see the windows go dark on their Audi A5.',50:'50%. A light smoke. You still see in easily.',35:'35%. A common middle shade.',20:'20%. The shade on the front doors of their Lexus GX470 post.',5:'5%. The darkest. On the back of their Lexus GX470 post.'};
+  document.querySelectorAll('.chip').forEach(function(b){b.addEventListener('click',function(){
+    document.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed','false')});
+    b.setAttribute('aria-pressed','true');var v=b.dataset.v;
+    g.style.opacity=op[v];tag.textContent=v==100?'Clear glass':v+'% shade';
+    big.innerHTML=v+'<small>% light in</small>';tt.textContent=txt[v];
+  })});
+  // quote -> sms
+  document.getElementById('qf').addEventListener('submit',function(e){e.preventDefault();
+    var n=document.getElementById('qn').value.trim(),c=document.getElementById('qc').value.trim(),s=document.getElementById('qs').value;
+    var body="Hi Autoholic, I'm "+n+(c?" and I drive a "+c:"")+". I need "+s+". Can I get a quote?";
+    location.href='sms:+14036185263?&body='+encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
