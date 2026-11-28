@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>604 Auto Detailing | Mobile Car Detailing, Maple Ridge BC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gasoek+One&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* PLAN: paver-driveway light editorial. Bone page, ink bands, ONE accent: McLaren papaya.
+ palette: bone #efe9df (stone wall / paver light), ink #14110e (asphalt in the Urus shots), paver #b08a63 (their driveway pavers), papaya #f5821f (McLaren Artura paint, p9-p11), red #d11f2a only inside photos.
+ fonts: Gasoek One (display) + Be Vietnam Pro (body). signature: "Case file" car picker (Urus / Artura) with glass chips.
+ order: hero > services list > case files > wheel video band > reviews > quote sentence > hours/area. motion: hero settle, count-up, gentle photo reveal. */
+:root{--bone:#efe9df;--ink:#14110e;--paver:#b08a63;--pap:#f5821f;--mute:#6b6258}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Be Vietnam Pro',system-ui,sans-serif;background:var(--bone);color:var(--ink);font-size:17px;line-height:1.55;overflow-x:hidden;padding-bottom:96px}
+a{color:inherit}
+img,video{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--pap);outline-offset:3px}
+.d{font-family:'Gasoek One',sans-serif;font-weight:400;line-height:.95;letter-spacing:.005em;word-spacing:.12em;text-transform:uppercase}
+.glass{background:rgba(239,233,223,.58);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.45);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 20px 60px -20px rgba(20,17,14,.35)}
+.glass.dk{background:rgba(20,17,14,.5);border-color:rgba(255,255,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 20px 60px -20px rgba(20,17,14,.5);color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;border-radius:999px;background:var(--pap);color:var(--ink);font-weight:700;text-decoration:none;border:0;font-size:16px;cursor:pointer;transition:transform .18s,filter .18s}
+.btn:hover{filter:brightness(1.07)}.btn:active{transform:scale(.97)}
+.btn.ghost{background:transparent;border:1px solid currentColor;color:inherit}
+/* nav */
+nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;display:flex;align-items:center;justify-content:space-between;padding:6px 6px 6px 20px;border-radius:999px;max-width:1100px;margin:0 auto}
+nav b{font-family:'Gasoek One';font-weight:400;font-size:15px;letter-spacing:.02em}
+nav .links{display:none;gap:26px;font-size:15px;font-weight:500}
+nav .links a{text-decoration:none;color:#fff}
+nav .btn{min-height:44px;padding:0 20px;white-space:nowrap}
+nav .btn .lg{display:none}
+nav b{white-space:nowrap}
+/* hero */
+.hero{position:relative;min-height:100svh;background:var(--ink);color:#fff;display:flex;align-items:flex-end;overflow:hidden}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;transform:scale(1.08);animation:settle 1.6s cubic-bezier(.2,.7,.2,1) forwards}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(20,17,14,.92) 0,rgba(20,17,14,.7) 34%,rgba(20,17,14,0) 62%)}
+.hero .in{position:relative;z-index:2;width:100%;padding:0 20px 28px;max-width:1240px;margin:0 auto}
+.hero h1{font-size:clamp(52px,15.2vw,68px);margin-bottom:18px;animation:rise 1s .25s both}
+.hero h1 em{font-style:normal;color:var(--pap)}
+.hero p.sub{font-size:17px;max-width:30ch;color:#eee;margin-bottom:20px;animation:rise 1s .4s both}
+.hero .row{display:flex;gap:10px;flex-wrap:wrap;animation:rise 1s .55s both}
+.rate{display:none}
+@keyframes settle{to{transform:scale(1)}}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+/* services */
+section{padding:72px 20px}
+.wrap{max-width:1240px;margin:0 auto}
+.lab{font-size:13px;font-weight:600;color:var(--mute);margin-bottom:14px;letter-spacing:.02em}
+h2.d{font-size:clamp(40px,11vw,56px);margin-bottom:28px}
+.svc{list-style:none;padding:0;counter-reset:s}
+.svc li{counter-increment:s;display:flex;gap:16px;align-items:baseline;padding:16px 0;border-top:1px solid rgba(20,17,14,.2);font-family:'Gasoek One';font-size:clamp(22px,6.4vw,34px);text-transform:uppercase;line-height:1.1}
+.svc li:last-child{border-bottom:1px solid rgba(20,17,14,.2)}
+.svc li:before{content:"0" counter(s);font-family:'Be Vietnam Pro';font-weight:600;font-size:14px;color:var(--pap);min-width:26px}
+.svc-note{margin-top:22px;color:var(--mute);max-width:46ch}
+/* case files */
+.cases{background:var(--ink);color:var(--bone);position:relative;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.35;pointer-events:none;animation:drift 26s ease-in-out infinite alternate}
+.orb.a{width:380px;height:380px;background:var(--pap);top:-120px;right:-120px}
+.orb.b{width:340px;height:340px;background:var(--paver);bottom:-120px;left:-120px;animation-delay:-9s}
+@keyframes drift{to{transform:translate(40px,30px)}}
+.cases .wrap{position:relative;z-index:2}
+.chips{display:flex;gap:10px;margin-bottom:22px;flex-wrap:wrap}
+.chip{min-height:46px;padding:0 20px;border-radius:999px;font:600 15px 'Be Vietnam Pro';color:#fff;cursor:pointer;background:rgba(255,255,255,.08);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.22);transition:.18s}
+.chip[aria-selected=true]{background:var(--pap);color:var(--ink);border-color:var(--pap)}
+.chip:active{transform:scale(.97)}
+.stage{display:grid;gap:12px}
+.stage .main{border-radius:26px;overflow:hidden;aspect-ratio:4/5;background:#000}
+.stage .main img{width:100%;height:100%;object-fit:cover;transition:opacity .35s}
+.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.thumbs button{padding:0;border:2px solid transparent;border-radius:14px;overflow:hidden;aspect-ratio:1;cursor:pointer;background:#000;opacity:.65;transition:.18s}
+.thumbs button[aria-current=true]{border-color:var(--pap);opacity:1}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+.cap{font-size:15px;color:#cfc7ba;margin-top:14px}
+.cap b{color:#fff;font-weight:600}
+/* video band */
+.band{position:relative;height:70svh;min-height:420px;background:#000;overflow:hidden;color:#fff;display:flex;align-items:flex-end}
+.band video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.band:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(20,17,14,.8),rgba(20,17,14,0) 55%)}
+.band .in{position:relative;z-index:2;padding:0 20px 30px;max-width:1240px;margin:0 auto;width:100%}
+.band h2{font-size:clamp(34px,9.5vw,60px)}
+/* reviews */
+.rev{position:relative;overflow:hidden}
+.rev .orb{opacity:.25}
+.rev .orb.a{top:auto;bottom:-140px;right:-100px;background:var(--paver)}
+.rev .orb.b{top:60px;left:-160px;bottom:auto;background:var(--pap);opacity:.18}
+.big{font-size:clamp(26px,7vw,44px);line-height:1.15;font-family:'Be Vietnam Pro';font-weight:600;letter-spacing:-.01em;margin-bottom:14px;max-width:24ch}
+.big+.who{margin-bottom:40px}
+.who{font-size:15px;font-weight:600;color:var(--mute)}
+.stat{display:flex;align-items:baseline;gap:14px;margin-bottom:30px;flex-wrap:wrap}
+.stat .n{font-size:clamp(64px,20vw,110px)}
+.stat span.t{font-weight:600}
+.cards{display:grid;gap:14px;position:relative;z-index:2}
+.card{padding:24px;border-radius:24px}
+.card p{margin-bottom:12px}
+/* quote */
+.quote{background:var(--paver);color:var(--ink)}
+.panel{padding:26px 22px;border-radius:28px}
+.sent{font-size:clamp(20px,5.6vw,28px);line-height:1.4;font-weight:600}
+.sent input,.sent select{margin:6px 0 16px!important}
+.sent input,.sent select{display:block;font:inherit;color:var(--ink);background:rgba(255,255,255,.55);border:1px solid rgba(20,17,14,.25);border-radius:14px;padding:2px 12px;min-height:46px;max-width:100%;width:100%;margin:2px 0;transition:.18s}
+.sent input:focus,.sent select:focus{outline:none;border-color:var(--pap);box-shadow:0 0 0 3px rgba(245,130,31,.5)}
+.panel .btn{margin-top:20px;width:100%;background:var(--ink);color:#fff}
+.alt{margin-top:16px;font-size:15px}
+/* where */
+.where{display:grid;gap:30px}
+.hrs{list-style:none;padding:0;max-width:360px}
+.hrs li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(20,17,14,.18);font-size:16px}
+.phone{font-family:'Gasoek One';font-size:clamp(34px,10vw,64px);text-decoration:none;display:block;margin:6px 0 20px}
+footer{padding:30px 20px 20px;font-size:14px;color:var(--mute);text-align:center}
+/* dock */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:12px;display:flex;gap:8px;padding:8px;border-radius:999px;max-width:520px;margin:0 auto}
+.dock a{flex:1;min-height:48px;border-radius:999px;display:flex;align-items:center;justify-content:center;text-decoration:none;font-weight:700;font-size:16px;transition:transform .18s}
+.dock a:active{transform:scale(.97)}
+.dock .c{background:var(--pap);color:var(--ink)}
+.dock .t{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25)}
+.reveal{opacity:1}
+@media(min-width:860px){
+ body{padding-bottom:0}
+ nav .links{display:flex}
+ nav .btn .lg{display:inline}
+ nav b{font-size:17px}
+ nav{padding-left:26px}
+ .dock{display:none}
+ section{padding:130px 40px}
+  .hero{display:grid;grid-template-columns:1fr 1fr}
+ .hero img.bg{position:relative;grid-column:2;grid-row:1;transform:none;animation:none;height:100svh}
+ .hero:after{display:none}
+ .hero .in{grid-column:1;grid-row:1;align-self:end;padding:0 40px 56px;max-width:none;margin:0}
+ .hero h1{font-size:clamp(70px,7.4vw,118px)}
+ .hero .in .wide{}
+ .hero p.sub{font-size:19px}
+ .rate{display:block;position:absolute;z-index:3;right:40px;top:104px;padding:22px 26px;border-radius:26px;width:300px;color:#fff;animation:rise 1s .7s both}
+ .rate .n{font-size:54px}
+ .rate p{font-size:15px;margin-top:8px;color:#eee}
+ .svc li{font-size:clamp(30px,3.4vw,46px);padding:22px 0}
+ .split{display:grid;grid-template-columns:5fr 7fr;gap:80px;align-items:start}
+ .stage{grid-template-columns:1fr 150px;align-items:start}
+ .stage .main{aspect-ratio:4/5;max-height:80vh;width:100%}
+ .thumbs{grid-template-columns:1fr;order:2}
+ .cards{grid-template-columns:repeat(3,1fr)}
+ .panel{padding:44px}
+ .sent input,.sent select{max-width:520px}
+ .where{grid-template-columns:1fr 1fr;gap:80px}
+ .band{height:80vh}
+ .stage .main{max-width:700px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.hero img.bg{transform:none}}
+</style>
+</head>
+<body>
+<nav class="glass dk">
+ <b>604 Auto Detailing</b>
+ <span class="links"><a href="#services">Services</a><a href="#cars">Their work</a><a href="#reviews">Reviews</a><a href="#quote">Quote</a></span>
+ <a class="btn" href="tel:+17782222345">Call<span class="lg">&nbsp;(778) 222-2345</span></a>
+</nav>
+
+<header class="hero">
+ <img class="bg" src="img/p4.jpg" alt="Red Lamborghini Urus washed in a Maple Ridge area driveway">
+ <div class="in">
+  <h1 class="d">Spotless<br>in your<br><em>driveway.</em></h1>
+  <p class="sub">Mobile car detailing in Maple Ridge, the Fraser Valley and the Lower Mainland.</p>
+  <div class="row"><a class="btn" href="#quote">Get a quote</a><a class="btn ghost" href="tel:+17782222345">Call now</a></div>
+ </div>
+ <div class="rate glass dk"><div class="d n"><span data-n="35">35</span></div><div style="font-weight:600">Google reviews, 5.0 rating</div><p>&ldquo;Seriously top notch work!&rdquo; Jesse&nbsp;D.</p></div>
+</header>
+
+<section id="services">
+ <div class="wrap split">
+  <div><p class="lab">What 604 Auto Detailing does</p><h2 class="d">Six ways to get it clean.</h2></div>
+  <div>
+   <ul class="svc"><li>Mobile Detailing</li><li>Interior / Exterior Detailing</li><li>Paint Correction</li><li>Ceramic Coating</li><li>Maintenance Detailing</li><li>Fleet Detailing</li></ul>
+   <p class="svc-note">Text or DM to book an appointment. Based in Maple Ridge, BC.</p>
+  </div>
+ </div>
+</section>
+
+<section class="cases" id="cars">
+ <div class="orb a"></div><div class="orb b"></div>
+ <div class="wrap">
+  <p class="lab" style="color:#b8afa2">Real jobs from their Instagram</p>
+  <h2 class="d">Pick a car.</h2>
+  <div class="chips" role="tablist">
+   <button class="chip" role="tab" aria-selected="true" data-k="urus">Lamborghini Urus</button>
+   <button class="chip" role="tab" aria-selected="false" data-k="art">McLaren Artura</button>
+  </div>
+  <div class="stage">
+   <div class="main"><img id="mainimg" src="img/p4.jpg" alt=""></div>
+   <div class="thumbs" id="thumbs"></div>
+  </div>
+  <p class="cap" id="cap"><b>Lamborghini Urus</b> in for a maintenance detail.</p>
+ </div>
+</section>
+
+<div class="band">
+ <video src="video/band.mp4" poster="video/band-poster.jpg" muted loop playsinline autoplay preload="metadata"></video>
+ <div class="in"><h2 class="d">Wheels get<br>their own wash.</h2></div>
+</div>
+
+<section class="rev" id="reviews">
+ <div class="orb a"></div><div class="orb b"></div>
+ <div class="wrap">
+  <div class="stat"><span class="d n"><span id="cnt" data-n="35">35</span></span><span class="t">Google reviews<br>5.0 rating</span></div>
+  <p class="big">&ldquo;Seriously top notch work! Absolutely love the result of my cars first bath.&rdquo;</p>
+  <p class="who">Jesse D., Google</p>
+  <div class="cards">
+   <div class="card glass"><p>&ldquo;Brendon and Nathan arrived on time and cleaned our car beautifully inside and out for the price they quoted. Very satisfied with their work!&rdquo;</p><div class="who">Jonathan G., Google</div></div>
+   <div class="card glass"><p>&ldquo;I messaged the night before expecting not to hear back and he managed to fit me in the next day, no questions asked. Got my car and motorcycle detailed and they look brand new.&rdquo;</p><div class="who">Jason, Google</div></div>
+   <div class="card glass"><p>&ldquo;Great experience! My car looks like new&mdash;super clean inside and out. They paid great attention to detail, especially in the interior.&rdquo;</p><div class="who">Karan S., Google</div></div>
+  </div>
+ </div>
+</section>
+
+<section class="quote" id="quote">
+ <div class="wrap split">
+  <div><p class="lab" style="color:#3a2f22">Free quote by text</p><h2 class="d">Tell us the car.</h2></div>
+  <form class="panel glass" id="f">
+   <div class="sent">
+    Hi, I'm<input id="nm" placeholder="your name" autocomplete="name" aria-label="Your name">I drive a<input id="car" placeholder="year and car" aria-label="Your car">and I need<select id="svc" aria-label="Service"><option>a mobile detail</option><option>interior / exterior detailing</option><option>paint correction</option><option>a ceramic coating</option><option>maintenance detailing</option><option>fleet detailing</option></select>I'm in<input id="ar" placeholder="your city" aria-label="Your city">
+   </div>
+   <button class="btn" type="submit">Text this to 604 Auto Detailing</button>
+   <p class="alt">Opens your messages. Or call <a href="tel:+17782222345"><b>(778) 222-2345</b></a>.</p>
+  </form>
+ </div>
+</section>
+
+<section>
+ <div class="wrap where">
+  <div><p class="lab">Call or text</p><a class="phone" href="tel:+17782222345">(778) 222-2345</a><a class="btn" href="sms:+17782222345">Text us</a>
+   <p style="margin-top:22px;max-width:36ch">Maple Ridge, BC. Serving the Fraser Valley and Lower Mainland. They come to you.</p></div>
+  <div><p class="lab">Hours</p>
+   <ul class="hrs"><li><span>Monday to Sunday</span><b>8 a.m.&ndash;8 p.m.</b></li></ul>
+   <p style="margin-top:16px;color:var(--mute);font-size:15px">Open all seven days, per their Google listing.</p></div>
+ </div>
+</section>
+
+<footer>Preview built by JPF. Not live yet.</footer>
+
+<div class="dock glass dk"><a class="c" href="tel:+17782222345">Call</a><a class="t" href="sms:+17782222345">Text</a></div>
+
+<script>
+var sets={
+ urus:{n:'Lamborghini Urus',c:' in for a maintenance detail.',i:['p4','p5','p6','p7','p8']},
+ art:{n:'McLaren Artura',c:' in for a maintenance detail.',i:['p9','p10','p11','p12']}
+};
+var mi=document.getElementById('mainimg'),th=document.getElementById('thumbs'),cap=document.getElementById('cap');
+function show(f){mi.style.opacity=.2;setTimeout(function(){mi.src='img/'+f+'.jpg';mi.style.opacity=1},150);
+ [].forEach.call(th.children,function(b){b.setAttribute('aria-current',b.dataset.f===f)})}
+function setCar(k){var s=sets[k];th.innerHTML='';
+ s.i.forEach(function(f){var b=document.createElement('button');b.dataset.f=f;b.setAttribute('aria-label','Photo '+f);b.innerHTML='<img src="img/'+f+'.jpg" alt="" loading="lazy">';b.onclick=function(){show(f)};th.appendChild(b)});
+ cap.innerHTML='<b>'+s.n+'</b>'+s.c;show(s.i[0]);
+ [].forEach.call(document.querySelectorAll('.chip'),function(c){c.setAttribute('aria-selected',c.dataset.k===k)})}
+[].forEach.call(document.querySelectorAll('.chip'),function(c){c.onclick=function(){setCar(c.dataset.k)}});
+setCar('urus');
+// count up
+var el=document.getElementById('cnt');
+if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
+ var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){io.disconnect();var t0=null;(function s(t){t0=t0||t;var p=Math.min((t-t0)/1100,1);el.textContent=Math.round(35*p);if(p<1)requestAnimationFrame(s)})(performance.now())}},{threshold:.5});io.observe(el)}
+document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();
+ var m="Hi 604 Auto Detailing, I'm "+(nm.value||'')+". I drive a "+(car.value||'')+" and I need "+svc.value+". I'm in "+(ar.value||'')+". Can I get a quote?";
+ location.href='sms:+17782222345?&body='+encodeURIComponent(m)});
+</script>
+</body>
+</html>
