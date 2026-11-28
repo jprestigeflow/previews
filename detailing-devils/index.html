@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Detailing Devils | Mobile Car Detailing in Leduc, AB</title>
+<meta name="description" content="Detailing Devils. Mobile car detailing service in Leduc, AB. Luxury Detail. Devilish Finish.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ direction: full-screen-photo-top, black-and-devil-red, mobile "we come to you" voice from their own tagline
+ palette: ink #0c0809 (warm black, their logo/post black) / oxblood #1b0e10 / bone #f3ece5 / devil red #dc2a2f (red devil logo on their posts) / ash #a1969a
+ fonts: Abril Fatface (display, fat didone = "luxury" + "devilish") + Outfit (body)
+ signature: "Whose ride?" chooser, their own truck / sedan / minivan / cabin jobs in a big frame with glass chips
+ order: hero > we-bring-it (3 lines) > chooser > review wall > hours + numbers > quote sentence > footer
+ motion: hero photo settles + type rises once; gentle reveals; count-up on rating; reduced-motion respected
+*/
+:root{--ink:#0c0809;--ox:#1b0e10;--bone:#f3ece5;--red:#dc2a2f;--ash:#a1969a;--r-pill:999px;--r-big:26px;--r-sm:15px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--bone);font-family:'Outfit',system-ui,sans-serif;font-size:17px;line-height:1.55;overflow-x:hidden;padding-bottom:calc(88px + env(safe-area-inset-bottom))}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.disp{font-family:'Abril Fatface',serif;font-weight:400;letter-spacing:-.01em;word-spacing:.12em;line-height:.95}
+.wrap{max-width:1240px;margin:0 auto;padding:0 22px}
+.small{font-size:14px;color:var(--ash)}
+.glass{background:rgba(27,14,16,.55);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 24px 60px -24px rgba(0,0,0,.6)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;border-radius:var(--r-pill);background:var(--red);color:#fff;font-weight:600;font-size:17px;border:0;cursor:pointer;transition:transform .18s,filter .18s;font-family:inherit}
+.btn:hover{filter:brightness(1.1)}.btn:active{transform:scale(.97)}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,.35)}
+
+/* nav */
+nav{position:fixed;z-index:50;top:max(12px,env(safe-area-inset-top));left:12px;right:12px;max-width:1100px;margin:0 auto;height:56px;border-radius:var(--r-pill);display:flex;align-items:center;justify-content:space-between;padding:0 8px 0 22px}
+nav b{font-family:'Abril Fatface',serif;font-weight:400;font-size:21px;letter-spacing:.01em;word-spacing:.1em}
+nav b i{color:var(--red);font-style:normal}
+nav .links{display:none;gap:28px;font-size:15px;color:#e8dfd8}
+nav .call{min-height:44px;padding:0 20px;font-size:15px}
+@media(min-width:820px){nav .links{display:flex}}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.hero picture,.hero picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero picture img{object-position:50% 0%;animation:settle 1.6s cubic-bezier(.2,.7,.2,1) both}
+.hero:after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,rgba(12,8,9,.55) 0%,rgba(12,8,9,0) 22%,rgba(12,8,9,.35) 34%,rgba(12,8,9,.9) 62%,var(--ink) 92%)}
+.hero .in{position:relative;z-index:2;width:100%;padding:0 22px 40px}
+.hero h1{font-size:clamp(56px,16vw,86px);text-shadow:0 2px 30px rgba(0,0,0,.45)}
+.hero h1 span{display:block}
+.hero h1 .r{color:var(--red)}
+.hero h1 span{animation:rise .9s .35s cubic-bezier(.2,.7,.2,1) both}
+.hero h1 span+span{animation-delay:.5s}
+.hero .row{display:flex;flex-direction:column;gap:18px;margin-top:26px;align-items:flex-start}
+.hero .card{border-radius:var(--r-big);padding:16px 20px;display:flex;gap:16px;align-items:center;max-width:370px;animation:rise .9s .8s cubic-bezier(.2,.7,.2,1) both}
+.hero .card .n{font-family:'Abril Fatface',serif;font-size:46px;line-height:1}
+.hero .card p{font-size:14.5px;line-height:1.4;color:#efe6df}
+.hero .stars{color:var(--red);letter-spacing:2px;font-size:15px}
+.hero .btns{display:flex;gap:12px;flex-wrap:wrap}
+@keyframes settle{from{transform:scale(1.12)}to{transform:scale(1)}}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@media(min-width:820px){
+ .hero:after{background:linear-gradient(180deg,rgba(12,8,9,.5) 0%,rgba(12,8,9,.1) 20%,rgba(12,8,9,.6) 42%,rgba(12,8,9,.92) 70%,var(--ink) 100%)}
+ .hero .in{max-width:1240px;margin:0 auto;padding:0 22px 64px}
+ .hero h1{font-size:clamp(110px,12.5vw,176px)}
+ .hero .row{flex-direction:row;align-items:center;gap:28px;margin-top:34px}
+}
+
+/* sections */
+section{position:relative;padding:84px 0}
+@media(min-width:820px){section{padding:130px 0}}
+.kick{font-size:14px;color:var(--red);font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px}
+h2.disp{font-size:clamp(46px,11vw,92px)}
+.bring{background:var(--ink)}
+.bring h2 em{font-style:normal;color:var(--red);display:block}
+.lines{margin-top:48px;border-top:1px solid rgba(255,255,255,.14)}
+.lines div{display:grid;grid-template-columns:54px 1fr;gap:6px 14px;padding:26px 0;border-bottom:1px solid rgba(255,255,255,.14);align-items:baseline}
+.lines span{font-family:'Abril Fatface',serif;color:var(--red);font-size:22px}
+.lines h3{font-family:'Abril Fatface',serif;font-weight:400;font-size:clamp(30px,7vw,48px);line-height:1.05;word-spacing:.1em}
+.lines p{grid-column:2;color:var(--ash);font-size:16px;max-width:46ch}
+@media(min-width:820px){
+ .bring .wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+ .lines{margin-top:12px}
+ .lines div{grid-template-columns:70px 1fr}
+}
+
+/* chooser */
+.pick{background:var(--ox);overflow:hidden}
+.pick .head{display:flex;flex-direction:column;gap:14px;margin-bottom:34px}
+.stage{position:relative;border-radius:var(--r-big);overflow:hidden;aspect-ratio:4/5;background:#000}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .55s,transform 1.2s}
+.stage img.on{opacity:1}
+.stage .cap{position:absolute;left:16px;bottom:16px;right:16px;display:flex;flex-wrap:wrap;gap:8px;z-index:2}
+.chip{min-height:46px;padding:0 20px;border-radius:var(--r-pill);font:500 15px 'Outfit',sans-serif;color:var(--bone);cursor:pointer;transition:transform .15s,background .2s}
+.chip:active{transform:scale(.96)}
+.chip[aria-pressed=true]{background:var(--red);border-color:var(--red);color:#fff}
+.stage:after{content:"";position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(0deg,rgba(12,8,9,.75),transparent);z-index:1;pointer-events:none}
+.stage .tag{position:absolute;top:16px;left:16px;z-index:2;padding:8px 16px;border-radius:var(--r-sm);font-size:14px}
+@media(min-width:820px){.stage{aspect-ratio:16/9}.pick .head{flex-direction:row;justify-content:space-between;align-items:end}.pick .head p{max-width:34ch}}
+
+/* reviews */
+.rev{background:var(--ink);overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;animation:drift 26s ease-in-out infinite alternate}
+.orb.a{width:420px;height:420px;background:rgba(220,42,47,.28);top:6%;right:-120px}
+.orb.b{width:360px;height:360px;background:rgba(120,30,40,.35);bottom:4%;left:-120px;animation-duration:32s}
+@keyframes drift{to{transform:translate(-60px,50px)}}
+.rev .lead{position:relative;margin:10px 0 52px}
+.rev blockquote{font-family:'Abril Fatface',serif;font-size:clamp(32px,7.4vw,66px);line-height:1.08;word-spacing:.1em;max-width:18em}
+.rev .by{margin-top:20px;color:var(--ash);font-size:15px}
+.rev .by b{color:var(--bone);font-weight:600}
+.wall{position:relative;display:grid;gap:14px}
+.wall figure{padding:24px;border-radius:var(--r-big)}
+.wall p{font-size:16px;line-height:1.55;color:#f0e8e1}
+.wall figcaption{margin-top:14px;font-size:14px;color:var(--ash)}
+.wall figcaption b{color:var(--bone);font-weight:600}
+@media(min-width:820px){.wall{grid-template-columns:repeat(2,1fr);gap:18px}}
+
+/* hours + numbers */
+.facts{background:var(--ox)}
+.facts .wrap{display:grid;gap:56px}
+.big{display:flex;gap:40px;flex-wrap:wrap}
+.big div b{display:block;font-family:'Abril Fatface',serif;font-weight:400;font-size:clamp(76px,19vw,150px);line-height:.95}
+.big div b i{font-style:normal;color:var(--red)}
+.big div span{color:var(--ash);font-size:15px}
+.hours{max-width:520px;width:100%}
+.hours li{list-style:none;display:flex;justify-content:space-between;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:17px}
+.hours li.now{color:#fff;font-weight:600}
+.hours li.now span:first-child:after{content:"Today";margin-left:10px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;background:var(--red);padding:3px 10px;border-radius:var(--r-pill);vertical-align:middle}
+.hours li span:last-child{color:inherit}
+@media(min-width:820px){.facts .wrap{grid-template-columns:1.1fr .9fr;align-items:end;gap:90px}}
+
+/* quote */
+.quote{background:linear-gradient(180deg,var(--ox),var(--ink) 60%);overflow:hidden}
+.panel{position:relative;border-radius:var(--r-big);padding:28px 22px 30px}
+.panel h2{font-size:clamp(38px,8.6vw,76px);margin-bottom:26px}
+.sent{font-size:clamp(21px,5.6vw,30px);line-height:2.1;font-weight:300}
+.sent input,.sent select{font:500 inherit 'Outfit',sans-serif;font-size:max(16px,.85em);color:#fff;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.25);border-radius:14px;padding:7px 14px;min-height:46px;max-width:100%;transition:border-color .2s,box-shadow .2s}
+.sent select option{color:#111}
+.sent input::placeholder{color:#b9aeb2}
+.sent input:focus,.sent select:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 3px rgba(220,42,47,.35)}
+.sent input{width:min(100%,200px)}.sent{line-height:2.25}
+.panel .btn{margin-top:26px;width:100%}
+.panel .small{margin-top:14px}
+@media(min-width:820px){.panel{padding:56px 64px}.panel .btn{width:auto}}
+
+/* find */
+.find{background:var(--ink);padding:64px 0 36px}
+.find .wrap{display:grid;gap:28px}
+.find a.ph{font-family:'Abril Fatface',serif;font-size:clamp(40px,10.5vw,84px);word-spacing:.08em;display:block;line-height:1}
+.find a.ph:hover{color:var(--red)}
+.find .alt{font-size:15px;color:var(--ash);margin-top:12px}
+footer{padding:24px 0 20px;border-top:1px solid rgba(255,255,255,.12);font-size:14px;color:var(--ash)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+/* dock */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));display:flex;gap:8px;padding:8px;border-radius:var(--r-pill);transform:translateY(130%);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.dock.show{transform:none}
+.dock a{flex:1;min-height:52px;border-radius:var(--r-pill);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:16px;transition:transform .15s}
+.dock a:active{transform:scale(.97)}
+.dock a:first-child{background:var(--red);color:#fff;flex:1.3}
+.dock a:last-child{background:rgba(255,255,255,.1)}
+@media(min-width:820px){.dock{display:none}body{padding-bottom:0}}
+
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s}
+.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav class="glass" aria-label="Main">
+  <b>Detailing <i>Devils</i></b>
+  <div class="links"><a href="#bring">Mobile</a><a href="#rides">Rides</a><a href="#reviews">Reviews</a><a href="#quote">Quote</a></div>
+  <a class="btn call" href="tel:+12265078584">Call</a>
+</nav>
+
+<header class="hero">
+  <picture>
+    <source media="(min-width:820px)" srcset="img/hero-truck.jpg">
+    <img src="img/p12.jpg" alt="Black Toyota Sienna after a detail by Detailing Devils" fetchpriority="high">
+  </picture>
+  <div class="in">
+    <h1 class="disp"><span>Luxury detail.</span><span class="r">Devilish finish.</span></h1>
+    <div class="row">
+      <div class="card glass">
+        <div class="n">5.0</div>
+        <p><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><br>19 Google reviews. Mobile car detailing in Leduc, AB.</p>
+      </div>
+      <div class="btns">
+        <a class="btn" href="tel:+12265078584">Call (226) 507-8584</a>
+        <a class="btn ghost" href="#quote">Get a quote</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="bring" id="bring">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kick">Car detailing service, Leduc</div>
+      <h2 class="disp">We bring <em>the detail to you.</em></h2>
+    </div>
+    <div class="lines rv">
+      <div><span>01</span><h3>Mobile service</h3><p>Their own line on every post. The detail comes to your driveway or garage.</p></div>
+      <div><span>02</span><h3>Professional care</h3><p>&ldquo;Professionalism and perfectionism is visible in every bit of his work.&rdquo; Balwinder S., Google</p></div>
+      <div><span>03</span><h3>Affordable rates</h3><p>&ldquo;More than satisfied with the pristine detailing done to my car and was worth every dime.&rdquo; Harman S., Google</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="pick" id="rides">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <div class="kick">Their work</div>
+        <h2 class="disp">Whose ride?</h2>
+      </div>
+      <p class="small">Real jobs from their Google listing. Tap a ride.</p>
+    </div>
+    <div class="stage rv" id="stage">
+      <img class="on" src="img/p7.jpg" alt="Grey Ford F-150 detailed in a driveway" data-k="truck">
+      <img src="img/p8.jpg" alt="Dark sedan with a clean finish on the street" data-k="sedan">
+      <img src="img/p12.jpg" alt="Black Toyota Sienna in a garage" data-k="van">
+      <img src="img/p9.jpg" alt="Cleaned minivan seats and floor" data-k="cabin">
+      <span class="tag glass" id="tag">Truck</span>
+      <div class="cap">
+        <button class="chip glass" aria-pressed="true" data-k="truck" data-t="Truck">Truck</button>
+        <button class="chip glass" aria-pressed="false" data-k="sedan" data-t="Sedan">Sedan</button>
+        <button class="chip glass" aria-pressed="false" data-k="van" data-t="Minivan">Minivan</button>
+        <button class="chip glass" aria-pressed="false" data-k="cabin" data-t="Inside the van">Cabin</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rev" id="reviews">
+  <div class="orb a"></div><div class="orb b"></div>
+  <div class="wrap">
+    <div class="lead rv">
+      <div class="kick">Google reviews</div>
+      <blockquote>&ldquo;He does an amazing job and is really friendly and really cares about his work.&rdquo;</blockquote>
+      <div class="by"><b>Mike C.</b>, Google. &ldquo;This was my second time going there with my second vehicle.&rdquo;</div>
+    </div>
+    <div class="wall">
+      <figure class="glass rv"><p>&ldquo;Detailing Devils provides the best service with excellent workmanship. The team is professional, genuine, and pays great attention to detail. They completed the work on time and exceeded my expectations. I highly recommend them. Cheers&rdquo;</p><figcaption><b>Anisha K.</b>, Google</figcaption></figure>
+      <figure class="glass rv"><p>&ldquo;More than satisfied with the pristine detailing done to my car and was worth every dime. Owner has a welcoming, calm attitude and is very professional towards his work.&rdquo;</p><figcaption><b>Harman S.</b>, Google</figcaption></figure>
+      <figure class="glass rv"><p>&ldquo;Very satisfied for the services provided for my car. Professionalism and perfectionism is visible in every bit of his work.Will also spread a word of great work done by him.&rdquo;</p><figcaption><b>Balwinder S.</b>, Google</figcaption></figure>
+      <figure class="glass rv"><p>&ldquo;Best workdone by garry bhai;he is such a humble and hardworking guy.must give him chance n he will not disappoint&rdquo;</p><figcaption><b>Pinku</b>, Google</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="facts" id="hours">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kick">On Google</div>
+      <div class="big">
+        <div><b><span id="c1" data-to="5.0" style="font-size:inherit;color:inherit">5.0</span></b><span>Google rating</span></div>
+        <div><b id="c2" data-to="19">19</b><span>Google reviews</span></div>
+      </div>
+    </div>
+    <div class="rv">
+      <div class="kick">Hours</div>
+      <ul class="hours" id="hrs">
+        <li data-d="1"><span>Monday</span><span>10 a.m. to 7:30 p.m.</span></li>
+        <li data-d="2"><span>Tuesday</span><span>10 a.m. to 7:30 p.m.</span></li>
+        <li data-d="3"><span>Wednesday</span><span>10 a.m. to 7:30 p.m.</span></li>
+        <li data-d="4"><span>Thursday</span><span>10 a.m. to 7:30 p.m.</span></li>
+        <li data-d="5"><span>Friday</span><span>10 a.m. to 7:30 p.m.</span></li>
+        <li data-d="6"><span>Saturday</span><span>9 a.m. to 5 p.m.</span></li>
+        <li data-d="0"><span>Sunday</span><span>9 a.m. to 5 p.m.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="quote" id="quote">
+  <div class="wrap">
+    <form class="panel glass rv" id="qf" autocomplete="off">
+      <h2 class="disp">Get a quote.</h2>
+      <p class="sent">Hi Detailing Devils, my name is <input id="qn" placeholder="your name" aria-label="Your name" required> and I drive a <input id="qv" placeholder="truck, car, van" aria-label="Your vehicle" required>. I need
+        <select id="qs" aria-label="What you need"><option>a full detail</option><option>an interior clean</option><option>a price</option></select>
+        in <input id="qa" placeholder="your area" aria-label="Your area">.</p>
+      <button class="btn" type="submit">Text this to Detailing Devils</button>
+      <p class="small">Opens your messages app with this text ready to send to (226) 507-8584.</p>
+    </form>
+  </div>
+</section>
+
+<section class="find">
+  <div class="wrap">
+    <div>
+      <div class="kick">Detailing Devils, Leduc, AB</div>
+      <a class="ph" href="tel:+12265078584">(226) 507-8584</a>
+      <p class="alt">Their Instagram posts also list 825-556-0057. Instagram: @detailingg_devils</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><span>Detailing Devils. Car detailing service, Leduc, AB.</span><span>Preview built by JPF. Not live yet.</span></div>
+</footer>
+
+<div class="dock glass" id="dock">
+  <a href="tel:+12265078584">Call now</a>
+  <a href="sms:+12265078584?body=Hi%20Detailing%20Devils%2C%20I%20need%20a%20quote.">Text</a>
+</div>
+
+<script>
+document.documentElement.classList.add('js');
+// reveal
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+setTimeout(function(){document.querySelectorAll('.rv').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<innerHeight)el.classList.add('in')})},300);
+// dock
+var dock=document.getElementById('dock');
+function dk(){dock.classList.toggle('show',scrollY>innerHeight*.35)}
+addEventListener('scroll',dk,{passive:true});dk();
+// chooser
+var imgs=document.querySelectorAll('#stage img'),chips=document.querySelectorAll('.chip'),tag=document.getElementById('tag');
+chips.forEach(function(c){c.addEventListener('click',function(){
+  chips.forEach(function(x){x.setAttribute('aria-pressed',x===c)});
+  imgs.forEach(function(i){i.classList.toggle('on',i.dataset.k===c.dataset.k)});
+  tag.textContent=c.dataset.t;
+})});
+// today
+var d=new Date().getDay();var li=document.querySelector('#hrs li[data-d="'+d+'"]');if(li)li.classList.add('now');
+// count up
+var done=false;
+var co=new IntersectionObserver(function(es){if(es[0].isIntersecting&&!done){done=true;
+ if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+ var a=document.getElementById('c1'),b=document.getElementById('c2'),t0=performance.now();
+ (function f(t){var p=Math.min(1,(t-t0)/1400),e=1-Math.pow(1-p,3);a.textContent=(5*e).toFixed(1);b.textContent=Math.round(19*e);if(p<1)requestAnimationFrame(f)})(t0);
+}},{threshold:.4});
+co.observe(document.getElementById('c2'));
+// sms form
+document.getElementById('qf').addEventListener('submit',function(e){e.preventDefault();
+ var n=qn.value.trim(),v=qv.value.trim(),s=qs.value,a=qa.value.trim();
+ var m='Hi Detailing Devils, my name is '+n+' and I drive a '+v+'. I need '+s+(a?' in '+a:'')+'.';
+ location.href='sms:+12265078584?body='+encodeURIComponent(m);
+});
+</script>
+</body>
+</html>
