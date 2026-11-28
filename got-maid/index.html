@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Got Maid | House Cleaning in Penticton, BC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ direction: warm light-editorial, review-led; sunny house photo owns the top
+ palette: cream #fbf4ef (bedroom walls p3), plum ink #2a1620, pink #c92f78 (GotMaid promo flyer p12), blush #f6d3e3
+ fonts: Yeseva One + Mulish
+ signature: room-by-room picker with glass chips (their client-home photos)
+ order: hero, big quote, rooms picker, services + special, numbers, more reviews, hours/area, quote sentence, footer
+ motion: one hero load-in, gentle reveal, rating counts up, reduced-motion respected */
+:root{--cream:#fbf4ef;--ink:#2a1620;--pink:#c92f78;--blush:#f6d3e3;--mute:#6b5560}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font:400 17px/1.6 'Mulish',sans-serif;color:var(--ink);background:var(--cream);overflow-x:hidden;padding-bottom:96px}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+h1,h2,h3,.disp{font-family:'Yeseva One',serif;font-weight:400}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:999px;background:var(--pink);color:#fff;font-weight:800;font-size:17px;text-decoration:none;border:0;cursor:pointer;transition:transform .18s,background .18s}
+.btn:hover{background:#b02468}.btn:active{transform:scale(.97)}
+.btn.ghost{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.5);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%)}
+
+/* nav pill */
+.nav{position:fixed;top:12px;left:12px;right:12px;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 8px 8px 20px;border-radius:999px;background:rgba(251,244,239,.58);border:1px solid rgba(255,255,255,.55);backdrop-filter:blur(22px) saturate(170%);-webkit-backdrop-filter:blur(22px) saturate(170%);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 18px 50px -22px rgba(42,22,32,.35);max-width:1100px;margin:0 auto}
+.nav b{font-family:'Yeseva One',serif;font-weight:400;font-size:21px;letter-spacing:.01em}
+.nav .btn{min-height:44px;padding:0 20px;font-size:15px}
+.nav .links{display:none;gap:26px;font-weight:700;font-size:15px}
+.nav .links a{text-decoration:none}
+
+/* hero */
+.hero{position:relative;min-height:100svh;color:#fff;display:flex;flex-direction:column;justify-content:flex-start;overflow:hidden;background:#2a1620}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 85%}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(42,22,32,.55) 0%,rgba(42,22,32,.18) 42%,rgba(42,22,32,.0) 55%,rgba(42,22,32,.62) 100%)}
+.hero .in{position:relative;z-index:2;padding:104px 22px 28px;max-width:1180px;margin:0 auto;width:100%}
+.hero h1{font-size:clamp(76px,22vw,200px);line-height:.92;letter-spacing:-.01em;word-spacing:.12em;text-shadow:0 2px 30px rgba(42,22,32,.35)}
+.hero h1 em{font-style:normal;color:#ffd3e6}
+.hero p.sub{font-size:clamp(18px,4.6vw,24px);font-weight:700;margin-top:14px;max-width:20em;text-shadow:0 1px 18px rgba(42,22,32,.5)}
+.hero .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.glasscard{position:relative;z-index:3;margin:auto 16px 92px;max-width:420px;padding:18px 20px;border-radius:26px;background:rgba(42,22,32,.46);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 24px 60px -24px rgba(42,22,32,.6)}
+.glasscard .r{display:flex;align-items:baseline;gap:10px}
+.glasscard .big{font-family:'Yeseva One',serif;font-size:44px;line-height:1}
+.glasscard .st{color:#ffd3e6;letter-spacing:2px;font-size:18px}
+.glasscard small{display:block;font-size:14px;opacity:.92;margin-top:2px}
+.glasscard q{display:block;font-size:15px;margin-top:10px;line-height:1.45;quotes:"\201C" "\201D"}
+.load{opacity:0;transform:translateY(16px);animation:in .9s cubic-bezier(.2,.7,.2,1) forwards}
+.l2{animation-delay:.15s}.l3{animation-delay:.3s}.l4{animation-delay:.5s}
+@keyframes in{to{opacity:1;transform:none}}
+
+section{padding:76px 0}
+.kick{font-weight:800;font-size:14px;color:var(--pink);letter-spacing:.04em;margin-bottom:12px}
+h2{font-size:clamp(40px,9vw,84px);line-height:1;letter-spacing:-.01em;word-spacing:.1em}
+
+/* big quote */
+.bq{background:var(--cream);padding-top:84px}
+.bq blockquote{font-family:'Yeseva One',serif;font-size:clamp(30px,6.4vw,66px);line-height:1.12;max-width:17em;word-spacing:.06em}
+.bq blockquote:before{content:"\201C";color:var(--pink)}
+.bq blockquote:after{content:"\201D";color:var(--pink)}
+.bq cite{display:block;margin-top:22px;font-style:normal;font-weight:700;font-size:16px;color:var(--mute)}
+.bq cite b{color:var(--ink)}
+
+/* rooms picker */
+.rooms{background:var(--ink);color:#fff;padding:76px 0 84px;position:relative;overflow:hidden}
+.rooms:before,.rooms:after{content:"";position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;pointer-events:none;animation:drift 26s ease-in-out infinite alternate}
+.rooms:before{width:420px;height:420px;background:radial-gradient(circle,#c92f78,transparent 70%);top:-120px;right:-140px}
+.rooms:after{width:380px;height:380px;background:radial-gradient(circle,#8a5a3c,transparent 70%);bottom:-140px;left:-120px;animation-delay:-9s}
+@keyframes drift{to{transform:translate(-40px,30px)}}
+.rooms .wrap{position:relative;z-index:2}
+.rooms h2{color:#fff}
+.rooms p.lead{color:#e9d8e0;margin-top:12px;max-width:32em}
+.stage{margin-top:30px;display:grid;gap:18px}
+.shot{position:relative;border-radius:26px;overflow:hidden;aspect-ratio:4/3;background:#150b10;box-shadow:0 30px 70px -30px #000}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s}
+.shot img.on{opacity:1}
+.shot .tag{position:absolute;left:14px;bottom:14px;padding:8px 16px;border-radius:999px;background:rgba(42,22,32,.5);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);font-weight:800;font-size:15px;z-index:2}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{min-height:46px;padding:0 22px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);color:#fff;font:800 15px 'Mulish',sans-serif;cursor:pointer;backdrop-filter:blur(18px) saturate(150%);-webkit-backdrop-filter:blur(18px) saturate(150%);box-shadow:inset 0 1px 0 rgba(255,255,255,.25);transition:transform .15s,background .15s}
+.chip:active{transform:scale(.97)}
+.chip[aria-pressed=true]{background:var(--pink);border-color:var(--pink)}
+
+/* services */
+.svc .grid{display:grid;gap:0;margin-top:34px;border-top:1.5px solid var(--ink)}
+.svc .row{display:grid;grid-template-columns:48px 1fr;gap:8px 12px;padding:22px 0;border-bottom:1.5px solid rgba(42,22,32,.2)}
+.svc .n{font-family:'Yeseva One',serif;color:var(--pink);font-size:26px;line-height:1.2}
+.svc h3{font-size:26px;line-height:1.15;margin-bottom:4px}
+.svc p{color:var(--mute);font-size:16px}
+.special{margin-top:36px;border-radius:28px;background:var(--blush);padding:28px 24px;display:grid;gap:8px}
+.special .p{font-family:'Yeseva One',serif;font-size:clamp(52px,13vw,96px);line-height:1;color:var(--pink)}
+.special h3{font-size:24px}
+.special small{font-size:14px;color:var(--mute)}
+
+/* photo band */
+.band{height:min(70vh,560px);position:relative;overflow:hidden}
+.band img{width:100%;height:100%;object-fit:cover}
+
+/* numbers */
+.nums{padding:70px 0;background:var(--cream)}
+.nums .wrap{display:grid;grid-template-columns:1fr 1fr;gap:28px 16px}
+.nums .v{font-family:'Yeseva One',serif;font-size:clamp(54px,14vw,110px);line-height:1;color:var(--pink)}
+.nums .k{font-weight:700;font-size:15px;color:var(--mute);margin-top:4px}
+
+/* reviews */
+.revs .list{display:grid;gap:18px;margin-top:32px}
+.rc{padding:26px 24px;border-radius:24px;background:#fff;border:1px solid rgba(42,22,32,.08);box-shadow:0 20px 50px -30px rgba(42,22,32,.3)}
+.rc .s{color:var(--pink);letter-spacing:2px;font-size:16px}
+.rc p{margin:10px 0 14px;font-size:17px}
+.rc b{font-size:15px}.rc span{color:var(--mute);font-size:14px}
+
+/* hours */
+.info{background:var(--ink);color:#fff}
+.info h2{color:#fff}
+.info .cols{display:grid;gap:34px;margin-top:30px}
+.info h3{font-size:24px;margin-bottom:10px;color:#ffd3e6}
+.info table{border-collapse:collapse;width:100%;max-width:420px}
+.info td{padding:9px 0;border-bottom:1px solid rgba(255,255,255,.16);font-size:17px}
+.info td:last-child{text-align:right;font-weight:700}
+.info p{max-width:28em;color:#e9d8e0}
+
+/* quote */
+.quote{position:relative;overflow:hidden}
+.quote:before{content:"";position:absolute;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,#f6d3e3,transparent 70%);top:-100px;right:-160px;animation:drift 28s ease-in-out infinite alternate}
+.panel{position:relative;z-index:2;margin-top:28px;padding:28px 22px;border-radius:28px;background:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.8);backdrop-filter:blur(24px) saturate(170%);-webkit-backdrop-filter:blur(24px) saturate(170%);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 30px 70px -30px rgba(42,22,32,.35);font-size:clamp(20px,5vw,30px);line-height:2.1}
+.panel label{display:inline}
+.fld{font:700 inherit;font-family:'Mulish',sans-serif;font-size:18px;color:var(--ink);background:rgba(255,255,255,.7);border:1px solid rgba(42,22,32,.2);border-radius:14px;padding:6px 14px;min-height:44px;max-width:100%;width:210px;transition:box-shadow .15s,border-color .15s}
+.fld:focus{outline:none;border-color:var(--pink);box-shadow:0 0 0 3px rgba(201,47,120,.28)}
+select.fld{width:auto}
+.panel .btn{margin-top:14px;display:flex;width:100%}
+.panel .note{display:block;font-size:14px;line-height:1.4;color:var(--mute);margin-top:12px}
+
+footer{padding:34px 0 20px;font-size:14px;color:var(--mute);text-align:center}
+
+/* dock */
+.dock{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;display:flex;gap:8px;padding:8px;border-radius:999px;background:rgba(251,244,239,.62);border:1px solid rgba(255,255,255,.6);backdrop-filter:blur(22px) saturate(170%);-webkit-backdrop-filter:blur(22px) saturate(170%);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 20px 50px -20px rgba(42,22,32,.45)}
+.dock a{flex:1;min-height:48px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;text-decoration:none;transition:transform .15s}
+.dock a:active{transform:scale(.97)}
+.dock .c{background:var(--pink);color:#fff;flex:1.3}
+.dock .t{background:rgba(255,255,255,.7);color:var(--ink)}
+
+.rv{opacity:0;transform:translateY(14px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+
+@media(min-width:820px){
+ body{font-size:18px;padding-bottom:0}
+ .wrap{padding:0 48px}
+ .nav .links{display:flex}.nav{padding-left:28px}
+ .hero .in{padding:150px 48px 0}
+ .glasscard{position:absolute;margin:0;left:auto;right:48px;bottom:48px;width:400px}
+ .hero img{object-position:50% 8%}
+ .hero:after{background:linear-gradient(180deg,rgba(42,22,32,.5),rgba(42,22,32,.12) 45%,rgba(42,22,32,.45))}
+ .hero .cta{margin-top:30px}
+ section{padding:130px 0}
+ .stage{grid-template-columns:1.6fr 1fr;align-items:end;gap:34px}
+ .chips{flex-direction:column;align-items:flex-start}
+ .svc .grid{grid-template-columns:1fr 1fr;column-gap:60px}
+ .special{grid-template-columns:auto 1fr;align-items:center;gap:36px;padding:44px 52px}
+ .nums .wrap{grid-template-columns:repeat(4,1fr)}
+ .revs .list{grid-template-columns:repeat(3,1fr)}
+ .info .cols{grid-template-columns:1fr 1fr;gap:80px}
+ .panel{padding:48px 56px}
+ .panel .btn{display:inline-flex;width:auto}
+ .dock{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+ .load,.rv{opacity:1;transform:none;animation:none;transition:none}
+ .rooms:before,.rooms:after,.quote:before{animation:none}
+ html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <b>Got Maid</b>
+  <span class="links"><a href="#rooms">Homes</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#quote">Get a quote</a></span>
+  <a class="btn" href="tel:+12503288855">Call</a>
+</nav>
+
+<header class="hero">
+  <img src="img/p1.jpg" alt="Sunny house in Penticton with a clean driveway and lavender">
+  <div class="in">
+    <h1 class="load">Got<br>Maid?</h1>
+    <p class="sub load l2">House cleaning in Penticton, BC. Mon to Fri, 7 a.m. to 7 p.m.</p>
+    <div class="cta load l3">
+      <a class="btn" href="tel:+12503288855">Call (250) 328-8855</a>
+      <a class="btn ghost" href="#quote">Get a quote</a>
+    </div>
+  </div>
+  <aside class="glasscard load l4" aria-label="Google rating">
+    <div class="r"><span class="big">4.9</span><span class="st" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+    <small>29 Google reviews</small>
+    <q>My house feels like a hotel every time they clean.</q>
+    <small>Mare M., Google</small>
+  </aside>
+</header>
+
+<section class="bq">
+  <div class="wrap">
+    <blockquote class="rv">Fantastic clean every time. Lovely and extremely professional ladies who do an incredible job and are so efficient.</blockquote>
+    <cite class="rv"><b>Annie M.</b> &middot; Google &middot; 5 stars</cite>
+  </div>
+</section>
+
+<section class="rooms" id="rooms">
+  <div class="wrap">
+    <div class="kick" style="color:#ffb3d3">Homes we look after</div>
+    <h2>Room by room.</h2>
+    <p class="lead">Photos from homes Got Maid cleans. Tap a room.</p>
+    <div class="stage">
+      <div class="shot" id="shot">
+        <img class="on" src="img/p2.jpg" alt="Open kitchen with island and white cabinets" data-k="Kitchen">
+        <img src="img/p4.jpg" alt="Kitchen island with pendant lights" data-k="Kitchen island" loading="lazy">
+        <img src="img/p3.jpg" alt="Made bed with white linens" data-k="Bedroom" loading="lazy">
+        <img src="img/p6.jpg" alt="Living room with leather sofas" data-k="Living room" loading="lazy">
+        <img src="img/p9.jpg" alt="Bright bathroom with soaker tub and glass shower" data-k="Bathroom" loading="lazy">
+        <img src="img/p7.jpg" alt="Dining area with wood floor" data-k="Dining" loading="lazy">
+        <span class="tag" id="tag">Kitchen</span>
+      </div>
+      <div class="chips" role="group" aria-label="Choose a room">
+        <button class="chip" aria-pressed="true" data-i="0">Kitchen</button>
+        <button class="chip" aria-pressed="false" data-i="1">Island</button>
+        <button class="chip" aria-pressed="false" data-i="2">Bedroom</button>
+        <button class="chip" aria-pressed="false" data-i="3">Living room</button>
+        <button class="chip" aria-pressed="false" data-i="4">Bathroom</button>
+        <button class="chip" aria-pressed="false" data-i="5">Dining</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="svc" id="services">
+  <div class="wrap">
+    <div class="kick">What they clean</div>
+    <h2>Cleans for<br>every home.</h2>
+    <div class="grid">
+      <div class="row rv"><span class="n">1</span><div><h3>Deep Clean</h3><p>The full top-to-bottom clean, including the dust bunnies and hidden cobwebs.</p></div></div>
+      <div class="row rv"><span class="n">2</span><div><h3>Move-out clean</h3><p>Move-out cleans where the little details get done, bathrooms included.</p></div></div>
+      <div class="row rv"><span class="n">3</span><div><h3>Hardwood floors</h3><p>Specialized equipment and the right technique for wood, not a one-size-fits-all mop.</p></div></div>
+      <div class="row rv"><span class="n">4</span><div><h3>Seasonal cleans</h3><p>Fall cleaning, spider web deep cleans and getting the house ready for the holidays.</p></div></div>
+    </div>
+    <div class="special rv">
+      <div class="p">$50<span style="font-size:.4em">/hr</span></div>
+      <div><h3>Deep Clean special, November and December</h3><small>As posted on Got Maid's Instagram. Ask when you call.</small></div>
+    </div>
+  </div>
+</section>
+
+<div class="band"><img src="img/p8.jpg" alt="Craftsman style home with a stone porch and green lawn" loading="lazy"></div>
+
+<section class="nums">
+  <div class="wrap">
+    <div class="rv"><div class="v"><span data-count="4.9" data-dec="1">4.9</span></div><div class="k">Google rating</div></div>
+    <div class="rv"><div class="v"><span data-count="29">29</span></div><div class="k">Google reviews</div></div>
+    <div class="rv"><div class="v">3</div><div class="k">Cities: Penticton, Kelowna, West Kelowna</div></div>
+    <div class="rv"><div class="v">5</div><div class="k">Days a week, Monday to Friday</div></div>
+  </div>
+</section>
+
+<section class="revs" id="reviews">
+  <div class="wrap">
+    <div class="kick">In their words</div>
+    <h2>Clients say it best.</h2>
+    <div class="list">
+      <div class="rc rv"><div class="s" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>This team of ladies will not only transform your home but they take all of the days stress away the moment they step foot in your home. Multiple girls come in, do their thing and all of a sudden your left with sparkles and shine without lifting a finger. 5 stars all around!</p><b>Robin B.</b> <span>Google</span></div>
+      <div class="rc rv"><div class="s" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>Incredibly impressed with this company! They are very communicative, easy to deal with, efficient, friendly and SO GOOD at what they do! My house feels like a hotel every time they clean. The team is easy to book, always on time and makes my house feel like new. Cannot recommend them enough.</p><b>Mare M.</b> <span>Google</span></div>
+      <div class="rc rv"><div class="s" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>We recently had Got Maid Cleaning Services clean our home and they were fantastic! Fast, efficient, and very thorough. Every room was left spotless and smelling fresh and sparkly. &hellip;</p><b>Bailey G.</b> <span>Google</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="info" id="hours">
+  <div class="wrap">
+    <div class="kick" style="color:#ffb3d3">Where and when</div>
+    <h2>Penticton,<br>now Kelowna too.</h2>
+    <div class="cols">
+      <div>
+        <h3>Hours</h3>
+        <table>
+          <tr><td>Monday to Friday</td><td>7 a.m. to 7 p.m.</td></tr>
+          <tr><td>Saturday</td><td>Closed</td></tr>
+          <tr><td>Sunday</td><td>Closed</td></tr>
+        </table>
+      </div>
+      <div>
+        <h3>Service area</h3>
+        <p>Based in Penticton, BC. Got Maid now also serves West Kelowna and Kelowna, with 15% off a first Deep Clean there.</p>
+        <p style="margin-top:14px"><a href="tel:+12503288855" style="font-family:'Yeseva One',serif;font-size:30px;text-decoration:none">(250) 328-8855</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quote" id="quote">
+  <div class="wrap">
+    <div class="kick">Free quote</div>
+    <h2>Tell them<br>about your home.</h2>
+    <form class="panel" id="qf">
+      Hi Got Maid, I'm
+      <label><span class="sr" hidden>Name</span><input class="fld" id="qn" placeholder="your name" autocomplete="name" required></label>
+      and I need a
+      <select class="fld" id="qt" aria-label="Type of clean">
+        <option>Deep Clean</option><option>regular clean</option><option>move-out clean</option><option>hardwood floor clean</option>
+      </select>
+      in
+      <select class="fld" id="qc" aria-label="City">
+        <option>Penticton</option><option>West Kelowna</option><option>Kelowna</option>
+      </select>.
+      <button class="btn" type="submit">Text this to Got Maid</button>
+      <span class="note">Opens your text app with this message ready to send to (250) 328-8855.</span>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Preview built by JPF. Not live yet.</div>
+</footer>
+
+<div class="dock" aria-label="Call or text">
+  <a class="c" href="tel:+12503288855">Call now</a>
+  <a class="t" href="sms:+12503288855">Text</a>
+</div>
+
+<script>
+(function(){
+  var imgs=[].slice.call(document.querySelectorAll('#shot img')),chips=[].slice.call(document.querySelectorAll('.chip')),tag=document.getElementById('tag');
+  chips.forEach(function(c){c.addEventListener('click',function(){
+    var i=+c.dataset.i;
+    imgs.forEach(function(m,j){m.classList.toggle('on',j===i)});
+    chips.forEach(function(x){x.setAttribute('aria-pressed',x===c)});
+    tag.textContent=imgs[i].dataset.k;
+    imgs[i].loading='eager';
+  })});
+  var rv=[].slice.call(document.querySelectorAll('.rv'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+    rv.forEach(function(e){io.observe(e)});
+  }else rv.forEach(function(e){e.classList.add('in')});
+  var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  document.querySelectorAll('[data-count]').forEach(function(el){
+    var end=parseFloat(el.dataset.count),dec=+(el.dataset.dec||0);
+    if(rm||!('IntersectionObserver' in window))return;
+    var o=new IntersectionObserver(function(es){if(es[0].isIntersecting){o.disconnect();var t0=performance.now();(function f(t){var p=Math.min(1,(t-t0)/1200);el.textContent=(end*(1-Math.pow(1-p,3))).toFixed(dec);if(p<1)requestAnimationFrame(f)})(t0)}},{threshold:.5});
+    o.observe(el);
+  });
+  document.getElementById('qf').addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=document.getElementById('qn').value.trim(),t=document.getElementById('qt').value,c=document.getElementById('qc').value;
+    var body="Hi Got Maid, I'm "+n+" and I need a "+t+" in "+c+". When can you give me a quote?";
+    location.href='sms:+12503288855?&body='+encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
