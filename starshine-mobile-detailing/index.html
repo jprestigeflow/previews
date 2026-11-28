@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Starshine Mobile Detailing | Langley, BC</title>
+<meta name="description" content="Starshine Mobile Detailing. Interior and exterior car detailing that comes to you in Langley, BC. Call (604) 907-0099.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ 1 Direction: bold-type-led night sky, vehicle picker as the signature. Their name is a star: a four-point sparkle is the one motif.
+ 2 Palette: ink #0a0d16 (night, base) / panel #131a2b (dusk, from the dark trim and tyres in their photos) / bone #eef0f5 / cloth orange #f39a2b (microfibre cloth holding their card in the Kia photo, the accent) / mist #9aa3b8.
+ 3 Fonts: Boldonse (display, wide) + Outfit (body).
+ 4 Signature: "What are we cleaning?" picker. Car / RV and trailer / Truck cab, each with their real photos, feeds the text form.
+ 5 Order: hero + glass rating card, numbers, picker, inside/outside, video band, reviews, hours + quote form, footer. Glass: nav pill, dock, hero card, quote panel, review cards.
+ 6 Motion: one load entrance, counters once, gentle reveals on 3 blocks, reduced-motion respected. */
+:root{--ink:#0a0d16;--panel:#131a2b;--bone:#eef0f5;--or:#f39a2b;--mist:#9aa3b8;--line:rgba(238,240,245,.14)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{overflow-x:clip}body{background:var(--ink);color:var(--bone);font-family:'Outfit',system-ui,sans-serif;font-size:17px;line-height:1.55;overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--or);outline-offset:3px;border-radius:6px}
+.disp{font-family:'Boldonse',sans-serif;font-weight:400;line-height:1.3;word-spacing:.12em}
+.wrap{width:min(1240px,100% - 40px);margin-inline:auto}
+section{position:relative;padding:84px 0}
+.lbl{font-size:14px;letter-spacing:.04em;color:var(--or);font-weight:600;display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.spark{width:16px;height:16px;flex:none;color:var(--or)}
+h2.disp{font-size:clamp(26px,5.6vw,60px);margin-bottom:22px}
+p.lead{color:var(--mist);max-width:56ch;font-size:18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font-weight:600;font-size:17px;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .18s,background .18s,box-shadow .18s;font-family:inherit}
+.btn:active{transform:scale(.98)}
+.btn.pri{background:var(--or);color:#1a1005;box-shadow:0 10px 30px -10px rgba(243,154,43,.6)}
+.btn.pri:hover{background:#ffab45}
+.btn.gl{background:rgba(238,240,245,.08);border-color:rgba(238,240,245,.28);color:var(--bone);-webkit-backdrop-filter:blur(20px) saturate(160%);backdrop-filter:blur(20px) saturate(160%)}
+.btn.gl:hover{background:rgba(238,240,245,.16)}
+/* orbs */
+.orb{max-width:100%;position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:0;animation:drift 26s ease-in-out infinite alternate}
+.o1{width:520px;height:520px;background:radial-gradient(circle,rgba(52,78,160,.55),transparent 70%);top:-120px;right:0}
+.o2{width:420px;height:420px;background:radial-gradient(circle,rgba(243,154,43,.22),transparent 70%);bottom:-80px;left:0;animation-duration:32s}
+@keyframes drift{to{transform:translate(-40px,50px) scale(1.08)}}
+/* nav */
+nav{position:fixed;top:12px;left:12px;right:12px;z-index:50;max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 8px 8px 20px;border-radius:999px;background:rgba(10,13,22,.55);border:1px solid rgba(255,255,255,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 20px 50px -20px rgba(0,0,0,.6);-webkit-backdrop-filter:blur(22px) saturate(170%);backdrop-filter:blur(22px) saturate(170%)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:600;font-size:16px;letter-spacing:.01em}
+nav .links{display:none;gap:26px;font-size:15px;color:var(--mist)}
+nav .links a{text-decoration:none}nav .links a:hover{color:var(--bone)}
+nav .btn{min-height:44px;padding:0 20px;font-size:15px}
+@media(min-width:860px){nav .links{display:flex}}
+.show-s{display:inline}.hide-s{display:none}@media(min-width:520px){.show-s{display:none}.hide-s{display:inline}}
+/* hero */
+.hero{padding:112px 0 56px;overflow:clip;min-height:100svh;display:flex;align-items:center}
+.hero .wrap{position:relative;z-index:1;display:grid;gap:34px}
+.hero h1{font-size:clamp(44px,14vw,112px);margin:6px 0 22px}
+.hero h1 span{display:block}
+.hero h1 .or{color:var(--or)}
+.hero .sub{font-size:19px;color:#c7cddb;max-width:34ch;margin-bottom:28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.hp{position:relative;margin:0 auto;width:100%;max-width:440px}
+.hp .main{aspect-ratio:4/5;border-radius:28px;overflow:clip;border:1px solid var(--line);box-shadow:0 40px 80px -30px rgba(0,0,0,.8)}
+.hp .main img{width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+.hp .sm{position:absolute;left:-14px;bottom:-26px;width:42%;aspect-ratio:1;border-radius:22px;overflow:clip;border:3px solid var(--ink);box-shadow:0 20px 40px -14px rgba(0,0,0,.7)}
+.hp .sm img{width:100%;height:100%;object-fit:cover}
+.gcard{position:absolute;right:-6px;top:22px;max-width:230px;padding:14px 16px;border-radius:22px;background:rgba(10,13,22,.5);border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 20px 50px -20px rgba(0,0,0,.7);-webkit-backdrop-filter:blur(22px) saturate(170%);backdrop-filter:blur(22px) saturate(170%)}
+.gcard b{font-size:34px;line-height:1;font-weight:700;display:block}
+.gcard b i{font-style:normal;color:var(--or);font-size:16px;margin-left:6px;letter-spacing:2px}
+.gcard small{display:block;font-size:14px;color:#cfd5e3;margin-top:6px;line-height:1.35}
+@media(min-width:900px){
+ .hero .wrap{grid-template-columns:1.25fr .75fr;align-items:center;gap:40px}
+ .hp{max-width:none}
+ .hero .sub{font-size:21px}
+ .hero h1{font-size:clamp(64px,8.2vw,112px)}
+}
+/* load entrance */
+.in{opacity:0;transform:translateY(18px);animation:up .9s cubic-bezier(.2,.7,.2,1) forwards}
+.hero h1 span:nth-child(1){animation-delay:.1s}.hero h1 span:nth-child(2){animation-delay:.22s}.hero h1 span:nth-child(3){animation-delay:.34s}
+.d3{animation-delay:.5s}.d4{animation-delay:.62s}.d5{animation-delay:.75s}
+@keyframes up{to{opacity:1;transform:none}}
+.hp .main{animation:zoom 1.4s cubic-bezier(.2,.7,.2,1) both}
+@keyframes zoom{from{transform:scale(1.08);opacity:.2}}
+/* numbers */
+.nums{padding:20px 0 70px}
+.nums .row{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.nums .c{padding:26px 6px;text-align:left}
+.nums .c+.c{border-left:1px solid var(--line);padding-left:18px}
+.nums .n{font-family:'Boldonse';font-size:clamp(24px,5.4vw,64px);line-height:1.25;display:block}
+.nums .n em{font-style:normal;color:var(--or)}
+.nums .t{font-size:14px;color:var(--mist);display:block;margin-top:6px}
+/* picker */
+.pick{background:var(--panel);overflow:clip}
+.pick .wrap{position:relative;z-index:1}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0 26px}
+.chip{min-height:48px;padding:0 22px;border-radius:999px;border:1px solid rgba(238,240,245,.26);background:rgba(238,240,245,.07);color:var(--bone);font:600 16px 'Outfit',sans-serif;cursor:pointer;-webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);box-shadow:inset 0 1px 0 rgba(255,255,255,.18);transition:transform .18s,background .18s,color .18s}
+.chip:active{transform:scale(.97)}
+.chip[aria-selected=true]{background:var(--or);color:#1a1005;border-color:var(--or)}
+.stage{display:grid;gap:22px}
+.shots{display:grid;grid-template-columns:1.5fr 1fr;gap:12px;min-height:300px}
+.shots figure{border-radius:24px;overflow:clip;position:relative;background:#0c1120;border:1px solid var(--line)}
+.shots img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:opacity .4s}
+.shots figure.big{grid-row:span 2}
+.shots{grid-template-rows:1fr 1fr;height:min(70vw,520px)}
+.pinfo h3{font-size:22px;margin-bottom:10px;font-weight:600}
+.pinfo p{color:#c3cadb;margin-bottom:22px;max-width:46ch}
+@media(min-width:900px){.stage{grid-template-columns:1.2fr .8fr;align-items:center;gap:56px}}
+/* inside outside */
+.io .grid{display:grid;gap:56px}
+.io .blk{display:grid;gap:22px;align-items:center}
+.io .ph{border-radius:26px;overflow:clip;aspect-ratio:4/3;border:1px solid var(--line)}
+.io .ph img{width:100%;height:100%;object-fit:cover}
+.io h3{font-size:clamp(22px,4.4vw,38px);margin-bottom:12px}
+.io blockquote{border-left:2px solid var(--or);padding-left:16px;color:#d6dbe8;font-size:17px;margin-top:14px}
+.io blockquote cite{display:block;font-style:normal;color:var(--mist);font-size:14px;margin-top:6px}
+@media(min-width:900px){.io .blk{grid-template-columns:1fr 1fr;gap:64px}.io .blk.rev .ph{order:2}}
+/* video band */
+.vband{padding:0}
+.vband .frame{position:relative;height:min(78vh,640px);overflow:clip}
+.vband video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.05)}
+.vband .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,13,22,.2),rgba(10,13,22,.1) 40%,rgba(10,13,22,.88))}
+.vband .cap{position:absolute;left:0;right:0;bottom:36px}
+.vband .cap .disp{font-size:clamp(24px,5.2vw,56px)}
+.vband .cap p{color:#d0d6e4;margin-top:10px;font-size:15px}
+/* reviews */
+.rev{overflow:clip}
+.rev .wrap{position:relative;z-index:1}
+.big{font-family:'Boldonse';font-size:clamp(20px,3.4vw,40px);line-height:1.5;word-spacing:.1em;margin:8px 0 18px;max-width:30ch}
+.big+.who{color:var(--mist);font-size:15px;margin-bottom:46px}
+.cards{display:grid;gap:14px}
+.rc{padding:24px;border-radius:24px;background:rgba(19,26,43,.55);border:1px solid rgba(255,255,255,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 24px 60px -24px rgba(0,0,0,.7);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%)}
+.rc .st{color:var(--or);letter-spacing:3px;font-size:15px}
+.rc p{margin:10px 0 14px;color:#e4e8f1}
+.rc .nm{font-size:14px;color:var(--mist)}
+@media(min-width:800px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1100px){.cards{grid-template-columns:repeat(4,1fr)}}
+.more{display:inline-block;margin-top:26px;color:var(--or);font-weight:600}
+/* quote */
+.quote{background:var(--panel);overflow:clip}
+.quote .wrap{position:relative;z-index:1;display:grid;gap:44px}
+.facts{list-style:none;display:grid;gap:2px;margin-top:26px;max-width:420px}
+.facts li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:16px}
+.facts li span:first-child{color:var(--mist)}
+.panel{padding:28px 24px;border-radius:28px;background:rgba(10,13,22,.5);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.26),0 30px 70px -26px rgba(0,0,0,.8);-webkit-backdrop-filter:blur(26px) saturate(170%);backdrop-filter:blur(26px) saturate(170%)}
+.panel h3{font-size:clamp(20px,3.2vw,28px);margin-bottom:6px}
+.sent{font-size:19px;line-height:2.3;color:#dfe4ef}
+.sent select,.sent input{font:600 17px 'Outfit',sans-serif;color:var(--bone);background:rgba(238,240,245,.09);border:1px solid rgba(238,240,245,.28);border-radius:14px;min-height:44px;padding:0 12px;margin:0 2px;max-width:100%;transition:border-color .18s,box-shadow .18s}
+.sent input{width:9.5em}.sent input::placeholder{color:#8e98ae;font-weight:400}
+.sent select option{color:#111;background:#fff}
+.sent select:focus,.sent input:focus{outline:none;border-color:var(--or);box-shadow:0 0 0 3px rgba(243,154,43,.3)}
+.panel .btn{margin-top:22px;width:100%}
+.panel small{display:block;margin-top:12px;color:var(--mist);font-size:14px}
+@media(min-width:900px){.quote .wrap{grid-template-columns:.9fr 1.1fr;align-items:center;gap:80px}.panel{padding:40px}.panel .btn{width:auto}}
+/* footer */
+footer{padding:44px 0 120px;border-top:1px solid var(--line);color:var(--mist);font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px}
+footer a{color:var(--bone)}
+/* dock */
+.dock{position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:60;display:flex;gap:8px;padding:8px;border-radius:999px;background:rgba(10,13,22,.55);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 20px 50px -16px rgba(0,0,0,.8);-webkit-backdrop-filter:blur(22px) saturate(170%);backdrop-filter:blur(22px) saturate(170%)}
+.dock a{flex:1;min-height:48px}
+.dock a.btn.pri{flex:1.3}
+@media(min-width:860px){.dock{display:none}footer{padding-bottom:44px}}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.in,.rv{opacity:1;transform:none}.orb{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.7 6.6 4.2 10.7 12 12-7.8 1.3-11.3 5.4-12 12C11.3 17.4 7.8 13.3 0 12 7.8 10.7 11.3 6.6 12 0z"/></symbol></defs></svg>
+
+<nav aria-label="Main">
+  <a class="brand" href="#top"><svg class="spark" style="width:20px;height:20px"><use href="#star"/></svg>Starshine</a>
+  <div class="links"><a href="#pick">Vehicles</a><a href="#inout">Services</a><a href="#reviews">Reviews</a><a href="#quote">Quote</a></div>
+  <a class="btn pri" href="tel:+16049070099"><span class="hide-s">Call (604) 907-0099</span><span class="show-s">Call</span></a>
+</nav>
+
+<header class="hero" id="top">
+  <div class="orb o1"></div><div class="orb o2"></div>
+  <div class="wrap">
+    <div>
+      <div class="lbl in d3"><svg class="spark"><use href="#star"/></svg>Starshine Mobile Detailing &middot; Langley, BC</div>
+      <h1 class="disp"><span class="in">Shine</span><span class="in or">at your</span><span class="in">door.</span></h1>
+      <p class="sub in d4">Mobile car detailing, inside and outside. We come on site to you.</p>
+      <div class="cta in d5">
+        <a class="btn pri" href="tel:+16049070099">Call (604) 907-0099</a>
+        <a class="btn gl" href="#quote">Text a quote request</a>
+      </div>
+    </div>
+    <div class="hp in d4">
+      <div class="main"><img src="img/p8.jpg" alt="Kia steering wheel with a Starshine Mobile Detailing card tucked in an orange microfibre cloth"></div>
+      <div class="sm"><img src="img/p3.jpg" alt="Mustang convertible after a detail" style="object-position:30% 55%"></div>
+      <div class="gcard"><b>5.0<i>&#9733;&#9733;&#9733;&#9733;&#9733;</i></b><small>49 Google reviews. "Amazing job every time."</small></div>
+    </div>
+  </div>
+</header>
+
+<div class="nums">
+  <div class="wrap"><div class="row">
+    <div class="c"><span class="n"><span data-n="5" data-d="1">5.0</span></span><span class="t">Google rating</span></div>
+    <div class="c"><span class="n"><span data-n="49">49</span></span><span class="t">Google reviews</span></div>
+    <div class="c"><span class="n">8<em>&ndash;</em>8</span><span class="t">Open every day</span></div>
+  </div></div>
+</div>
+
+<section class="pick" id="pick">
+  <div class="orb o1" style="top:auto;bottom:-200px;right:0;opacity:.6"></div>
+  <div class="wrap">
+    <div class="lbl"><svg class="spark"><use href="#star"/></svg>Pick your ride</div>
+    <h2 class="disp">What are we cleaning?</h2>
+    <div class="chips" role="tablist" aria-label="Vehicle type">
+      <button class="chip" role="tab" aria-selected="true" data-k="car">Car</button>
+      <button class="chip" role="tab" aria-selected="false" data-k="rv">RV and trailer</button>
+      <button class="chip" role="tab" aria-selected="false" data-k="truck">Truck cab</button>
+    </div>
+    <div class="stage">
+      <div class="shots" id="shots">
+        <figure class="big"><img id="s1" alt=""></figure>
+        <figure><img id="s2" alt=""></figure>
+        <figure><img id="s3" alt=""></figure>
+      </div>
+      <div class="pinfo">
+        <h3 id="pt"></h3>
+        <p id="pp"></p>
+        <a class="btn pri" id="pgo" href="#quote">Quote this one</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="io" id="inout">
+  <div class="wrap">
+    <div class="lbl"><svg class="spark"><use href="#star"/></svg>What we do</div>
+    <h2 class="disp">Interior and exterior specialists.</h2>
+    <div class="grid">
+      <div class="blk rv">
+        <div class="ph"><img src="img/p8.jpg" alt="Clean Kia interior with steering wheel cover" style="object-position:50% 40%" loading="lazy"></div>
+        <div>
+          <h3 class="disp">Inside</h3>
+          <p class="lead">Interior detailing, done on site at your home or workplace.</p>
+          <blockquote>"We have a very fuzzy dog and the dog hair was taking over. Absolutely none in sight now!"<cite>Carolynn B., Google</cite></blockquote>
+        </div>
+      </div>
+      <div class="blk rev rv">
+        <div class="ph"><img src="img/blazer.jpg" alt="Grey Chevrolet Blazer washed in a driveway" loading="lazy"></div>
+        <div>
+          <h3 class="disp">Outside</h3>
+          <p class="lead">Exterior detailing for cars, SUVs, trailers and motorhomes, where they are parked.</p>
+          <blockquote>"Got my car cleaned from inside and outside, looking like new."<cite>Khushboo C., Google</cite></blockquote>
+        </div>
+      </div>
+    </div>
+    <p class="lead" style="margin-top:44px">100% satisfaction guaranteed, in Starshine's own words. Book by call, text or Instagram DM.</p>
+  </div>
+</section>
+
+<section class="vband">
+  <div class="frame">
+    <video id="vid" muted loop playsinline preload="none" poster="video/band-poster.jpg" src="video/band.mp4"></video>
+    <div class="scrim"></div>
+    <div class="cap"><div class="wrap"><div class="disp">A Mustang,<br>up close.</div><p>Clip from Starshine's Instagram, @starshinemobiledetailing_09</p></div></div>
+  </div>
+</section>
+
+<section class="rev" id="reviews">
+  <div class="orb o2" style="bottom:auto;top:-60px;left:auto;right:0"></div>
+  <div class="wrap">
+    <div class="lbl"><svg class="spark"><use href="#star"/></svg>49 reviews on Google, 5.0</div>
+    <div class="big">"I have nothing but good words to say about this company very easy to communicate and does an amazing job every time."</div>
+    <div class="who">Jason S., Google</div>
+    <div class="cards">
+      <div class="rc"><div class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Amazing job! I am super happy with the quality of work. Sherry was very detailed, prepared and professional. My vehicle looks brand new again!"</p><div class="nm">Erin C., Google</div></div>
+      <div class="rc"><div class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Incredible job!. Never thought it would come out so beautiful!"</p><div class="nm">Carolynn B., Google</div></div>
+      <div class="rc"><div class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"They did a great job, didn&rsquo;t rush the work, I was really happy with their service."</p><div class="nm">Graham W., Google</div></div>
+      <div class="rc"><div class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Incredible job my Sherry. Got my car cleaned from inside and outside, looking like new. Loved the services, highly recommended."</p><div class="nm">Khushboo C., Google</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="quote" id="quote">
+  <div class="orb o2" style="bottom:-120px;left:0"></div>
+  <div class="wrap">
+    <div>
+      <div class="lbl"><svg class="spark"><use href="#star"/></svg>Book Starshine</div>
+      <h2 class="disp">Tell us what needs a shine.</h2>
+      <p class="lead">Fill in the sentence and your phone opens a text to Starshine.</p>
+      <ul class="facts">
+        <li><span>Based in</span><span>Langley, BC</span></li>
+        <li><span>Hours</span><span>Daily, 8 a.m. to 8 p.m.</span></li>
+        <li><span>Call</span><span><a href="tel:+16049070099">(604) 907-0099</a></span></li>
+        <li><span>Instagram</span><span><a href="https://www.instagram.com/starshinemobiledetailing_09/" rel="noopener">@starshinemobiledetailing_09</a></span></li>
+      </ul>
+    </div>
+    <form class="panel" id="qf">
+      <h3 class="disp">Quote request</h3>
+      <div class="sent">
+        Hi Starshine, I'm
+        <input id="qn" placeholder="your name" autocomplete="given-name" aria-label="Your name">
+        and I need my
+        <select id="qv" aria-label="Vehicle"><option>car</option><option>SUV</option><option>RV</option><option>trailer</option><option>truck</option><option>motorhome</option></select>
+        done
+        <select id="qs" aria-label="Service"><option>inside and outside</option><option>inside only</option><option>outside only</option></select>
+        in
+        <input id="qw" placeholder="your area" aria-label="Your area">.
+      </div>
+      <button class="btn pri" type="submit">Text this to Starshine</button>
+      <small>Opens your messages app. No account needed.</small>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Starshine Mobile Detailing &middot; Langley, BC &middot; <a href="tel:+16049070099">(604) 907-0099</a></span>
+    <span>Preview built by JPF. Not live yet.</span>
+  </div>
+</footer>
+
+<div class="dock" role="group" aria-label="Contact">
+  <a class="btn pri" href="tel:+16049070099">Call</a>
+  <a class="btn gl" href="#quote" id="dtext">Text</a>
+</div>
+
+<script>
+(function(){
+var D={
+ car:{t:"Cars, inside and out",p:"Mustang, Corvette, Porsche, Chevrolet. These are the cars Starshine has been posting.",img:["img/p3.jpg","img/blazer.jpg","img/p11.jpg"],pos:["30% 55%","50% 50%","50% 40%"],v:"car"},
+ rv:{t:"RVs, trailers and motorhomes",p:"Travel trailers and motorhomes show up all over Starshine's posts, tagged right in the captions.",img:["img/p1.jpg","img/p10.jpg","img/p2.jpg"],pos:["50% 50%","50% 45%","50% 40%"],v:"RV"},
+ truck:{t:"Truck cabs",p:"Cabs get the same inside-out treatment. This one is a Mack, from Starshine's page.",img:["img/p9.jpg","img/p12.jpg","img/p8.jpg"],pos:["50% 40%","50% 50%","50% 45%"],v:"truck"}
+};
+var cur="car",chips=document.querySelectorAll('.chip');
+function show(k){cur=k;var d=D[k];
+ chips.forEach(function(c){c.setAttribute('aria-selected',c.dataset.k===k)});
+ ['s1','s2','s3'].forEach(function(id,i){var im=document.getElementById(id);im.style.opacity=0;setTimeout(function(){im.src=d.img[i];im.style.objectPosition=d.pos[i];im.style.opacity=1},160)});
+ document.getElementById('pt').textContent=d.t;document.getElementById('pp').textContent=d.p}
+chips.forEach(function(c){c.addEventListener('click',function(){show(c.dataset.k)})});
+show('car');
+document.getElementById('pgo').addEventListener('click',function(){document.getElementById('qv').value=D[cur].v});
+// counters
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;io.unobserve(e.target);
+ if(e.target.dataset.n){var el=e.target,end=+el.dataset.n,dd=+(el.dataset.d||0),t0=performance.now();
+  (function f(t){var p=Math.min(1,(t-t0)/1200),v=end*(1-Math.pow(1-p,3));el.textContent=v.toFixed(dd);if(p<1)requestAnimationFrame(f)})(t0)}
+ else e.target.classList.add('on')})},{threshold:.2});
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('[data-n]').forEach(function(n){io.observe(n)})}
+document.querySelectorAll('.rv').forEach(function(n){io.observe(n)});
+// video autoplay in view
+var v=document.getElementById('vid');
+new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){v.play().catch(function(){})}else v.pause()})},{threshold:.3}).observe(v);
+// form
+document.getElementById('qf').addEventListener('submit',function(e){e.preventDefault();
+ var n=document.getElementById('qn').value.trim()||'a customer',w=document.getElementById('qw').value.trim()||'Langley';
+ var m="Hi Starshine, I'm "+n+" and I need my "+document.getElementById('qv').value+" done "+document.getElementById('qs').value+" in "+w+". Can I get a quote?";
+ location.href='sms:+16049070099?&body='+encodeURIComponent(m)});
+})();
+</script>
+</body>
+</html>
