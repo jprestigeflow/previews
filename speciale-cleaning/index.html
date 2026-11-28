@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Speciale Cleaning | House cleaning in Aurora, Ontario</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:wght@400;700&family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Mulish:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+/* DESIGN PLAN
+ direction: light editorial, video-led hero (their microwave wipe reel), before/after sliders as the signature, tagline from their logo as headline
+ palette: ink #1d2840 (logo wordmark navy), accent blue #4a74b5 (logo "Paying attention to detail" line), sage #9db3ae (eucalyptus wreath in logo), cream #f5f2ea (logo background), pink #e8a3b5 only in one dot detail (their pink gloves and "pink stuff" reel)
+ fonts: Bona Nova SC (small-caps serif like the logo) + Bona Nova for headlines + Mulish body
+ signature: draggable before/after slider with glass chips (fridge, microwave)
+ order: hero video + glass card, numbers, before/after, services list, results set + logo, reviews, hours/area + quote, footer
+ motion: one load entrance, count-up numbers, gentle reveals, reduced-motion respected
+*/
+:root{--ink:#1d2840;--blue:#4a74b5;--sage:#9db3ae;--cream:#f5f2ea;--pink:#e8a3b5;--line:rgba(29,40,64,.16)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Mulish',sans-serif;font-size:17px;line-height:1.55;color:var(--ink);background:var(--cream);overflow-x:hidden;padding-bottom:96px}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+.disp{font-family:'Bona Nova',serif;font-weight:700;letter-spacing:-.01em;word-spacing:.12em}
+.sc{font-family:'Bona Nova SC',serif;letter-spacing:.06em}
+.wrap{width:min(1180px,100% - 40px);margin:0 auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;border-radius:999px;font-weight:800;text-decoration:none;border:0;cursor:pointer;font:800 16px 'Mulish',sans-serif;transition:transform .18s,background .18s}
+.btn:active{transform:scale(.98)}
+.btn.blue{background:var(--blue);color:#fff}
+.btn.blue:hover{background:#3b62a0}
+.btn.ghost{background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.5)}
+.glass{background:rgba(245,242,234,.6);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 20px 60px -20px rgba(29,40,64,.35)}
+.glass.dark{background:rgba(29,40,64,.5);border-color:rgba(255,255,255,.2);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 20px 60px -20px rgba(29,40,64,.5)}
+
+/* nav */
+nav{position:fixed;z-index:50;top:12px;left:12px;right:12px;max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:6px 6px 6px 20px;border-radius:999px}
+nav .nm{font-size:17px;text-decoration:none;color:#fff}
+nav .links{display:none;gap:26px;font-weight:600;font-size:15px;color:#fff}
+nav .links a{text-decoration:none;opacity:.9}
+nav .btn{min-height:44px;padding:0 20px;font-size:15px}
+nav.dark{background:rgba(29,40,64,.45)}
+
+/* hero */
+.hero{position:relative;min-height:min(100svh,860px);display:flex;align-items:flex-end;color:#fff;background:var(--ink);overflow:hidden}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(29,40,64,.4) 0%,rgba(29,40,64,.05) 30%,rgba(29,40,64,.4) 58%,rgba(29,40,64,.88) 100%)}
+.hero .in{position:relative;z-index:2;padding:110px 0 104px;width:100%}
+.hero h1{font-size:clamp(54px,15.5vw,150px);line-height:.95;max-width:9.5em}
+.hero h1 em{font-style:italic;font-weight:400;color:#cfe0ee}
+.hero .sub{margin:16px 0 20px;font-size:17px;max-width:30em;color:#eef2f7}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.hcard{margin-top:22px;border-radius:24px;padding:18px 22px;max-width:420px}
+.hcard .stars{color:#ffd77a;letter-spacing:3px;font-size:17px}
+.hcard p{font-size:15px;margin-top:6px;line-height:1.45}
+.hcard small{display:block;margin-top:8px;opacity:.85;font-size:13.5px}
+.in-anim>*{opacity:0;transform:translateY(18px);animation:up .9s cubic-bezier(.2,.7,.2,1) forwards}
+.in-anim>*:nth-child(2){animation-delay:.12s}.in-anim>*:nth-child(3){animation-delay:.24s}.in-anim>*:nth-child(4){animation-delay:.38s}
+@keyframes up{to{opacity:1;transform:none}}
+
+/* numbers */
+.nums{padding:80px 0 40px}
+.nums .row{display:grid;grid-template-columns:1fr 1fr;gap:34px 20px}
+.num b{display:block;font-family:'Mulish',sans-serif;font-weight:800;letter-spacing:-.04em;font-size:clamp(56px,12vw,104px);line-height:1;color:var(--blue)}
+.num span{display:block;margin-top:8px;font-size:15px;max-width:14em}
+.nums .tag{grid-column:1/-1;font-size:clamp(22px,4.5vw,34px);line-height:1.25;border-top:1px solid var(--line);padding-top:26px}
+
+/* before/after */
+.ba{padding:72px 0 90px;position:relative}
+.ba h2,.svc h2,.rev h2,.res h2,.quote h2{font-size:clamp(40px,9vw,84px);line-height:1;margin-bottom:14px}
+.ba .lead{max-width:34em;margin-bottom:28px}
+.chips{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.chip{min-height:44px;padding:0 20px;border-radius:999px;font:800 15px 'Mulish',sans-serif;cursor:pointer;color:var(--ink);transition:transform .18s}
+.chip:active{transform:scale(.97)}
+.chip[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.slider{position:relative;width:100%;aspect-ratio:4/5;max-height:78vh;border-radius:26px;overflow:hidden;background:#ddd;touch-action:pan-y;user-select:none;margin:0 auto}
+.slider img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.slider .top{clip-path:inset(0 50% 0 0)}
+.handle{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;transform:translateX(-1px);pointer-events:none}
+.handle i{position:absolute;top:50%;left:50%;width:54px;height:54px;margin:-27px;border-radius:50%;display:grid;place-items:center;color:#fff;font-style:normal;font-weight:800;font-size:18px;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);background:rgba(29,40,64,.45);border:1px solid rgba(255,255,255,.6)}
+.slider .lab{position:absolute;top:16px;padding:7px 16px;border-radius:999px;font-weight:800;font-size:13.5px;color:#fff}
+.slider .lab.l{left:16px}.slider .lab.r{right:16px}
+.slider input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.baw{display:grid;gap:30px}
+
+/* services */
+.svc{background:var(--ink);color:var(--cream);padding:90px 0}
+.svc h2{color:#fff}
+.svc ol{list-style:none;margin-top:36px;border-top:1px solid rgba(255,255,255,.2)}
+.svc li{display:grid;grid-template-columns:54px 1fr;gap:8px;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.2);align-items:baseline}
+.svc li small{font-size:15px;color:var(--sage);font-family:'Bona Nova SC',serif;letter-spacing:.1em}
+.svc li b{font-family:'Bona Nova',serif;font-size:clamp(26px,6vw,46px);line-height:1.1;font-weight:700}
+.svc li span{grid-column:2;color:#c9d3e2;font-size:15.5px}
+.dot{display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--pink);margin-left:12px;vertical-align:middle}
+
+/* results */
+.res{padding:96px 0 60px}
+.set{display:grid;grid-template-columns:1fr;gap:14px;margin-top:30px}
+.set figure{border-radius:22px;overflow:hidden;aspect-ratio:4/5;background:#ddd}
+.set img{width:100%;height:100%;object-fit:cover}
+.logo-row{display:flex;gap:24px;align-items:center;margin-top:60px;border-top:1px solid var(--line);padding-top:36px}
+.logo-row img{width:130px;height:130px;border-radius:50%;object-fit:cover;flex:none;box-shadow:0 14px 40px -14px rgba(29,40,64,.4)}
+.logo-row p{font-size:20px;line-height:1.35}
+
+/* reviews */
+.rev{padding:70px 0 90px;position:relative;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;pointer-events:none;animation:drift 26s ease-in-out infinite alternate}
+.o1{width:420px;height:420px;background:var(--sage);top:-60px;right:-120px}
+.o2{width:360px;height:360px;background:#b8cbe6;bottom:-40px;left:-120px;animation-delay:-9s}
+@keyframes drift{to{transform:translate(40px,30px)}}
+.rev .big{font-family:'Bona Nova',serif;font-size:clamp(28px,6.4vw,58px);line-height:1.18;margin:20px 0 14px;font-weight:400;font-style:italic;position:relative;max-width:20em}
+.rev .by{font-weight:800;position:relative}
+.cards{display:grid;gap:16px;margin-top:40px;position:relative}
+.rc{border-radius:24px;padding:24px}
+.rc p{font-size:16px}
+.rc b{display:block;margin-top:12px;font-size:15px}
+
+/* quote */
+.quote{background:linear-gradient(180deg,var(--cream),#e5ece9);padding:80px 0 70px;position:relative;overflow:hidden}
+.q-grid{display:grid;gap:34px;position:relative}
+.hrs{list-style:none;margin-top:20px;font-size:16px}
+.hrs li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line)}
+.qp{border-radius:28px;padding:26px}
+.qp .sent{font-family:'Bona Nova',serif;font-size:clamp(22px,5vw,30px);line-height:2;font-weight:400}
+.qp input,.qp select{font:700 inherit;font-family:'Mulish',sans-serif;font-size:17px;color:var(--ink);background:rgba(255,255,255,.55);border:1px solid rgba(29,40,64,.25);border-radius:14px;min-height:44px;padding:4px 12px;margin:0 2px;max-width:100%}
+.qp input:focus,.qp select:focus{outline:2px solid var(--blue);border-color:var(--blue)}
+.qp .btn{margin-top:20px;width:100%}
+.qp small{display:block;margin-top:12px;font-size:14px;opacity:.8}
+
+footer{background:var(--ink);color:#c9d3e2;padding:44px 0;font-size:15px}
+footer a{color:#fff}
+
+/* dock */
+.dock{position:fixed;z-index:60;left:12px;right:12px;bottom:12px;display:flex;gap:6px;padding:6px;border-radius:999px;max-width:520px;margin:0 auto}
+.dock .btn{flex:1;min-height:50px;padding:0 10px}
+.dock .btn.t{background:rgba(255,255,255,.65);color:var(--ink)}
+.rv{opacity:0;transform:translateY(16px);transition:opacity .8s,transform .8s}
+.rv.on{opacity:1;transform:none}
+
+@media(min-width:820px){
+ body{padding-bottom:0}
+ nav .links{display:flex}
+ .dock{display:none}
+ .hero h1{max-width:8em}
+ .hero .in{padding-bottom:64px;padding-top:130px}
+ .hero .row{display:flex;align-items:flex-end;justify-content:space-between;gap:40px}
+ .hcard{margin:0;flex:none;width:360px}
+ .nums .row{grid-template-columns:repeat(3,1fr)}
+ .nums .tag{grid-column:auto;border-top:0;padding-top:0;border-left:1px solid var(--line);padding-left:30px}
+ .baw{grid-template-columns:5fr 7fr;align-items:center;gap:70px}
+ .slider{aspect-ratio:1/1;max-height:none}
+ .svc ol{columns:1}
+ .svc li{grid-template-columns:90px 1fr 1fr;align-items:center}
+ .svc li span{grid-column:3}
+ .set{grid-template-columns:1.2fr 1fr 1fr}
+ .cards{grid-template-columns:repeat(3,1fr)}
+ .q-grid{grid-template-columns:5fr 6fr;gap:80px;align-items:start}
+ .res,.ba,.svc{padding-top:130px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.in-anim>*,.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav class="glass dark" aria-label="Main">
+ <a class="nm sc" href="#top">Speciale Cleaning</a>
+ <div class="links"><a href="#work">Before &amp; after</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#quote">Quote</a></div>
+ <a class="btn blue" href="tel:+12892216876">(289) 221-6876</a>
+</nav>
+
+<header class="hero" id="top">
+ <video autoplay muted loop playsinline poster="video/hero-poster.jpg" aria-hidden="true"><source src="video/hero.mp4" type="video/mp4"></video>
+ <div class="in"><div class="wrap"><div class="row">
+  <div class="in-anim">
+   <h1 class="disp">Paying attention <em>to detail.</em></h1>
+   <p class="sub">House cleaning in Aurora, Ontario. Deep cleans, bathrooms, kitchens and more, with a complimentary quote.</p>
+   <div class="cta"><a class="btn blue" href="tel:+12892216876">Call (289) 221-6876</a><a class="btn ghost" href="#quote">Get a quote</a></div>
+  </div>
+  <div class="hcard glass dark in-anim">
+   <div class="stars" aria-hidden="true">★★★★★</div>
+   <p><b>5.0 on Google</b> from 40 reviews</p>
+   <small>"The place has never looked better." Silent G.</small>
+  </div>
+ </div></div></div>
+</header>
+
+<section class="nums"><div class="wrap"><div class="row">
+ <div class="num rv"><b data-to="5" data-dec="1">5.0</b><span>Google rating</span></div>
+ <div class="num rv"><b data-to="40">40</b><span>Google reviews</span></div>
+ <p class="tag disp rv">Every nook and corner, kept up to date by text.</p>
+</div></div></section>
+
+<section class="ba" id="work"><div class="wrap baw">
+ <div>
+  <h2 class="disp">See the difference.</h2>
+  <p class="lead">Real jobs from the Speciale team. Drag the line to compare before and after.</p>
+  <div class="chips" role="group" aria-label="Choose a job">
+   <button class="chip glass" aria-pressed="true" data-i="0">Fridge</button>
+   <button class="chip glass" aria-pressed="false" data-i="1">Microwave</button>
+  </div>
+ </div>
+ <div class="slider" id="slider">
+  <img id="imgA" src="img/fridge-after.jpg" alt="Stainless steel fridge after cleaning">
+  <img id="imgB" class="top" src="img/fridge-before.jpg" alt="Stainless steel fridge before cleaning">
+  <div class="handle" id="handle"><i>&lt;&gt;</i></div>
+  <span class="lab l glass dark">Before</span><span class="lab r glass dark">After</span>
+  <input type="range" min="0" max="100" value="50" id="range" aria-label="Before and after slider">
+ </div>
+</div></section>
+
+<section class="svc" id="services"><div class="wrap">
+ <h2 class="disp">What we clean<span class="dot" aria-hidden="true"></span></h2>
+ <ol>
+  <li><small>01</small><b>Deep cleaning</b><span>Top to bottom, from their deep cleans in Aurora and Richmond Hill.</span></li>
+  <li><small>02</small><b>Bathrooms</b><span>Showers and toilets brought back to bright.</span></li>
+  <li><small>03</small><b>Kitchens and appliances</b><span>Microwaves, stoves and fridges, inside and out.</span></li>
+  <li><small>04</small><b>Windows</b><span>Sparkly clean windows, ready for summer or any season.</span></li>
+  <li><small>05</small><b>Carpet shampooing</b><span>Mentioned by a customer after their clean.</span></li>
+  <li><small>06</small><b>Post-construction cleaning</b><span>Working with local builders to hand over a spotless home.</span></li>
+ </ol>
+</div></section>
+
+<section class="res"><div class="wrap">
+ <h2 class="disp">Clean, down to the corners.</h2>
+ <div class="set">
+  <figure class="rv"><img src="img/toilet-after.jpg" alt="Clean toilet after a Speciale Cleaning visit" loading="lazy"></figure>
+  <figure class="rv"><img src="img/fridge-in-after.jpg" alt="Clean fridge interior" loading="lazy"></figure>
+  <figure class="rv"><img src="img/office-after.jpg" alt="Tidy break room table and chairs" loading="lazy"></figure>
+ </div>
+ <div class="logo-row">
+  <img src="img/logo.jpg" alt="Speciale Cleaning logo">
+  <p class="disp" style="font-weight:400;font-style:italic">Paying attention to detail.<br><span class="sc" style="font-style:normal;font-size:15px;color:var(--blue)">Speciale Cleaning, Aurora ON</span></p>
+ </div>
+</div></section>
+
+<section class="rev" id="reviews">
+ <div class="orb o1"></div><div class="orb o2"></div>
+ <div class="wrap">
+  <h2 class="disp" style="position:relative">What clients say.</h2>
+  <p class="big">"I don’t even recognize my own house they did such a good job. My shower especially was a complete disaster and they totally transformed it."</p>
+  <p class="by">Asher L., Google</p>
+  <div class="cards">
+   <div class="rc glass"><p>"Team was very detailed oriented. Everything nook and corner was cleaned and carpets were shampood. They kept me updated on all steps of the process through text."</p><b>Silent G., Google</b></div>
+   <div class="rc glass"><p>"She was so efficient, had amazing products that smelled so great and was very attentive with little and delicate items on desks and mantles."</p><b>Angelina A., Google</b></div>
+   <div class="rc glass"><p>"Tala and the Speciale cleaning team are fantastic! I was a bit unsure if I should inquire about help for my home but I am so glad I did!"</p><b>Thuy H., Google</b></div>
+  </div>
+ </div>
+</section>
+
+<section class="quote" id="quote">
+ <div class="orb o1" style="top:auto;bottom:-120px"></div><div class="orb o2" style="bottom:auto;top:-60px"></div>
+ <div class="wrap q-grid">
+  <div>
+   <h2 class="disp">Free quote.</h2>
+   <p>Call or text and we will get back to you. Serving Aurora, Ontario.</p>
+   <ul class="hrs">
+    <li><span>Monday to Thursday</span><b>6 a.m. to 9 p.m.</b></li>
+    <li><span>Friday</span><b>6 a.m. to 9 p.m.</b></li>
+    <li><span>Saturday</span><b>6 a.m. to 9 p.m.</b></li>
+    <li><span>Sunday</span><b>6 a.m. to 5 p.m.</b></li>
+   </ul>
+  </div>
+  <form class="qp glass" id="qf">
+   <p class="sent">Hi Speciale, I'm <input id="qn" name="n" placeholder="your name" aria-label="Your name" required> in <input id="qc" placeholder="your city" aria-label="Your city" value="Aurora">. I need <select id="qs" aria-label="What you need"><option>a deep clean</option><option>a bathroom clean</option><option>kitchen and appliances</option><option>window cleaning</option><option>carpet shampooing</option><option>post-construction cleaning</option></select>.</p>
+   <button class="btn blue" type="submit">Text my quote request</button>
+   <small>Opens a text message to (289) 221-6876. Nothing is sent until you press send.</small>
+  </form>
+ </div>
+</section>
+
+<footer><div class="wrap">
+ <p><b style="color:#fff">Speciale Cleaning</b> · House cleaning service · Aurora, ON · <a href="tel:+12892216876">(289) 221-6876</a></p>
+ <p style="margin-top:8px">Preview built by JPF. Not live yet.</p>
+</div></footer>
+
+<div class="dock glass" role="group" aria-label="Contact">
+ <a class="btn t" href="sms:+12892216876">Text</a>
+ <a class="btn blue" href="tel:+12892216876">Call now</a>
+</div>
+
+<script>
+(function(){
+ var pairs=[{a:'img/fridge-after.jpg',b:'img/fridge-before.jpg',al:'Fridge after cleaning',bl:'Fridge before cleaning'},{a:'img/mw-a1.jpg',b:'img/mw-b1.jpg',al:'Microwave after cleaning',bl:'Microwave before cleaning'}];
+ var A=document.getElementById('imgA'),B=document.getElementById('imgB'),R=document.getElementById('range'),H=document.getElementById('handle');
+ function set(v){B.style.clipPath='inset(0 '+(100-v)+'% 0 0)';H.style.left=v+'%'}
+ R.addEventListener('input',function(){set(R.value)});set(50);
+ document.querySelectorAll('.chip').forEach(function(c){c.addEventListener('click',function(){
+  var p=pairs[+c.dataset.i];A.src=p.a;A.alt=p.al;B.src=p.b;B.alt=p.bl;R.value=50;set(50);
+  document.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',x===c)});
+ })});
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);var b=e.target.querySelector('b[data-to]');if(b)count(b)}})},{threshold:.15});
+ document.querySelectorAll('.rv').forEach(function(x){io.observe(x)});
+ function count(b){var to=+b.dataset.to,d=+b.dataset.dec||0,t0=performance.now();
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  (function f(t){var k=Math.min(1,(t-t0)/1200);b.textContent=(to*(1-Math.pow(1-k,3))).toFixed(d);if(k<1)requestAnimationFrame(f)})(t0)}
+ document.getElementById('qf').addEventListener('submit',function(e){e.preventDefault();
+  var n=document.getElementById('qn').value.trim(),c=document.getElementById('qc').value.trim(),s=document.getElementById('qs').value;
+  var body="Hi Speciale, I'm "+n+(c?" in "+c:"")+". I need "+s+". Could I get a quote?";
+  location.href='sms:+12892216876?&body='+encodeURIComponent(body)});
+})();
+</script>
+</body>
+</html>
