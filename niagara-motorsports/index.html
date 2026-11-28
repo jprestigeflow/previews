@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Niagara Motorsports | Custom Styling, Wraps, Tint &amp; Stripes in Niagara Falls</title>
+<meta name="description" content="Niagara Motorsports, Niagara Falls ON. Custom racing stripes, chrome delete and blackout, window tint, wraps. Call (289) 932-9255.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unica+One&family=Inclusive+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* Design plan
+ direction: blacked-out shop at night. Stripe video owns the top, giant condensed headline, drag slider as the signature.
+ palette: base #0b0c0e + panel #15171a (blacked-out Bronco/building in their photos), stripe white #ebe8e1 (Mustang stripes),
+          steel #8a9099 (Bronco paint), gold #cfa44e (their shield logo) = the one accent
+ fonts: Unica One (display) + Inclusive Sans (body)
+ signature: Nissan Rogue chrome-delete before/after slider
+ order: hero video > services list > slider > jobs set > numbers+reviews > quote form > visit
+ motion: one load entrance, count-up numbers, gentle photo scale on scroll; all off for reduced motion */
+:root{--base:#0b0c0e;--panel:#15171a;--line:rgba(235,232,225,.14);--white:#ebe8e1;--steel:#8a9099;--gold:#cfa44e;--gold-d:#9b7a2f;
+--disp:'Unica One','Arial Narrow',sans-serif;--body:'Inclusive Sans',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--base)}
+body{background:var(--base);color:var(--white);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1200px,100% - 40px);margin-inline:auto}
+.disp{font-family:var(--disp);font-weight:400;text-transform:uppercase;letter-spacing:.005em;word-spacing:.12em;line-height:.92}
+.small{font-size:14px;color:var(--steel)}
+/* glass */
+.glass{background:rgba(14,15,18,.55);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 20px 60px -20px rgba(0,0,0,.6)}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;border-radius:999px;border:1px solid transparent;font:600 16px/1 var(--body);text-decoration:none;cursor:pointer;transition:transform .18s,background .18s,box-shadow .18s}
+.btn:active{transform:scale(.98)}
+.btn-gold{background:var(--gold);color:#14110a;box-shadow:0 10px 30px -10px rgba(207,164,78,.6)}
+.btn-gold:hover{background:#dcb460}
+.btn-ghost{color:var(--white);border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.06)}
+.btn-ghost:hover{background:rgba(255,255,255,.14)}
+/* nav */
+nav{position:fixed;z-index:50;top:14px;left:14px;right:14px;max-width:1200px;margin-inline:auto;height:56px;border-radius:999px;display:flex;align-items:center;justify-content:space-between;padding:0 8px 0 22px}
+nav .logo{font-family:var(--disp);font-size:22px;text-transform:uppercase;text-decoration:none;letter-spacing:.02em;white-space:nowrap}
+nav .logo b{color:var(--gold);font-weight:400}
+nav .links{display:none;gap:28px;font-size:15px}
+nav .links a{text-decoration:none;color:var(--white);opacity:.85}
+nav .links a:hover{opacity:1;color:var(--gold)}
+nav .btn{min-height:44px;padding:0 20px;font-size:15px}
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:var(--base)}
+.hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,12,14,.55) 0%,rgba(11,12,14,.12) 30%,rgba(11,12,14,.55) 62%,rgba(11,12,14,.96) 100%),linear-gradient(90deg,rgba(11,12,14,.7),rgba(11,12,14,0) 70%)}
+.hero .in{position:relative;z-index:2;padding:110px 0 36px;width:min(1200px,100% - 40px);margin-inline:auto}
+.hero h1{font-size:clamp(66px,19.6vw,132px);margin-bottom:18px}
+.hero h1 span{display:block}
+.hero h1 .g{color:var(--gold)}
+.hero .sub{max-width:34ch;font-size:17px;line-height:1.5;color:#d9d6cf;margin-bottom:20px}
+.hero .cta{display:flex;gap:10px}.hero .cta .btn{padding:0 22px}
+.hcard{position:relative;margin-top:20px;margin-bottom:76px;border-radius:24px;padding:18px 20px;display:flex;align-items:center;gap:16px;max-width:360px}
+.hcard .big{font-family:var(--disp);font-size:44px;line-height:1;color:var(--gold)}
+.hcard p{font-size:14px;line-height:1.4;color:#d9d6cf}
+.hcard strong{color:var(--white);font-weight:600}
+.entry{opacity:0;transform:translateY(18px);animation:in .9s cubic-bezier(.2,.7,.2,1) forwards}
+.e2{animation-delay:.15s}.e3{animation-delay:.3s}.e4{animation-delay:.45s}.e5{animation-delay:.7s}
+@keyframes in{to{opacity:1;transform:none}}
+/* stripe rule */
+.rule{height:18px;position:relative}
+.rule::before,.rule::after{content:"";position:absolute;left:0;right:0;background:var(--white)}
+.rule::before{top:0;height:7px}.rule::after{bottom:0;height:3px;opacity:.7}
+.rule.short{width:96px}
+section{padding:84px 0}
+.h2{font-size:clamp(46px,9vw,104px);margin-bottom:18px}
+.h2 em{font-style:normal;color:var(--gold)}
+.lede{max-width:52ch;color:#c7c4bd}
+/* services */
+.svc{margin-top:44px;border-top:1px solid var(--line)}
+.svc li{list-style:none;display:grid;grid-template-columns:48px 1fr;gap:4px 12px;padding:22px 0;border-bottom:1px solid var(--line);align-items:baseline;transition:background .2s,padding .2s}
+.svc li:hover{padding-left:10px;background:linear-gradient(90deg,rgba(207,164,78,.08),transparent)}
+.svc .n{font-family:var(--disp);color:var(--gold);font-size:22px}
+.svc h3{font-family:var(--disp);font-weight:400;text-transform:uppercase;font-size:clamp(30px,6vw,54px);line-height:1}
+.svc p{grid-column:2;color:var(--steel);font-size:15px;max-width:60ch}
+/* slider */
+.slider-sec{background:var(--panel);padding:84px 0}
+.ba{position:relative;margin-top:40px;border-radius:26px;overflow:hidden;aspect-ratio:787/470;background:#000;touch-action:pan-y;user-select:none;-webkit-user-select:none;border:1px solid var(--line)}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba .after{clip-path:inset(0 0 0 var(--p,50%))}
+.ba .bar{position:absolute;top:0;bottom:0;left:var(--p,50%);width:3px;margin-left:-1.5px;background:var(--white);box-shadow:0 0 0 1px rgba(0,0,0,.25)}
+.ba .knob{position:absolute;top:50%;left:var(--p,50%);width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:999px;display:grid;place-items:center;font-size:20px;color:var(--white);pointer-events:none}
+.ba .tag{position:absolute;top:14px;padding:8px 16px;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.ba .tag.b{left:14px}.ba .tag.a{right:14px;color:var(--gold)}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.ba:focus-within{outline:2px solid var(--gold);outline-offset:3px}
+.cap{margin-top:16px;color:var(--steel);font-size:15px}
+.cap a{color:var(--gold)}
+/* jobs */
+.jobs{display:grid;gap:14px;margin-top:40px}
+.job{position:relative;border-radius:22px;overflow:hidden;background:var(--panel);aspect-ratio:4/5}
+.job img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.job:hover img{transform:scale(1.04)}
+.job figcaption{position:absolute;left:0;right:0;bottom:0;padding:60px 20px 18px;background:linear-gradient(0deg,rgba(11,12,14,.92),transparent);font-size:15px;line-height:1.4}
+.job figcaption b{display:block;font-family:var(--disp);font-weight:400;text-transform:uppercase;font-size:26px;letter-spacing:.01em;color:var(--white);margin-bottom:2px}
+.job.wide{aspect-ratio:4/3}
+/* proof */
+.proof{background:var(--base)}
+.nums{display:grid;grid-template-columns:1fr 1fr;gap:28px 16px;margin:38px 0 56px}
+.nums .v{font-family:var(--disp);font-size:clamp(56px,11vw,120px);line-height:.95;color:var(--white)}
+.nums .v small{font-size:.42em;color:var(--gold);margin-left:4px}
+.nums .k{font-size:14px;color:var(--steel);margin-top:4px}
+.lead-q{font-family:var(--disp);text-transform:uppercase;font-size:clamp(30px,5.4vw,62px);line-height:1.02;word-spacing:.1em;max-width:22ch}
+.lead-q::before{content:"\201C";color:var(--gold)}.lead-q::after{content:"\201D";color:var(--gold)}
+.by{margin-top:16px;color:var(--steel);font-size:15px}
+.by b{color:var(--white);font-weight:600}
+.rv{display:grid;gap:14px;margin-top:46px}
+.rv blockquote{padding:24px;border-radius:22px;background:var(--panel);border:1px solid var(--line);font-size:16px}
+.rv cite{display:block;margin-top:14px;font-style:normal;color:var(--steel);font-size:14px}
+.rv cite b{color:var(--white);font-weight:600}
+.stars{color:var(--gold);letter-spacing:3px;font-size:14px;margin-bottom:10px;display:block}
+/* quote */
+.quote{position:relative;overflow:hidden;background:var(--panel)}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;pointer-events:none;animation:drift 26s ease-in-out infinite alternate}
+.orb.o1{width:420px;height:420px;background:radial-gradient(circle,rgba(207,164,78,.55),transparent 70%);top:-120px;right:-100px}
+.orb.o2{width:360px;height:360px;background:radial-gradient(circle,rgba(138,144,153,.5),transparent 70%);bottom:-120px;left:-100px;animation-duration:32s}
+@keyframes drift{to{transform:translate(-50px,40px)}}
+.qp{position:relative;z-index:2;margin-top:34px;border-radius:28px;padding:28px 22px}
+.qp p.sent{font-size:clamp(20px,3.4vw,30px);line-height:2.1;color:#d9d6cf}
+.qp input,.qp select{font:600 inherit/1 var(--body);font-size:inherit;color:var(--white);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:7px 14px;min-height:44px;margin:0 2px;max-width:100%;transition:border-color .15s,box-shadow .15s}
+.qp input::placeholder{color:rgba(235,232,225,.4);font-weight:400}
+.qp input:focus,.qp select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(207,164,78,.3)}
+.qp select{background-color:#1a1c20;appearance:none;-webkit-appearance:none;padding-right:14px}
+.qp select option{background:#15171a;color:var(--white)}
+.qp .btn{margin-top:22px}
+.qp .note{margin-top:12px}
+#qn{width:min(100%,220px)}#qv{width:min(100%,290px)}
+/* visit */
+.visit{display:grid;gap:36px;margin-top:40px}
+.hours{width:100%;border-collapse:collapse}
+.hours td{padding:13px 0;border-bottom:1px solid var(--line);font-size:16px}
+.hours td:last-child{text-align:right;color:var(--steel)}
+.hours tr.today td{color:var(--gold)}
+.addr{font-family:var(--disp);text-transform:uppercase;font-size:clamp(30px,5vw,50px);line-height:1.05;margin-bottom:14px}
+.links2{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+footer{padding:34px 0 120px;border-top:1px solid var(--line);color:var(--steel);font-size:14px;text-align:left}
+/* dock */
+.dock{position:fixed;z-index:60;left:14px;right:14px;bottom:max(14px,env(safe-area-inset-bottom));height:64px;border-radius:999px;display:flex;gap:8px;padding:8px;max-width:520px;margin-inline:auto}
+.dock a{flex:1;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-weight:600;font-size:16px;min-height:48px;transition:transform .18s}
+.dock a:active{transform:scale(.97)}
+.dock .c{background:var(--gold);color:#14110a}
+.dock .t{color:var(--white);background:rgba(255,255,255,.1)}
+@media(min-width:760px){
+ body{font-size:18px}
+ nav .links{display:flex}
+ .dock{display:none}
+ footer{padding-bottom:40px}
+ .hero .in{padding-bottom:56px}
+ .hcard{position:absolute;right:0;bottom:56px;margin:0;max-width:340px}
+ .hero .in{position:relative}
+ section,.slider-sec{padding:130px 0}
+ .svc li{grid-template-columns:70px 1.1fr 1.4fr;align-items:center;padding:28px 0}
+ .svc p{grid-column:auto}
+ .jobs{grid-template-columns:repeat(12,1fr);gap:16px}
+ .job{aspect-ratio:auto}
+ .j1{grid-column:1/6;grid-row:1/3}
+ .j2{grid-column:6/13;aspect-ratio:4/3}
+ .j3{grid-column:6/10;aspect-ratio:1/1.12}
+ .j4{grid-column:10/13;aspect-ratio:auto}
+ .nums{grid-template-columns:repeat(3,1fr)}
+ .rv{grid-template-columns:repeat(3,1fr)}
+ .visit{grid-template-columns:1fr 1fr;gap:80px}
+ .qp{padding:54px 60px}
+ .ba{aspect-ratio:787/400;border-radius:32px}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ .entry{animation:none;opacity:1;transform:none}
+ .orb{animation:none}
+ .job img{transition:none}
+}
+</style>
+</head>
+<body>
+<nav class="glass" aria-label="Main">
+  <a class="logo" href="#top">Niagara <b>Motorsports</b></a>
+  <div class="links"><a href="#work">What we do</a><a href="#after">Before / after</a><a href="#reviews">Reviews</a><a href="#quote">Get a quote</a><a href="#visit">Visit</a></div>
+  <a class="btn btn-gold" href="tel:+12899329255">Call</a>
+</nav>
+
+<header class="hero" id="top">
+  <img class="poster" src="video/hero-poster2.jpg" alt="" aria-hidden="true">
+  <video autoplay muted loop playsinline preload="auto" poster="video/hero-poster2.jpg" aria-hidden="true"><source src="video/hero.mp4" type="video/mp4"></video>
+  <div class="in">
+    <p class="small entry" style="color:#d9d6cf;margin-bottom:14px">Custom styling, wraps and tint &middot; Niagara Falls, ON</p>
+    <h1 class="disp"><span class="entry e2">Stripes.</span><span class="entry e3 g">Blackout.</span><span class="entry e4">Tint.</span></h1>
+    <p class="sub entry e4">Custom racing stripes, chrome delete, window tint and wraps from Niagara Motorsports.</p>
+    <div class="cta entry e5"><a class="btn btn-gold" href="tel:+12899329255">Call now</a><a class="btn btn-ghost" href="#quote">Get a quote</a></div>
+    <div class="hcard glass entry e5">
+      <div class="big">4.8</div>
+      <p><strong>96 Google reviews</strong><br>4346 Fourth Ave, Niagara Falls<br>Open Mon to Sat</p>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <div class="rule short"></div>
+    <h2 class="h2 disp" style="margin-top:26px">What they<br>do to <em>your car</em></h2>
+    <p class="lede">Custom Styling, Wraps and Automotive Upgrades, as they put it on their own page. Every line below is a job from their posts or a customer review.</p>
+    <ul class="svc">
+      <li><span class="n">01</span><h3>Racing stripes</h3><p>Custom stripes on a Mustang GT, and Italian flag stripes on a Fiat 124 Spider.</p></li>
+      <li><span class="n">02</span><h3>Chrome delete</h3><p>Full chrome delete on a Nissan Rogue, finished in gloss black with satin black lower bumper trim.</p></li>
+      <li><span class="n">03</span><h3>Blackout work</h3><p>Blacked-out emblems and a gloss-black roof wrap on a Bronco Sport.</p></li>
+      <li><span class="n">04</span><h3>Window tint</h3><p>Window tint, and custom tinted lights. Customers also mention headlights and taillights wrapped on a Lexus.</p></li>
+      <li><span class="n">05</span><h3>Wraps and decals</h3><p>Wraps, custom decals and painted calipers, as mentioned in customer reviews.</p></li>
+      <li><span class="n">06</span><h3>Winter tires</h3><p>Zeta, Mazzini and Zmax winter tires starting at $79 per tire. Send your size for your exact price.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="slider-sec" id="after">
+  <div class="wrap">
+    <h2 class="h2 disp">Chrome<br>to <em>blackout</em></h2>
+    <p class="lede">Nissan Rogue. Drag the line. Same grille, same light.</p>
+    <div class="ba" id="ba" style="--p:50%">
+      <img src="img/nissan-before.jpg" alt="Nissan Rogue grille with chrome trim, before" width="787" height="470">
+      <img class="after" src="img/nissan-after.jpg" alt="Nissan Rogue grille after chrome delete in gloss black" width="787" height="470">
+      <div class="bar"></div>
+      <div class="knob glass" aria-hidden="true">&#8596;</div>
+      <span class="tag b glass">Before</span><span class="tag a glass">After</span>
+      <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
+    </div>
+    <p class="cap">Full chrome delete in gloss black, lower bumper trim in satin black. <a href="https://www.instagram.com/p/Df5tKQJJSxA/" rel="noopener">See the post</a></p>
+  </div>
+</section>
+
+<section id="jobs">
+  <div class="wrap">
+    <div class="rule short"></div>
+    <h2 class="h2 disp" style="margin-top:26px">Recent <em>jobs</em></h2>
+    <div class="jobs">
+      <figure class="job j1"><img src="img/fiat.jpg" alt="Black Fiat 124 Spider with Italian flag stripes on the hood, in the shop" loading="lazy"><figcaption><b>Fiat 124 Spider</b>Italian flag racing stripes and custom tinted lights.</figcaption></figure>
+      <figure class="job j2 wide"><img src="img/bronco-front.jpg" alt="Grey Ford Bronco Sport with blacked-out emblems" loading="lazy"><figcaption><b>Bronco Sport</b>Blacked-out emblems, gloss-black roof wrap and window tint.</figcaption></figure>
+      <figure class="job j3"><img src="img/mustang.jpg" alt="Black Mustang GT convertible with white racing stripes" loading="lazy" style="object-position:50% 60%"><figcaption><b>Mustang GT</b>Custom racing stripes.</figcaption></figure>
+      <figure class="job j4"><img src="img/p12.jpg" alt="Side view of tinted windows and blackout trim on a Bronco Sport" loading="lazy"><figcaption><b>Tint</b>Bronco Sport, side glass.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="proof" id="reviews">
+  <div class="wrap">
+    <div class="rule short"></div>
+    <div class="nums" style="margin-top:30px">
+      <div><div class="v"><span data-to="4.8" data-dec="1">4.8</span></div><div class="k">Google rating</div></div>
+      <div><div class="v"><span data-to="96">96</span></div><div class="k">Google reviews</div></div>
+      <div><div class="v"><span data-to="8745" data-comma="1">8,745</span></div><div class="k">Instagram followers, @niagara_motorsports</div></div>
+    </div>
+    <blockquote>
+      <p class="lead-q">I had racing stripes put on my 2008 mustang gt convertible and the outcome was amazing. I am so happy with the look and would recommend anyone to Niagara Motorsports.</p>
+      <p class="by"><b>Peter K.</b>, Google review, 5 stars</p>
+    </blockquote>
+    <div class="rv">
+      <blockquote><span class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>Recently had my stripes replaced. I was shown the product prior to installation. The work was performed as stated and I was impressed with the workmanship, attention to detail and timeliness. Youness was very approachable, open and answered &hellip;<cite><b>Bernie H.</b>, Google</cite></blockquote>
+      <blockquote><span class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>Another exceptional service. I just had my Lexus taillights and headlights wrapped and couldn&rsquo;t be happier. I got the exact look that I wanted at a very reasonable price. &hellip;<cite><b>Aldous S.</b>, Google</cite></blockquote>
+      <blockquote><span class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>I&rsquo;m extremely happy with the work done on my bronco sport! The blackout on the emblems came out clean, sharp, and exactly how I wanted it, and the wrap job was done with a lot of attention to detail. The tint also looks amazing and really &hellip;<cite><b>Nick</b>, Google</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="quote" id="quote">
+  <div class="orb o1"></div><div class="orb o2"></div>
+  <div class="wrap" style="position:relative;z-index:2">
+    <h2 class="h2 disp">Get a <em>quote</em></h2>
+    <p class="lede">Tell them what you drive and what you want. It opens a text to (289) 932-9255.</p>
+    <form class="qp glass" id="qf" autocomplete="off">
+      <p class="sent">Hi, I&rsquo;m <input id="qn" name="n" placeholder="your name" aria-label="Your name"> and I drive a <input id="qv" name="v" placeholder="year, make, model" aria-label="Year, make and model">. I&rsquo;m looking for
+        <select id="qs" name="s" aria-label="What you need"><option>racing stripes</option><option>chrome delete / blackout</option><option>window tint</option><option>a wrap</option><option>headlight / taillight tint</option><option>winter tires</option><option>something else</option></select>.</p>
+      <button class="btn btn-gold" type="submit">Text my quote request</button>
+      <p class="small note">Opens your messages app. Nothing is sent until you press send.</p>
+    </form>
+  </div>
+</section>
+
+<section id="visit">
+  <div class="wrap">
+    <div class="rule short"></div>
+    <h2 class="h2 disp" style="margin-top:26px">Come <em>by</em></h2>
+    <div class="visit">
+      <div>
+        <p class="addr">4346 Fourth Ave<br>Niagara Falls, ON L2E 4N2</p>
+        <p class="lede">Serving the Niagara Region.</p>
+        <div class="links2">
+          <a class="btn btn-gold" href="tel:+12899329255">Call (289) 932-9255</a>
+          <a class="btn btn-ghost" href="sms:+12899329255">Text</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/place/Niagara+Motorsports/data=!4m7!3m6!1s0x89d345eea4658ab3:0x9406e3858f138dcb!8m2!3d43.0889822!4d-79.1360061" rel="noopener">Directions</a>
+          <a class="btn btn-ghost" href="https://www.instagram.com/niagara_motorsports/" rel="noopener">Instagram</a>
+        </div>
+      </div>
+      <table class="hours" id="hours" aria-label="Hours">
+        <tr data-d="1"><td>Monday</td><td>8:30 a.m. to 6:30 p.m.</td></tr>
+        <tr data-d="2"><td>Tuesday</td><td>8:30 a.m. to 6:30 p.m.</td></tr>
+        <tr data-d="3"><td>Wednesday</td><td>8:30 a.m. to 6:30 p.m.</td></tr>
+        <tr data-d="4"><td>Thursday</td><td>8:30 a.m. to 6:30 p.m.</td></tr>
+        <tr data-d="5"><td>Friday</td><td>8:30 a.m. to 6:30 p.m.</td></tr>
+        <tr data-d="6"><td>Saturday</td><td>9:30 a.m. to 4:30 p.m.</td></tr>
+        <tr data-d="0"><td>Sunday</td><td>Closed</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">Preview built by JPF. Not live yet.</div></footer>
+
+<div class="dock glass" role="group" aria-label="Call or text">
+  <a class="c" href="tel:+12899329255">Call</a><a class="t" href="sms:+12899329255">Text</a>
+</div>
+
+<script>
+(function(){
+  // before/after
+  var ba=document.getElementById('ba'),r=ba.querySelector('input');
+  function set(v){ba.style.setProperty('--p',v+'%')}
+  r.addEventListener('input',function(){set(r.value)});
+  // quote form -> sms
+  document.getElementById('qf').addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=document.getElementById('qn').value.trim()||'a customer',v=document.getElementById('qv').value.trim()||'my car',s=document.getElementById('qs').value;
+    var body='Hi, I’m '+n+' and I drive a '+v+'. I’m looking for '+s+'. Can I get a quote?';
+    location.href='sms:+12899329255?&body='+encodeURIComponent(body);
+  });
+  // today in hours
+  var d=new Date().getDay(),row=document.querySelector('#hours tr[data-d="'+d+'"]');if(row)row.className='today';
+  // count up
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce&&'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){
+      if(!en.isIntersecting)return;io.unobserve(en.target);
+      var el=en.target,to=parseFloat(el.dataset.to),dec=+el.dataset.dec||0,c=el.dataset.comma,t0=performance.now();
+      (function f(t){var k=Math.min(1,(t-t0)/1100),e=1-Math.pow(1-k,3),v=to*e;
+        el.textContent=c?Math.round(v).toLocaleString('en-US'):v.toFixed(dec);
+        if(k<1)requestAnimationFrame(f)})(t0);
+    })},{threshold:.5});
+    document.querySelectorAll('[data-to]').forEach(function(n){io.observe(n)});
+  }
+  if(reduce){var v=document.querySelector('.hero video');if(v){v.removeAttribute('autoplay');v.pause()}}
+})();
+</script>
+</body>
+</html>
